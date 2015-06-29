@@ -14,6 +14,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<springframework.version>3.2.4.RELEASE</springframework.version>
+		<tomcat.plugin.version>2.2</tomcat.plugin.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -51,4 +52,20 @@
 		</dependency>
 
 	</dependencies>
+
+
+	<build>
+		<finalName>arya</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>${tomcat.plugin.version}</version>
+				<configuration>
+					<url>http://localhost:8080/manager/text</url>
+					<path>/${project.build.finalName}</path>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
