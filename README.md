@@ -13,6 +13,6 @@ HOW TO USE TOMCAT PLUGIN
 
 3 - Go to $ARYA_HOME/arya-gateway/
 
-4 - type to command line  "mvn tomcat7:deploy"
+4 - type to command line  "mvn tomcat7:deploy". If you already deployed before type "mvn tomcat7:redeploy"
 
 5 - Open web browser and go to address "http://localhost:8080/arya/rest/ismail"
