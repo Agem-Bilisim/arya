@@ -56,7 +56,14 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-
+		<dependency>
+			<groupId>tr.com.agem</groupId>
+			<artifactId>arya-core-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>tr.com.agem</groupId>
+			<artifactId>arya-metadata-engine</artifactId>
+		</dependency>
 	</dependencies>
 
 

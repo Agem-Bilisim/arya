@@ -1,5 +1,6 @@
 package tr.com.agem.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -7,15 +8,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import tr.com.agem.core.metadata.IMetaDataEngine;
+
 
 @Controller
 @RequestMapping("/rest")
 public class HelloAryaController {
 	
+	@Autowired
+	IMetaDataEngine metadataService;
+	
 	@RequestMapping(value="/{name}",method=RequestMethod.GET)
 	@ResponseBody
 	public String sayHello(@PathVariable("name") String name){
-		return "Hello World " + name;
+		return metadataService.sayHello();
 	}
 	
 	@RequestMapping(value="/jsp/{name}",method=RequestMethod.GET)
