@@ -32,5 +32,7 @@
   <modules>
     <module>arya-core-api</module>
     <module>arya-gateway</module>
+    <module>arya-metadata-persistence</module>
+    <module>arya-metadata-engine</module>
   </modules>
 </project>
