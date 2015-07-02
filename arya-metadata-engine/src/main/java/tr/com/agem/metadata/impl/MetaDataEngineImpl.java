@@ -4,7 +4,7 @@ import tr.com.agem.core.metadata.IMetaDataEngine;
 import tr.com.agem.core.metadata.model.IMetaData;
 import tr.com.agem.core.metadata.persistence.IMetaDataPersistence;
 
-public class IMetaDataEngineImpl implements IMetaDataEngine{
+public class MetaDataEngineImpl implements IMetaDataEngine{
 
 	private IMetaDataPersistence persistence;
 
@@ -13,7 +13,12 @@ public class IMetaDataEngineImpl implements IMetaDataEngine{
 	}
 
 	public IMetaData findMetaData(Long metaDataId) {
+		
 		return persistence.findMetaData(metaDataId);
+	}
+
+	public void saveMetaData(IMetaData metaData) {
+		persistence.saveMetaData(metaData);;
 	}
 
 

@@ -1,5 +1,6 @@
 package tr.com.agem.metadata.persistence.dao.impl;
 
+import java.util.Iterator;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -10,6 +11,10 @@ import tr.com.agem.metadata.persistence.EntityManagerService;
 public class BaseDaoImpl<T> implements BaseDao<T> {
 	
 	private Class<T> type;
+	
+	public BaseDaoImpl(Class<T> type) {
+		this.type = type;
+	}
 
 	public T save(T o) {
 		EntityManager em = EntityManagerService.getInstance();

@@ -22,7 +22,6 @@
        http://www.springframework.org/schema/jdbc/spring-jdbc-3.0.xsd">
        
        
-     <context:component-scan base-package="tr.com.agem" />
 	<!-- jdbc:hsqldb:mem:dataSource -->
 	<jdbc:embedded-database id="metadata" type="HSQL">
 		<jdbc:script location="classpath:db/sql/create-db.sql" />
@@ -43,7 +42,7 @@
 	</bean> -->
 	<tx:annotation-driven />
     <context:annotation-config />
-	
+	<!-- jdbc:hsqldb:mem:metadata -->
 	<bean id="dataSource"
         class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName">

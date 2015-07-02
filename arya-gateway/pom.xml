@@ -64,6 +64,10 @@
 			<groupId>tr.com.agem</groupId>
 			<artifactId>arya-metadata-engine</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>tr.com.agem</groupId>
+			<artifactId>arya-metadata-persistence</artifactId>
+		</dependency>
 	</dependencies>
 
 

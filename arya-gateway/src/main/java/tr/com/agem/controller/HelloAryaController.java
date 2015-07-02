@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import tr.com.agem.core.metadata.IMetaDataEngine;
+import tr.com.agem.core.metadata.model.IMetaData;
+import tr.com.agem.metadata.persistence.model.MetaDataImpl;
 
 
 @Controller
@@ -21,7 +23,15 @@ public class HelloAryaController {
 	@RequestMapping(value="/{name}",method=RequestMethod.GET)
 	@ResponseBody
 	public String sayHello(@PathVariable("name") String name){
-		return "Hello " + name;
+		
+//		MetaDataImpl imp = new MetaDataImpl();
+//		
+//		imp.setMetaDataXml("ad asdasdda");
+//		
+//		metadataService.saveMetaData(imp);
+		
+		IMetaData md = metadataService.findMetaData(1L);
+		return md.getMetaDataXml();
 	}
 	
 	@RequestMapping(value="/jsp/{name}",method=RequestMethod.GET)
