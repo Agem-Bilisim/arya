@@ -34,5 +34,6 @@
     <module>arya-gateway</module>
     <module>arya-metadata-persistence</module>
     <module>arya-metadata-engine</module>
+    <module>arya-metadata-xul</module>
   </modules>
 </project>
