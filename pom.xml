@@ -18,13 +18,22 @@
 			<groupId>tr.com.agem</groupId>
 			<artifactId>arya-core-api</artifactId>
 			<version>${arya.version}</version>
-			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>tr.com.agem</groupId>
 			<artifactId>arya-gateway</artifactId>
 			<version>${arya.version}</version>
 			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>tr.com.agem</groupId>
+			<artifactId>arya-metadata-engine</artifactId>
+			<version>${arya.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>tr.com.agem</groupId>
+			<artifactId>arya-metadata-engine</artifactId>
+			<version>${arya.version}</version>
 		</dependency>
 	</dependencies>
 </dependencyManagement>
