@@ -21,7 +21,7 @@ public class HelloAryaController {
 	@RequestMapping(value="/{name}",method=RequestMethod.GET)
 	@ResponseBody
 	public String sayHello(@PathVariable("name") String name){
-		return metadataService.sayHello();
+		return "Hello " + name;
 	}
 	
 	@RequestMapping(value="/jsp/{name}",method=RequestMethod.GET)

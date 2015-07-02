@@ -1,0 +1,1 @@
+---INSERT INTO SAMPLE (name,surname,email) VALUES ('ismail','başaran','basaran.ismaill@gmail.com');

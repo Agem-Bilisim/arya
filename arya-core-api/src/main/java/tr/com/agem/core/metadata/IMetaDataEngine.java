@@ -1,7 +1,9 @@
 package tr.com.agem.core.metadata;
 
+import tr.com.agem.core.metadata.model.IMetaData;
+
 public interface IMetaDataEngine {
 	
-	String sayHello();
+	IMetaData findMetaData(Long metaDataId);
 
 }
