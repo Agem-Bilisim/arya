@@ -566,8 +566,8 @@
 			<xs:element ref="attribute" />
 			<xs:element ref="custom-attributes" />
 			<xs:element ref="variables" />
-		 	<xs:element ref="template" />
-			<xs:element ref="zk" />  
+			<xs:element ref="template" />
+			<xs:element ref="zk" />
 			<xs:any namespace="##other" processContents="lax" />
 		</xs:choice>
 	</xs:group>
