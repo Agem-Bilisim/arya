@@ -8,7 +8,7 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 
 import junit.framework.TestCase;
-import tr.com.agem.metadata.xul.impl.WindowElementType;
+import tr.com.agem.arya.metadata.xul.impl.WindowElementType;
 
 public class TestXMLParse extends TestCase {
 	// @Test
