@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 
@@ -22,9 +23,13 @@ public class TestXMLParse extends TestCase {
 					.newInstance(WindowElementType.class);
 
 			Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-			WindowElementType window = (WindowElementType) jaxbUnmarshaller
+			@SuppressWarnings("unchecked")
+			JAXBElement<WindowElementType> cc = (JAXBElement<WindowElementType>) jaxbUnmarshaller
 					.unmarshal(file);
-			System.out.println(window);
+			
+			WindowElementType window = cc.getValue();
+			
+			System.out.println(window.getId());
 
 		} catch (JAXBException e) {
 			e.printStackTrace();

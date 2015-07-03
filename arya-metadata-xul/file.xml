@@ -1,4 +1,6 @@
-<windowElementType id="win" title="Car Inventory Editor" width="400px"
+<window id="win" title="Car Inventory Editor"
 	border="normal" apply="demo.getting_started.input.EditController">
-	<buttonElementType id="submitButton" label="Submit" />
-</windowElementType>
+	
+	<button id="submitButton" label="Submit" />
+	
+</window>
