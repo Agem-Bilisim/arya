@@ -1,6 +1,5 @@
 package tr.com.agem.metadata.persistence.dao.impl;
 
-import java.util.Iterator;
 import java.util.List;
 
 import javax.persistence.EntityManager;

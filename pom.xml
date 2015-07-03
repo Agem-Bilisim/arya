@@ -35,6 +35,11 @@
 			<artifactId>arya-metadata-engine</artifactId>
 			<version>${arya.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>tr.com.agem</groupId>
+			<artifactId>arya-metadata-persistence</artifactId>
+			<version>${arya.version}</version>
+		</dependency>
 	</dependencies>
 </dependencyManagement>
   
