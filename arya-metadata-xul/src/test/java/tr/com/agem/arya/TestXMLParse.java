@@ -2,6 +2,7 @@ package tr.com.agem.arya;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
@@ -29,7 +30,14 @@ public class TestXMLParse extends TestCase {
 			
 			WindowElementType window = cc.getValue();
 			
+			List<Object> comp = window.getAnyOrTextboxOrStatusbar();
+			
+			for (Object o : comp) {
+				System.out.println(o);
+			}
+			
 			System.out.println(window.getId());
+			
 
 		} catch (JAXBException e) {
 			e.printStackTrace();

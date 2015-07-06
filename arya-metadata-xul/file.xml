@@ -1,6 +1,9 @@
-<window id="win" title="Car Inventory Editor"
-	border="normal" apply="demo.getting_started.input.EditController">
-	
-	<button id="submitButton" label="Submit" />
-	
+<window id="main" border="none" apply="demo.layout.business_portal.BusinessPortalController">
+    <style src="/widgets/layout/business_portal/Customize.css" />
+    <textbox id="deneeme"/>
+    <portallayout id="bussinessPortal" maximizedMode="whole">
+        <portalchildren id="ptc1" width="30%" style="padding:5px;" />
+        <portalchildren id="ptc2" width="40%" style="padding:5px;" />
+        <portalchildren id="ptc3" width="30%" style="padding:5px;" />
+    </portallayout>
 </window>

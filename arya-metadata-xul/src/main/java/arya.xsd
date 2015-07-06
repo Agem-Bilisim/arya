@@ -17,6 +17,7 @@
 
   <xs:complexType name="windowElementType">
      <xs:choice minOccurs="0" maxOccurs="unbounded">
+       <xs:group minOccurs="0" maxOccurs="unbounded" ref="boxElementElementsOnlyGroup" />
        <xs:element ref="statusbar" />
      </xs:choice>
      <xs:attributeGroup ref="windowElementAttributes" />
