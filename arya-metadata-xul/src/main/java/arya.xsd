@@ -154,10 +154,59 @@
 
   <xs:group name="elementsForBox">
     <xs:choice>
+      <xs:element ref="box" />
+      <xs:element ref="vbox" />
+      <xs:element ref="hbox" />
+      <xs:element ref="bbox" />
+      <xs:element ref="stack" />
+      <xs:element ref="deck" />
+      <xs:element ref="spacer" />
+      <xs:element ref="separator" />
+      <xs:element ref="splitter" />
+      <xs:element ref="template" />
+      <xs:element ref="arrowscrollbox" />
+      <xs:element ref="button" />
+      <xs:element ref="browser" />
+      <xs:element ref="checkbox" />
+      <xs:element ref="grid" />
+      <xs:element ref="groupbox" />
+      <xs:element ref="colorpicker" />
+      <xs:element ref="datepicker" />
+      <xs:element ref="description" />
+      <xs:element ref ="editor" />
+      <xs:element ref ="iframe" />
+      <xs:element ref="image" />
+      <xs:element ref="label" />
+      <xs:element ref="listbox" />
+      <xs:element ref="menubar" />
+      <xs:element ref="menulist" />
+      <xs:element ref="menupopup" />
+      <xs:element ref="notificationbox" />
+      <xs:element ref="panel" />
+      <xs:element ref="popupset" />
+      <xs:element ref="progressmeter" />
+      <xs:element ref="radio" />
+      <xs:element ref="radiogroup"/>
+      <xs:element ref="resizer" />
+      <xs:element ref="richlistbox" />
+      <xs:element ref="scale" />
+      <xs:element ref="script" />
+      <xs:element ref="scrollbar" />
+      <xs:element ref="scrollbox" />
+      <xs:element ref="scrollcorner" />
+      <xs:element ref="spinbuttons" />
+      <xs:element ref="tabbox" />
       <xs:element ref="textbox" />
+      <xs:element ref="timepicker" />
+      <xs:element ref="titlebar"/>
+      <xs:element ref="toolbar" />
+      <xs:element ref="toolbarset" />
+      <xs:element ref="toolbox" />
+      <xs:element ref="tooltip" />
+      <xs:element ref="tree" />
+      <xs:element ref="toolbarbutton" />
     </xs:choice>
   </xs:group>
-
   <xs:element name="box" type="boxElementType">
     <xs:annotation>
       <xs:documentation source="http://developer.mozilla.org/en/docs/XUL:box">

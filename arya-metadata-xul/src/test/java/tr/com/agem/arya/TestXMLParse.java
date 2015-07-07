@@ -10,6 +10,7 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 
 import junit.framework.TestCase;
+import tr.com.agem.arya.metadata.xul.impl.ObjectFactory;
 import tr.com.agem.arya.metadata.xul.impl.WindowElementType;
 
 public class TestXMLParse extends TestCase {
@@ -21,7 +22,7 @@ public class TestXMLParse extends TestCase {
 			File file = new File("file.xml");
 			System.out.println(file.getAbsolutePath());
 			JAXBContext jaxbContext = JAXBContext
-					.newInstance(WindowElementType.class);
+					.newInstance(WindowElementType.class, ObjectFactory.class);
 
 			Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
 			@SuppressWarnings("unchecked")
@@ -33,7 +34,12 @@ public class TestXMLParse extends TestCase {
 			List<Object> comp = window.getAnyOrTextboxOrStatusbar();
 			
 			for (Object o : comp) {
-				System.out.println(o);
+				if (o instanceof JAXBElement) {
+					JAXBElement<?> x = (JAXBElement<?>) o;
+					System.out.println(x.getDeclaredType());
+				}
+				System.out.println(o.getClass());
+				
 			}
 			
 			System.out.println(window.getId());

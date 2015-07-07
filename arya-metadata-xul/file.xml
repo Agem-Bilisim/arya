@@ -1,9 +1,7 @@
-<window id="main" border="none" apply="demo.layout.business_portal.BusinessPortalController">
-    <style src="/widgets/layout/business_portal/Customize.css" />
-    <textbox id="deneeme"/>
-    <portallayout id="bussinessPortal" maximizedMode="whole">
-        <portalchildren id="ptc1" width="30%" style="padding:5px;" />
-        <portalchildren id="ptc2" width="40%" style="padding:5px;" />
-        <portalchildren id="ptc3" width="30%" style="padding:5px;" />
-    </portallayout>
+<window id="main" border="none"
+	apply="demo.layout.business_portal.BusinessPortalController">
+	<label value="Deneme" />
+	<textbox id="deneme" />
+	<button onClick="Deneme.OnClick" />
+	<hedehodo>dsdfsd</hedehodo>
 </window>
