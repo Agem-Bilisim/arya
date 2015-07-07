@@ -3,5 +3,4 @@
 	<label value="Deneme" />
 	<textbox id="deneme" />
 	<button onClick="Deneme.OnClick" />
-	<hedehodo>dsdfsd</hedehodo>
 </window>

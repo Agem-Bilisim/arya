@@ -491,8 +491,8 @@
 	</xs:attributeGroup>
 	<xs:attributeGroup name="xulElementAttrGroup">
 		<xs:attributeGroup ref="htmlBasedComponentAttrGroup" />
-		<xs:attribute name="context" type="xs:string" use="optional" />
-		<xs:attribute name="popup" type="xs:string" use="optional" />
+	  	<xs:attribute name="context" type="xs:string" use="optional" />
+	  <!-- 	<xs:attribute name="popup" type="xs:string" use="optional" />    -->
 		<xs:attribute name="tooltip" type="xs:string" use="optional" />
 		<xs:attribute name="onCtrlKey" type="xs:string" use="optional" />
 		<xs:attribute name="ctrlKeys" type="xs:string" use="optional" />
@@ -573,7 +573,7 @@
 	</xs:group>
 	<xs:group name="anyGroup">
 		<xs:choice>
-			<xs:group ref="baseGroup" />
+		 	<xs:group ref="baseGroup" />
 			<xs:element ref="a" />
 			<xs:element ref="absolutelayout"/>
 			<xs:element ref="anchorlayout"/>
@@ -641,7 +641,7 @@
 			<xs:element ref="slider" />
 			<xs:element ref="space" />
 			<xs:element ref="spinner" />
-			<xs:element ref="style" />
+			<xs:element ref="styleType" />
 			<xs:element ref="tabbox" />
 			<xs:element ref="tablelayout" />
 			<xs:element ref="textbox" />
@@ -726,7 +726,7 @@
 				<xs:element ref="slider" />
 				<xs:element ref="space" />
 				<xs:element ref="spinner" />
-				<xs:element ref="style" />
+				<xs:element ref="styleType" />
 				<xs:element ref="tabbox" />
 				<xs:element ref="textbox" />
 				<xs:element ref="timer" />
@@ -739,7 +739,7 @@
 				<xs:element ref="window" />
 				<xs:element ref="zscript" />
 			</xs:choice>
-			<xs:group ref="baseGroup" minOccurs="0" maxOccurs="unbounded"/>
+		<!-- 	<xs:group ref="baseGroup" minOccurs="0" maxOccurs="unbounded"/>  -->
 		</xs:sequence>
 	</xs:group>
     <!--
@@ -881,7 +881,7 @@
 			<xs:group ref="baseGroup" minOccurs="0" maxOccurs="unbounded" />
 			<xs:sequence minOccurs="0" maxOccurs="1">
 				<xs:element ref="bandpopup" />
-				<xs:group ref="baseGroup" minOccurs="0" maxOccurs="unbounded" />
+			<!-- 	<xs:group ref="baseGroup" minOccurs="0" maxOccurs="unbounded" /> -->
 			</xs:sequence>
 		</xs:sequence>
 		<xs:attributeGroup ref="inputElementAttrGroup" />
@@ -1253,7 +1253,7 @@
 		<xs:attributeGroup ref="labelImageElementAttrGroup" />
 		<xs:attribute name="description" type="xs:string" use="optional" />
 		<xs:attribute name="value" type="xs:string" use="optional" />
-		<xs:attribute name="content" type="xs:string" use="optional" />
+	<!-- 	<xs:attribute name="content" type="xs:string" use="optional" /> -->
 		<xs:attribute name="disabled" type="booleanType" use="optional" />
 	</xs:complexType>
 	<!-- combobutton -->
@@ -1263,7 +1263,7 @@
 			<xs:group ref="baseGroup" minOccurs="0" maxOccurs="unbounded" />
 			<xs:sequence minOccurs="0" maxOccurs="1">
 				<xs:element ref="popup" />
-				<xs:group ref="baseGroup" minOccurs="0" maxOccurs="unbounded" />
+			<!-- 	<xs:group ref="baseGroup" minOccurs="0" maxOccurs="unbounded" /> -->
 			</xs:sequence>
 		</xs:sequence>
 		<xs:attributeGroup ref="labelImageElementAttrGroup" />
@@ -1715,7 +1715,7 @@
 	<xs:complexType name="htmlType" mixed="true">
 		<xs:group ref="baseGroup" minOccurs="0" maxOccurs="unbounded" />
 		<xs:attributeGroup ref="xulElementAttrGroup" />
-		<xs:attribute name="content" type="xs:string" use="optional" />
+	<!-- 	<xs:attribute name="content" type="xs:string" use="optional" /> -->
 		<xs:attributeGroup ref="rootAttrGroup" />
 	</xs:complexType>
     <!-- idspace -->
@@ -2020,11 +2020,11 @@
 			<xs:group ref="baseGroup" minOccurs="0" maxOccurs="unbounded" />
 			<xs:sequence minOccurs="0" maxOccurs="1">
 				<xs:element ref="menupopup" />
-				<xs:group ref="baseGroup" minOccurs="0" maxOccurs="unbounded" />
+			<!-- 	<xs:group ref="baseGroup" minOccurs="0" maxOccurs="unbounded" /> -->
 			</xs:sequence>
 		</xs:sequence>
 		<xs:attributeGroup ref="labelImageElementAttrGroup" />
-		<xs:attribute name="content" type="mediaType" use="optional" />
+	 	<xs:attribute name="content" type="mediaType" use="optional" />
 	</xs:complexType>
     <!-- menubar -->
 	<xs:element name="menubar" type="menubarType" />
@@ -2435,12 +2435,12 @@
 		<xs:attribute name="onOpen" type="xs:string" use="optional" />
 	</xs:complexType>
     <!-- style -->
-	<xs:element name="style" type="styleType" />
+	<xs:element name="styleType" type="styleType" />
 	<xs:complexType name="styleType" mixed="true">
 		<xs:group ref="baseGroup" minOccurs="0" maxOccurs="unbounded" />
 		<xs:attributeGroup ref="abstractComponentAttrGroup" />
 		<xs:attribute name="src" type="xs:string" use="optional" />
-		<xs:attribute name="content" type="xs:string" use="optional" />
+	<!-- 	<xs:attribute name="content" type="xs:string" use="optional" /> -->
 		<xs:attribute name="media" type="xs:string" use="optional" />
 	</xs:complexType>
     <!-- tab -->
@@ -2450,7 +2450,7 @@
 			<xs:group ref="baseGroup" minOccurs="0" maxOccurs="unbounded" />
 			<xs:sequence minOccurs="0" maxOccurs="1">
 				<xs:element ref="caption" />
-				<xs:group ref="baseGroup" minOccurs="0" maxOccurs="unbounded" />
+			<!-- 	<xs:group ref="baseGroup" minOccurs="0" maxOccurs="unbounded" /> -->
 			</xs:sequence>
 		</xs:sequence>
 		<xs:attributeGroup ref="labelImageElementAttrGroup" />
@@ -3193,7 +3193,7 @@
 		<xs:attribute name="open" type="booleanType" use="optional" />
 		<xs:attribute name="lng" type="doubleType" use="optional" />
 		<xs:attribute name="lat" type="doubleType" use="optional" />
-		<xs:attribute name="content" type="xs:string" use="optional" />
+	<!-- 	<xs:attribute name="content" type="xs:string" use="optional" /> -->
 	</xs:complexType>
     <!-- gimage -->
 	<xs:element name="gimage" type="gimageType" />
@@ -3214,7 +3214,7 @@
 		<xs:attribute name="open" type="booleanType" use="optional" />
 		<xs:attribute name="lng" type="doubleType" use="optional" />
 		<xs:attribute name="lat" type="doubleType" use="optional" />
-		<xs:attribute name="content" type="xs:string" use="optional" />
+	<!-- 	<xs:attribute name="content" type="xs:string" use="optional" /> -->
 		<xs:attribute name="iconAnchorX" type="intType" use="optional" />
 		<xs:attribute name="iconAnchorY" type="intType" use="optional" />
 		<xs:attribute name="iconDragCrossAnchorX" type="intType" use="optional" />
@@ -3246,7 +3246,7 @@
 			<xs:group ref="gmapsGroup" minOccurs="0" maxOccurs="unbounded" />
 			<xs:sequence minOccurs="0" maxOccurs="1">
 				<xs:element ref="ginfo" />
-				<xs:group ref="gmapsGroup" minOccurs="0" maxOccurs="unbounded" />
+			<!-- 	<xs:group ref="gmapsGroup" minOccurs="0" maxOccurs="unbounded" />  -->
 			</xs:sequence>
 		</xs:sequence>
 		<xs:attributeGroup ref="xulElementAttrGroup" />
