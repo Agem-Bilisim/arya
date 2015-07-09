@@ -20,7 +20,7 @@ import tr.com.agem.core.metadata.model.IMetaData;
 
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/hello")
 public class HelloAryaController {
 	
 	@Autowired
@@ -43,6 +43,9 @@ public class HelloAryaController {
 		}
 		return md.getMetaDataXml();
 	}
+	
+	
+
 	
 	@RequestMapping(value="/jsp/{name}",method=RequestMethod.GET)
 	public String sayHelloViaJps(@PathVariable("name") String name,Model model){
