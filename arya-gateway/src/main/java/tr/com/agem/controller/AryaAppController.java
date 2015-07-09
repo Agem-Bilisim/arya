@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import tr.com.agem.core.IAryaAppAdaptor;
+import tr.com.agem.core.adaptor.IAryaAppAdaptor;
 import tr.com.agem.model.AryaActionRequest;
 
 @Controller

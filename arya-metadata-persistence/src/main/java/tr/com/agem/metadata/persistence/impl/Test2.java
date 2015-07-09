@@ -21,11 +21,11 @@ public class Test2 {
 //		em.persist(impl);
 //		em.flush();
 //		em.getTransaction().commit();
-		ClassPathXmlApplicationContext appContext = new ClassPathXmlApplicationContext("applicationContext.xml");
-		IMetaDataPersistence bean = appContext.getBean(IMetaDataPersistence.class);
-		MetaDataImpl impl = new MetaDataImpl();
-		impl.setMetaDataXml("tirilaylay lom2 ");
-		bean.saveMetaData(impl);
+//		ClassPathXmlApplicationContext appContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+//		IMetaDataPersistence bean = appContext.getBean(IMetaDataPersistence.class);
+//		MetaDataImpl impl = new MetaDataImpl();
+//		impl.setMetaDataXml("<window><textfield></textfield></window>");
+//		bean.saveMetaData(impl);
 		DatabaseManagerSwing.main(new String[] { "--url", "jdbc:hsqldb:mem:metadata", "--user", "sa", "--password", "" });
 		
 		

@@ -12,8 +12,6 @@ public class MetaDataPersistenceImpl implements IMetaDataPersistence {
 	public void setMetaDataDao(MetaDataDao metaDataDao) {
 		this.metaDataDao = metaDataDao;
 	}
-
-	
 	
 	public void saveMetaData(IMetaData metaData) {
 		metaDataDao.save(new MetaDataImpl(metaData));
@@ -21,6 +19,10 @@ public class MetaDataPersistenceImpl implements IMetaDataPersistence {
 
 	public IMetaData findMetaData(Long metaDataId) {
 		return metaDataDao.find(metaDataId);
+	}
+	
+	public IMetaData findMetaDataWithName(String appName) {
+		return metaDataDao.findWithName(appName);
 	}
 
 	public void updateMetaData(IMetaData metaData) {

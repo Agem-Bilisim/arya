@@ -49,5 +49,6 @@
     <module>arya-metadata-persistence</module>
     <module>arya-metadata-engine</module>
     <module>arya-metadata-xul</module>
+    <module>arya-adaptor-java</module>
   </modules>
 </project>

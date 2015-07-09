@@ -53,5 +53,14 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
 		return em.createQuery(
                 "select model from " + obj.getName() + " model", obj).getResultList();
 	}
+	
+	public T findWithName(String name) {
+		EntityManager em = EntityManagerService.getInstance();
+		return (T) em.createQuery(
+		    "select model from " + type.getName() + " model WHERE model.applicationName=:appName")
+		    .setParameter("appName", name)
+		    .setMaxResults(10)
+		    .getSingleResult();
+		}
 
 }

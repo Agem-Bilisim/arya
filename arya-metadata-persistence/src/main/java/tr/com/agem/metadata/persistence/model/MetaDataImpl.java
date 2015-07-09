@@ -14,6 +14,8 @@ public class MetaDataImpl implements IMetaData{
 	@Id @GeneratedValue
 	private Long id;
 	
+	private String applicationName;
+	
 	private String metaDataXml;
 	
 	public MetaDataImpl(IMetaData metaData) {
@@ -38,6 +40,14 @@ public class MetaDataImpl implements IMetaData{
 
 	public void setMetaDataXml(String metaDataXml) {
 		this.metaDataXml = metaDataXml;
+	}
+
+	public String getApplicationName() {
+		return applicationName;
+	}
+
+	public void setApplicationName(String applicationName) {
+		this.applicationName = applicationName;
 	}
 
 }
