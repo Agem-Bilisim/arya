@@ -41,7 +41,7 @@ public class HelloAryaController {
 		} catch (Exception e) {
 			throw new AryaMetaDataNotFoundException();
 		}
-		return md.getMetaDataXml();
+		return md.getMetaData();
 	}
 	
 	

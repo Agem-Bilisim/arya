@@ -1,18 +1,9 @@
-package tr.com.agem.metadata.persistence.model;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+package tr.com.agem.arya.metadata.persistence.impl.xml;
 
 import tr.com.agem.core.metadata.model.IMetaData;
 
-@Entity
-@Table(name = "METADATA")
-public class MetaDataImpl implements IMetaData {
+public class MetaDataXml implements IMetaData {
 
-	@Id
-	@GeneratedValue
 	private Long id;
 
 	private String applicationName;
@@ -22,14 +13,6 @@ public class MetaDataImpl implements IMetaData {
 	private String formName;
 
 	private String metaData;
-
-	public MetaDataImpl(IMetaData metaData) {
-		this.id = metaData.getId();
-		this.metaData = metaData.getMetaData();
-	}
-
-	public MetaDataImpl() {
-	}
 
 	public Long getId() {
 		return id;
@@ -70,5 +53,4 @@ public class MetaDataImpl implements IMetaData {
 	public void setMetaData(String metaData) {
 		this.metaData = metaData;
 	}
-
 }

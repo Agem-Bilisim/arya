@@ -4,6 +4,8 @@ public interface IMetaData {
 
 	Long getId();
 	String getApplicationName();
-	String getMetaDataXml();
+	String getModuleName();
+	String getFormName();
+	String getMetaData();
 	
 }

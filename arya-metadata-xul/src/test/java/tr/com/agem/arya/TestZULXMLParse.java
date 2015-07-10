@@ -10,8 +10,6 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 
 import junit.framework.TestCase;
-import tr.com.agem.arya.metadata.xul.impl.ButtonElementType;
-import tr.com.agem.arya.metadata.xul.impl.TextboxElementType;
 import tr.com.agem.arya.metadata.zul.impl.ObjectFactory;
 import tr.com.agem.arya.metadata.zul.impl.WindowType;
 import tr.com.agem.arya.metadata.zul.impl.ZkType;

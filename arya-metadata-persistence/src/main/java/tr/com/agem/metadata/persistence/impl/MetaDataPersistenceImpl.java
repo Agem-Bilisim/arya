@@ -8,21 +8,17 @@ import tr.com.agem.metadata.persistence.model.MetaDataImpl;
 public class MetaDataPersistenceImpl implements IMetaDataPersistence {
 
 	private MetaDataDao metaDataDao;
-	
+
 	public void setMetaDataDao(MetaDataDao metaDataDao) {
 		this.metaDataDao = metaDataDao;
 	}
-	
+
 	public void saveMetaData(IMetaData metaData) {
 		metaDataDao.save(new MetaDataImpl(metaData));
 	}
 
 	public IMetaData findMetaData(Long metaDataId) {
 		return metaDataDao.find(metaDataId);
-	}
-	
-	public IMetaData findMetaDataWithName(String appName) {
-		return metaDataDao.findWithName(appName);
 	}
 
 	public void updateMetaData(IMetaData metaData) {
@@ -33,7 +29,9 @@ public class MetaDataPersistenceImpl implements IMetaDataPersistence {
 		metaDataDao.delete(metaDataId);
 	}
 
-	public IMetaData findWithName(String appName) {
-		return metaDataDao.findWithName(appName);
+	public IMetaData findWithName(String appName, String moduleName,
+			String formName) {
+		return metaDataDao.findWithName(appName, moduleName, formName);
 	}
+
 }

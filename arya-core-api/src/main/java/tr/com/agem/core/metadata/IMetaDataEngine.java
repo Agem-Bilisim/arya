@@ -8,6 +8,6 @@ public interface IMetaDataEngine {
 	
 	void saveMetaData(IMetaData metaData);
 	
-	IMetaData findWithName(String appName);
+	IMetaData findWithName(String appName, String moduleName, String formName);
 
 }
