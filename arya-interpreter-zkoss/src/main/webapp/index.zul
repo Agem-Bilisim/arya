@@ -19,7 +19,7 @@
 				</center>
 				<south size="120px" style="border: none;">
 					<div align="right">
-						<image src="img/AGEM.jpg" width="100px" />
+						<image src="img/AGEM.jpg" height="100px"/>
 					</div>
 				</south>
 			</borderlayout>
