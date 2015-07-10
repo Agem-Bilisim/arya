@@ -8,9 +8,7 @@
 		<artifactId>arya</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
-	<groupId>tr.com.agem.metadata.xul</groupId>
 	<artifactId>arya-metadata-xul</artifactId>
-	<version>1.0-SNAPSHOT</version>
 	<name>arya-metadata-xul</name>
 	<url>http://maven.apache.org</url>
 	<properties>
