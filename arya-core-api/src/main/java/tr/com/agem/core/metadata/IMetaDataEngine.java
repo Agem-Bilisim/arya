@@ -7,5 +7,7 @@ public interface IMetaDataEngine {
 	IMetaData findMetaData(Long metaDataId);
 	
 	void saveMetaData(IMetaData metaData);
+	
+	IMetaData findWithName(String appName);
 
 }

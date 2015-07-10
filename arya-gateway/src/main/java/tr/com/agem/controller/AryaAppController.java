@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import tr.com.agem.core.adaptor.IAryaAppAdaptor;
+import tr.com.agem.core.metadata.IMetaDataEngine;
+import tr.com.agem.core.metadata.exception.AryaMetaDataNotFoundException;
+import tr.com.agem.core.metadata.model.IMetaData;
 import tr.com.agem.model.AryaActionRequest;
 
 @Controller
@@ -22,13 +25,21 @@ public class AryaAppController {
 	@Autowired
 	IAryaAppAdaptor appAdaptor;
 	
+	@Autowired
+	IMetaDataEngine metadataService;
+	
 	
 	@RequestMapping(value="/{appName}",method=RequestMethod.GET)
 	@ResponseBody
 	public String masterWindowRequest(@PathVariable("appName") String appName,HttpServletRequest request,HttpServletResponse response){
+		IMetaData metadata = null;
+		try {
+			metadata = metadataService.findWithName(appName);
+		} catch (Exception e) {
+			throw new AryaMetaDataNotFoundException();
+		}
 		
-
-		return appName;
+		return metadata.getMetaDataXml();
 	}
 
 	@RequestMapping(value="/{appName}",method=RequestMethod.POST)

@@ -12,4 +12,6 @@ public interface IMetaDataPersistence {
 	
 	void deleteMetaData(Long metaDataId);
 	
+	IMetaData findWithName(String appName);
+	
 }

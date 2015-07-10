@@ -32,4 +32,8 @@ public class MetaDataPersistenceImpl implements IMetaDataPersistence {
 	public void deleteMetaData(Long metaDataId) {
 		metaDataDao.delete(metaDataId);
 	}
+
+	public IMetaData findWithName(String appName) {
+		return metaDataDao.findWithName(appName);
+	}
 }
