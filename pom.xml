@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>tr.com.agem</groupId>
 	<artifactId>arya</artifactId>
@@ -9,45 +10,69 @@
 	<url>http://www.agem.com.tr</url>
 
 
-  <properties>
-  	<arya.version>1.0.0-SNAPSHOT</arya.version>
-  </properties>
-<dependencyManagement>
-	<dependencies>
-		<dependency>
-			<groupId>tr.com.agem</groupId>
-			<artifactId>arya-core-api</artifactId>
-			<version>${arya.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>tr.com.agem</groupId>
-			<artifactId>arya-gateway</artifactId>
-			<version>${arya.version}</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>tr.com.agem</groupId>
-			<artifactId>arya-metadata-engine</artifactId>
-			<version>${arya.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>tr.com.agem</groupId>
-			<artifactId>arya-metadata-engine</artifactId>
-			<version>${arya.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>tr.com.agem</groupId>
-			<artifactId>arya-metadata-persistence</artifactId>
-			<version>${arya.version}</version>
-		</dependency>
-	</dependencies>
-</dependencyManagement>
-  
-  <modules>
-    <module>arya-core-api</module>
-    <module>arya-gateway</module>
-    <module>arya-metadata-persistence</module>
-    <module>arya-metadata-engine</module>
-    <module>arya-metadata-xul</module>
-  </modules>
+	<properties>
+		<arya.version>1.0.0-SNAPSHOT</arya.version>
+		<javaVersion>1.7</javaVersion>
+	</properties>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>tr.com.agem</groupId>
+				<artifactId>arya-core-api</artifactId>
+				<version>${arya.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>tr.com.agem</groupId>
+				<artifactId>arya-gateway</artifactId>
+				<version>${arya.version}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>tr.com.agem</groupId>
+				<artifactId>arya-metadata-engine</artifactId>
+				<version>${arya.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>tr.com.agem</groupId>
+				<artifactId>arya-metadata-engine</artifactId>
+				<version>${arya.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>tr.com.agem</groupId>
+				<artifactId>arya-metadata-persistence</artifactId>
+				<version>${arya.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>tr.com.agem</groupId>
+				<artifactId>arya-interpreter-zkoss</artifactId>
+				<version>${arya.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<modules>
+		<module>arya-core-api</module>
+		<module>arya-gateway</module>
+		<module>arya-metadata-persistence</module>
+		<module>arya-metadata-engine</module>
+		<module>arya-metadata-xul</module>
+		<module>arya-test-app</module>
+		<module>arya-interpreter-zkoss</module>
+	</modules>
+	
+		<build>
+		<finalName>arya</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>${javaVersion}</source>
+					<target>${javaVersion}</target>
+					<compilerArgument>-proc:none</compilerArgument>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>

@@ -47,8 +47,6 @@ public class AryaWindow extends BaseController {
 				}
 			}
 
-			System.out.println(window.getId());
-
 		} catch (JsonParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
