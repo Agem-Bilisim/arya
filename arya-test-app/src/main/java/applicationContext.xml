@@ -36,7 +36,7 @@
 			<value>true</value>
 		</property>
 	</bean>
-	<bean id="baseDAO" class="com.mos.dao.BaseDAO">
+	<bean id="baseDAO" class="tr.com.agem.dao.BaseDAO">
 		<property name="sessionFactory">
 			<ref bean="factory" />
 		</property>
