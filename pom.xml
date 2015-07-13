@@ -54,10 +54,12 @@
 		<module>arya-core-api</module>
 		<module>arya-gateway</module>
 		<module>arya-metadata-persistence</module>
+		<module>arya-metadata-persistence-xml</module>
 		<module>arya-metadata-engine</module>
 		<module>arya-metadata-xul</module>
 		<module>arya-test-app</module>
 		<module>arya-interpreter-zkoss</module>
+		<module>arya-adaptor-java</module>
 	</modules>
 	
 		<build>

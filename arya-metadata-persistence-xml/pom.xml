@@ -8,9 +8,7 @@
 		<artifactId>arya</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
-	<groupId>tr.com.agem</groupId>
 	<artifactId>arya-metadata-persistence-xml</artifactId>
-	<version>1.0-SNAPSHOT</version>
 	<name>arya-metadata-persistence-xml</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>

@@ -6,7 +6,6 @@ public interface IAryaActionRequest {
 	
 	Map<String, Object> getParams();
 	String getWindow();
-	String getActionClass();
-	String getActionMethod();
+	String getAction();
 
 }

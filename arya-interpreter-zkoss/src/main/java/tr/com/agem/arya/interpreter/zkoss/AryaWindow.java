@@ -11,8 +11,8 @@ import org.restlet.resource.ClientResource;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zul.Label;
 
-import tr.com.agem.arya.metadata.xul.impl.LabelElementType;
-import tr.com.agem.arya.metadata.xul.impl.WindowElementType;
+import tr.com.agem.arya.metadata.zul.impl.LabelType;
+import tr.com.agem.arya.metadata.zul.impl.WindowType;
 
 @SuppressWarnings("serial")
 public class AryaWindow extends BaseController {
@@ -25,7 +25,7 @@ public class AryaWindow extends BaseController {
 
 	private void init() throws IOException {
 		ClientResource resource = new ClientResource(
-				"http://localhost:8080/someresource");
+				"http://localhost:8080/arya/rest/hello");
 
 		Representation clientText = resource.get();
 
@@ -34,15 +34,15 @@ public class AryaWindow extends BaseController {
 		try {
 			ObjectMapper mapper = new ObjectMapper();
 
-			WindowElementType window = mapper.readValue(masterWindowJSON,
-					WindowElementType.class);
+			WindowType window = mapper.readValue(masterWindowJSON,
+					WindowType.class);
 
-			List<Object> comp = window.getAnyOrTextboxOrStatusbar();
+			List<Object> comp = window.getContent();
 
 			for (Object o : comp) {
-				if (o instanceof LabelElementType) {
+				if (o instanceof LabelType) {
 					Label label = new Label();
-					label.setValue(((LabelElementType)o).getValue());
+					label.setValue(((LabelType)o).getValue());
 					label.setParent(getIcerik());
 				}
 			}

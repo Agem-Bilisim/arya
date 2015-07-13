@@ -11,8 +11,7 @@ public class AryaActionRequest implements IAryaActionRequest,Serializable{
 	
 	private Map<String,Object> params;
 	private String window;
-	private String actionClass;
-	private String actionMethod;
+	private String action;
 	
 
 	@Override
@@ -25,16 +24,6 @@ public class AryaActionRequest implements IAryaActionRequest,Serializable{
 		return window;
 	}
 
-	@Override
-	public String getActionClass() {
-		return actionClass;
-	}
-
-	@Override
-	public String getActionMethod() {
-		return actionMethod;
-	}
-
 	public void setParams(Map<String,Object> params) {
 		this.params = params;
 	}
@@ -43,12 +32,14 @@ public class AryaActionRequest implements IAryaActionRequest,Serializable{
 		this.window = window;
 	}
 
-	public void setActionClass(String actionClass) {
-		this.actionClass = actionClass;
+	@Override
+	public String getAction() {
+		return action;
 	}
 
-	public void setActionMethod(String actionMethod) {
-		this.actionMethod = actionMethod;
+	public void setAction(String action) {
+		this.action = action;
 	}
+
 
 }

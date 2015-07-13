@@ -18,7 +18,7 @@ import tr.com.agem.core.metadata.model.IMetaData;
 import tr.com.agem.model.AryaActionRequest;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/rest")
 public class AryaAppController {
 	
 	

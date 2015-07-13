@@ -61,12 +61,12 @@ public class MetadataPersistenceImplXml implements IMetaDataPersistence {
 			xmlFileName =  appName + "/" + MASTERMODULE + "/" + MASTERFORM
 					+ ".xml";
 		
-		xmlFileName = XMLPATH + xmlFileName;
+//		xmlFileName = XMLPATH + xmlFileName;
 		
 		File file = new File(xmlFileName);
 		
 		try {
-			JAXBContext jaxbContext = JAXBContext.newInstance(WindowType.class,
+			JAXBContext jaxbContext = JAXBContext.newInstance(ZkType.class,
 					ObjectFactory.class);
 
 			Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
@@ -75,16 +75,17 @@ public class MetadataPersistenceImplXml implements IMetaDataPersistence {
 					.unmarshal(file))).getValue();
 
 			List<Object> comp = zk.getContent();
-
+			
+			
+			
 			for (Object o : comp) {
 				if (o instanceof JAXBElement) {
-					if (((JAXBElement<?>) o).getName().getLocalPart()
-							.equalsIgnoreCase("window")) {
+					JAXBElement<?> x = (JAXBElement<?>) o;
+					System.out.println(x.getDeclaredType());
+					if (x.getName().getLocalPart().equalsIgnoreCase("window")) {
+						WindowType window = (WindowType) x.getValue();
 						Gson gson = new Gson();
-
-						String json = gson.toJson(((JAXBElement<?>) o)
-								.getValue());
-						
+						String json = gson.toJson(window);
 						MetaDataXml metaData = new MetaDataXml();
 						metaData.setApplicationName(appName);
 						metaData.setModuleName(moduleName);
@@ -96,6 +97,27 @@ public class MetadataPersistenceImplXml implements IMetaDataPersistence {
 					}
 				}
 			}
+			
+
+//			for (Object o : comp) {
+//				if (o instanceof JAXBElement) {
+//					if (((JAXBElement<?>) o).getName().getLocalPart()
+//							.equalsIgnoreCase("window")) {
+//						Gson gson = new Gson();
+//						
+//						String json = gson.toJson(((JAXBElement<WindowType>) o).getValue());
+//						
+//						MetaDataXml metaData = new MetaDataXml();
+//						metaData.setApplicationName(appName);
+//						metaData.setModuleName(moduleName);
+//						metaData.setFormName(formName);
+//						metaData.setMetaData(json);
+//						metaData.setId(Long.MIN_VALUE);
+//						
+//						return metaData;
+//					}
+//				}
+//			}
 
 		} catch (JAXBException e) {
 			// TODO Auto-generated catch block
