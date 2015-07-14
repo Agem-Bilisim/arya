@@ -1,0 +1,10 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<window id="main" border="none"
+	apply="demo.layout.business_portal.BusinessPortalController">
+	<label value="Deneme" />
+	<textbox id="deneme" />
+	<button onClick="Deneme.OnClick" />
+</window>
+</zk>

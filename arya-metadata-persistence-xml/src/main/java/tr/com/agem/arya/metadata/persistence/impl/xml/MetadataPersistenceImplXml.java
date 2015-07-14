@@ -1,6 +1,10 @@
 package tr.com.agem.arya.metadata.persistence.impl.xml;
 
+import java.io.BufferedOutputStream;
 import java.io.File;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.xml.bind.JAXBContext;
@@ -8,13 +12,15 @@ import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 
+import org.codehaus.jackson.JsonGenerationException;
+import org.codehaus.jackson.map.JsonMappingException;
+import org.codehaus.jackson.map.ObjectMapper;
+
 import tr.com.agem.arya.metadata.zul.impl.ObjectFactory;
 import tr.com.agem.arya.metadata.zul.impl.WindowType;
 import tr.com.agem.arya.metadata.zul.impl.ZkType;
 import tr.com.agem.core.metadata.model.IMetaData;
 import tr.com.agem.core.metadata.persistence.IMetaDataPersistence;
-
-import com.google.gson.Gson;
 
 public class MetadataPersistenceImplXml implements IMetaDataPersistence {
 
@@ -63,6 +69,8 @@ public class MetadataPersistenceImplXml implements IMetaDataPersistence {
 		
 //		xmlFileName = XMLPATH + xmlFileName;
 		
+//		ClassLoader classLoader = getClass().getClassLoader();
+//		File file = new File(classLoader.getResource(xmlFileName).getFile());
 		File file = new File(xmlFileName);
 		
 		try {
@@ -76,21 +84,37 @@ public class MetadataPersistenceImplXml implements IMetaDataPersistence {
 
 			List<Object> comp = zk.getContent();
 			
-			
-			
 			for (Object o : comp) {
 				if (o instanceof JAXBElement) {
-					JAXBElement<?> x = (JAXBElement<?>) o;
-					System.out.println(x.getDeclaredType());
-					if (x.getName().getLocalPart().equalsIgnoreCase("window")) {
-						WindowType window = (WindowType) x.getValue();
-						Gson gson = new Gson();
-						String json = gson.toJson(window);
+					if (((JAXBElement<?>) o).getName().getLocalPart().equalsIgnoreCase("window")) {
+						WindowType window = (WindowType) ((JAXBElement<?>) o).getValue();
+						List<Object> l = new ArrayList<Object>();
+						for (Object oo : window.getContent()) {
+							if (oo instanceof JAXBElement<?>) {
+								//if (((JAXBElement<?>) oo).getName().getLocalPart().equalsIgnoreCase("label")) {
+									l.add(((JAXBElement<?>) oo).getValue());
+								//}
+							}
+						}
+						//window.getContent().clear();
+						//window.getContent().addAll(l);
+
 						MetaDataXml metaData = new MetaDataXml();
 						metaData.setApplicationName(appName);
 						metaData.setModuleName(moduleName);
 						metaData.setFormName(formName);
-						metaData.setMetaData(json);
+						try {
+							metaData.setMetaData(new ObjectMapper().writeValueAsString(window));
+						} catch (JsonGenerationException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						} catch (JsonMappingException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 						metaData.setId(Long.MIN_VALUE);
 						
 						return metaData;
