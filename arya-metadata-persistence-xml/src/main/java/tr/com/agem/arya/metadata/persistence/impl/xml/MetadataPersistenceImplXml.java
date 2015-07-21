@@ -1,24 +1,11 @@
 package tr.com.agem.arya.metadata.persistence.impl.xml;
 
-import java.io.BufferedOutputStream;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
-import java.io.OutputStream;
-import java.util.ArrayList;
-import java.util.List;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBElement;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Unmarshaller;
-
-import org.codehaus.jackson.JsonGenerationException;
-import org.codehaus.jackson.map.JsonMappingException;
-import org.codehaus.jackson.map.ObjectMapper;
-
-import tr.com.agem.arya.metadata.zul.impl.ObjectFactory;
-import tr.com.agem.arya.metadata.zul.impl.WindowType;
-import tr.com.agem.arya.metadata.zul.impl.ZkType;
 import tr.com.agem.core.metadata.model.IMetaData;
 import tr.com.agem.core.metadata.persistence.IMetaDataPersistence;
 
@@ -74,54 +61,72 @@ public class MetadataPersistenceImplXml implements IMetaDataPersistence {
 		File file = new File(xmlFileName);
 		
 		try {
-			JAXBContext jaxbContext = JAXBContext.newInstance(ZkType.class,
-					ObjectFactory.class);
+		BufferedReader reader = new BufferedReader( new FileReader (file));
+	    String         line = null;
+	    StringBuilder  stringBuilder = new StringBuilder();
+	    String         ls = System.getProperty("line.separator");
 
-			Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+	    while( ( line = reader.readLine() ) != null ) {
+	        stringBuilder.append( line );
+	        stringBuilder.append( ls );
+	    }
 
-			ZkType zk = ((JAXBElement<ZkType>) ((JAXBElement<ZkType>) jaxbUnmarshaller
-					.unmarshal(file))).getValue();
-
-			List<Object> comp = zk.getContent();
-			
-			for (Object o : comp) {
-				if (o instanceof JAXBElement) {
-					if (((JAXBElement<?>) o).getName().getLocalPart().equalsIgnoreCase("window")) {
-						WindowType window = (WindowType) ((JAXBElement<?>) o).getValue();
-						List<Object> l = new ArrayList<Object>();
-						for (Object oo : window.getContent()) {
-							if (oo instanceof JAXBElement<?>) {
-								//if (((JAXBElement<?>) oo).getName().getLocalPart().equalsIgnoreCase("label")) {
-									l.add(((JAXBElement<?>) oo).getValue());
-								//}
-							}
-						}
-						//window.getContent().clear();
-						//window.getContent().addAll(l);
-
-						MetaDataXml metaData = new MetaDataXml();
-						metaData.setApplicationName(appName);
-						metaData.setModuleName(moduleName);
-						metaData.setFormName(formName);
-						try {
-							metaData.setMetaData(new ObjectMapper().writeValueAsString(window));
-						} catch (JsonGenerationException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						} catch (JsonMappingException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						} catch (IOException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
-						metaData.setId(Long.MIN_VALUE);
-						
-						return metaData;
-					}
-				}
-			}
-			
+	    MetaDataXml metaData = new MetaDataXml();
+		metaData.setApplicationName(appName);
+		metaData.setModuleName(moduleName);
+		metaData.setFormName(formName);
+		metaData.setMetaData(stringBuilder.toString());
+		
+		reader.close();
+		
+		return metaData;
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+//		try {
+//			JAXBContext jaxbContext = JAXBContext.newInstance(ZkType.class,
+//					ObjectFactory.class);
+//
+//			Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+//
+//			ZkType zk = ((JAXBElement<ZkType>) ((JAXBElement<ZkType>) jaxbUnmarshaller
+//					.unmarshal(file))).getValue();
+//
+//			List<Object> comp = zk.getContent();
+//			
+//			for (Object o : comp) {
+//				if (o instanceof JAXBElement) {
+//					if (((JAXBElement<?>) o).getName().getLocalPart().equalsIgnoreCase("window")) {
+//						WindowType window = (WindowType) ((JAXBElement<?>) o).getValue();
+//						
+//						MetaDataXml metaData = new MetaDataXml();
+//						metaData.setApplicationName(appName);
+//						metaData.setModuleName(moduleName);
+//						metaData.setFormName(formName);
+//						try {
+//							//new ObjectMapper().writeValueAsString(window));
+//							metaData.setMetaData(file);
+//						} catch (JsonGenerationException e) {
+//							// TODO Auto-generated catch block
+//							e.printStackTrace();
+//						} catch (JsonMappingException e) {
+//							// TODO Auto-generated catch block
+//							e.printStackTrace();
+//						} catch (IOException e) {
+//							// TODO Auto-generated catch block
+//							e.printStackTrace();
+//						}
+//						metaData.setId(Long.MIN_VALUE);
+//						
+//						return metaData;
+//					}
+//				}
+//			}
 
 //			for (Object o : comp) {
 //				if (o instanceof JAXBElement) {
@@ -143,11 +148,11 @@ public class MetadataPersistenceImplXml implements IMetaDataPersistence {
 //				}
 //			}
 
-		} catch (JAXBException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null;
+//		} catch (JAXBException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		return null;
 	}
 
 }
