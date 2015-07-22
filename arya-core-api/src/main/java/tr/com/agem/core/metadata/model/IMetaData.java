@@ -6,6 +6,7 @@ public interface IMetaData {
 	String getApplicationName();
 	String getModuleName();
 	String getFormName();
+	String getMetaDataType();
 	String getMetaData();
 	
 }

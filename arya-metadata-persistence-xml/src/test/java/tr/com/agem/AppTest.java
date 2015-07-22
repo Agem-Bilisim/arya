@@ -1,10 +1,8 @@
 package tr.com.agem;
 
-import java.io.IOException;
 import java.io.StringReader;
 import java.util.List;
 
-import javax.naming.spi.ObjectFactory;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
@@ -13,12 +11,9 @@ import javax.xml.bind.Unmarshaller;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-
-import org.codehaus.jackson.JsonParseException;
-import org.codehaus.jackson.map.JsonMappingException;
-
 import tr.com.agem.arya.metadata.persistence.impl.xml.MetaDataXml;
 import tr.com.agem.arya.metadata.persistence.impl.xml.MetadataPersistenceImplXml;
+import tr.com.agem.arya.metadata.zul.impl.ButtonType;
 import tr.com.agem.arya.metadata.zul.impl.WindowType;
 import tr.com.agem.arya.metadata.zul.impl.ZkType;
 
@@ -58,7 +53,7 @@ public class AppTest extends TestCase {
 		try {
 
 			JAXBContext jaxbContext = JAXBContext.newInstance(ZkType.class,
-					ObjectFactory.class);
+					tr.com.agem.arya.metadata.zul.impl.ObjectFactory.class);
 
 			Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
 
@@ -79,7 +74,15 @@ public class AppTest extends TestCase {
 						for (Object oo : window.getContent()) {
 							if (oo instanceof JAXBElement<?>) {
 								JAXBElement<?> j = (JAXBElement<?>) oo;
-								System.out.println(j.getValue());
+								System.out.println(j.getDeclaredType());
+								if (((JAXBElement<?>) j).getName()
+										.getLocalPart()
+										.equalsIgnoreCase("button")) {
+									ButtonType button = (ButtonType) ((JAXBElement<?>) j)
+											.getValue();
+									System.out.println(button.getId()
+											+ button.getOnClick());
+								}
 							} else
 								System.out.println("---> " + oo);
 						}

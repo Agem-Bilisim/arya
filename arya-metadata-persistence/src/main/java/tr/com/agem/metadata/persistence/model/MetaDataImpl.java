@@ -21,6 +21,8 @@ public class MetaDataImpl implements IMetaData {
 
 	private String formName;
 
+	private String metaDataType;
+	
 	private String metaData;
 
 	public MetaDataImpl(IMetaData metaData) {
@@ -71,4 +73,11 @@ public class MetaDataImpl implements IMetaData {
 		this.metaData = metaData;
 	}
 
+	public String getMetaDataType() {
+		return metaDataType;
+	}
+
+	public void setMetaDataType(String metaDataType) {
+		this.metaDataType = metaDataType;
+	}
 }

@@ -12,6 +12,8 @@ public class MetaDataXml implements IMetaData {
 
 	private String formName;
 
+	private String metaDataType;
+	
 	private String metaData;
 
 	public Long getId() {
@@ -52,5 +54,13 @@ public class MetaDataXml implements IMetaData {
 
 	public void setMetaData(String metaData) {
 		this.metaData = metaData;
+	}
+
+	public String getMetaDataType() {
+		return metaDataType;
+	}
+
+	public void setMetaDataType(String metaDataType) {
+		this.metaDataType = metaDataType;
 	}
 }
