@@ -21,9 +21,12 @@ public class MetaDataEngineImpl implements IMetaDataEngine{
 		persistence.saveMetaData(metaData);;
 	}
 
-	public IMetaData findWithName(String appName, String moduleName, String formName) {
-		return persistence.findWithName(appName, moduleName, formName);
+	public IMetaData findWithNameAsXML(String appName, String moduleName, String formName) {
+		return persistence.findWithNameAsXML(appName, moduleName, formName);
 	}
 
+	public IMetaData findWithNameAsJSON(String appName, String moduleName, String formName) {
+		return persistence.findWithNameAsJSON(appName, moduleName, formName);
+	}
 
 }

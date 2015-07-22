@@ -6,6 +6,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
+import org.codehaus.jackson.map.ObjectMapper;
+
 import tr.com.agem.core.metadata.model.IMetaData;
 import tr.com.agem.core.metadata.persistence.IMetaDataPersistence;
 
@@ -39,8 +41,7 @@ public class MetadataPersistenceImplXml implements IMetaDataPersistence {
 
 	}
 
-	@Override
-	public IMetaData findWithName(String appName, String moduleName,
+	private IMetaData findWithName(String appName, String moduleName,
 			String formName) {
 		String xmlFileName;
 		if (moduleName != null && formName != null)
@@ -85,4 +86,24 @@ public class MetadataPersistenceImplXml implements IMetaDataPersistence {
 		return null;
 	}
 
+	
+	@Override
+	public IMetaData findWithNameAsXML(String appName, String moduleName,
+			String formName) {
+		return findWithName(appName, moduleName, formName);
+	}
+
+	@Override
+	public IMetaData findWithNameAsJSON(String appName, String moduleName,
+			String formName) {
+		MetaDataXml metadata = (MetaDataXml) findWithName(appName, moduleName, formName);
+		metadata.setMetaDataType("JSON");
+		try {
+			metadata.setMetaData(new ObjectMapper().writeValueAsString(metadata.getMetaData()));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return metadata;
+	}
 }

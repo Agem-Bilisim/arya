@@ -46,7 +46,7 @@ public class AppTest extends TestCase {
 
 		MetadataPersistenceImplXml xml = new MetadataPersistenceImplXml();
 
-		MetaDataXml mdxml = (MetaDataXml) xml.findWithName("arya", null, null);
+		MetaDataXml mdxml = (MetaDataXml) xml.findWithNameAsXML("arya", null, null);
 
 		System.out.println(mdxml.getMetaData());
 

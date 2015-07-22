@@ -34,7 +34,7 @@ public class AryaAppController {
 	public String masterWindowRequest(@PathVariable("appName") String appName,HttpServletRequest request,HttpServletResponse response){
 		IMetaData metadata = null;
 		try {
-			metadata = metadataService.findWithName(appName, null, null);
+			metadata = metadataService.findWithNameAsXML(appName, null, null);
 		} catch (Exception e) {
 			throw new AryaMetaDataNotFoundException();
 		}

@@ -8,5 +8,4 @@ public interface IMetaData {
 	String getFormName();
 	String getMetaDataType();
 	String getMetaData();
-	
 }

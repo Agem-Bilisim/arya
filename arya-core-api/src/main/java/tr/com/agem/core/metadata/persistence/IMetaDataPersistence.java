@@ -12,6 +12,8 @@ public interface IMetaDataPersistence {
 	
 	void deleteMetaData(Long metaDataId);
 	
-	IMetaData findWithName(String appName, String moduleName, String formName);
+	IMetaData findWithNameAsXML(String appName, String moduleName, String formName);
+
+	IMetaData findWithNameAsJSON(String appName, String moduleName, String formName);
 	
 }
