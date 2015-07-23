@@ -1,10 +1,10 @@
 package tr.com.agem.arya.metadata.persistence.impl.xml;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 import org.codehaus.jackson.map.ObjectMapper;
 
@@ -53,10 +53,10 @@ public class MetadataPersistenceImplXml implements IMetaDataPersistence {
 			xmlFileName = appName + "/" + MASTERMODULE + "/" + MASTERFORM
 					+ ".xml";
 
-		File file = new File(xmlFileName);
+		InputStream xmlStream = getClass().getClassLoader().getResourceAsStream(xmlFileName);
 
 		try {
-			BufferedReader reader = new BufferedReader(new FileReader(file));
+			BufferedReader reader = new BufferedReader(new InputStreamReader(xmlStream));
 			String line = null;
 			StringBuilder stringBuilder = new StringBuilder();
 			String ls = System.getProperty("line.separator");
@@ -72,15 +72,15 @@ public class MetadataPersistenceImplXml implements IMetaDataPersistence {
 			metaData.setFormName(formName);
 			metaData.setMetaDataType("XML");
 			metaData.setMetaData(stringBuilder.toString());
+			
+			System.out.println(metaData.getMetaData());
 
 			reader.close();
 
 			return metaData;
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;
@@ -101,7 +101,6 @@ public class MetadataPersistenceImplXml implements IMetaDataPersistence {
 		try {
 			metadata.setMetaData(new ObjectMapper().writeValueAsString(metadata.getMetaData()));
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return metadata;
