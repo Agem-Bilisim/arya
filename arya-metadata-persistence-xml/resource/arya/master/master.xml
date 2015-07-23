@@ -3,8 +3,8 @@
 	xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 <window id="main" border="none"
 	apply="demo.layout.business_portal.BusinessPortalController">
-	<label value="Deneme" />
-	<textbox id="deneme" />
-	<button onClick="Deneme.OnClick" />
+	<label value="Bu bir Labeldir :)" />
+	<textbox id="deneme" value="Denemememememe"/>
+	<button label="Hobareyyy!!!" onClick="Deneme.OnClick" />
 </window>
 </zk>

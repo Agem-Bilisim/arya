@@ -90,35 +90,6 @@ public class AppTest extends TestCase {
 				}
 
 			}
-			// try {
-			// window = new ObjectMapper().readValue(mdxml.getMetaData(),
-			// WindowType.class);
-			//
-			// // Map<String, Object> properties = new HashMap<String,
-			// Object>(2);
-			// // //properties.put(UnmarshallerProperties.MEDIA_TYPE,
-			// MediaType.APPLICATION_JSON);
-			// // //properties.put(JAXBContextProperties.JSON_INCLUDE_ROOT,
-			// true);
-			// // JAXBContext jc = JAXBContext.newInstance(new Class[]
-			// {WindowType.class,
-			// tr.com.agem.arya.metadata.zul.impl.ObjectFactory.class});// ,
-			// properties);
-			// //
-			// // Unmarshaller unmarshaller = jc.createUnmarshaller();
-			// // StreamSource json = new StreamSource(new
-			// java.io.StringReader(mdxml.getMetaData()));
-			// // window = unmarshaller.unmarshal(json,
-			// WindowType.class).getValue();
-			//
-			// for (Object oo : window.getContent()) {
-			// if (oo instanceof JAXBElement<?>) {
-			// JAXBElement<?> j = (JAXBElement<?>) oo;
-			// System.out.println(j.getValue());
-			// } else
-			// System.out.println("---> " + oo);
-			// }
-			//
 		} catch (JAXBException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
