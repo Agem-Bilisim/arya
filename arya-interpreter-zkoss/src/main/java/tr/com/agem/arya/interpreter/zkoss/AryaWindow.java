@@ -1,7 +1,13 @@
 package tr.com.agem.arya.interpreter.zkoss;
 
 import java.io.IOException;
+import java.io.StringReader;
 import java.util.List;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBElement;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
 
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
@@ -9,10 +15,15 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.restlet.representation.Representation;
 import org.restlet.resource.ClientResource;
 import org.zkoss.zk.ui.Component;
+import org.zkoss.zul.Button;
 import org.zkoss.zul.Label;
+import org.zkoss.zul.Textbox;
 
+import tr.com.agem.arya.metadata.zul.impl.ButtonType;
 import tr.com.agem.arya.metadata.zul.impl.LabelType;
+import tr.com.agem.arya.metadata.zul.impl.TextboxType;
 import tr.com.agem.arya.metadata.zul.impl.WindowType;
+import tr.com.agem.arya.metadata.zul.impl.ZkType;
 
 @SuppressWarnings("serial")
 public class AryaWindow extends BaseController {
@@ -23,6 +34,7 @@ public class AryaWindow extends BaseController {
 		init();
 	}
 
+	@SuppressWarnings("unchecked")
 	private void init() throws IOException {
 		ClientResource resource = new ClientResource(
 				"http://localhost:8080/arya/rest/hello");
@@ -32,32 +44,65 @@ public class AryaWindow extends BaseController {
 		String masterWindowJSON = clientText.getText();
 
 		try {
-			ObjectMapper mapper = new ObjectMapper();
 
-			WindowType window = mapper.readValue(masterWindowJSON,
-					WindowType.class);
+			JAXBContext jaxbContext = JAXBContext.newInstance(ZkType.class,
+					tr.com.agem.arya.metadata.zul.impl.ObjectFactory.class);
 
-			List<Object> comp = window.getContent();
+			Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+
+			StringReader reader = new StringReader(masterWindowJSON);
+
+			ZkType zk = ((JAXBElement<ZkType>) ((JAXBElement<ZkType>) jaxbUnmarshaller
+					.unmarshal(reader))).getValue();
+
+			List<Object> comp = zk.getContent();
 
 			for (Object o : comp) {
-				if (o instanceof LabelType) {
-					Label label = new Label();
-					label.setValue(((LabelType)o).getValue());
-					label.setParent(getIcerik());
-				}
-			}
+				if (o instanceof JAXBElement) {
+					if (((JAXBElement<?>) o).getName().getLocalPart()
+							.equalsIgnoreCase("window")) {
+						WindowType window = (WindowType) ((JAXBElement<?>) o)
+								.getValue();
 
-		} catch (JsonParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (JsonMappingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
+						for (Object oo : window.getContent()) {
+							if (oo instanceof JAXBElement<?>) {
+								JAXBElement<?> j = (JAXBElement<?>) oo;
+								System.out.println(j.getDeclaredType());
+								if (((JAXBElement<?>) j).getName()
+										.getLocalPart()
+										.equalsIgnoreCase("label")) {
+									LabelType objType = (LabelType) j.getValue(); 
+									Label obj = new Label();
+									obj.setValue(objType.getValue());
+									obj.setParent(getIcerik());
+								}
+								else if (((JAXBElement<?>) j).getName()
+										.getLocalPart()
+										.equalsIgnoreCase("textbox")) {
+									TextboxType objType = (TextboxType) j.getValue(); 
+									Textbox obj = new Textbox();
+									obj.setValue(objType.getValue());
+									obj.setParent(getIcerik());
+								}
+								else if (((JAXBElement<?>) j).getName()
+										.getLocalPart()
+										.equalsIgnoreCase("button")) {
+									ButtonType objType = (ButtonType) j.getValue(); 
+									Button obj = new Button();
+									obj.setLabel(objType.getLabel());
+									obj.setParent(getIcerik());
+								}
+							} else
+								System.out.println("---> " + oo);
+						}
+					}
+				}
+
+			}
+		} catch (JAXBException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 	}
 
 }
