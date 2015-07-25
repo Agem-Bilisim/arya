@@ -7,6 +7,13 @@
 	<description><![CDATA[My ZK Application]]></description>
 	<display-name>arya-interpreter-zkoss</display-name>
 
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/classes/arya-interpreter-zkoss.xml</param-value>
+	</context-param>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
 	<!-- //// -->
 	<!-- ZK -->
 	<listener>

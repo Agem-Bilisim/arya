@@ -5,6 +5,6 @@
 	apply="demo.layout.business_portal.BusinessPortalController">
 	<label value="Bu bir Labeldir :)" />
 	<textbox id="deneme" value="Denemememememe"/>
-	<button label="Hobareyyy!!!" onClick="Deneme.OnClick" />
+	<button label="Hobareyyy!!!" onClick="Deneme.OnClick"  />
 </window>
 </zk>
