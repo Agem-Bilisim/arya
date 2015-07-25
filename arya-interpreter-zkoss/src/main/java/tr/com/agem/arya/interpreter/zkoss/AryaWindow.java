@@ -9,12 +9,12 @@ import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 
-import org.codehaus.jackson.JsonParseException;
-import org.codehaus.jackson.map.JsonMappingException;
-import org.codehaus.jackson.map.ObjectMapper;
 import org.restlet.representation.Representation;
 import org.restlet.resource.ClientResource;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.zkoss.zk.ui.Component;
+import org.zkoss.zk.ui.event.Events;
 import org.zkoss.zul.Button;
 import org.zkoss.zul.Label;
 import org.zkoss.zul.Textbox;
@@ -34,7 +34,7 @@ public class AryaWindow extends BaseController {
 		init();
 	}
 
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "resource" })
 	private void init() throws IOException {
 		ClientResource resource = new ClientResource(
 				"http://localhost:8080/arya/rest/hello");
@@ -45,8 +45,14 @@ public class AryaWindow extends BaseController {
 
 		try {
 
-			JAXBContext jaxbContext = JAXBContext.newInstance(ZkType.class,
-					tr.com.agem.arya.metadata.zul.impl.ObjectFactory.class);
+			// JAXBContext jaxbContext = JAXBContext.newInstance(ZkType.class,
+			// tr.com.agem.arya.metadata.zul.impl.ObjectFactory.class);
+
+			ApplicationContext appContext = new ClassPathXmlApplicationContext(
+					"arya-interpreter-zkoss.xml");
+
+			JAXBContext jaxbContext = (JAXBContext) appContext
+					.getBean("jaxbContext");
 
 			Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
 
@@ -71,26 +77,30 @@ public class AryaWindow extends BaseController {
 								if (((JAXBElement<?>) j).getName()
 										.getLocalPart()
 										.equalsIgnoreCase("label")) {
-									LabelType objType = (LabelType) j.getValue(); 
+									LabelType objType = (LabelType) j
+											.getValue();
 									Label obj = new Label();
 									obj.setValue(objType.getValue());
 									obj.setParent(getIcerik());
-								}
-								else if (((JAXBElement<?>) j).getName()
+								} else if (((JAXBElement<?>) j).getName()
 										.getLocalPart()
 										.equalsIgnoreCase("textbox")) {
-									TextboxType objType = (TextboxType) j.getValue(); 
+									TextboxType objType = (TextboxType) j
+											.getValue();
 									Textbox obj = new Textbox();
 									obj.setValue(objType.getValue());
 									obj.setParent(getIcerik());
-								}
-								else if (((JAXBElement<?>) j).getName()
+								} else if (((JAXBElement<?>) j).getName()
 										.getLocalPart()
 										.equalsIgnoreCase("button")) {
-									ButtonType objType = (ButtonType) j.getValue(); 
+									ButtonType objType = (ButtonType) j
+											.getValue();
 									Button obj = new Button();
 									obj.setLabel(objType.getLabel());
 									obj.setParent(getIcerik());
+									if (!objType.getOnClick().isEmpty()) {
+										obj.addEventListener(Events.ON_CLICK, new OnClickEventListener(getIcerik(), objType.getOnClick()));
+									}
 								}
 							} else
 								System.out.println("---> " + oo);
