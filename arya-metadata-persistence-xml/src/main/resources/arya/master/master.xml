@@ -1,33 +1,6 @@
 <?page title="DOCSYS" ?>
 <zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchemainstance"
 	xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
-<<<<<<< HEAD
-	<window id="main" border="none">
-		<grid>
-			<columns>
-				<column label="1" width="30%" />
-				<column label="2" width="70%" />
-			</columns>
-			<rows>
-				<row>
-					<label id="a" action="onClick" value="Deneme1" />
-				</row>
-				<row>
-					<textbox id="deneme4" />
-				</row>
-			</rows>
-		</grid>
-		<label id="a" action="onClick" value="Deneme1" />
-		<textbox id="deneme4" />
-		<button onClick="Deneme.OnClick" />
-		<datebox constraint="no future"></datebox>
-		<box>
-			<button id="c" onClick=""></button>
-		</box>
-		<button onClick="Deneme.OnClick()" />
-	</window>
-</zk>
-=======
 <window id="main" border="none"
 	apply="demo.layout.business_portal.BusinessPortalController">
 	<label value="Bu bir Labeldir :)" />
@@ -35,4 +8,3 @@
 	<button label="Hobareyyy!!!" onClick="Deneme.OnClick"  />
 </window>
 </zk>
->>>>>>> f7601a67e327dca1e426dc196b1a056a1cc59302

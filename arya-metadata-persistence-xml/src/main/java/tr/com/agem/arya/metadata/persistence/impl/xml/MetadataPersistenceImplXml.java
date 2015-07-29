@@ -45,13 +45,13 @@ public class MetadataPersistenceImplXml implements IMetaDataPersistence {
 			String formName) {
 		String xmlFileName;
 		if (moduleName != null && formName != null)
-			xmlFileName = appName + "/" + moduleName + "/" + formName + ".xml";
+			xmlFileName = appName + "/" + moduleName + "/" + formName + ".arya";
 		else if (formName != null)
 			xmlFileName = appName + "/" + MASTERMODULE + "/" + formName
-					+ ".xml";
+					+ ".arya";
 		else
 			xmlFileName = appName + "/" + MASTERMODULE + "/" + MASTERFORM
-					+ ".xml";
+					+ ".arya";
 
 		InputStream xmlStream = getClass().getClassLoader().getResourceAsStream(xmlFileName);
 

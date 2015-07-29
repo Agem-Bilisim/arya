@@ -1,0 +1,14 @@
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchemainstance"
+	xsi:schemaLocation="aryaportal.org file:///home/volkan/git/arya/arya-metadata-persistence-xml/arya.xsd ">
+
+<window>
+
+<button label="label" onClick="clikc()"></button>
+<button label="label" onClick="clikc()"></button>
+<button label="label" onClick="clikc()"></button>
+<button label="label" onClick="clikc()"></button>
+
+</window>
+	
+	
+</arya>
