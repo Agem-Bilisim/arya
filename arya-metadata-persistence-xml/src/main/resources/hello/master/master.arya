@@ -6,7 +6,8 @@
 		<label value="Bu bir Labeldir :)" />
 		<textbox id="deneme" value="Denemememememe" />
 		<label value="Hede Hödö" />
-		<checkbox label="Deneme" onCheck="AryaOnCheck"/>
+		<checkbox label="Deneme" onCheck="AryaOnCheck" />
+		<datebox />
 		<button label="Arya" onClick="AryaOnClick" />
 		<button label="Yeni Ekran" onClick="YeniEkranOnClick" />
 	</window>

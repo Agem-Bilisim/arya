@@ -14,14 +14,7 @@ import org.restlet.resource.ClientResource;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.zkoss.zk.ui.Component;
-import org.zkoss.zk.ui.event.Events;
-import org.zkoss.zul.Button;
-import org.zkoss.zul.Label;
-import org.zkoss.zul.Textbox;
 
-import tr.com.agem.arya.metadata.zul.impl.ButtonType;
-import tr.com.agem.arya.metadata.zul.impl.LabelType;
-import tr.com.agem.arya.metadata.zul.impl.TextboxType;
 import tr.com.agem.arya.metadata.zul.impl.WindowType;
 import tr.com.agem.arya.metadata.zul.impl.ZkType;
 
@@ -36,6 +29,8 @@ public class AryaWindow extends BaseController {
 
 	@SuppressWarnings({ "unchecked", "resource" })
 	private void init() throws IOException {
+		AryaInterpreterZkoss interpreter = new AryaInterpreterZkoss();
+
 		ClientResource resource = new ClientResource(
 				"http://localhost:8080/arya/rest/hello");
 
@@ -70,41 +65,8 @@ public class AryaWindow extends BaseController {
 						WindowType window = (WindowType) ((JAXBElement<?>) o)
 								.getValue();
 
-						for (Object oo : window.getContent()) {
-							if (oo instanceof JAXBElement<?>) {
-								JAXBElement<?> j = (JAXBElement<?>) oo;
-								System.out.println(j.getDeclaredType());
-								if (((JAXBElement<?>) j).getName()
-										.getLocalPart()
-										.equalsIgnoreCase("label")) {
-									LabelType objType = (LabelType) j
-											.getValue();
-									Label obj = new Label();
-									obj.setValue(objType.getValue());
-									obj.setParent(getIcerik());
-								} else if (((JAXBElement<?>) j).getName()
-										.getLocalPart()
-										.equalsIgnoreCase("textbox")) {
-									TextboxType objType = (TextboxType) j
-											.getValue();
-									Textbox obj = new Textbox();
-									obj.setValue(objType.getValue());
-									obj.setParent(getIcerik());
-								} else if (((JAXBElement<?>) j).getName()
-										.getLocalPart()
-										.equalsIgnoreCase("button")) {
-									ButtonType objType = (ButtonType) j
-											.getValue();
-									Button obj = new Button();
-									obj.setLabel(objType.getLabel());
-									obj.setParent(getIcerik());
-									if (!objType.getOnClick().isEmpty()) {
-										obj.addEventListener(Events.ON_CLICK, new OnClickEventListener(getIcerik(), objType.getOnClick()));
-									}
-								}
-							} else
-								System.out.println("---> " + oo);
-						}
+						interpreter.createComponents(getIcerik(),
+								window.getContent());
 					}
 				}
 
