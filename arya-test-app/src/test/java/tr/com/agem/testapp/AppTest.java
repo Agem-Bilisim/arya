@@ -1,5 +1,10 @@
 package tr.com.agem.testapp;
 
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineFactory;
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
+
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -33,6 +38,15 @@ public class AppTest
      */
     public void testApp()
     {
+    	ScriptEngineManager factory = new ScriptEngineManager();
+	    ScriptEngine engine = factory.getEngineByName("JavaScript");
+	    try {
+			engine.eval("zk.Widget.$(jq('$deneme2')[0]).setValue('changed with Kutluk');", engine.getContext());
+		} catch (ScriptException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
         assertTrue( true );
     }
 }

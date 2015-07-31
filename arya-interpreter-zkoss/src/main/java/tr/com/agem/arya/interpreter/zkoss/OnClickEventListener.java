@@ -41,6 +41,15 @@ public class OnClickEventListener implements EventListener {
 			String responseString = EntityUtils.toString(entity, "UTF-8");
 			System.out.println(responseString);
 			
+//			ScriptEngineManager factory = new ScriptEngineManager();
+//		    ScriptEngine engine = factory.getEngineByName("JavaScript");
+//		    try {
+//				engine.eval("zk.Widget.$(jq('$deneme2')[0]).setValue('changed with Kutluk');", engine.getContext());
+//			} catch (ScriptException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+			
 			Textbox tb = new Textbox();
 			tb.setValue(responseString);
 			tb.setParent(this.parent);

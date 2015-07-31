@@ -17,6 +17,7 @@ import org.zkoss.zk.ui.Component;
 
 import tr.com.agem.arya.metadata.zul.impl.WindowType;
 import tr.com.agem.arya.metadata.zul.impl.ZkType;
+import tr.com.agem.core.interpreter.IAryaInterpreter;
 
 @SuppressWarnings("serial")
 public class AryaWindow extends BaseController {
@@ -29,7 +30,11 @@ public class AryaWindow extends BaseController {
 
 	@SuppressWarnings({ "unchecked", "resource" })
 	private void init() throws IOException {
-		AryaInterpreterZkoss interpreter = new AryaInterpreterZkoss();
+		ApplicationContext appContext = new ClassPathXmlApplicationContext(
+				"arya-interpreter-zkoss.xml");
+
+		IAryaInterpreter interpreter = (IAryaInterpreter) appContext
+				.getBean("aryaInterpreter");
 
 		ClientResource resource = new ClientResource(
 				"http://localhost:8080/arya/rest/hello");
@@ -39,13 +44,6 @@ public class AryaWindow extends BaseController {
 		String masterWindowJSON = clientText.getText();
 
 		try {
-
-			// JAXBContext jaxbContext = JAXBContext.newInstance(ZkType.class,
-			// tr.com.agem.arya.metadata.zul.impl.ObjectFactory.class);
-
-			ApplicationContext appContext = new ClassPathXmlApplicationContext(
-					"arya-interpreter-zkoss.xml");
-
 			JAXBContext jaxbContext = (JAXBContext) appContext
 					.getBean("jaxbContext");
 

@@ -4,7 +4,8 @@
 	<window id="main" border="none"
 		apply="demo.layout.business_portal.BusinessPortalController">
 		<label value="Bu bir Labeldir :)" />
-		<textbox id="deneme" value="Denemememememe" />
+		<textbox id="deneme" value="1" />
+		<textbox id="deneme2" value="2" />
 		<label value="Hede Hödö" />
 		<checkbox label="Deneme" onCheck="AryaOnCheck" />
 		<datebox />
