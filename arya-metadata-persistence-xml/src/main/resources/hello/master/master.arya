@@ -2,9 +2,9 @@
 <zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 	<window id="main" border="none"
-		apply="demo.layout.business_portal.BusinessPortalController">
-		<label value="Bu bir Labeldir :)" />
-		<textbox id="deneme" value="1" />
+		apply="demo.layout.business_portal.Kisi">
+		<label value="Bu bir Ali Özkan Özerendir.... " />
+		<textbox id="deneme" value="Ali ali ali" />
 		<textbox id="deneme2" value="2" />
 		<label value="Hede Hödö" />
 		<checkbox label="Deneme" onCheck="AryaOnCheck" />
