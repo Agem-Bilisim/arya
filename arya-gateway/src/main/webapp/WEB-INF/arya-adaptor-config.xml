@@ -15,7 +15,13 @@
            http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd
            http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-	<bean id="appAdaptor" class="tr.com.agem.java.adaptor.AryaSampleAdaptor">
+	<bean id="adaptorMapper" class="tr.com.agem.java.adaptor.AryaSampleMapper"/>
+	
+	<bean id="adaptorConverter" class="tr.com.agem.java.adaptor.AryaSampleConverter"/>
+	
+	<bean id="applicationAdaptor" class="tr.com.agem.java.adaptor.AryaSampleAdaptor">
+		<property name="mapper" ref="adaptorMapper" />
+		<property name="converter" ref="adaptorConverter" />
 	</bean>
-                 
+
 </beans>

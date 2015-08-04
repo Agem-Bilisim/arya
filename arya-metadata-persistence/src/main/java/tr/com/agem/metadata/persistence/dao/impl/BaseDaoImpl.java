@@ -4,10 +4,10 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
-import tr.com.agem.core.dao.BaseDao;
+import tr.com.agem.core.dao.IBaseDao;
 import tr.com.agem.metadata.persistence.EntityManagerService;
 
-public class BaseDaoImpl<T> implements BaseDao<T> {
+public class BaseDaoImpl<T> implements IBaseDao<T> {
 	
 	private Class<T> type;
 	

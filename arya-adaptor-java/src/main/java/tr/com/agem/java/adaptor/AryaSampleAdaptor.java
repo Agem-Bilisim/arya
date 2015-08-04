@@ -1,16 +1,19 @@
 package tr.com.agem.java.adaptor;
 
-import tr.com.agem.core.adaptor.IAryaAppAdaptor;
-import tr.com.agem.core.gateway.model.IAryaActionRequest;
+import tr.com.agem.core.adaptor.AryaApplicationAdaptor;
+import tr.com.agem.core.adaptor.IAryaAdaptorResponse;
+import tr.com.agem.core.gateway.model.IAryaRequest;
 
-public class AryaSampleAdaptor implements IAryaAppAdaptor{
+public class AryaSampleAdaptor extends AryaApplicationAdaptor{
 
-	public String processRequest(IAryaActionRequest request) {
-		String returnVal = "Makine soguk";
+	public IAryaAdaptorResponse processRequest(IAryaRequest request) 
+	{
+		AryaAdaptorResponse returnVal = new AryaAdaptorResponse();
 		String username = "";
 		try {
 			username = (String) request.getParams().get("username");
-			returnVal = "Merhaba " + username;
+			returnVal.setData("{message:'Merhaba " + username + "'}");
+			returnVal.setViewName("helloView");
 		} catch (Exception e) {
 		}
 		return returnVal;

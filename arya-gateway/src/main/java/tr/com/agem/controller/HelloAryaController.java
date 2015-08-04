@@ -37,7 +37,7 @@ public class HelloAryaController {
 //		metadataService.saveMetaData(imp);
 		IMetaData md = null;
 		try {
-			md = metadataService.findMetaData(Long.valueOf(metadataId));
+			md = metadataService.findMetaData("",Long.valueOf(metadataId));
 		} catch (Exception e) {
 			throw new AryaMetaDataNotFoundException();
 		}

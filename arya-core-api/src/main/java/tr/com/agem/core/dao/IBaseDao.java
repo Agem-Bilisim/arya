@@ -2,7 +2,7 @@ package tr.com.agem.core.dao;
 
 import java.util.List;
 
-public interface BaseDao<T> {
+public interface IBaseDao<T> {
 	
 	T save(T o);
 	void delete(Object id);

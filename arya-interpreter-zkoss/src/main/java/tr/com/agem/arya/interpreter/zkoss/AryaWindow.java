@@ -9,14 +9,14 @@ import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 
-import org.restlet.representation.Representation;
-import org.restlet.resource.ClientResource;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.zkoss.zk.ui.Component;
 
 import tr.com.agem.arya.metadata.zul.impl.WindowType;
 import tr.com.agem.arya.metadata.zul.impl.ZkType;
+import tr.com.agem.core.gateway.model.AryaRequest;
+import tr.com.agem.core.gateway.model.AryaResponse;
 import tr.com.agem.core.interpreter.IAryaInterpreter;
 
 @SuppressWarnings("serial")
@@ -36,20 +36,31 @@ public class AryaWindow extends BaseController {
 		IAryaInterpreter interpreter = (IAryaInterpreter) appContext
 				.getBean("aryaInterpreter");
 
-		ClientResource resource = new ClientResource(
-				"http://localhost:8080/arya/rest/hello");
+//		ClientResource resource = new ClientResource(
+//				"http://localhost:8080/arya/rest/hello");
+//
+//		resource.addQueryParameter("requestType", "V");
+//		
+//		Representation clientText = resource.get();
+//
+//		String masterWindowJSON = clientText.getText();
 
-		Representation clientText = resource.get();
-
-		String masterWindowJSON = clientText.getText();
-
+		AryaRequest request = new AryaRequest();
+		request.setAction("main");
+		request.setRequestType("V");
+		String masterWindow= AryaInterpreterHelper.callUrl("http://localhost:8080/arya/rest/hello", request);
+		
+		AryaResponse response = new AryaResponse();
+		
+		response.fromXMLString(masterWindow);
+		
 		try {
 			JAXBContext jaxbContext = (JAXBContext) appContext
 					.getBean("jaxbContext");
 
 			Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
 
-			StringReader reader = new StringReader(masterWindowJSON);
+			StringReader reader = new StringReader(response.getView());
 
 			ZkType zk = ((JAXBElement<ZkType>) ((JAXBElement<ZkType>) jaxbUnmarshaller
 					.unmarshal(reader))).getValue();

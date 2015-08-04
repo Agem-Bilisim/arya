@@ -12,11 +12,6 @@ public class MetaDataEngineImpl implements IMetaDataEngine{
 		this.persistence = persistence;
 	}
 
-	public IMetaData findMetaData(Long metaDataId) {
-		
-		return persistence.findMetaData(metaDataId);
-	}
-
 	public void saveMetaData(IMetaData metaData) {
 		persistence.saveMetaData(metaData);;
 	}
@@ -27,6 +22,21 @@ public class MetaDataEngineImpl implements IMetaDataEngine{
 
 	public IMetaData findWithNameAsJSON(String appName, String moduleName, String formName) {
 		return persistence.findWithNameAsJSON(appName, moduleName, formName);
+	}
+
+	@Override
+	public IMetaData findMetaData(String applicationName, Long metaDataId) {
+		return persistence.findMetaData(metaDataId);
+	}
+
+	@Override
+	public IMetaData findWithNameAsXML(String applicationName, String viewName) {
+		return null;
+	}
+
+	@Override
+	public IMetaData findWithNameAsJSON(String applicationName, String viewName) {
+		return null;
 	}
 
 }
