@@ -1,16 +1,15 @@
 package tr.com.agem.arya.interpreter.zkoss;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.util.EntityUtils;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.EventListener;
 import org.zkoss.zul.Textbox;
+
+import tr.com.agem.core.gateway.model.AryaRequest;
+import tr.com.agem.core.gateway.model.AryaResponse;
 
 @SuppressWarnings("rawtypes")
 public class OnClickEventListener implements EventListener {
@@ -26,32 +25,25 @@ public class OnClickEventListener implements EventListener {
 
 	@Override
 	public void onEvent(Event event) throws Exception {
-		HttpPost httppost = new HttpPost("http://localhost:8080/arya/rest/arya");
-		httppost.setHeader("Content-Type", "application/json");
-		httppost.setHeader("Accept", "application/json");
+		AryaRequest request = new AryaRequest();
+		request.setAction("myAction");
+		request.setRequestType("D");
 
-		StringEntity se = new StringEntity(
-				"{\"window\":\"test\", \"action\":\"myAction\", \"params\":{\"username\":\"alio\"}}");
-		httppost.setEntity(se);
-		HttpClient httpClient = HttpClientBuilder.create().build();
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("username", "alio");
+
+		request.setParams(params);
+
+		String res = AryaInterpreterHelper.callUrl(
+				"http://localhost:8080/arya/rest/arya", request);
+
+		AryaResponse response = new AryaResponse();
+
+		response.fromXMLString(res);
 
 		try {
-			HttpResponse response = httpClient.execute(httppost);
-			HttpEntity entity = response.getEntity();
-			String responseString = EntityUtils.toString(entity, "UTF-8");
-			System.out.println(responseString);
-			
-//			ScriptEngineManager factory = new ScriptEngineManager();
-//		    ScriptEngine engine = factory.getEngineByName("JavaScript");
-//		    try {
-//				engine.eval("zk.Widget.$(jq('$deneme2')[0]).setValue('changed with Kutluk');", engine.getContext());
-//			} catch (ScriptException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-			
 			Textbox tb = new Textbox();
-			tb.setValue(responseString);
+			tb.setValue(response.getData());
 			tb.setParent(this.parent);
 		} catch (Exception e) {
 			// TODO: handle exception
