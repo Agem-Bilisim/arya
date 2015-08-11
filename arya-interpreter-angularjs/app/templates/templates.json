@@ -1,0 +1,4 @@
+{
+	"textbox": "<input type='text'/ id='{{content.id}}' value='{{content.value}}'>",
+	"label": "<label for='{{content.for}}'>{{content.value}}</label>"
+}
