@@ -3,13 +3,13 @@
 	xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 	<window id="main" border="none"
 		apply="demo.layout.business_portal.Kisi">
-		<label value="Bu bir Ali Özkan Özerendir.... " />
-		<textbox id="deneme" value="Ali ali ali" />
+		<label id="deneme" value="Bu bir Ali Özkan Özerendir.... " />
+		<textbox id="deneme1" value="Ali ali ali" />
 		<textbox id="deneme2" value="2" />
-		<label value="Hede Hödö" />
-		<checkbox label="Deneme" onCheck="AryaOnCheck" />
-		<datebox />
-		<button label="Arya" onClick="AryaOnClick" />
-		<button label="Yeni Ekran" onClick="YeniEkranOnClick" />
+		<label id="deneme3" value="Hede Hödö" />
+		<checkbox id="deneme4" label="Deneme" onCheck="AryaOnCheck" />
+		<datebox id="deneme5" />
+		<button id="deneme6" label="Arya" onClick="AryaOnClick" />
+		<button id="deneme7" label="Yeni Ekran" onClick="YeniEkranOnClick" />
 	</window>
 </zk>
