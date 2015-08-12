@@ -29,10 +29,10 @@ aryaServices.factory('AryaService', [ '$http', function($http) {
                 }
 	    }).
             then(function(response) {
+        	console.log("[AryaService] Request succeeded.");
         	if (typeof callback === "function") {
         	    callback(response.data);
         	}
-                console.log("[AryaService] Request succeeded.");
             }, function(response) {
                 console.log("[AryaService] Request failed. Status Code: " + response.status + " Status: " + response.statusText);
             });

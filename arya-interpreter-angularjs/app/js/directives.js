@@ -18,46 +18,33 @@ aryaDirectives.directive('aryaDynamicTemplate',
 		    var val = $(this).attr('value');
 		    
 		    if (thisTagName == 'label') {
-			if (!scope.aryaMetadata.viewJson.label) {
-			    scope.aryaMetadata.viewJson.label = {};
-			}
-			scope.aryaMetadata.viewJson.label[id] = {'id': id, 'value': val};
-			// Test
-			scope.aryaMetadata.viewJson.test = 'Emre';
-			htmlStr += 'name: {{scope.aryaMetadata.viewJson.test}}';
-			//
-			htmlStr += '<label id="{{aryaMetadata.viewJson.label[' + id +'].id}}">{{aryaMetadata.viewJson.label[' + id +'].value}}</label>'
+			scope.aryaMetadata.viewJson[id] = {'id': id, 'value': val, 'type': 'label'};
+			htmlStr += '<label id="{{aryaMetadata.viewJson.' + id +'.id}}">{{aryaMetadata.viewJson.' + id +'.value}}</label>';
 		    } else if (thisTagName == 'textbox') {
-			if (!scope.aryaMetadata.viewJson.input) {
-			    scope.aryaMetadata.viewJson.input = {};
-			}
-			scope.aryaMetadata.viewJson.input[' + id + '] = {'id': id, 'value': val};
-			htmlStr += '<input type="text" id="{{aryaMetadata.viewJson.input[' + id + '].id}}" value="{{aryaMetadata.viewJson.input[' + id + '].value}}" />';
+			scope.aryaMetadata.viewJson[id] = {'id': id, 'value': val, 'type': 'textbox'};
+			htmlStr += '<input type="text" id="{{aryaMetadata.viewJson.' + id + '.id}}" value="{{aryaMetadata.viewJson.' + id + '.value}}" />';
 		    }
-		    // TODO other inputs
+		    
+		    // TODO other elements...
+		    
 		});
 
-		console.log(JSON.stringify(scope.aryaMetadata.viewJson));
 		return htmlStr;
-
 	    };
 
 	    var linker = function(scope, element, attrs) {
-
-		AryaService.getMetadata({
-		    action : 'main',
-		    requestType : 'V'
-		}, function(data) {
+		console.log("AryaRequest: " + JSON.stringify(scope.aryaRequest));
+		AryaService.getMetadata(scope.aryaRequest, function(data) {
 		    scope.aryaMetadata = data;
 		    element.append(createDynamicTemplate(scope));
 		    $compile(element.contents())(scope);
 		});
-
 	    };
 
 	    return {
-		restrict : 'E',
-		link : linker,
+		restrict: 'E',
+		replace: true,
+		link: linker,
 		scope: true
 	    };
 	});

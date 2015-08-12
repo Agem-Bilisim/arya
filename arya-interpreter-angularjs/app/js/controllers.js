@@ -7,11 +7,13 @@ var aryaControllers = angular.module('aryaControllers', []);
 aryaControllers.controller('AryaMainActionCtrl', [ '$scope', 'AryaService',
 	function($scope, AryaService) {
 
-//	    AryaService.getMetadata({
-//		action : 'main',
-//		requestType : 'V'
-//	    }, function(data) {
-//		$scope.aryaMetadata = data;
-//	    });
+	    $scope.aryaRequest = {
+		action : 'main',
+		requestType : 'V'
+	    };
+
+	    AryaService.getMetadata($scope.aryaRequest, function(data) {
+		$scope.aryaMetadata = data;
+	    });
 
 	} ]);
