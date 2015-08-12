@@ -1,0 +1,61 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>tr.com.agem</groupId>
+		<artifactId>arya</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>arya-metadata-generator</artifactId>
+	<name>arya-metadata-generator</name>
+	<url>http://ofis.agem.com.tr:8082/root/arya</url>
+	<description>Automatically generates metadata XML files from AgemUtils projects (such as Asya, RCOP etc.) using *.jsp files and their corresponding *Form.java classes.</description>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!-- To generate XML files from another AgemUtils project, place its jar 
+			file under reference-project folder and enter its file name here: -->
+		<reference.project.name>asya.jar</reference.project.name>
+		<javaVersion>1.7</javaVersion>
+	</properties>
+	<repositories>
+		<repository>
+			<id>agem-maven</id>
+			<name>Agem Maven Repository</name>
+			<url>http://192.168.1.51:8081/nexus/content/repositories/thirdparty</url>
+		</repository>
+	</repositories>
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>1.3.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.4</version>
+		</dependency>
+		<dependency>
+			<groupId>struts</groupId>
+			<artifactId>struts</artifactId>
+			<version>1.2.9</version>
+		</dependency>
+		<dependency>
+			<groupId>com.agem</groupId>
+			<artifactId>agem-display-tag</artifactId>
+			<version>1.1.3</version>
+		</dependency>
+		<dependency>
+			<groupId>com.agem</groupId>
+			<artifactId>agem-utils</artifactId>
+			<version>1.2.9</version>
+		</dependency>
+		<dependency>
+			<groupId>tr.com.agem.reference.project</groupId>
+			<artifactId>ReferenceProject</artifactId>
+			<version>1.0.0</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/reference-project/${reference.project.name}</systemPath>
+		</dependency>
+	</dependencies>
+</project>

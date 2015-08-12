@@ -60,6 +60,7 @@
 		<module>arya-test-app</module>
 		<module>arya-interpreter-zkoss</module>
 		<module>arya-adaptor-java</module>
+		<module>arya-metadata-generator</module>
 	</modules>
 	
 		<build>
