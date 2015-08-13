@@ -1,6 +1,6 @@
 package tr.com.agem.arya.metadata.elements;
 
-import tr.com.agem.arya.metadata.util.RandomValueGenerator;
+import tr.com.agem.arya.metadata.util.RandomStringGenerator;
 import tr.com.agem.arya.metadata.xml.XMLElement;
 import tr.com.agem.tag.anotations.FormAttribute;
 
@@ -11,10 +11,12 @@ public class XMLPasswordElement implements XMLElement {
 
 		StringBuilder xml = new StringBuilder();
 
-		xml.append("<label id=\"").append(property).append("lbl").append("\" value=\"").append(formAttrAnn.label()).append("\" />\n");
-		xml.append("<textbox type=\"password\" id=\"").append(property).append("\" ");
+		if (formAttrAnn.label() != null && !formAttrAnn.label().isEmpty()) {
+			xml.append("\t\t<label id=\"").append(property).append("lbl").append("\" value=\"").append(formAttrAnn.label()).append("\" />\n");
+		}
+		xml.append("\t\t<textbox type=\"password\" id=\"").append(property).append("\" ");
 		if (generateRandomVal) {
-			xml.append(" value=\"").append(new RandomValueGenerator(formAttrAnn.maxlength() > 0 ? formAttrAnn.maxlength() : 10).nextString()).append("\" ");
+			xml.append(" value=\"").append(new RandomStringGenerator(formAttrAnn.maxlength() > 0 ? formAttrAnn.maxlength() : 10).nextString()).append("\" ");
 		}
 		if (formAttrAnn.mandatory()) {
 			// TODO xul mandatory attr?

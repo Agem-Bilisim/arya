@@ -25,7 +25,7 @@ public class MetadataBuilder {
 				xml.append("<zk xmlns=\"http://www.zkoss.org/2005/zul\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n");
 				xml.append("xsi:schemaLocation=\"http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd\">\n");
 
-				xml.append("<window id=\"")
+				xml.append("\t<window id=\"")
 						.append(MetadataGeneratorUtil.getInstance().generateWindowId(actionName, cls.getName()))
 						.append("\">\n");
 			}
@@ -87,7 +87,7 @@ public class MetadataBuilder {
 	public String end() {
 		StringBuilder xml = new StringBuilder();
 
-		xml.append("</window>\n");
+		xml.append("\t</window>\n");
 		xml.append("</zk>\n");
 
 		return xml.toString();

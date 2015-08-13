@@ -2,13 +2,13 @@ package tr.com.agem.arya.metadata.util;
 
 import java.util.Random;
 
-public class RandomValueGenerator {
+public class RandomStringGenerator {
 
 	private static final char[] symbols = "abcdefghijklmnopqrstuvwxyz0123456789".toCharArray();
 	private static final Random random = new Random();
 	private char[] buf;
 
-	public RandomValueGenerator(int length) {
+	public RandomStringGenerator(int length) {
 		if (length < 1)
 			throw new IllegalArgumentException("length < 1: " + length);
 		buf = new char[length];

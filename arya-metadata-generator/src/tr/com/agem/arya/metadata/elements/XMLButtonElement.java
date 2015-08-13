@@ -10,7 +10,7 @@ public class XMLButtonElement implements XMLElement {
 		
 		StringBuilder xml = new StringBuilder();
 		
-		xml.append("<button id=\"").append(property).append("\" label=\"").append(formAttrAnn.label()).append("\" ");
+		xml.append("\t\t<button id=\"").append(property).append("\" label=\"").append(formAttrAnn.label()).append("\" ");
 		if (formAttrAnn.onClickFunction() != null) {
 			xml.append(" onClick=\"").append(formAttrAnn.onClickFunction()).append("\" ");
 		}
