@@ -1,0 +1,25 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="listAjandaWindow">
+		<label visible="false" id="isyeriZiyaretIdParamlbl" value="Isveren Ziyaret Id" />
+		<textbox visible="false" type="text" id="isyeriZiyaretIdParam"  value="0ff2mojac7"  placeholder=""  />
+		<label visible="false" id="isyeriIdParamlbl" value="Isyeri Id" />
+		<textbox visible="false" type="text" id="isyeriIdParam"  value="9iq6fnoeg3"  placeholder=""  />
+		<label id="subeParamlbl" value="Şube" />
+		<selectbox id="subeParam"  width="240"  >
+			<template>
+				<label value="3zr0qncznt" />
+			</template>
+		</selectbox>
+		<label id="isyeriAdiParamlbl" value="Kurum/Kişi Adı" />
+		<textbox type="text" id="isyeriAdiParam"  value="ju9am4q45bm31s9daviyeed7wn1c6ej68aucchsuiehfpmbclvbyq1vp2nqs6rootefwjrvsa85azmpfruxn8jajokd0a0j09gj7l3103gtlx1x6okxgk25f2wc24i7f1sfwvt60j2ugpjtdhla6qcnrpxhi9oc3jg3w98w2mio2prs4ii9xte65si4jyoqu3qqar9owj5jrmbue16u87jlfksq65wxirt9z5ofoy2essxoh494b6l8fct3mf9x"  width="416"  maxlength="255"  placeholder=""  onChange="autocomplete("genel/isyeri/autocomplete.do", "unvanParam", 5, "setIsyeri")" />
+		<label id="ziyaretTarihiBasParamlbl" value="Ziyaret Tarihi" />
+		<datebox id="ziyaretTarihiBasParam"  value="2013-8-14"  width="120"  placeholder=""  />
+		<datebox id="ziyaretTarihiBitParam"  value="1993-8-8"  width="120"  placeholder=""  />
+		<label id="faaliyetRaporuParamlbl" value="Faaliyet Raporu" />
+		<checkbox type="text" id="faaliyetRaporuParam"  checked="false"  width="50"  />
+		<label id="benimKayitlarimParamlbl" value="Benim kayıtlarım" />
+		<checkbox type="text" id="benimKayitlarimParam"  checked="false"  width="50"  />
+	</window>
+</zk>

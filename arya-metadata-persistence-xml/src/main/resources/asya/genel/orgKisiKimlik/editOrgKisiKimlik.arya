@@ -1,0 +1,49 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="addOrgkisikimlikWindow">
+		<textbox visible="false" type="text" id="orgKisiId"  value="4zkth2opac"  placeholder=""  />
+		<label visible="false" id="kimlik.kisiIdlbl" value="Kisi Id" />
+		<textbox visible="false" type="text" id="kimlik.kisiId"  value="4dg3gt36wg"  placeholder=""  />
+		<label id="kimlik.serilbl" value="Seri" />
+		<textbox type="text" id="kimlik.seri"  value="51u68"  width="50"  maxlength="5"  placeholder=""  />
+		<label id="kimlik.nolbl" value="No" />
+		<textbox type="text" id="kimlik.no"  value="zu4kt86awi"  width="100"  maxlength="10"  placeholder=""  />
+		<label id="kimlik.babaAdilbl" value="Baba Adı" />
+		<textbox type="text" id="kimlik.babaAdi"  value="7oyqk45jndhli9to15usp7crw26cat994h4mwdb71wb3e2my38ke3edb5rhtl8f4wzyats7pe94rz19udvuyohdnvh2h51dfm7rbnwpbz55tzwjt85a9ktgez0pduvbif5ms2ffzvo304yf6of2ug8j41vdhiqyi284nrk7t8t0eonq50cjjevym5jkpau9e10xisr1ow8lpuj33xhlasinfywtl7nxutauqbvgb72m5v2ubvlpcpu8v9sb4cl5"  width="150"  maxlength="255"  placeholder=""  />
+		<label id="kimlik.anaAdilbl" value="Ana Adı" />
+		<textbox type="text" id="kimlik.anaAdi"  value="vtetvf6spn3ns1scxx5gg5tp6y2vvpsdrzrbd07qbxu7th9oygt5ogc1908qmacqkwu7jzy9fw0g3sl7w80zqmc47sai8b18qvafuu3p8m4dflgspcu2zgvjw1hsbk3dztcmejazikjdd0qz5tcergz58tp8dyyzxibjr8bj2ioe8hv1m3iqy42f8ppe7wmm4t040n6nzbo2m4n12t733jegjsdtlynt27mbbr76l4maly28wgj2b5p8l8abao5"  width="150"  maxlength="255"  placeholder=""  />
+		<label id="kimlik.dogumYerilbl" value="Doğum Yeri" />
+		<textbox type="text" id="kimlik.dogumYeri"  value="ohg6uqsqhd4vmm9ddxn7durpozesbzqpkovrbiz3qlky6k7iobjfl43tb05aods543pmvima4z042tne2g4aepr0h07tklbu5ra7iwf3sr496f96i8qpok9oj8x8lyldqz1d8mxntnfwqrdwxlkzbe389micwus0nrn05hkso9plq98dax793z0k2ss8dbn0lbkx8dojw885t4oeyjaa8rpbqiklk362fsb83t5gtdykdybxb763xpk3dadqleh"  width="150"  maxlength="255"  placeholder=""  />
+		<label id="kimlik.dogumTarihilbl" value="Doğum Tarihi" />
+		<datebox id="kimlik.dogumTarihi"  value="2013-7-13"  width="150"  placeholder=""  />
+		<label id="kimlik.medeniHalilbl" value="Medeni Hali" />
+		<selectbox id="kimlik.medeniHali"  width="150"  >
+			<template>
+				<label value="sptp40z40c" />
+			</template>
+		</selectbox>
+		<label id="kimlik.dinilbl" value="Dini" />
+		<textbox type="text" id="kimlik.dini"  value="qcp81ck0i3ngimfki08se90oqqepdjd05l1jmrlif8zz28fv19r9xtwcch1skklme6zf5wafir7jt1nhg3q7c0ms2727n2i13jwu5f1n8tq439z65b9c38ggckw0s51x6jn975cdjtczfo72659aucccy7k0h5rnizdcbhdtaxqu6uzan0u7wwxx5x5zzauzwnhrp6e0imwe4ofialzlntijs9g5alwr2igphq2lhjxqlcrhl0g9p19xbxkdupc"  width="150"  maxlength="255"  placeholder=""  />
+		<label id="kimlik.kanGrubulbl" value="Kan Grubu" />
+		<selectbox id="kimlik.kanGrubu"  width="150"  >
+			<template>
+				<label value="xmd1oi4k5d" />
+			</template>
+		</selectbox>
+		<label id="kimlik.mahKoylbl" value="Mahalle/Köy" />
+		<textbox type="text" id="kimlik.mahKoy"  value="xa0g87v3wy7nuxf3qi52u1lswlyipavto2b3zjdwq1747t6brx"  width="100"  maxlength="50"  placeholder=""  />
+		<label id="kimlik.ciltNolbl" value="Cilt No" />
+		<textbox type="text" id="kimlik.ciltNo"  value="8fodqumf1f"  width="100"  maxlength="10"  placeholder=""  />
+		<label id="kimlik.aileSiraNolbl" value="Aile Sıra No" />
+		<textbox type="text" id="kimlik.aileSiraNo"  value="vffiv1as9z"  width="100"  maxlength="10"  placeholder=""  />
+		<label id="kimlik.verildigiYerlbl" value="Verildiği Yer" />
+		<textbox type="text" id="kimlik.verildigiYer"  value="ul281hwftf6m9xvb4ag8n90r6qfln7jz2x3kxnx2sjo12sris7iwhm2uro4rouz0y464j06m0gop53do5t7iss73mgtiaje0hf3lywkfcxs2zbbs3dsii86gorn82gpswp5ekl1ddy928xz6v6x6cag01cqhmnj42610rpzk20uy0yklko93uurnvvlqb8kxsabvtp50vidcrx2zno57zn0xd852dh8h56eqc97d9wv8lspbngoi9q4io4da3wk"  width="100"  maxlength="255"  placeholder=""  />
+		<label id="kimlik.verilisNedenilbl" value="Veriliş Nedeni" />
+		<textbox type="text" id="kimlik.verilisNedeni"  value="2ddn1lotbsqvlap6xlzs"  width="100"  maxlength="20"  placeholder=""  />
+		<label id="kimlik.verilisTarihilbl" value="Veriliş Tarihi" />
+		<datebox id="kimlik.verilisTarihi"  value="1999-5-24"  width="125"  placeholder=""  />
+		<label id="kimlik.kayitNolbl" value="Kayıt No" />
+		<textbox type="text" id="kimlik.kayitNo"  value="7fz2aue32n"  width="100"  maxlength="10"  placeholder=""  />
+	</window>
+</zk>

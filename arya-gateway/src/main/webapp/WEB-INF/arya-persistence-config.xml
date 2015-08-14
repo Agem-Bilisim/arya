@@ -15,8 +15,8 @@
            http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd
            http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-<!-- 	<bean id="metaDataDao" class="tr.com.agem.metadata.persistence.dao.MetaDataDao"/>
-	<bean id="aryaPersistence" class="tr.com.agem.metadata.persistence.impl.MetaDataPersistenceImpl">
+<!-- 	<bean id="metaDataDao" class="tr.com.agem.metadata.persistence.dao.MetadataDao"/>
+	<bean id="aryaPersistence" class="tr.com.agem.metadata.persistence.impl.MetadataPersistenceImpl">
 		<property name="metaDataDao" ref="metaDataDao"/>
 	</bean> -->
 	

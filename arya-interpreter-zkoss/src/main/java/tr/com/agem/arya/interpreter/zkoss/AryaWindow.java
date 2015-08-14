@@ -17,6 +17,7 @@ import tr.com.agem.arya.metadata.zul.impl.WindowType;
 import tr.com.agem.arya.metadata.zul.impl.ZkType;
 import tr.com.agem.core.gateway.model.AryaRequest;
 import tr.com.agem.core.gateway.model.AryaResponse;
+import tr.com.agem.core.gateway.model.RequestTypes;
 import tr.com.agem.core.interpreter.IAryaInterpreter;
 
 @SuppressWarnings("serial")
@@ -36,18 +37,9 @@ public class AryaWindow extends BaseController {
 		IAryaInterpreter interpreter = (IAryaInterpreter) appContext
 				.getBean("aryaInterpreter");
 
-//		ClientResource resource = new ClientResource(
-//				"http://localhost:8080/arya/rest/hello");
-//
-//		resource.addQueryParameter("requestType", "V");
-//		
-//		Representation clientText = resource.get();
-//
-//		String masterWindowJSON = clientText.getText();
-
 		AryaRequest request = new AryaRequest();
-		request.setAction("main");
-		request.setRequestType("V");
+		request.setAction("master");
+		request.setRequestType(RequestTypes.VIEW_ONLY);
 		String masterWindow= AryaInterpreterHelper.callUrl("http://localhost:8080/arya/rest/hello", request);
 		
 		AryaResponse response = new AryaResponse();
@@ -81,7 +73,6 @@ public class AryaWindow extends BaseController {
 
 			}
 		} catch (JAXBException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

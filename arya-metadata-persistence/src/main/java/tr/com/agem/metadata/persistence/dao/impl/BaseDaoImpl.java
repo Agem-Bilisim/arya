@@ -8,9 +8,9 @@ import tr.com.agem.core.dao.IBaseDao;
 import tr.com.agem.metadata.persistence.EntityManagerService;
 
 public class BaseDaoImpl<T> implements IBaseDao<T> {
-	
+
 	private Class<T> type;
-	
+
 	public BaseDaoImpl(Class<T> type) {
 		this.type = type;
 	}
@@ -30,7 +30,7 @@ public class BaseDaoImpl<T> implements IBaseDao<T> {
 		em.remove(em.getReference(type, id));
 		em.flush();
 		em.getTransaction().commit();
-		
+
 	}
 
 	public T find(Object id) {
@@ -50,18 +50,14 @@ public class BaseDaoImpl<T> implements IBaseDao<T> {
 
 	public List<? extends T> findAll(Class<? extends T> obj) {
 		EntityManager em = EntityManagerService.getInstance();
-		return em.createQuery(
-                "select model from " + obj.getName() + " model", obj).getResultList();
+		return em.createQuery("select model from " + obj.getName() + " model", obj).getResultList();
 	}
-	
+
 	@SuppressWarnings("unchecked")
-	public T findWithName(String appName, String moduleName, String formName) {
+	public T findWithName(String appName, String viewName) {
 		EntityManager em = EntityManagerService.getInstance();
-		return (T) em.createQuery(
-		    "select model from " + type.getName() + " model WHERE model.applicationName=:appName")
-		    .setParameter("appName", appName)
-		    .setMaxResults(10)
-		    .getSingleResult();
-		}
+		return (T) em.createQuery("select model from " + type.getName() + " model WHERE model.applicationName=:appName")
+				.setParameter("appName", appName).setMaxResults(10).getSingleResult();
+	}
 
 }

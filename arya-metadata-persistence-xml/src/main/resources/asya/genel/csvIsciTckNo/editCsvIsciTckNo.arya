@@ -1,0 +1,22 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="selectCsviscitcknoWindow">
+		<label id="dosyaIdlbl" value="TCK No,SGK No Listesi" />
+		<selectbox id="dosyaId"  width="320"  >
+			<template>
+				<label value="9coznmr7qv" />
+			</template>
+		</selectbox>
+		<button id="dosyaYukleBtn" label="İncele"  onClick="dosyaIsle()"  width="90"  />
+		<label id="eslesenlbl" value="Eşleşen Kayıt Sayısı" />
+		<textbox type="text" id="eslesen"  value="qf6iyr8nbq"  width="320"  placeholder=""  readonly="true"  />
+		<button id="guncelleBtn" label="Güncelle"  onClick="guncelle()"  width="90"  />
+		<label id="eslemeKriterlbl" value="Eşleştirme Kriteri" />
+		<selectbox id="eslemeKriter"  width="320"  >
+			<template>
+				<label value="mnz37gbytz" />
+			</template>
+		</selectbox>
+	</window>
+</zk>

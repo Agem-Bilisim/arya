@@ -1,0 +1,48 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="listUyesayilarimatrisWindow">
+		<label id="durumParamlbl" value="Üyelik Durumu" />
+		<selectbox id="durumParam"  width="120"  >
+			<template>
+				<label value="gm7y0k7yu8" />
+			</template>
+		</selectbox>
+		<label id="tarihParamlbl" value="Tarih" />
+		<datebox id="tarihParam"  value="2001-6-28"  width="150"  placeholder=""  />
+		<label id="cikisNedeniParamlbl" value="Çıkış Nedeni" />
+		<selectbox id="cikisNedeniParam"  width="120"  >
+			<template>
+				<label value="4pbtg2fmoo" />
+			</template>
+		</selectbox>
+		<label id="gecerlilikParamlbl" value="Geçerlilik" />
+		<selectbox id="gecerlilikParam"  width="120"  >
+			<template>
+				<label value="bm3m6580be" />
+			</template>
+		</selectbox>
+		<label id="basTarihParamlbl" value="Üyelik Düşme Baş. Tarihi" />
+		<datebox id="basTarihParam"  value="1994-11-16"  width="120"  placeholder=""  />
+		<label id="bitTarihParamlbl" value="Üyelik Düşme Bit. Tarihi" />
+		<datebox id="bitTarihParam"  value="2001-4-29"  width="120"  placeholder=""  />
+		<label id="orgutDurumParamlbl" value="Örgüt Durumu" />
+		<selectbox id="orgutDurumParam"  width="120"  >
+			<template>
+				<label value="sinw2u5s5g" />
+			</template>
+		</selectbox>
+		<label id="aciklamaParamlbl" value="Açıklama" />
+		<textbox type="text" id="aciklamaParam"  value="6ik74otzz5"  width="120"  placeholder=""  />
+		<label id="cikisAciklamaParamlbl" value="Çıkış Açıklama" />
+		<textbox type="text" id="cikisAciklamaParam"  value="d3qptl1udc"  width="120"  placeholder=""  />
+		<label id="acikUyelikGostermeParamlbl" value="Açık üyelikleri gösterme" />
+		<checkbox type="text" id="acikUyelikGostermeParam"  checked="true"  width="50"  />
+		<label id="girisYkKararNoParamlbl" value="YK Karar No" />
+		<textbox type="text" id="girisYkKararNoParam"  value="rvhuvp5ywcf51w0qk1grz0n5h39c7pqjzg2b7bsen5uscommxz0fg7z474boh8ppnkjvjouqw642u34rh2if5dhm3qfxjcjj3vecdegnu73n9lrqm3oyk8le37mm08bvfe9aueer057ux1atyh495fyk6vfk8qn7npv7gscs4vawb9ym0cegd5tk7lab1thybaghz0qdh2ikm4owfh0yn0mjw9fu04ugsnhkeejyj1anz5u31rkccy9rkoze09a"  width="120"  maxlength="255"  placeholder=""  top="50" />
+		<label id="onayBasTarihParamlbl" value="Onay Baş. Tarihi" />
+		<datebox id="onayBasTarihParam"  value="1996-4-9"  width="120"  placeholder=""  top="75" />
+		<label id="onayBitTarihParamlbl" value="Onay Bit. Tarihi" />
+		<datebox id="onayBitTarihParam"  value="2001-2-1"  width="120"  placeholder=""  top="75" />
+	</window>
+</zk>

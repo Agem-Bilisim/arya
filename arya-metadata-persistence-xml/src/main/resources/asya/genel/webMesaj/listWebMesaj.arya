@@ -1,0 +1,15 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="listWebmesajWindow">
+		<selectbox id="okunduParam"  width="100"  >
+			<template>
+				<label value="58n7xrvq2e" />
+			</template>
+		</selectbox>
+		<textbox type="text" id="aramaParam"  value="9c53jwg67j"  width="200"  placeholder=""  />
+		<button id="yenileBtn" label="Listele"  onClick="yenile()"  width="80"  top="2" />
+		<button id="raporAlBtn" label="Rapor Al"  onClick="raporAl()"  width="80"  top="2" />
+		<button id="silBtn" label="Sil"  onClick="mesajSil()"  width="80"  top="2" />
+	</window>
+</zk>

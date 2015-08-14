@@ -1,0 +1,18 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="addSozlesmeWindow">
+		<label visible="false" id="sozlesmeIdlbl" value="Sozlesme Id" />
+		<textbox visible="false" type="text" id="sozlesmeId"  value="vnzh0vx8fx"  placeholder=""  />
+		<label visible="false" id="isyeriIdlbl" value="İsyeri" />
+		<textbox visible="false" type="text" id="isyeriId"  value="w1mxmc282p"  placeholder=""  />
+		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="3yub7gw0ha"  placeholder=""  />
+		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
+		<textbox visible="false" type="text" id="ekleyen"  value="9fab63t7bc"  placeholder=""  />
+		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="7af9mjt9bq"  placeholder=""  />
+		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="42zsyffhn2"  placeholder=""  />
+	</window>
+</zk>

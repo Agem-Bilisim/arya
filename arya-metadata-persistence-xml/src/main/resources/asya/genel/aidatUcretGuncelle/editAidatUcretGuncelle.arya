@@ -1,0 +1,12 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="editAidatucretguncelleWindow">
+		<label id="donemlbl" value="Dönem Ay/Yil" />
+		<selectbox id="donem"  width="200"  >
+			<template>
+				<label value="3o9t182k49" />
+			</template>
+		</selectbox>
+	</window>
+</zk>

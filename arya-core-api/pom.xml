@@ -10,6 +10,7 @@
 	</parent>
 	<artifactId>arya-core-api</artifactId>
 	<name>arya-core-api</name>
+	<url>http://www.agem.com.tr</url>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -32,6 +33,6 @@
 			<artifactId>servlet-api</artifactId>
 			<version>2.5</version>
 			<scope>provided</scope>
-		</dependency>		
+		</dependency>
 	</dependencies>
 </project>

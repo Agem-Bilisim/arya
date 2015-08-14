@@ -1,0 +1,17 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="selectCsvistencikarmalistesiWindow">
+		<label visible="false" id="isyeriIdlbl" value="İşyeri" />
+		<textbox visible="false" type="text" id="isyeriId"  value="qnkeyu56c5"  placeholder=""  />
+		<label visible="false" id="dosyaIdlbl" value="Dosya" />
+		<textbox visible="false" type="text" id="dosyaId"  value="tog7lfamm6"  placeholder=""  />
+		<label id="istenCikarmaListeDosyaIdlbl" value="Çalışan Listeleri" />
+		<selectbox id="istenCikarmaListeDosyaId"  width="300"  >
+			<template>
+				<label value="v9apiop4sk" />
+			</template>
+		</selectbox>
+		<button id="istenCikarmaDosyaYukleBtn" label="Yükle"  onClick="istenCikarmaDosyaYukle()"  width="70"  />
+	</window>
+</zk>

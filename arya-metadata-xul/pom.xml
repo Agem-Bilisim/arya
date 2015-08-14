@@ -10,11 +10,7 @@
 	</parent>
 	<artifactId>arya-metadata-xul</artifactId>
 	<name>arya-metadata-xul</name>
-	<url>http://maven.apache.org</url>
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<javaVersion>1.7</javaVersion>
-	</properties>
+	<url>http://www.agem.com.tr</url>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -46,8 +42,6 @@
 			<artifactId>portlet-api</artifactId>
 			<version>2.0</version>
 		</dependency>
-
-
 	</dependencies>
 	<build>
 		<plugins>
@@ -56,8 +50,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.1</version>
 				<configuration>
-					<source>${javaVersion}</source>
-					<target>${javaVersion}</target>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
 					<compilerArgument>-proc:none</compilerArgument>
 				</configuration>
 			</plugin>

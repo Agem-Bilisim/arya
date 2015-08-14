@@ -1,0 +1,22 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="addGidenevrakdefterWindow">
+		<label visible="false" id="evrakDefterIdlbl" value="Evrak Defter Id" />
+		<textbox visible="false" type="text" id="evrakDefterId"  value="qqjbn7msye"  placeholder=""  />
+		<label id="basliklbl" value="Başlık" />
+		<textbox type="text" id="baslik"  value="lyxw0iodg9ru4zaud29fvsj622p1zrdfb16qq77i2uvxbe7v7anwj3594nousydhqqrztt8wd01wgubzz25yt9uk26zwppuw1vif90v8m97zicqtq7zpji3iaa3c2ckf8hvixoktgpii210aa9g03j5j2s8ybzbijjxvydr3vt80c8px9b89ma60x0hmb27arnt8ksgjr9djctdurq0jsxswo964zic2jy2groblhps5u88ead05hbtb688on2a"  width="220"  maxlength="255"  placeholder=""  />
+		<label id="baslangicTarihilbl" value="Başlangıç Tarihi" />
+		<datebox id="baslangicTarihi"  value="2007-5-7"  width="120"  placeholder=""  />
+		<label id="bitisTarihilbl" value="Bitiş Tarihi" />
+		<datebox id="bitisTarihi"  value="2014-3-23"  width="120"  placeholder=""  />
+		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="yn3p2ah4jo"  placeholder=""  />
+		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
+		<textbox visible="false" type="text" id="ekleyen"  value="wq85p3445794oneb4vmve6jzb5zvrnfw732uh850qh9uootvmmq7qm10mbgoeclhddshes07sviv3qzry6bya3qtjzneerwo73m2enafml83qn8qoyzpuxs2n3p0gw0g1fwsgdp6deby3p8gf2kgvhbk66a827mhfd6ckv4okb3vw7chw8oe39ma3yu8aclscegaq3cbd70n8xs6yxllsqtgv3p5v0m4dmh633zx9v6q72a6q4ovtt97ueqfhlg"  maxlength="255"  placeholder=""  />
+		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="9d4vc55h93"  placeholder=""  />
+		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="y5shk114r5ha4x97nj5d0zbxscvmyhgttww62esbik3zkukjtndd2ovp0m8lfjww417vwfmkeh85mbkmdtl31qo4tj3yecfj92tnmkj7aj2ewc3nauqlimyflg8hlz0fjcu9wnjkr47w4qnv9jv1aviy4tvu2kg8ccuzxvfihrcixsv1hiaujdz8tan2vcexw4klntqpr3406bwzfgxpbdlahrdcb7y8wddh5bovp5pa1iovalxg868k30ljdjg"  maxlength="255"  placeholder=""  />
+	</window>
+</zk>

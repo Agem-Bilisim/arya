@@ -10,6 +10,7 @@ import org.zkoss.zul.Textbox;
 
 import tr.com.agem.core.gateway.model.AryaRequest;
 import tr.com.agem.core.gateway.model.AryaResponse;
+import tr.com.agem.core.gateway.model.RequestTypes;
 
 @SuppressWarnings("rawtypes")
 public class OnClickEventListener implements EventListener {
@@ -27,7 +28,7 @@ public class OnClickEventListener implements EventListener {
 	public void onEvent(Event event) throws Exception {
 		AryaRequest request = new AryaRequest();
 		request.setAction("myAction");
-		request.setRequestType("D");
+		request.setRequestType(RequestTypes.DATA_ONLY);
 
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("username", "alio");

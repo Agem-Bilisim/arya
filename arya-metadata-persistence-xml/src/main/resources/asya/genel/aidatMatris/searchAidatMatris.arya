@@ -1,0 +1,77 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="listAidatmatrisWindow">
+		<label id="raporTurParamlbl" value="Rapor Türü" />
+		<selectbox id="raporTurParam"  width="240"  >
+			<template>
+				<label value="alwuz511fy" />
+			</template>
+		</selectbox>
+		<label id="listeTurParamlbl" value="Kaynak Liste" />
+		<selectbox id="listeTurParam"  width="240"  >
+			<template>
+				<label value="n6wu5kde35" />
+			</template>
+		</selectbox>
+		<label id="aidatTurParamlbl" value="Üye / DA" />
+		<selectbox id="aidatTurParam"  width="240"  >
+			<template>
+				<label value="467uor3icq" />
+			</template>
+		</selectbox>
+		<label id="donemParamlbl" value="Dönem Ay/Yil" />
+		<selectbox id="donemParam"  width="240"  >
+			<template>
+				<label value="xrbya1mox6" />
+			</template>
+		</selectbox>
+		<label id="donemBasParamlbl" value="Dönem Ay/Yil" />
+		<selectbox id="donemBasParam"  width="117"  top="75" >
+			<template>
+				<label value="b73a7aiw1l" />
+			</template>
+		</selectbox>
+		<label id="donemBitParamlbl" value="Dönem Ay/Yil" />
+		<selectbox id="donemBitParam"  width="117"  top="75" >
+			<template>
+				<label value="noywx99n4b" />
+			</template>
+		</selectbox>
+		<label id="tutarAraliklbl" value="Tutar Aralık" />
+		<selectbox id="tutarAralik"  width="240"  top="100" >
+			<template>
+				<label value="59ex11p046" />
+			</template>
+		</selectbox>
+		<label id="turParamlbl" value="Liste Türü" />
+		<selectbox id="turParam"  width="240"  >
+			<template>
+				<label value="2cun61r98i" />
+			</template>
+		</selectbox>
+		<label id="subeParamlbl" value="Şube" />
+		<selectbox id="subeParam"  width="240"  >
+			<template>
+				<label value="j5bmuqajng" />
+			</template>
+		</selectbox>
+		<label id="ilKoduParamlbl" value="İl" />
+		<selectbox id="ilKoduParam"  width="117"  >
+			<template>
+				<label value="18sdys1iyl" />
+			</template>
+		</selectbox>
+		<selectbox id="ilceKoduParam"  width="117"  >
+			<template>
+				<label value="qmzwb2v2rj" />
+			</template>
+		</selectbox>
+		<label id="isyeriKategoriIdParamlbl" value="Kategori" />
+		<selectbox id="isyeriKategoriIdParam"  width="240"  >
+			<template>
+				<label value="rnwchn8tcq" />
+			</template>
+		</selectbox>
+	</window>
+</zk>

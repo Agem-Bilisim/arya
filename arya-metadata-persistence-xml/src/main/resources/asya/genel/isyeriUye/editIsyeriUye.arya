@@ -1,0 +1,19 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="selectIsyeriuyeWindow">
+		<textbox visible="false" type="text" id="isyeriId"  value="skwepn999z"  width="100"  placeholder=""  />
+		<label id="degerlendirmeTarihilbl" value="Tarih" />
+		<datebox id="degerlendirmeTarihi"  value="1992-5-17"  width="100"  placeholder=""  />
+		<label id="degerlendirmeTurlbl" value="İşci Sayısı" />
+		<selectbox id="degerlendirmeTur"  width="120"  >
+			<template>
+				<label value="qyk7kmz866" />
+			</template>
+		</selectbox>
+		<button id="degerlendirBtn" label="Değerlendir"  onClick="degerlendir()"  width="100"  />
+		<label id="isyeriSayisilbl" value="İşyeri Sayısı" />
+		<textbox type="text" id="isyeriSayisi"  value="nkpokf8fri"  width="100"  placeholder=""  readonly="true"  top="40" />
+		<textbox visible="false" type="text" id="merkezId"  value="be8dg48axc"  width="100"  placeholder=""  />
+	</window>
+</zk>

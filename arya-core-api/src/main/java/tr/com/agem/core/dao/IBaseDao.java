@@ -10,5 +10,5 @@ public interface IBaseDao<T> {
 	T update(T t);
 	
 	List<? extends T> findAll(Class<? extends T> obj);
-	T findWithName(String appName, String moduleName, String formName);
+	T findWithName(String appName, String viewName);
 }

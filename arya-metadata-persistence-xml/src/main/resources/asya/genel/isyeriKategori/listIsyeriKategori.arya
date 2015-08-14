@@ -1,0 +1,18 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="addIsyerikategoriWindow">
+		<label visible="false" id="isyeriKategoriIdlbl" value="Isyeri Kategori Id" />
+		<textbox visible="false" type="text" id="isyeriKategoriId"  value="339dexb90y"  placeholder=""  />
+		<label id="tanimlbl" value="Tanım" />
+		<textbox type="text" id="tanim"  value="jzhq3irfb6lr29dyykkc"  width="160"  maxlength="20"  placeholder=""  />
+		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="c72rl4vqsk"  placeholder=""  />
+		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
+		<textbox visible="false" type="text" id="ekleyen"  value="2hp71dpfj5u1kcvwgajevxyl8r47an2zfycl5hdsnpaixyu8g0gd8kvqsw2cozr1fc7sdht9s3gemlnytvvbj6vlrddl1z9fn8jec5ejp90dweyd4tgxomuq8ki7lpjkmpvx32wpz51ge7rxwf4j2k9y3jfygbkpswwnqus40bf1uuinxw6xr8moou4ilzud5dtqt787yl74yagywh3exeatbek3hjggucvfrsxy81dbjnjy0mbw422kx7gxwah"  maxlength="255"  placeholder=""  />
+		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="fic9ip5cu3"  placeholder=""  />
+		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="vst1p0slvleat4ehwnjid35pussbiz6dhs2bsrgb7en1ehpwnafqm9vk1jy5v060hudv59t7jtozh2so9pzdvv8umznz95no7uojec7wui29alcjl7xv254bd3iwqw9f5fto9hi31ira9svcx4bwdj4jh0zlwj7jci1tpx4isto5mq5s69i0nhbv3uh2aopzni84uy6zuu1tump2vdmy43mevwarslzssoebwqep0mub7m76tmj35xcg0awjiom"  maxlength="255"  placeholder=""  />
+	</window>
+</zk>

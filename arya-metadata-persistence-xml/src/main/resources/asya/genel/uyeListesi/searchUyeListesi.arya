@@ -1,0 +1,55 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="listUyelistesiWindow">
+		<label id="turParamlbl" value="Liste Türü" />
+		<selectbox id="turParam"  width="206"  >
+			<template>
+				<label value="5rynq23fx1" />
+			</template>
+		</selectbox>
+		<label id="tarihParamlbl" value="Tarih" />
+		<datebox id="tarihParam"  value="2005-0-10"  width="206"  placeholder=""  />
+		<label id="subeParamlbl" value="Şube" />
+		<selectbox id="subeParam"  width="206"  >
+			<template>
+				<label value="9brz4pdv02" />
+			</template>
+		</selectbox>
+		<label id="ilKoduParamlbl" value="İl" />
+		<selectbox id="ilKoduParam"  width="100"  >
+			<template>
+				<label value="xoa0u5bice" />
+			</template>
+		</selectbox>
+		<selectbox id="ilceKoduParam"  width="100"  >
+			<template>
+				<label value="oelpmkosxp" />
+			</template>
+		</selectbox>
+		<label id="isyeriKategoriIdParamlbl" value="Kategori" />
+		<selectbox id="isyeriKategoriIdParam"  width="206"  >
+			<template>
+				<label value="xkhfyih4hf" />
+			</template>
+		</selectbox>
+		<label id="orgutDurumParamlbl" value="Örgüt Durumu" />
+		<selectbox id="orgutDurumParam"  width="206"  >
+			<template>
+				<label value="snh5tyv2y6" />
+			</template>
+		</selectbox>
+		<label id="bakanlikIssizParamlbl" value="Bakanlık Kayıtlarında İşsiz Olan Üyeler" />
+		<checkbox type="text" id="bakanlikIssizParam"  checked="true"  width="40"  />
+		<label id="uyeDetayParamlbl" value="Üye Detay" />
+		<selectbox id="uyeDetayParam"  width="206"  >
+			<template>
+				<label value="j1dhl7ou41" />
+			</template>
+		</selectbox>
+		<label id="isciSayilariniGosterParamlbl" value="İşçi Sayılarını Göster" />
+		<checkbox type="text" id="isciSayilariniGosterParam"  checked="false"  width="40"  />
+		<label id="uyesiOlmayaniGostermeParamlbl" value="Üyesi Olmayan İşyerlerini Gösterme" />
+		<checkbox type="text" id="uyesiOlmayaniGostermeParam"  checked="true"  width="40"  />
+	</window>
+</zk>

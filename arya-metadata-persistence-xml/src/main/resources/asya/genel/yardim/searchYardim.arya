@@ -1,0 +1,10 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="listYardimWindow">
+		<label id="yardimSozcukParamlbl" value="Anahtar Sözcük" />
+		<textbox type="text" id="yardimSozcukParam"  value="0pndnp1yh03ygvbhgrnjuit5wdawnp1jkz56prn4vw9x1vn99d1mb2no8wlkk126buj4yqal2fd7jjyyfe1luksme3fdskjxp7ml"  width="120"  maxlength="100"  placeholder=""  />
+		<label id="aciklamaParamlbl" value="Açıklama" />
+		<textbox type="text" id="aciklamaParam"  value="4we8g0nsyt3guz7brtghm8prz2pcyuxzxzjq3kuom8u4icwa173k4lnm8z2ejqtfymhdy333upzhs14xy85g9qchlwknrkqeqycot8lcsqy7rxegknafww468vp8qffen5owhtt5i5fvndfmbkepp3"  width="180"  maxlength="150"  placeholder=""  />
+	</window>
+</zk>

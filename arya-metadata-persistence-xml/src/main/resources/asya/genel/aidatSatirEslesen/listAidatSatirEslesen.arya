@@ -1,0 +1,26 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="listAidatsatireslesenWindow">
+		<label id="istenCikislarParamlbl" value="İşten Çıkış Farkı" />
+		<checkbox type="text" id="istenCikislarParam"  checked="false"  width="10"  />
+		<label id="ucretsizIzinParamlbl" value="R/UI/A Farkı" />
+		<checkbox type="text" id="ucretsizIzinParam"  checked="true"  width="10"  />
+		<label id="tutarFarkiParamlbl" value="Tutar Farkı" />
+		<checkbox type="text" id="tutarFarkiParam"  checked="true"  width="10"  />
+		<label id="bildirimFarkiParamlbl" value="Bildirim Farkı" />
+		<checkbox type="text" id="bildirimFarkiParam"  checked="true"  width="10"  />
+		<label id="subeParamlbl" value="Şube" />
+		<selectbox id="subeParam"  width="140"  >
+			<template>
+				<label value="czkm3rhir5" />
+			</template>
+		</selectbox>
+		<textbox visible="false" type="text" id="aidatIdsString"  value="8onuuilrm2"  placeholder=""  />
+		<textbox visible="false" type="text" id="aidatIdParam"  value="hs2nsrhiso"  placeholder=""  />
+		<textbox visible="false" type="text" id="isletmeParam"  value="5d3a5bxszi"  placeholder=""  />
+		<textbox visible="false" type="text" id="donemAyParam"  value="gxn1z171vi"  placeholder=""  />
+		<textbox visible="false" type="text" id="donemYilParam"  value="f4ls61o15v"  placeholder=""  />
+		<textbox visible="false" type="text" id="merkezIdParam"  value="zp0sktja4f"  placeholder=""  />
+	</window>
+</zk>

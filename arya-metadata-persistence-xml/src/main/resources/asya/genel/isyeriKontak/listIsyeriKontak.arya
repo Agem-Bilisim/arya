@@ -1,0 +1,56 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="addIsyerikontakWindow">
+		<label visible="false" id="isyeriKontakIdlbl" value="Isveren Kontak Id" />
+		<textbox visible="false" type="text" id="isyeriKontakId"  value="pbzrkw8odl"  placeholder=""  />
+		<label visible="false" id="isyeriIdlbl" value="Isyeri Id" />
+		<textbox visible="false" type="text" id="isyeriId"  value="ro7l2vxszg"  placeholder=""  />
+		<label id="unvanlbl" value="Ünvan" />
+		<textbox type="text" id="unvan"  value="gutnorc4buhj5399unx7s06z52vo1f7f4ij4ei2q9ezkxsw1nxo33gnon7bydznuumgo2sg5sfuhbdtf7c1gdt8dleeuu17w9nymsczl62j1r1005zwh3ynt39dwrlufpokgjw7e1ehl6p9ebkib8hd9lwbzt65z5dnjni4o3kcxoa37832itctfwu4w3mku3rlit8hg3jos8iougoptxsd1er9bu4jt6x4nlckwlwq7mu2n74hdxdnpwwkn1fl"  width="100"  maxlength="255"  placeholder=""  />
+		<label id="adilbl" value="Ad" />
+		<textbox type="text" id="adi"  value="1uoszu3buwldtb2qa1j864b0t2wr5plstzn718pm52tp87yjcmjpb3ajcl7a01se55mrqg2ndq6mm56nzin5dxiuybabiixj94qbeemsecktj21sl5gikrvfsecw9s4t9ojrd5h7hsj1kd1nx3k2rttrw0ex1q9uelns6uui0m4npvsgzcb1fm7m0m70vkkgyvgx1wj5xeexqv42bsft3m3krxknvrppjiqm0k6mro2liy3zl3r4tyfcxrsxlrg"  width="100"  maxlength="255"  placeholder=""  />
+		<label id="soyadlbl" value="Soyad" />
+		<textbox type="text" id="soyad"  value="p83w4pt572onee7q1lhotfq9zyy7y8v9ulguhcsuhyquxhbytgbc595jdidan1cfiei5jztu0g6yxg1125fru4kaihvgvvdcuvlwa83xcakvavms6wm02ceimo2iyryii9qok8ivgydu86u6btgr950rk2dbgpxryursra3s1j7yokc9as259mdxxrr7q1v5t018ib64btro0iksv16powughref3mbp0mp9e3mrqghjnjfmu51bhy2rcypm7ga"  width="100"  maxlength="255"  placeholder=""  />
+		<label id="iletisim.tellbl" value="Telefon" />
+		<textbox type="text" id="iletisim.tel"  value="f749qulj42g27uc1teboo45ys5s8dbpz3i73seeit6xwh75lvs7d7itl9ten7ynw9tt9xy570v4og1dk2o1ixi9ckged8k31wngdkzwhftsj5kx9ce19t8jzf6uk95kzm56lzbtpss1n35x5m93wvh4h339bluju2zpva54qcv3ueykbk3kuw0bm8e32lykhrp4lt6yhb8mirivcemuy8lufjgx1oxm0va0deob195alduavo7nq98xkhhpsi8q"  width="100"  maxlength="255"  placeholder=""  />
+		<label id="iletisim.ceplbl" value="Cep Tel." />
+		<textbox type="text" id="iletisim.cep"  value="gs33maybfa2chl4s1td2tyye89hhzsysproen7w1q69bsmfu1nm7i4qvre7cbtvzy0xuy4zinwouc074wt0mrx4h7chqu2zws32i2il9e68r7801dm0kfc43t2trhebvagauf4t4en1y8mnit39jay7i7inrwqqvtr62gm8ozmb1yw7vw59dvu0ep61a78shcfmqjhkousqtzopnx6qd81n2qf5hmvax8i2njosenq5zy6bj07pvwq1jn5ljugi"  width="100"  maxlength="255"  placeholder=""  />
+		<label id="iletisim.fakslbl" value="Faks" />
+		<textbox type="text" id="iletisim.faks"  value="ag39o4k8jh6hmrxznqwm3rd9hctr7lem9xx9wyk4i81ay9lc2vlppxvvbstbvkmmxudwdlh502b7vuz3luy9iqrv6v1zfwm8ogcbuxhm903a9taz4cuspqimdijp9n5mz205webkds7d9qmwqczcqprzisaamjscp5a0lk0t3ia19pk6obzhofm62iqijqukglyynv3f3dfyjm4y5k45qc4k4s29zy449p88gf1d7a8bqlkvqssix18cm5gau99"  width="100"  maxlength="255"  placeholder=""  />
+		<label id="iletisim.epostalbl" value="E-Posta" />
+		<textbox type="text" id="iletisim.eposta"  value="vs2jpihw0xlb6e6vpb285qkz216iisx99c7dj8ffri8yx7dmoofw2u2wu1qphp4d76olgye72163thy7lobp903f9xxhb68sgdyqhhibhrdbthu9rs5cy8gpq6xuwdkqwat2uf401gd6rd796n9w8yzthjng3kzwrd4rj6ipd73klbuivqgcgydsbtprxuvumdg6zx5ux5bxs2rll1qwe039vk77e7fv8zgjzg20lm4sgmm50jmjt5z51odgmzf"  width="472"  maxlength="255"  placeholder=""  />
+		<label id="iletisim.adres1lbl" value="Adres (1)" />
+		<textbox type="text" id="iletisim.adres1"  value="nxjlub3jq61af48ci5ykvj8uq5kdxo62yi9frbypdzzypt27d27t2esdbcxmshpehms16jl1oor41s2wthptqvfepdiyb9by0x0fn25lb6bvg7qwbuarpp57zo0l7c02ybnam15jvkl07245a3a0guc6uyzs96gir1fxq49i3mdmsnn9ryzbf8lpgtu3nerec65hdr198csm4g4igabd601v8nqlep1uk6ketdl6hfij7e9ik3udx6vnz0bmeje"  width="472"  maxlength="255"  placeholder=""  />
+		<label id="iletisim.adres2lbl" value="Adres (2)" />
+		<textbox type="text" id="iletisim.adres2"  value="2netvvn1waujyth0j0yqgvmzj4isvq0na6t8hvuu24hiidsf3am95if1i0ruwkrr283s7933ai1cwlhclej31cy1zuid4f1iaygedx9fv1dtk4q60zma8rfw8i814mas27pyx3aw949k55g1i9y019ywshoh37qhrz9j8n3e7z9av6fee9r9sor3ji2liw51br8iltcr7na2r56zvy57qu9chhejc6md7izyph9w8bzdtf6y7gx8r0lrubt8uie"  width="472"  maxlength="255"  placeholder=""  />
+		<label visible="false" id="iletisim.ilceKodulbl" value="İlçe" />
+		<textbox visible="false" type="text" id="iletisim.ilceKodu"  value="0ztgpre6mqo8fowfmpse4a"  maxlength="22"  placeholder=""  />
+		<label visible="false" id="iletisim.ilKodulbl" value="İl" />
+		<textbox visible="false" type="text" id="iletisim.ilKodu"  value="m3s6k6vvq16gz5h5dmkdxq"  maxlength="22"  placeholder=""  />
+		<label id="iletisim.ilce.valuelbl" value="İl/İlçe" />
+		<textbox type="text" id="iletisim.ilce.value"  value="bgglitd8gv"  width="288"  placeholder=""  onChange="autocomplete("genel/ilce/autocomplete.do", "dbParam", 5, "setIlIlce")" />
+		<label id="iletisim.postaKodulbl" value="Posta Kodu" />
+		<textbox type="text" id="iletisim.postaKodu"  value="g7blf"  width="100"  maxlength="5"  placeholder=""  />
+		<label id="kategorilbl" value="Kategori" />
+		<selectbox id="kategori"  width="102"  >
+			<template>
+				<label value="t6cjz3why6" />
+			</template>
+		</selectbox>
+		<label id="iletisim.aciklamalbl" value="Açıklama" />
+		<textbox type="text" id="iletisim.aciklama"  value="7bailv33fzolfk788d8dzwuq4pgbhmhpimm4ysx8itn0ag0w6jbpofuz4f3ix6c65bxuknslnujs0q63b5sq8hkw0v1hpyvtl6tc31nkiq46g5q63efqziwqjca2y9s9m343jh12ug6tilu4ygw1lpnt996rajtzv23u4wx6g6l863ovmpmtyeogfggvz9xe0zqx2gkpcqshgy3lai63elboh3pq3rs4bqcc680vsp0sca8m4zw4hvkwqjpwsz3"  width="552"  maxlength="255"  placeholder=""  rows="5" cols="40" />
+		<label visible="false" id="iletisim.iletisimIdlbl" value="Iletisim Id" />
+		<textbox visible="false" type="text" id="iletisim.iletisimId"  value="qluunaxwbf"  placeholder=""  />
+		<label visible="false" id="iletisimIdlbl" value="Iletisim Id" />
+		<textbox visible="false" type="text" id="iletisimId"  value="317v4u3oos"  placeholder=""  />
+		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="j8c0df4g29"  placeholder=""  />
+		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
+		<textbox visible="false" type="text" id="ekleyen"  value="whz4hgu7a0afd34b894bdds5j2776pi9vyhs9uudkhgghtp1p5oc2kztw6ivti2ue6x8v0hleys7v081bzt0vhgh8x9itlhjpmitgt1h87j8p4w3atwzkcffi9ttubroa99u63xb3cdem1d4nuwc05d8ahdborwowvm4msl56qdd2zv2abvz9vhlp2exm7dx45dmgg60mo8y4xzuei2i1rik6qcma542omxl8lixuf2lagbdz2kypdyj24vfuuj"  maxlength="255"  placeholder=""  />
+		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="v4e2h9hva2"  placeholder=""  />
+		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="pyda4ll5nmtudxsk8a08a5gqdaxtd7ln45f51kr9qczazddlix42kyxtovlv9s1s7y6nisonttnq6jojfebt6aimydqahp9ijb7ootuaji6e30rt6n6telrfna8b86n8a1t0j4bu9vbxinhxn5lad8sko8ufckp6ufd3zz2c57nlis9vb3fc3194cbw0zt95vjb5c82nq32h9zdj9yp2vyqrr94bpfmsnaxqluljkn7gt08a9yum2qn6ds3got0"  maxlength="255"  placeholder=""  />
+	</window>
+</zk>

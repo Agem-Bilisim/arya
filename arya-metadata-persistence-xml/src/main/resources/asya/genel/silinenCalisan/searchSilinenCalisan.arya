@@ -1,0 +1,15 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="listSilinencalisanWindow">
+		<label id="adParamlbl" value="Ad" />
+		<textbox type="text" id="adParam"  value="tvjgrqj4fezxcygox1fkpcxvvs1k4vsv854ugolr4p8zkyitloh5leihv4r6aq7sy9pf25qegy8am97c97ewdok5h1x61ftkagj0txqwsr9hu1xf6mekcu74kjydkug4cltgpgxvjkk5go0fbmsxyqfccerniuiuphgcdxw2yvox8eytpexhiih2ijsj942c028nvyxdgaemi1kbr69hu7jfx95ubcosuaxuhhachwa3evjrtvb3s1bhik9n1ys"  width="120"  maxlength="255"  placeholder=""  />
+		<label id="soyadParamlbl" value="Soyad" />
+		<textbox type="text" id="soyadParam"  value="ki4yl8qe76e7lbpevgwgzl88h81037e2q15gftjtqe664n7g9nh7gl4ucn7s5lfvcq4ecumbxumz3wts0faav00d8w2rm7yp81d9100oolihmg6bjfcbbqp67va1t9nqc3opyf943v4dmtc24jiqlfjzje80nr1xnv6xqvdoyxq3j4pqiooc9rxaqfbef8emlheiyvg7pfjew91d8h75au1276vjyekatewc9thtwbzvaom9wfm9sfljpe1t0fo"  width="120"  maxlength="255"  placeholder=""  />
+		<label id="silenParamlbl" value="Silen" />
+		<textbox type="text" id="silenParam"  value="zpyo2zrtq3vn6opalhd1vkw2linnu8hqnsf3he3ceqvq2rwzp730g97r852oaay1s6gkx7f9p5qwge9aa5ugv8aylx2df7z3cjy45lt6s9wi4erq2164tpzxi0v0yn4uaur92ubl6gmb9yk2f2t4ibfptty02th7a9q9oaifb7r3gbmpoo1peva2psm99hi1lbwzmia0nvf6d4fk8jipk040mhk7sp7e1gk8pdrbam7lz6lfyrryouhysgr37ms"  width="120"  maxlength="255"  placeholder=""  />
+		<label id="silinmeTarihiBasParamlbl" value="Silinme Tarihi" />
+		<datebox id="silinmeTarihiBasParam"  value="2006-11-16"  width="120"  placeholder=""  />
+		<datebox id="silinmeTarihiBitParam"  value="1997-5-7"  width="120"  placeholder=""  />
+	</window>
+</zk>

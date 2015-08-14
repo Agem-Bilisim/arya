@@ -1,108 +1,109 @@
 package tr.com.agem.arya.metadata.persistence.impl.xml;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
+import org.apache.commons.lang3.StringUtils;
 import org.codehaus.jackson.map.ObjectMapper;
 
-import tr.com.agem.core.metadata.model.IMetaData;
-import tr.com.agem.core.metadata.persistence.IMetaDataPersistence;
+import tr.com.agem.core.metadata.model.IMetadata;
+import tr.com.agem.core.metadata.model.MetadataTypes;
+import tr.com.agem.core.metadata.persistence.IMetadataPersistence;
+import tr.com.agem.core.property.reader.PropertyReader;
 
-public class MetadataPersistenceImplXml implements IMetaDataPersistence {
+public class MetadataPersistenceImplXml implements IMetadataPersistence {
 
-	private static final String MASTERMODULE = "master";
-	private static final String MASTERFORM = "master";
-//	private static final String XMLPATH = null;
+	private static final Logger logger = Logger.getLogger(MetadataPersistenceImplXml.class.getName());
 
 	@Override
-	public void saveMetaData(IMetaData metaData) {
+	public void saveMetadata(IMetadata metadata) {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
-	public IMetaData findMetaData(Long metaDataId) {
+	public IMetadata findMetadata(Long metadataId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void updateMetaData(IMetaData metaData) {
+	public void updateMetadata(IMetadata metadata) {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
-	public void deleteMetaData(Long metaDataId) {
+	public void deleteMetadata(Long metadataId) {
 		// TODO Auto-generated method stub
-
 	}
 
-	private IMetaData findWithName(String appName, String moduleName,
-			String formName) {
-		String xmlFileName;
-		if (moduleName != null && formName != null)
-			xmlFileName = appName + "/" + moduleName + "/" + formName + ".arya";
-		else if (formName != null)
-			xmlFileName = appName + "/" + MASTERMODULE + "/" + formName
-					+ ".arya";
-		else
-			xmlFileName = appName + "/" + MASTERMODULE + "/" + MASTERFORM
-					+ ".arya";
+	private IMetadata findWithName(String appName, String viewName) {
 
-		InputStream xmlStream = getClass().getClassLoader().getResourceAsStream(xmlFileName);
+		String xmlFilePath = findXMLFilePath(appName, viewName);
+		
+		logger.log(Level.INFO, "XML File Path: {0}", xmlFilePath);
+
+		InputStream xmlStream = getClass().getClassLoader().getResourceAsStream(xmlFilePath);
 
 		try {
+
 			BufferedReader reader = new BufferedReader(new InputStreamReader(xmlStream));
 			String line = null;
-			StringBuilder stringBuilder = new StringBuilder();
+			StringBuilder metadataStr = new StringBuilder();
 			String ls = System.getProperty("line.separator");
 
 			while ((line = reader.readLine()) != null) {
-				stringBuilder.append(line);
-				stringBuilder.append(ls);
+				metadataStr.append(line);
+				metadataStr.append(ls);
 			}
 
-			MetaDataXml metaData = new MetaDataXml();
-			metaData.setApplicationName(appName);
-			metaData.setModuleName(moduleName);
-			metaData.setFormName(formName);
-			metaData.setMetaDataType("XML");
-			metaData.setMetaData(stringBuilder.toString());
-			
-			System.out.println(metaData.getMetaData());
+			MetadataXml metadata = new MetadataXml();
+			metadata.setApplicationName(appName);
+			metadata.setFormName(viewName);
+			metadata.setMetadataType(MetadataTypes.XML);
+			metadata.setMetadata(metadataStr.toString());
 
 			reader.close();
+			
+			logger.log(Level.FINE, "Metadata: {0}", metadataStr.toString());
+			
+			return metadata;
 
-			return metaData;
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+
 		return null;
 	}
 
-	
-	@Override
-	public IMetaData findWithNameAsXML(String appName, String moduleName,
-			String formName) {
-		return findWithName(appName, moduleName, formName);
+	private String findXMLFilePath(String appName, String viewName) {
+		String tmp = (viewName == null || viewName.isEmpty()) ? PropertyReader.property("master.metadata.file") : viewName;
+		String path = StringUtils.join(tmp.split("\\."), File.separator);
+		return appName + File.separator + path + "." + PropertyReader.property("metadata.file.extension");
 	}
 
 	@Override
-	public IMetaData findWithNameAsJSON(String appName, String moduleName,
-			String formName) {
-		MetaDataXml metadata = (MetaDataXml) findWithName(appName, moduleName, formName);
-		metadata.setMetaDataType("JSON");
+	public IMetadata findWithNameAsXML(String appName, String viewName) {
+		return findWithName(appName, viewName);
+	}
+
+	@Override
+	public IMetadata findWithNameAsJSON(String appName, String viewName) {
+		MetadataXml metadata = (MetadataXml) findWithName(appName, viewName);
+		metadata.setMetadataType(MetadataTypes.JSON);
 		try {
-			metadata.setMetaData(new ObjectMapper().writeValueAsString(metadata.getMetaData()));
+			metadata.setMetadata(new ObjectMapper().writeValueAsString(metadata.getMetadata()));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		return metadata;
 	}
+
 }

@@ -1,0 +1,17 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="addCsvisyeriWindow">
+		<label id="csvIsyeriIdlbl" value="Kayıtlı Aktarımlar" />
+		<selectbox id="csvIsyeriId"  width="200"  >
+			<template>
+				<label value="3p0eieywo8" />
+			</template>
+		</selectbox>
+		<label id="tanimlbl" value="Tanım" />
+		<textbox type="text" id="tanim"  value="nhs0h3u3w3ylzk1iezfmmc8vkql6464ig2xlsnxpp65mb4vi6nrq8lxx8i94myp2r0bk2n9c9gmu21vmhhg7jk601isc7duuccy87j8nhs5k1v7p933eyab3ov4gxfxwspvbi7kbrnjafiprxdemut7dblce8bcfh09y7vpp0cidhqmkph8oayvo7rtmhfbf0ckszmhi13h06ihwoy94n5vghtmu4648a5w6yiagkxh53kgvkpitcivvnjf44bt"  width="200"  maxlength="255"  placeholder=""  />
+		<label id="kayitSayisilbl" value="Kayıt Sayısı" />
+		<decimalbox id="kayitSayisi"  value="-1575933308"  width="200"  placeholder=""  readonly="true"  />
+		<textbox visible="false" type="text" id="nitelik"  value="rx02kzxu57"  placeholder=""  />
+	</window>
+</zk>

@@ -10,7 +10,7 @@
 	</parent>
 	<artifactId>arya-metadata-persistence-xml</artifactId>
 	<name>arya-metadata-persistence-xml</name>
-	<url>http://maven.apache.org</url>
+	<url>http://www.agem.com.tr</url>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -18,23 +18,24 @@
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>tr.com.agem</groupId>
 			<artifactId>arya-core-api</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>tr.com.agem</groupId>
 			<artifactId>arya-metadata-xul</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-mapper-asl</artifactId>
 			<version>1.9.13</version>
 		</dependency>
-
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.4</version>
+		</dependency>
 	</dependencies>
 </project>

@@ -1,0 +1,20 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="listCsvcsgbuyeentegrasyonWindow">
+		<label id="subeParamlbl" value="Şube" />
+		<selectbox id="subeParam"  width="200"  >
+			<template>
+				<label value="46u51gaqtt" />
+			</template>
+		</selectbox>
+		<label id="donusDurumuParamlbl" value="Durum" />
+		<selectbox id="donusDurumuParam"  width="240"  >
+			<template>
+				<label value="2a2a9oy0z4" />
+			</template>
+		</selectbox>
+		<textbox visible="false" type="text" id="listeTurParam"  value="jmwlchk7rb"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriIdParam"  value="35apc3ig7r"  placeholder=""  />
+	</window>
+</zk>

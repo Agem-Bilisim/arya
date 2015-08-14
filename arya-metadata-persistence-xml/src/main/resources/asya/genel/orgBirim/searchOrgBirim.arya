@@ -1,0 +1,14 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="listOrgbirimWindow">
+		<label id="tanimParamlbl" value="Unvan" />
+		<textbox type="text" id="tanimParam"  value="5acz75e3qe86v2ndneftcxosn4tgqqs7nboo1jd2jt329uepnpkp5osxbd73toudh0gclye1xgtbt4ki05vyd3frfo494y9xadcbit603phngvcjtwo088jz03393nd06yu1dgn6t7codz0hg0m0sru1vxkk0vdepjcjepd1vagtph3o9jp4rtu19y4dlc3n75e0w52zpth7ossoigt2xm1uxxygq3934a344b9xzqe4ihwlsz4yot4uqs3xhjs"  maxlength="255"  placeholder=""  />
+		<label id="orgBirimTurIdParamlbl" value="Tür" />
+		<selectbox id="orgBirimTurIdParam"  >
+			<template>
+				<label value="hhfv8ak6yh" />
+			</template>
+		</selectbox>
+	</window>
+</zk>

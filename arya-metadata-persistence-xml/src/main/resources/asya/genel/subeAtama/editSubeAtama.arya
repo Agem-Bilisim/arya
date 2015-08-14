@@ -1,0 +1,15 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="addSubeatamaWindow">
+		<label visible="false" id="ilKodulbl" value="İl Kodu" />
+		<textbox visible="false" type="text" id="ilKodu"  value="g7h1cpnxal"  placeholder=""  />
+		<label id="ilAdilbl" value="İl Adı" />
+		<label id="subelbl" value="Şube" />
+		<selectbox id="sube"  width="240"  >
+			<template>
+				<label value="8zz3qq7rwv" />
+			</template>
+		</selectbox>
+	</window>
+</zk>

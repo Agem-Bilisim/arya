@@ -1,0 +1,18 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="listUyecsgbanalizWindow">
+		<label id="subeParamlbl" value="Şube" />
+		<selectbox id="subeParam"  width="140"  >
+			<template>
+				<label value="9fb7a37xwp" />
+			</template>
+		</selectbox>
+		<label id="orgutluParamlbl" value="Örgütlenme Var" />
+		<checkbox type="text" id="orgutluParam"  checked="true"  width="50"  />
+		<label id="isletmeParamlbl" value="İşyeri / İşletme" />
+		<checkbox type="text" id="isletmeParam"  checked="true"  width="50"  />
+		<label id="farkOlanlarParamlbl" value="Fark Olanları Göster" />
+		<checkbox type="text" id="farkOlanlarParam"  checked="false"  width="50"  />
+	</window>
+</zk>

@@ -1,0 +1,20 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="selectIscitcknosorgulamaWindow">
+		<label visible="false" id="kisiIdlbl" value="Kisi Id" />
+		<textbox visible="false" type="text" id="kisiId"  value="bjgdqxk2w1"  placeholder=""  />
+		<label id="tckNolbl" value="T.C. Kimlik No" />
+		<textbox type="text" id="tckNo"  value="dyjnleun6lf"  width="200"  maxlength="11"  placeholder=""  onChange="autocomplete("genel/isciTckNoSorgulama/autocomplete.do", "function:prepareTCKimlikNoParameterName()", 5, "setKisi")" />
+		<label id="adSoyadlbl" value="Ad Soyad" />
+		<textbox type="text" id="adSoyad"  value="kd4c066hfq"  width="200"  placeholder=""  readonly="true"  />
+		<label id="sgkNolbl" value="SGK Sicil No" />
+		<decimalbox id="sgkNo"  value="1150809366"  width="200"  maxlength="13"  placeholder=""  readonly="true"  />
+		<label id="cinsiyetlbl" value="Cinsiyet" />
+		<selectbox id="cinsiyet"  width="200"  readonly="true"  >
+			<template>
+				<label value="0jmlg57won" />
+			</template>
+		</selectbox>
+	</window>
+</zk>

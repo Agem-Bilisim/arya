@@ -1,0 +1,37 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="listAidatsatirWindow">
+		<textbox visible="false" type="text" id="aidatIdParam"  value="yzk86wwniw"  placeholder=""  />
+		<textbox visible="false" type="text" id="aidatIdsString"  value="4wpokc1x0r"  placeholder=""  />
+		<textbox visible="false" type="text" id="satirTurParam"  value="3q3kzyn4yx"  placeholder=""  />
+		<textbox visible="false" type="text" id="isletmeParam"  value="bxpue8n58o"  placeholder=""  />
+		<textbox visible="false" type="text" id="donemAyParam"  value="wec1a7gia5"  placeholder=""  />
+		<textbox visible="false" type="text" id="donemYilParam"  value="1jveuw6obv"  placeholder=""  />
+		<textbox visible="false" type="text" id="merkezIdParam"  value="tq31ndngbp"  placeholder=""  />
+		<label id="bildirimFarkiParamlbl" value="Üye/DA" />
+		<selectbox id="bildirimFarkiParam"  width="120"  >
+			<template>
+				<label value="k0la94y250" />
+			</template>
+		</selectbox>
+		<label id="istenCikislarParamlbl" value="İşten Çıkış" />
+		<selectbox id="istenCikislarParam"  width="120"  >
+			<template>
+				<label value="jwna3w76qi" />
+			</template>
+		</selectbox>
+		<label id="ucretsizIzinParamlbl" value="R/UI/A " />
+		<selectbox id="ucretsizIzinParam"  width="120"  >
+			<template>
+				<label value="u3j1nnchcq" />
+			</template>
+		</selectbox>
+		<label id="subeParamlbl" value="Şube" />
+		<selectbox id="subeParam"  width="120"  >
+			<template>
+				<label value="dp48ejjt5h" />
+			</template>
+		</selectbox>
+	</window>
+</zk>

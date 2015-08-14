@@ -1,0 +1,27 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="selectCsvcsgbisyerientegrasyonWindow">
+		<label id="dosyaIdlbl" value="Yüklenen Dosyalar" />
+		<selectbox id="dosyaId"  width="320"  >
+			<template>
+				<label value="6zsyzrg50y" />
+			</template>
+		</selectbox>
+		<button id="yukleBtn" label="Yükle"  onClick="dosyaYukle()"  width="90"  />
+		<label id="yillbl" value="Dönem" />
+		<selectbox id="yil"  width="70"  >
+			<template>
+				<label value="srvq3a8gco" />
+			</template>
+		</selectbox>
+		<label id="aylbl" value="Ay" />
+		<selectbox id="ay"  width="100"  >
+			<template>
+				<label value="af39aqyccd" />
+			</template>
+		</selectbox>
+		<label id="sonDonemlbl" value="Son Dönem" />
+		<checkbox type="text" id="sonDonem"  checked="false"  width="40"  />
+	</window>
+</zk>

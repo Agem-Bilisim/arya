@@ -1,0 +1,30 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="addSozlesmedonemWindow">
+		<textbox visible="false" type="text" id="sozlesmeDonemId"  value="vehmtltjzx"  placeholder=""  />
+		<textbox visible="false" type="text" id="sozlesmeId"  value="wjzf1aaus6"  placeholder=""  />
+		<label id="donemAylbl" value="Dönem Ay" />
+		<selectbox id="donemAy"  width="100"  >
+			<template>
+				<label value="qk5t092t5q" />
+			</template>
+		</selectbox>
+		<label id="donemYillbl" value="Dönem Yıl" />
+		<selectbox id="donemYil"  width="100"  >
+			<template>
+				<label value="p1754ukrtr" />
+			</template>
+		</selectbox>
+		<label id="anlasilanDegerlbl" value="Anlaşılan" />
+		<textbox type="text" id="anlasilanDeger"  value="pm6j6mvigcnbh7mhw3sg43czjqn9r349hiyaj7csfax9nlvt4rrl3t3233pqg744mqouh6r8lhbkvp0on0qsua05vhorphf88ut2hbejdx8rr9lfh351s8m94bsjvs4m09ctn70981p4d06hv42wnq5phj21i4uhsgag3w98hmht1zce8mud5c5h7uun6ib2rz30d09r44x49cxfgqo0zbxe8b3vjgqoydqb4mbrhywnbwmgoo1005r82glqws7"  width="500"  maxlength="255"  placeholder=""  />
+		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="wzn7qde5m1"  placeholder=""  />
+		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
+		<textbox visible="false" type="text" id="ekleyen"  value="9n3pg37znw"  placeholder=""  />
+		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="b6s2pxi10u"  placeholder=""  />
+		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="chl9djhs0a"  placeholder=""  />
+	</window>
+</zk>

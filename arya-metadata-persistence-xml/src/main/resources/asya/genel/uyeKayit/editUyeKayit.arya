@@ -1,0 +1,18 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="addUyekayitWindow">
+		<label visible="false" id="uye.uyeIdlbl" value="Uye Id" />
+		<textbox visible="false" type="text" id="uye.uyeId"  value="5ognbgtmjs"  placeholder=""  />
+		<label visible="false" id="uye.kisiIdlbl" value="Kisi Id" />
+		<textbox visible="false" type="text" id="uye.kisiId"  value="zwk4x6su9m"  placeholder=""  />
+		<label visible="false" id="uye.eklemeTarihilbl" value="Ekleme Tarihi" />
+		<textbox visible="false" type="text" id="uye.eklemeTarihi"  value="9flfzdbkda"  placeholder=""  />
+		<label visible="false" id="uye.ekleyenlbl" value="Ekleyen" />
+		<textbox visible="false" type="text" id="uye.ekleyen"  value="gkkgjqxp62pf30z5xlrolmzgogf3iaukqkzitg6cxpldg4fxhgce2me94pktdd2btjs9zh40iyft5ss7ocuvm7r63ghwimcmhf7thnl39rszqjykq76bnhen7s7bdc6qimvzy9vjrzg3xags72qvtbbffl1y34mr4j8hfloomamq4847b5euu66fzewl8mi1rlr6k3qo432j7uwpu4hg8x23s9eps1sf8mjvwkrd4owbk391hkfizxx70dah6hx"  maxlength="255"  placeholder=""  />
+		<label visible="false" id="uye.sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
+		<textbox visible="false" type="text" id="uye.sonGunlemeTarihi"  value="v9hwqcgo86"  placeholder=""  />
+		<label visible="false" id="uye.sonGunleyenlbl" value="Son Gunleyen" />
+		<textbox visible="false" type="text" id="uye.sonGunleyen"  value="wx8l4ngrr9bk5u6d691zva78ujyz69labhgaoymgqefz6whl8l6qj508xb33rugdt6yc0av45qikosoi3iikwjt5xxxy2uol6njnrnz7hmxiibvvrns17zojccxgzvmkmt9nal9houjasz2hss1offrrpl26cg2xhmivdsqrkoogbd8uemnmh6j3gv4gqo8of6m8zf6rz3cjbdvkt4wjwrvx9moqct4lwjf6csg3jws4fzo15mj65ch08vx70hp"  maxlength="255"  placeholder=""  />
+	</window>
+</zk>
