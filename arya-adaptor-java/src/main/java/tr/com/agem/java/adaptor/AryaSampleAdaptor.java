@@ -8,14 +8,7 @@ public class AryaSampleAdaptor extends AryaApplicationAdaptor{
 
 	public IAryaAdaptorResponse processRequest(IAryaRequest request) 
 	{
-		AryaAdaptorResponse returnVal = new AryaAdaptorResponse();
-		String username = "";
-		try {
-			username = (String) request.getParams().get("username");
-			returnVal.setData("{message:'Merhaba " + username + "'}");
-			returnVal.setViewName("helloView");
-		} catch (Exception e) {
-		}
+		AryaAdaptorResponse returnVal = (AryaAdaptorResponse) getMapper().map(request);
 		return returnVal;
 	}
 
