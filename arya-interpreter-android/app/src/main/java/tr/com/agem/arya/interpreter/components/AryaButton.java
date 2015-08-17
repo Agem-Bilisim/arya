@@ -29,12 +29,12 @@ public class AryaButton extends Button implements IAryaComponent {
             public void onClick(View v) {
                 AryaRequest request = new AryaRequest();
                 request.setAction("myAction");
-                request.setRequestType("D");
+                request.setRequestType(RequestTypes.DATA_ONLY);
                 Map<String, Object> params = new HashMap<String, Object>();
                 params.put("username", "alio");
                 request.setParams(params);
 
-                String url = "http://10.0.2.2:8080/arya/rest/arya";
+                String url = "http://192.168.1.191:8080/arya/rest/arya";
                 WebServiceConnectionAsyncTask connectionThread = new WebServiceConnectionAsyncTask(url, request, context);
 
                 String responseStr = null;

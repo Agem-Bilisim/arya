@@ -7,14 +7,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
-import org.xmlpull.v1.XmlPullParserException;
-
-import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 
 import tr.com.agem.arya.gateway.*;
 import tr.com.agem.arya.interpreter.*;
-import tr.com.agem.arya.interpreter.components.AryaWindow;
+
 
 
 public class MainActivity extends Activity
@@ -41,9 +38,9 @@ public class MainActivity extends Activity
                 mainLayout.addView(refreshButton);
 
                 AryaRequest request = new AryaRequest();
-                request.setAction("main");
-                request.setRequestType("V");
-                String url = "http://10.0.2.2:8080/arya/rest/hello";
+                request.setAction("master");
+                request.setRequestType(RequestTypes.VIEW_ONLY);
+                String url = "http://192.168.1.191:8080/arya/rest/hello/";
                 WebServiceConnectionAsyncTask connectionThread = new WebServiceConnectionAsyncTask(url, request, getApplicationContext());
                 try {
                     onGetEnd(connectionThread.execute().get());

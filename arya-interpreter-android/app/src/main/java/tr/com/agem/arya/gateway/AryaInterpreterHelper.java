@@ -24,8 +24,6 @@ public class AryaInterpreterHelper {
         httppost.setHeader("Accept", "application/json");
 
         try {
-
-            // Use toJSON method here. Edit later.
             StringEntity se = new StringEntity(request.toJSON());
 
             httppost.setEntity(se);
