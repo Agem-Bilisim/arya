@@ -31,7 +31,7 @@ public class JsEngineUtil {
 			// object.addToScope(scope);
 			// }
 
-			String script = "print('print smt')";
+			String script = "print('arya')";
 			// String script = "getElementById('61')";
 			// String script = "getElementsByName('volkan')";
 			// String script = "getElementsByClass('12A')";
