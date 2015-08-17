@@ -1,0 +1,70 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="addIsyeriWindow">
+		<label visible="false" id="isyeriIdlbl" value="Isyeri Id" />
+		<textbox visible="false" type="text" id="isyeriId"  value="hs3t9vax38"  width="80"  placeholder=""  />
+		<label visible="false" id="merkezIdlbl" value="Merkez Id" />
+		<textbox visible="false" type="text" id="merkezId"  value="klqe8xd5tw"  placeholder=""  />
+		<label visible="false" id="iletisimIdlbl" value="Iletisim Id" />
+		<textbox visible="false" type="text" id="iletisimId"  value="xsm0d1uzr1"  placeholder=""  />
+		<label id="unvanlbl" value="İşyeri Ünvanı" />
+		<textbox type="text" id="unvan"  value="5cgjbgzuooi2w3yleaf3445fyttu4vjpqr90r2pb18tgy2sjzg8oi2zfaw3wyucvdeg3g8leu3zch6cdxfqazhxgwprw0r0uunm9mullqv0kmy2juwdc6u1u30j9pvsstb2t0vrvl25boya1k987sglovth3mpx7iyx3bb9bziylc78yifny903fo9xm6algegajm3oa42ifmxf882zdxi0by2ufmhpboxp2ezlzddd4ifhdn2f83g0gqlkpafl"  width="245"  maxlength="255"  placeholder=""  top="56" />
+		<label id="kisaAdlbl" value="Kısa Ad" />
+		<textbox type="text" id="kisaAd"  value="bs2fjniqswl7kvus6lockjdzxfikk2ct9etba9lk7r1dzq5dagmdo7z17gxd99js52ryozj6lxo3ee1x7fpi41iae3agzg08zs1rwm5uaasrkcxi3yq089req3qkeew0jlhiahqn6iwohkaxzdjy5pqknl7hyonzogpsatbo8yoz293678iwmya2svig420vrxblxqwjuwvumgtkqo93nzc2eb0cn3wa8g5v2cvuyy791hotynij9i7a1kf6rwm"  width="110"  maxlength="255"  placeholder=""  top="56" />
+		<label id="vergiNolbl" value="Vergi No" />
+		<textbox type="text" id="vergiNo"  value="lrtdw1u7rw"  width="120"  maxlength="10"  placeholder=""  />
+		<label id="vergiDairesilbl" value="Vergi Dairesi" />
+		<textbox type="text" id="vergiDairesi"  value="zn2zjrwhr37jwk0plh9lxjs30h0ygqwyjjsp7ess3uz55ippps"  width="180"  maxlength="50"  placeholder=""  />
+		<label id="isyeriKategoriIdlbl" value="Kategori" />
+		<selectbox id="isyeriKategoriId"  width="120"  >
+			<template>
+				<label value="t8xeji2vqy" />
+			</template>
+		</selectbox>
+		<label id="calisanSayisilbl" value="İşçi Sayısı" />
+		<decimalbox id="calisanSayisi"  value="-179991752"  width="107"  maxlength="5"  placeholder=""  />
+		<button id="duzenleBtn" label="Düzenle"  onClick="isciSayisiDuzenle()"  width="65"  />
+		<label visible="false" id="aktifCalisanSayisilbl" value="Aktif Çalışan Sayısı" />
+		<textbox visible="false" type="text" id="aktifCalisanSayisi"  value="8cie2j0yt2"  placeholder=""  />
+		<label id="maasGunulbl" value="Maaş Günü" />
+		<selectbox id="maasGunu"  width="120"  >
+			<template>
+				<label value="36jl7ncmpq" />
+			</template>
+		</selectbox>
+		<label id="isyeriTurlbl" value="Kamu/Özel" />
+		<selectbox id="isyeriTur"  width="60"  >
+			<template>
+				<label value="5d301gmy9p" />
+			</template>
+		</selectbox>
+		<label id="isletmeTekAidatlbl" value="İşletme Tek Aidat" />
+		<checkbox type="text" id="isletmeTekAidat"  checked="true"  width="10"  />
+		<label id="kanunKapsaminaAlinisTarihilbl" value="Kan. Kap. Alınış" />
+		<datebox id="kanunKapsaminaAlinisTarihi"  value="2001-2-25"  width="124"  placeholder=""  />
+		<label id="kanunKapsamidanCikisTarihilbl" value="Kan. Kap. Çıkış" />
+		<datebox id="kanunKapsamidanCikisTarihi"  value="2010-6-25"  width="120"  placeholder=""  />
+		<label id="subelbl" value="Şube" />
+		<selectbox id="sube"  width="120"  >
+			<template>
+				<label value="2c4216gf46" />
+			</template>
+		</selectbox>
+		<label id="orgutlulbl" value="Örgütlü İşyeri" />
+		<checkbox type="text" id="orgutlu"  checked="true"  width="10"  />
+		<datebox id="orgutlenmeTarihi"  value="1994-3-17"  width="120"  placeholder=""  />
+		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="1v3x3aoiqv"  placeholder=""  />
+		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
+		<textbox visible="false" type="text" id="ekleyen"  value="woihit5g9o3mdh94xbe3waa0er7wy1jiizhz70wz87f5a3alqwarrp856x8iggqe7zwu14vsm9tkhgc6skmrprhfsr1ae0c82zd4556stwty7vbaimhsnof2kwmrtsk7p8vndkgarp4ughae233s41mdi27hosj83ma5ogajegoib1e5e3o0sxftejw4bcl3btnx7hozs8j9cj33kp98ssexzgdzb1mny44zhzdxaikbfbgemz8czbj6b1mwvy1"  maxlength="255"  placeholder=""  />
+		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="8xhfivnepc"  placeholder=""  />
+		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="7vchaiwtf7dy81bcdcuorfoumz4rwjxqwo8unt9py9dgh5p45m9hxbcik0ooib6wgo7gysmage5mifgttgd2iuix22qj9z2ee9xqngug4yujduj0p6ec48uzehyjey94xpy5fdqzf9u78ru258gjjkn365kh46mtmnqv1iyml4jznl2lofrhd76vjjovw5abdv9kts97it7acynir9nk8tuxdmuw43ssx97awyfhia0wx74oe058wmg77uqu21h"  maxlength="255"  placeholder=""  />
+		<label visible="false" id="calisaniVarlbl" value="Çalışanı var" />
+		<textbox visible="false" type="text" id="calisaniVar"  value="l39cktldnc"  placeholder=""  />
+		<label visible="false" id="merkezlbl" value="Merkez" />
+		<textbox visible="false" type="text" id="merkez"  value="m8ahv1hpj7"  placeholder=""  />
+	</window>
+</zk>

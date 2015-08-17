@@ -1,0 +1,32 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="addIscisayisiWindow">
+		<label visible="false" id="isciSayisiIdlbl" value="Isci Sayısı Id" />
+		<textbox visible="false" type="text" id="isciSayisiId"  value="z5mguneuov"  placeholder=""  />
+		<label visible="false" id="isyeriIdlbl" value="Isyeri Id" />
+		<textbox visible="false" type="text" id="isyeriId"  value="ks2meatha8"  placeholder=""  />
+		<label id="yillbl" value="Yıl" />
+		<selectbox id="yil"  width="100"  >
+			<template>
+				<label value="3eueiif88x" />
+			</template>
+		</selectbox>
+		<label id="aylbl" value="Ay" />
+		<selectbox id="ay"  width="100"  >
+			<template>
+				<label value="20yl29u82v" />
+			</template>
+		</selectbox>
+		<label id="isciSayisilbl" value="İşçi Sayısı" />
+		<decimalbox id="isciSayisi"  value="-201450949"  width="100"  maxlength="255"  placeholder=""  />
+		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="kautistifs"  placeholder=""  />
+		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
+		<textbox visible="false" type="text" id="ekleyen"  value="a8uxpbkmi7na7azjntw63luj2e5neko6luouj07yc4kzih3vttcf3i43lg0u3ly4wi41890ynsmrxmwbxt79g58m97unqus5y7se2nxn7v2htvzy2h1avy8qo2ww8tut3144fgcxm4jqaqdl4ot7s129xb2y9g0d7691k6jaisq34qsaoi8022s79v7iguycnc6w50c1mveyezqd1xdd2akfftb273cvy38cuqerzw0cmppd3zhytngtjznbcgm"  maxlength="255"  placeholder=""  />
+		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="h41ryu402j"  placeholder=""  />
+		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="gj1ytr6esnb8rf6553xczcq6gifzz0m4e89i5apjmsoepkxi5ejmy6nj52lv9t6ygir4jgllfrghlxal5xv07ovnbedf426bvqhmyru0bth3bpqyy348safinubqv125yzyie1x9kutec8txrgp70gmh4w7d2hbnbqx1j55zklqm6d97x6s58zd3cxx9965unfoi92nq7ia9jyxz0y7malekp8k4wsr0x5lc1yqqbqilamie33f9s74xfmeuwmt"  maxlength="255"  placeholder=""  />
+	</window>
+</zk>

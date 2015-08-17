@@ -1,0 +1,62 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="addCalisanWindow">
+		<label visible="false" id="calisanIdlbl" value="Calisan Id" />
+		<textbox visible="false" type="text" id="calisanId"  value="rv5c1svlju"  placeholder=""  />
+		<label visible="false" id="kisiIdlbl" value="İşçi" />
+		<textbox visible="false" type="text" id="kisiId"  value="q0rcgowwjc"  placeholder=""  />
+		<label visible="false" id="isyeriIdlbl" value="İşyeri" />
+		<textbox visible="false" type="text" id="isyeriId"  value="1p46cejqry"  placeholder=""  />
+		<label visible="false" id="isci.kisiIdlbl" value="Kisi Id" />
+		<textbox visible="false" type="text" id="isci.kisiId"  value="99dpkxv4cu"  placeholder=""  />
+		<label id="isci.kisi.tckNolbl" value="T.C. Kimlik No" />
+		<textbox type="text" id="isci.kisi.tckNo"  value="d0n4zza05oo"  width="100"  maxlength="11"  placeholder=""  onChange="autocomplete("function:prepareKisiUrl()", "function:prepareTCKimlikNoParameterName()", 5, "setKisi")" />
+		<label id="isci.kisi.adSoyadlbl" value="Ad Soyad" />
+		<textbox type="text" id="isci.kisi.adSoyad"  value="tuqtpe5797xtqe30w0mi0z3vnsiwrmdozs6ajpys89d1axh6hsezjgf6hksl38xglv0v7muu5haoaj3tcnxmiloo68hyoa257z5xuklw3v1rqz53exice62oulitvhagdsfjk7r8b3twa5zmaey4nixw9tackozovyd2h57ojpeepbwzbqcmwpda42m63oanltkscbr5tlxlwuiq7hoyiclr165k35vz49zvhwun7vxqi1byuzvgtb7eev0hluq"  maxlength="255"  placeholder=""  />
+		<label id="isci.cinsiyetlbl" value="Cinsiyet" />
+		<selectbox id="isci.cinsiyet"  width="200"  >
+			<template>
+				<label value="mzrv66drhj" />
+			</template>
+		</selectbox>
+		<label id="girisTarihilbl" value="Giriş Tarihi" />
+		<datebox id="girisTarihi"  value="2011-6-27"  width="120"  placeholder=""  />
+		<label id="cikisTarihilbl" value="Çıkış Tarihi" />
+		<datebox id="cikisTarihi"  value="1994-2-1"  width="120"  placeholder=""  />
+		<label id="unvanlbl" value="Ünvan" />
+		<textbox type="text" id="unvan"  value="jvk9p09u4o1c9dpm7idckucm1qa5dz94pebi9itcg8coewel4b4xq9jh8bija3h39vgkfbb5oaicnpqf00zsoyd84ky74peab1ddn0ukaeadgmt9xw8p003bx9uy8erqz0c2exwp3x8zowql6kyb7pxf0ejcp668lhtirunwrisy4vuh27uz3zzyv0gooptz93uyr68lz22h37qcnlacs7oe73979jt3sbxeirbgh87punva0blft9lepdy1nne"  width="120"  maxlength="255"  placeholder=""  />
+		<label id="cikisNedenilbl" value="İşten Çıkış Nedeni" />
+		<selectbox id="cikisNedeni"  width="200"  >
+			<template>
+				<label value="44k9un4w27" />
+			</template>
+		</selectbox>
+		<label id="aidatlbl" value="Aidat" />
+		<doublebox id="aidat"  value="0.3150263503454491"  width="120"  maxlength="18"  placeholder=""  />
+		<label id="dayanismaAidatilbl" value="Dayanışma Aidati" />
+		<checkbox type="text" id="dayanismaAidati"  checked="false"  width="20"  />
+		<label id="kapsamDisilbl" value="Kapsam Dışı" />
+		<checkbox type="text" id="kapsamDisi"  checked="true"  width="20"  />
+		<label id="sendikaTemsilcilbl" value="Temsilci" />
+		<selectbox id="sendikaTemsilci"  width="120"  >
+			<template>
+				<label value="52dw1kncov" />
+			</template>
+		</selectbox>
+		<label id="ucretsizIzindelbl" value="Raporlu/Ü.siz İzinli/Askı" />
+		<checkbox type="text" id="ucretsizIzinde"  checked="true"  width="20"  />
+		<label id="mevsimlikDaimilbl" value="Geçici/Mevsimlik" />
+		<checkbox type="text" id="mevsimlikDaimi"  checked="false"  width="20"  />
+		<label id="aciklamalbl" value="Açıklama" />
+		<textbox type="text" id="aciklama"  value="sb5eq30o9fvbe2mf9ncy6fv4eqcgc9hdyivz6jwags6e6iydk9di7idfgkjmj65mzdf43v80emv965fh61dorxodb00ruv0uw85wf9svy6390dyjw91gqvz16h1jw8f94kcoonlm14b1r4e56a1967b4tp3dptd09wach7uhijljvwnljr1hszylekifhefqrd9cur4sb8q90juishly9lbovzu30z4b8rnvn9mktya07jq19n9kc7zd5iryv8o4q5uypkosj6dka2oshedttwlhzk1jkhobhg7xi73ovgbwz6blxh0g4vebe6s0lybjzru48k3x2jbul5r09qk0xq5rm3bzpje1mmfjeq6iwfz4w2pvwhbaxgmpegwlkgszurylkdebktdns4pgfr7ledemjktyqqqw137nuojk3ov791x62s6zq989hcs5wj2sldml4hcukdfbs0rx4rdmgj4nvffcc4n76i27bnp48sq4z4vqakcz"  width="425"  maxlength="500"  placeholder=""  />
+		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="85n2iyrx8h"  placeholder=""  />
+		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
+		<textbox visible="false" type="text" id="ekleyen"  value="2i51hg562m78sq83g0fcriyax02g81rjy8e0pasyphgi1pyc2zhnqbu2s8eye89o0axrcj73fz9ppdtnaoic1t9x3jzjd96xael3gsy9qirmoxt8v9acsya3f3ccpiy7vqzniw9klil0mybbdheyqwwkqar5e9u4g1f0qdd49pdnjg10t16rxzpkogq1j6gyc8060t0dx1ste31vn6aa7ldbfndcenqjg6rg8hcvey9wtb6wt15g1g6iu59r9af"  maxlength="255"  placeholder=""  />
+		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="5nvvqqggv2"  placeholder=""  />
+		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="qhw23o7iyksop572p2yqdbahb5u9goz4jkmusb4rvezygvj944s7ejo37h13r4sugxdum4j6i04ot36noautxlmkhrprady45ha8l14mu6oivh5nb1vk8zrwoia891qyb881kojknkbo8dilxkg4hftoxfnfoym1ltst4o5bu54pezy60d0tdjfoul1webnpr96rd548auz7qfmpy9kr8247qdr40cu4l4tx7b9mf29tjuoi2njluhqthzq9y1d"  maxlength="255"  placeholder=""  />
+	</window>
+</zk>

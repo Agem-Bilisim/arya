@@ -1,0 +1,30 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="editOrgbirimWindow">
+		<textbox visible="false" type="text" id="orgBirimId"  value="4p45ao5w9i"  placeholder=""  />
+		<textbox visible="false" type="text" id="orgBirimTurId"  value="mlq09f8oxx"  placeholder=""  />
+		<textbox visible="false" type="text" id="ustOrgBirimId"  value="t9v3hedz6m"  placeholder=""  />
+		<label id="tanimlbl" value="Ünvan" />
+		<textbox type="text" id="tanim"  value="yzzbnxy0k3esyzu0y40wonqi5kn8v70maw9dk1yzb0zjjsv87z2ughutx1wm7n5wxi7olf3i1akp0yddstx7x5oli2b85894e1gksxvcui20sncuitmjby82cah6tvgzp0h99yftyk4l0tkncc46icy5gqhoa5e0yga7yq0mafr1k3p9mizs1bupwuvm5knwqxu6xag398umn2vv0utt6coiid5veu7mguhm780e32y5jgmy7970ehv9uwop922"  width="300"  maxlength="255"  placeholder=""  readonly="true"  />
+		<label id="orgBirimTurTanimlbl" value="Birim Tür" />
+		<label id="baslangicTarihilbl" value="Açılış Tarihi" />
+		<datebox id="baslangicTarihi"  value="2002-11-7"  width="120"  placeholder=""  />
+		<label id="bitisTarihilbl" value="Kapanış Tarihi" />
+		<datebox id="bitisTarihi"  value="2004-8-1"  width="120"  placeholder=""  />
+		<label id="yayinlalbl" value="Yayınlansın mı ? " />
+		<checkbox type="text" id="yayinla"  checked="false"  width="100"  />
+		<label visible="false" id="iletisimIdlbl" value="Iletisim Id" />
+		<textbox visible="false" type="text" id="iletisimId"  value="qgg06oypy0"  placeholder=""  />
+		<label visible="false" id="resimIdlbl" value="Resim Id" />
+		<textbox visible="false" type="text" id="resimId"  value="jj2a76lizo"  placeholder=""  />
+		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="zswdy223mu"  placeholder=""  />
+		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
+		<textbox visible="false" type="text" id="ekleyen"  value="0gpr23ggz1ktlolppvp5wxcvctvcwzg8h5igu1e2biehweqwkip8fp12hgn46jtg3te7lem3ir7sxs4m3x1ckasmbsv8cxaeol4o6zejwbo70idpm1q45wyrv652t5nuu3k4zofe5w8hk9nnmizokofhvqcde00nv43idk5s2c02zpcw5tgxhhbrlgd1uppvu41274s4i93umpmq5g6micy2gcvfm12g4ss93b0fxmd6oiik1ctnth8iszn2yk2"  maxlength="255"  placeholder=""  />
+		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="ijmeuyihd3"  placeholder=""  />
+		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="n7lbr4p5qzx2r5z5zki59j7xs7h746ms7cg014at476vektj1inw1ftkgumo69hgwt9i4u21si06krvmduevrcmu3j2ej83kpheqeyzegyjzegijcfemfcbm630wct43q8iga4z6ib1ratm5ki78z0z439gj5qc8j7er2g7n8joyg0jcbyu9k0dxwdmz9grtgh846h3c81zo7e8obfejx443s0ro4n0yxvqnnx794e7g8vuxiqzwnktwuxadv7k"  maxlength="255"  placeholder=""  />
+	</window>
+</zk>

@@ -1,0 +1,30 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="addUnvanlarWindow">
+		<label visible="false" id="gorevIdlbl" value="Görev Id" />
+		<textbox visible="false" type="text" id="gorevId"  value="9xe2joiqc4"  placeholder=""  />
+		<label id="tanimlbl" value="Tanım" />
+		<textbox type="text" id="tanim"  value="hm7ndvarh2tequdo132eo6ls2xvkrfj3rdhtyclpuffriyqttp15jjg92eom3jlrwfqew1p5fxkfs20208s84d6abdyxsxodb8plyeasymdusvgavw44oxacemyhw6elg4mexavy9w5kttae314cjuinuxorntxbjwuq9dy7bh4qkvaqioc00t5qum6e2n7q0axwdsxakz37cdwamntlgp23c1m2l717srdoa3pww8y3zlnx2vndnbi08ao40e8"  width="357"  maxlength="255"  placeholder=""  />
+		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="utns6f9vpn"  placeholder=""  />
+		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
+		<textbox visible="false" type="text" id="ekleyen"  value="e4ne4txngcq8ydis5vq2fajhiyf97d1hkl6gcwkny6scj70tmnyw78939x2w8k03dhcnhajf211jqk009t4lyx9zmwjshg1cjd6gatdgm0nsqcwczsmabzjt2sv8ptl4ppmuo2s177q8fvp9mt6rylvuqjshlakvyzeeq9m6ev0fmp3r73jzc65gsx5qkxepkm2k5qw7hjz8jatq66y7pg0xatbcntqu2fw8x1qgqwi8lx5voj93ohhgmrk3ldd"  maxlength="255"  placeholder=""  />
+		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="fogutsi7ib"  placeholder=""  />
+		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="hdzsktonhbf6jgt5gvabbrauhfvxpd72itsq9enclpeu818crgzlt054gkkuquxpo000h7r0284phr1qc3biwkzm8r6zc7f26ljp8yo9sdfe6c1u41d6su8ouqet9ftbx1c6ityxwb1yziaib9nuljtu0t7kv0ra4y86jlm6lfi04yyczjq67zwgueqjzgy67vayjyi6cb8pcvoue895mifqnvvm94027s8tuvswwh5g5jczsbljavp8vrdbu4z"  maxlength="255"  placeholder=""  />
+		<label id="aktifParamlbl" value="Aktif" />
+		<selectbox id="aktifParam"  width="152"  >
+			<template>
+				<label value="0n6r18i7bq" />
+			</template>
+		</selectbox>
+		<label id="amirParamlbl" value="Amir" />
+		<selectbox id="amirParam"  width="150"  >
+			<template>
+				<label value="p16m0ivg8q" />
+			</template>
+		</selectbox>
+	</window>
+</zk>

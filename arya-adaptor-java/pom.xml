@@ -10,7 +10,7 @@
 	</parent>
 	<artifactId>arya-adaptor-java</artifactId>
 	<name>arya-adaptor-java</name>
-	<url>http://maven.apache.org</url>
+	<url>http://www.agem.com.tr</url>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>

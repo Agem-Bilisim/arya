@@ -1,5 +1,8 @@
 package tr.com.agem.controller;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -15,15 +18,17 @@ import tr.com.agem.core.adaptor.AryaApplicationAdaptor;
 import tr.com.agem.core.adaptor.IAryaAdaptorResponse;
 import tr.com.agem.core.gateway.model.AryaRequest;
 import tr.com.agem.core.gateway.model.AryaResponse;
-import tr.com.agem.core.gateway.model.IAryaRequest;
-import tr.com.agem.core.metadata.IMetaDataEngine;
-import tr.com.agem.core.metadata.exception.AryaMetaDataNotFoundException;
-import tr.com.agem.core.metadata.model.IMetaData;
+import tr.com.agem.core.gateway.model.RequestTypes;
+import tr.com.agem.core.metadata.IMetadataEngine;
+import tr.com.agem.core.metadata.exception.AryaMetadataNotFoundException;
+import tr.com.agem.core.metadata.model.IMetadata;
 
 @Controller
 @RequestMapping("/rest")
 public class AryaGateway 
 {
+	private static final Logger logger = Logger.getLogger(AryaGateway.class.getName());
+	
 	/**
 	 * The requests from the client is redirected to the application adaptors 
 	 * where the request is mapped and converted as a service request.  
@@ -32,11 +37,10 @@ public class AryaGateway
 	AryaApplicationAdaptor applicationAdaptor;
 	
 	@Autowired
-	IMetaDataEngine metadataEngine;
-	
+	IMetadataEngine metadataEngine;
 	
 	/**
-	 * All request are handled in this method.
+	 * All requests are handled in this method.
 	 * 
 	 * @param applicationName
 	 * @param aryaRequest
@@ -44,39 +48,48 @@ public class AryaGateway
 	 * @param response
 	 * @return
 	 */
-	@RequestMapping(value="/{applicationName}",method={RequestMethod.GET,RequestMethod.POST})
+	@RequestMapping(value="/{applicationName}", method={RequestMethod.GET, RequestMethod.POST})
 	@ResponseBody
 	public String handleRequest(@PathVariable("applicationName") String applicationName,
-			@RequestBody AryaRequest aryaRequest, HttpServletRequest request,HttpServletResponse response)
+			@RequestBody AryaRequest aryaRequest, HttpServletRequest request, HttpServletResponse response)
 	{
 		
-		IMetaData metadata = null;
+		IMetadata metadata = null;
 		AryaResponse resp = new AryaResponse();
 		
-		// if request only ask for the view 
-		if (IAryaRequest.RequestTypes.VIEW_ONLY.equals(aryaRequest.getRequestType())) {
+		logger.log(Level.INFO, "Application: {0}", applicationName);
+		logger.log(Level.INFO, "AryaRequest: {0}", aryaRequest.toJSON());
+		
+		// if request asks only for the view, return <view> and <script> metadata
+		if (RequestTypes.VIEW_ONLY.equals(aryaRequest.getRequestType())) {
 			try {
-				metadata = metadataEngine.findWithNameAsXML(applicationName, null, null);
+				metadata = metadataEngine.findWithNameAsXML(applicationName, aryaRequest.getAction());
 			} catch (Exception e) {
-				throw new AryaMetaDataNotFoundException();
+				logger.log(Level.SEVERE, e.toString(), e);
+				throw new AryaMetadataNotFoundException();
 			}
 		} else {
-			
+
 			IAryaAdaptorResponse adaptorResponse = applicationAdaptor.processRequest(aryaRequest);
-			
+
 			// response includes view and interpreter asks for the view, prepare the view for response 
 			if (adaptorResponse.getViewName() != null 
-					&& IAryaRequest.RequestTypes.ALL.equals(aryaRequest.getRequestType())) {
+					&& RequestTypes.ALL.equals(aryaRequest.getRequestType())) {
 				metadata = metadataEngine.findWithNameAsXML(applicationName, adaptorResponse.getViewName());
 			}
-			
+
 			resp.setData(adaptorResponse.getData());
 		}
 
 		if (metadata != null) {
-			resp.setView(metadata.getMetaData());
+			resp.setView(metadata.getMetadata());
 		}
-		return resp.toString();
+		
+		String respStr = resp.toString();
+		
+		logger.log(Level.INFO, "AryaResponse: {0}", respStr);
+
+		return respStr;
 	}
 	
 }

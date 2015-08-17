@@ -27,7 +27,7 @@
     <property name="suffix" value=".jsp" />
   </bean>
   
-  <bean id="metadataEngine" class="tr.com.agem.metadata.impl.MetaDataEngineImpl">
+  <bean id="metadataEngine" class="tr.com.agem.metadata.impl.MetadataEngineImpl">
   	<property name="persistence" ref="aryaPersistence"/>
   </bean>
                  

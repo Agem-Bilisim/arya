@@ -1,0 +1,63 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="addIscicalisanWindow">
+		<label visible="false" id="calisanIdlbl" value="Uye Id" />
+		<textbox visible="false" type="text" id="calisanId"  value="96csyas1ar"  placeholder=""  />
+		<label visible="false" id="kisiIdlbl" value="Kisi Id" />
+		<textbox visible="false" type="text" id="kisiId"  value="ngshd00ug5"  placeholder=""  />
+		<label visible="false" id="calisan.calisanIdlbl" value="Calisan Id" />
+		<textbox visible="false" type="text" id="calisan.calisanId"  value="htpvybp48g"  placeholder=""  />
+		<label visible="false" id="calisan.kisiIdlbl" value="İşçi" />
+		<textbox visible="false" type="text" id="calisan.kisiId"  value="9vcd0azo23"  placeholder=""  />
+		<label visible="false" id="calisan.isyeriIdlbl" value="İşyeri" />
+		<textbox visible="false" type="text" id="calisan.isyeriId"  value="9hbvglm46g"  placeholder=""  />
+		<label visible="false" id="calisan.isyeri.isyeriIdlbl" value="Isyeri Id" />
+		<textbox visible="false" type="text" id="calisan.isyeri.isyeriId"  value="s1ip54m9gf"  width="80"  placeholder=""  />
+		<label id="calisan.isyeri.unvanlbl" value="İşyeri Ünvanı" />
+		<textbox type="text" id="calisan.isyeri.unvan"  value="dtg876wc1ytkf6jwi64bwip3en7pl5qu1srvbt3zk9vz5y49u9oq3jfrp7njsu3kdfs7wqa9cgu0esiwkycc6d8dwymt7znoai1ttx94t06hvq0wwviyeumhd7v112tk7o5sziwbz4tszizlaet0qb30df2ha5r3jp8tlpiym41tklfz27uegoo8otf1fxbuoen4jxdt3pxe68gqsl4n050z2pb6sa53sqp1u83cwehx61ebg4z4r6q8w0pwc0v"  width="245"  maxlength="255"  placeholder=""  top="56" />
+		<label visible="false" id="calisan.isci.kisiIdlbl" value="Kisi Id" />
+		<textbox visible="false" type="text" id="calisan.isci.kisiId"  value="kdyaj6g98y"  placeholder=""  />
+		<label visible="false" id="calisan.isci.kisi.kisiIdlbl" value="Kisi Id" />
+		<textbox visible="false" type="text" id="calisan.isci.kisi.kisiId"  value="zijf908vtz"  placeholder=""  />
+		<label id="calisan.girisTarihilbl" value="Giriş Tarihi" />
+		<datebox id="calisan.girisTarihi"  value="1997-4-4"  width="120"  placeholder=""  />
+		<label id="calisan.cikisTarihilbl" value="Çıkış Tarihi" />
+		<datebox id="calisan.cikisTarihi"  value="1999-5-1"  width="120"  placeholder=""  />
+		<label id="calisan.unvanlbl" value="Ünvan" />
+		<textbox type="text" id="calisan.unvan"  value="ww3xfk55fkf7n292ziuakdtnjuw4zfbgws020fxgyrvqmmrmcf7w3iwc6r58vprjwzth8i3key0s4nddnch9jzaxj1uw4dcbwo5h9fwri0qd2c6j8ita8mm7o9aeb421boy0dbvlrigoedbt6tzro5t9z60w6sukdmigbrg05o8u6aviq4zjsa1f8ge33q308yeenhzqzgs78r260j4sln9yps23kze5mevh1jmz3p6f6rttnn40aampwitovda"  width="120"  maxlength="255"  placeholder=""  />
+		<label id="calisan.cikisNedenilbl" value="İşten Çıkış Nedeni" />
+		<selectbox id="calisan.cikisNedeni"  width="200"  >
+			<template>
+				<label value="zg3f7poa12" />
+			</template>
+		</selectbox>
+		<label id="calisan.aidatlbl" value="Aidat" />
+		<doublebox id="calisan.aidat"  value="0.025275033537044522"  width="120"  maxlength="18"  placeholder=""  />
+		<label id="calisan.dayanismaAidatilbl" value="Dayanışma Aidati" />
+		<checkbox type="text" id="calisan.dayanismaAidati"  checked="true"  width="20"  />
+		<label id="calisan.kapsamDisilbl" value="Kapsam Dışı" />
+		<checkbox type="text" id="calisan.kapsamDisi"  checked="true"  width="20"  />
+		<label id="calisan.sendikaTemsilcilbl" value="Temsilci" />
+		<selectbox id="calisan.sendikaTemsilci"  width="120"  >
+			<template>
+				<label value="lwazgfkt3e" />
+			</template>
+		</selectbox>
+		<label id="calisan.ucretsizIzindelbl" value="Raporlu/Ü.siz İzinli/Askı" />
+		<checkbox type="text" id="calisan.ucretsizIzinde"  checked="true"  width="20"  />
+		<label id="calisan.mevsimlikDaimilbl" value="Geçici/Mevsimlik" />
+		<checkbox type="text" id="calisan.mevsimlikDaimi"  checked="false"  width="20"  />
+		<label visible="false" id="calisan.eklemeTarihilbl" value="Ekleme Tarihi" />
+		<textbox visible="false" type="text" id="calisan.eklemeTarihi"  value="0alzwpxnhr"  placeholder=""  />
+		<label visible="false" id="calisan.ekleyenlbl" value="Ekleyen" />
+		<textbox visible="false" type="text" id="calisan.ekleyen"  value="i7rh4nm83lm343zj1l23sdzsulf9elodkekqynfcaq9gbjra2274uuf9fffo8kv31y3zsvav7iu9acilb20qcauuy2rqsrb7b8j7f2j4sk64oaor0ik173t4a87229fnsro32idjo983qg47yhvva2k970sxhqghiwuzndxljs0fzs4v3g1exjincbxexx78rthme53gk5bf0l6egqziqu1973ib3ce4e525k0rp9tvccmb59sos6zzbfov52dt"  maxlength="255"  placeholder=""  />
+		<label visible="false" id="calisan.sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
+		<textbox visible="false" type="text" id="calisan.sonGunlemeTarihi"  value="6qdowl8p9t"  placeholder=""  />
+		<label visible="false" id="calisan.sonGunleyenlbl" value="Son Gunleyen" />
+		<textbox visible="false" type="text" id="calisan.sonGunleyen"  value="j2ebouyqtckoppyod17rqeglf0uw7cj8ns4r0prc5sutufcqmbralvsijckla1ba2rj6wiyxda5kxof5glqyjlhtsyd11ktfwlaoxyxm80qvh1y1e8rs0si6exrg45238d3y743vyaxqfu8uwbnjk4mgy2z9y38magsri6otgmdmwnc8raq3zwm1bos9tzl0a5dgqaxq9avyes3zm9sathbo67g7wps19c0hmpk8aa2r2k2b658ttvuh5j4gu91"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="calisan.calisanIsyeriYetki"  value="lv5yxob3le"  placeholder=""  />
+		<label id="calisan.aciklamalbl" value="Açıklama" />
+		<textbox type="text" id="calisan.aciklama"  value="kw1wcycider5aiwr9wz9vkw7gqwm4p32unrk4dirhwiz5ilasnxnilydmi3armgpz71dotd8pk2dusoi82d9vpfhafiydm6bf541wxtpu7khrwl3h04biq44x1kjqxj5r183fezfb07g1ggyoi9lzq3um3ym2rlqqmsaee1xs88y766f44tj54duk2jxlh3z46xo9yo7avyzj4h89ekx54uk2tkheiofpie3gv4qgwqbrk2wobl3ca3d99k5e2uaqlsgqkayugk2sp104f49rjeczeg3598paxyfshgdl33w2rfixgaqt1c1bofmfvm7tv1cu24aj0wg4aqmf4vkcuy5mey6bc3d0ykv0nce2cu04zfqzc29dt2f2p42ylhq63o8hxuzauxa44zlg7o64uy05o6jkwfav6pz36glpkjspzsgmaokldkna0jq1rpqzuq3o4witwtkmnfpq5jh8a65y9oldx7t78z6hes9hq5rx45obngu"  width="425"  maxlength="500"  placeholder=""  />
+	</window>
+</zk>

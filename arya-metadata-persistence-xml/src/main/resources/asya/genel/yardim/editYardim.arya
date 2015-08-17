@@ -1,0 +1,20 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="addYardimWindow">
+		<textbox visible="false" type="text" id="yardimId"  value="2wsxhn3l5e"  placeholder=""  />
+		<label id="yardimSozcuklbl" value="Anahtar Sözcük" />
+		<textbox type="text" id="yardimSozcuk"  value="dombz78hidbyviaudra3kjjpctjr7iyygrpitk2f4x59a1njtmkywwzdldxjqy2txnq2ny850imh2bk98f6za8lj641ppim7fzld"  width="200"  maxlength="100"  placeholder=""  />
+		<label id="aciklamalbl" value="Açıklama" />
+		<textbox type="text" id="aciklama"  value="e97onh16sjrwrvzyqjlz0biqefxwczap45qf9dsgzdntd5dqwl06e6r9jzk5qsd8r6lqiveez55672ytga57m8ec3g25xaiqmh1pxay2c34ah13dbypah21xyg35as9t5oid2jpiqslenro77pjfqf19dtk75nxjws6pvhnzpa3coz1migrbr7mkq2wpmuwdnpgyuh8su26rx2u0vhqhp8ohfyo6omsz7gty3r87f4j3pgzri9rdbrbmu37jbe2"  width="400"  maxlength="255"  placeholder=""  />
+		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="hi7vfkif2q"  placeholder=""  />
+		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
+		<textbox visible="false" type="text" id="ekleyen"  value="kpdhwsc39ngbjrt1cxalnrq6blgvidaua1gp6d7v3ldyhsznd3h0spb6102oc2n7zmwkr5ckc6knkqrchs85atw2vvfpgicqpkl4r6e0hgxkagz9y11zkr5zinu49gbxlooehay20e12zcxknpir7yurjns5saeyclsd6m4qfxbw0g6b8wq9qoyk47yicmi7g05jlf00w7rnshi9hzesyw2of8t42tymnsosn3901sansso2mxkdbt2pnhs2prk"  maxlength="255"  placeholder=""  />
+		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="yr10yfnpjg"  placeholder=""  />
+		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="nagkj2ubva8gl2err822cy094t7qz2v781tbna90w8k5ql8th8lcsdmaw3s3qdip07m5s5clc82r605rv4bojdttefkji5rte2ljm25e0wqejb7rus7ddxih5scpm0edjkcl4vufbff1mmc8pg2smn0096r6dsfgmpnisu2ouam5j1iapdzglhb4nyf29unejvo7k09h8rvxmrg89mnew4vr7qykkicbzs5f2lzma89ertuw2cuyp49cbdsobjo"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="metinId"  value="ipr2voxhk2"  placeholder=""  />
+	</window>
+</zk>

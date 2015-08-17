@@ -5,9 +5,9 @@ import javax.persistence.EntityManager;
 import org.hsqldb.util.DatabaseManagerSwing;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import tr.com.agem.core.metadata.persistence.IMetaDataPersistence;
+import tr.com.agem.core.metadata.persistence.IMetadataPersistence;
 import tr.com.agem.metadata.persistence.EntityManagerService;
-import tr.com.agem.metadata.persistence.model.MetaDataImpl;
+import tr.com.agem.metadata.persistence.model.MetadataImpl;
 
 public class Test2 {
 
@@ -15,17 +15,17 @@ public class Test2 {
 	public static void main(String[] args) {
 		
 //		EntityManager em = EntityManagerService.getInstance();
-//		MetaDataImpl impl = new MetaDataImpl();
-//		impl.setMetaDataXml("tirilaylay lom");
+//		MetadataImpl impl = new MetadataImpl();
+//		impl.setMetadataXml("tirilaylay lom");
 //		em.getTransaction().begin();
 //		em.persist(impl);
 //		em.flush();
 //		em.getTransaction().commit();
 //		ClassPathXmlApplicationContext appContext = new ClassPathXmlApplicationContext("applicationContext.xml");
-//		IMetaDataPersistence bean = appContext.getBean(IMetaDataPersistence.class);
-//		MetaDataImpl impl = new MetaDataImpl();
-//		impl.setMetaDataXml("<window><textfield></textfield></window>");
-//		bean.saveMetaData(impl);
+//		IMetadataPersistence bean = appContext.getBean(IMetadataPersistence.class);
+//		MetadataImpl impl = new MetadataImpl();
+//		impl.setMetadataXml("<window><textfield></textfield></window>");
+//		bean.saveMetadata(impl);
 		DatabaseManagerSwing.main(new String[] { "--url", "jdbc:hsqldb:mem:metadata", "--user", "sa", "--password", "" });
 		
 		

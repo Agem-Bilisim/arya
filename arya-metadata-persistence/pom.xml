@@ -10,7 +10,7 @@
 	</parent>
 	<artifactId>arya-metadata-persistence</artifactId>
 	<name>arya-metadata-persistence</name>
-	<url>http://maven.apache.org</url>
+	<url>http://www.agem.com.tr</url>
 	<properties>
 		<springframework.version>3.2.4.RELEASE</springframework.version>
 	</properties>

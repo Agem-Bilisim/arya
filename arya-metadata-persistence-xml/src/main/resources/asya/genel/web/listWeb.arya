@@ -1,0 +1,30 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="listWebWindow">
+		<label id="sayfaTurParamlbl" value="Tür" />
+		<selectbox id="sayfaTurParam"  width="200"  >
+			<template>
+				<label value="poc5eqqwf1" />
+			</template>
+		</selectbox>
+		<label id="baslikParamlbl" value="Başlık" />
+		<textbox type="text" id="baslikParam"  value="t6tays8dndic8hmzhpjy6haossg6whs1sz"  width="200"  maxlength="34"  placeholder=""  onChange="autocomplete("genel/sayfa/autocomplete.do", "baslikParam", 5, "setBaslik")" />
+		<label id="dilRequestParamlbl" value="Dil" />
+		<selectbox id="dilRequestParam"  >
+			<template>
+				<label value="qqh8pqsrvy" />
+			</template>
+		</selectbox>
+		<label id="subeParamlbl" value="Web Yayın Şube" />
+		<selectbox id="subeParam"  >
+			<template>
+				<label value="rs79dpsdgi" />
+			</template>
+		</selectbox>
+		<label id="onayBekleyenParamlbl" value="Onay Bekleyen " />
+		<checkbox type="text" id="onayBekleyenParam"  checked="true"  width="120"  />
+		<label id="yayinlananParamlbl" value="Yayında Olanlar" />
+		<checkbox type="text" id="yayinlananParam"  checked="true"  width="120"  />
+	</window>
+</zk>

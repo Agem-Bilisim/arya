@@ -1,0 +1,40 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="addRakipsendikayetkiWindow">
+		<label visible="false" id="rakipSendikaYetkiIdlbl" value="Rakip Sendika Yetki Id" />
+		<textbox visible="false" type="text" id="rakipSendikaYetkiId"  value="z7qwqb716l"  placeholder=""  />
+		<label id="unvanlbl" value="İşyeri Ünvanı" />
+		<textbox type="text" id="unvan"  value="klfba16d32ran0l7qenit843ky901kzby4cn1yishf3ot81yxvpdlysa2w23gsv6ujduqevsgmz9ip203qugctjlk8jggm3sj7u7w18qa2966ma47cdsfw0jmdzugirfdfwn0u3tebxzouvnbgulxdsc8kau9422js1xezqhvqdv4fqf6yu23bbgvbxw6wqlv9n2xzeyjaznf3jakv7wgptbdy7rkahokqm691yhdkif8f1m42fjx4a5bkkoya8"  width="260"  maxlength="255"  placeholder=""  onChange="autocomplete("genel/csgbIsyeri/autocomplete.do", "unvanParam", 5, "setCsgbIsyeri")" />
+		<label id="isvSendikasilbl" value="İşveren Sendikası" />
+		<selectbox id="isvSendikasi"  width="260"  >
+			<template>
+				<label value="beohxfic8k" />
+			</template>
+		</selectbox>
+		<label id="yetkiTespitTarihilbl" value="Yetki Tespit Tarihi" />
+		<datebox id="yetkiTespitTarihi"  value="2004-5-30"  width="120"  placeholder=""  />
+		<label id="yetkiBelgesiTarihilbl" value="Yetki Belgesi Tarihi" />
+		<datebox id="yetkiBelgesiTarihi"  value="2013-11-26"  width="120"  placeholder=""  />
+		<label visible="false" id="rakipSendikaIdlbl" value="Rakip Sendika Id" />
+		<textbox visible="false" type="text" id="rakipSendikaId"  value="72m4rp1c76"  placeholder=""  />
+		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="mtlx3pdh3p"  width="200"  placeholder=""  />
+		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
+		<textbox visible="false" type="text" id="ekleyen"  value="7mf1e4anam"  width="200"  placeholder=""  />
+		<label visible="false" id="sonGunlemeTarihilbl" value="Son Günleme Tarihi" />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="liwg5vs0ub"  width="200"  placeholder=""  />
+		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="ne2tir8gi5"  width="200"  placeholder=""  />
+		<label id="isciSayisilbl" value="İşçi Sayısı" />
+		<textbox type="text" id="isciSayisi"  value="b0flm1dna0"  width="90"  placeholder=""  />
+		<label id="uyeSayisilbl" value="Üye Sayısı" />
+		<textbox type="text" id="uyeSayisi"  value="q1iuirbgoz"  width="89"  placeholder=""  />
+		<label id="yeniOrgutlenmelbl" value="Yeni Örgütlenme" />
+		<checkbox type="text" id="yeniOrgutlenme"  checked="false"  width="20"  />
+		<label id="isletmelbl" value="İşletme" />
+		<checkbox type="text" id="isletme"  checked="true"  width="20"  />
+		<label id="aciklamalbl" value="Açıklama" />
+		<textbox type="text" id="aciklama"  value="ad2hj4o8jyeolkszy20mk609twh3qszt32zys7f0fkpms0cly4silel6tw2tvmf0iemqipv35jgcmx5bqznq1gsjriojpf3a45vshbkwqdbxkzst6nkzrbn5tp30qiz5wv38w9t0vr8l9p9yvs0zg8pkd74978yyiwiu8ukrmupwzbg7nqqkwihctjfgkox4mozq8iwolc6n76d4otnlvydxvpy7gztwwcmx6qodzf2hda8dx5hrozfa2xnlckobpiriny9gs6tmgm4me6r9ra5c7wq7b0rqj7nailcygwszhq3qvsq76zpvk8uneee8s7i05cbbgz6bn8bmhklxr9samuzgtf9szbzgxqzi6h4mr12668hgugqb2iqqon0t0taq9gwt801xp8yh09lvlljkz0e2i1fsbqs2rlemhrtegi4hy01yiszud48v3xh5ljg18ioada1j9utw7jid14plc339x0gboie6vi8s4oc0cp7jakj9whz80j34umzsusve6mtyvn37pqmegp959wjledltruxiyyezipeq8uhyvr4s2jn1s9rmsyc7rtv20y0fmcw95pq0ug0j1nhemn9wo4ly3m1cgmkdnrwz98nqgeyh040z333z9pbnnxnz60v6pl8norraz5d3f1jgrcrafniduoak7qb106lnqiby487wukvhxzyqqsjs50v7hf3yzzz9npeumvymdnz7yvozj650cwt82qhdyo2mwg4oq3rj0svtaddtwnlmuijb151zvgeebj66k878k2wjoc0sv9u50e1rubbfcbbwumvjjx8dz496t5b3zq51a1ehafgpdichstkrkjf1z8rt405ngwsv7yc1rn3hwhzhdo0nfh4qbphcu0toedixkmpz76dkrju8dz8uzvyurvj3v9putksiptezoghh2tfm1nj0hbn6we6vzwf46pk7puncc9cpr6k2b2xysriy8edjhd4szj2el1gbe1pawvet9hu3afitpz17ajc0ekhl5zd4y8oe5497mls7p0pwes5k9abpev9vkkqbpauc0zlcm88adtxfjvy4zvxab4fhnn3n5zi1ffe3xfo5bf3uonutcei99b25xlslovlnmy4mzbvj75bphxorbuio98fiwtwppaa4a87nlme01g9nqjuo2ctkd3k8p8trssxgbu6ft6g8k8pxwic22nys3cws3pxn15jx9knxdhe8hwjzuqmxqg76qnddchegs93d3t4rk97nzh39nn1f4nmce4zr5juzise3etenqsb1oylb29oe0asnznuz2suoxif8m6aqkkbztj0sso0lc4p7u0ffm4mr30qei5yksnq0p9mlmd4ge76c5bq5dhqnjo4fbwj04zpwqghq52p4qnlp68h192yehn43wjl8ajnsxnr3b4qoupi4w7j94lmix2z8upsagjgq5buzyo7o8tzz3ldbzutbw3cw533bty5obvnn10dsk2r2j4xidbpz4boqd546t29y7c67sdvtk86jwdv3r9ckvrey5tyd564q9ufj38qu2gf4it1gla8wgpe9p64u7ary0w2nvjdnmeoeq26z2mrobvhmjygyla2hk6a26wg5al317l708c6vs3e15t4tamownx15ah8zcydt5zud0lxcrrxn4cxaqdlh3gycu4c18oah42bopw46pt7vjnz3p9emoo4vmcx43oib448olqfa4v7p39uer92bs915i4229ht5tvcuciqgukmlcma8h9tylaj3r2r5e0zbcp48slh82rjox3bs5mwdfwz9v91s1s4fokq4ju898a30bwlgxia7sa1jggfc72wvgqim9y6spk5kqkfmcu886cxxhlm8rqy9aqzkgdh1j1hxx43ji2l1dkvu6f5g77gfmbx8iyr8kto9pvj7bephnjvv3egsod8hizd1r9l8i35riu16oi5oqwx042chtlkxbtmro73rfxsbzsjzzzpbac4h"  width="420"  maxlength="2000"  placeholder=""  rows="5" cols="40" />
+	</window>
+</zk>

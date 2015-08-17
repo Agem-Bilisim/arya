@@ -8,11 +8,10 @@
 	<packaging>pom</packaging>
 	<name>ARYA</name>
 	<url>http://www.agem.com.tr</url>
-
-
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<arya.version>1.0.0-SNAPSHOT</arya.version>
-		<javaVersion>1.7</javaVersion>
+		<java.version>1.7</java.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -62,8 +61,8 @@
 		<module>arya-adaptor-java</module>
 		<module>arya-metadata-generator</module>
 	</modules>
-	
-		<build>
+
+	<build>
 		<finalName>arya</finalName>
 		<plugins>
 			<plugin>
@@ -71,8 +70,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.1</version>
 				<configuration>
-					<source>${javaVersion}</source>
-					<target>${javaVersion}</target>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
 					<compilerArgument>-proc:none</compilerArgument>
 				</configuration>
 			</plugin>

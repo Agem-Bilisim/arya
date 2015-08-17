@@ -1,0 +1,15 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="listIsciaidatfarkanalizWindow">
+		<textbox visible="false" type="text" id="aidatIdParam"  value="68id7mtafp"  placeholder=""  />
+		<label id="istenCikislarParamlbl" value="İşten Çıkış Farkı" />
+		<checkbox type="text" id="istenCikislarParam"  checked="false"  width="10"  />
+		<label id="ucretsizIzinParamlbl" value="R/UI/A Farkı" />
+		<checkbox type="text" id="ucretsizIzinParam"  checked="true"  width="10"  />
+		<label id="tutarFarkiParamlbl" value="Tutar Farkı" />
+		<checkbox type="text" id="tutarFarkiParam"  checked="true"  width="10"  />
+		<label id="bildirimFarkiParamlbl" value="Bildirim Farkı" />
+		<checkbox type="text" id="bildirimFarkiParam"  checked="false"  width="10"  />
+	</window>
+</zk>

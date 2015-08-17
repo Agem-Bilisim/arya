@@ -1,0 +1,34 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="addIsverensendikaWindow">
+		<label visible="false" id="isverenSendikaIdlbl" value="Isveren Sendika Id" />
+		<textbox visible="false" type="text" id="isverenSendikaId"  value="s66ryf814i"  placeholder=""  />
+		<label id="kodlbl" value="Sendika Kodu" />
+		<textbox type="text" id="kod"  value="foggdrh273"  width="100"  maxlength="10"  placeholder=""  />
+		<label id="adilbl" value="Sendika Adı" />
+		<textbox type="text" id="adi"  value="rjva14a5augz6qepwcdah1qg3yw2dqu9jteu6orqahgs8kioz4g2rbym54rr2fwbvoeyeqbrnj2zuoa1xn6v1p60brtwd0rkv4n285udqze7jcpgld2npu0g7hz52agmshnjlyg45hjtkxtlza4m47nzn8wg0trrs8kk9s082l9bs2gcv6dutsakaqtr0kkodfax74o8ofxzxsgwpt1lqkrxwhp95vali7cjk1umvnysg6v6pgiu8osc5n8a04f"  width="208"  maxlength="255"  placeholder=""  />
+		<label id="aciklamalbl" value="Açıklama" />
+		<textbox type="text" id="aciklama"  value="lnw2s8s7sn5pzouqewliqnneq5abjd02ewutuak7ntlxvbgp45lt7qd9johlj8l6it6ox3arin0io2pov40hbygdqzzq2onh2f2wf32lzfolq8c35tjl2ap6g9ankmhdl8z7mxvusgmdy2iy440u63z02q9kq1cbd2tcx6ltyuqfas3oc9wydxvbx2ncfuz7wclhx6l89hgeliyr3tcdycwz452jvtbhra96pcf28x1acvk9zfyi1r8vyvt5rtw"  width="330"  maxlength="255"  placeholder=""  rows="5" cols="40" />
+		<label id="gruplbl" value="Grup Sayısı" />
+		<selectbox id="grup"  width="50"  >
+			<template>
+				<label value="1u9rv1pu29" />
+			</template>
+		</selectbox>
+		<label id="subelbl" value="Şube" />
+		<selectbox id="sube"  width="100"  >
+			<template>
+				<label value="e701jo86z8" />
+			</template>
+		</selectbox>
+		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="hnjjxq503e"  placeholder=""  />
+		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
+		<textbox visible="false" type="text" id="ekleyen"  value="30jkvh1l1j"  placeholder=""  />
+		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="amhr7j0qeu"  placeholder=""  />
+		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="5kzvz6z9yf"  placeholder=""  />
+	</window>
+</zk>

@@ -1,0 +1,17 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="listCsvcsgbuyebildirimWindow">
+		<textbox visible="false" type="text" id="isyeriIdParam"  value="9dhnat0zaa"  placeholder=""  />
+		<label id="subeParamlbl" value="Şube" />
+		<selectbox id="subeParam"  width="200"  >
+			<template>
+				<label value="fmsmjyrvni" />
+			</template>
+		</selectbox>
+		<label id="isyeriUnvanParamlbl" value="İşyeri Ünvanı" />
+		<textbox type="text" id="isyeriUnvanParam"  value="5ev66ki6c0h0l5zs7adgh9nd2q6dvv5i75j7q9ra8cey3cfs7lk2rp2rd1zykcv2u1n3g14by2xgjo4duvmkp274nrol1b12e1nxvfey6yhdf0vx1fm8nwn5ylcaf8eiru024pdx8rmmkn43upkkoyi1o680a3vf1nlmueh2gh5ftbu36a1c8y7rffbcdkssk9qgq1y82tp3n2ii9xwpkm8hdvxdtjp4sbjufrjfu227dttqbrdf0j3ewiil9wm"  width="200"  maxlength="255"  placeholder=""  onChange="autocomplete("function:prepareIsyeriUrl", "unvanParam", 5, "setIsyeri")" />
+		<label id="isyeriSgkKisaNoParamlbl" value="İşyeri SGK No" />
+		<textbox type="text" id="isyeriSgkKisaNoParam"  value="l21lhqt9v4hhu1w45wb06re5r69fp9iy3c"  width="200"  maxlength="34"  placeholder=""  onChange="autocomplete("function:prepareIsyeriUrl", "sgkKisaNoParam", 5, "setIsyeri")" />
+	</window>
+</zk>

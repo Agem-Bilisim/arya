@@ -1,0 +1,32 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="listYonetimlogWindow">
+		<label id="subeParamlbl" value="Şube" />
+		<selectbox id="subeParam"  width="120"  >
+			<template>
+				<label value="c5rfwokjw0" />
+			</template>
+		</selectbox>
+		<label id="modulParamlbl" value="Modül" />
+		<selectbox id="modulParam"  width="120"  >
+			<template>
+				<label value="333nf62823" />
+			</template>
+		</selectbox>
+		<label id="islemParamlbl" value="İşlem" />
+		<selectbox id="islemParam"  width="120"  >
+			<template>
+				<label value="v01tqgu1el" />
+			</template>
+		</selectbox>
+		<label id="zamanParamlbl" value="Zaman" />
+		<selectbox id="zamanParam"  width="90"  >
+			<template>
+				<label value="llcfu883sd" />
+			</template>
+		</selectbox>
+		<label id="kullaniciParamlbl" value="Kullanıcı" />
+		<textbox type="text" id="kullaniciParam"  value="qrxz7k1ug1ztgy4dak37ubbdlbrle9zrgx5m5a77l4hjnasbx4chclqw7zewk31ptlck64tx1um8qj4iodmftt7em0z405df4naotvqlf48okjkjf9dhygq3l7mayivp0f4iaefosp6cuj2byai8gx2b53flskcfyx4nyq39p4n42ab047jcbljuykrywo0x6pnmvz3fjktn6iy738av1nq8wqkc55eungur8l6itib96so0l513cxbk79vrgty"  width="80"  maxlength="255"  placeholder=""  onChange="autocomplete("autocomplete/autocomplete/autocomplete.do?tip=kullanici", "param", 5, "setKullanici")" />
+	</window>
+</zk>

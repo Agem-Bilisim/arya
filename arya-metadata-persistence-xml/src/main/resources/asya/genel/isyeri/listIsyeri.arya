@@ -1,0 +1,9 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="listIsyeriWindow">
+		<label id="kisaAdParamlbl" value="Kısa Ad" />
+		<textbox type="text" id="kisaAdParam"  value="o79n3m7ch5rwrkzcvo9fe6d1kkgf84eiwjm47290dilikhssl1i0jq8t0rv6hqhqhbbfxnoijs6v5tnq693hcoh65hfhnc8vqnifuhdybrze2vonpnt56qur0e6pzqoucs78ufmgvrfvrun76jzp96hzry5163vhy1g39fpoqh7rfn8nli70tp08xuf62hjtwy7bbjlnt37a8mf5v6e3pfqxn127kmfv7fcujf6vesu39yxnka3lrk3qc3n18bf"  width="260"  maxlength="255"  placeholder=""  />
+		<button id="kisaAdAtaBtn" label="Kısa Adları Düzenle"  onClick="kisaAdAta()"  width="140"  />
+	</window>
+</zk>

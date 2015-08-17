@@ -1,0 +1,15 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="listAidatnakilWindow">
+		<label id="donemParamlbl" value="Dönem Ay/Yil" />
+		<selectbox id="donemParam"  width="180"  >
+			<template>
+				<label value="c7fauv1cxx" />
+			</template>
+		</selectbox>
+		<label id="unvanParamlbl" value="İşyeri Ünvanı" />
+		<textbox type="text" id="unvanParam"  value="s4ctvia4a1opiztgrkft4kmqpwnuu9by7zquwdv507izja5v9bo9pmvqvaabna21c8fqwqmxkfok4jsve3u11oprahwlixeeyv8s4ibwnxfkvvqyix6vfdjtynl90c3t9i4x0r7a0l21q2362i8sn6d85ig7y01i63sdctp8gcy0aow91jkagbgdpm3imo1xpxsigylst9zzndr1k4t1j4qmupnqpmtqlowzcsbb6whilc29yfz0t1hg3hj8z0r"  width="180"  maxlength="255"  placeholder=""  onChange="autocomplete("genel/isyeri/autocomplete.do?merkezOlanParam=1&isletmeTekAidatParam=0", "unvanParam", 5, "setIsyeri")" />
+		<textbox visible="false" type="text" id="isyeriIdParam"  value="169zmg0bak"  placeholder=""  />
+	</window>
+</zk>

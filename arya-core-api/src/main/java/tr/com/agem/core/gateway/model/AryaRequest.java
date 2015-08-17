@@ -5,21 +5,19 @@ import java.util.Map;
 
 import org.codehaus.jackson.map.ObjectMapper;
 
-public class AryaRequest implements IAryaRequest, Serializable
-{
+public class AryaRequest implements IAryaRequest, Serializable {
 	
-	private static final long serialVersionUID = 1L;
-	
+	private static final long serialVersionUID = 722327548252141833L;
+
 	private Map<String,Object> params;
 	private String action;
-	private String requestType;
-	
+	private RequestTypes requestType;
 
-	public String getRequestType() {
+	public RequestTypes getRequestType() {
 		return requestType;
 	}
 
-	public void setRequestType(String requestType) {
+	public void setRequestType(RequestTypes requestType) {
 		this.requestType = requestType;
 	}
 
@@ -42,7 +40,6 @@ public class AryaRequest implements IAryaRequest, Serializable
 	}
 	
 	public String toJSON() {
-		
 		ObjectMapper mapper = new ObjectMapper();
 		try {
 			return mapper.writeValueAsString(this);
@@ -51,4 +48,5 @@ public class AryaRequest implements IAryaRequest, Serializable
 			throw new RuntimeException(e);
 		}
 	}
+
 }

@@ -1,0 +1,30 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="addKisiWindow">
+		<label visible="false" id="kisiIdlbl" value="Kisi Id" />
+		<textbox visible="false" type="text" id="kisiId"  value="68db0dsgow"  placeholder=""  />
+		<label id="adlbl" value="Ad" />
+		<textbox type="text" id="ad"  value="wzapv0d5vvtuw011y3a82wxs9getu612son3cpmx2k61ow8h78xwluwlsb6cxx3df26erx13r77x7ki8nz9iw4xasiwe1yblabfkv2fsaeep0mhf349afiygsfjm5jdbj0wjxilswe27wgk5myiwm9524qomuye6xge9x8dpgat1vs7qkpsggvkspougci8r88znztdxenvw94ir57m9aaxfilxt76991sjxurok31t523l3uycpkxymjxn5upn"  width="100"  maxlength="255"  placeholder=""  />
+		<label id="soyadlbl" value="Soyad" />
+		<textbox type="text" id="soyad"  value="pavdz8zxtq8ja1x4nijvuqsxisndwnc09m2ixz6e0n3wgjjv6l53mj7kyy4qis0qcit934nh6uagjozapglfj0zl64swj92rf47n5iu4awnw3sz9e2nne9yvfqynf80lsftoqbzyogosn2p8wb2s3e6ekhzoqjgqjzz2spaj5q1f5gfvsf3qyvm9qfmq30lt7kog91fet6kik0cegvm0rvyakfwuowzp0fhgz7btmpfkjax6022beby8uq983en"  width="100"  maxlength="255"  placeholder=""  />
+		<label id="tckNolbl" value="T.C. Kimlik No" />
+		<textbox type="text" id="tckNo"  value="k73my8qdjfi"  width="100"  maxlength="11"  placeholder=""  onChange="autocomplete("function:prepareKisiUrl()", "function:prepareTCKimlikNoParameterName()", 5, "setKisi")" />
+		<label id="unvanlbl" value="Ünvan" />
+		<textbox type="text" id="unvan"  value="2mfkgp3ogujbe7lyd7ydr1vlinxb58thffx4n09efyhrrvtuf730p70nuveqbkmbk4jwwfn2xuma7gc28dz8wczfe13zfjifp4emtzcz4bsq46g6rtqt0v35higa1lv1g0iqp6kioxpdx9pvd2w2lopbs5xmemj5vzveohspq3fw6d68updlv3s7iv294emceux4fh4e25ryfifedx98ygdghviltpzlel31wse008hx9cxjcbvkfjneetvigru"  width="100"  maxlength="255"  placeholder=""  />
+		<label visible="false" id="iletisimIdlbl" value="Iletisim Id" />
+		<textbox visible="false" type="text" id="iletisimId"  value="w7nfhhso0j"  placeholder=""  />
+		<label visible="false" id="resimIdlbl" value="Resim Id" />
+		<textbox visible="false" type="text" id="resimId"  value="kxjunjtc65"  placeholder=""  />
+		<label visible="false" id="kullaniciIdlbl" value="Kullanici Id" />
+		<textbox visible="false" type="text" id="kullaniciId"  value="9xgqagff6d"  placeholder=""  />
+		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="w0mlcn8t7e"  placeholder=""  />
+		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
+		<textbox visible="false" type="text" id="ekleyen"  value="c0cjhorp7snlifrrvhz7jtkpyzl1dkrjnmsbmegw2mxppcs55uxo7yzjguy75qij5rh44gq8h2dv4134kueg7m6coquiwfubvcjotyq70a20svc9p7582cn0zqqvuvm68cdeydezbw98krn4fersvffpovdgfvhhcxgh77zo30ar2r887ugkduaen0cyu29nnkzec2hln8wlsx4xvpjjdmdwx2ac00xk6obis09u7ynm3chjh8w73gult5w0xho"  maxlength="255"  placeholder=""  />
+		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="906b71r9wz"  placeholder=""  />
+		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="y4ynowbg243yxm9bkdh91wdx6cehnzew238n9hlt836cz233ha27g85eb134m11l036pgpo6mgiv44jyti5ojo4qfflghd860l6j0e0lnnhcnmyzj68s4sqhbqinpdns8wuugt1qtu034iny5u9f584n6cx653jix8opyfsfpqnbs2qw81md14lpewlx1tzk6fhuxilua6y9dlo7zfo5o8iivook5l4q935j10feq3p5tyh93tvov4emfgsatdd"  maxlength="255"  placeholder=""  />
+	</window>
+</zk>

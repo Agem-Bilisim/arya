@@ -1,0 +1,40 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="listGidenevrakWindow">
+		<label id="evrakDefterIdParamlbl" value="Defter" />
+		<selectbox id="evrakDefterIdParam"  width="300"  >
+			<template>
+				<label value="vwy40igxo4" />
+			</template>
+		</selectbox>
+		<label id="siraNoParamlbl" value="Sıra No" />
+		<textbox type="text" id="siraNoParam"  value="by3z2tvo92"  width="150"  placeholder=""  />
+		<label id="evrakNoParamlbl" value="Evrak No" />
+		<textbox type="text" id="evrakNoParam"  value="3csevcmytc"  width="150"  placeholder=""  />
+		<label id="gelisTarihiBasParamlbl" value="Gidiş Tarihi" />
+		<datebox id="gelisTarihiBasParam"  value="2003-2-7"  width="120"  placeholder=""  />
+		<datebox id="gelisTarihiBitParam"  value="2010-3-3"  width="120"  placeholder=""  />
+		<label id="evrakTarihiBasParamlbl" value="Evrak Tarihi" />
+		<datebox id="evrakTarihiBasParam"  value="2000-3-27"  width="120"  placeholder=""  />
+		<datebox id="evrakTarihiBitParam"  value="1996-6-8"  width="120"  placeholder=""  />
+		<label id="kimdenParamlbl" value="Kime" />
+		<textbox type="text" id="kimdenParam"  value="axqncggqzqxbn3ci0yu6zmu13vy17q8lf3ilmkr6kfn1wlhlt5z99jiwza1l329zw0ra7cypfkjjsjjgkp45lvl06bczl19guppeq4037ih1xbpsizg12h8psb2iazj7dxwg9gu0ldhai8g0m2qa0w9gbh938nnhlwn1vtjt90n4bq7curgwrin0927t1na9do8p1hox60vhgkqws243b6fdmutybu3fdm5719vgt0l6tc2xoaw2x34zc4j8c0f"  width="215"  maxlength="255"  placeholder=""  />
+		<label id="konuParamlbl" value="Konu" />
+		<textbox type="text" id="konuParam"  value="3i9blslvmdh0e3l7mvjaz3feb98ucrppe0am5ju54066jsbrrh2rgrxqoh382x5pmb8uo96c58o1vyis8hnfe4dsmhxti0kwmq5r9emhal7z3wqe6h9u8ivy5hpvbpyh36596y7ehg5mj6fs0qpw8hrm2d4hz9z1nnlgdivic9prvxtyvzypoqg4w01q4bjf1owcjwfu6w5a2b4h9at4hzsf031gezertmvsciolo4hbt1kwwc1r6em7gt79318"  width="215"  maxlength="255"  placeholder=""  />
+		<label id="aciklamaParamlbl" value="Açıklama" />
+		<textbox type="text" id="aciklamaParam"  value="yshmi8ngcdae6kkxfb8zwxqitqgwzph57cs0kabp6d54jv7wvjbyl4v5sdtng5sxfs86kfq6vkzad523gbprk4xxda3h9f055d4nkzc20b9xy49ncbxt2tw77bkiqbfn5hhnhixfkxqgwutcxj013blv625k35so47v0jcevf2ogto0rj4uzvtvdr3tqwkb0d3u7qs2om2gof9ge9pyaihpd9kiuplo0lddbyb5dxylljvk23q96891j1v5ohc8"  width="335"  maxlength="255"  placeholder=""  rows="5" cols="40" />
+		<label id="birimParamlbl" value="İlgili Birim" />
+		<selectbox id="birimParam"  width="120"  >
+			<template>
+				<label value="init5ntfeb" />
+			</template>
+		</selectbox>
+		<label id="ilgiliKonuParamlbl" value="İlgili Konu" />
+		<textbox type="text" id="ilgiliKonuParam"  value="x0excccyrro1pbo23d1ukdfb5lwcuoigzts5x4ydh3kg35uc1chebdgu76uv50bktbe7ycy1bmtblcis83rfnnrz6s7fjg8o6wh7a861xw04g1d1gl4z5nivwrgb0ypwqh45v1w5sgg1gvpwdbnnglj9lq8csci3l9o9vaiufbq4hy8wvhlvulg2ndw6jxv9cilujnu7eodeye89rmtb9kkh864e4x8rukaaiwixplav1zjo8vcbepqib37ykt5"  width="215"  maxlength="255"  placeholder=""  />
+		<label id="ilgiliSiraNoParamlbl" value="İlgili Sıra No" />
+		<textbox type="text" id="ilgiliSiraNoParam"  value="cn5nny5k35jcn8hrorspbpf4mchpynv248j9mt639t9kanhuqq09rug9oknj05pvogmcco02sdd94w1q13s33kf4oqixbtu07j0nnbyzzm40ll399y4kmoxjja2yrdhp2h3zc5nt3fmkog2l7hzkuy8thd2zbbtqg7nrng9wromin320quyydqim41zvt8fzxsawjao7ztpa8uslbgxig09tvwxjvrw1agmpisu0s76n43yoxwjtrjvcjarmam5"  width="215"  maxlength="255"  placeholder=""  />
+		<label id="gecikenlerlbl" value="Sadece İşlem Süresi Gecikenler ya da Son Günü Olanları Göster" />
+		<checkbox type="text" id="gecikenler"  checked="true"  width="20"  />
+	</window>
+</zk>

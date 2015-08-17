@@ -15,9 +15,14 @@ import org.w3c.dom.NodeList;
 public class AryaResponse implements IAryaResponse
 {
 	/**
-	 * meta-data of the view in XML notation
+	 * metadata of the view in XML notation
 	 */
 	private String view;
+	
+	/**
+	 * script metadata forms up the logic part of the view
+	 */
+	private String script;
 
 	/**
 	 * response data in JSON  
@@ -39,7 +44,14 @@ public class AryaResponse implements IAryaResponse
 	public void setData(String data) {
 		this.data = data;
 	}
+	
+	public String getScript() {
+		return script;
+	}
 
+	public void setScript(String script) {
+		this.script = script;
+	}
 
 	public void fromXMLString(String xmlString) {
 		
@@ -49,15 +61,21 @@ public class AryaResponse implements IAryaResponse
 			
 			NodeList nodeList = doc.getElementsByTagName("view");
 
-			assert( nodeList != null && nodeList.getLength() == 1);
+			assert(nodeList != null && nodeList.getLength() == 1);
 
-			this.view= nodeList.item(0).getTextContent();
+			this.view = nodeList.item(0).getTextContent();
 
 			nodeList = doc.getElementsByTagName("data");
 
-			assert( nodeList != null && nodeList.getLength() == 1);
+			assert(nodeList != null && nodeList.getLength() == 1);
 
 			this.data = nodeList.item(0).getTextContent();
+			
+			nodeList = doc.getElementsByTagName("script");
+			
+			assert(nodeList != null && nodeList.getLength() == 1);
+			
+			this.script = nodeList.item(0).getTextContent();
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -65,10 +83,9 @@ public class AryaResponse implements IAryaResponse
 		} 
 	}
 
-
 	public String toString() {
 
-		StringBuffer xmlString= new StringBuffer();
+		StringBuilder xmlString = new StringBuilder();
 
 		xmlString.append("<arya-response>");
 
@@ -86,6 +103,14 @@ public class AryaResponse implements IAryaResponse
 			.append("]]></data>");
 		} else {
 			xmlString.append("<data/>");			
+		}
+		
+		if (this.script != null) {
+			xmlString.append("<script><![CDATA[")
+			.append(this.script)
+			.append("]]></script>");
+		} else {
+			xmlString.append("<script/>");
 		}
 
 		xmlString.append("</arya-response>");

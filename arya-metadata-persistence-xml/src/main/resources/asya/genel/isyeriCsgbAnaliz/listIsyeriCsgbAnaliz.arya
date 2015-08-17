@@ -1,0 +1,25 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="editIsyericsgbanalizWindow">
+		<textbox visible="false" type="text" id="isyeriIdParam"  value="pio0u6l997"  placeholder=""  />
+		<textbox visible="false" type="text" id="listeTurParam"  value="mbb8qe05uo"  placeholder=""  />
+		<label id="ucretsizIzindeParamlbl" value="Raporlu/Ü.siz İzinli/Askı" />
+		<selectbox id="ucretsizIzindeParam"  width="120"  >
+			<template>
+				<label value="bb6n60wmys" />
+			</template>
+		</selectbox>
+		<label id="mevsimlikDaimiParamlbl" value="Mevsimlik/Daimi" />
+		<selectbox id="mevsimlikDaimiParam"  width="120"  >
+			<template>
+				<label value="d40apsadqx" />
+			</template>
+		</selectbox>
+		<label id="ayniIsletmeParamlbl" value="Aynı işletme Olanları Gösterme" />
+		<checkbox type="text" id="ayniIsletmeParam"  checked="true"  width="30"  top="60" />
+		<label id="tarihParamlbl" value="İşlem Tarihi" />
+		<datebox id="tarihParam"  value="1995-11-22"  width="120"  placeholder=""  top="20" />
+		<textbox visible="false" type="text" id="isletme"  value="x2qerd2fyc"  placeholder=""  />
+	</window>
+</zk>

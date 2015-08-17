@@ -1,0 +1,20 @@
+<?page title="DOCSYS" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="listIsciaidatfarkanalizWindow">
+		<label id="donemParamlbl" value="Dönem Ay/Yil" />
+		<selectbox id="donemParam"  width="150"  >
+			<template>
+				<label value="mtmpx3u1ox" />
+			</template>
+		</selectbox>
+		<label id="subeParamlbl" value="Şube" />
+		<selectbox id="subeParam"  width="240"  >
+			<template>
+				<label value="fc2twlv6yq" />
+			</template>
+		</selectbox>
+		<label id="isletmeParamlbl" value="İşyeri / İşletme Merkezleri" />
+		<checkbox type="text" id="isletmeParam"  checked="false"  width="50"  />
+	</window>
+</zk>

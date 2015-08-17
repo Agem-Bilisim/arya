@@ -11,7 +11,7 @@ import javax.xml.bind.Unmarshaller;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-import tr.com.agem.arya.metadata.persistence.impl.xml.MetaDataXml;
+import tr.com.agem.arya.metadata.persistence.impl.xml.MetadataXml;
 import tr.com.agem.arya.metadata.persistence.impl.xml.MetadataPersistenceImplXml;
 import tr.com.agem.arya.metadata.zul.impl.ButtonType;
 import tr.com.agem.arya.metadata.zul.impl.WindowType;
@@ -46,9 +46,9 @@ public class AppTest extends TestCase {
 
 		MetadataPersistenceImplXml xml = new MetadataPersistenceImplXml();
 
-		MetaDataXml mdxml = (MetaDataXml) xml.findWithNameAsXML("arya", null, null);
+		MetadataXml mdxml = (MetadataXml) xml.findWithNameAsXML("arya", null);
 
-		System.out.println(mdxml.getMetaData());
+		System.out.println(mdxml.getMetadata());
 
 		try {
 
@@ -57,7 +57,7 @@ public class AppTest extends TestCase {
 
 			Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
 
-			StringReader reader = new StringReader(mdxml.getMetaData());
+			StringReader reader = new StringReader(mdxml.getMetadata());
 
 			ZkType zk = ((JAXBElement<ZkType>) ((JAXBElement<ZkType>) jaxbUnmarshaller
 					.unmarshal(reader))).getValue();
@@ -91,7 +91,6 @@ public class AppTest extends TestCase {
 
 			}
 		} catch (JAXBException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
