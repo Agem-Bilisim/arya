@@ -15,16 +15,14 @@
 	<bean id="adaptorMapper" class="tr.com.agem.java.adaptor.AryaSampleMapper">
 		<property name="actionMap">
 			<map>
-				<entry key="action1" value="action1" />
-				<entry key="action2" value="action2" />
-				<entry key="action3" value="action3" />
+				<entry key="ilList" value="il.list" />
+				<entry key="ilceList" value="ilce.list" />
 			</map>
 		</property>
 		<property name="actionViewMap">
 			<map>
-				<entry key="action1" value="view1" />
-				<entry key="action2" value="view2" />
-				<entry key="action3" value="view3" />
+				<entry key="ilList" value="view1" />
+				<entry key="ilceList" value="view2" />
 			</map>
 		</property>
 	</bean>

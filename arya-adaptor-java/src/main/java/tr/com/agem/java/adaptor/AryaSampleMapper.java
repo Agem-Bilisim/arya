@@ -6,8 +6,6 @@ import java.util.Map;
 
 import javax.sql.DataSource;
 
-import org.codehaus.jackson.map.ObjectMapper;
-
 import tr.com.agem.common.AgemCrudService;
 import tr.com.agem.common.AgemUtils;
 import tr.com.agem.common.form.PagedList;
@@ -19,6 +17,7 @@ import tr.com.agem.db.connection.DBConnectionInterface;
 import tr.com.agem.db.dbms.PostgreSqlDBMS;
 import tr.com.agem.db.operations.BDBase;
 import tr.com.agem.sndk.genel.il.IlParameterForm;
+import tr.com.agem.sndk.genel.ilce.IlceParameterForm;
 
 public class AryaSampleMapper implements IAryaAdaptorMapper {
 	private Map<String, Object> actionMap;
@@ -27,9 +26,10 @@ public class AryaSampleMapper implements IAryaAdaptorMapper {
 	@Override
 	public Object map(IAryaRequest request, DataSource dataSource,
 			IAryaAdaptorConverter converter) {
-		Object action = getActionMap().get(request.getAction());
-		String actionView = getActionViewMap().get(request.getAction());
 
+		/*
+		 * Initialize
+		 */
 		try {
 			final Connection conn = dataSource.getConnection();
 			DBConnectionFactory.getInstance().setConnectionInterface(
@@ -49,40 +49,39 @@ public class AryaSampleMapper implements IAryaAdaptorMapper {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-		AryaAdaptorResponse returnVal = new AryaAdaptorResponse();
-
-		IlParameterForm p = new IlParameterForm();
-
-		// parametreler set edilecek.
-
-		// il service var mi? // yoksa AgemCrudService kullanilacak
-
 		AgemCrudService service = new AgemCrudService();
+		String data = null;
 
-		PagedList list = new PagedList();
-		list.setPageSize(-1);
-		list.setParameters(p);
-		
-		
-		list  = service.list(list);
+		String action = (String) getActionMap().get(request.getAction());
+		String actionView = getActionViewMap().get(request.getAction());
 
-		String data = AgemUtils.jsObject(list.getList());
-		
-//		ObjectMapper mapper = new ObjectMapper();
-//		
-//		mapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
-//		try {
-//			data = mapper.writeValueAsString(list.getList());
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//			throw new RuntimeException(e);
-//		}
+		/*
+		 * Mapping
+		 */
+		if (action.equalsIgnoreCase("il.list")) {
+			IlParameterForm p = new IlParameterForm();
+			PagedList list = new PagedList();
+			list.setPageSize(-1);
+			list.setParameters(p);
+			list = service.list(list);
+			data = AgemUtils.jsObject(list.getList());
+		} else if (action.equalsIgnoreCase("ilce.list")) {
+			IlceParameterForm p = new IlceParameterForm();
+			p.setIlKoduParam(new Long((String) request.getParams()
+					.get("ilKodu")));
+			PagedList list = new PagedList();
+			list.setPageSize(-1);
+			list.setParameters(p);
+			list = service.list(list);
+			data = AgemUtils.jsObject(list.getList());
+		}
 
+		/*
+		 * Response
+		 */
+		AryaAdaptorResponse returnVal = new AryaAdaptorResponse();
 		returnVal.setData(data);
-
 		returnVal.setViewName(actionView);
-
 		return returnVal;
 	}
 

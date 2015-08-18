@@ -33,11 +33,12 @@ public class OnClickEventListener implements EventListener {
 	@Override
 	public void onEvent(Event event) throws Exception {
 		AryaRequest request = new AryaRequest();
-		request.setAction("action2");
+		request.setAction("ilceList");
 		request.setRequestType(RequestTypes.DATA_ONLY);
 
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("username", "alio");
+		params.put("ilKodu", "35");
 
 		request.setParams(params);
 
@@ -65,8 +66,8 @@ public class OnClickEventListener implements EventListener {
 			List<Map<String,Object>> list = mapper.readValue(response.getData(), List.class);
 			for (Map<String,Object> o : list) {
 				Listitem li = new Listitem();
-				li.setLabel(o.get("ilAdi") +" - " + o.get("ilKodu"));
-				li.setValue(o.get("ilKodu"));
+				li.setLabel((String) o.get("ilceAdi"));
+				li.setValue(o.get("ilceKodu"));
 				li.setParent(lb);
 			}
 		}
