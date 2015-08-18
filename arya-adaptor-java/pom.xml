@@ -11,6 +11,16 @@
 	<artifactId>arya-adaptor-java</artifactId>
 	<name>arya-adaptor-java</name>
 	<url>http://www.agem.com.tr</url>
+	<properties>
+		<reference.project.name>asya.jar</reference.project.name>
+	</properties>
+	<repositories>
+		<repository>
+			<id>agem-maven</id>
+			<name>Agem Maven Repository</name>
+			<url>http://192.168.1.51:8081/nexus/content/repositories/thirdparty</url>
+		</repository>
+	</repositories>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -27,6 +37,28 @@
 			<artifactId>servlet-api</artifactId>
 			<version>2.5</version>
 			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>struts</groupId>
+			<artifactId>struts</artifactId>
+			<version>1.2.9</version>
+		</dependency>
+		<dependency>
+			<groupId>com.agem</groupId>
+			<artifactId>agem-display-tag</artifactId>
+			<version>1.1.3</version>
+		</dependency>
+		<dependency>
+			<groupId>com.agem</groupId>
+			<artifactId>agem-utils</artifactId>
+			<version>1.2.9</version>
+		</dependency>
+		<dependency>
+			<groupId>tr.com.agem.reference.project</groupId>
+			<artifactId>referenceproject</artifactId>
+			<version>1.0.0</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/reference-project/${reference.project.name}</systemPath>
 		</dependency>
 	</dependencies>
 </project>
