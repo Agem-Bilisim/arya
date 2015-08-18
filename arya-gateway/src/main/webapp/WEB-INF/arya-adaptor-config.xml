@@ -31,9 +31,26 @@
 
 	<bean id="adaptorConverter" class="tr.com.agem.java.adaptor.AryaSampleConverter" />
 
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName">
+			<value>org.postgresql.Driver</value>
+		</property>
+		<property name="url">
+			<value>jdbc:postgresql://192.168.1.53:5432/sndk</value>
+		</property>
+		<property name="username">
+			<value>sndk</value>
+		</property>
+		<property name="password">
+			<value>sndk</value>
+		</property>
+	</bean>
+
 	<bean id="applicationAdaptor" class="tr.com.agem.java.adaptor.AryaSampleAdaptor">
 		<property name="mapper" ref="adaptorMapper" />
 		<property name="converter" ref="adaptorConverter" />
+		<property name="dataSource" ref="dataSource" />
 	</bean>
 
 </beans>

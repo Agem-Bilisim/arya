@@ -9,13 +9,17 @@ import org.zkoss.zk.ui.Component;
 
 import tr.com.agem.arya.interpreter.zkoss.component.ZkossButton;
 import tr.com.agem.arya.interpreter.zkoss.component.ZkossCheckbox;
+import tr.com.agem.arya.interpreter.zkoss.component.ZkossCombobox;
 import tr.com.agem.arya.interpreter.zkoss.component.ZkossDatebox;
 import tr.com.agem.arya.interpreter.zkoss.component.ZkossLabel;
+import tr.com.agem.arya.interpreter.zkoss.component.ZkossListbox;
 import tr.com.agem.arya.interpreter.zkoss.component.ZkossTextbox;
 import tr.com.agem.arya.metadata.zul.impl.ButtonType;
 import tr.com.agem.arya.metadata.zul.impl.CheckboxType;
+import tr.com.agem.arya.metadata.zul.impl.ComboboxType;
 import tr.com.agem.arya.metadata.zul.impl.DateboxType;
 import tr.com.agem.arya.metadata.zul.impl.LabelType;
+import tr.com.agem.arya.metadata.zul.impl.ListboxType;
 import tr.com.agem.arya.metadata.zul.impl.TextboxType;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.interpreter.IAryaInterpreter;
@@ -59,6 +63,12 @@ public class AryaInterpreterZkoss implements IAryaInterpreter {
 				} else if (compStr.equalsIgnoreCase("datebox")) {
 					components.add(new ZkossDatebox().create(
 							(DateboxType) j.getValue(), parent));
+				} else if (compStr.equalsIgnoreCase("listbox")) {
+					components.add(new ZkossListbox().create(
+							(ListboxType) j.getValue(), parent));
+				} else if (compStr.equalsIgnoreCase("combobox")) {
+					components.add(new ZkossCombobox().create(
+							(ComboboxType) j.getValue(), parent));
 				}
 			} else
 				System.out.println("---> " + oo);
