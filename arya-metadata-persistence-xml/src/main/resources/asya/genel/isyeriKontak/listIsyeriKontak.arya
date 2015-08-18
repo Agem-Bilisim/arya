@@ -1,56 +1,56 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addIsyerikontakWindow">
 		<label visible="false" id="isyeriKontakIdlbl" value="Isveren Kontak Id" />
-		<textbox visible="false" type="text" id="isyeriKontakId"  value="kz4a2qtz0f"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriKontakId"  value="59nnjkbxrm"  placeholder=""  />
 		<label visible="false" id="isyeriIdlbl" value="Isyeri Id" />
-		<textbox visible="false" type="text" id="isyeriId"  value="akyrpaqlfh"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriId"  value="17bkpmx69q"  placeholder=""  />
 		<label id="unvanlbl" value="Ünvan" />
-		<textbox type="text" id="unvan"  value="ise4tu49iygzqlogv31p1xfopwmo6dyxjdahczra9xgt58jvxdoor8uqab6cwokgwc9jvi8jdk1vg4rbs2ijcqofqi61yv7ff1yeycdh994352559vahi6yabah6mguhiv3gky3vh8pf6cykff532oionigop59ekms8zhzduurpwcwpafahg4a05r7kzh4jm42u9080b3vzf9tr3r9b7yofydt8fszfmbxt7rxjo78fafvud6smw3azpwudrai"  width="100"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="unvan"  value="7kqsfrqejxcw8fbggb0jty64i4f2pzhu33e3df25kpkyjockknckl3p8e29n9ivqkcc07mh3ih2actpmj78xika7dswgbeh070n19vpe73up4l4b6ff9mq430crdfshy3xzgmmk7i99i6pzvzztsml56ws2nvbhx78o181fmb1atot8m0zry13gtseaporvohi7u05uanpp33sl0wz4gtbco8k6ztmglwxsdppdwowbueunor79tab37wcnx0mc"  width="100"  maxlength="255"  placeholder=""  />
 		<label id="adilbl" value="Ad" />
-		<textbox type="text" id="adi"  value="bass38e0f1hfa2ukjgdc7j573af7vdv5amqvaelb3jqvs37ilwcodgym9dq0yak80c6jzngkrtaddp4blu6ej7tx53boqerb6yk4v00as3o84ojlidkm132r3fsrvsye3n7pghrw1m9xfbf6thidix2n0pdmghktov8jfx74bl44tng8crza0tnfjh8dz9tg8bzx0qzx942cl0692loatnb2pgjfigl7oif32inn3rb9tuh40q1tq304tdqh3ip"  width="100"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="adi"  value="i8rid5mg8ohswicyvantxirbl4c0kmjvg2ytnob7auemxji2pfzshrxegcuhjb6xvs4els62uaq3303ru43j8dumyhxf6maq28r8p77k7k838qfgh4n9qmok3p5py849n9pz6drbmgupkl0br7zvf478hapw6o7ggztc1ohl7ifh98jz5534sb62mjrfu8kaiie2laq4uzv05gf3kqvpk12m3kuqi972dui2mfuufat93dt97q3xfwqj8eiir2n"  width="100"  maxlength="255"  placeholder=""  />
 		<label id="soyadlbl" value="Soyad" />
-		<textbox type="text" id="soyad"  value="jf0xv7yc6anngn0yxwvl6zckp4pvmkunex6gry2sip75xwobbiyptcrmdt603e51xa7ub6dx3dzqfogaophtrhsqw02xclv6hsvlc1s2wdo5yzh6fxjwkinlqackzxku88ildxbjrm8vrlafc31v3jbdnatzni3djcdvjbuk3e5oam1h3alpdoxo31zaeoqn7n7bhbltxcvzqiwd0fyc5ktpeiseof3laychspnafa8u0tkxnocdodrsopw3eqv"  width="100"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="soyad"  value="18ck7c0ccd3zx7ac3segsugzvdr3r81wg87chk54mdu0ryw5ehlg7fqk0eh1v9zzxli5ppm30j30bzj3aja0d5uq4m3g4rn09z3pf7m12re3a6y0rt31eh81h21ras6qsylntjux4c0pbzy0tichfhvzouvxozcmh19n2368xnj2zvzco1bhfnsvyx5zuh5juh1dft1dzsduh5w73nlqru7f1xnmt0seuijd61wdt7t91l2mcorae3vn6gu64e1"  width="100"  maxlength="255"  placeholder=""  />
 		<label id="iletisim.tellbl" value="Telefon" />
-		<textbox type="text" id="iletisim.tel"  value="ty8g44910yc6qjmgbwoc3l179hb1l8bt5d605cjnmu2puwfm2rx14xm08t3dr1gbw5fjrh7xn7xb8jqoisnb9j6zu82jad27i4bhsup3mhgmgugbn7ibi42492rkmme24w3bxn0w84c10ch3icrvuwqfj8mymh6kszm0pxyp2ho4ibeo1ju1phafn8krfkfw0b9cys1alyt0i3l5m0tdp2qihzwr4rt06zro1v7bnw6sapa40zz1wx6mdqvkmlc"  width="100"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="iletisim.tel"  value="uw85baxav64fnc8olmgwrp0pg4n5bruy8i7hnk3oszaopp5cf8uknnso25679b91b22u9bumflqetl40hjv7ogfx0c0e0cl7wia8xgfw9ugb07tgu0zh11ekr0i6o0df6wzkfa9ptjsquv5hm9abt1wp2vdpqytmmhl0z9si8ghaoubj3j3vmptrifi0kj2g0d7idqcqu5oeoz3yau8nj8p7aeocb9n43we1u0aye1arvzupeyzi3ypc3et8ofw"  width="100"  maxlength="255"  placeholder=""  />
 		<label id="iletisim.ceplbl" value="Cep Tel." />
-		<textbox type="text" id="iletisim.cep"  value="6k7oqpb6z28zsc9nf39pjzy53wjk45j3rxixoj7jbhkxgoqjaf0xqxrp3cjkullkyp2luvwar41bdggen8pvz3hggfjiyddehpekat2z37wq6e0j461pkxeo4w1eth24mfuvegguzjf9j26ou6uqnmub4vfxe7iguhyed0emy24whutnl7pfcocez0buhth45umwcrt91ihsjwepthbup41xwvr93ooh2615dno24q4glk4ex06nsx8c29xzz7r"  width="100"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="iletisim.cep"  value="fr6mh8kwi4m86u9fd0ehg44gb0gb85iedlifu4p5q9z5orxyp7kld5d6ga0kcspb9datg7zut1jn7js3i93duad02o6wwfx5kapjk7flrjjbdz2jwymzpnelafq153l4th6qwlk1ac4t5lpxyjbocv99s2cxpxtqy92uueni47wtjfv9qfkoasog0u3t2wmt17ir94vhahgzcnw31zi3rlazhz157zv02ec8tds43dc2yzr8ub9knm4hn4s5sst"  width="100"  maxlength="255"  placeholder=""  />
 		<label id="iletisim.fakslbl" value="Faks" />
-		<textbox type="text" id="iletisim.faks"  value="zn5tmek40nygpgzgar888w5qbms3bh7lau35en4hd1ysmyd9xt5fwm462gq8uhsimcxp16tm77fivpqo3305wg0d10evrwp3fop24h7o7xn5xs10kb0ouc3uox0yj4r4dghuabwmxj4o3wb6of0qua5qms5oh0ucvug24oik95p1yk7u2xamj84lxxb9x1pcjbqi59dkvam394770fe7dkyancshspp3v7vm5pzzv3jeg08dkxa7h57190u75fu"  width="100"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="iletisim.faks"  value="kurhm2r3qkskbrysnnylkqjlig5y45h3vd5ttl8f0lloy67spc8anog5fuvdobkhzflk54q5ophsa3sywve0pmd5jpumzk00cbedy5bwxxnn168eaioz5fioqvdpyeo3gihm3fxkztgz5nyxiitesnkfkqx680yr9npq1m2624ombe4v5uaj6at5yit9m6dje0fg0eh6jbiuzc53q7u8vwyazxi6dwtwcqziknhmhyapcs9l95u7f6b7f0jprm2"  width="100"  maxlength="255"  placeholder=""  />
 		<label id="iletisim.epostalbl" value="E-Posta" />
-		<textbox type="text" id="iletisim.eposta"  value="61a8itoe8pk02gphx0xrpev4rvfj9k7r03bvrtn6w8lm78agn6hi9g7hk9f2emiti2vinrhx2u9z0xnayni26gcqz35nizv03aysfde4ghq9b29e6rw3y9aqw9gf9uqzgv094z6aaa2b3kn9l2fpg8mqhvykfffz45k104mttut9o29v8gegwoy6z9xogaz4sogs8o9ekj9v24vol1mpqetdcai28c1lgoe3pgjd4msi2jezk0zu6l0csgdmvd1"  width="472"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="iletisim.eposta"  value="cdko28q8chwxscywhqj129ms4fy9l4xku7om5ut9k5mv7d6ag9u0iey2z1974abr7xraf0u0xjj72c4ve76ebipja8aykr6u5o0wc70orz5h1gsfhgigtdfwl5tdz0hnozojoiz37zhmwv3ioanugj0a32dd7t05vu74bvbo4xeaa7vc8fofkvcj41rmph7c6t1epo1zicm81lu9vq371is9pdajlerx699y6mz0mk2h8x3xlv6360y25js4766"  width="472"  maxlength="255"  placeholder=""  />
 		<label id="iletisim.adres1lbl" value="Adres (1)" />
-		<textbox type="text" id="iletisim.adres1"  value="jrcvdhv0tx70sae1ksvd9gxhyu15stkwu5iel6u9vquzfbpwlao75sn6hf74gqpp5vwlxurdynn9ad1z86tv6uy6anok7v88dhsis3l47hlg58ljiy4boe32ccluz2295q4yr0mbqouecsevele87g0cllipmsz1y3xpw4qxfzgcw2z8l9bxc48jmcrbftmfgrbql99epztyv05cbi3k2i9zy9sima37zvm61aoj1rf0frb1jpu34b396ddrzln"  width="472"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="iletisim.adres1"  value="aylvjhd3n8qygqiiosjxv9k0w1pn2rqm8qddyokc4q1l64ioyfode8kxxfy31py67ntdu5c23q1cn6nfbjpyspa9je69ooxy3l64gthtwsuq5t2pv6f0ea3kkged0u9igqj97wjyzz9o3zq9bssyc4fb2xd3g9kefld5crq7djtibd169cvptjx0o1jq8vjbmre430tmwpjoxul366wcy3fh5xs2yml8y64lbriapolp6kv9bun8ugrxztphjfg"  width="472"  maxlength="255"  placeholder=""  />
 		<label id="iletisim.adres2lbl" value="Adres (2)" />
-		<textbox type="text" id="iletisim.adres2"  value="aa62azivyuo79qohy66ofo16w645qvvlzatbn5zw9xd96yhk8wgh4ppfom9ev89tiij48vc6si313nff9s7g9cfqtpga905o3ntj8j96dg1r4fb7n34b8boawrzj9i1tjxyq6bhu2o4f9n3fmc78r8uv0qnb7ebht33n7162yio19wl3o17hbabt54yvfg9ft3ckznn9aq811dzovcl4r0t9c6orkghgvq8i9c4jwb4a9ezpihwed9hrkf07wbh"  width="472"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="iletisim.adres2"  value="ko9a5g2big9p9qajluyp1mq2w5rll6u2dqpx4bggpln668310wf5rtgzmz6sz43gzl94lkl7kl65i8lg8qfoxgw8wo7jyoqeg263128q8a7cajmhz25o8qw70usxzwrn9vbmgmbiyxlxp504suiffgypocpue4ykz2c5hn8r1b5cohhp3k9tbq0a7u96ih7etxidl241t6ezvsefleq88fb15ogigvlieuk9j2njm0s05ljs0aem9fr862m1oxe"  width="472"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="iletisim.ilceKodulbl" value="İlçe" />
-		<textbox visible="false" type="text" id="iletisim.ilceKodu"  value="v43bhz05cmlpa93kzypdnz"  maxlength="22"  placeholder=""  />
+		<textbox visible="false" type="text" id="iletisim.ilceKodu"  value="b1sbmh8dfovgubdgaaupm7"  maxlength="22"  placeholder=""  />
 		<label visible="false" id="iletisim.ilKodulbl" value="İl" />
-		<textbox visible="false" type="text" id="iletisim.ilKodu"  value="ys6xsjjlbw4z0ipr0il027"  maxlength="22"  placeholder=""  />
+		<textbox visible="false" type="text" id="iletisim.ilKodu"  value="nk1y0gvxvgor26b4b6fvll"  maxlength="22"  placeholder=""  />
 		<label id="iletisim.ilce.valuelbl" value="İl/İlçe" />
-		<textbox type="text" id="iletisim.ilce.value"  value="vcs95187ve"  width="288"  placeholder=""  onChange="autocomplete("genel/ilce/autocomplete.do", "dbParam", 5, "setIlIlce")" />
+		<textbox type="text" id="iletisim.ilce.value"  value="25rl1uplky"  width="288"  placeholder=""  onChange="autocomplete("genel/ilce/autocomplete.do", "dbParam", 5, "setIlIlce")" />
 		<label id="iletisim.postaKodulbl" value="Posta Kodu" />
-		<textbox type="text" id="iletisim.postaKodu"  value="8sizx"  width="100"  maxlength="5"  placeholder=""  />
+		<textbox type="text" id="iletisim.postaKodu"  value="baxe2"  width="100"  maxlength="5"  placeholder=""  />
 		<label id="kategorilbl" value="Kategori" />
 		<selectbox id="kategori"  width="102"  >
 			<template>
-				<label value="k7w61gh6dq" />
+				<label value="ydouw0t2l8" />
 			</template>
 		</selectbox>
 		<label id="iletisim.aciklamalbl" value="Açıklama" />
-		<textbox type="text" id="iletisim.aciklama"  value="iqvqgc5q7xwf12fmy0j0bpwb03mu0k3oro8mozjv2f4ymi0060gz89funuyq2b0j0ohdzlnilsshedb40623yxwabsk92rm778ycpwuz0yahrik8mxjdewbxl7i7hjir578qzkiyyslponurl1tsef1h8lv2ac3huu1b8v7voiplaxxg97m59qdcagvwpyyfunq0svoe2h6ejvakh9hbggg3pei9a8quoovsgsujkfzvp3hrm9uf9uiiiu0gejo"  width="552"  maxlength="255"  placeholder=""  rows="5"  cols="40"  />
+		<textbox type="text" id="iletisim.aciklama"  value="fs6w0s0euwxzsechpq10sov6t2fo47t1gad5miow74u30j2ceh5peuvm7ynoy0t2wircwtqvcpv0af25u3pxfojdvjhrhj6w73zrgnlwg6vf2u05g8z0veuw9sd7svjesq73evxa01n71f5m2i9i2tweg2aefwdl0ndjg0yhcykmq04uke5vd7urx46pryanu975bwmx7u4mhgyt0flyqhfwgforedxerwbnwaarilogmfetgzekrj8v0mr6aof"  width="552"  maxlength="255"  placeholder=""  rows="5"  cols="40"  />
 		<label visible="false" id="iletisim.iletisimIdlbl" value="Iletisim Id" />
-		<textbox visible="false" type="text" id="iletisim.iletisimId"  value="ah71wr3kdx"  placeholder=""  />
+		<textbox visible="false" type="text" id="iletisim.iletisimId"  value="qje2muuoel"  placeholder=""  />
 		<label visible="false" id="iletisimIdlbl" value="Iletisim Id" />
-		<textbox visible="false" type="text" id="iletisimId"  value="eyl06lisy9"  placeholder=""  />
+		<textbox visible="false" type="text" id="iletisimId"  value="2kgpdwooiw"  placeholder=""  />
 		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
-		<textbox visible="false" type="text" id="eklemeTarihi"  value="vmrill4ptw"  placeholder=""  />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="hv68bq250u"  placeholder=""  />
 		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
-		<textbox visible="false" type="text" id="ekleyen"  value="nvbtymv5s72nhqbivq3bc1uidds2t4pwbdtcw7aq3fs08betranvnw1em6fs3bnagmkh9d03jnwdf9dguapjzdj0yqu9signh3kuy69rtz2xy8wrgdf8c41zeg0nzbv6s7p5x4y218q6p84zs8cy7htnupzusz4jvb3q41awimgetiknay35f0ut6k9ovuovq7hfe3telww21okr0gutj1twpqcjosy1mywrv00v9amp8rlk4pbpu09ocmeo8hb"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="ekleyen"  value="12p50s6lk3qnisque15p1vh6kspeioyxv2d3s9f58k01scxqmkpnzr7gm3fvvl0eayteyt4qhm2e87zjpai6p4d1tdfm1ciumuxdd4msdaqwwna73665vedyvvk625jasfimahtkfjo4pmml00tlkos2igbl140zas32k2l5vdmdmmp5odh6w050koywwh5g5dk44px3p1uhxdt8fg4zow2mrg4y4gqg1je1pwf29ej9m0zwqyp1oixbh0l1k1a"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
-		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="971593yzjz"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="teivlox96z"  placeholder=""  />
 		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
-		<textbox visible="false" type="text" id="sonGunleyen"  value="tq5sjmkb3syd172u58n5lez53ayqbonn9jolokxg6r890q0oe6slt3kzcclk56qttfrxzercfpjzxq8ea8rvzvza2v8i32kk6oelu1oz52qlp8icxyrb0i0hqr5bg6ycnztuqsmc12mh6j0lysxlhqst7k9vid2bh137gns8jlvi9s86h1tqk9x6mewe8w23jol4qnzj6qtkmalevzy0azi8qoiw9uahidf5xr6g2z8na1sicw6hcbou5gqlnkk"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="gy9i0nbzqxvvcjw4aqucn7nkgibld4bkku0gvhz7cijezgbr9e0ywvs80g8y0z6iuvi1up6qt62sfjutq597ijhsbasaaox2odl5sabpolzx4y34zf2lz2v5j1iz392gdlnvbpv6a987mfk33liwtytczxvtrbww6ihfaikuis6s9f8pr6bnp1jn8k75aybjlkiuokgyh5s80tkguaafrcpzp0xnzpw3mbfwfp5sxdvk1fe792m8jb71f0ym0el"  maxlength="255"  placeholder=""  />
 	</window>
-</zk>
+</arya>

@@ -18,7 +18,7 @@ public abstract class ZkossComponent implements IAryaComponent {
 	@Override
 	public void setProperty() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override

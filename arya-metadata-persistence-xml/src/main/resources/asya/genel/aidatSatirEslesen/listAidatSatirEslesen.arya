@@ -1,22 +1,22 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listAidatsatireslesenWindow">
-		<checkbox type="text" id="istenCikislarParam"  checked="true"  label="İşten Çıkış Farkı"  onCheck=""  width="10"  />
-		<checkbox type="text" id="ucretsizIzinParam"  checked="true"  label="R/UI/A Farkı"  onCheck=""  width="10"  />
+		<checkbox type="text" id="istenCikislarParam"  checked="false"  label="İşten Çıkış Farkı"  onCheck=""  width="10"  />
+		<checkbox type="text" id="ucretsizIzinParam"  checked="false"  label="R/UI/A Farkı"  onCheck=""  width="10"  />
 		<checkbox type="text" id="tutarFarkiParam"  checked="false"  label="Tutar Farkı"  onCheck=""  width="10"  />
-		<checkbox type="text" id="bildirimFarkiParam"  checked="true"  label="Bildirim Farkı"  onCheck=""  width="10"  />
+		<checkbox type="text" id="bildirimFarkiParam"  checked="false"  label="Bildirim Farkı"  onCheck=""  width="10"  />
 		<label id="subeParamlbl" value="Şube" />
 		<selectbox id="subeParam"  width="140"  >
 			<template>
-				<label value="dd20di1718" />
+				<label value="gcuqtowihy" />
 			</template>
 		</selectbox>
-		<textbox visible="false" type="text" id="aidatIdsString"  value="rn6x360l5u"  placeholder=""  />
-		<textbox visible="false" type="text" id="aidatIdParam"  value="c57x3ee5q3"  placeholder=""  />
-		<textbox visible="false" type="text" id="isletmeParam"  value="o55pr0nh7b"  placeholder=""  />
-		<textbox visible="false" type="text" id="donemAyParam"  value="kr67aihd7f"  placeholder=""  />
-		<textbox visible="false" type="text" id="donemYilParam"  value="to4wf9f2o0"  placeholder=""  />
-		<textbox visible="false" type="text" id="merkezIdParam"  value="vjgusudv28"  placeholder=""  />
+		<textbox visible="false" type="text" id="aidatIdsString"  value="7j3t157b9m"  placeholder=""  />
+		<textbox visible="false" type="text" id="aidatIdParam"  value="6lyw1lmqoj"  placeholder=""  />
+		<textbox visible="false" type="text" id="isletmeParam"  value="sgu3e3gsin"  placeholder=""  />
+		<textbox visible="false" type="text" id="donemAyParam"  value="wkrfwblb38"  placeholder=""  />
+		<textbox visible="false" type="text" id="donemYilParam"  value="ficsm3lmf3"  placeholder=""  />
+		<textbox visible="false" type="text" id="merkezIdParam"  value="zhk554zgvv"  placeholder=""  />
 	</window>
-</zk>
+</arya>

@@ -1,77 +1,77 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listAidatmatrisWindow">
 		<label id="raporTurParamlbl" value="Rapor Türü" />
 		<selectbox id="raporTurParam"  width="240"  >
 			<template>
-				<label value="on12gglf7v" />
+				<label value="az88z2vbse" />
 			</template>
 		</selectbox>
 		<label id="listeTurParamlbl" value="Kaynak Liste" />
 		<selectbox id="listeTurParam"  width="240"  >
 			<template>
-				<label value="9si0rwyg51" />
+				<label value="mebcjj2iyw" />
 			</template>
 		</selectbox>
 		<label id="aidatTurParamlbl" value="Üye / DA" />
 		<selectbox id="aidatTurParam"  width="240"  >
 			<template>
-				<label value="7pjj62bult" />
+				<label value="8qaikkhg56" />
 			</template>
 		</selectbox>
 		<label id="donemParamlbl" value="Dönem Ay/Yil" />
 		<selectbox id="donemParam"  width="240"  >
 			<template>
-				<label value="ek5mpt67k4" />
+				<label value="zvnc8a305l" />
 			</template>
 		</selectbox>
 		<label id="donemBasParamlbl" value="Dönem Ay/Yil" />
 		<selectbox id="donemBasParam"  width="117"  top="75" >
 			<template>
-				<label value="0e47dc7gze" />
+				<label value="ewvq2wmklb" />
 			</template>
 		</selectbox>
 		<label id="donemBitParamlbl" value="Dönem Ay/Yil" />
 		<selectbox id="donemBitParam"  width="117"  top="75" >
 			<template>
-				<label value="jacin7x5if" />
+				<label value="iio3r4h1mr" />
 			</template>
 		</selectbox>
 		<label id="tutarAraliklbl" value="Tutar Aralık" />
 		<selectbox id="tutarAralik"  width="240"  top="100" >
 			<template>
-				<label value="lnqrntlpbu" />
+				<label value="qq5r13ob57" />
 			</template>
 		</selectbox>
 		<label id="turParamlbl" value="Liste Türü" />
 		<selectbox id="turParam"  width="240"  >
 			<template>
-				<label value="gce6j8z9tn" />
+				<label value="fv65c9ep5f" />
 			</template>
 		</selectbox>
 		<label id="subeParamlbl" value="Şube" />
 		<selectbox id="subeParam"  width="240"  >
 			<template>
-				<label value="ff1bm9fr7n" />
+				<label value="o1naplqtar" />
 			</template>
 		</selectbox>
 		<label id="ilKoduParamlbl" value="İl" />
 		<selectbox id="ilKoduParam"  width="117"  >
 			<template>
-				<label value="qurlv31pq7" />
+				<label value="5o1tee5oj6" />
 			</template>
 		</selectbox>
 		<selectbox id="ilceKoduParam"  width="117"  >
 			<template>
-				<label value="vz9hp3y424" />
+				<label value="pvwrmt5sws" />
 			</template>
 		</selectbox>
 		<label id="isyeriKategoriIdParamlbl" value="Kategori" />
 		<selectbox id="isyeriKategoriIdParam"  width="240"  >
 			<template>
-				<label value="acdigzormn" />
+				<label value="xc2715er61" />
 			</template>
 		</selectbox>
 	</window>
-</zk>
+</arya>

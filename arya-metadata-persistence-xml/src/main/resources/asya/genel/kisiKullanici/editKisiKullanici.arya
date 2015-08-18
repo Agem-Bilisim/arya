@@ -1,16 +1,16 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addKisikullaniciWindow">
 		<label visible="false" id="kisi.kisiIdlbl" value="Kisi Id" />
-		<textbox visible="false" type="text" id="kisi.kisiId"  value="qydx5vqdj6"  placeholder=""  />
-		<textbox visible="false" type="text" id="kullanici.kullaniciId"  value="sr6q9x5j6r"  placeholder=""  />
+		<textbox visible="false" type="text" id="kisi.kisiId"  value="qshhy6aj0r"  placeholder=""  />
+		<textbox visible="false" type="text" id="kullanici.kullaniciId"  value="3v2gra8yh0"  placeholder=""  />
 		<label id="kullanici.kullaniciAdilbl" value="Kullanıcı Adı" />
-		<textbox type="text" id="kullanici.kullaniciAdi"  value="qioctnvh6d"  width="200"  placeholder=""  />
+		<textbox type="text" id="kullanici.kullaniciAdi"  value="rsxkur7a36"  width="200"  placeholder=""  />
 		<label id="kullanici.parolalbl" value="Parola" />
-		<textbox type="password" id="kullanici.parola"  value="viom38ql31"  width="200"  placeholder=""  />
+		<textbox type="password" id="kullanici.parola"  value="gvaklhd0ga"  width="200"  placeholder=""  />
 		<label id="kullanici.parolaTekrarlbl" value="Parola (Tekrar)" />
-		<textbox type="password" id="kullanici.parolaTekrar"  value="0thfrwsste"  width="200"  placeholder=""  />
-		<checkbox type="text" id="kullanici.pasif"  checked="true"  label="Kulanıcı Pasif"  onCheck=""  width="30"  />
+		<textbox type="password" id="kullanici.parolaTekrar"  value="k52kmrfv15"  width="200"  placeholder=""  />
+		<checkbox type="text" id="kullanici.pasif"  checked="false"  label="Kulanıcı Pasif"  onCheck=""  width="30"  />
 	</window>
-</zk>
+</arya>

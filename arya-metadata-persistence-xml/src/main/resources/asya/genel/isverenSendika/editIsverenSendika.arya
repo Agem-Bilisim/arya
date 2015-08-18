@@ -1,34 +1,34 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addIsverensendikaWindow">
 		<label visible="false" id="isverenSendikaIdlbl" value="Isveren Sendika Id" />
-		<textbox visible="false" type="text" id="isverenSendikaId"  value="ntb3emgb8t"  placeholder=""  />
+		<textbox visible="false" type="text" id="isverenSendikaId"  value="d8algpcm12"  placeholder=""  />
 		<label id="kodlbl" value="Sendika Kodu" />
-		<textbox type="text" id="kod"  value="mt53wpal2m"  width="100"  maxlength="10"  placeholder=""  />
+		<textbox type="text" id="kod"  value="o21a94jq34"  width="100"  maxlength="10"  placeholder=""  />
 		<label id="adilbl" value="Sendika Adı" />
-		<textbox type="text" id="adi"  value="7iz44x3oui2nl2wdsmr76iu56e8h56nt98jwyny07s5l2olek85kzo1va8k5teqgjqsc1oiqcen4uuo49b3d1lup9s5le8l3snkmisyll9shgechbrxsfbay6abwk6juhjhbt1h4rgoni21kbxq9w3nxtix3aiwt5jfxuhll13ervb789rzt9lr0vhcdalg1823ghhujzmzpa0qnv7js3kwuva4n2agobsx3ldm66imkw7jw7h4lwyszyh4w77e"  width="208"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="adi"  value="u3qc4ntzwq0c287lyygxlfpcfqix6aly1lbob6sebq49s65yyzc84uv05fh3h2u3p5zy31atpsmpho5s27wiqyhubfxlhbojpa4ecw6nwsw7c3lmk680zo82solkx83xi8kbjaoqhfdvuq1epg89owrcuhrfd7874b2p3s58wbxiumkadlchk9nwfie6hlyrro59k60y068fcn7of1dp70f6w4e2i5mz3136mja867qrwctql1ltetsx5pfmn1o"  width="208"  maxlength="255"  placeholder=""  />
 		<label id="aciklamalbl" value="Açıklama" />
-		<textbox type="text" id="aciklama"  value="36udfgxuqdul8hmcf9w00pxm7bbxldycyvny4xxzbl6hiyazvwv36ep766zr954h2wz94f8gtx3xahfruw97j7cpowtht0s9ddy22n7pklrfjf18jq752vtdxwu49tkoc5d4kiyys2sc2z3j2hfk4oz8dr8gg7m68wv8u2oj982fmjqarpsqot7xsg18quzsfzkxp4vcbtblcym7eryc7txkqbl9omvw7tgpxopeij1ynzj4ffeeoespztyryuq"  width="330"  maxlength="255"  placeholder=""  rows="5"  cols="40"  />
+		<textbox type="text" id="aciklama"  value="x78nsqw3iviyt323lp0x73fdrl71rwarukfdcj52c4rit4pchkamhojjixxgsen862kcy5tcyketsvghaery3551f9bkybqedoiycx5s0a0z5w464af2s1ws3tptoq4en46ao9ojapskskci75e7sfh0otnzeg0jw8qkmjsgfq5wu6itj45rkafg3g1y9v7pfpo4xb2sl9psfiggr0q8jbfwcfwa4d5e27mahfdi2psii1ivh8b06s9lzqnnn1d"  width="330"  maxlength="255"  placeholder=""  rows="5"  cols="40"  />
 		<label id="gruplbl" value="Grup Sayısı" />
 		<selectbox id="grup"  width="50"  >
 			<template>
-				<label value="8afctpifcu" />
+				<label value="cv9qmvt3b8" />
 			</template>
 		</selectbox>
 		<label id="subelbl" value="Şube" />
 		<selectbox id="sube"  width="100"  >
 			<template>
-				<label value="ugpscof2z3" />
+				<label value="ss3zad9v2z" />
 			</template>
 		</selectbox>
 		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
-		<textbox visible="false" type="text" id="eklemeTarihi"  value="zcq2sf56pj"  placeholder=""  />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="t88drk1y5r"  placeholder=""  />
 		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
-		<textbox visible="false" type="text" id="ekleyen"  value="zjr6gbwtll"  placeholder=""  />
+		<textbox visible="false" type="text" id="ekleyen"  value="c0zc0zoaoh"  placeholder=""  />
 		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
-		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="6nhuvyfbrn"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="eh0mjzhlyb"  placeholder=""  />
 		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
-		<textbox visible="false" type="text" id="sonGunleyen"  value="25wqi1yyc4"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="4mdtf21ug5"  placeholder=""  />
 	</window>
-</zk>
+</arya>

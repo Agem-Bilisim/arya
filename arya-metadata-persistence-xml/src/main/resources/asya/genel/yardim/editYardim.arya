@@ -1,20 +1,20 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addYardimWindow">
-		<textbox visible="false" type="text" id="yardimId"  value="548ax5vw75"  placeholder=""  />
+		<textbox visible="false" type="text" id="yardimId"  value="felzgf9eov"  placeholder=""  />
 		<label id="yardimSozcuklbl" value="Anahtar Sözcük" />
-		<textbox type="text" id="yardimSozcuk"  value="c9ica42ml0aytj2i24ieq12c0nq2dkq7mjw964ex6vwqfrub8gjb9a62bl56iuth1cdqxnf096qafwdmcm41e4p7rqfshm4a0z0k"  width="200"  maxlength="100"  placeholder=""  />
+		<textbox type="text" id="yardimSozcuk"  value="xja6dijfd7wqyzmogjrrbwxbikrt99prqchxfopriwb3hv31v31vhebvqenq48ynostz5vgwal94i9ztocnft35biygcoutz6qi3"  width="200"  maxlength="100"  placeholder=""  />
 		<label id="aciklamalbl" value="Açıklama" />
-		<textbox type="text" id="aciklama"  value="0ai02tfkqs6ewkvybstbu3iueslbd5olajbkdrh3imq42jgxftw8mvsjaxqzbqia08p1ylsrf3xw8qhxn3mx9tj3sgzb5x7jgp1qhzmc4tjdk7fw5qds041y89my4g8gtozk5to6l3jbzgjdtniq3hlon1t5k5vycvaq4mjkz9ejda0kul86m4whxvkz5dyn4dnp0fmo1zrdn5acggdwp9sp9fcdjswsyia8jct53yrwy5pb84218fm4nhxn6di"  width="400"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="aciklama"  value="gr67qd989aycoltt4vra4slrfh1dcjlfwsub0xok6w882f2r6melivzlzpmai3xp560df9u91dgcuyrj71ka70lt58ssl6vfn2jssgy9po0t4dr3uia8crk7orzqwvjvhid8tjwt3xnx9lnww7448vjm3fa5bjou44l2oxehbcxsvymu5f75v5bc9zrse9j8c7zucopt51eslb5x1ul4l8snv7xvyi3pk7biixbp01izwxopb4z3behk5bwbaa5"  width="400"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
-		<textbox visible="false" type="text" id="eklemeTarihi"  value="ign2ozd0ru"  placeholder=""  />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="hyo0w5r8sx"  placeholder=""  />
 		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
-		<textbox visible="false" type="text" id="ekleyen"  value="969dlpgd2vp7b72v2zve96btjktdmzulxjrbq2bslfrptqvudh8r0hhe27m5mmbp8jnosxwfargot3f0a0g86wiqxk7jq6sh8agnv5zxbq7yj6i0q4gvfy8uezp32yeyocne3qo4au14avoq08n2e3tdr8k1aup3p47rf87ses9rvzt2gdtbp77j0mr5aypoiy5nkrgh03k164ll2ybsxuodvyeylqmqbkcjanngrhubfkl33p5aphuquvn2w2p"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="ekleyen"  value="nxly8uylmuh08mfibg43s47sfk89kjsk6bpu3vs9uwb098skrysf5cpviuxepp7xwcrc3wyn2v4jffzpwktotjazr6nput389sg5nte5491yfqg25zbys3pvd8v1akugfcg3theam0hs9x3nqj1vdowlc4c6eldevut9a4sx8mcm0p4frovpkvxzsevklpwe63tsp3i3ktfmp2ej82mjj31m933cs8zcrzcqo2tb70hm3n705aphgdk1oxg9f1q"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
-		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="4c09tgpwtn"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="3yugqoo93y"  placeholder=""  />
 		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
-		<textbox visible="false" type="text" id="sonGunleyen"  value="jqhd6fnufypwigfw233f78u6ioi4f8i8gofyy8tnrf1pflfubpy6v0dw0wqw7hmrth8owdyfnna13je32uskguhu49s14sqqe1mntkd1sbggyt1zu9vatsss68y3ydwovvolb2utd6imkqfazjksinp7gdbt6tjibfpkg0an452e9ookvbn27spy0bi5u2gaiezq7o80yfy12yp6wr70h9etmfp14p3fy0g4ckhjit4jecm37f29v0g5nsaa2re"  maxlength="255"  placeholder=""  />
-		<textbox visible="false" type="text" id="metinId"  value="1545l3eksy"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="ez9bh97jyxo70uek9rvmoppr90olm2lwtcg57xrkzd3yxrnwbbbo2k0i6p06nou4cspw2svm6li30bt6f1w2fjwj65bzovm5aga61wm016hq46c26w6jid7rao0mo2pgtnz8xmhyxz9t2r3eysp4ng35g1ktgzei4dah9ej0zk92t0zf4ma1nq2kqgp98cj8zfxvi8mrpy1hd3pe9lc1ac52ay9lbzmg65jq87g5xpioo2nuvmbxfnjnuyo65m7"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="metinId"  value="gdip8t9uw5"  placeholder=""  />
 	</window>
-</zk>
+</arya>

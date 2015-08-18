@@ -1,20 +1,20 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listCsvcsgbuyeentegrasyonWindow">
 		<label id="subeParamlbl" value="Şube" />
 		<selectbox id="subeParam"  width="200"  >
 			<template>
-				<label value="28n62a72tt" />
+				<label value="ahewju7v0o" />
 			</template>
 		</selectbox>
 		<label id="donusDurumuParamlbl" value="Durum" />
 		<selectbox id="donusDurumuParam"  width="240"  >
 			<template>
-				<label value="ngptuezd7p" />
+				<label value="5siw2fgxb4" />
 			</template>
 		</selectbox>
-		<textbox visible="false" type="text" id="listeTurParam"  value="1x4yrppz6f"  placeholder=""  />
-		<textbox visible="false" type="text" id="isyeriIdParam"  value="kj4wsaxst6"  placeholder=""  />
+		<textbox visible="false" type="text" id="listeTurParam"  value="o4p54zvi69"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriIdParam"  value="3xhng063cc"  placeholder=""  />
 	</window>
-</zk>
+</arya>

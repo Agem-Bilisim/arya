@@ -3,7 +3,7 @@ package tr.com.agem.arya.interpreter.zkoss.component;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zul.Label;
 
-import tr.com.agem.arya.metadata.zul.impl.LabelType;
+import tr.com.agem.arya.metadata.arya.impl.LabelType;
 import tr.com.agem.core.interpreter.IAryaComponent;
 
 public class ZkossLabel extends ZkossComponent implements IAryaComponent {

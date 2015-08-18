@@ -1,26 +1,26 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listGiriscikislogWindow">
 		<label id="subeParamlbl" value="Şube" />
 		<selectbox id="subeParam"  width="120"  >
 			<template>
-				<label value="wuwbf6tcfs" />
+				<label value="1yhmtwd92z" />
 			</template>
 		</selectbox>
 		<label id="islemParamlbl" value="İşlem" />
 		<selectbox id="islemParam"  width="120"  >
 			<template>
-				<label value="1wsqf16f6l" />
+				<label value="tysfxictyj" />
 			</template>
 		</selectbox>
 		<label id="zamanParamlbl" value="Zaman" />
 		<selectbox id="zamanParam"  width="90"  >
 			<template>
-				<label value="o2segg1xzv" />
+				<label value="oga4oq2pu8" />
 			</template>
 		</selectbox>
 		<label id="kullaniciParamlbl" value="Kullanıcı" />
-		<textbox type="text" id="kullaniciParam"  value="q0nbdfjxf1iglqkz0c228whtsq3v84mpz3p5976ud9965hvb7sgt20q5q0wydsroclomyp2isp6groe7n5swo60hb31v6uktpx2canerccnk870qxauavkelr0ssl3c367lk03zn5fqvhaa8h7t5lok6pav64pgu2xvtcnvdm5dp19yx21z7swbrui0gh5un94x5nh6ywjtts03mdzntvmu4lfwkf4qh1nfuzjf9ix25qvqiau4mi1yl8m7gbcn"  width="80"  maxlength="255"  placeholder=""  onChange="autocomplete("autocomplete/autocomplete/autocomplete.do?tip=kullanici", "param", 5, "setKullanici")" />
+		<textbox type="text" id="kullaniciParam"  value="0rzoxbtnlu2wyago0yfg6b3su32e3990wrozmuheap7nxp0ptvjytjhbuhqi478o4ntxzjlxh30hpadvxmtnqico81lb8l9uki5wxedd8qlqirwjimop5xdz6g6ggh9g8pghfn8wdi31y26kt8cm40zcyx9uopgt02mzepzwyx53u86qzb2j0csbm1qhviuxzckvu2e8hyvrppb5qzh70f658re4d0iw38xduw50li9vsdk5kp1zthigez85zf9"  width="80"  maxlength="255"  placeholder=""  onChange="autocomplete("autocomplete/autocomplete/autocomplete.do?tip=kullanici", "param", 5, "setKullanici")" />
 	</window>
-</zk>
+</arya>

@@ -1,19 +1,19 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listIsciaidatfarkanalizWindow">
 		<label id="donemParamlbl" value="Dönem Ay/Yil" />
 		<selectbox id="donemParam"  width="150"  >
 			<template>
-				<label value="ackaih53ee" />
+				<label value="3gvjtwn9cl" />
 			</template>
 		</selectbox>
 		<label id="subeParamlbl" value="Şube" />
 		<selectbox id="subeParam"  width="240"  >
 			<template>
-				<label value="vmsut6rgkq" />
+				<label value="gc11destu5" />
 			</template>
 		</selectbox>
-		<checkbox type="text" id="isletmeParam"  checked="true"  label="İşyeri / İşletme Merkezleri"  onCheck=""  width="50"  />
+		<checkbox type="text" id="isletmeParam"  checked="false"  label="İşyeri / İşletme Merkezleri"  onCheck=""  width="50"  />
 	</window>
-</zk>
+</arya>

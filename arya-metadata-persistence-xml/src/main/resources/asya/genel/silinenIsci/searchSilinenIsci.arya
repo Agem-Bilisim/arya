@@ -1,15 +1,15 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listSilinenisciWindow">
 		<label id="adParamlbl" value="Ad" />
-		<textbox type="text" id="adParam"  value="3sd6llhk0s9juys0wrfj02fv7ooi19wgkni5k7w8u205uxerw159bmdsvjoz0khy844bnqhy3mxpuwr9smp9yc6h12g29l3p62s5wwobbl99hxnn8rl66cfa4y1k3e9xlu1y32dai2fpwaqnlv912e8rs51cnplvvzokt5jij2obmozfl2jyf1p11iunlfdljqndafry8omtgbfpthd0s3tn7u49koephpsdlhx3kkfzh42n1r6wiqm0q3d2900"  width="120"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="adParam"  value="05u5tiqz6ih7pgxvnjacev4agp2dfvpbo1ee8xlbbw7o41zcvu1ovnjyz3qqwthw4flzayhrez1fc6vi9wp3b4yg3jnz02u42fzocjk8n1f3hci5joiw3mpk69j7ihcggjppl30pufp4qxbq7l5u2xbzp8lm2ei7vtp35bhb7courjrxiah3pex9oxdsd21ifvd816xxl6jpti2lps56qgzx7ofhb0hlwnolksuwxrp97w4iqjbrg7c8yxctrsx"  width="120"  maxlength="255"  placeholder=""  />
 		<label id="soyadParamlbl" value="Soyad" />
-		<textbox type="text" id="soyadParam"  value="6o3me7rp6rje6aposqcupwoauahn1jzns6lq1bwaop48yzi9wixm0nbywz7pyuh6r2qjlpehz6cbfnpc4zdhh389n95jn46akgfh0v86xq2l8q9ayvdvsf3tp44ymupflg64z259tt66idyzkkw54v400cvpwfs54au5ipnyvkto1wzehkr12037a1yk0clcsm0boaoc3xm94ie5p9p5hm8e1zms7oqvxkr6e9tkq52og3p2gly9fousgmbvxp9"  width="120"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="soyadParam"  value="y2tqri5k0so4ahzgtm6uuofh59vm4pqy0l3zwkqgf0d74kuue0bfmtxh8k7na538x9bbh96242ejrvdogyo4hksefitmz4269uy3batep2i633tsgfyf6cw53ldv7evlt38m0abby0uq0bp75qlippmlvfnqamr89ulfqyluw8e52cl0s14vmg5k0emb4otl0l443d627euhp12ccmp15g9rp0zq9kp1e220lrfweuy9temrev6cilb1gaucmrr"  width="120"  maxlength="255"  placeholder=""  />
 		<label id="silenParamlbl" value="Silen" />
-		<textbox type="text" id="silenParam"  value="7nw4ev362bwsesstiaebr9abenr73hvfc3y6kw3nm5qsxmxah7i7tiim8709ws3keb69jlqo7eobzjlk6gzvuwdye6uykacggd92j6k1u5s0ca9rzo0ufs988iu8pyvzfc14pqgu3bv8ehgz6n0ovp20xeuii9oxzk304h67iiumv5j4gtd6u4orfi3pgf22sh3dslfzbr7q61p6w2urgt93oaa42rmahnm79g7stfotfzjs0afchwo9sqlksqn"  width="120"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="silenParam"  value="793v079i0mnthjwccymc1mk9kpcrkd901idzmcmh6yj4yle9obsm6r1ttp6xm3pvcnkyou3zxb0rm0sarp5e1qqjvzg5q1vkoc0bcsb1icr9ndf80dl6tj2hskhf49ok489j096h8adc02nn8fsbuquhlo3vkg72kwrmfndlsosupw2pj2lpgkkmhmp9fzsea8hkad3tundgegn0c2yjfboddbes4cwsoa5sfvpb5as2r8jj0s5bkkwdxi45ypi"  width="120"  maxlength="255"  placeholder=""  />
 		<label id="silinmeTarihiBasParamlbl" value="Silinme Tarihi" />
-		<datebox id="silinmeTarihiBasParam"  value="2001-2-21"  width="120"  placeholder=""  />
-		<datebox id="silinmeTarihiBitParam"  value="2006-9-22"  width="120"  placeholder=""  />
+		<datebox id="silinmeTarihiBasParam"  value="2001-7-23"  width="120"  placeholder=""  />
+		<datebox id="silinmeTarihiBitParam"  value="1994-9-24"  width="120"  placeholder=""  />
 	</window>
-</zk>
+</arya>

@@ -1,10 +1,10 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listYardimWindow">
 		<label id="yardimSozcukParamlbl" value="Anahtar Sözcük" />
-		<textbox type="text" id="yardimSozcukParam"  value="r6kguugncneonlhfz276urdgr68sgykvsxcugh0t2hvi089mzm2742t6szkkwm5g89mcywr58a8caq5n5slu7144002ec85eczn8"  width="120"  maxlength="100"  placeholder=""  />
+		<textbox type="text" id="yardimSozcukParam"  value="kj0zb5jzksdzhn5s84obqofsy9nktszrb484rtla3ukpzsta97jo7f17ul4vaq6yil27ahk649z69z8vx0mlhq3eh9yy1rhdejbw"  width="120"  maxlength="100"  placeholder=""  />
 		<label id="aciklamaParamlbl" value="Açıklama" />
-		<textbox type="text" id="aciklamaParam"  value="42x66com0pmvkx15lbjuux6d31s98c7bavq5x1gpg536xoaycxcjrqsz4w4sz7aug4fahfw750snv7grah20e6bnp9rour3oy8jwhvkauha7zpim5bh9croah189o4wls47k6hkttpsdsmlqv6x9t7"  width="180"  maxlength="150"  placeholder=""  />
+		<textbox type="text" id="aciklamaParam"  value="sqwtmhq9rg5imb5e82jlb7izf9x6bp3p1cmhyzcngng9292ig6n85pcne2oogbt1l2o8v26fifxvxtbq9t9veaz8zvkqpaaazeg95egqnpkfajwtf2nibr466rgefp9shi1b5gh8l1e39o7k5uwp3q"  width="180"  maxlength="150"  placeholder=""  />
 	</window>
-</zk>
+</arya>

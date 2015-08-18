@@ -1,19 +1,19 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="selectAidatsihirbaziWindow">
 		<label id="dosyaIdlbl" value="Yüklenen Dosyalar" />
 		<selectbox id="dosyaId"  width="490"  >
 			<template>
-				<label value="r4gt7rio5q" />
+				<label value="c6mg7it1v8" />
 			</template>
 		</selectbox>
 		<button id="dosyaEkleBtn" label="Yeni Dosya Ekle"  onClick="dosyaEkle()"  width="120"  />
 		<label id="sheetNolbl" value="Excel Sheet" />
 		<selectbox id="sheetNo"  width="490"  >
 			<template>
-				<label value="ssyp2g2zor" />
+				<label value="q29usfc31j" />
 			</template>
 		</selectbox>
 	</window>
-</zk>
+</arya>

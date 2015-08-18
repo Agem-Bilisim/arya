@@ -1,19 +1,19 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="editSendikaWindow">
 		<label visible="false" id="sendikaIdlbl" value="Sendika Id" />
-		<textbox visible="false" type="text" id="sendikaId"  value="ey1dnac4hx"  placeholder=""  />
+		<textbox visible="false" type="text" id="sendikaId"  value="on1jbripvq"  placeholder=""  />
 		<label id="sendikaKodulbl" value="Sendika Kodu" />
-		<textbox type="text" id="sendikaKodu"  value="1t5"  width="110"  maxlength="3"  placeholder=""  />
+		<textbox type="text" id="sendikaKodu"  value="1mo"  width="110"  maxlength="3"  placeholder=""  />
 		<label id="isKolulbl" value="İş Kolu" />
-		<textbox type="text" id="isKolu"  value="mj"  width="110"  maxlength="2"  placeholder=""  />
+		<textbox type="text" id="isKolu"  value="9n"  width="110"  maxlength="2"  placeholder=""  />
 		<label id="maxAidatTutarilbl" value="Maksimum Aidat Tutarı" />
-		<doublebox id="maxAidatTutari"  value="0.5229003602879065"  width="110"  maxlength="18"  placeholder=""  />
+		<doublebox id="maxAidatTutari"  value="0.273363098290647"  width="110"  maxlength="18"  placeholder=""  />
 		<label id="ortalamaAidatTutarilbl" value="Ortalama Üye Aidatı" />
-		<doublebox id="ortalamaAidatTutari"  value="0.021572412811523"  width="110"  maxlength="18"  placeholder=""  />
-		<checkbox type="text" id="oncekiIssizlik"  checked="false"  label="Geçmişteki 12 ay işsizlikleri ele al"  onCheck=""  width="30"  />
+		<doublebox id="ortalamaAidatTutari"  value="0.8043404944421464"  width="110"  maxlength="18"  placeholder=""  />
+		<checkbox type="text" id="oncekiIssizlik"  checked="true"  label="Geçmişteki 12 ay işsizlikleri ele al"  onCheck=""  width="30"  />
 		<checkbox type="text" id="turkceAramaDuzelt"  checked="true"  label="Türkçe Arama Düzelt"  onCheck=""  width="110"  />
-		<checkbox type="text" id="calisanSil"  checked="false"  label="İşyeri Silerken Çalışanları Otomatik Sil"  onCheck=""  width="110"  />
+		<checkbox type="text" id="calisanSil"  checked="true"  label="İşyeri Silerken Çalışanları Otomatik Sil"  onCheck=""  width="110"  />
 	</window>
-</zk>
+</arya>

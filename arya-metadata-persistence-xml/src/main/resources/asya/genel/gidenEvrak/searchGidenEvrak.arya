@@ -1,39 +1,39 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listGidenevrakWindow">
 		<label id="evrakDefterIdParamlbl" value="Defter" />
 		<selectbox id="evrakDefterIdParam"  width="300"  >
 			<template>
-				<label value="v9n4g0g443" />
+				<label value="8vol32dat6" />
 			</template>
 		</selectbox>
 		<label id="siraNoParamlbl" value="Sıra No" />
-		<textbox type="text" id="siraNoParam"  value="eakbs3h1s3"  width="150"  placeholder=""  />
+		<textbox type="text" id="siraNoParam"  value="m78vsl3s0r"  width="150"  placeholder=""  />
 		<label id="evrakNoParamlbl" value="Evrak No" />
-		<textbox type="text" id="evrakNoParam"  value="5hq8j2z9vn"  width="150"  placeholder=""  />
+		<textbox type="text" id="evrakNoParam"  value="1r50vwx9vm"  width="150"  placeholder=""  />
 		<label id="gelisTarihiBasParamlbl" value="Gidiş Tarihi" />
-		<datebox id="gelisTarihiBasParam"  value="2009-1-2"  width="120"  placeholder=""  />
-		<datebox id="gelisTarihiBitParam"  value="2014-6-15"  width="120"  placeholder=""  />
+		<datebox id="gelisTarihiBasParam"  value="2000-11-11"  width="120"  placeholder=""  />
+		<datebox id="gelisTarihiBitParam"  value="2010-0-22"  width="120"  placeholder=""  />
 		<label id="evrakTarihiBasParamlbl" value="Evrak Tarihi" />
-		<datebox id="evrakTarihiBasParam"  value="2001-0-21"  width="120"  placeholder=""  />
-		<datebox id="evrakTarihiBitParam"  value="1999-2-5"  width="120"  placeholder=""  />
+		<datebox id="evrakTarihiBasParam"  value="2002-9-23"  width="120"  placeholder=""  />
+		<datebox id="evrakTarihiBitParam"  value="1998-10-12"  width="120"  placeholder=""  />
 		<label id="kimdenParamlbl" value="Kime" />
-		<textbox type="text" id="kimdenParam"  value="6p310wrrbdsodagfbd5wm454pj2bprrzibk8wzabz0v8ju9wjap1gpkcbjmhdpjlb9n3e06lje9lxdg954pmb7m2vsjpm6b6wqdgabawdiemq35b55dx606u3qd0onmuww0c9ob6omjvutj57xxweqdvmg50cm884casjktb34y4ru3gjeq06lyyffpul6blx262yu3ocl5g2atzp2myy7nevvzbszhgpq8c4u30htv5l5574enhbam8fsuhkej"  width="215"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="kimdenParam"  value="sx1ijqn5v7tuurxrnm0ynhe48kzwhhxd947flbhx5fz9jsg3fqvkiq9z61by4sfsxs1mn870o2yrx2exo31hwwj8ynyh6qdew6k3t1rtir73zdp5evajzh50t1dturugz9z6b2rxxvxjvq29ef54s4d2dszxxc4xperjws12t9khr3eg7eftj593srdmrvyhut42qpvk8nuvsmzr9lnzgkji1but8eo9qh9677b5ov4bley0l4i0ftd8xkrkkge"  width="215"  maxlength="255"  placeholder=""  />
 		<label id="konuParamlbl" value="Konu" />
-		<textbox type="text" id="konuParam"  value="e58lkx8as3s0afoy06qs0cdrzp5e61pgqhj38sdrs6lwbdiklpupxq13wyr7sg3hxt40nhwkjedrsynlyvdmiogayameh452u57r8l29hbctha8rcq901usom1ytrqta61ro13tk3d6zyawyrrw51p5onufacdmmw4iv5rjrpcuwzln8qmjjtwpb6rs0qdwmtc6836jb23pspc9v6ztdbsq0ezazrfnpdfgjt4unr07zei7ji673ewzhwtp32vg"  width="215"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="konuParam"  value="0a3ml0d78slsy8vozeq7dfduc71coq5g3tfchsf56d2ywr5j6kk3mpqpq7j4hn2md74zk15zddeahbhl8z6hqh68b1mc3zdgm9nusdwjdyh2xod4aoribe0i6uhzi60a3i09m12o84ex0ubayic1sywu75pteni07mu2ehhxltytm82aoh1z0ve2byarisey7tea85kglnt2mvirjahfhqblmtgt43n9msszkg3wm96pa77f70tyhzlr23qmy46"  width="215"  maxlength="255"  placeholder=""  />
 		<label id="aciklamaParamlbl" value="Açıklama" />
-		<textbox type="text" id="aciklamaParam"  value="cz7gpq43gbtchj34efju1uhp787tgenu3jipduya2j8k7s089gqof7hil13pj1hu5mttntajce7ivtt4z6epy5z01r6nmuxuf4cazz1uftnzbv02ywpro8oqozw93tqgkkjhdkfo7nonagndf790jr2515lsppgwae2ptsu13l6mcxeyya45y4hc5g9rwgc4avxgsrdnsztcxrsjeu06p6c7gp0s4tdy3f3s4l9g14d4lchikbuacxnu6bax2sb"  width="335"  maxlength="255"  placeholder=""  rows="5"  cols="40"  />
+		<textbox type="text" id="aciklamaParam"  value="fk6v9yfud8caxk0ttlztg5difx7gjexsp270vqi1b2uowpxpok78s62xzrdzr6gaj4o76jhtacxtvublmwx332cyef2bbjre94jb2nvsmnw1odvbaucms64l4t5sitcyooqh50dkuusrnniis18gba9bxaihh0vha4516ww8khotzkfqoqdypx16h1uv8w285je6jhlcf140x8sse88be52gkzv2eh35vlf9ccfk458rgmvq9g8xp9hwm7fdb6n"  width="335"  maxlength="255"  placeholder=""  rows="5"  cols="40"  />
 		<label id="birimParamlbl" value="İlgili Birim" />
 		<selectbox id="birimParam"  width="120"  >
 			<template>
-				<label value="pbxy23igv4" />
+				<label value="dprslit851" />
 			</template>
 		</selectbox>
 		<label id="ilgiliKonuParamlbl" value="İlgili Konu" />
-		<textbox type="text" id="ilgiliKonuParam"  value="gu3t2imnoejku7yezrncpzhzity0yacjsb1vba8dlczfjja4kyy0oxzjtjfnl1wmkil5tme8bgff5zm6z1p55fme7979z0l63l9au87suaj3ogy63q9jwryhs340sk6f12fmw7j2xxmjoe3htayaxl3722rqovwpvz4hxlf6t7mv5joqo50fkouxskjewlx79ts0zqmg9epzseaqdwj8e8ib4eqzi94me8mhh64zpgog30z149ev1igpab68rr9"  width="215"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="ilgiliKonuParam"  value="qdc5ge6z52dnwyybtip0duh80bg506xr7i8jxhmfrcevs8in6mu1t84m12fo1qyaxnq3w2o9j0mij5cnhxv558q984pfwjzuzpjoyrr58du3if9xfyl4urfjox0j0skn9abng57gv4xblfrijaj8x9zy36h8jolpswlzg0tgrw96gokuln220e3xpmfl88y9rba5bgvq8hnzbsf5yjicouljuhr7eggl21ahxwranbqu2pw0mu7yx4fezjthikm"  width="215"  maxlength="255"  placeholder=""  />
 		<label id="ilgiliSiraNoParamlbl" value="İlgili Sıra No" />
-		<textbox type="text" id="ilgiliSiraNoParam"  value="9vg8qmah3bvy1779y8kvby5mm7tk2sjcl3xw2o6iqsk5996jud7o7pmem73suf7yuzrfhe06m7zryfqqp89dau83z9sy5lwmoe1s38vxkd4hgq21m1mcly72vdelhj4xux1tlhgw3xffx7rwqflzxzsx7wrygnqplzl05rpy4tkkq0wjh78n3quu6itxxvvggdzmhhezf5ztwn5iygts2cqlhymqo1auknxbs7mjjuk3ea3yebtq6zfc41r8urz"  width="215"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="ilgiliSiraNoParam"  value="eyc8mex4sfi8slc3hvawf3t4x0x5ssfj1vjdsi7qckja5g9d6r5iop1g4vyyr9mlof3lssa5nbuzsywc1mes4t8f6vydfbhn55bbmq6t38lcpxginj1rs6x5xxep3zgymyrg1virtym9hrq61enzcv534ntzg4fw4w3chm3l210dkhmolkn43ekcrlbzug13gn06koxtwp36hfw41wx9dh2zm2k8kqji1hkvn60657ctlqvi3q26f93edepr6dp"  width="215"  maxlength="255"  placeholder=""  />
 		<checkbox type="text" id="gecikenler"  checked="false"  label="Sadece İşlem Süresi Gecikenler ya da Son Günü Olanları Göster"  onCheck=""  width="20"  />
 	</window>
-</zk>
+</arya>

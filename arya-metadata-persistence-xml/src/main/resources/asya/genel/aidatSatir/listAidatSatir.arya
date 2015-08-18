@@ -1,37 +1,37 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listAidatsatirWindow">
-		<textbox visible="false" type="text" id="aidatIdParam"  value="t9l1kvmhjl"  placeholder=""  />
-		<textbox visible="false" type="text" id="aidatIdsString"  value="1z29kxwhvy"  placeholder=""  />
-		<textbox visible="false" type="text" id="satirTurParam"  value="x6gzirh9h5"  placeholder=""  />
-		<textbox visible="false" type="text" id="isletmeParam"  value="ud2aujl1cz"  placeholder=""  />
-		<textbox visible="false" type="text" id="donemAyParam"  value="75352hif4g"  placeholder=""  />
-		<textbox visible="false" type="text" id="donemYilParam"  value="31o96yh3y2"  placeholder=""  />
-		<textbox visible="false" type="text" id="merkezIdParam"  value="hka82wlzgh"  placeholder=""  />
+		<textbox visible="false" type="text" id="aidatIdParam"  value="9p9ezw67g2"  placeholder=""  />
+		<textbox visible="false" type="text" id="aidatIdsString"  value="wrsb576qfm"  placeholder=""  />
+		<textbox visible="false" type="text" id="satirTurParam"  value="p5vt74s65f"  placeholder=""  />
+		<textbox visible="false" type="text" id="isletmeParam"  value="e62ch77siv"  placeholder=""  />
+		<textbox visible="false" type="text" id="donemAyParam"  value="0pwrg1voy2"  placeholder=""  />
+		<textbox visible="false" type="text" id="donemYilParam"  value="zj7t4192ji"  placeholder=""  />
+		<textbox visible="false" type="text" id="merkezIdParam"  value="r50viva0tk"  placeholder=""  />
 		<label id="bildirimFarkiParamlbl" value="Üye/DA" />
 		<selectbox id="bildirimFarkiParam"  width="120"  >
 			<template>
-				<label value="koudcvjkw7" />
+				<label value="hwc5nwwkn6" />
 			</template>
 		</selectbox>
 		<label id="istenCikislarParamlbl" value="İşten Çıkış" />
 		<selectbox id="istenCikislarParam"  width="120"  >
 			<template>
-				<label value="5p6fc8hcxm" />
+				<label value="f86yqyv0xh" />
 			</template>
 		</selectbox>
 		<label id="ucretsizIzinParamlbl" value="R/UI/A " />
 		<selectbox id="ucretsizIzinParam"  width="120"  >
 			<template>
-				<label value="o9zwebk9tt" />
+				<label value="z52669ad96" />
 			</template>
 		</selectbox>
 		<label id="subeParamlbl" value="Şube" />
 		<selectbox id="subeParam"  width="120"  >
 			<template>
-				<label value="us37g7v3nz" />
+				<label value="tgluxasjij" />
 			</template>
 		</selectbox>
 	</window>
-</zk>
+</arya>

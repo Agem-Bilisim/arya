@@ -1,56 +1,56 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addKisidigerWindow">
 		<label visible="false" id="kisiIdlbl" value="Kisi Id" />
-		<textbox visible="false" type="text" id="kisiId"  value="yhhz981ro6"  width="200"  placeholder=""  />
+		<textbox visible="false" type="text" id="kisiId"  value="7yr7pmvki2"  width="200"  placeholder=""  />
 		<label id="metin01lbl" value="metin01" />
-		<textbox type="text" id="metin01"  value="ajccuni7rgz5xxl78db7skkvscbfj37q20ijjwxhucyp61xlgbagcz8lmndb7k1eclrpg6glmgrfirvthbzd69rrg15mpu7z9cp33mwjxwo1kl2kf7egkbd1d5koacxphiycij0ektqjpl7qeczs41pb8fy0pby1jssk03gn7l152wej9ji2umn10nce6an44pq0mfavmyycw5uj97nl0c0f6to76mjt58b8y6z48n7039fim8zio4opeljmbnb"  width="300"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="metin01"  value="xpbdkj7akj4qn30e0hy90sf4p23vcdg8mm9agncsoscc8xmba83c1fyhw2wb9uqaqh2ws53q34bwvemjsndqa292tnjcqwd8sl2v5xz2ur6avjx4zugb1ofijszgsnc6xby2o7s7501q2ydg3s4e8vwdrqu897jd9jo7bbjl0rgvrclfgehthyln5s233p37nr4osm3dedmujymblrr6ike1174353kr4m4ymux6wi9rouymncqm2vqyye0unvh"  width="300"  maxlength="255"  placeholder=""  />
 		<label id="metin02lbl" value="metin02" />
-		<textbox type="text" id="metin02"  value="b38hr6uqnbomrtn28gm4sll6en0mjkp6u1m31uw049dpf0t3szl3nwtekfdj32jld6jpmkjof6ip0fdp46q1coppxgw01r1be583b6004s8bhyj5aergadw7y79viyhlnj31oznofdtdai9uo3y12bjjnfca1zh3qc2u4o71bafxkqlts1i5f2u2pe97v26o1jgs7z5fqfpyem31fzb2p7wzemtwu474txhy9ahtisf31ykzx2xmdp6fa0mk50d"  width="300"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="metin02"  value="24mbd9swgltktr9hz9oishm93oeqp172iuwl89k43emiepcmfswmm01vq1iegjsbarbhhn7es7qd8xl9s0kkilblpz7oe2j126z9qyjt2bxvwrens03m96qrrbhs50e0j5qnshye93y59vx3ayp1f254l86lz3bucy1oyiq8izu75e497rzibl48d3951e5ipxf4a00zsesxui9a6ykz3zvrdw8qadn5ynpnif507xhfp1uhfx5xlgij0yg20gv"  width="300"  maxlength="255"  placeholder=""  />
 		<label id="metin03lbl" value="metin03" />
-		<textbox type="text" id="metin03"  value="sub6ogxef1gdigv0ei65r3189js2yx7g04nlal2pe5dvxnkfrenpbx1pa0qkcpjbrbtg92bmy3taufxox51fwlbaihd85emjq6j1fufo63kt88r4h6vucjv3ftymcijs8zf6xmz0r5k0vk4uujqyyevroalv3ojxttey7ptacdf3uhbgxue3xalv7e6td10f37oep77hy3aujj1zexftn8kvoqx22charigg71s2cf1955si4mp9frsasidlmqj"  width="300"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="metin03"  value="5ckel3w7mn4c1q9a7q1q4itxhfusbtz3imwn2xp4etz6n5oon492w948vdggaenpvcm3mg4zng1i8126ioueokvnoufp7bjkofzwtbgj9s65irxvbas9mlhztqgrqzyc5eqiizhud2nfz3qbq6ic49yudu39bcec3p92jofv6sgf1ha60ll6kwy58570u0vm6o5wayqt9gpxepgj0mhg4qu0nj9bz8n1lgtj9wrahulafev0vtp52uoz51lv9wn"  width="300"  maxlength="255"  placeholder=""  />
 		<label id="metin04lbl" value="metin04" />
-		<textbox type="text" id="metin04"  value="h8n4qmq5p3k4gcvz73m3tszqpr3ralun984228jdpew3881ezty6jkxdskfv9nwiqjibmyzsviph05l5xjkema8x28yhz3l4ve5zthf6nq1bs3sl6zp2qu53w2q0m30npkpdjfewkfa54ik1y94k7472dui5sji9862ql509nklecic2lk7mygvummyo8tixf8jjpka9by281j1eut11hekfvj9166gnvx6lp2n0ltt951unpf5layai4w8sea9"  width="300"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="metin04"  value="pwsffughdfw5es1t00bieg1if32mvqfcqwcsdq0fy2kd85yazbzwibjz68i1w0a9gg4rl5cvo2usxmxwhdtiunozpdl5u1pyncph67ys148bon9t69udp0byx50cr70vb96etkofgzoehg3bys44c22s8ca3mr7c4qkuto0id7dcqgzgt9t57gzuwnzpldpaaod4vawn4hjm8d9vzkpadsrz75v8gdb71a38qscg9wnve1xs0qifekl6zmfl8n1"  width="300"  maxlength="255"  placeholder=""  />
 		<label id="metin05lbl" value="metin05" />
-		<textbox type="text" id="metin05"  value="w05ab4lr798iayoo4cjxx4cyes28cwtwi91ybif3pjodb7otexcjy3cbzko3qk728fdzrfunvu4lrkywoh3p1vip97k6ynomnpgm9jo9jzoc7xgjufktfpq15ry9ow1w1sj15afkbp9wgib2o0ds73gruhvwnz81dcxdt1mlel7zj4z9nsdq4vsyccefw4647x2irrc6p7dr3xhdmqaz1kf6c60q07kuz20wwobfezchmfbqxfobnijnhgx4w08"  width="300"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="metin05"  value="995mk7kefkdokd9ej8iexzmntiv6o5z7ruwkmh8w7pfi5g6htgt4848jbakc4uolxpbbflar0cvmuleml2uts0vmp1vqaw4qf4bqy2bv3psqak6xajhjw4gkp1jf162jp4b5gpvsq8yw2i65yrjod3xsl91vat1c4dz1xya9vmu09m27cf7jiiv47kva10mguo8x4kwzxxbg4h9f9dapkgda9s5hh4555ra56jhmo6uynjt1vmz9zytfust70cj"  width="300"  maxlength="255"  placeholder=""  />
 		<label id="metin06lbl" value="metin06" />
-		<textbox type="text" id="metin06"  value="qygwao8uqr83del6ykbctmxxqnp8r7wb1r6pabj1ycmj3dj7zw9anh5t7auqtj2axb9tf8ls8njszji0xoulrxyggzrewt6r9gp84hzmmqx5hi03jkdqf75cs5rcm94sqopn2sk9sw52xg3q9xo85stu04vm8n0nff31idvwom6gfmpv42h0ynqn6hnpu7iulzcvy6iz9i16acksnf05rfstafzw4knjm2bpntoisam1wmnbv0uwizfy76ycqbh"  width="300"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="metin06"  value="hooolz4d6ktyhdrdtbraf7vear8y53p293lyeqjrjxjbqk2wm2e8v38rh6z9h1a7d3n4b8r9c8ui3dvfxrltuc0em9fkl88hsirnghcxur7mazmra6u33dwtqizf89uy4a37ms49507kfk9mpz3k2rsedr3crn1x75d3giojxi07gctpqzqco63farbmkrtxql432uz0lx8jnlc80gle711tbuv6t1lc0xr3gyysf9p1nxen0wj625jwaw32tc9"  width="300"  maxlength="255"  placeholder=""  />
 		<label id="metin07lbl" value="metin07" />
-		<textbox type="text" id="metin07"  value="8d76alf29nustrzzzjm7g0cjodukwwom0zaeescici4c9opyvk0vm5uxttgn1aahevo2no0u34aiqsq1dwepx84k8ujla4bisukv29fxq9jxvt6tculi2jobo0zih1x9p76hxugjtew24sn9ob0xwlw4n8dgejpvhuyr0x48tmfprpz90dr0kl17bps4yob2bodqmo3wst29974hi0e4ap2ii40pt1mw5gauw1wjn8czpoctlfuwlnxyn4dh2uw"  width="300"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="metin07"  value="kbic0r3w757hsxdjumxrpa6dgc2jal922921yy8y9flyxrwpdxdbqd32hobvh0okrfmsgtbrabpyjr3nfz0qtx26ykq3nqwidtb4ulhxl7ybr12bemobzhovxeprhzel1ro5clm4o1orjj4xwviosq4u5jrjik6wr0l2w5xly2bdaj6iryvcuiwtdbt4i4rwm92d75fcylvo58n2xmijkkw0q2x82v64k6rpv6f0xdt2m61k7xelf46ytrdcpmq"  width="300"  maxlength="255"  placeholder=""  />
 		<label id="metin08lbl" value="metin08" />
-		<textbox type="text" id="metin08"  value="8mey29q56226b8vry9euypsw4mp81hrfqy7bv2oo82of89vnjeam7g08vu0cdv40ipnjdufugxhrnummvomjyvf13hdlw0921b1tvqz7gcyenbm9cfijkk5jkmezz367t8liq60600dledk8tnf51j2x29dje9zhc43gxtyou3xntfsejgoytz2saamk8tv5dr45ij1dryw8re69sa6w7t006d42qwkbkt853185c26oq6qvq509ocm18yjmn90"  width="300"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="metin08"  value="lwnlyrb61v9zihmuo1xl6tr4wonvccgti9zfoc0ws5ufgl7a737nyi4aew6htqht4pnoj5e4pxgccqxuphyig0f1u1omlwdmy6gmny48bkmm99pe5rkwed8trvcmlghpxp74kkexrt21x51ikw3nb18qjykqu5wi5zrf6nomguumf3f11eg5gr23ute0etapp6u15d39zafrzpjgl4flzvet1e3ergfttnm8t8anbs56h233vhjjly1o4gqnnek"  width="300"  maxlength="255"  placeholder=""  />
 		<label id="metin09lbl" value="metin09" />
-		<textbox type="text" id="metin09"  value="u5muycfdg8pvgb60df1ngrlrrvxcnod1gwy6i6g69nd0n2mw3xa2ulnixz2ixtj93di40l806h1daicywjpthmbwsslqduwp4p45pdsopaosjwhpy1w5851lom6bperhq7p9r9gw2vsjsz7378kpfzopsu19r2pl3r5j4mzlfuzi84e6cmhtbg8keez1b9qlx9lrovyr2x7ssjhcsts23zi24oeyb4th5hfi55s2o7bdajpjlgbcnllr7jjd1f2"  width="300"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="metin09"  value="j2hsyyglntub254p5w6i7y4i7yadz0og2guf54sw602fnvrlbzgya2n1b0pa28ar82dew4cck1efdfbpwtdo6ltu7d2ec5i66x583w18crsgtidj5pi3d4ya1h31t2u0vcw2r9uonrldx6due07xmdoo6t1ymmaddvg8yngl9xh0zc1aaycktda09tsu6j56x0f6uzd6dgwni40kne4dqxdnkcsm9gjlq4nv6fsboo6zxu77yk94ijr8w3gnzk9"  width="300"  maxlength="255"  placeholder=""  />
 		<label id="metin10lbl" value="metin10" />
-		<textbox type="text" id="metin10"  value="orfo71watxg3u4a5s1z3tgmnfjvy5gh2gf0lijkv2pkua21y3xm908xdyvxcmps1rkfsozg80v4622jjkxhbmlbd7h7vx756zzsf46xd2xmmli2pbg1rxbojwrbklqri60n4f72xuxk23hzc3f8z803aza8gzig85rw10qk4abx694l3evk1oqx3di9hurgdofv488zjjppe6ht6vdkj4whh665ta2hg7q5j5cih5hkevinaxccnlzhpiblqsuh"  width="300"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="metin10"  value="olup06gn5qiq4jjcfep6l3kc3cimkkhmje8pdini6emapl1acpxqvn9f8tzpo867spy3auu9s1bsos9yrsje3pss4rd8yo3b5pdjrq39frym7lwc3uwv5lb86q2c7awqdugtnb4utnuiz3wasgbn17kayhm670lpluwgb4zvsq7ivyq6f2lnaspuw1ac5tqv3jp6fhasj3zgpizcf313eqs5tpevq9bxhlidruvtr8jxzfh6osczbfrb8qxvbtc"  width="300"  maxlength="255"  placeholder=""  />
 		<label id="tarih01lbl" value="tarih01" />
-		<datebox id="tarih01"  value="2005-10-14"  width="300"  placeholder=""  />
+		<datebox id="tarih01"  value="1999-10-15"  width="300"  placeholder=""  />
 		<label id="tarih02lbl" value="tarih02" />
-		<datebox id="tarih02"  value="2012-2-8"  width="300"  placeholder=""  />
+		<datebox id="tarih02"  value="1994-3-3"  width="300"  placeholder=""  />
 		<label id="tarih03lbl" value="tarih03" />
-		<datebox id="tarih03"  value="1999-7-24"  width="300"  placeholder=""  />
+		<datebox id="tarih03"  value="2013-7-13"  width="300"  placeholder=""  />
 		<label id="tarih04lbl" value="tarih04" />
-		<datebox id="tarih04"  value="1999-7-19"  width="300"  placeholder=""  />
+		<datebox id="tarih04"  value="2010-3-14"  width="300"  placeholder=""  />
 		<label id="tarih05lbl" value="tarih05" />
-		<datebox id="tarih05"  value="2009-5-19"  width="300"  placeholder=""  />
+		<datebox id="tarih05"  value="2011-6-6"  width="300"  placeholder=""  />
 		<label id="sayi01lbl" value="sayi01" />
-		<intbox id="sayi01"  value="-1694892441"  width="300"  maxlength="22"  placeholder=""  />
+		<intbox id="sayi01"  value="-182294701"  width="300"  maxlength="22"  placeholder=""  />
 		<label id="sayi02lbl" value="sayi02" />
-		<intbox id="sayi02"  value="1908044515"  width="300"  maxlength="22"  placeholder=""  />
+		<intbox id="sayi02"  value="-1124766397"  width="300"  maxlength="22"  placeholder=""  />
 		<label id="sayi03lbl" value="sayi03" />
-		<intbox id="sayi03"  value="-565226585"  width="300"  maxlength="22"  placeholder=""  />
+		<intbox id="sayi03"  value="-52275334"  width="300"  maxlength="22"  placeholder=""  />
 		<label id="sayi04lbl" value="sayi04" />
-		<intbox id="sayi04"  value="-1503563732"  width="300"  maxlength="22"  placeholder=""  />
+		<intbox id="sayi04"  value="-739771915"  width="300"  maxlength="22"  placeholder=""  />
 		<label id="sayi05lbl" value="sayi05" />
-		<intbox id="sayi05"  value="-1774619307"  width="300"  maxlength="22"  placeholder=""  />
+		<intbox id="sayi05"  value="-214469286"  width="300"  maxlength="22"  placeholder=""  />
 		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
-		<textbox visible="false" type="text" id="eklemeTarihi"  value="uiyco6eq7s"  width="200"  placeholder=""  />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="ajyvv27hrm"  width="200"  placeholder=""  />
 		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
-		<textbox visible="false" type="text" id="ekleyen"  value="06mvjynp3g4i9ayx1m2741m1vappqvdoazqb2nww14180jh7k17c2stgbupiddipnwi9pmxcn14hsu9g8ofqe3i3hs49qrbbug20bu82tuk0vg7w0xspsa298sxnddrp9rep5waamydmb1jalbsuyw105f6zupr5idqapkxk0vahncsgvm60yy1qb3aee16peai3159c111xnmuw6jd0rftosepjcxl3ornzk0hta6l50iqot4bxd9fiav3n8jz"  width="200"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="ekleyen"  value="zyx6xevedx7h116i0j0qzxfr8tqhsbiegmo2dski1h7ielgpql2v5eyz0sn0q35rkvl2idn7xjq0dp9rxvhsuviu9zyrwg8rrey8fg091w29vkk7hkcnt8k44j76xigs1eaaikidof9femd21h51l9mqofy8n4ghpwclfntdzlweg293ehi6nmwnb0zi2gw3kkmtgcuvqq0ovejm4p1p4kxfjpa0sph4lha96ygvg53fttszus0k9hlboj2ii7e"  width="200"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
-		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="t6u3mnke9e"  width="200"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="2p3da2nbz6"  width="200"  placeholder=""  />
 		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
-		<textbox visible="false" type="text" id="sonGunleyen"  value="valtd86ujzg1mk02e75j59sapfxl30r79cqinnvn3x0uev2sn3lkrikdf8rerd2nfr7kr37sgd106swgb6cbu31mgo8e0k3z9zoq716nq68ki42hc8dg2r3fgsla7v7nn8yskd0vdeg9ens1c5l0fni6fdq1ke0z1igqhysfxklfpw9u6pzqsvucix537eza0hjxc18czk8msojsm9fmqaqtz644jngh2dqomdrlaepjziwt4vyptgcdwq7x1g3"  width="200"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="qi013fn97wpgqlqgldv9asckjnozqs1sv1f00gw9hhpjr8gwchpgiybylkzl3udl5so0k49hv78dhqxv3ki3roumk4nw6e9euz2ivub24y13us6brgmydfpopb707rfqyxv79n4k9edbsmep8ujxgf8yvdkl1queogdueyb6urlmpmdt563s4igyryycq6iudmkjuz0dmkm1ayvmygosdmc545dk5bwmcpu2ljc01nnb8i9lcco8nfwibstx6yf"  width="200"  maxlength="255"  placeholder=""  />
 	</window>
-</zk>
+</arya>

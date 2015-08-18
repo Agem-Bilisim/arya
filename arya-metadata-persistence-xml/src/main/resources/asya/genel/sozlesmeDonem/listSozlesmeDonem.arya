@@ -1,30 +1,30 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addSozlesmedonemWindow">
-		<textbox visible="false" type="text" id="sozlesmeDonemId"  value="0xu14q9m43"  placeholder=""  />
-		<textbox visible="false" type="text" id="sozlesmeId"  value="24j56rvffy"  placeholder=""  />
+		<textbox visible="false" type="text" id="sozlesmeDonemId"  value="uhk76mnfi5"  placeholder=""  />
+		<textbox visible="false" type="text" id="sozlesmeId"  value="eclir2wwyg"  placeholder=""  />
 		<label id="donemAylbl" value="Dönem Ay" />
 		<selectbox id="donemAy"  width="100"  >
 			<template>
-				<label value="6jc5dcyiyf" />
+				<label value="o32kkapt4h" />
 			</template>
 		</selectbox>
 		<label id="donemYillbl" value="Dönem Yıl" />
 		<selectbox id="donemYil"  width="100"  >
 			<template>
-				<label value="ekhd5pglnb" />
+				<label value="haqpq1odu4" />
 			</template>
 		</selectbox>
 		<label id="anlasilanDegerlbl" value="Anlaşılan" />
-		<textbox type="text" id="anlasilanDeger"  value="4fbc88t8g91lnngld1e24rzmry0eiclj9mkhb1wpn61hmfuy97p9q2n6dx63okb2g49rpj2ppsu79saz0amn44m0kygk04ujlo87sesxqyqoqog5jlzh2l0rkdh24l5f3gz3hngx1bvfumdo5umhvym5vu7rmic2eu719xdofcmcq38fvjc9h7r7kdk9gf4vkro0e5j0jt3voatrhqlorbgklltyo94ny4uj1yveeahp2zc8d1guxiw26gekc38"  width="500"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="anlasilanDeger"  value="r5bpzvcdd15yam4yt96wk3fvv28l32f1jg5y2r041qm261yp1k2szyj5e0uw6sbca9w2ahnb0vhi8kkmr84ddqb1z3ziwltz31faazd52e5a0nvvgw5w9e4zp8fenj0suey5kf7kwtrji1dyu0p9d3z8o2g5pbis46bka2f3yvbwa4wdd5zzz5jmk546ndr4s5s7tkvmnd4eb22efm0ns407v2gaxwt7yh6letuxvx0l7s53brsgwrqtqgb8vh5"  width="500"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
-		<textbox visible="false" type="text" id="eklemeTarihi"  value="urz4sf8vh7"  placeholder=""  />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="4bg4yfwk46"  placeholder=""  />
 		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
-		<textbox visible="false" type="text" id="ekleyen"  value="ctwbvu6uhv"  placeholder=""  />
+		<textbox visible="false" type="text" id="ekleyen"  value="p84oew260q"  placeholder=""  />
 		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
-		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="vr07x0kbie"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="brf5ezb2l1"  placeholder=""  />
 		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
-		<textbox visible="false" type="text" id="sonGunleyen"  value="mc38d4n2se"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="x8xqpfv1mq"  placeholder=""  />
 	</window>
-</zk>
+</arya>

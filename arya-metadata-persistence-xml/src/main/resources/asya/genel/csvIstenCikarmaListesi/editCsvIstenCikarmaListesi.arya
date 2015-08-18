@@ -1,17 +1,17 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="selectCsvistencikarmalistesiWindow">
 		<label visible="false" id="isyeriIdlbl" value="İşyeri" />
-		<textbox visible="false" type="text" id="isyeriId"  value="0a5745j31e"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriId"  value="u63ox7bbey"  placeholder=""  />
 		<label visible="false" id="dosyaIdlbl" value="Dosya" />
-		<textbox visible="false" type="text" id="dosyaId"  value="r20cz1f9hu"  placeholder=""  />
+		<textbox visible="false" type="text" id="dosyaId"  value="4m4rxdv62q"  placeholder=""  />
 		<label id="istenCikarmaListeDosyaIdlbl" value="Çalışan Listeleri" />
 		<selectbox id="istenCikarmaListeDosyaId"  width="300"  >
 			<template>
-				<label value="a83jfsqyz8" />
+				<label value="frskhlkv1c" />
 			</template>
 		</selectbox>
 		<button id="istenCikarmaDosyaYukleBtn" label="Yükle"  onClick="istenCikarmaDosyaYukle()"  width="70"  />
 	</window>
-</zk>
+</arya>

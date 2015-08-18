@@ -1,15 +1,15 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listAidatnakilWindow">
 		<label id="donemParamlbl" value="Dönem Ay/Yil" />
 		<selectbox id="donemParam"  width="180"  >
 			<template>
-				<label value="1cogfz4ko5" />
+				<label value="4u5ico56j3" />
 			</template>
 		</selectbox>
 		<label id="unvanParamlbl" value="İşyeri Ünvanı" />
-		<textbox type="text" id="unvanParam"  value="znd4jhmecrwlspx0vv0o4bex0jx09dr1ewvqyno2uoj0ptgsbywg5s3xp39t6cv5ki30am8nwb95bc9ecxiby4bocvayfc2moy2wrw1x1x7rcm5e1js41s6y1ouv9137c018qwohye9nvbj1fl384ox0fy73unf8572h6m7mr5vl02v19ebnedn1bvn44u8hmja3bqhovupk4du15f4hjpo256o4y2uf9h1yh3zf7y7ulfn6lfumvx5d81zwsno"  width="180"  maxlength="255"  placeholder=""  onChange="autocomplete("genel/isyeri/autocomplete.do?merkezOlanParam=1&isletmeTekAidatParam=0", "unvanParam", 5, "setIsyeri")" />
-		<textbox visible="false" type="text" id="isyeriIdParam"  value="pflr1s340m"  placeholder=""  />
+		<textbox type="text" id="unvanParam"  value="9zrbl88kma2xpvttvpj3437a8d5fbtnd5foclx4qvsbz68vznucmsgvvt9r6w58h1xzutrwodxfrny5p0j675tk634egjsc3we9ssjesmlehhvioesccfs59k7r6d753qo4nzfg4f1lo7e0uxiuujqj270lotes9fiu7tw0fgo7d6q5dh8lwtjekw6w93lwh3e277impqy9r5wq0iavokzlffi964370is5g5h0234dc5dvj0pybhmyb8f2z8av"  width="180"  maxlength="255"  placeholder=""  onChange="autocomplete("genel/isyeri/autocomplete.do?merkezOlanParam=1&isletmeTekAidatParam=0", "unvanParam", 5, "setIsyeri")" />
+		<textbox visible="false" type="text" id="isyeriIdParam"  value="c08deltoix"  placeholder=""  />
 	</window>
-</zk>
+</arya>

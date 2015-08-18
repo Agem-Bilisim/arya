@@ -1,19 +1,19 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addKisidigeretiketWindow">
 		<label visible="false" id="kisiDigerEtiketIdlbl" value="Kisi Diger Etiket Id" />
-		<textbox visible="false" type="text" id="kisiDigerEtiketId"  value="w9qqjm7001"  width="200"  placeholder=""  />
+		<textbox visible="false" type="text" id="kisiDigerEtiketId"  value="xyb5zbxqhw"  width="200"  placeholder=""  />
 		<label id="sutunlbl" value="Sütun" />
 		<selectbox id="sutun"  width="200"  >
 			<template>
-				<label value="y2p5fencgv" />
+				<label value="6qcl52pna7" />
 			</template>
 		</selectbox>
 		<label id="etiketlbl" value="Etiket" />
-		<textbox type="text" id="etiket"  value="qgiavcnphg1rf4siah6lv3g1gz2v7qgn58cug3je1a7617zyynvwvdkeksso1vrh2ghmotgzb4e3828ny7a2cge8m99ltu1xyqynrz8nl5t5udl8byqzm9n352ci6fbckvu1dwlfyzxy4hvl3gb7k2dgp6xbmijdgqi0dvu2nz5kx8nv0w2689divvtwbnelfp94kijkm82krsnqp7zg0drqamo8yy5rclcle0bq5fri4k8ozpldgyzzm21tugu"  width="200"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="etiket"  value="ky8dibdprmuf8m9mz12idrmdgfzm3qxvkb1p195e2rc5ahgh895or94qv1t6jlviwwb668k4eqi7hreu8g69d7m5yym552mdw21kqtbzgnjni3k0am6wo458fon7s2owlpo15ocq2e9tchpd288lj11xwyzddbrj5ur7ugviyr4v5irnc49p812twjedr9s92ji1e96336w7am9jlbcq81s8r9dlfwn7bhqk98k9pgy4mwuknylyegqyxrr9dqk"  width="200"  maxlength="255"  placeholder=""  />
 		<label id="degerlerlbl" value="Değerler" />
-		<textbox type="text" id="degerler"  value="gf1qi3pob4klm18zctdco2seprdwh10znc6sdii14977kmdu33s5nssuxm46ud22g04l0416cyrywqln7tikkbgcya2vyv61kin6lhkffaw2mrygw32otf2xl7sequgiieu7a12k6ioia7izw6h6c09zte6k68gfqpm2gw7x08pqnfv2mpytet1gq23gmjfapt6ir1bxaycfb24bf5zybwympbg7egrxqcrl31ai3ccl02u1lhycvn1nxxl0ufun2q9wgs18jgmvjdnz0dzgi6sxbh5ouwffcpz2yiidrgap4ccv617twfta2y5exeaf572jxi3mi3b8jjqkqtm4k4fd7wpnlynus0qs5y7bpmek49wx1e89s3ilogo3cgv792mtxwa433uovkyg9b4nm9mw4db9ssko1f3t78w1dctlkew8uhnmk9nhcby53y4sbyhplwe6yglqvgi1fmwv0ievza0g21qvbnn0s6ycqcy04dhb404urreweny6x6m9ujmjgw6havi2qbc6mrf6qt2nf10ekpkaotmat8la1hft60aa81hrfksg5ct97mp6cpuf3ersnqp91l1z2o5azj3vdgueqg7pmf39a4clxf1gxqkhhbb3d0of6e291s8rect2iowa67zhvjksk6h1ndpyl5r0bu7ctz3q7jssfefqj73k02h90zgj1d2gee483gy209j9jo4ztzfx0mwi3e7ua3igoknjv85ezy0bjund172bda556lkblyx9rvotpaadi190ybzgnr6muvxhbmi6h28exkjaha2n3bhq8k1rbbeyvvcrwrd7ik6dr7lfss42kgdkenprom2g5lxfblqvxe9uh8xue56jycnh7mzrwh3aby9g9vjwi6uezan0uktodjt3scmg9wzxdvkemjqzvowohej6odth1wlh4aj58ew6g19yybugfa1xicl6h5d12s1yrq13q5dv8cp4t47n7229gwhtk3x58j8k"  width="200"  maxlength="1000"  placeholder=""  />
-		<checkbox type="text" id="aramaKriter"  checked="true"  label="Arama Kriteri"  onCheck=""  width="200"  />
+		<textbox type="text" id="degerler"  value="581qfm1lkhvaf6gg4k71hgzmayh1jwmvzm9mmy3sflsvuyrtpb8o2fx22nnu1hm09zbfdxn3bjohjdt7wovow6fs0bcu6gefi91x9a4wctdoi4x00vibaulyomeyv97kbqpb8y2s6tx51v4d7075tbyp0voxyz468o515433keqoa6tev84prty5ypio5umfh6rz1ewdr568kklzx2zfzraajtwicoddlwqqu6gqv47lgpzst5ywd5e4f4ubh7khdfpuj0p2kp3g07wwrbkzq59ze7sgyzgnx1eucdr12ug0mcbhiv4oltzfclmk6qcw50kqedb3c5chmcdy3asoe9y7sqxkhm86xzrv3w87fxd8mda6qazfy3b1jizb0329gi641h7bza14g8t67l9cndp7ll566f7bzhfpwpwhglby74ezq9izvz5rpnv4joijqsxzfbmfl8blrzmfysacuvezpd9h8egllgodekl74xwm9a5rsdk0ibdcju06s6g8j3kchwaebfk74ti3k1y7xflu82yqb0cum3dfo7d0v5ur4vpbemnz6pkxs9cl9o8xsbr6s8phbeebyxcjlljni7qhu7vgv9pqyz6yw8vt970i0nweazqck1c2rwtmc8uxv0uv1yeoj1ctpg4q1ncws4lwjxgsc94alwvbxbbly9qaqtl5y9urasieyk2lfjj1ep9cif16mmq4o92d55ej25zu8ftiib6yvlsez9h5yncs45w0179v52rukhbuwoltba8o1eu4zywxyha3vc7s24z4w2i15n668ztu3yxtl7ukc1anz6k06bqq2u8o6860cs01lslhw46cogsixvs3c64humni6zjt4irgbhnksq85h7l1oic4zuzdegaghrx38n78m9r2oa0wnxojt3anem8isaodslv04t5gcnwb2buk7jy6guj423modjfdlkeq3rrkg4ibcdfasx3hxwkdddurlzq52lpe7dep7say"  width="200"  maxlength="1000"  placeholder=""  />
+		<checkbox type="text" id="aramaKriter"  checked="false"  label="Arama Kriteri"  onCheck=""  width="200"  />
 	</window>
-</zk>
+</arya>

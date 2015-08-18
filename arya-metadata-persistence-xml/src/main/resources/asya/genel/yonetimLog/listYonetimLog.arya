@@ -1,32 +1,32 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listYonetimlogWindow">
 		<label id="subeParamlbl" value="Şube" />
 		<selectbox id="subeParam"  width="120"  >
 			<template>
-				<label value="y48ugz6ugc" />
+				<label value="oubcvf1otq" />
 			</template>
 		</selectbox>
 		<label id="modulParamlbl" value="Modül" />
 		<selectbox id="modulParam"  width="120"  >
 			<template>
-				<label value="idxw2pib2r" />
+				<label value="o0hf92uow8" />
 			</template>
 		</selectbox>
 		<label id="islemParamlbl" value="İşlem" />
 		<selectbox id="islemParam"  width="120"  >
 			<template>
-				<label value="vvlirvhevy" />
+				<label value="arg1z37jlk" />
 			</template>
 		</selectbox>
 		<label id="zamanParamlbl" value="Zaman" />
 		<selectbox id="zamanParam"  width="90"  >
 			<template>
-				<label value="tioun1il7d" />
+				<label value="f79kndij2t" />
 			</template>
 		</selectbox>
 		<label id="kullaniciParamlbl" value="Kullanıcı" />
-		<textbox type="text" id="kullaniciParam"  value="07bs1krkatsq03xo955x6cky282alheiu303gohhppp2vsztnhlhpr6lurde68dr6t7dhcp1zbcj3rw5ep0vh1tpn29o9ewicgc094ie4olcyarc0xqq5sn995g9x79vrtpejoqts7cikd2mycwk2popctxp7ru85vwn3fv3nhml6an7hatmz1eak9hjqidydz0cvn6npla0son8zwdrpqr6teix3382n81t0bnxyj08tz6jitlt09xigbukx0n"  width="80"  maxlength="255"  placeholder=""  onChange="autocomplete("autocomplete/autocomplete/autocomplete.do?tip=kullanici", "param", 5, "setKullanici")" />
+		<textbox type="text" id="kullaniciParam"  value="6rjf4pgq1bxshzm1w29ajbrnu3hpf8rasysyhaeeuj9kd3vjhe0v6rf5bshkq4ci34tl66t3cmu2p4eb4f426w2pw2z5sur27dttfph0sxn5hdckepdrcah9cbcu8zm5gwkkf03yzcoteqpvyrvezyzm1xzrjalseuz8eu3h3fpmcvt3qi6fjj2fm976c3lv5wcn5n9kd5bklt71hq3yh2b9yjigj6ydczpn37wvhjskfjzwqvdfhdprricht70"  width="80"  maxlength="255"  placeholder=""  onChange="autocomplete("autocomplete/autocomplete/autocomplete.do?tip=kullanici", "param", 5, "setKullanici")" />
 	</window>
-</zk>
+</arya>

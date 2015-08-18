@@ -1,8 +1,8 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addDigersendikadancekilmeWindow">
 		<label visible="false" id="istifaDigerIdlbl" value="İstifa Diğer Id" />
-		<textbox visible="false" type="text" id="istifaDigerId"  value="1twfczwt5x"  placeholder=""  />
+		<textbox visible="false" type="text" id="istifaDigerId"  value="qhinnw5ba3"  placeholder=""  />
 	</window>
-</zk>
+</arya>

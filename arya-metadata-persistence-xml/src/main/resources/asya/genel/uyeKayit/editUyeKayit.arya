@@ -1,18 +1,18 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addUyekayitWindow">
 		<label visible="false" id="uye.uyeIdlbl" value="Uye Id" />
-		<textbox visible="false" type="text" id="uye.uyeId"  value="qasz4fovyd"  placeholder=""  />
+		<textbox visible="false" type="text" id="uye.uyeId"  value="oz6nvconwk"  placeholder=""  />
 		<label visible="false" id="uye.kisiIdlbl" value="Kisi Id" />
-		<textbox visible="false" type="text" id="uye.kisiId"  value="j4kjguygvf"  placeholder=""  />
+		<textbox visible="false" type="text" id="uye.kisiId"  value="ed3x1dhuc0"  placeholder=""  />
 		<label visible="false" id="uye.eklemeTarihilbl" value="Ekleme Tarihi" />
-		<textbox visible="false" type="text" id="uye.eklemeTarihi"  value="qc7ojpxz4u"  placeholder=""  />
+		<textbox visible="false" type="text" id="uye.eklemeTarihi"  value="9c8n96cvh2"  placeholder=""  />
 		<label visible="false" id="uye.ekleyenlbl" value="Ekleyen" />
-		<textbox visible="false" type="text" id="uye.ekleyen"  value="75t4u1yy50h8z44i7jwmilcwgv89xofalljj7ol049bu6abj8jzwh2hnl9uluwquiesg3cxfspii6uf3zpy5i6aztumap0dw8qzfp5q055ch5vard2yuwopjdynf6g52bjtfz2h8gzm2lqr1943qqak34qa9t7wlelqh7swl86zx8f6f8d5i2qpjydrbtnkm1m143rxkqu8gzqj3thvuq5enssdmgqn0xcv49zfmxcp0q263hqxhfu2rpmdmhlz"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="uye.ekleyen"  value="kmbq52qknegy174xipmd1j2u4nvarvg3v9mw6yds5olo0utnzx7cfgoapo7zz2pfg3r1xrfyhhaxbv7r01qrhsreqm2xolhsqfjg6w5ttmv60pu15hlejz9c1ait3wzcik3lui68n5oaptkhuyxqpp320u0qzu35w0lh8o780kwtdbs76z3bjhzaggll8l3ds7zf4rs6w2dw12giubevi81dg3r5ra8p1zfvvj08irmunb0wmsp5peocq3knrs8"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="uye.sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
-		<textbox visible="false" type="text" id="uye.sonGunlemeTarihi"  value="a9esfujmlt"  placeholder=""  />
+		<textbox visible="false" type="text" id="uye.sonGunlemeTarihi"  value="1d9vynfzno"  placeholder=""  />
 		<label visible="false" id="uye.sonGunleyenlbl" value="Son Gunleyen" />
-		<textbox visible="false" type="text" id="uye.sonGunleyen"  value="at0x9w2ym1z9uleer7qjnni657qqou7fv9h0hs3fw9182ramnyenqjuz850t24am4derjl0dwm7c7lfde3k6co4ovl3v1qkrno4e6dnfvzsx42j0dupi28bmqxbwdq75vzu8sjqy8lwzkdffjqn4glyltn509ftg82ez3skkv4pp2ozs9cy8hunjdbsemx5dy4slg25g8zs53uzhls9ujvhe52hg04eza69wvnpj0b89js36phpq4o8q2ckg74q"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="uye.sonGunleyen"  value="j3kl6lzydiqtqx54c6psxrh6uy4qcezw28xruzplizclx35vr3qu5l591rjgyxcz5l9rol0kwq7t3zwfupbiecgxyw9bt3is62pz4olzt2idfd983uiz2zwgtse9w1157n16hb0qbup5ezappszp58owi6dir2ww3pvh0uth1gkevcejs9hd53fyq42s8adq2qtupr8z7r8nr6wqkksa09me7d6lt3evg3n33zxh1359q16m5ol4a2yrrt486m9"  maxlength="255"  placeholder=""  />
 	</window>
-</zk>
+</arya>

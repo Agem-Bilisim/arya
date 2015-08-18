@@ -1,23 +1,23 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listAjandaWindow">
 		<label visible="false" id="isyeriZiyaretIdParamlbl" value="Isveren Ziyaret Id" />
-		<textbox visible="false" type="text" id="isyeriZiyaretIdParam"  value="b0oc3ai0g4"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriZiyaretIdParam"  value="z4h1comwlp"  placeholder=""  />
 		<label visible="false" id="isyeriIdParamlbl" value="Isyeri Id" />
-		<textbox visible="false" type="text" id="isyeriIdParam"  value="6okyypksgi"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriIdParam"  value="68bsknhkbb"  placeholder=""  />
 		<label id="subeParamlbl" value="Şube" />
 		<selectbox id="subeParam"  width="240"  >
 			<template>
-				<label value="zrrkd6z5si" />
+				<label value="jih6cu4g2u" />
 			</template>
 		</selectbox>
 		<label id="isyeriAdiParamlbl" value="Kurum/Kişi Adı" />
-		<textbox type="text" id="isyeriAdiParam"  value="d5mksv9sbvcalyo1zjs34y5o23pkto6kq1ghic4wtgpdqbaf9l0iohior7bqzgtqepszxf51ik1713irvu2zzd37lsrck5v5goj9hwr7jqh6rio9i3801cftd9otqzzgoo6k2jz2nna3ud5lh73fqg3bfaobtzj3ohfwtokvcrylgyl4aubcf0uc7x1grvfee4ztsvu57peeka3t7ywtublg0vpxlwz2a0265omk791061zc40as173j7bmx4j4"  width="416"  maxlength="255"  placeholder=""  onChange="autocomplete("genel/isyeri/autocomplete.do", "unvanParam", 5, "setIsyeri")" />
+		<textbox type="text" id="isyeriAdiParam"  value="ff7usdxqjz7pfdfbsys97i9kv3ls6dm0qu2oer0zzt438sqxxif6tnfczsf2j75dzvugkd33w742pdscbq3108rd5wygygdbjjxcu5g2c8vz7zzfuejy5bj7xg7iwtz4qdj0zlw49tem6sh7bzn78xczjmgnp2eewmnl4ari1l3n5y3e8gbq4ilz4av0onk7i89r04kueh9ldn9lyms49qg9y6kgx87aee5ekjg6n8pl5p7den9s05rwak5gh98"  width="416"  maxlength="255"  placeholder=""  onChange="autocomplete("genel/isyeri/autocomplete.do", "unvanParam", 5, "setIsyeri")" />
 		<label id="ziyaretTarihiBasParamlbl" value="Ziyaret Tarihi" />
-		<datebox id="ziyaretTarihiBasParam"  value="2014-8-17"  width="120"  placeholder=""  />
-		<datebox id="ziyaretTarihiBitParam"  value="2014-10-14"  width="120"  placeholder=""  />
+		<datebox id="ziyaretTarihiBasParam"  value="2003-4-23"  width="120"  placeholder=""  />
+		<datebox id="ziyaretTarihiBitParam"  value="1995-2-25"  width="120"  placeholder=""  />
 		<checkbox type="text" id="faaliyetRaporuParam"  checked="false"  label="Faaliyet Raporu"  onCheck=""  width="50"  />
-		<checkbox type="text" id="benimKayitlarimParam"  checked="true"  label="Benim kayıtlarım"  onCheck=""  width="50"  />
+		<checkbox type="text" id="benimKayitlarimParam"  checked="false"  label="Benim kayıtlarım"  onCheck=""  width="50"  />
 	</window>
-</zk>
+</arya>

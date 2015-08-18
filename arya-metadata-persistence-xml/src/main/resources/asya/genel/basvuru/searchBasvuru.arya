@@ -1,10 +1,10 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listBasvuruWindow">
 		<label visible="false" id="basvuruIdParamlbl" value="Basvuru Id" />
-		<textbox visible="false" type="text" id="basvuruIdParam"  value="kw6qn4ehp9"  placeholder=""  />
-		<textbox visible="false" type="text" id="isyeriIdParam"  value="fdedod3ghn"  placeholder=""  />
-		<textbox visible="false" type="text" id="subeParam"  value="0bhfu9ognk"  placeholder=""  />
+		<textbox visible="false" type="text" id="basvuruIdParam"  value="9eg1purx73"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriIdParam"  value="rub02ageb9"  placeholder=""  />
+		<textbox visible="false" type="text" id="subeParam"  value="u6064eik8z"  placeholder=""  />
 	</window>
-</zk>
+</arya>

@@ -1,44 +1,44 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listDavaWindow">
 		<label visible="false" id="davaIdParamlbl" value="Dava Id" />
-		<textbox visible="false" type="text" id="davaIdParam"  value="z90m3hgms3"  width="240"  placeholder=""  />
+		<textbox visible="false" type="text" id="davaIdParam"  value="5rwgh5c7ah"  width="240"  placeholder=""  />
 		<label id="mahkemesiParamlbl" value="Mahkemesi" />
-		<textbox type="text" id="mahkemesiParam"  value="t8i0j6ric2gioywq6aw2quvayutm8s8qf0uxukyqan5kn550zo2t3sldn2a7cbub89f7yso4l6kepdq5dpb3rixbt9wt0q7moj13"  width="240"  maxlength="100"  placeholder=""  />
+		<textbox type="text" id="mahkemesiParam"  value="29g65clq7kogzh0en1voymq67b2hethm5yfkoy4curzyzryzesd6ow50k6hpmdjkrwpfmoothvfd0i5crq8yvbq66xi0gcdxfrnv"  width="240"  maxlength="100"  placeholder=""  />
 		<label id="esasNoParamlbl" value="Mahkeme Esas No" />
-		<textbox type="text" id="esasNoParam"  value="kw2k4f9298gag9vav3ybhk61d6r2fm8xrrz3i6xxfx6yzg25av"  width="240"  maxlength="50"  placeholder=""  />
+		<textbox type="text" id="esasNoParam"  value="7x4ij1zu0xmqrb9m7zu6l3acswptlr4nne02w98dkcbgoqk5fc"  width="240"  maxlength="50"  placeholder=""  />
 		<label id="eskiEsasNoParamlbl" value="Mahkeme Eski Esas No" />
-		<textbox type="text" id="eskiEsasNoParam"  value="om3j4lielr8a06fuo9de384cxe0dkctbhfn67vg626pmt8x3ph"  width="240"  maxlength="50"  placeholder=""  />
+		<textbox type="text" id="eskiEsasNoParam"  value="zwp9ho9vsfhrxdh1o29fdyo4anpkg6dzyev3mbgg37cwpv3j3p"  width="240"  maxlength="50"  placeholder=""  />
 		<label id="konuParamlbl" value="Konu" />
-		<textbox type="text" id="konuParam"  value="zwrlr6h55he3ry34l1d1lmt3szkokhloq8pid6pcw0yto039knc9ofo9z9ozxop9suldxs7rbuiotlgr6tmdnnx90cdvrplpm9f8"  width="240"  maxlength="100"  placeholder=""  />
+		<textbox type="text" id="konuParam"  value="9erd3rluysmbfugni1iudvsyd1p3vlnzoiem2j2p8gly23n4mis5801bgbdvxyzti1wgaublaiu065kbc6c10nxi5ew0bqvqs1kl"  width="240"  maxlength="100"  placeholder=""  />
 		<label id="davaTarihiBasParamlbl" value="Dava Tarihi" />
-		<datebox id="davaTarihiBasParam"  value="2004-2-25"  width="120"  placeholder=""  />
-		<datebox id="davaTarihiBitParam"  value="2014-11-29"  width="120"  placeholder=""  />
+		<datebox id="davaTarihiBasParam"  value="2010-6-19"  width="120"  placeholder=""  />
+		<datebox id="davaTarihiBitParam"  value="2002-9-28"  width="120"  placeholder=""  />
 		<label id="bitTarihiBasParamlbl" value="Karar Tarihi" />
-		<datebox id="bitTarihiBasParam"  value="1991-1-15"  width="120"  placeholder=""  />
-		<datebox id="bitTarihiBitParam"  value="2002-5-13"  width="120"  placeholder=""  />
+		<datebox id="bitTarihiBasParam"  value="1992-11-16"  width="120"  placeholder=""  />
+		<datebox id="bitTarihiBitParam"  value="2003-8-4"  width="120"  placeholder=""  />
 		<label id="kesTarihiBasParamlbl" value="Kesinleşme Tarihi" />
-		<datebox id="kesTarihiBasParam"  value="2014-4-22"  width="120"  placeholder=""  />
-		<datebox id="kesTarihiBitParam"  value="1998-0-20"  width="120"  placeholder=""  />
+		<datebox id="kesTarihiBasParam"  value="1998-11-24"  width="120"  placeholder=""  />
+		<datebox id="kesTarihiBitParam"  value="2009-11-4"  width="120"  placeholder=""  />
 		<label id="davaAdiParamlbl" value="Dava Adı" />
-		<textbox type="text" id="davaAdiParam"  value="r9057b1vl6bqm39b65g2wf7ya6w7szwm80v68yrqdi8tzdwp9iihr8yiv67cie2qkdm73s150ty8zyslmkvt1didpaavkn3m54hc"  width="240"  maxlength="100"  placeholder=""  />
+		<textbox type="text" id="davaAdiParam"  value="wi658us5u480vzggfd7499uqr5z793g7zap6qpkivc52vr16v554z58d6jjzpud0eaab575hlmd9wuytoi1zcyet0hfutzqmsbc0"  width="240"  maxlength="100"  placeholder=""  />
 		<label id="davaYonuParamlbl" value="Dava Yönü" />
 		<selectbox id="davaYonuParam"  width="150"  >
 			<template>
-				<label value="5hpka8ycgz" />
+				<label value="gwsyw4a97u" />
 			</template>
 		</selectbox>
 		<label id="davaciParamlbl" value="Davacı" />
-		<textbox type="text" id="davaciParam"  value="n2uynr6q8h188x1xi9u2uk9lhbsi81fwqfz89qadz4inuxfez2gmrnqr0f1znuwt2u8r6388esgzgo1c6v5o1f4xaqujcc7ueymd"  width="240"  maxlength="100"  placeholder=""  />
+		<textbox type="text" id="davaciParam"  value="pgsahcy3fqdqj90uvimneubfkzwg2wbhm76s8475kc5xj7y21c84yw79er0l0jszqlh1a6i4sfjsr9bw401lbvjl9tlnnw7uo4i3"  width="240"  maxlength="100"  placeholder=""  />
 		<label id="davaliParamlbl" value="Davalı" />
-		<textbox type="text" id="davaliParam"  value="tu2k77cs99ygk3c0jpu1zxm372oy6bg506vda8ajad71zai3irynzgeyvt36y8i8knqn5ak77w1ph7qcqd6pu7s4xcz26vx4cm86"  width="240"  maxlength="100"  placeholder=""  />
+		<textbox type="text" id="davaliParam"  value="m6k8vawikiko7mzmtu35inzixu3ghiskax4w7boskv8pj2krrpnfpvym1e8dd8dqxyawpci44ingncts79wzdn986niz3e73ju2d"  width="240"  maxlength="100"  placeholder=""  />
 		<label id="subeParamlbl" value="İlgili Şube" />
 		<selectbox id="subeParam"  width="120"  >
 			<template>
-				<label value="lf0hn1em1k" />
+				<label value="wmgvoadcgb" />
 			</template>
 		</selectbox>
 		<checkbox type="text" id="devamEdenDavaParam"  checked="false"  label="Devam Eden Dava"  onCheck=""  width="50"  />
 	</window>
-</zk>
+</arya>

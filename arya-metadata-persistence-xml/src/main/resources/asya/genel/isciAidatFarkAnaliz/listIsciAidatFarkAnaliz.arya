@@ -1,11 +1,11 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listIsciaidatfarkanalizWindow">
-		<textbox visible="false" type="text" id="aidatIdParam"  value="yqvijn46td"  placeholder=""  />
+		<textbox visible="false" type="text" id="aidatIdParam"  value="7e6tmxvbpx"  placeholder=""  />
 		<checkbox type="text" id="istenCikislarParam"  checked="true"  label="İşten Çıkış Farkı"  onCheck=""  width="10"  />
 		<checkbox type="text" id="ucretsizIzinParam"  checked="false"  label="R/UI/A Farkı"  onCheck=""  width="10"  />
 		<checkbox type="text" id="tutarFarkiParam"  checked="true"  label="Tutar Farkı"  onCheck=""  width="10"  />
-		<checkbox type="text" id="bildirimFarkiParam"  checked="true"  label="Bildirim Farkı"  onCheck=""  width="10"  />
+		<checkbox type="text" id="bildirimFarkiParam"  checked="false"  label="Bildirim Farkı"  onCheck=""  width="10"  />
 	</window>
-</zk>
+</arya>

@@ -1,36 +1,36 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listEdevletperformansWindow">
 		<label id="turParamlbl" value="Liste Türü" />
 		<selectbox id="turParam"  width="150"  >
 			<template>
-				<label value="la4vo8lfka" />
+				<label value="lspbdllqa7" />
 			</template>
 		</selectbox>
 		<label id="basTarihParamlbl" value="Tarih Başlangıç" />
-		<datebox id="basTarihParam"  value="1993-2-27"  width="150"  placeholder=""  />
+		<datebox id="basTarihParam"  value="1992-3-20"  width="150"  placeholder=""  />
 		<label id="bitTarihParamlbl" value="Tarih Bitiş" />
-		<datebox id="bitTarihParam"  value="2002-10-23"  width="150"  placeholder=""  />
+		<datebox id="bitTarihParam"  value="1996-9-13"  width="150"  placeholder=""  />
 		<label id="subeParamlbl" value="Şube" />
 		<selectbox id="subeParam"  width="150"  >
 			<template>
-				<label value="tavj6ea7s9" />
+				<label value="23s67e8yiw" />
 			</template>
 		</selectbox>
 		<label id="isyeriKategoriIdParamlbl" value="Kategori" />
 		<selectbox id="isyeriKategoriIdParam"  width="150"  >
 			<template>
-				<label value="ctgymb6a04" />
+				<label value="rr5or469te" />
 			</template>
 		</selectbox>
 		<label id="orgutDurumParamlbl" value="Örgüt Durumu" />
 		<selectbox id="orgutDurumParam"  width="150"  >
 			<template>
-				<label value="skbu5qtnoo" />
+				<label value="ucq6l37lki" />
 			</template>
 		</selectbox>
 		<checkbox type="text" id="onayTarihineGoreParam"  checked="false"  label="Onay Tarihine Göre"  onCheck=""  width="50"  />
 		<checkbox type="text" id="islemParam"  checked="false"  label="İşlem Olmayanları Gösterme"  onCheck=""  width="50"  />
 	</window>
-</zk>
+</arya>

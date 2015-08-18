@@ -1,12 +1,12 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listCsgbisyeriWindow">
 		<label id="subelbl" value="Şube" />
 		<selectbox id="sube"  width="200"  >
 			<template>
-				<label value="wjsdld096i" />
+				<label value="jewlnwa0i3" />
 			</template>
 		</selectbox>
 	</window>
-</zk>
+</arya>

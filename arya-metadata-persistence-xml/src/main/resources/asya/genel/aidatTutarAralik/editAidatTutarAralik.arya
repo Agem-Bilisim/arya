@@ -1,8 +1,8 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addAidattutararalikWindow">
 		<label id="metinlbl" value="Her satıra '-' ile ayrılmış rakamlar girin." />
-		<textbox type="text" id="metin"  value="foxm7uqfhf"  width="400"  height="200"  placeholder=""  rows="5"  cols="40"  />
+		<textbox type="text" id="metin"  value="topjigd4ru"  width="400"  height="200"  placeholder=""  rows="5"  cols="40"  />
 	</window>
-</zk>
+</arya>

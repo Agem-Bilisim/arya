@@ -1,17 +1,17 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listCsvcsgbuyecekilmebildirimWindow">
-		<textbox visible="false" type="text" id="isyeriIdParam"  value="33nigll9ws"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriIdParam"  value="eothzbergn"  placeholder=""  />
 		<label id="subeParamlbl" value="Şube" />
 		<selectbox id="subeParam"  width="200"  >
 			<template>
-				<label value="zpjqmx8f2m" />
+				<label value="ov6n9rigmf" />
 			</template>
 		</selectbox>
 		<label id="isyeriUnvanParamlbl" value="İşyeri Ünvanı" />
-		<textbox type="text" id="isyeriUnvanParam"  value="yuph3geqwfm02snpo21qt267l8s18ouaz66zsnntg04l868aax8diniol0nd1rahj4ohi641h91gto60t9a3jp9o83vwzag0i6cf6taunbkc5bi91y4rbpef9o3m57t8lkmi8frcooyq7ne0fgiisbpqgrck1u6nz4luoxdba2n11csprosjsayvqxeidhifgoaei32ct462x270rdlvcc97a5gbzzh21bsi294lkf4s5wb9dzahtrimt7vn1zf"  width="200"  maxlength="255"  placeholder=""  onChange="autocomplete("function:prepareIsyeriUrl", "unvanParam", 5, "setIsyeri")" />
+		<textbox type="text" id="isyeriUnvanParam"  value="n0ftnn3167dpq75uxgq59d60adp94j42e6tc6b7bk1z67vi8x4buwg5jh3e3elckxlxsrau4vsc1r7mqlwr6v9l0d6c5tt9ptqvaxab2wagbpxpyn6guhnhr5cz0zschajrxo1nrv27whjwzsck1j0hsgn77ei83omp95n1dzspngdr8r5tgw1yvfpxilze1i69fj1uumsyc08572lllwx8sdofepupdm7vumvhvibbr4w2ubsivvaqrkf2atzm"  width="200"  maxlength="255"  placeholder=""  onChange="autocomplete("function:prepareIsyeriUrl", "unvanParam", 5, "setIsyeri")" />
 		<label id="isyeriSgkKisaNoParamlbl" value="İşyeri SGK No" />
-		<textbox type="text" id="isyeriSgkKisaNoParam"  value="emx4fcaqvvq98fjsl9iii50eoubm34u0uy"  width="200"  maxlength="34"  placeholder=""  onChange="autocomplete("function:prepareIsyeriUrl", "sgkKisaNoParam", 5, "setIsyeri")" />
+		<textbox type="text" id="isyeriSgkKisaNoParam"  value="ca1zj7lz800ux91sqv26sal8fu6yjhkc3v"  width="200"  maxlength="34"  placeholder=""  onChange="autocomplete("function:prepareIsyeriUrl", "sgkKisaNoParam", 5, "setIsyeri")" />
 	</window>
-</zk>
+</arya>

@@ -1,6 +1,6 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="main" border="none" apply="demo.layout.business_portal.Kisi">
 		<label id="deneme" value="Bu bir Ali Özkan Özerendir.... " />
 		<textbox id="deneme1" value="Ali ali ali" />
@@ -21,4 +21,4 @@
 		<button id="deneme6" label="Arya" onClick="AryaOnClick" />
 		<button id="deneme7" label="Yeni Ekran" onClick="YeniEkranOnClick" />
 	</window>
-</zk>
+</arya>

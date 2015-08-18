@@ -8,8 +8,8 @@ import org.zkoss.zk.ui.Component;
 import org.zkoss.zul.Combobox;
 import org.zkoss.zul.Comboitem;
 
-import tr.com.agem.arya.metadata.zul.impl.ComboboxType;
-import tr.com.agem.arya.metadata.zul.impl.ComboitemType;
+import tr.com.agem.arya.metadata.arya.impl.ComboboxType;
+import tr.com.agem.arya.metadata.arya.impl.ComboitemType;
 import tr.com.agem.core.interpreter.IAryaComponent;
 
 public class ZkossCombobox extends ZkossComponent implements IAryaComponent {
@@ -19,8 +19,8 @@ public class ZkossCombobox extends ZkossComponent implements IAryaComponent {
 		setComponent(new Combobox());
 		Combobox component = (Combobox) getComponent();
 		component.setParent((Component) parent);
-		if (((ComboboxType) object).getAttributeOrCustomAttributesOrVariables() != null) {
-			List<Object> componentsList = ((ComboboxType) object).getAttributeOrCustomAttributesOrVariables();
+		if (((ComboboxType) object).getAttributeOrCustomAttributesOrTemplate() != null) {
+			List<Object> componentsList = ((ComboboxType) object).getAttributeOrCustomAttributesOrTemplate();
 			for (Object oo : componentsList) {
 				if (oo instanceof JAXBElement<?>) {
 					JAXBElement<?> j = (JAXBElement<?>) oo;
@@ -28,8 +28,8 @@ public class ZkossCombobox extends ZkossComponent implements IAryaComponent {
 					String compStr = ((JAXBElement<?>) j).getName().getLocalPart();
 					if (compStr.equalsIgnoreCase("comboitem")) {
 						Comboitem ci = new Comboitem();
-						ci.setLabel(((ComboitemType)j.getValue()).getLabel());
-						ci.setValue(((ComboitemType)j.getValue()).getValue());
+						ci.setLabel(((ComboitemType) j.getValue()).getLabel());
+						ci.setValue(((ComboitemType) j.getValue()).getValue());
 						ci.setParent(component);
 					}
 				}

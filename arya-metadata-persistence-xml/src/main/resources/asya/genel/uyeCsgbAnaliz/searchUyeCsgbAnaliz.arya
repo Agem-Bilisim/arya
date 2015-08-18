@@ -1,15 +1,15 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listUyecsgbanalizWindow">
 		<label id="subeParamlbl" value="Şube" />
 		<selectbox id="subeParam"  width="140"  >
 			<template>
-				<label value="9chm8be4yd" />
+				<label value="xs18iz5h31" />
 			</template>
 		</selectbox>
 		<checkbox type="text" id="orgutluParam"  checked="true"  label="Örgütlenme Var"  onCheck=""  width="50"  />
 		<checkbox type="text" id="isletmeParam"  checked="true"  label="İşyeri / İşletme"  onCheck=""  width="50"  />
 		<checkbox type="text" id="farkOlanlarParam"  checked="true"  label="Fark Olanları Göster"  onCheck=""  width="50"  />
 	</window>
-</zk>
+</arya>

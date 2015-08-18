@@ -8,8 +8,8 @@ import org.zkoss.zk.ui.Component;
 import org.zkoss.zul.Listbox;
 import org.zkoss.zul.Listitem;
 
-import tr.com.agem.arya.metadata.zul.impl.ListboxType;
-import tr.com.agem.arya.metadata.zul.impl.ListitemType;
+import tr.com.agem.arya.metadata.arya.impl.ListboxType;
+import tr.com.agem.arya.metadata.arya.impl.ListitemType;
 import tr.com.agem.core.interpreter.IAryaComponent;
 
 public class ZkossListbox extends ZkossComponent implements IAryaComponent {
@@ -28,8 +28,8 @@ public class ZkossListbox extends ZkossComponent implements IAryaComponent {
 					String compStr = ((JAXBElement<?>) j).getName().getLocalPart();
 					if (compStr.equalsIgnoreCase("listitem")) {
 						Listitem li = new Listitem();
-						li.setLabel(((ListitemType)j.getValue()).getLabel());
-						li.setValue(((ListitemType)j.getValue()).getValue());
+						li.setLabel(((ListitemType) j.getValue()).getLabel());
+						li.setValue(((ListitemType) j.getValue()).getValue());
 						li.setParent(component);
 					}
 				}

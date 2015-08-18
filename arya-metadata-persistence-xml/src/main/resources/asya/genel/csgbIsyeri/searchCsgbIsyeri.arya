@@ -1,45 +1,45 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listCsgbisyeriWindow">
-		<textbox visible="false" type="text" id="isyeriIdParam"  value="2n6a1iumeb"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriIdParam"  value="61r8rfzqqr"  placeholder=""  />
 		<label id="unvanParamlbl" value="İşyeri Ünvanı" />
-		<textbox type="text" id="unvanParam"  value="nbl0fcp3yi2061nb0xylgukhpunztem7adr4xwcweapvi0nid85vgkb06qjibwpo2bgostrhynfr7f6l4eh6u4ruq29401ihhekr2sedai1bxiuy4be69s00kmwzosmvbmi90rfmnwvzoyi6m73brmb64mx5ry3ddy4rf9kh8jcr4regly5ereznc1s5xaj16ks3lj9ii4mslfzhywct9ndchp9ve0akzjfj8gg0pv34scgdgs0e913su00nqde"  width="361"  maxlength="255"  placeholder=""  top="56" onChange="autocomplete("genel/csgbIsyeri/autocomplete.do", "unvanParam", 5, "setIsyeri")" />
+		<textbox type="text" id="unvanParam"  value="ikj8dzhkmi60ghupoybp92cwcd8b85jgipbi1zr15mte5yzz3qp10kdnyh3ke88mudrygsns1r1eq9lhxkrpgx17ul0takphridnmd8dfm4ijpmad8agl5g6qjy3py2hfjumv4jo2eqbbrcycvanubyyhpeyp1zypodq6jegm30z83x29k2qxwsxc20l33hgqmfzhbf7kpym0p888b7o90t8ynnc3q2sl8wnz4skwpcr1t9tm1thd64skfw490w"  width="361"  maxlength="255"  placeholder=""  top="56" onChange="autocomplete("genel/csgbIsyeri/autocomplete.do", "unvanParam", 5, "setIsyeri")" />
 		<label id="calisanSayisiBasParamlbl" value="ÇSGB Çalışan Sayısı" />
-		<intbox id="calisanSayisiBasParam"  value="895014111"  width="98"  maxlength="5"  placeholder=""  />
-		<intbox id="calisanSayisiBitParam"  value="-884320263"  width="98"  maxlength="5"  placeholder=""  />
+		<intbox id="calisanSayisiBasParam"  value="1880875935"  width="98"  maxlength="5"  placeholder=""  />
+		<intbox id="calisanSayisiBitParam"  value="-1162197442"  width="98"  maxlength="5"  placeholder=""  />
 		<label id="uyeSayisiBasParamlbl" value="ÇSGB Üye Sayısı" />
-		<intbox id="uyeSayisiBasParam"  value="205347282"  width="98"  maxlength="5"  placeholder=""  />
-		<intbox id="uyeSayisiBitParam"  value="-49827801"  width="98"  maxlength="5"  placeholder=""  />
+		<intbox id="uyeSayisiBasParam"  value="552998202"  width="98"  maxlength="5"  placeholder=""  />
+		<intbox id="uyeSayisiBitParam"  value="-234767374"  width="98"  maxlength="5"  placeholder=""  />
 		<label id="oranBasParamlbl" value="ÇSGB Üye Oran" />
-		<intbox id="oranBasParam"  value="505003510"  width="98"  maxlength="5"  placeholder=""  />
-		<intbox id="oranBitParam"  value="477972598"  width="98"  maxlength="5"  placeholder=""  />
+		<intbox id="oranBasParam"  value="2060069288"  width="98"  maxlength="5"  placeholder=""  />
+		<intbox id="oranBitParam"  value="-120185283"  width="98"  maxlength="5"  placeholder=""  />
 		<label id="ilKoduParamlbl" value="İl" />
 		<selectbox id="ilKoduParam"  width="98"  >
 			<template>
-				<label value="p86oeu1vkw" />
+				<label value="4venkf5ffh" />
 			</template>
 		</selectbox>
 		<selectbox id="ilceKoduParam"  width="98"  >
 			<template>
-				<label value="wc1na1ng8c" />
+				<label value="6dzhi0dy9v" />
 			</template>
 		</selectbox>
 		<label id="orgutluParamlbl" value="Örgütlü" />
 		<selectbox id="orgutluParam"  width="120"  >
 			<template>
-				<label value="k7dbl44wd9" />
+				<label value="ufwrn1aet1" />
 			</template>
 		</selectbox>
 		<label id="kanunKapsaminaAlinisTarihiBasParamlbl" value="Kan. Kap. Alınış Baş." />
-		<datebox id="kanunKapsaminaAlinisTarihiBasParam"  value="1996-9-3"  width="100"  placeholder=""  />
+		<datebox id="kanunKapsaminaAlinisTarihiBasParam"  value="2001-8-23"  width="100"  placeholder=""  />
 		<label id="kanunKapsaminaAlinisTarihiBitParamlbl" value="Kan. Kap. Alınış Bit." />
-		<datebox id="kanunKapsaminaAlinisTarihiBitParam"  value="2009-10-14"  width="100"  placeholder=""  />
-		<checkbox type="text" id="onaylananUyelerParam"  checked="true"  label="Onaylanan Üye"  onCheck=""  width="50"  />
+		<datebox id="kanunKapsaminaAlinisTarihiBitParam"  value="2008-11-4"  width="100"  placeholder=""  />
+		<checkbox type="text" id="onaylananUyelerParam"  checked="false"  label="Onaylanan Üye"  onCheck=""  width="50"  />
 		<checkbox type="text" id="istifaEdenUyeParam"  checked="false"  label="İstifa Eden Üye"  onCheck=""  width="50"  />
 		<label visible="false" id="ilKodlariParamlbl" value="İl" />
-		<textbox visible="false" type="text" id="ilKodlariParam"  value="9xqw7lgt1d"  placeholder=""  />
+		<textbox visible="false" type="text" id="ilKodlariParam"  value="dehexpu27j"  placeholder=""  />
 		<label id="ilAdlariParamlbl" value="İller" />
-		<textbox type="text" id="ilAdlariParam"  value="lrihingjs5"  width="361"  placeholder=""  readonly="true"  />
+		<textbox type="text" id="ilAdlariParam"  value="djw6utta8l"  width="361"  placeholder=""  readonly="true"  />
 	</window>
-</zk>
+</arya>

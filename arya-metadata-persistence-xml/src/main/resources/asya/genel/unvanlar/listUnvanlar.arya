@@ -1,30 +1,30 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addUnvanlarWindow">
 		<label visible="false" id="gorevIdlbl" value="Görev Id" />
-		<textbox visible="false" type="text" id="gorevId"  value="94hdbgyki8"  placeholder=""  />
+		<textbox visible="false" type="text" id="gorevId"  value="o3x9oks74k"  placeholder=""  />
 		<label id="tanimlbl" value="Tanım" />
-		<textbox type="text" id="tanim"  value="mpktp3lpq5yy00erg6i6303ogmtwqg7j0uyai1jnudu1vax5pnmt98plsbq3hq45ocnprcs3fkin6sfvlrl6d44zo92ric7dq7znfuejjtet38wp1nlajr3t5v14vw7qpv0k05uaxx4rlzg08te77imh65u3q0ci1poz49xku3mcrlvm6ze192p28vyw5czkjsr0ck6stfgpqmmw0tnr5hc09q0iqmyna1ygkosgnh49jxzm19tyejgjw1x9y8n"  width="357"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="tanim"  value="v2e07f31sbyjs2hi2rdtpb6tc4zsa70rbmp2hcsod6w3ed0ala7uwxm2w9pra87011wb6wd1myvdtxldwp84obl8346owe7uuyjgztn4juiy4toi4m7omcalzulvho9su424azd5febczzwbhdb9txqfk9kh3n4wtkmrd788z2x72stib4esp55k0jilo3p4b7he397h3m0iqjol1sngeiy1pzzsszfqr68055zjnrs9a61qpux2pm2as9r9lsz"  width="357"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
-		<textbox visible="false" type="text" id="eklemeTarihi"  value="56m9r4ydb7"  placeholder=""  />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="4mfr2ei78a"  placeholder=""  />
 		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
-		<textbox visible="false" type="text" id="ekleyen"  value="mwxon0pithmqasj6glyyzdl0pokkehh1h0dm4wzi8nxbsn0x4ch4vorz5uj80mmq6if9s7pai7ivizqtvx5gcgn4rc5ovm255g6dqlw9cs344vx9nt7w919mqai0dv1jnm06cemn9n0f2s9hsvqb3j8m6j1vk33rjldrgno9x0a4z4e6w0nluz6zzcrb4h8t9l66jm3e52lvo9gvx4xxqku9a8bifl8ia2fpk9dezm841hz83qx9ixs5qsy273k"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="ekleyen"  value="399e6fetpq41toz1xegluszkkbz6hgqeojdn2edm11xuhswwrgqzwgj18649y5bxxytvk8nbeuj4vrlks9a4nn0p8hkogrdv6ait5y8mcxice5923xgurmhf2lvqwadywvfe4ejlbuqhg9iqb01f3ckszk6fxtvohd94q8y9od086wvwaq1jg608kg4n10z7jo7yfj4i62jn817ck7j4ugwq4fln5wxlssaciwk75l48dtb1vv3gkducbba68ll"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
-		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="d1bj613wyl"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="iyx5m8fctt"  placeholder=""  />
 		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
-		<textbox visible="false" type="text" id="sonGunleyen"  value="rvn6ufi4z27o4xu7wo5t0e7a1q3kgvyr2zr6r4lanl0mlb4d0jw1jvzhgydeoxs7rsmr03nox5dxijkxzubzj35r7wxnwgf3yh6viajia70wpdqain6qqjmbfqpii24yq3hf3qehara1cdw4wyhs351hrsq4w9x14dd2hj20kg7ahvp820cz72fiwlr2d4ir7wf6feifp6yon3ux092w0vnwieu5l3togzbp5pze5ihb6qxzy4hy7q6itby0cl1"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="eaeufosgu6m3u0sha3l4m2k830hx2a0ut2uqsw9g1v3eur7qym6uvihqjg0g8bkguve68ksayqh6x75b6mnlq7ipj03erz10xhc6600ayci7xth2l0fj4vv7swnv3eewqxwiugzsxced3yth12rp48omupr2xsh2u2ox5zfcwb3re5nrdopqvn41afjkhx49jpmnzboi5w3eb54k88j0glggut4d25nxm19infobiz1hdqz881to8cor43cssbg"  maxlength="255"  placeholder=""  />
 		<label id="aktifParamlbl" value="Aktif" />
 		<selectbox id="aktifParam"  width="152"  >
 			<template>
-				<label value="0v7l0vagyj" />
+				<label value="zz264lided" />
 			</template>
 		</selectbox>
 		<label id="amirParamlbl" value="Amir" />
 		<selectbox id="amirParam"  width="150"  >
 			<template>
-				<label value="03y2qezj5b" />
+				<label value="5yta363s4t" />
 			</template>
 		</selectbox>
 	</window>
-</zk>
+</arya>

@@ -22,8 +22,8 @@ public class MetadataBuilder {
 			if (isFirst) {
 
 				xml.append("<?page title=\"DOCSYS\" ?>\n");
-				xml.append("<zk xmlns=\"http://www.zkoss.org/2005/zul\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n");
-				xml.append("xsi:schemaLocation=\"http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd\">\n");
+				xml.append("<arya xmlns=\"aryaportal.org\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n");
+				xml.append("xsi:schemaLocation=\"aryaportal.org arya.xsd\">\n");
 
 				xml.append("\t<window id=\"")
 						.append(MetadataGeneratorUtil.getInstance().generateWindowId(actionName, cls.getName()))
@@ -88,7 +88,7 @@ public class MetadataBuilder {
 		StringBuilder xml = new StringBuilder();
 
 		xml.append("\t</window>\n");
-		xml.append("</zk>\n");
+		xml.append("</arya>\n");
 
 		return xml.toString();
 	}

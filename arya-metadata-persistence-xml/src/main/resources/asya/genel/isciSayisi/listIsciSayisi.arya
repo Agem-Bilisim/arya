@@ -1,32 +1,32 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addIscisayisiWindow">
 		<label visible="false" id="isciSayisiIdlbl" value="Isci Sayısı Id" />
-		<textbox visible="false" type="text" id="isciSayisiId"  value="5psquotrdk"  placeholder=""  />
+		<textbox visible="false" type="text" id="isciSayisiId"  value="czn8jfvox9"  placeholder=""  />
 		<label visible="false" id="isyeriIdlbl" value="Isyeri Id" />
-		<textbox visible="false" type="text" id="isyeriId"  value="5n3ovx92hb"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriId"  value="n9qtgpcpyo"  placeholder=""  />
 		<label id="yillbl" value="Yıl" />
 		<selectbox id="yil"  width="100"  >
 			<template>
-				<label value="whazhd7yo1" />
+				<label value="gcpme6bluk" />
 			</template>
 		</selectbox>
 		<label id="aylbl" value="Ay" />
 		<selectbox id="ay"  width="100"  >
 			<template>
-				<label value="3gqbv5cila" />
+				<label value="i50i4lf6i1" />
 			</template>
 		</selectbox>
 		<label id="isciSayisilbl" value="İşçi Sayısı" />
-		<intbox id="isciSayisi"  value="495433248"  width="100"  maxlength="255"  placeholder=""  />
+		<intbox id="isciSayisi"  value="-1109345304"  width="100"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
-		<textbox visible="false" type="text" id="eklemeTarihi"  value="6xxj605x55"  placeholder=""  />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="ucaznsn3u7"  placeholder=""  />
 		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
-		<textbox visible="false" type="text" id="ekleyen"  value="apwqd1hix3mpgg2so636vrz26ifavgj1jn31jes4gureetj8i7r3v11eruiurovuwrxcqvr43b0mhzkyy6bcdlpahp20egmzgz96o3hxuqkjh1ej3dozpmre3gs9o5fxw9pjvaekzvp0en876imsjd1af4kzxlb8zrrnxhj53xtx5m29qy1pbl55pneo5oh3ty7rsvbocm17kx4e4hpntqmoiy1n9t0jcujtfpi4aslwsdruw3h3d14y18e43sj"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="ekleyen"  value="0tqdopr9xn8fmjr4n8o499zw0jnfb5vyqfz9leducn6si7lpdahtivvzyrbr4jlik9yt6c8dp8ns7s0dhm0ab52jjqmsg9fn3g8gpioe7iwbvft108nnapwn7wylyi12i3xw75pxydon741fpw6b1sxu72g3xgzlmukts1jije4vf3nkwzirpm6ayznp7lyhmp2s92blicgxjvfwa8z6myl1l79vam0q3xfsgznf93np7lhwnjxh4lc57arbo2z"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
-		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="z9nxr9uh6g"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="hola2phhyf"  placeholder=""  />
 		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
-		<textbox visible="false" type="text" id="sonGunleyen"  value="hxayppshc7sr5wgrftvwdj8bxy48ymdj3sw0tp53ktecbtuwiupheuefge0nijuqbomfysxrrvxmejnrstko4b14zpb6d4t6tbg4vo3dwzpqu6d5bly3tb0skai04v175xu988cohfnhc3tp132wwovzhrnfy63bfo4c644tc0d1r5ejcvslqg0acqkqrsztqmrz5te7r2dzswasatscau5cn7o1oqoncoew02nfg9a0yti8gly3wffej83s8iv"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="0b8b196lx3vjnmtsxo6v76odlg66wsftitqynjfqd6p3czp53qrorlwjt13uwsepd4y6vkciz9uz038lgi0jv8ada8axle8n228507r4nxfxumchh7xkbng8niiui479zsqhrvq4ymb3sdgklanvyucngbzjs442m198867rrjr74zse8jxgueweqyzqfwsvzy7zvgc8m6mjrbksmt8y9ym28snkridi87w2v3vz0wxwgnw5c103seoiedxpn1x"  maxlength="255"  placeholder=""  />
 	</window>
-</zk>
+</arya>

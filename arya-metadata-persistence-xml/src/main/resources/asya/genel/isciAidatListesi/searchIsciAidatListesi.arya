@@ -1,52 +1,52 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listIsciaidatlistesiWindow">
 		<label id="listeTurParamlbl" value="Liste Türü" />
 		<selectbox id="listeTurParam"  width="200"  >
 			<template>
-				<label value="faedrcmqzp" />
+				<label value="7ijia1xpkr" />
 			</template>
 		</selectbox>
 		<label id="donemParamlbl" value="Dönem Ay/Yil" />
 		<selectbox id="donemParam"  width="150"  >
 			<template>
-				<label value="3oytv5ek4d" />
+				<label value="eeisopcy4z" />
 			</template>
 		</selectbox>
 		<label id="isyeriParam.subeParamlbl" value="Şube" />
 		<selectbox id="isyeriParam.subeParam"  width="300"  >
 			<template>
-				<label value="t2ey0s4icm" />
+				<label value="1u6g9m5i6i" />
 			</template>
 		</selectbox>
 		<label id="isyeriParam.unvanParamlbl" value="İşyeri Ünvanı" />
-		<textbox type="text" id="isyeriParam.unvanParam"  value="tygfvuib65mng7ckduyqfa20s1nez84bpshdk1dd3ltkxcjod7scvcs99usa9yyrqm1gaeoo69gjx129ojk6j9s3x27d6yru3j4p882r11ccm4yrkz0oti2chgcy3y7sbgfga15i1qsp82v7yh6d5bmmv8s3on21o4t09nb6ebsgcfl76cpagkjn0vu1cd8qwcuj5gs5tcd5hfn1c9lax9n24hqr00wyd3669amtsqyukyqwkzrahew8ko1fzkb"  width="416"  maxlength="255"  placeholder=""  top="56" onChange="autocomplete("genel/isyeri/autocomplete.do", "unvanParam", 5, "setIsyeri")" />
+		<textbox type="text" id="isyeriParam.unvanParam"  value="1cetso9dz3zbyhasnulj7hkge8o4mek5gzjujnhe9echo76jadixuap3s0ckbu4x9cp5rbnvcnn6lv79zf6qsezyr4oggvy7lloqdk2a2a56sek88oioe6vetn8tm487wvtp0nsfcn59tz3piwkejts68y9jk60wnluyc7y3itb0lmamlb6z877jup5brzqeo15h2szt8ezxrbtb90a14k84tgivypk63thjtbc61chlgmpb6gefv53uyef0pj0"  width="416"  maxlength="255"  placeholder=""  top="56" onChange="autocomplete("genel/isyeri/autocomplete.do", "unvanParam", 5, "setIsyeri")" />
 		<label id="isyeriParam.sgkKisaNoParamlbl" value="İşyeri SGK No" />
-		<textbox type="text" id="isyeriParam.sgkKisaNoParam"  value="1edu4uy41w9vlt0is3fai82aj6mmyydxjr"  maxlength="34"  placeholder=""  onChange="autocomplete("genel/isyeri/autocomplete.do", "sgkKisaNoParam", 5, "setIsyeri")" />
+		<textbox type="text" id="isyeriParam.sgkKisaNoParam"  value="giy6ux3tyrz5hrgar8v9gq1v0p4cblyqrw"  maxlength="34"  placeholder=""  onChange="autocomplete("genel/isyeri/autocomplete.do", "sgkKisaNoParam", 5, "setIsyeri")" />
 		<label id="isyeriParam.isyeriKategoriIdParamlbl" value="Kategori" />
 		<selectbox id="isyeriParam.isyeriKategoriIdParam"  width="300"  >
 			<template>
-				<label value="fxrfwxdu71" />
+				<label value="g0n30ek91o" />
 			</template>
 		</selectbox>
 		<label id="isyeriParam.kisaAdParamlbl" value="Kısa Ad" />
-		<textbox type="text" id="isyeriParam.kisaAdParam"  value="ij9jhvka5pvjlof97sm64vsg0d8e5c32ji49nx23gtv9g0ei8a5lgw5puoaq58i42cj7mdqqz3waubzqybw3wpp66yunesmbjqsarkreyfonqer8k8lk7m4qw6kf2ibdrip6lwi34zwzobh87lu4c3r6re4frsncm0gn87e29wwdx8xevhcz1k108653wohf4bq0wznqzhskz48ns8z0qdfi3bd3x4m7csbe16ifsrsdouxyhvb0l2s3b1izeyo"  width="260"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="isyeriParam.kisaAdParam"  value="nxgru6lc64wtn3qlelg8bdanafye1ek9ss3upqdx4ezoihg6b1f490ywgkyaoj6sdnbko2geynt12ymgg6vi53udzmrlt5g50bysmwet4ja021j1rsy4ecv0odacx214zuzwf2ngyfio7m0zeaarl0g8wjdb47wlx8r9o13ucey6h41ln06ml3bptdap1skltsp2ch1nuhh2fdq342jvf56n110z1l2mtetchy6c4v7v53mpf97nm6afeenx8uq"  width="260"  maxlength="255"  placeholder=""  />
 		<label id="isyeriParam.orgutluParamlbl" value="Örgütlenme Var" />
 		<selectbox id="isyeriParam.orgutluParam"  width="80"  >
 			<template>
-				<label value="ijy3lziv90" />
+				<label value="ib7r38wyfy" />
 			</template>
 		</selectbox>
 		<label id="aidatTurParamlbl" value="Üye / DA" />
 		<selectbox id="aidatTurParam"  width="200"  >
 			<template>
-				<label value="9gs74tsyic" />
+				<label value="gdegf2frt0" />
 			</template>
 		</selectbox>
 		<label id="tutarBaslbl" value="Aidat Tutar Aralığı" />
-		<doublebox id="tutarBas"  value="0.11060013055838169"  width="90"  placeholder=""  />
+		<doublebox id="tutarBas"  value="0.3663553889407176"  width="90"  placeholder=""  />
 		<label id="tutarTirelbl" value=""  onClick=""  />
-		<doublebox id="tutarBit"  value="0.14992551636368023"  width="90"  placeholder=""  />
+		<doublebox id="tutarBit"  value="0.8940021860270656"  width="90"  placeholder=""  />
 	</window>
-</zk>
+</arya>

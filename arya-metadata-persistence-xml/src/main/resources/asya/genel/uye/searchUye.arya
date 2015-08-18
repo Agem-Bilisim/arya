@@ -1,47 +1,47 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listUyeWindow">
 		<label id="durumParamlbl" value="Üyelik Durumu" />
 		<selectbox id="durumParam"  width="120"  >
 			<template>
-				<label value="obcu1l24bg" />
+				<label value="vm6xccwe4x" />
 			</template>
 		</selectbox>
 		<label id="tarihParamlbl" value="Tarih" />
-		<datebox id="tarihParam"  value="2007-0-18"  width="150"  placeholder=""  />
+		<datebox id="tarihParam"  value="2000-7-26"  width="150"  placeholder=""  />
 		<label id="cikisNedeniParamlbl" value="Çıkış Nedeni" />
 		<selectbox id="cikisNedeniParam"  width="120"  >
 			<template>
-				<label value="s4pvmr65s1" />
+				<label value="jdtfvdqzkl" />
 			</template>
 		</selectbox>
 		<label id="gecerlilikParamlbl" value="Geçerlilik" />
 		<selectbox id="gecerlilikParam"  width="120"  >
 			<template>
-				<label value="fhrb7cehj6" />
+				<label value="vt0evhyhnr" />
 			</template>
 		</selectbox>
 		<label id="basTarihParamlbl" value="Üyelik Düşme Baş. Tarihi" />
-		<datebox id="basTarihParam"  value="1996-4-11"  width="120"  placeholder=""  />
+		<datebox id="basTarihParam"  value="2007-10-22"  width="120"  placeholder=""  />
 		<label id="bitTarihParamlbl" value="Üyelik Düşme Bit. Tarihi" />
-		<datebox id="bitTarihParam"  value="2011-9-25"  width="120"  placeholder=""  />
+		<datebox id="bitTarihParam"  value="2003-3-17"  width="120"  placeholder=""  />
 		<label id="orgutDurumParamlbl" value="Örgüt Durumu" />
 		<selectbox id="orgutDurumParam"  width="120"  >
 			<template>
-				<label value="c4r8v5cs1q" />
+				<label value="8f1osot732" />
 			</template>
 		</selectbox>
 		<label id="aciklamaParamlbl" value="Açıklama" />
-		<textbox type="text" id="aciklamaParam"  value="pebxyc3wlq"  width="120"  placeholder=""  />
+		<textbox type="text" id="aciklamaParam"  value="4eq3qinqiq"  width="120"  placeholder=""  />
 		<label id="cikisAciklamaParamlbl" value="Çıkış Açıklama" />
-		<textbox type="text" id="cikisAciklamaParam"  value="qcmgv2op83"  width="120"  placeholder=""  />
-		<checkbox type="text" id="acikUyelikGostermeParam"  checked="false"  label="Açık üyelikleri gösterme"  onCheck=""  width="50"  />
+		<textbox type="text" id="cikisAciklamaParam"  value="whmlfzg4fc"  width="120"  placeholder=""  />
+		<checkbox type="text" id="acikUyelikGostermeParam"  checked="true"  label="Açık üyelikleri gösterme"  onCheck=""  width="50"  />
 		<label id="girisYkKararNoParamlbl" value="YK Karar No" />
-		<textbox type="text" id="girisYkKararNoParam"  value="38ngeuyf0crqzyemf98vhayj39wk1dw021k0x03tvi4vysgjxfqtno9sifr6v6y3wtvpbseijxt3xomt8x0i6eqdbq6shu5s52kfw59luqwoa2gr84itbesc6njd8rnv570x1yf0ivri6yqldesn9em0r1pmjfaxw9qgqknyx3yybsz7r27wl8x12xtawrzsqyz3qo6shjrcpjpxqqyf255cvaqy3ri24mq324n80a8sfhm7j6a5xhune8s61rq"  width="120"  maxlength="255"  placeholder=""  top="50" />
+		<textbox type="text" id="girisYkKararNoParam"  value="k66p3m02azvslsqh8bgmc4y41bmrvu90wyoku17kewd0ofooqmk5kd8be0nfnz1do5fo98dpcav6dsr3rerz73yyn7gcp0re3cuh1bhm6s7iay13klfp0klg22k0ng784y539eo2ec4syd3bdptd831tt33p4cgi7p4ihma7a4boihstfra8eouqxjdqdijkr7rrimbp49u2wfepor9irwbrfqf2lgbzutigr7u1xauub6aox0ysdm5zljn75d9"  width="120"  maxlength="255"  placeholder=""  top="50" />
 		<label id="onayBasTarihParamlbl" value="Onay Baş. Tarihi" />
-		<datebox id="onayBasTarihParam"  value="1993-2-6"  width="120"  placeholder=""  top="75" />
+		<datebox id="onayBasTarihParam"  value="1992-5-2"  width="120"  placeholder=""  top="75" />
 		<label id="onayBitTarihParamlbl" value="Onay Bit. Tarihi" />
-		<datebox id="onayBitTarihParam"  value="2012-10-4"  width="120"  placeholder=""  top="75" />
+		<datebox id="onayBitTarihParam"  value="2000-7-9"  width="120"  placeholder=""  top="75" />
 	</window>
-</zk>
+</arya>
