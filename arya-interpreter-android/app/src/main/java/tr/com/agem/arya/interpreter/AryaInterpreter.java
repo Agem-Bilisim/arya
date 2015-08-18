@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.io.StringReader;
 
 import tr.com.agem.arya.R;
+import tr.com.agem.arya.gateway.AryaResponse;
 import tr.com.agem.arya.interpreter.components.AryaButton;
 import tr.com.agem.arya.interpreter.components.AryaCheckbox;
 import tr.com.agem.arya.interpreter.components.AryaDatebox;
@@ -25,12 +26,12 @@ public class AryaInterpreter
 {
     private static final String TAG = "AryaInterpreter";
 
-    public static void handleViewResponse(String viewXML, final LinearLayout mainLayout, Context context){
+    public static void handleViewResponse(AryaResponse response, final LinearLayout mainLayout, Context context){
 
         XmlPullParser parser = Xml.newPullParser();
         try {
             parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
-            parser.setInput(new StringReader(viewXML));
+            parser.setInput(new StringReader(response.getView()));
 
             while(parser.next() != XmlPullParser.END_DOCUMENT)
             {
@@ -44,12 +45,14 @@ public class AryaInterpreter
                     }
                 }
             }
+
+            // TODO set data values
+
         } catch (XmlPullParserException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
 
     }
 
@@ -63,16 +66,24 @@ public class AryaInterpreter
 
                     if(tagName.equals("label")) {
                         new AryaLabel(context, parser, window);
-                    }else if(tagName.equals("textbox")) {
+                    } else if ("textbox".equalsIgnoreCase(tagName)) {
                         new AryaTextbox(context, parser, window);
-                    }else if(tagName.equals("checkbox")) {
+                    } else if ("checkbox".equalsIgnoreCase(tagName)) {
                         new AryaCheckbox(context, parser, window);
-                    }else if(tagName.equals("datebox")) {
+                    } else if ("datebox".equalsIgnoreCase(tagName)) {
                         new AryaDatebox(context, parser, window);
-                    }else if(tagName.equals("button")) {
+                    } else if ("button".equalsIgnoreCase(tagName)) {
                         new AryaButton(context, parser, window);
+                    } else if ("intbox".equalsIgnoreCase(tagName)) {
+                        new AryaTextbox(context, parser, window);
+                    } else if ("doublebox".equalsIgnoreCase(tagName)) {
+                        new AryaTextbox(context, parser, window);
+                    } else if ("listbox".equalsIgnoreCase(tagName)) {
+                        // TODO multiple combobox impl
+                    } else if ("selectbox".equalsIgnoreCase(tagName)) {
+                        // TODO single combobox impl
                     }
-                }else if(parser.getEventType() == XmlPullParser.END_TAG) {
+                } else if(parser.getEventType() == XmlPullParser.END_TAG) {
                     String tagName = parser.getName();
                     if(tagName.equals("window")) {
                         ImageView image = new ImageView(context);
