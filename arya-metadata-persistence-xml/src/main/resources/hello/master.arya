@@ -1,14 +1,23 @@
 <?page title="DOCSYS" ?>
 <zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
-	<window id="main" border="none"
-		apply="demo.layout.business_portal.Kisi">
+	<window id="main" border="none" apply="demo.layout.business_portal.Kisi">
 		<label id="deneme" value="Bu bir Ali Özkan Özerendir.... " />
 		<textbox id="deneme1" value="Ali ali ali" />
 		<textbox id="deneme2" value="2" />
 		<label id="deneme3" value="Hede Hödö" />
 		<checkbox id="deneme4" label="Deneme" onCheck="AryaOnCheck" />
 		<datebox id="deneme5" />
+		<listbox>
+			<listitem label="item1" value="1" />
+			<listitem label="item2" value="2" />
+			<listitem label="item3" value="3" />
+		</listbox>
+		<combobox>
+			<comboitem label="item1" value="1" />
+			<comboitem label="item2" value="2" />
+			<comboitem label="item3" value="3" />
+		</combobox>
 		<button id="deneme6" label="Arya" onClick="AryaOnClick" />
 		<button id="deneme7" label="Yeni Ekran" onClick="YeniEkranOnClick" />
 	</window>

@@ -1,13 +1,16 @@
 package tr.com.agem.core.adaptor;
 
+import javax.sql.DataSource;
+
 import tr.com.agem.core.gateway.model.IAryaRequest;
 
-public abstract class AryaApplicationAdaptor 
-{
-	public IAryaAdaptorMapper mapper;
-	
-	public IAryaAdaptorConverter converter;
-	
+public abstract class AryaApplicationAdaptor {
+	private IAryaAdaptorMapper mapper;
+
+	private IAryaAdaptorConverter converter;
+
+	private DataSource dataSource;
+
 	public abstract IAryaAdaptorResponse processRequest(IAryaRequest request);
 
 	public IAryaAdaptorMapper getMapper() {
@@ -25,4 +28,13 @@ public abstract class AryaApplicationAdaptor
 	public void setConverter(IAryaAdaptorConverter converter) {
 		this.converter = converter;
 	}
+
+	public DataSource getDataSource() {
+		return dataSource;
+	}
+
+	public void setDataSource(DataSource dataSource) {
+		this.dataSource = dataSource;
+	}
+
 }
