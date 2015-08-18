@@ -15,7 +15,7 @@ public class XMLIntegerElement implements XMLElement {
 		if (formAttrAnn.label() != null && !formAttrAnn.label().isEmpty()) {
 			xml.append("\t\t<label id=\"").append(property).append("lbl").append("\" value=\"").append(formAttrAnn.label()).append("\" />\n");
 		}
-		xml.append("\t\t<decimalbox id=\"").append(property).append("\" ");
+		xml.append("\t\t<intbox id=\"").append(property).append("\" ");
 		if (generateRandomVal) {
 			xml.append(" value=\"").append(new Random().nextInt()).append("\" ");
 		}

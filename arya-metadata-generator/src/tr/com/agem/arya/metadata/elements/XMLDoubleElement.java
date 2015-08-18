@@ -43,6 +43,7 @@ public class XMLDoubleElement implements XMLElement {
 		if (formAttrAnn.left() > 0) {
 			xml.append(" left=\"").append(formAttrAnn.left()).append("\"");
 		}
+		// TODO format="" ???? or precision="" ????
 		xml.append(" />\n");
 
 		return xml.toString();

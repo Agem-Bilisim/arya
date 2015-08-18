@@ -12,12 +12,15 @@ public class XMLCheckboxElement implements XMLElement {
 
 		StringBuilder xml = new StringBuilder();
 
-		if (formAttrAnn.label() != null && !formAttrAnn.label().isEmpty()) {
-			xml.append("\t\t<label id=\"").append(property).append("lbl").append("\" value=\"").append(formAttrAnn.label()).append("\" />\n");
-		}
 		xml.append("\t\t<checkbox type=\"text\" id=\"").append(property).append("\" ");
 		if (generateRandomVal) {
 			xml.append(" checked=\"").append(new Random().nextBoolean()).append("\" ");
+		}
+		if (formAttrAnn.label() != null && !formAttrAnn.label().isEmpty()) {
+			xml.append(" label=\"").append(formAttrAnn.label()).append("\" ");
+		}
+		if (formAttrAnn.onClickFunction() != null) {
+			xml.append(" onCheck=\"").append(formAttrAnn.onClickFunction()).append("\" ");
 		}
 		if (formAttrAnn.mandatory()) {
 			// TODO xul mandatory attr?

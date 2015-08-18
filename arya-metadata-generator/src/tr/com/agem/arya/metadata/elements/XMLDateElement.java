@@ -18,6 +18,7 @@ public class XMLDateElement implements XMLElement {
 		if (generateRandomVal) {
 			xml.append(" value=\"").append(new RandomDateGenerator(1990, 2015).nextDate()).append("\" ");
 		}
+		// TODO onChange=""
 		if (formAttrAnn.mandatory()) {
 			// TODO xul mandatory attr?
 		}
