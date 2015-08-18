@@ -27,7 +27,7 @@ public class OnClickEventListener implements EventListener {
 	@Override
 	public void onEvent(Event event) throws Exception {
 		AryaRequest request = new AryaRequest();
-		request.setAction("myAction");
+		request.setAction("action2");
 		request.setRequestType(RequestTypes.DATA_ONLY);
 
 		Map<String, Object> params = new HashMap<String, Object>();
