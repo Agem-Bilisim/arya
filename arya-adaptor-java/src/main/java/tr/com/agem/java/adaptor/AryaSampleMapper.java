@@ -6,9 +6,19 @@ import java.util.Map;
 
 import javax.sql.DataSource;
 
+import org.codehaus.jackson.map.ObjectMapper;
+
+import tr.com.agem.common.AgemCrudService;
+import tr.com.agem.common.AgemUtils;
+import tr.com.agem.common.form.PagedList;
 import tr.com.agem.core.adaptor.IAryaAdaptorConverter;
 import tr.com.agem.core.adaptor.IAryaAdaptorMapper;
 import tr.com.agem.core.gateway.model.IAryaRequest;
+import tr.com.agem.db.connection.DBConnectionFactory;
+import tr.com.agem.db.connection.DBConnectionInterface;
+import tr.com.agem.db.dbms.PostgreSqlDBMS;
+import tr.com.agem.db.operations.BDBase;
+import tr.com.agem.sndk.genel.il.IlParameterForm;
 
 public class AryaSampleMapper implements IAryaAdaptorMapper {
 	private Map<String, Object> actionMap;
@@ -20,29 +30,56 @@ public class AryaSampleMapper implements IAryaAdaptorMapper {
 		Object action = getActionMap().get(request.getAction());
 		String actionView = getActionViewMap().get(request.getAction());
 
-		AryaAdaptorResponse returnVal = new AryaAdaptorResponse();
-		/*
-		 * IlParameterForm p = new IlParameterForm();
-		 * 
-		 * // parametreler set edilecek.
-		 * 
-		 * // il service var mi? // yoksa AgemCrudService kullanilacak
-		 * 
-		 * AgemCrudService service = new AgemCrudService(); List<?> col =
-		 * service.list(p);
-		 * 
-		 * String data = AgemUtils.jsObject(col);
-		 */
-		
 		try {
-			Connection conn = dataSource.getConnection();
+			final Connection conn = dataSource.getConnection();
+			DBConnectionFactory.getInstance().setConnectionInterface(
+					new DBConnectionInterface() {
+
+						@Override
+						public Connection getConnection() {
+							return conn;
+						}
+					});
+
+			BDBase.DBMS_INTERFACE = new PostgreSqlDBMS();
+			BDBase.DBMS_INTERFACE.init();
+
 			System.out.println(conn.toString());
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
+		AryaAdaptorResponse returnVal = new AryaAdaptorResponse();
+
+		IlParameterForm p = new IlParameterForm();
+
+		// parametreler set edilecek.
+
+		// il service var mi? // yoksa AgemCrudService kullanilacak
+
+		AgemCrudService service = new AgemCrudService();
+
+		PagedList list = new PagedList();
+		list.setPageSize(-1);
+		list.setParameters(p);
 		
-		returnVal.setData("");
+		
+		list  = service.list(list);
+
+		String data = AgemUtils.jsObject(list.getList());
+		
+//		ObjectMapper mapper = new ObjectMapper();
+//		
+//		mapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
+//		try {
+//			data = mapper.writeValueAsString(list.getList());
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//			throw new RuntimeException(e);
+//		}
+
+		returnVal.setData(data);
 
 		returnVal.setViewName(actionView);
 
