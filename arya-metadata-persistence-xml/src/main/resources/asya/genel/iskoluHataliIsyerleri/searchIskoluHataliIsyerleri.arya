@@ -3,8 +3,8 @@
 xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 	<window id="listIskoluhataliisyerleriWindow">
 		<label id="basvuruBasTarihlbl" value="Başvuru Tarihi" />
-		<datebox id="basvuruBasTarih"  value="2010-3-17"  width="120"  placeholder=""  />
+		<datebox id="basvuruBasTarih"  value="2000-6-11"  width="120"  placeholder=""  />
 		<label id="basvuruBitTarihlbl" value="-" />
-		<datebox id="basvuruBitTarih"  value="2007-7-6"  width="120"  placeholder=""  />
+		<datebox id="basvuruBitTarih"  value="1993-0-28"  width="120"  placeholder=""  />
 	</window>
 </zk>

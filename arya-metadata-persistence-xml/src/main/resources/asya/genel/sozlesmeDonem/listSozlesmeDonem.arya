@@ -2,29 +2,29 @@
 <zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 	<window id="addSozlesmedonemWindow">
-		<textbox visible="false" type="text" id="sozlesmeDonemId"  value="vehmtltjzx"  placeholder=""  />
-		<textbox visible="false" type="text" id="sozlesmeId"  value="wjzf1aaus6"  placeholder=""  />
+		<textbox visible="false" type="text" id="sozlesmeDonemId"  value="0xu14q9m43"  placeholder=""  />
+		<textbox visible="false" type="text" id="sozlesmeId"  value="24j56rvffy"  placeholder=""  />
 		<label id="donemAylbl" value="Dönem Ay" />
 		<selectbox id="donemAy"  width="100"  >
 			<template>
-				<label value="qk5t092t5q" />
+				<label value="6jc5dcyiyf" />
 			</template>
 		</selectbox>
 		<label id="donemYillbl" value="Dönem Yıl" />
 		<selectbox id="donemYil"  width="100"  >
 			<template>
-				<label value="p1754ukrtr" />
+				<label value="ekhd5pglnb" />
 			</template>
 		</selectbox>
 		<label id="anlasilanDegerlbl" value="Anlaşılan" />
-		<textbox type="text" id="anlasilanDeger"  value="pm6j6mvigcnbh7mhw3sg43czjqn9r349hiyaj7csfax9nlvt4rrl3t3233pqg744mqouh6r8lhbkvp0on0qsua05vhorphf88ut2hbejdx8rr9lfh351s8m94bsjvs4m09ctn70981p4d06hv42wnq5phj21i4uhsgag3w98hmht1zce8mud5c5h7uun6ib2rz30d09r44x49cxfgqo0zbxe8b3vjgqoydqb4mbrhywnbwmgoo1005r82glqws7"  width="500"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="anlasilanDeger"  value="4fbc88t8g91lnngld1e24rzmry0eiclj9mkhb1wpn61hmfuy97p9q2n6dx63okb2g49rpj2ppsu79saz0amn44m0kygk04ujlo87sesxqyqoqog5jlzh2l0rkdh24l5f3gz3hngx1bvfumdo5umhvym5vu7rmic2eu719xdofcmcq38fvjc9h7r7kdk9gf4vkro0e5j0jt3voatrhqlorbgklltyo94ny4uj1yveeahp2zc8d1guxiw26gekc38"  width="500"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
-		<textbox visible="false" type="text" id="eklemeTarihi"  value="wzn7qde5m1"  placeholder=""  />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="urz4sf8vh7"  placeholder=""  />
 		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
-		<textbox visible="false" type="text" id="ekleyen"  value="9n3pg37znw"  placeholder=""  />
+		<textbox visible="false" type="text" id="ekleyen"  value="ctwbvu6uhv"  placeholder=""  />
 		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
-		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="b6s2pxi10u"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="vr07x0kbie"  placeholder=""  />
 		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
-		<textbox visible="false" type="text" id="sonGunleyen"  value="chl9djhs0a"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="mc38d4n2se"  placeholder=""  />
 	</window>
 </zk>

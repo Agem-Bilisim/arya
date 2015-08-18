@@ -5,22 +5,22 @@ xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/
 		<label id="subeParamlbl" value="Şube" />
 		<selectbox id="subeParam"  width="120"  >
 			<template>
-				<label value="yc3t0cpiu8" />
+				<label value="wuwbf6tcfs" />
 			</template>
 		</selectbox>
 		<label id="islemParamlbl" value="İşlem" />
 		<selectbox id="islemParam"  width="120"  >
 			<template>
-				<label value="id1wlxlf9i" />
+				<label value="1wsqf16f6l" />
 			</template>
 		</selectbox>
 		<label id="zamanParamlbl" value="Zaman" />
 		<selectbox id="zamanParam"  width="90"  >
 			<template>
-				<label value="pwd9yo96pr" />
+				<label value="o2segg1xzv" />
 			</template>
 		</selectbox>
 		<label id="kullaniciParamlbl" value="Kullanıcı" />
-		<textbox type="text" id="kullaniciParam"  value="e16fxcjm27y48tj5hvulrnid97vk1qtsgwqullt0irxo0tafpc6xd6dxve3tubc3cxusyea6yit9ixtqmmpyil5vhbr26eo6q0wu3h64xliai0wxbkmh9da22xndrf3sfqmjiatyfrmkg37yg3aa8yhovw3er5rt2qczxffk5sqmz6q0ux08hnww28e6j2i14840ma5rykldxpuj1wlr1ld2f219j0r009scbdapns9c5z5jn31pc461h506f0b"  width="80"  maxlength="255"  placeholder=""  onChange="autocomplete("autocomplete/autocomplete/autocomplete.do?tip=kullanici", "param", 5, "setKullanici")" />
+		<textbox type="text" id="kullaniciParam"  value="q0nbdfjxf1iglqkz0c228whtsq3v84mpz3p5976ud9965hvb7sgt20q5q0wydsroclomyp2isp6groe7n5swo60hb31v6uktpx2canerccnk870qxauavkelr0ssl3c367lk03zn5fqvhaa8h7t5lok6pav64pgu2xvtcnvdm5dp19yx21z7swbrui0gh5un94x5nh6ywjtts03mdzntvmu4lfwkf4qh1nfuzjf9ix25qvqiau4mi1yl8m7gbcn"  width="80"  maxlength="255"  placeholder=""  onChange="autocomplete("autocomplete/autocomplete/autocomplete.do?tip=kullanici", "param", 5, "setKullanici")" />
 	</window>
 </zk>

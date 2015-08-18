@@ -5,26 +5,24 @@ xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/
 		<label id="sayfaTurParamlbl" value="Tür" />
 		<selectbox id="sayfaTurParam"  width="200"  >
 			<template>
-				<label value="poc5eqqwf1" />
+				<label value="og9c1z1r66" />
 			</template>
 		</selectbox>
 		<label id="baslikParamlbl" value="Başlık" />
-		<textbox type="text" id="baslikParam"  value="t6tays8dndic8hmzhpjy6haossg6whs1sz"  width="200"  maxlength="34"  placeholder=""  onChange="autocomplete("genel/sayfa/autocomplete.do", "baslikParam", 5, "setBaslik")" />
+		<textbox type="text" id="baslikParam"  value="h5su9fs2ceg4si849qwejxv0k42m78xecl"  width="200"  maxlength="34"  placeholder=""  onChange="autocomplete("genel/sayfa/autocomplete.do", "baslikParam", 5, "setBaslik")" />
 		<label id="dilRequestParamlbl" value="Dil" />
 		<selectbox id="dilRequestParam"  >
 			<template>
-				<label value="qqh8pqsrvy" />
+				<label value="vy6x1wjssp" />
 			</template>
 		</selectbox>
 		<label id="subeParamlbl" value="Web Yayın Şube" />
 		<selectbox id="subeParam"  >
 			<template>
-				<label value="rs79dpsdgi" />
+				<label value="v04uqws3jd" />
 			</template>
 		</selectbox>
-		<label id="onayBekleyenParamlbl" value="Onay Bekleyen " />
-		<checkbox type="text" id="onayBekleyenParam"  checked="true"  width="120"  />
-		<label id="yayinlananParamlbl" value="Yayında Olanlar" />
-		<checkbox type="text" id="yayinlananParam"  checked="true"  width="120"  />
+		<checkbox type="text" id="onayBekleyenParam"  checked="true"  label="Onay Bekleyen "  onCheck=""  width="120"  />
+		<checkbox type="text" id="yayinlananParam"  checked="false"  label="Yayında Olanlar"  onCheck=""  width="120"  />
 	</window>
 </zk>

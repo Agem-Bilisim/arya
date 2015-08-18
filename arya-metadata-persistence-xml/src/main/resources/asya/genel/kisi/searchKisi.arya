@@ -3,20 +3,20 @@
 xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 	<window id="listKisiWindow">
 		<label visible="false" id="kisiIdParamlbl" value="Kisi Id" />
-		<textbox visible="false" type="text" id="kisiIdParam"  value="djsgprvmgd"  placeholder=""  />
+		<textbox visible="false" type="text" id="kisiIdParam"  value="qy9efz74ev"  placeholder=""  />
 		<label id="adParamlbl" value="Ad" />
-		<textbox type="text" id="adParam"  value="cgfnn7i0b3yoopyc6j9hbmsojyod57etbrnnzskh0w3184dm3bze68fj77rhsx6ckh0xdwd7wd2t4yzrh1gma2355qgi24v6g8fdnada9ss00sk5w923u1rxwl5c2pepme8f8qut8cyec5tofvjko07phvz3vzafbtrgw9qhk45fc21a7341rnnisrarnvz87b4n2ywuma4rk2chbcxr7bor4exph8d9h9mwgucvlo5ndxfdkk600c5edd9w5ed"  width="120"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="adParam"  value="qawx99844bdvozzfx9otaxfbqy7lofq9aem9gpydjnnd9e10zb97xsc9r29ky4063br684fp4k0aw3027od8cpah8q7jnhsq8ilg9k3aygh4homk7tutdbovxra76s9sztd042ham2kqd2381sz1mfju2n7fs1oe2ywp0h6akm35v44sybog2xusq443um46angs5b5fkccfbb4p25xvaoq064z8l0e5yerc40bnh49gin8kcma98d7l6xvl4i5"  width="120"  maxlength="255"  placeholder=""  />
 		<label id="soyadParamlbl" value="Soyad" />
-		<textbox type="text" id="soyadParam"  value="qdnuz58flyza6hgknxxfy6k6komybiyuj81s4584003sr9mavjdbotdo0d68kmwsrmjojg3zfloqkabm1aara8fhn7xzi4iwnutddqss7pun9uc6g4xr8yl41b2qys3kz1ikwzgwc1t6k2scl4jyq43auwjuuq0euqcdezyyh0woavkr88um8rehhvrzgy3y122cy6aizjt18n3c84zprv53qjltmwnyv4fl0ox9t639p4qdq9l8uc4fn9vkqg1"  width="120"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="soyadParam"  value="b4qvhgqfn9zkv2okr2qrvy8ohmaz3oeqou4xwhbmzef3cd53zedw8g81uhkd9whs4pmqgn8rmlax0ned4l0lskezm8h7zgz0jtdty70n2ln5mqx3i6d6ssm2jfjjmcj5ht21tgs924e9vsox0b677n35aak0lo2kuv48lmryxcv8qtjq4im8mmi9bxaa9tfs1prcn2z6xq7ybf4zsol1ofztq7gc1mvu8g3vnymwgu8rfsxn65v268t23l2wuce"  width="120"  maxlength="255"  placeholder=""  />
 		<label id="tckNoParamlbl" value="T.C. Kimlik No" />
-		<textbox type="text" id="tckNoParam"  value="s998v9y6u9w"  width="200"  maxlength="11"  placeholder=""  onChange="autocomplete("function:prepareKisiUrl()", "function:prepareTCKimlikNoParameterName()", 5, "setKisi")" />
+		<textbox type="text" id="tckNoParam"  value="2d0h0zlwwrj"  width="200"  maxlength="11"  placeholder=""  onChange="autocomplete("function:prepareKisiUrl()", "function:prepareTCKimlikNoParameterName()", 5, "setKisi")" />
 		<label id="unvanParamlbl" value="Unvan" />
-		<textbox type="text" id="unvanParam"  value="tft48tlz6vwasmu8rvfmsjzsij7m65xioo09p4a95lfxhug9frh254perdo1ketbtoieqflkd7j196srh8ls3mme093j4um3uv4y6durs2a7junje6xgq1j5lyzxjkw88owjeqgjwfdhoj9lasj2jtn32xbpgsfff50wlikjv95gek1sxjyzp3fzq7k88fen3430nmtw7mt989w4bzi9t5b935vzm4qlnudt59s1xwx6fram3gztiq7u0ehoa3i"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="unvanParam"  value="kmlzmz0l5kqwt7dr11yx0vasv7xovvf26t1khugb51b8jxalvnonstl1r71hphqfmn4c89okhein6jcauypenprfzmyvyx5awgmufjdgon1xvi5gwyccs7429ngyjvvz1c1m85jnqxcaelbhvv274qki82c28oihj7gspjmcvyizetb221x6zbnqlfhghgpyw18xm8xxo0vvkuiqm4wd0pkwi6fr9asgfeb0kwysrpkybjif180ptpdahr7r5v6"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="iletisimIdParamlbl" value="Iletisim Id" />
-		<textbox visible="false" type="text" id="iletisimIdParam"  value="49yu263pfl"  placeholder=""  />
+		<textbox visible="false" type="text" id="iletisimIdParam"  value="v4619fsoy2"  placeholder=""  />
 		<label visible="false" id="resimIdParamlbl" value="Resim Id" />
-		<textbox visible="false" type="text" id="resimIdParam"  value="5tt28iazql"  placeholder=""  />
+		<textbox visible="false" type="text" id="resimIdParam"  value="bkk14svtpo"  placeholder=""  />
 		<label visible="false" id="kullaniciIdParamlbl" value="Kullanici Id" />
-		<textbox visible="false" type="text" id="kullaniciIdParam"  value="44ze24ck05"  placeholder=""  />
+		<textbox visible="false" type="text" id="kullaniciIdParam"  value="xju5w8mpld"  placeholder=""  />
 	</window>
 </zk>

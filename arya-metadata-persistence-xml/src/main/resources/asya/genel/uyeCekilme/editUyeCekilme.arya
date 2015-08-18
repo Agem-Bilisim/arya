@@ -3,6 +3,6 @@
 xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 	<window id="addUyecekilmeWindow">
 		<label visible="false" id="uye.kisiIdlbl" value="Kisi Id" />
-		<textbox visible="false" type="text" id="uye.kisiId"  value="meo31qyymx"  placeholder=""  />
+		<textbox visible="false" type="text" id="uye.kisiId"  value="6gkj4hx8gk"  placeholder=""  />
 	</window>
 </zk>

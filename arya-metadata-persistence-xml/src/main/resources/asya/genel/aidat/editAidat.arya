@@ -2,15 +2,15 @@
 <zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 	<window id="addAidatWindow">
-		<textbox visible="false" type="text" id="aidatId"  value="i2uh5enx8b"  placeholder=""  />
-		<textbox visible="false" type="text" id="isyeriId"  value="zwgpfzwsmu"  placeholder=""  />
+		<textbox visible="false" type="text" id="aidatId"  value="56xj5n10kf"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriId"  value="t9hj6jsj6h"  placeholder=""  />
 		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
-		<textbox visible="false" type="text" id="eklemeTarihi"  value="j0mckk35dh"  placeholder=""  />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="dwvupeiek5"  placeholder=""  />
 		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
-		<textbox visible="false" type="text" id="ekleyen"  value="4az64p6kwq"  placeholder=""  />
+		<textbox visible="false" type="text" id="ekleyen"  value="154qqmdmc2"  placeholder=""  />
 		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
-		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="a29j2ic84k"  width="200"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="aub1ltogjf"  width="200"  placeholder=""  />
 		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
-		<textbox visible="false" type="text" id="sonGunleyen"  value="72qo2iww6m"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="b23watxmf0"  placeholder=""  />
 	</window>
 </zk>

@@ -2,35 +2,35 @@
 <zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 	<window id="listAidatsatirWindow">
-		<textbox visible="false" type="text" id="aidatIdParam"  value="yzk86wwniw"  placeholder=""  />
-		<textbox visible="false" type="text" id="aidatIdsString"  value="4wpokc1x0r"  placeholder=""  />
-		<textbox visible="false" type="text" id="satirTurParam"  value="3q3kzyn4yx"  placeholder=""  />
-		<textbox visible="false" type="text" id="isletmeParam"  value="bxpue8n58o"  placeholder=""  />
-		<textbox visible="false" type="text" id="donemAyParam"  value="wec1a7gia5"  placeholder=""  />
-		<textbox visible="false" type="text" id="donemYilParam"  value="1jveuw6obv"  placeholder=""  />
-		<textbox visible="false" type="text" id="merkezIdParam"  value="tq31ndngbp"  placeholder=""  />
+		<textbox visible="false" type="text" id="aidatIdParam"  value="t9l1kvmhjl"  placeholder=""  />
+		<textbox visible="false" type="text" id="aidatIdsString"  value="1z29kxwhvy"  placeholder=""  />
+		<textbox visible="false" type="text" id="satirTurParam"  value="x6gzirh9h5"  placeholder=""  />
+		<textbox visible="false" type="text" id="isletmeParam"  value="ud2aujl1cz"  placeholder=""  />
+		<textbox visible="false" type="text" id="donemAyParam"  value="75352hif4g"  placeholder=""  />
+		<textbox visible="false" type="text" id="donemYilParam"  value="31o96yh3y2"  placeholder=""  />
+		<textbox visible="false" type="text" id="merkezIdParam"  value="hka82wlzgh"  placeholder=""  />
 		<label id="bildirimFarkiParamlbl" value="Üye/DA" />
 		<selectbox id="bildirimFarkiParam"  width="120"  >
 			<template>
-				<label value="k0la94y250" />
+				<label value="koudcvjkw7" />
 			</template>
 		</selectbox>
 		<label id="istenCikislarParamlbl" value="İşten Çıkış" />
 		<selectbox id="istenCikislarParam"  width="120"  >
 			<template>
-				<label value="jwna3w76qi" />
+				<label value="5p6fc8hcxm" />
 			</template>
 		</selectbox>
 		<label id="ucretsizIzinParamlbl" value="R/UI/A " />
 		<selectbox id="ucretsizIzinParam"  width="120"  >
 			<template>
-				<label value="u3j1nnchcq" />
+				<label value="o9zwebk9tt" />
 			</template>
 		</selectbox>
 		<label id="subeParamlbl" value="Şube" />
 		<selectbox id="subeParam"  width="120"  >
 			<template>
-				<label value="dp48ejjt5h" />
+				<label value="us37g7v3nz" />
 			</template>
 		</selectbox>
 	</window>

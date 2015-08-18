@@ -2,8 +2,8 @@
 <zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 	<window id="listSozlesmeWindow">
-		<textbox visible="false" type="text" id="sozlesmeIdParam"  value="8h67mgiga7"  placeholder=""  />
-		<textbox visible="false" type="text" id="isyeriIdParam"  value="u37x359iqt"  placeholder=""  />
-		<textbox visible="false" type="text" id="subeParam"  value="sky1wfltf3"  placeholder=""  />
+		<textbox visible="false" type="text" id="sozlesmeIdParam"  value="k8tc7nhif6"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriIdParam"  value="sjdtgdbah1"  placeholder=""  />
+		<textbox visible="false" type="text" id="subeParam"  value="7dsoo51743"  placeholder=""  />
 	</window>
 </zk>

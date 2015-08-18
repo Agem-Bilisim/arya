@@ -3,15 +3,14 @@
 xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 	<window id="addKisikullaniciWindow">
 		<label visible="false" id="kisi.kisiIdlbl" value="Kisi Id" />
-		<textbox visible="false" type="text" id="kisi.kisiId"  value="vt96c7xg9k"  placeholder=""  />
-		<textbox visible="false" type="text" id="kullanici.kullaniciId"  value="ms3uokvui6"  placeholder=""  />
+		<textbox visible="false" type="text" id="kisi.kisiId"  value="qydx5vqdj6"  placeholder=""  />
+		<textbox visible="false" type="text" id="kullanici.kullaniciId"  value="sr6q9x5j6r"  placeholder=""  />
 		<label id="kullanici.kullaniciAdilbl" value="Kullanıcı Adı" />
-		<textbox type="text" id="kullanici.kullaniciAdi"  value="xnoidu0vn1"  width="200"  placeholder=""  />
+		<textbox type="text" id="kullanici.kullaniciAdi"  value="qioctnvh6d"  width="200"  placeholder=""  />
 		<label id="kullanici.parolalbl" value="Parola" />
-		<textbox type="password" id="kullanici.parola"  value="w7thhm7i22"  width="200"  placeholder=""  />
+		<textbox type="password" id="kullanici.parola"  value="viom38ql31"  width="200"  placeholder=""  />
 		<label id="kullanici.parolaTekrarlbl" value="Parola (Tekrar)" />
-		<textbox type="password" id="kullanici.parolaTekrar"  value="jrjyfyj905"  width="200"  placeholder=""  />
-		<label id="kullanici.pasiflbl" value="Kulanıcı Pasif" />
-		<checkbox type="text" id="kullanici.pasif"  checked="true"  width="30"  />
+		<textbox type="password" id="kullanici.parolaTekrar"  value="0thfrwsste"  width="200"  placeholder=""  />
+		<checkbox type="text" id="kullanici.pasif"  checked="true"  label="Kulanıcı Pasif"  onCheck=""  width="30"  />
 	</window>
 </zk>

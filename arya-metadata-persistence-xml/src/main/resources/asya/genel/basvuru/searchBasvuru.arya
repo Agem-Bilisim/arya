@@ -3,8 +3,8 @@
 xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 	<window id="listBasvuruWindow">
 		<label visible="false" id="basvuruIdParamlbl" value="Basvuru Id" />
-		<textbox visible="false" type="text" id="basvuruIdParam"  value="beftxgkbo2"  placeholder=""  />
-		<textbox visible="false" type="text" id="isyeriIdParam"  value="8ec69plxzu"  placeholder=""  />
-		<textbox visible="false" type="text" id="subeParam"  value="nsezhf9h0x"  placeholder=""  />
+		<textbox visible="false" type="text" id="basvuruIdParam"  value="kw6qn4ehp9"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriIdParam"  value="fdedod3ghn"  placeholder=""  />
+		<textbox visible="false" type="text" id="subeParam"  value="0bhfu9ognk"  placeholder=""  />
 	</window>
 </zk>

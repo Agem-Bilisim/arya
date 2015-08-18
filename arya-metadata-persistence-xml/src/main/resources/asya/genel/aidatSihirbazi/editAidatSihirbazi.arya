@@ -5,14 +5,14 @@ xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/
 		<label id="dosyaIdlbl" value="Yüklenen Dosyalar" />
 		<selectbox id="dosyaId"  width="490"  >
 			<template>
-				<label value="6ebu32t42i" />
+				<label value="r4gt7rio5q" />
 			</template>
 		</selectbox>
 		<button id="dosyaEkleBtn" label="Yeni Dosya Ekle"  onClick="dosyaEkle()"  width="120"  />
 		<label id="sheetNolbl" value="Excel Sheet" />
 		<selectbox id="sheetNo"  width="490"  >
 			<template>
-				<label value="fb3moctuvj" />
+				<label value="ssyp2g2zor" />
 			</template>
 		</selectbox>
 	</window>

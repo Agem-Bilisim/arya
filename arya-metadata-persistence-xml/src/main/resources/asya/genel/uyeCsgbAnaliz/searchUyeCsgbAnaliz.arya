@@ -5,14 +5,11 @@ xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/
 		<label id="subeParamlbl" value="Şube" />
 		<selectbox id="subeParam"  width="140"  >
 			<template>
-				<label value="9fb7a37xwp" />
+				<label value="9chm8be4yd" />
 			</template>
 		</selectbox>
-		<label id="orgutluParamlbl" value="Örgütlenme Var" />
-		<checkbox type="text" id="orgutluParam"  checked="true"  width="50"  />
-		<label id="isletmeParamlbl" value="İşyeri / İşletme" />
-		<checkbox type="text" id="isletmeParam"  checked="true"  width="50"  />
-		<label id="farkOlanlarParamlbl" value="Fark Olanları Göster" />
-		<checkbox type="text" id="farkOlanlarParam"  checked="false"  width="50"  />
+		<checkbox type="text" id="orgutluParam"  checked="true"  label="Örgütlenme Var"  onCheck=""  width="50"  />
+		<checkbox type="text" id="isletmeParam"  checked="true"  label="İşyeri / İşletme"  onCheck=""  width="50"  />
+		<checkbox type="text" id="farkOlanlarParam"  checked="true"  label="Fark Olanları Göster"  onCheck=""  width="50"  />
 	</window>
 </zk>

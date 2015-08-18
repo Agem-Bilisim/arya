@@ -5,16 +5,15 @@ xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/
 		<label id="donemParamlbl" value="Dönem Ay/Yil" />
 		<selectbox id="donemParam"  width="150"  >
 			<template>
-				<label value="mtmpx3u1ox" />
+				<label value="ackaih53ee" />
 			</template>
 		</selectbox>
 		<label id="subeParamlbl" value="Şube" />
 		<selectbox id="subeParam"  width="240"  >
 			<template>
-				<label value="fc2twlv6yq" />
+				<label value="vmsut6rgkq" />
 			</template>
 		</selectbox>
-		<label id="isletmeParamlbl" value="İşyeri / İşletme Merkezleri" />
-		<checkbox type="text" id="isletmeParam"  checked="false"  width="50"  />
+		<checkbox type="text" id="isletmeParam"  checked="true"  label="İşyeri / İşletme Merkezleri"  onCheck=""  width="50"  />
 	</window>
 </zk>

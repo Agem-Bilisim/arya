@@ -5,13 +5,13 @@ xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/
 		<label id="donemlbl" value="Dönem Ay/Yil" />
 		<selectbox id="donem"  width="200"  >
 			<template>
-				<label value="fluj7819s0" />
+				<label value="lpf59jnx4o" />
 			</template>
 		</selectbox>
 		<label id="dosyaIdlbl" value="Aidat Dosya" />
 		<selectbox id="dosyaId"  width="442"  >
 			<template>
-				<label value="pd1w5l9vy8" />
+				<label value="kvjo4p6lrb" />
 			</template>
 		</selectbox>
 	</window>

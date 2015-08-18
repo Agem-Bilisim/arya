@@ -2,14 +2,14 @@
 <zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 	<window id="listCsvcsgbuyeentegrasyonWindow">
-		<textbox visible="false" type="text" id="isyeriIdParam"  value="zrwbew0nyc"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriIdParam"  value="nxrc2jfz2y"  placeholder=""  />
 		<label id="subeParamlbl" value="Şube" />
 		<selectbox id="subeParam"  width="200"  >
 			<template>
-				<label value="iu49foqfn2" />
+				<label value="0spvcfikyl" />
 			</template>
 		</selectbox>
 		<label id="isyeriParam.unvanParamlbl" value="İşyeri Ünvanı" />
-		<textbox type="text" id="isyeriParam.unvanParam"  value="r3ga1s1dlfsiwf5p8ljzdjmxiwfg4830g3ukuzxemo80witolyelsbenf87tt8t1yxjwr9uo1bechfxoxilnthvy4b9e8ishprtpibvqhc47hc9138scz8ov178riv17orif3lqnov1wbloikqj9r5hiangs9e7xc8170y3dnkxnw0fhg7bl3n4j2rkm4k7hxytoff7610v5z3xwjo6w6keiib6d81ppjaonro23heh1syjhlvtjomimen1sz9c"  width="361"  maxlength="255"  placeholder=""  top="56" onChange="autocomplete("genel/csgbIsyeri/autocomplete.do", "unvanParam", 5, "setIsyeri")" />
+		<textbox type="text" id="isyeriParam.unvanParam"  value="0wwzhvx7a0wyollyl7ultsrb9ljytpawap0nv1r0lxtdzklmryo73yt90vuepxzrlmchiai3uwb4wknkpnkehumaw3sw5an62ws13um3ukies8z5ti6d6byuwkdge5f5vatpu4jp71icz30glga1n4wmszedjm7cq8eqeq4feo8mwjzxnpteo76sry6s9g205bbrcu6rcwjb0ao85vi8zaemnlt5wher6bpqbe1oze3c6hztxwdmjfcvbqnrvoh"  width="361"  maxlength="255"  placeholder=""  top="56" onChange="autocomplete("genel/csgbIsyeri/autocomplete.do", "unvanParam", 5, "setIsyeri")" />
 	</window>
 </zk>

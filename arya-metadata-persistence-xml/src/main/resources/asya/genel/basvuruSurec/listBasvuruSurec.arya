@@ -2,25 +2,25 @@
 <zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 	<window id="editBasvurusurecWindow">
-		<textbox visible="false" type="text" id="basvuruSurecId"  value="l4i2buf3of"  placeholder=""  />
-		<textbox visible="false" type="text" id="basvuruId"  value="ogv93gtejh"  placeholder=""  />
+		<textbox visible="false" type="text" id="basvuruSurecId"  value="xgoxnrls2p"  placeholder=""  />
+		<textbox visible="false" type="text" id="basvuruId"  value="e2day46wsu"  placeholder=""  />
 		<label id="tarihlbl" value="Tarih" />
-		<datebox id="tarih"  value="2004-8-25"  width="100"  placeholder=""  />
-		<textbox visible="false" type="text" id="surecDurumId"  value="8ndtyx9ru3"  placeholder=""  />
+		<datebox id="tarih"  value="1992-5-16"  width="100"  placeholder=""  />
+		<textbox visible="false" type="text" id="surecDurumId"  value="a11h1ywrlv"  placeholder=""  />
 		<label id="adilbl" value="Durum" />
-		<textbox type="text" id="adi"  value="ygxmhqr9l3"  width="400"  placeholder=""  readonly="true"  />
+		<textbox type="text" id="adi"  value="2xj8n5biz2"  width="400"  placeholder=""  readonly="true"  />
 		<label id="aciklamalbl" value="Açıklama" />
-		<textbox type="text" id="aciklama"  value="hr1m28nwqxsuj85vs445te9vkecaehk2lz316ccf8oj1v5r80a2peeyzuh7t8jfbln9j9wjya8zl0l4hteyb9ac5qcjf9r3y5ox31a8nqeq2jtkmccyorjojh1i9e8nmwwiuu32zepr5f16blkpwagdi3yhqu7gp7lsaquey6he2cwys4ubp1ntas25aqrl5qebrfsrsoazrjrhtsbkul2477qkqo537prncgphdjghmmhrumqcs0dfl68nq2xu3sh0999ylun23o8viamzxlqevv97sfbhpeeqf7zvr2011qimfwp59kmofneizgm01wvl1tbvt2mi01nfb83naaw9o9ea4gj8r6tevz3rx0pt56kz01mzfq6y9v55lv9l78z7qmp2hmxm3hh2wcv6h8xfbjrpp1mqxmp9ecmyv5ylfoiygtv8qcp3jm05hvfk0n78hz5bwp0ncxyyskx5y7x2b4940nraywq8qvb686km27u0801acwaq0scg3owktdgy6msab3kbmitosirl4v78u83khnr0m6rkninwl96afjw7wrzfexxv1e9bmifne2e70apcasx39pzhv851s0040nmb7glw3i90i7e96w1b5811z8e9zusqdau7j5douecxg0l7c1ng3oz7qxxpxbg3jltbb2vaf6v0rh3w6a5buahsq8tnxidbd2g2eey0il6feav564t5atz495o18i6bsu26ota2y5iwxcb0an1o3582g4mt124atx6y23d9t4u15x51ojf1nzcvn15po7ndaueyzd59e3m4d8xb17axrehiqn2fe3uw8viyku3t81m32y8vl5v69a5klvyhnxa272w6cm694oesf12kofwus78gk1wxp97rfc9ab2nibu2ycw3zqtnbhqkbvsgtvg084keqe4ukf8f0ubmsvxiff2j1xqqca9qpuoaal7em1q4sonwubxv1enhk0lam0s1xg2xjiscxlssxfig19"  width="557"  maxlength="1000"  placeholder=""  rows="5" cols="40" />
-		<textbox visible="false" type="text" id="bilgi"  value="f1wvukf66p"  placeholder=""  />
+		<textbox type="text" id="aciklama"  value="esmej150yzp6bhnxyez4dfrspj0bb5joe256dyd7223uuo2m20btbau12cz1add12wrh4xc7wqxb73ac7nly0dyoh0wctzr5i51xgtv3eu78hcybivojrktak58nw97k6q62sk9nirtztkfjw9onxv1lhua7ygmq2ma6440bi8gdybxkfcdix633mkvsvo4oa2mzpqys0u3iddkbxpkqgsybaalpss5kmg5lzagc3f6xih4j13w1ergx0hm752xsyfrq91yx7qqjz143ie1j9yzianlyptbfugcgwtrezoerfsxhezc24kwo7fj9d0gdy59rzapzxna6wx75ftow9ar1faf1c94amexh6ui4wje8qqm5ztpt8hrryfhyjm2j3yssb8ntw3b9e9hyh6bymztcjjhftt0efdi4gobzh3o0gjull9f7vt9j8ps9348pf04i1lksfk92n8v9rh4wqrr04dgs4wfnnu9ybpg6m5bqcotq2eqcglnkroofddtsob6khios6eklqfzggttocqstd9hvebd0wwhbsxc2voerhlzj45acms09ut98qpkfhhskvi80di5wn6f0yqgvk6pjqj79dxy2d4bzrpjzkln712gl6946brr3pnrvo2f81r4v0e2h00yg68yo8igwmd8tkmmt3zroma15xpl4ho2t7i04cna6y6mldrrl5i98fc9wbqobbg94jizxuadgq3bklvulm97bfp4xxtma64h1ghnrunumg8gsot71jdb60qj0fttxnl52moo20983whgb65rqcahjgup1ewvwsyd5axiz0svcryy04w5g4ojspyy7eglc2jq7vhkkrxzsg7hbodl3kjfbylqvuaak59jnqkw7ffsw8g2obxwaff6iyjqo7rwfms4artg713nwft9wej4m284kfl57w91vj2d39e4ol8f80lllno76s6tugyncilq8emfkdi678ipvou81znp7esw2dnduh3zs"  width="557"  maxlength="1000"  placeholder=""  rows="5"  cols="40"  />
+		<textbox visible="false" type="text" id="bilgi"  value="h5hvq0gu8y"  placeholder=""  />
 		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
-		<textbox visible="false" type="text" id="eklemeTarihi"  value="e4iopwb3rz"  placeholder=""  />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="odqmkz3gch"  placeholder=""  />
 		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
-		<textbox visible="false" type="text" id="ekleyen"  value="x0ob55zim4"  placeholder=""  />
+		<textbox visible="false" type="text" id="ekleyen"  value="kgi6mj2ig7"  placeholder=""  />
 		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
-		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="2vswi15igl"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="jc6lrc4qrz"  placeholder=""  />
 		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
-		<textbox visible="false" type="text" id="sonGunleyen"  value="192rpsk43s"  placeholder=""  />
-		<textbox visible="false" type="text" id="enSonuncuMu"  value="78h1srezmm"  placeholder=""  />
-		<textbox visible="false" type="text" id="yetkiliMi"  value="rdobjh25av"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="e740mi6j1b"  placeholder=""  />
+		<textbox visible="false" type="text" id="enSonuncuMu"  value="aj403ojmm4"  placeholder=""  />
+		<textbox visible="false" type="text" id="yetkiliMi"  value="7w49jd614y"  placeholder=""  />
 	</window>
 </zk>

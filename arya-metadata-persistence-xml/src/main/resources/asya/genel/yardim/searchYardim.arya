@@ -3,8 +3,8 @@
 xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 	<window id="listYardimWindow">
 		<label id="yardimSozcukParamlbl" value="Anahtar Sözcük" />
-		<textbox type="text" id="yardimSozcukParam"  value="0pndnp1yh03ygvbhgrnjuit5wdawnp1jkz56prn4vw9x1vn99d1mb2no8wlkk126buj4yqal2fd7jjyyfe1luksme3fdskjxp7ml"  width="120"  maxlength="100"  placeholder=""  />
+		<textbox type="text" id="yardimSozcukParam"  value="r6kguugncneonlhfz276urdgr68sgykvsxcugh0t2hvi089mzm2742t6szkkwm5g89mcywr58a8caq5n5slu7144002ec85eczn8"  width="120"  maxlength="100"  placeholder=""  />
 		<label id="aciklamaParamlbl" value="Açıklama" />
-		<textbox type="text" id="aciklamaParam"  value="4we8g0nsyt3guz7brtghm8prz2pcyuxzxzjq3kuom8u4icwa173k4lnm8z2ejqtfymhdy333upzhs14xy85g9qchlwknrkqeqycot8lcsqy7rxegknafww468vp8qffen5owhtt5i5fvndfmbkepp3"  width="180"  maxlength="150"  placeholder=""  />
+		<textbox type="text" id="aciklamaParam"  value="42x66com0pmvkx15lbjuux6d31s98c7bavq5x1gpg536xoaycxcjrqsz4w4sz7aug4fahfw750snv7grah20e6bnp9rour3oy8jwhvkauha7zpim5bh9croah189o4wls47k6hkttpsdsmlqv6x9t7"  width="180"  maxlength="150"  placeholder=""  />
 	</window>
 </zk>

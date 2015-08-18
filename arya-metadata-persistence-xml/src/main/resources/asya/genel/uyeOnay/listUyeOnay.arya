@@ -3,19 +3,19 @@
 xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 	<window id="listUyeonayWindow">
 		<label id="uyeParam.basTarihParamlbl" value="Üyelik Düşme Baş. Tarihi" />
-		<datebox id="uyeParam.basTarihParam"  value="2002-3-10"  width="120"  placeholder=""  />
+		<datebox id="uyeParam.basTarihParam"  value="1999-2-28"  width="120"  placeholder=""  />
 		<label id="uyeParam.bitTarihParamlbl" value="Üyelik Düşme Bit. Tarihi" />
-		<datebox id="uyeParam.bitTarihParam"  value="1998-3-28"  width="120"  placeholder=""  />
+		<datebox id="uyeParam.bitTarihParam"  value="2007-7-29"  width="120"  placeholder=""  />
 		<button id="listeleBtn" label="Listele"  onClick="listele()"  width="70"  />
 		<label id="uyeParam.subeParamlbl" value="Şube" />
 		<selectbox id="uyeParam.subeParam"  width="200"  >
 			<template>
-				<label value="kk4vl032vp" />
+				<label value="0hvb5m0map" />
 			</template>
 		</selectbox>
-		<textbox visible="false" type="text" id="uyeParam.isyeriIdParam"  value="u3cedcbv3o"  placeholder=""  />
-		<textbox visible="false" type="text" id="uyeParam.isyeriParam.isyeriIdParam"  value="zqnrmxoko8"  placeholder=""  />
+		<textbox visible="false" type="text" id="uyeParam.isyeriIdParam"  value="horwst7evi"  placeholder=""  />
+		<textbox visible="false" type="text" id="uyeParam.isyeriParam.isyeriIdParam"  value="83zy6uio0y"  placeholder=""  />
 		<label id="uyeParam.isyeriParam.unvanParamlbl" value="İşyeri Ünvanı" />
-		<textbox type="text" id="uyeParam.isyeriParam.unvanParam"  value="pyywlij37rrtshwg9gbcl9b10n5t3wdv1vgqxencu0oyohw99rpr5xh8mz4cl8giukfsiqfa0v11t534x7lxryz25168uusy9wibzq5ldu0en7m954orx6is127knwyya41wxyxeo1htzqcp8sg7gcx9ph3kv667t089jz9x7263hzekk93eik9encffji7oqwfcykrp0bomcx8hf9ghenyaaldba2a2lwn3lefzhh4zgolkqqn29wouxhzzs53"  width="416"  maxlength="255"  placeholder=""  top="56" onChange="autocomplete("genel/isyeri/autocomplete.do", "unvanParam", 5, "setIsyeri")" />
+		<textbox type="text" id="uyeParam.isyeriParam.unvanParam"  value="c4e6np4e6p42apret9csj0yz6xdtt154dl7apnhq0114xfasjvfo3g8xfnmb15vglx0m4elmuur2frg4ujbxin2kv026pxuf191llq2et8ps70kkzl8bigr510ccj0a2nuozbytl744be7g9kxjegk101zkh1r2m52jhseyg6wriszfvjnrr7eq8rxzbbmk62ny51vt7odbpwh01n75x9bgyb78g68uwar89lpd2fbehfg8wcpwgvqlvyb4rq22"  width="416"  maxlength="255"  placeholder=""  top="56" onChange="autocomplete("genel/isyeri/autocomplete.do", "unvanParam", 5, "setIsyeri")" />
 	</window>
 </zk>

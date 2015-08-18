@@ -3,16 +3,16 @@
 xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 	<window id="addSozlesmeWindow">
 		<label visible="false" id="sozlesmeIdlbl" value="Sozlesme Id" />
-		<textbox visible="false" type="text" id="sozlesmeId"  value="vnzh0vx8fx"  placeholder=""  />
+		<textbox visible="false" type="text" id="sozlesmeId"  value="dih9qg38it"  placeholder=""  />
 		<label visible="false" id="isyeriIdlbl" value="İsyeri" />
-		<textbox visible="false" type="text" id="isyeriId"  value="w1mxmc282p"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriId"  value="np0x8f7s1f"  placeholder=""  />
 		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
-		<textbox visible="false" type="text" id="eklemeTarihi"  value="3yub7gw0ha"  placeholder=""  />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="uhd6juzkww"  placeholder=""  />
 		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
-		<textbox visible="false" type="text" id="ekleyen"  value="9fab63t7bc"  placeholder=""  />
+		<textbox visible="false" type="text" id="ekleyen"  value="j5ubw84szv"  placeholder=""  />
 		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
-		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="7af9mjt9bq"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="5w8zwobt8e"  placeholder=""  />
 		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
-		<textbox visible="false" type="text" id="sonGunleyen"  value="42zsyffhn2"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="zly0vje0zc"  placeholder=""  />
 	</window>
 </zk>

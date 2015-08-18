@@ -3,12 +3,12 @@
 xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 	<window id="addSubeatamaWindow">
 		<label visible="false" id="ilKodulbl" value="İl Kodu" />
-		<textbox visible="false" type="text" id="ilKodu"  value="g7h1cpnxal"  placeholder=""  />
-		<label id="ilAdilbl" value="İl Adı" />
+		<textbox visible="false" type="text" id="ilKodu"  value="nrwgummuoe"  placeholder=""  />
+		<label id="ilAdilbl" value="İl Adı"  onClick=""  />
 		<label id="subelbl" value="Şube" />
 		<selectbox id="sube"  width="240"  >
 			<template>
-				<label value="8zz3qq7rwv" />
+				<label value="ikjlihr3b7" />
 			</template>
 		</selectbox>
 	</window>

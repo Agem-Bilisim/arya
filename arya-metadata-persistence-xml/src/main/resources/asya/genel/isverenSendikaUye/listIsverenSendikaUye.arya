@@ -3,8 +3,7 @@
 xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 	<window id="addIsverensendikauyeWindow">
 		<label id="isyeri.unvanlbl" value="İşyeri Ünvanı" />
-		<textbox type="text" id="isyeri.unvan"  value="56k3hd7rbhwl5s2pkp57zd27i00mp8t2p5fqpeyfbzfiek7wnzpskbv4xtw83vw4ckl9getmmotp6wdqbwrnei6z5e7pypiwpz75xpkdkisy653p7wqq0euff60mg9bfss07qsw86pwgt1n4bmmbbwxp527bvnuwmotl527p2m5thu40nu83nby0tt5kwzpvq298zq2m6h97weak320mg79o6p6liyzto4x0o6672ab0jr58wop0mcaud4py7uc"  width="245"  maxlength="255"  placeholder=""  top="56" />
-		<label id="isyeri.orgutlulbl" value="Örgütlü İşyeri" />
-		<checkbox type="text" id="isyeri.orgutlu"  checked="true"  width="10"  />
+		<textbox type="text" id="isyeri.unvan"  value="g5an1vrmz1hkjdepexapgpt18kvkowu450l84k2j34iebcmk4cq54k2iel1blc9ddbi7luvo3jekvnxxj599w48ttg04deeunjhoufi777lpz50rmjwc64evqnfiih3jwmh31zwtyo3pb2h3pcz04ksk0g4dld6n3dnxw9rt4jr83mylx2yow4e344plr76nd0bd9del6q26zufgingol9p1533q2b83pjpymc2ioqo8niyt7x7dafsxgpax07e"  width="245"  maxlength="255"  placeholder=""  top="56" />
+		<checkbox type="text" id="isyeri.orgutlu"  checked="true"  label="Örgütlü İşyeri"  onCheck=""  width="10"  />
 	</window>
 </zk>

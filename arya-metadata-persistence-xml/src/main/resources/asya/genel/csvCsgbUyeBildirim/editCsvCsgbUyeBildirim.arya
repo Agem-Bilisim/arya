@@ -5,11 +5,11 @@ xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/
 		<label id="dosyaIdlbl" value="Yüklenen Dosyalar" />
 		<selectbox id="dosyaId"  width="320"  >
 			<template>
-				<label value="uo135qeoiq" />
+				<label value="lxo3xss4oe" />
 			</template>
 		</selectbox>
 		<button id="yukleBtn" label="Yükle"  onClick="dosyaYukle()"  width="90"  />
-		<textbox visible="false" type="text" id="tarihDuzelt"  value="qic4vedi4f"  width="320"  placeholder=""  />
-		<textbox visible="false" type="text" id="ykkNoGuncelle"  value="fore6b641y"  placeholder=""  />
+		<textbox visible="false" type="text" id="tarihDuzelt"  value="9so433ommc"  width="320"  placeholder=""  />
+		<textbox visible="false" type="text" id="ykkNoGuncelle"  value="ltsu1x16tk"  placeholder=""  />
 	</window>
 </zk>

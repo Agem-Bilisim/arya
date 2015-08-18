@@ -2,26 +2,23 @@
 <zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 	<window id="addDuyuruWindow">
-		<textbox visible="false" type="text" id="duyuruId"  value="ufw8x8alby"  placeholder=""  />
+		<textbox visible="false" type="text" id="duyuruId"  value="sstf3sooit"  placeholder=""  />
 		<label id="basliklbl" value="Başlık" />
-		<textbox type="text" id="baslik"  value="feaconsbbeuunivpzx4b00kva0ng32bk9wknqgrlmuuhc6avogdxdos6fmh392vumevuq0h55j8abnv6bhfyupdzqvxqw9lcfrzthccyhhe1ugckn7wxu5as4a5pwi32kr2dtwinpqdscvbz0ywj72ogkvqfpyo8reyen7l2yok28a31zjtvzp8jmy7daao2a93brvwirq5t4y8xf9l60uvsr4lepnf9pf7hk2jzgo9tu7j6lo4o0gkde8sf48e"  width="419"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="baslik"  value="zgnthxtiny8nrt414my2l1ri3ryqhad8nm0gj7a8csg2srcge7zn9snyl599gv38wjipce6a8326upo8b2vx7clizx0a9k3jucg8sdm79ez54w9zjy5onygdwdmcdjt8gkwfz0xr4ih02p6zhovr76kwqap57qif4ol19jkrwu1jomsnuv4gcdq1uifv6vd9zke9rdyumvetjxivej79399bnltvg0b50yhwnwfwa86wh0wsgph3b7m2bajgxrb"  width="419"  maxlength="255"  placeholder=""  />
 		<label id="aciklamalbl" value="Açıklama" />
-		<textbox type="text" id="aciklama"  value="rjwwfop39u3b3okmagg4gox25b6bborbpkkmm606z4idfoajgd6yqgb0gn33vhuwf1g75paevfxkcfx14fhtjoany6qj2ba8i1fslfoloel7vp1squtfz0ocbqv55aub4om0ua2lii9wn2mgpv29t8sw7eyj4y1hmfvx3b0dx9pwcybpzt9jqr95ivch6jmaly4802ei9yhesddrj0psl3w1kfsxnh677zg5qkfei2mfwa0bhhq5z393dua4gbdmic0joysvxg7nvrcwhv9x7mvz1uj5d3npsp3j4rxz8t4tyep6zf5qmxga0ayi5zffnp9czme4oz5m0padzk6tbwim7fzw4dq4ps2jzvvlpl7y7u45l7thbkup4vazrfg987zc09jmboxkryjqajsoezn98eo2y65gjtzz1mz0vzwhdp710klj36nsbf02s283lvi7bkj5bf6947f4gzklu40922mmaj344ssphpzjwfpjpcgpy7jf"  width="520"  maxlength="500"  placeholder=""  rows="5" cols="40" />
-		<label id="ilerikiTarihlbl" value="İleriki Tarih" />
-		<checkbox type="text" id="ilerikiTarih"  checked="true"  width="20"  />
+		<textbox type="text" id="aciklama"  value="zlx0mjb0tfmca4dngppvpc883qua8j2ic7rkaa20qmxfonymmd2nliy34qskl3jf3h4pq4t4ab0ttapyznxeh1zccdhdg2ces4xbw20vlyjwjldq1c54u1lakww3lb4s7c2elevh4qn1oh16zz3tkfqmaqitc6i8l8eqcuuruv491wz7pl7gmh8nx8ejgvka9xy3345wf7hyu4y48ukn6x16xitkye9rzbt4ke4hbff9q86uayyh6ekxynf6ucxz39bnc8gt7u5qvc2cu4edz0kj9cbz83boyce2z4r9yewszwsqhxvtlsrh9clgk11wz4bndna0gkfhj8z95gmv78sur5a9t5y3i8dc9m1yicbc69zspyn0aavj9xyzkn2gkl2movp8a1zsmps0trx4alvy1sckxnlrgjihywktm0sjxeqcxrl3nlyyvfkkwlzl6xaxnsjhi1t34rhte5a9tmn0xu0h0ecpiodaefnlkrrhr8p2fa0m"  width="520"  maxlength="500"  placeholder=""  rows="5"  cols="40"  />
+		<checkbox type="text" id="ilerikiTarih"  checked="false"  label="İleriki Tarih"  onCheck=""  width="20"  />
 		<label id="tarihlbl" value="Tarih" />
-		<datebox id="tarih"  value="2009-3-28"  width="120"  placeholder=""  />
-		<label id="yayinlalbl" value="Yayınla" />
-		<checkbox type="text" id="yayinla"  checked="false"  width="20"  />
-		<label id="subeSeclbl" value="Şube" />
-		<checkbox type="text" id="subeSec"  checked="false"  width="20"  />
+		<datebox id="tarih"  value="1995-5-8"  width="120"  placeholder=""  />
+		<checkbox type="text" id="yayinla"  checked="false"  label="Yayınla"  onCheck=""  width="20"  />
+		<checkbox type="text" id="subeSec"  checked="true"  label="Şube"  onCheck=""  width="20"  />
 		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
-		<textbox visible="false" type="text" id="eklemeTarihi"  value="kj3lfgvnvt"  placeholder=""  />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="vsyfp1he2t"  placeholder=""  />
 		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
-		<textbox visible="false" type="text" id="ekleyen"  value="05nou0wzqp"  placeholder=""  />
+		<textbox visible="false" type="text" id="ekleyen"  value="0gdgo4hm28"  placeholder=""  />
 		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
-		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="vr08wse3ut"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="ebq5m96311"  placeholder=""  />
 		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
-		<textbox visible="false" type="text" id="sonGunleyen"  value="s1dmsuj0md"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="lurj3savxj"  placeholder=""  />
 	</window>
 </zk>

@@ -2,32 +2,32 @@
 <zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 	<window id="editOrgkisiiletisimWindow">
-		<textbox visible="false" type="text" id="orgKisiId"  value="qyu36obw2c"  placeholder=""  />
+		<textbox visible="false" type="text" id="orgKisiId"  value="ixn2f8yste"  placeholder=""  />
 		<label visible="false" id="iletisim.iletisimIdlbl" value="Iletisim Id" />
-		<textbox visible="false" type="text" id="iletisim.iletisimId"  value="1kes4qr5ld"  placeholder=""  />
+		<textbox visible="false" type="text" id="iletisim.iletisimId"  value="c5bdq21b32"  placeholder=""  />
 		<label id="iletisim.adres1lbl" value="Adres (1)" />
-		<textbox type="text" id="iletisim.adres1"  value="44ok85jy8wu9v0f4c786s78ri3a7wnuioum27f9s9r4u40haraxwzzlbt3udl7my8znapafqbkinzsd9gxv4ywlcevf6006gn9euqou42tz0r7agb49llo0znt8xp6e9vy8pdk6lpwqhpt14kj2zlpy3rjbt7eho2knnafeauy22rn9ob1sdx221h6coq2s29v5vi8vef3cfdwwlsr39hw9hr65pbojnllcjk3xu6uddykgmfhpyup2u7ybvl89"  width="472"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="iletisim.adres1"  value="g5qk3vgnbl83ty2rz22u2jw38pl7ejjag6hq4wuhpt1z1inn3kd28l1moecu6ga3d9d69gzh590died6m6s60r48xlg8tvo53ejzhahfc3q1opok4fq62yhyjkgve0w3qmf2xuresdhju030mtk8ty4wcl5uyacjibsudlo7rpootusvi3duaq91lupd5q2fsuifwzl2cpw7sktxaxd7lykvfx35mvcgrg2h3zq7vrvg06we93xsp3s4p05tedo"  width="472"  maxlength="255"  placeholder=""  />
 		<label id="iletisim.adres2lbl" value="Adres (2)" />
-		<textbox type="text" id="iletisim.adres2"  value="u8s6u9gztptiaew547brgnzes6jnccwrvz9aokki0padvmrh26wa3ppx4opczl6toesp1lp22uu8wd99l2m53fkryxoag3qui99dtlaekkdii32okxf44173h1kpr363zcnb0fgntj2oflnc8lzbyce5mk0dsgsfr6g82glxmv68973mdbg6x0x3ku1eqjzzp1erbjobzcu3yvmimjwdl35f0z757rrz6fpcj01mrxje3vovbpx1yb1uhem9qc1"  width="472"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="iletisim.adres2"  value="lfb3siqwadhdjdb3avl0vzk7pf9r1g6j4wx1lk3x2wx5he3zwgbvefqzlxylhy7tzusxnurl8utj9cj0lghx1htuib55epzy3hqqfk1qgq4gk7nqt4zqi0cqap9kjsgasypt0tqblopzor6dc2p33kwwucxs4hmdx835m6x4dcaln7c41cfgffk42q70mxam4ei6tnn4eq6x4zr52p17r3sqa9yd4cfrvikltfgt5yg3c9kvdtje1cyytceau9i"  width="472"  maxlength="255"  placeholder=""  />
 		<label id="iletisim.postaKodulbl" value="Posta Kodu" />
-		<textbox type="text" id="iletisim.postaKodu"  value="35y37"  width="100"  maxlength="5"  placeholder=""  />
+		<textbox type="text" id="iletisim.postaKodu"  value="i78kl"  width="100"  maxlength="5"  placeholder=""  />
 		<label visible="false" id="iletisim.ilKodulbl" value="İl" />
-		<textbox visible="false" type="text" id="iletisim.ilKodu"  value="2ghl2cgo1veml9dlow978d"  maxlength="22"  placeholder=""  />
+		<textbox visible="false" type="text" id="iletisim.ilKodu"  value="3frpq9e4ejmdi8hlzrf087"  maxlength="22"  placeholder=""  />
 		<label visible="false" id="iletisim.ilceKodulbl" value="İlçe" />
-		<textbox visible="false" type="text" id="iletisim.ilceKodu"  value="yubfgmro20oq36hz3dim3i"  maxlength="22"  placeholder=""  />
+		<textbox visible="false" type="text" id="iletisim.ilceKodu"  value="jv0lnhka9z2jspk2z361iw"  maxlength="22"  placeholder=""  />
 		<label id="iletisim.ilce.valuelbl" value="İl/İlçe" />
-		<textbox type="text" id="iletisim.ilce.value"  value="gjwdbxa38m"  width="288"  placeholder=""  onChange="autocomplete("genel/ilce/autocomplete.do", "dbParam", 5, "setIlIlce")" />
+		<textbox type="text" id="iletisim.ilce.value"  value="7307ok20rb"  width="288"  placeholder=""  onChange="autocomplete("genel/ilce/autocomplete.do", "dbParam", 5, "setIlIlce")" />
 		<label id="iletisim.tellbl" value="Telefon" />
-		<textbox type="text" id="iletisim.tel"  value="q0n349fifo6fragnyt4kz4nqk5cqqmi2rjgh23ipehm6xkqlfsaa3o6wndxcjrlth7bv0ikv31lvmugfqjbbm6nvm5b6dn28s9040nw15jfztdlqxkt4c1rdp6m1ya59b7r2ilmey31xaoyayt7sym00ker8sfdkr70p0ifgch5aa9uvql036825arsn6j6vc8rtwrviwukhbxex9cuyygtk0cavxqxp6qdn9vpn5832fb5rnmgkae3pqdeng3y"  width="100"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="iletisim.tel"  value="kxbj5ahdxeb6o9llbs8t3pywislz01qqn7ecsuvizjotnajyyclteyptwx1jsxcuvi5otmegr1rgo9bdw3r1ekupvl4twuuq0twfowur4cnqnt0etfhmt7hcdwu58asq2hsosh7jklh0e9kaxbc0jbcmjbompvye1043q08synchqxhjs46rt0dfultd6awmph5q9j73em4nxowbacm6u59kkf1hkfdqed1z2ptykrp0b4hpzfgurw8wrg4k767"  width="100"  maxlength="255"  placeholder=""  />
 		<label id="iletisim.ceplbl" value="Cep Tel." />
-		<textbox type="text" id="iletisim.cep"  value="i5yoz8jph91oq6psr7ja6ctz403erbf0hc6x03ngymod1vc6bzcs7ean1ics4eas80kxes2ekd5s153cplspz7tfgvuaia7p9teaprde5503wnje7pvj3sikt43iwxbvlzieqikpe4xceq0zy1o9q7g5bdhiyydc4pbntvfqv891y4qvyf2ndirjomncgu31asurttp6wujookof3oytn9taqqxjzrvpzkh0y16wxeenpuqrp4tf0q0tqq8ybkt"  width="100"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="iletisim.cep"  value="vcna7k5hn01kowjb9fz9jcf62lhn7qjbkssgto12p6tcc6zwoy7vkcsuswdxp960coaxmpr3g2y980uigkg5ys111mszgqedhhgb6489c4x3gcdeji04wbn7a5zn9mt53j7doox8potfvqsbou724tz8dzlfzvtt4m2316g04bys2j7nihcqnsbccmzug1gttjiypqycnn9uku2o4g7c89cyqpcxlbot7g61737tc1dyyglrvh1tljl7y8g6p6y"  width="100"  maxlength="255"  placeholder=""  />
 		<label id="iletisim.fakslbl" value="Faks" />
-		<textbox type="text" id="iletisim.faks"  value="iz5ywp1gp9c4l03qusnshxrc9s26jvx6sibjp57x0ufgh1iqc8duftfnd5mlhb7yssxi1mn5mn4f1lfij8pv6dubxbyooso9dcgqqlzqf7zb0sj4wq0340dcrmlvjhmuo48f2lptezwqihgiewiyq3zkg8w20yxedqli4fo9fgjmngggu82wwlshz8vtqcssv4ut4u8obw39vxr83ciquexjx6uldmnticduhfurycd6913su58nx3tn9lw4pt2"  width="100"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="iletisim.faks"  value="4tei04h33upfj0hvkoxdfj74reioralmb3qnrkh9q5jixpwm7sx70tcciydbwtp4mtioz6b3ya02cqtkrh3k0wgx3koe3ptg9f8m7vmjefqsd7ajx1tv1kfyzijgazqaomy4jjbr7eybnk41lf5xxxi4262tkrwia86y0t11het0yspn7r1lcu880u1eyca0oni1dq168ypuzbxlumnk8o6kll3mu743yy8cep6jrwsxtjf78u5cfaotsba6y8f"  width="100"  maxlength="255"  placeholder=""  />
 		<label id="iletisim.epostalbl" value="E-Posta" />
-		<textbox type="text" id="iletisim.eposta"  value="tnr0st4pef4hy74igyrp7f3w59jf06o1kah0qbk9oegz3w8nalel2dmil1ad4s3l5u6o7r0fqdw6mc43gji308h42ynbszfp5ge2w5vhwdbnkjtxyx7gpqnx9fac930ivzdsuti251jq8lxt9a94qx9hq5zq58kykkmzurn7yqivmrobhfz71fmkc8yviexjsqjb7btd6vieezcvisz5s2jbkv7c6lnk2aaf8th1apte4qsazwbh6o3dxay4b11"  width="472"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="iletisim.eposta"  value="dk5ycf81y380ycm8tvh1wo9pj6p1x6mncpsisxtd8sw700sf3rm5tv19m7xk74u3120jsbcrtu27kebx925gmtdxy3po920rhfrc5ta60hgu9xtijaepkde53xnz2jzt6wn3uo7vf44msdy9sxlad744oalirosyltnr4rjhhgllz7wyu9emcg27rmal3rbopxbouepptpvuxe96buy5y21tm5nsn6n7s1jmkt2v97btbidw4ms36r93jben109"  width="472"  maxlength="255"  placeholder=""  />
 		<label id="iletisim.facebooklbl" value="Facebook" />
-		<textbox type="text" id="iletisim.facebook"  value="ivnp8fpmbufc8h013lstlj3mq87vhw6rwrauaovxlmrson5pr0773zxhv5v5lhp2ex2e1xntd5hzewp0drh27r0zjw0u9n0toawltb1aqcy257lpc34az9zpyg60xgkpnmsvp7hdomxs2kbsb313hrl6ly0tleilh89030b104rn9j0hj8f5eccuy9bfwkkhh1jwxe0zhi86ip16uyjoa0zu7eq7s2rastnvnx6ubvfs54ckfhwjd36xo56hbws"  width="472"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="iletisim.facebook"  value="upxfc3lxafmvpbb62tjwnlfpg87prsmxqol0ke1zq09t8du25qqevyw6pqa2uhrav8oshutk8wp81ga9bnzye10cd5gbxnnlfbopz22cszq0g03okcacc3ymdttvdjmulzbyuznmx5zxhepjfxe1lnftpq1ewz9wzphjqz4yw62fb1pu9qdj9q65g03hfm7s1dscv5digm5iol601qd4wfnxy6cybt4lwnayhmrwykhjvftuc7mvuayeka0nyjc"  width="472"  maxlength="255"  placeholder=""  />
 		<label id="iletisim.twitterlbl" value="Twitter" />
-		<textbox type="text" id="iletisim.twitter"  value="jkftsrhieyl9npqjpnc4ouiw8rdbl9qtwoskx7nhsb5lpzacwkfvxvr7q6fvr4goecct8wx9n5yrcnotm88u02k63wvleyrjd1qn3ul744q4y5g0qq5orf81oycnsgqc4mz3wtmgidy0gt23s3r2fwzk8yv9gm55zbbkoc4ehb12yizg56lo8j5j0qkglwgwq8x3zxrnaakn01ql5nwhepqq3inw45zoe6qnxqkl0ejjmiidaegdpqbh1szsibi"  width="472"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="iletisim.twitter"  value="04jh70phtluylw78n13esk8n76377u5khkxnld3fgumb7nf1xtc30ckv2jc4mp6j805sfyeluge1oca75bcuprj9c7aws12usd3q50lw30wd13l3qw0nthwicfi719mjy723z7lnehts7pyo6fgmj2v8gzu5tkpop9cgtrxu805xbst2uxcmyjpthiz1dgjg2ovlw56ihtsnjxgtxicphy1x3pdtkjp8dbda3fve0zmp9sdp49c95sg21vcnq3z"  width="472"  maxlength="255"  placeholder=""  />
 	</window>
 </zk>

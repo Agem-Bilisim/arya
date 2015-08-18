@@ -3,28 +3,28 @@
 xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 	<window id="addRakipsendikaWindow">
 		<label visible="false" id="rakipSendikaIdlbl" value="Rakip Sendika Id" />
-		<textbox visible="false" type="text" id="rakipSendikaId"  value="qaa57x54ow"  placeholder=""  />
+		<textbox visible="false" type="text" id="rakipSendikaId"  value="nmldjv4ar7"  placeholder=""  />
 		<label id="kodlbl" value="Sendika Kodu" />
-		<textbox type="text" id="kod"  value="ail6"  width="50"  maxlength="4"  placeholder=""  />
+		<textbox type="text" id="kod"  value="mcql"  width="50"  maxlength="4"  placeholder=""  />
 		<label id="adilbl" value="Sendika Adı" />
-		<textbox type="text" id="adi"  value="ci27t4aebsqe13idlkvo3kox5dzuil4ggormfo2xhm70ctlrrhzlzehrvkahvxjguq6iby8z2f90l7qe18hs0093c9tw5xajd6xnt9kt9kl7lmtuvv2kwikom8fbopyl6x55hp06b57joc670fyax673tceapqm1hj6wb3eckanqa164xw5rhblvs3su6bitgxod3fl03nkrw04aduj462a507e5opzaapab6jptgoky4dw48dz0zpjpwtjtjnw"  width="80"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="adi"  value="vi1ud5twf3o4ioz78uhnnl476t8t3dic1k82e1rm2zqzb3xbckavoe09zbaq4n3dj2ri8orkycz45aty1kttz4k7rs7fgrwwhkcnipsc2bqekooddawmcufu1tsn0daw3bqsza23kimxpiy0aya98dm2ylhfr08z59haegjuy3x2n82v8o3a65o76krut9v3qs5okak785y5qh4qx8bq25619ycl2j6yr32zzejf44hk6emtc7u8wa4gm79vjk6"  width="80"  maxlength="255"  placeholder=""  />
 		<label id="unvanlbl" value="Sendika Ünvanı" />
-		<textbox type="text" id="unvan"  value="vpnllm6v1wxxfjpb3glmb7cardyp58ltyh1tl45a1nijfenc7vawx4p52qcild87zf6qn4qm0o64g3rj45g9qlrc78wbdkbwnneslvpjz3regce4p3646u3td6mwdzbaawka4jg2a9bb2njwrky6qbv6tthg14n5kf6h156y4eztqdna99avo03qb0j86ljzwjipnuwva90okn928t7b24da6szdjgg6jdd2ycw28bkmggy0whmavd40z5c84b1"  width="300"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="unvan"  value="qw2caat85ose2c7howr419890j7rwz1r0sx3teaubuypsj7z62ex4sq9dyfwpupgwddft52ios82goj8hurhlpt1ektydw21id845xt7f2sp9lm3v7eo9ldtd8zbsatjipc2lleimexmso5d1r43zrx0ss8h7bmeg1kumuuebuz9ks4ews3g03uqx20eu0g5c0wqr3xkrzyaua30qbh83x7oa3r8rfk91n4vh42ojpjdhtha430b0ilykb2u0yp"  width="300"  maxlength="255"  placeholder=""  />
 		<label id="konfederasyonlbl" value="Konfederasyon" />
 		<selectbox id="konfederasyon"  width="80"  >
 			<template>
-				<label value="pp87f61iya" />
+				<label value="ltvkpftu1d" />
 			</template>
 		</selectbox>
 		<label id="aciklamalbl" value="Açıklama" />
-		<textbox type="text" id="aciklama"  value="nw9fjg58157biteuawg103hhxspf7t3rmgq0my8hohnzb60uv1sqdh8kjcpd8phzbjlmf9qzau6h0zw02xvr4b097zwlaulwrzejowxi5csv97wsgiyxse5ecxpxn2q0pfk2ok39eq0vnqn57dxbhxtxz6231egjquson3zg3ygzcwl0ninsih2ys9oa648n2aevgsehkyia9nf1rxmqhtrmlgj297gq0x6h5onas069uson8mgt9x1pl17gx8m"  width="420"  maxlength="255"  placeholder=""  rows="5" cols="40" />
+		<textbox type="text" id="aciklama"  value="8kydl32me6isxo3nd7rlowdqtdhyz1nqbv5r2oc8y2zeyg83n4hlid7hoql9c6vyryy6s99lwxr36k403on4avojuuacnek94jibw69fwt3uodw6678jvzfi97lolh8uuuflha31xodokevc7tidm923nw8s8e4bdhmss2b2lki8usawwbgng9x28e1lfiiqgdc1gyj8unri33p9njao2axaa3eqqp2xwnrvl2sp10efiv26p3wgnkl1ntpj6ab"  width="420"  maxlength="255"  placeholder=""  rows="5"  cols="40"  />
 		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
-		<textbox visible="false" type="text" id="eklemeTarihi"  value="wg8b0dmqb8"  width="200"  placeholder=""  />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="6tugfrtk6m"  width="200"  placeholder=""  />
 		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
-		<textbox visible="false" type="text" id="ekleyen"  value="mumvhcr5oy3e2ur6es6gquyzsrm07fur20ft9gxj9nxwjovthpqppjo17kyuyvdyy6yu9bwprx4ztjyxnfrwec61izhj388wbdtf4p98gy73vdfqgadpdcjjdj5f7d86pkb1j2n7irewa8jxo1sbc48l32ridv9skisycfsfq4hqsf6qv248du58uqkkm0ztwuhbe72od9glguns17lfc1569gbdxnpxcpo1ae9hhhzlzqv85hwo49hn3001y8o"  width="200"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="ekleyen"  value="7hmrvs46yyogty28jc1aimib6o4vrb70d6nirhv1okv8n805khnex2m5n96ji84so73oxl4o1amujiduvi22m00tdtyd4s9iirx4nt15tkkdcwzyxx9jmn5dgyjlhay6qtmfqh6hpyq6nn4rflgwswppxee6f7nokb131ghnvcqnsbyjmp81u6nr3zq4snr30sje1z555ebr2z664v8ztedxtzv3spg5izv7apepaw6jic4yve9dog2td1mb5hc"  width="200"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
-		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="5q7z6bs6av"  width="200"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="g6ypjjrjsi"  width="200"  placeholder=""  />
 		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
-		<textbox visible="false" type="text" id="sonGunleyen"  value="tjq8ye91ggv9rcn2pnc2gg5gs10yqxgid3g4qrkf3p4wenwc9o6wuwwwzqtpn2vwh3v1v409033saix6qor1u5uwlevfz0mkonze3ymhlmseohc0hh8g0u41ydc17se2cv9k48e8m6rlevlmmlzhtx24awq6qpetb3jm2g72loldq9dkg7x987jvwx0b4kfea8yl3e5jdak74y7uwj6rp7cri2l7m5ku04qkdgdvh6x2y30c6hzkxzg3iyfaaku"  width="200"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="2p94h81e2q75jhk3ofxl4pkl829lcemlk0j3vupl2v1hf0lxek0wdlra5554dhb822885ts1gl4g9hjo2v18d9j95ivfxl2hlztaw76w37r5l9hdww6j01x2sy0ztro2nk5rnqpgjm64i8kfjuh99lpt2lmkktpa9ko57gv8odi3wysa5x1j5572nak5z81l8vyc3jpjmh10s7kihq39j9qijl3zhbz7ya4lown015t4mnyjb8ez8tvjqylhn0d"  width="200"  maxlength="255"  placeholder=""  />
 	</window>
 </zk>

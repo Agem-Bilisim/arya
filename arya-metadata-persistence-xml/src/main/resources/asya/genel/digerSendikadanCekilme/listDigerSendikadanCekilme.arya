@@ -3,6 +3,6 @@
 xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 	<window id="addDigersendikadancekilmeWindow">
 		<label visible="false" id="istifaDigerIdlbl" value="İstifa Diğer Id" />
-		<textbox visible="false" type="text" id="istifaDigerId"  value="cnl2j7ynf6"  placeholder=""  />
+		<textbox visible="false" type="text" id="istifaDigerId"  value="1twfczwt5x"  placeholder=""  />
 	</window>
 </zk>

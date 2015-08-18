@@ -3,13 +3,13 @@
 xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 	<window id="selectCsvcalisanlistesiaktarWindow">
 		<label visible="false" id="isyeriIdlbl" value="İşyeri" />
-		<textbox visible="false" type="text" id="isyeriId"  value="5tt913loo9"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriId"  value="1irr5oyywa"  placeholder=""  />
 		<label visible="false" id="dosyaIdlbl" value="Dosya" />
-		<textbox visible="false" type="text" id="dosyaId"  value="2ja6szb03f"  placeholder=""  />
+		<textbox visible="false" type="text" id="dosyaId"  value="9em8fndlxj"  placeholder=""  />
 		<label id="calisanListeDosyaIdlbl" value="Çalışan Listeleri" />
 		<selectbox id="calisanListeDosyaId"  width="370"  >
 			<template>
-				<label value="sgybho86yr" />
+				<label value="30d4dt5fe5" />
 			</template>
 		</selectbox>
 		<button id="calisanDosyaYukleBtn" label="Yükle"  onClick="calisanDosyaYukle()"  width="70"  />

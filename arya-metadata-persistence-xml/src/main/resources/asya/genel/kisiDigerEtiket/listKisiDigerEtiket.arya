@@ -3,18 +3,17 @@
 xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 	<window id="addKisidigeretiketWindow">
 		<label visible="false" id="kisiDigerEtiketIdlbl" value="Kisi Diger Etiket Id" />
-		<textbox visible="false" type="text" id="kisiDigerEtiketId"  value="vdynth8zl9"  width="200"  placeholder=""  />
+		<textbox visible="false" type="text" id="kisiDigerEtiketId"  value="w9qqjm7001"  width="200"  placeholder=""  />
 		<label id="sutunlbl" value="Sütun" />
 		<selectbox id="sutun"  width="200"  >
 			<template>
-				<label value="5w2xh4da0c" />
+				<label value="y2p5fencgv" />
 			</template>
 		</selectbox>
 		<label id="etiketlbl" value="Etiket" />
-		<textbox type="text" id="etiket"  value="jbi26bcjcc79plc6v5rpdwm7coqxh5sdyhdjt0sf1b588svz634mjsd481x3sdviinfhgezfm33ixrjdwapvsby8gk7ybnkie4p5vfm6hfl2zw387ygrf6gxemmipl55a1ubjmgu9kj2fog0t04j9to5of0erggc21q6kuf355ek8nvi43ifpwij9pdq5wypu8mnpkhrrqx4zld82gcqg25nsfjoi4quqrhyycvgmsw3n1hglm8pt5vxj60qfyy"  width="200"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="etiket"  value="qgiavcnphg1rf4siah6lv3g1gz2v7qgn58cug3je1a7617zyynvwvdkeksso1vrh2ghmotgzb4e3828ny7a2cge8m99ltu1xyqynrz8nl5t5udl8byqzm9n352ci6fbckvu1dwlfyzxy4hvl3gb7k2dgp6xbmijdgqi0dvu2nz5kx8nv0w2689divvtwbnelfp94kijkm82krsnqp7zg0drqamo8yy5rclcle0bq5fri4k8ozpldgyzzm21tugu"  width="200"  maxlength="255"  placeholder=""  />
 		<label id="degerlerlbl" value="Değerler" />
-		<textbox type="text" id="degerler"  value="ezunul658pj8955x9fltkd76thgc479worz4c32mladk6t027mu42gq7j2shgbwljfohkewo2w0o1a9oas4k8w4y8xnlkap9cvpptu4pbrsozwq3eswxqorezkkzo1qfcvls8eiqhfsxvc9ng21z76dlgyw36nkt0c0v9jd32vgeuej7qp434bvl73ma8dwd60f4f9bz450rkpksen4sk6pr8fiv260o84dyfiyndkyd1lou37pm1f7qvm5iar5q5gim4p8f3ores3zothgm17w05ouvenbampry88jne9x12f90dt8e86qbgtyz2n9elt80hvgvk3jnakq89bhgb7s8q1kprn54feznvb7yqiqqt76t3joc2zpn6w0dtym8tqm8bo4l5v1xz3g7phg89hv7ka300gjwebx95h78j09wbxe5dl66j2s2xjwl7iej6nf15m8rm2wzugydin5h9996z0s8bolw5040awzal1db0xd58r2qef6csnalst1gr85n1nzkd9mv4kvlwdgwvov7mp2pliaq99d15u66sbbvf4930l7vwbkxja1jbycg9e963q64bl4klh5eqzgjl49gm7m3tyfo5qcavqgqvo2dpoj1pvy55kqdcyiugdvjkf2igf1b7d1mop9ttea8pnf4ngg7scw96s094ofgjmbgibauymj040rs1ahuda2q75ln86jpj8q1m2qvcgh5b30jsyzfac4xrtuxfo9uzou75b0xcptkixoz6itnndw47e2q7z1bs0iafai10bi8g281mw8deq4pijluprib06i8jmu0ib9tihl1gm71tndkz4slwbm35877mwhl9qxkwzha96vjxrw7c1mgln3zi4cus3rj52u41vpt7iqcduj89qwm48nvbkii04kpix1peuhj88n76hf5sfx78uougm4pjiskwhtb7nw1nqvlcc4r2kdcykc9212pc270skznvvci4rx0yei18tx8y29o"  width="200"  maxlength="1000"  placeholder=""  />
-		<label id="aramaKriterlbl" value="Arama Kriteri" />
-		<checkbox type="text" id="aramaKriter"  checked="false"  width="200"  />
+		<textbox type="text" id="degerler"  value="gf1qi3pob4klm18zctdco2seprdwh10znc6sdii14977kmdu33s5nssuxm46ud22g04l0416cyrywqln7tikkbgcya2vyv61kin6lhkffaw2mrygw32otf2xl7sequgiieu7a12k6ioia7izw6h6c09zte6k68gfqpm2gw7x08pqnfv2mpytet1gq23gmjfapt6ir1bxaycfb24bf5zybwympbg7egrxqcrl31ai3ccl02u1lhycvn1nxxl0ufun2q9wgs18jgmvjdnz0dzgi6sxbh5ouwffcpz2yiidrgap4ccv617twfta2y5exeaf572jxi3mi3b8jjqkqtm4k4fd7wpnlynus0qs5y7bpmek49wx1e89s3ilogo3cgv792mtxwa433uovkyg9b4nm9mw4db9ssko1f3t78w1dctlkew8uhnmk9nhcby53y4sbyhplwe6yglqvgi1fmwv0ievza0g21qvbnn0s6ycqcy04dhb404urreweny6x6m9ujmjgw6havi2qbc6mrf6qt2nf10ekpkaotmat8la1hft60aa81hrfksg5ct97mp6cpuf3ersnqp91l1z2o5azj3vdgueqg7pmf39a4clxf1gxqkhhbb3d0of6e291s8rect2iowa67zhvjksk6h1ndpyl5r0bu7ctz3q7jssfefqj73k02h90zgj1d2gee483gy209j9jo4ztzfx0mwi3e7ua3igoknjv85ezy0bjund172bda556lkblyx9rvotpaadi190ybzgnr6muvxhbmi6h28exkjaha2n3bhq8k1rbbeyvvcrwrd7ik6dr7lfss42kgdkenprom2g5lxfblqvxe9uh8xue56jycnh7mzrwh3aby9g9vjwi6uezan0uktodjt3scmg9wzxdvkemjqzvowohej6odth1wlh4aj58ew6g19yybugfa1xicl6h5d12s1yrq13q5dv8cp4t47n7229gwhtk3x58j8k"  width="200"  maxlength="1000"  placeholder=""  />
+		<checkbox type="text" id="aramaKriter"  checked="true"  label="Arama Kriteri"  onCheck=""  width="200"  />
 	</window>
 </zk>

@@ -3,23 +3,21 @@
 xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 	<window id="listAjandaWindow">
 		<label visible="false" id="isyeriZiyaretIdParamlbl" value="Isveren Ziyaret Id" />
-		<textbox visible="false" type="text" id="isyeriZiyaretIdParam"  value="0ff2mojac7"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriZiyaretIdParam"  value="b0oc3ai0g4"  placeholder=""  />
 		<label visible="false" id="isyeriIdParamlbl" value="Isyeri Id" />
-		<textbox visible="false" type="text" id="isyeriIdParam"  value="9iq6fnoeg3"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriIdParam"  value="6okyypksgi"  placeholder=""  />
 		<label id="subeParamlbl" value="Şube" />
 		<selectbox id="subeParam"  width="240"  >
 			<template>
-				<label value="3zr0qncznt" />
+				<label value="zrrkd6z5si" />
 			</template>
 		</selectbox>
 		<label id="isyeriAdiParamlbl" value="Kurum/Kişi Adı" />
-		<textbox type="text" id="isyeriAdiParam"  value="ju9am4q45bm31s9daviyeed7wn1c6ej68aucchsuiehfpmbclvbyq1vp2nqs6rootefwjrvsa85azmpfruxn8jajokd0a0j09gj7l3103gtlx1x6okxgk25f2wc24i7f1sfwvt60j2ugpjtdhla6qcnrpxhi9oc3jg3w98w2mio2prs4ii9xte65si4jyoqu3qqar9owj5jrmbue16u87jlfksq65wxirt9z5ofoy2essxoh494b6l8fct3mf9x"  width="416"  maxlength="255"  placeholder=""  onChange="autocomplete("genel/isyeri/autocomplete.do", "unvanParam", 5, "setIsyeri")" />
+		<textbox type="text" id="isyeriAdiParam"  value="d5mksv9sbvcalyo1zjs34y5o23pkto6kq1ghic4wtgpdqbaf9l0iohior7bqzgtqepszxf51ik1713irvu2zzd37lsrck5v5goj9hwr7jqh6rio9i3801cftd9otqzzgoo6k2jz2nna3ud5lh73fqg3bfaobtzj3ohfwtokvcrylgyl4aubcf0uc7x1grvfee4ztsvu57peeka3t7ywtublg0vpxlwz2a0265omk791061zc40as173j7bmx4j4"  width="416"  maxlength="255"  placeholder=""  onChange="autocomplete("genel/isyeri/autocomplete.do", "unvanParam", 5, "setIsyeri")" />
 		<label id="ziyaretTarihiBasParamlbl" value="Ziyaret Tarihi" />
-		<datebox id="ziyaretTarihiBasParam"  value="2013-8-14"  width="120"  placeholder=""  />
-		<datebox id="ziyaretTarihiBitParam"  value="1993-8-8"  width="120"  placeholder=""  />
-		<label id="faaliyetRaporuParamlbl" value="Faaliyet Raporu" />
-		<checkbox type="text" id="faaliyetRaporuParam"  checked="false"  width="50"  />
-		<label id="benimKayitlarimParamlbl" value="Benim kayıtlarım" />
-		<checkbox type="text" id="benimKayitlarimParam"  checked="false"  width="50"  />
+		<datebox id="ziyaretTarihiBasParam"  value="2014-8-17"  width="120"  placeholder=""  />
+		<datebox id="ziyaretTarihiBitParam"  value="2014-10-14"  width="120"  placeholder=""  />
+		<checkbox type="text" id="faaliyetRaporuParam"  checked="false"  label="Faaliyet Raporu"  onCheck=""  width="50"  />
+		<checkbox type="text" id="benimKayitlarimParam"  checked="true"  label="Benim kayıtlarım"  onCheck=""  width="50"  />
 	</window>
 </zk>

@@ -4,10 +4,10 @@ xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/
 	<window id="listWebmesajWindow">
 		<selectbox id="okunduParam"  width="100"  >
 			<template>
-				<label value="58n7xrvq2e" />
+				<label value="n3o8gt8hbt" />
 			</template>
 		</selectbox>
-		<textbox type="text" id="aramaParam"  value="9c53jwg67j"  width="200"  placeholder=""  />
+		<textbox type="text" id="aramaParam"  value="pqxm3hasxf"  width="200"  placeholder=""  />
 		<button id="yenileBtn" label="Listele"  onClick="yenile()"  width="80"  top="2" />
 		<button id="raporAlBtn" label="Rapor Al"  onClick="raporAl()"  width="80"  top="2" />
 		<button id="silBtn" label="Sil"  onClick="mesajSil()"  width="80"  top="2" />

@@ -3,20 +3,17 @@
 xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 	<window id="editSendikaWindow">
 		<label visible="false" id="sendikaIdlbl" value="Sendika Id" />
-		<textbox visible="false" type="text" id="sendikaId"  value="qr5ysx7gyv"  placeholder=""  />
+		<textbox visible="false" type="text" id="sendikaId"  value="ey1dnac4hx"  placeholder=""  />
 		<label id="sendikaKodulbl" value="Sendika Kodu" />
-		<textbox type="text" id="sendikaKodu"  value="k9e"  width="110"  maxlength="3"  placeholder=""  />
+		<textbox type="text" id="sendikaKodu"  value="1t5"  width="110"  maxlength="3"  placeholder=""  />
 		<label id="isKolulbl" value="İş Kolu" />
-		<textbox type="text" id="isKolu"  value="fg"  width="110"  maxlength="2"  placeholder=""  />
+		<textbox type="text" id="isKolu"  value="mj"  width="110"  maxlength="2"  placeholder=""  />
 		<label id="maxAidatTutarilbl" value="Maksimum Aidat Tutarı" />
-		<doublebox id="maxAidatTutari"  value="0.8548300725019652"  width="110"  maxlength="18"  placeholder=""  />
+		<doublebox id="maxAidatTutari"  value="0.5229003602879065"  width="110"  maxlength="18"  placeholder=""  />
 		<label id="ortalamaAidatTutarilbl" value="Ortalama Üye Aidatı" />
-		<doublebox id="ortalamaAidatTutari"  value="0.7181940203979341"  width="110"  maxlength="18"  placeholder=""  />
-		<label id="oncekiIssizliklbl" value="Geçmişteki 12 ay işsizlikleri ele al" />
-		<checkbox type="text" id="oncekiIssizlik"  checked="true"  width="30"  />
-		<label id="turkceAramaDuzeltlbl" value="Türkçe Arama Düzelt" />
-		<checkbox type="text" id="turkceAramaDuzelt"  checked="true"  width="110"  />
-		<label id="calisanSillbl" value="İşyeri Silerken Çalışanları Otomatik Sil" />
-		<checkbox type="text" id="calisanSil"  checked="false"  width="110"  />
+		<doublebox id="ortalamaAidatTutari"  value="0.021572412811523"  width="110"  maxlength="18"  placeholder=""  />
+		<checkbox type="text" id="oncekiIssizlik"  checked="false"  label="Geçmişteki 12 ay işsizlikleri ele al"  onCheck=""  width="30"  />
+		<checkbox type="text" id="turkceAramaDuzelt"  checked="true"  label="Türkçe Arama Düzelt"  onCheck=""  width="110"  />
+		<checkbox type="text" id="calisanSil"  checked="false"  label="İşyeri Silerken Çalışanları Otomatik Sil"  onCheck=""  width="110"  />
 	</window>
 </zk>

@@ -5,7 +5,7 @@ xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/
 		<label id="dosyaIdlbl" value="Yüklenen Dosyalar" />
 		<selectbox id="dosyaId"  width="320"  >
 			<template>
-				<label value="sv4ydcocts" />
+				<label value="mt9pq4gb6s" />
 			</template>
 		</selectbox>
 		<button id="yukleBtn" label="Yükle"  onClick="dosyaYukle()"  width="90"  />

@@ -3,7 +3,7 @@
 xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 	<window id="listAidatsatirfarkWindow">
 		<label id="cikisTarihilbl" value="Çıkış Tarihi" />
-		<datebox id="cikisTarihi"  value="1994-5-30"  width="120"  placeholder=""  />
-		<label id="aciklamalbl" value="" />
+		<datebox id="cikisTarihi"  value="2006-9-27"  width="120"  placeholder=""  />
+		<label id="aciklamalbl" value=""  onClick=""  />
 	</window>
 </zk>

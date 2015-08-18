@@ -2,24 +2,23 @@
 <zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 	<window id="editIsyericsgbanalizWindow">
-		<textbox visible="false" type="text" id="isyeriIdParam"  value="pio0u6l997"  placeholder=""  />
-		<textbox visible="false" type="text" id="listeTurParam"  value="mbb8qe05uo"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriIdParam"  value="j0xgvw83ed"  placeholder=""  />
+		<textbox visible="false" type="text" id="listeTurParam"  value="b6wevrtbgj"  placeholder=""  />
 		<label id="ucretsizIzindeParamlbl" value="Raporlu/Ü.siz İzinli/Askı" />
 		<selectbox id="ucretsizIzindeParam"  width="120"  >
 			<template>
-				<label value="bb6n60wmys" />
+				<label value="wmf1ebdnwy" />
 			</template>
 		</selectbox>
 		<label id="mevsimlikDaimiParamlbl" value="Mevsimlik/Daimi" />
 		<selectbox id="mevsimlikDaimiParam"  width="120"  >
 			<template>
-				<label value="d40apsadqx" />
+				<label value="737o61phk8" />
 			</template>
 		</selectbox>
-		<label id="ayniIsletmeParamlbl" value="Aynı işletme Olanları Gösterme" />
-		<checkbox type="text" id="ayniIsletmeParam"  checked="true"  width="30"  top="60" />
+		<checkbox type="text" id="ayniIsletmeParam"  checked="false"  label="Aynı işletme Olanları Gösterme"  onCheck=""  width="30"  top="60" />
 		<label id="tarihParamlbl" value="İşlem Tarihi" />
-		<datebox id="tarihParam"  value="1995-11-22"  width="120"  placeholder=""  top="20" />
-		<textbox visible="false" type="text" id="isletme"  value="x2qerd2fyc"  placeholder=""  />
+		<datebox id="tarihParam"  value="2011-4-28"  width="120"  placeholder=""  top="20" />
+		<textbox visible="false" type="text" id="isletme"  value="4cqixkmmfg"  placeholder=""  />
 	</window>
 </zk>

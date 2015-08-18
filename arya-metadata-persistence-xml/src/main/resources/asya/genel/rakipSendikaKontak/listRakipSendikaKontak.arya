@@ -3,44 +3,44 @@
 xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 	<window id="addRakipsendikakontakWindow">
 		<label visible="false" id="rakipSendikaKontakIdlbl" value="Rakip Sendika Kontak Id" />
-		<textbox visible="false" type="text" id="rakipSendikaKontakId"  value="bfd4nz47iy"  placeholder=""  />
+		<textbox visible="false" type="text" id="rakipSendikaKontakId"  value="o45x8esw01"  placeholder=""  />
 		<label visible="false" id="rakipSendikaIdlbl" value="Rakip Sendika Id" />
-		<textbox visible="false" type="text" id="rakipSendikaId"  value="vc7ewsqyaa"  placeholder=""  />
+		<textbox visible="false" type="text" id="rakipSendikaId"  value="dymhistnv6"  placeholder=""  />
 		<label id="unvanlbl" value="Ünvan" />
-		<textbox type="text" id="unvan"  value="v6gk1ll99u"  width="100"  placeholder=""  />
+		<textbox type="text" id="unvan"  value="0rom3s2x99"  width="100"  placeholder=""  />
 		<label id="adlbl" value="Ad" />
-		<textbox type="text" id="ad"  value="c86p26nauq"  width="100"  placeholder=""  />
+		<textbox type="text" id="ad"  value="2dpbm5t8xu"  width="100"  placeholder=""  />
 		<label id="soyadlbl" value="Soyad" />
-		<textbox type="text" id="soyad"  value="cg929vhmn4"  width="100"  placeholder=""  />
+		<textbox type="text" id="soyad"  value="gyyynmzf5l"  width="100"  placeholder=""  />
 		<label id="tellbl" value="Tel" />
-		<textbox type="text" id="tel"  value="09hulnc6nznqdvjb3e31"  width="100"  maxlength="20"  placeholder=""  />
+		<textbox type="text" id="tel"  value="gj9tk7tddvpi50x9c13e"  width="100"  maxlength="20"  placeholder=""  />
 		<label id="ceplbl" value="Cep" />
-		<textbox type="text" id="cep"  value="gu4il182xqp35i8dfezv"  width="100"  maxlength="20"  placeholder=""  />
+		<textbox type="text" id="cep"  value="sfhwv738wfql7e917axh"  width="100"  maxlength="20"  placeholder=""  />
 		<label id="fakslbl" value="Faks" />
-		<textbox type="text" id="faks"  value="8ll8duet8u0cw0k1h2d9"  width="100"  maxlength="20"  placeholder=""  />
+		<textbox type="text" id="faks"  value="iwtiwlngwjzxkw978ppg"  width="100"  maxlength="20"  placeholder=""  />
 		<label id="epostalbl" value="E-posta" />
-		<textbox type="text" id="eposta"  value="seeo4ij2id"  width="472"  placeholder=""  />
+		<textbox type="text" id="eposta"  value="jjonaeakay"  width="472"  placeholder=""  />
 		<label id="adres1lbl" value="Adres (1)" />
-		<textbox type="text" id="adres1"  value="gyxu2ueufa"  width="472"  placeholder=""  />
+		<textbox type="text" id="adres1"  value="0w5beqhahq"  width="472"  placeholder=""  />
 		<label id="adres2lbl" value="Adres (2)" />
-		<textbox type="text" id="adres2"  value="6g5nmsyyzm"  width="472"  placeholder=""  />
+		<textbox type="text" id="adres2"  value="cds1rxy4a2"  width="472"  placeholder=""  />
 		<label visible="false" id="ilceKodulbl" value="İlçe" />
-		<textbox visible="false" type="text" id="ilceKodu"  value="bmkzrz9qfoazhs5oeztyu4"  maxlength="22"  placeholder=""  />
+		<textbox visible="false" type="text" id="ilceKodu"  value="il293rrbdpy4gm28ga6pa5"  maxlength="22"  placeholder=""  />
 		<label visible="false" id="ilKodulbl" value="İl" />
-		<textbox visible="false" type="text" id="ilKodu"  value="fuenjxwe5zfpjrs4wsbmug"  maxlength="22"  placeholder=""  />
+		<textbox visible="false" type="text" id="ilKodu"  value="nv01stz9wsagvfjteh11lc"  maxlength="22"  placeholder=""  />
 		<label id="ilce.valuelbl" value="İl/İlçe" />
-		<textbox type="text" id="ilce.value"  value="otzyqo1rih"  width="288"  placeholder=""  onChange="autocomplete("genel/ilce/autocomplete.do", "dbParam", 5, "setIlIlce")" />
+		<textbox type="text" id="ilce.value"  value="frnfrd0nzs"  width="288"  placeholder=""  onChange="autocomplete("genel/ilce/autocomplete.do", "dbParam", 5, "setIlIlce")" />
 		<label id="postaKodulbl" value="Posta Kodu" />
-		<textbox type="text" id="postaKodu"  value="luoef"  width="100"  maxlength="5"  placeholder=""  />
+		<textbox type="text" id="postaKodu"  value="e3wxr"  width="100"  maxlength="5"  placeholder=""  />
 		<label id="aciklamalbl" value="Açıklama" />
-		<textbox type="text" id="aciklama"  value="wss92kceqe"  width="552"  placeholder=""  rows="5" cols="40" />
+		<textbox type="text" id="aciklama"  value="61fnq1t76k"  width="552"  placeholder=""  rows="5"  cols="40"  />
 		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
-		<textbox visible="false" type="text" id="eklemeTarihi"  value="mxmk9fpbtt"  width="200"  placeholder=""  />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="dat4j42rwp"  width="200"  placeholder=""  />
 		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
-		<textbox visible="false" type="text" id="ekleyen"  value="k13fp56zme"  width="200"  placeholder=""  />
+		<textbox visible="false" type="text" id="ekleyen"  value="diw7cym8vr"  width="200"  placeholder=""  />
 		<label visible="false" id="sonGunlemeTarihilbl" value="Son Günleme Tarihi" />
-		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="f6obvqom9c"  width="200"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="zjyu6awqfm"  width="200"  placeholder=""  />
 		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
-		<textbox visible="false" type="text" id="sonGunleyen"  value="nbnpzk3k1r"  width="200"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="xbvv2jcfdm"  width="200"  placeholder=""  />
 	</window>
 </zk>

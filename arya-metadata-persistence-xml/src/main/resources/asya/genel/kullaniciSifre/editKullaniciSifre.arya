@@ -2,12 +2,12 @@
 <zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 	<window id="editKullanicisifreWindow">
-		<textbox visible="false" type="text" id="kullaniciId"  value="1crw57lahp"  placeholder=""  />
+		<textbox visible="false" type="text" id="kullaniciId"  value="o7uk1ogmac"  placeholder=""  />
 		<label id="kullaniciAdilbl" value="Kullanıcı Adı" />
-		<textbox type="text" id="kullaniciAdi"  value="nyo092trte"  width="200"  placeholder=""  readonly="true"  />
+		<textbox type="text" id="kullaniciAdi"  value="sfiafykg4w"  width="200"  placeholder=""  readonly="true"  />
 		<label id="parolalbl" value="Parola" />
-		<textbox type="password" id="parola"  value="9wn8k2bx63"  width="200"  placeholder=""  />
+		<textbox type="password" id="parola"  value="tinguxovbj"  width="200"  placeholder=""  />
 		<label id="parolaTekrarlbl" value="Parola (Tekrar)" />
-		<textbox type="password" id="parolaTekrar"  value="xxf6nnxp41"  width="200"  placeholder=""  />
+		<textbox type="password" id="parolaTekrar"  value="vip6ypbco9"  width="200"  placeholder=""  />
 	</window>
 </zk>

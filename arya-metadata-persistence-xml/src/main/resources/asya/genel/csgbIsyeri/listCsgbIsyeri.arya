@@ -5,7 +5,7 @@ xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/
 		<label id="subelbl" value="Şube" />
 		<selectbox id="sube"  width="200"  >
 			<template>
-				<label value="57cnkx1fkh" />
+				<label value="wjsdld096i" />
 			</template>
 		</selectbox>
 	</window>

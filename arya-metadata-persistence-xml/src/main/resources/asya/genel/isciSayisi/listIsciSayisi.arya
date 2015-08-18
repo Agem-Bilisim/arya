@@ -3,30 +3,30 @@
 xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 	<window id="addIscisayisiWindow">
 		<label visible="false" id="isciSayisiIdlbl" value="Isci Sayısı Id" />
-		<textbox visible="false" type="text" id="isciSayisiId"  value="z5mguneuov"  placeholder=""  />
+		<textbox visible="false" type="text" id="isciSayisiId"  value="5psquotrdk"  placeholder=""  />
 		<label visible="false" id="isyeriIdlbl" value="Isyeri Id" />
-		<textbox visible="false" type="text" id="isyeriId"  value="ks2meatha8"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriId"  value="5n3ovx92hb"  placeholder=""  />
 		<label id="yillbl" value="Yıl" />
 		<selectbox id="yil"  width="100"  >
 			<template>
-				<label value="3eueiif88x" />
+				<label value="whazhd7yo1" />
 			</template>
 		</selectbox>
 		<label id="aylbl" value="Ay" />
 		<selectbox id="ay"  width="100"  >
 			<template>
-				<label value="20yl29u82v" />
+				<label value="3gqbv5cila" />
 			</template>
 		</selectbox>
 		<label id="isciSayisilbl" value="İşçi Sayısı" />
-		<decimalbox id="isciSayisi"  value="-201450949"  width="100"  maxlength="255"  placeholder=""  />
+		<intbox id="isciSayisi"  value="495433248"  width="100"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
-		<textbox visible="false" type="text" id="eklemeTarihi"  value="kautistifs"  placeholder=""  />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="6xxj605x55"  placeholder=""  />
 		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
-		<textbox visible="false" type="text" id="ekleyen"  value="a8uxpbkmi7na7azjntw63luj2e5neko6luouj07yc4kzih3vttcf3i43lg0u3ly4wi41890ynsmrxmwbxt79g58m97unqus5y7se2nxn7v2htvzy2h1avy8qo2ww8tut3144fgcxm4jqaqdl4ot7s129xb2y9g0d7691k6jaisq34qsaoi8022s79v7iguycnc6w50c1mveyezqd1xdd2akfftb273cvy38cuqerzw0cmppd3zhytngtjznbcgm"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="ekleyen"  value="apwqd1hix3mpgg2so636vrz26ifavgj1jn31jes4gureetj8i7r3v11eruiurovuwrxcqvr43b0mhzkyy6bcdlpahp20egmzgz96o3hxuqkjh1ej3dozpmre3gs9o5fxw9pjvaekzvp0en876imsjd1af4kzxlb8zrrnxhj53xtx5m29qy1pbl55pneo5oh3ty7rsvbocm17kx4e4hpntqmoiy1n9t0jcujtfpi4aslwsdruw3h3d14y18e43sj"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
-		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="h41ryu402j"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="z9nxr9uh6g"  placeholder=""  />
 		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
-		<textbox visible="false" type="text" id="sonGunleyen"  value="gj1ytr6esnb8rf6553xczcq6gifzz0m4e89i5apjmsoepkxi5ejmy6nj52lv9t6ygir4jgllfrghlxal5xv07ovnbedf426bvqhmyru0bth3bpqyy348safinubqv125yzyie1x9kutec8txrgp70gmh4w7d2hbnbqx1j55zklqm6d97x6s58zd3cxx9965unfoi92nq7ia9jyxz0y7malekp8k4wsr0x5lc1yqqbqilamie33f9s74xfmeuwmt"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="hxayppshc7sr5wgrftvwdj8bxy48ymdj3sw0tp53ktecbtuwiupheuefge0nijuqbomfysxrrvxmejnrstko4b14zpb6d4t6tbg4vo3dwzpqu6d5bly3tb0skai04v175xu988cohfnhc3tp132wwovzhrnfy63bfo4c644tc0d1r5ejcvslqg0acqkqrsztqmrz5te7r2dzswasatscau5cn7o1oqoncoew02nfg9a0yti8gly3wffej83s8iv"  maxlength="255"  placeholder=""  />
 	</window>
 </zk>

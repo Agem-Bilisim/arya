@@ -5,72 +5,72 @@ xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/
 		<label id="raporTurParamlbl" value="Rapor Türü" />
 		<selectbox id="raporTurParam"  width="240"  >
 			<template>
-				<label value="alwuz511fy" />
+				<label value="on12gglf7v" />
 			</template>
 		</selectbox>
 		<label id="listeTurParamlbl" value="Kaynak Liste" />
 		<selectbox id="listeTurParam"  width="240"  >
 			<template>
-				<label value="n6wu5kde35" />
+				<label value="9si0rwyg51" />
 			</template>
 		</selectbox>
 		<label id="aidatTurParamlbl" value="Üye / DA" />
 		<selectbox id="aidatTurParam"  width="240"  >
 			<template>
-				<label value="467uor3icq" />
+				<label value="7pjj62bult" />
 			</template>
 		</selectbox>
 		<label id="donemParamlbl" value="Dönem Ay/Yil" />
 		<selectbox id="donemParam"  width="240"  >
 			<template>
-				<label value="xrbya1mox6" />
+				<label value="ek5mpt67k4" />
 			</template>
 		</selectbox>
 		<label id="donemBasParamlbl" value="Dönem Ay/Yil" />
 		<selectbox id="donemBasParam"  width="117"  top="75" >
 			<template>
-				<label value="b73a7aiw1l" />
+				<label value="0e47dc7gze" />
 			</template>
 		</selectbox>
 		<label id="donemBitParamlbl" value="Dönem Ay/Yil" />
 		<selectbox id="donemBitParam"  width="117"  top="75" >
 			<template>
-				<label value="noywx99n4b" />
+				<label value="jacin7x5if" />
 			</template>
 		</selectbox>
 		<label id="tutarAraliklbl" value="Tutar Aralık" />
 		<selectbox id="tutarAralik"  width="240"  top="100" >
 			<template>
-				<label value="59ex11p046" />
+				<label value="lnqrntlpbu" />
 			</template>
 		</selectbox>
 		<label id="turParamlbl" value="Liste Türü" />
 		<selectbox id="turParam"  width="240"  >
 			<template>
-				<label value="2cun61r98i" />
+				<label value="gce6j8z9tn" />
 			</template>
 		</selectbox>
 		<label id="subeParamlbl" value="Şube" />
 		<selectbox id="subeParam"  width="240"  >
 			<template>
-				<label value="j5bmuqajng" />
+				<label value="ff1bm9fr7n" />
 			</template>
 		</selectbox>
 		<label id="ilKoduParamlbl" value="İl" />
 		<selectbox id="ilKoduParam"  width="117"  >
 			<template>
-				<label value="18sdys1iyl" />
+				<label value="qurlv31pq7" />
 			</template>
 		</selectbox>
 		<selectbox id="ilceKoduParam"  width="117"  >
 			<template>
-				<label value="qmzwb2v2rj" />
+				<label value="vz9hp3y424" />
 			</template>
 		</selectbox>
 		<label id="isyeriKategoriIdParamlbl" value="Kategori" />
 		<selectbox id="isyeriKategoriIdParam"  width="240"  >
 			<template>
-				<label value="rnwchn8tcq" />
+				<label value="acdigzormn" />
 			</template>
 		</selectbox>
 	</window>

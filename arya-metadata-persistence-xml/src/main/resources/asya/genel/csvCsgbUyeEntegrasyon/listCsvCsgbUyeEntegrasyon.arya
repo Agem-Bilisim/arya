@@ -5,16 +5,16 @@ xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/
 		<label id="subeParamlbl" value="Şube" />
 		<selectbox id="subeParam"  width="200"  >
 			<template>
-				<label value="46u51gaqtt" />
+				<label value="28n62a72tt" />
 			</template>
 		</selectbox>
 		<label id="donusDurumuParamlbl" value="Durum" />
 		<selectbox id="donusDurumuParam"  width="240"  >
 			<template>
-				<label value="2a2a9oy0z4" />
+				<label value="ngptuezd7p" />
 			</template>
 		</selectbox>
-		<textbox visible="false" type="text" id="listeTurParam"  value="jmwlchk7rb"  placeholder=""  />
-		<textbox visible="false" type="text" id="isyeriIdParam"  value="35apc3ig7r"  placeholder=""  />
+		<textbox visible="false" type="text" id="listeTurParam"  value="1x4yrppz6f"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriIdParam"  value="kj4wsaxst6"  placeholder=""  />
 	</window>
 </zk>

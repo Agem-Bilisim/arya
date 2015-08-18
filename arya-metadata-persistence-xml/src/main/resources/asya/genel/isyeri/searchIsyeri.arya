@@ -2,76 +2,74 @@
 <zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 	<window id="listIsyeriWindow">
-		<textbox visible="false" type="text" id="isyeriIdParam"  value="xuhlxn9c19"  placeholder=""  />
-		<textbox visible="false" type="text" id="merkezIdParam"  value="th65p9rrjs"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriIdParam"  value="4mevdr2sy6"  placeholder=""  />
+		<textbox visible="false" type="text" id="merkezIdParam"  value="ptsgrl3gfm"  placeholder=""  />
 		<label id="sgkSiraNoParamlbl" value="İşyeri SGK No" />
-		<decimalbox id="sgkSiraNoParam"  value="629383008"  width="57"  maxlength="7"  placeholder="Sıra No"  />
-		<decimalbox id="sgkIlKodParam"  value="1609220788"  width="33"  maxlength="3"  placeholder="İl Kodu"  />
+		<intbox id="sgkSiraNoParam"  value="675409814"  width="57"  maxlength="7"  placeholder="Sıra No"  />
+		<intbox id="sgkIlKodParam"  value="-1541545303"  width="33"  maxlength="3"  placeholder="İl Kodu"  />
 		<label id="unvanParamlbl" value="İşyeri Ünvanı" />
-		<textbox type="text" id="unvanParam"  value="r2fsyhph3e8s91b42yn020cgotp7no3qc9e3vdedyy8wphh9hfu5068ftu3rhgd8x6baosevxkdlb2khdfqq8ohh02vpbq1rxjus9n1qpf5p5rjgrbz17koue6cd3ybfdphpy6sbyldmxwyam551zefs6m7sjdkjpgqlf3amb0o7996ijyzauo9xdq00lzndwcegkkvqwqsxrrxhh6i9ednpa2vfju4ivh9zt58g3dn6aypvtpqw9ufumm48sws"  width="416"  maxlength="255"  placeholder=""  top="56" onChange="autocomplete("genel/isyeri/autocomplete.do", "unvanParam", 5, "setIsyeri")" />
+		<textbox type="text" id="unvanParam"  value="l3wug4tkgxouqlki5n8oef037hwc63sklgiwycsgjqhtbqnkxfr1j8olk3rk66teucr529i0tazz3syooz36v6qh92gqwpc05hkk0645yxodjsyakbho8wqcqe71af5m2x3ddhqsa0a2elehr7niy0fy5sthexpowb9ps7nz4h4nsoreqwiljihf1yk7kmf2gz6z57gbqmt76xc244q8t0x7hehuubgoepj81r4ju2neqgy7nxsfn0b6m7cba0o"  width="416"  maxlength="255"  placeholder=""  top="56" onChange="autocomplete("genel/isyeri/autocomplete.do", "unvanParam", 5, "setIsyeri")" />
 		<label id="kisaAdParamlbl" value="Kısa Ad" />
-		<textbox type="text" id="kisaAdParam"  value="1drn0q80o9uynlhyzim215t0ycdi3jtu066s5bo3tgt1hqgq29vkbsemt55ewa4qjv9r1o61442w38cj7mziihwphpkckwll4k6t050z9gxeh34g7n196fne4ro8pdpplozue3aozxq4nik5i3n8fko4ev3qptv8awu54ob8rq9epb5fss39mn60pimtfrwahz9kspb4xw98s5a9cvmiyvpwropyndjd46558yfeci0lvko3fbswq66ywwc9de8"  width="260"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="kisaAdParam"  value="2uu6jy04ttx1tigkat26ryqi0w5m93lurscddadbcirr3atnbfjmn1kiwud946pmdb9289zqrn019w1e2dcm0c88c1hux9s2qg0qbyud8elyyqmqji6s9v6s22jy7mgbvzhub42fp8pkez1aqkbuqv79gaxzv9bvo8w0remkshrqusdzq1tq4qzcw0d2046aie9yw5v131hgpjjdpmr2ajasbvq4idgvfftn43clzz7a8efn5i5gdf7upudj2ju"  width="260"  maxlength="255"  placeholder=""  />
 		<label id="orgutluParamlbl" value="Örgütlenme Var" />
 		<selectbox id="orgutluParam"  width="80"  >
 			<template>
-				<label value="rnsux38ukt" />
+				<label value="70t7menetw" />
 			</template>
 		</selectbox>
 		<label id="orgutlenmeTarihiBasParamlbl" value="Başlangıç Tarihi" />
-		<datebox id="orgutlenmeTarihiBasParam"  value="2010-5-15"  width="90"  placeholder=""  />
+		<datebox id="orgutlenmeTarihiBasParam"  value="2013-10-29"  width="90"  placeholder=""  />
 		<label id="orgutlenmeTarihiBitParamlbl" value="Bitiş Tarihi" />
-		<datebox id="orgutlenmeTarihiBitParam"  value="2009-4-16"  width="90"  placeholder=""  />
-		<label id="merkezIdIsNullParamlbl" value="İşyeri / İşletme Merkezleri" />
-		<checkbox type="text" id="merkezIdIsNullParam"  checked="false"  width="50"  />
+		<datebox id="orgutlenmeTarihiBitParam"  value="2013-4-2"  width="90"  placeholder=""  />
+		<checkbox type="text" id="merkezIdIsNullParam"  checked="false"  label="İşyeri / İşletme Merkezleri"  onCheck=""  width="50"  />
 		<label id="isyeriDurumParamlbl" value="İşyeri Durum " />
 		<selectbox id="isyeriDurumParam"  width="120"  >
 			<template>
-				<label value="5kq1cai48x" />
+				<label value="cnkelkl4j7" />
 			</template>
 		</selectbox>
 		<label id="sozlesmeDurumParamlbl" value="Sözleşme Durum " />
 		<selectbox id="sozlesmeDurumParam"  width="120"  >
 			<template>
-				<label value="zsnhhdq3i2" />
+				<label value="qsc71aiopb" />
 			</template>
 		</selectbox>
 		<label id="isyeriTurParamlbl" value="İşyeri Tür" />
 		<selectbox id="isyeriTurParam"  width="120"  >
 			<template>
-				<label value="e4nkegvtdw" />
+				<label value="r058dqpnh1" />
 			</template>
 		</selectbox>
 		<label id="isyeriKategoriIdParamlbl" value="Kategori" />
 		<selectbox id="isyeriKategoriIdParam"  width="300"  >
 			<template>
-				<label value="28cb3ktc50" />
+				<label value="9q02q0uzss" />
 			</template>
 		</selectbox>
 		<label id="calisanSayisiBasParamlbl" value="Çalışan Sayısı" />
-		<decimalbox id="calisanSayisiBasParam"  value="35732733"  width="98"  maxlength="5"  placeholder=""  />
-		<decimalbox id="calisanSayisiBitParam"  value="-115633436"  width="98"  maxlength="5"  placeholder=""  />
+		<intbox id="calisanSayisiBasParam"  value="1994064631"  width="98"  maxlength="5"  placeholder=""  />
+		<intbox id="calisanSayisiBitParam"  value="1018346125"  width="98"  maxlength="5"  placeholder=""  />
 		<label id="ilKoduParamlbl" value="İl" />
 		<selectbox id="ilKoduParam"  width="98"  >
 			<template>
-				<label value="zlr3qk6qwe" />
+				<label value="vair12eyvg" />
 			</template>
 		</selectbox>
 		<selectbox id="ilceKoduParam"  width="98"  >
 			<template>
-				<label value="8ohqyhsz9q" />
+				<label value="syvdaxyonu" />
 			</template>
 		</selectbox>
 		<label id="subeParamlbl" value="Şube" />
 		<selectbox id="subeParam"  width="300"  >
 			<template>
-				<label value="6y20ojkfrj" />
+				<label value="2sol3dogns" />
 			</template>
 		</selectbox>
-		<label id="isletmeTekAidatParamlbl" value="İşletme Tek Aidat Listesi" />
-		<checkbox type="text" id="isletmeTekAidatParam"  checked="true"  width="50"  />
+		<checkbox type="text" id="isletmeTekAidatParam"  checked="false"  label="İşletme Tek Aidat Listesi"  onCheck=""  width="50"  />
 		<label visible="false" id="ilKodlariParamlbl" value="İl" />
-		<textbox visible="false" type="text" id="ilKodlariParam"  value="ovc8vsbtsb"  placeholder=""  />
+		<textbox visible="false" type="text" id="ilKodlariParam"  value="c2zw736vs1"  placeholder=""  />
 		<label id="ilAdlariParamlbl" value="İller" />
-		<textbox type="text" id="ilAdlariParam"  value="vw8p7rjadj"  width="361"  placeholder=""  readonly="true"  />
+		<textbox type="text" id="ilAdlariParam"  value="oieapuiiqo"  width="361"  placeholder=""  readonly="true"  />
 	</window>
 </zk>

@@ -3,12 +3,12 @@
 xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 	<window id="editMailWindow">
 		<label id="smtpAuthUserlbl" value="E-posta Adresi" />
-		<textbox type="text" id="smtpAuthUser"  value="1ag07gb36t"  width="200"  placeholder=""  />
+		<textbox type="text" id="smtpAuthUser"  value="7lae67g7hq"  width="200"  placeholder=""  />
 		<label id="smtpAuthPwdlbl" value="E-posta Şifre" />
-		<textbox type="password" id="smtpAuthPwd"  value="9uxmcezver"  width="200"  placeholder=""  />
+		<textbox type="password" id="smtpAuthPwd"  value="neye2vgsu9"  width="200"  placeholder=""  />
 		<label id="smtpHostNamelbl" value="Host Name" />
-		<textbox type="text" id="smtpHostName"  value="5i5brzgehp"  width="200"  placeholder=""  />
+		<textbox type="text" id="smtpHostName"  value="ab3mclkh3d"  width="200"  placeholder=""  />
 		<label id="smtpPortlbl" value="Port" />
-		<textbox type="text" id="smtpPort"  value="pvir5byi8w"  width="200"  placeholder=""  />
+		<textbox type="text" id="smtpPort"  value="wanfb5s2dv"  width="200"  placeholder=""  />
 	</window>
 </zk>

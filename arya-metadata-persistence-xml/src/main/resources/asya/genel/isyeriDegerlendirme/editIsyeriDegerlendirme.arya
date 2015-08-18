@@ -3,9 +3,9 @@
 xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 	<window id="selectIsyeridegerlendirmeWindow">
 		<label visible="false" id="isyeriIdlbl" value="Isyeri Id" />
-		<textbox visible="false" type="text" id="isyeriId"  value="n0j3yempcv"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriId"  value="d5az6tnq5b"  placeholder=""  />
 		<label id="tarihlbl" value="Tarih" />
-		<datebox id="tarih"  value="2012-2-9"  width="100"  placeholder=""  />
+		<datebox id="tarih"  value="1996-0-14"  width="100"  placeholder=""  />
 		<button id="degerlendirmeBtn" label="Değerlendir"  onClick="degerlendir()"  width="100"  left="200" />
 	</window>
 </zk>

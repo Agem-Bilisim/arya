@@ -3,20 +3,20 @@
 xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 	<window id="addGelenevrakdefterWindow">
 		<label visible="false" id="evrakDefterIdlbl" value="Evrak Defter Id" />
-		<textbox visible="false" type="text" id="evrakDefterId"  value="t6xa8dqwzv"  placeholder=""  />
+		<textbox visible="false" type="text" id="evrakDefterId"  value="g8l3ltgm2v"  placeholder=""  />
 		<label id="basliklbl" value="Başlık" />
-		<textbox type="text" id="baslik"  value="0rrpx73io0owkxldhnj5cc5sb7c46b65ofx96hvwbzshlrz8wziqehqjzlsbedvtgqqq951l154wqhcmpmfwjyb3hhq7cc92n4fded2gtbdym3onsry99pcu368ciihcqct2trhl5xsn9943o8qu20m2iocm2lq81niwv96deuz6r7sbyllr45gq5l3ofiwhf8746d2nvij9k5emab9keu3jayx3uaovhgsqspwb5ecysfk4j2ow5tqbeuug9zl"  width="220"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="baslik"  value="0pukm7stg1ajfnw2plm8agejg1qndf6l80rk19tp73akczwvgz0fqrq696fauk9dgdhaw1hgbc1bvqpn97i1ydnpzy36ki2yiyguae1mqi595frfi2wc5mb5obtbbjptz8w00dw5hek65jeikkw2on7a3nmil2clv75o01vwgb9yno1wn1z9azef7vv1gcxbb34iuimd3nsu8shyfhmswuapabp18m8fhnomwoxcu4t4fnhc47get8wvafmas1v"  width="220"  maxlength="255"  placeholder=""  />
 		<label id="baslangicTarihilbl" value="Başlangıç Tarihi" />
-		<datebox id="baslangicTarihi"  value="2000-7-24"  width="120"  placeholder=""  />
+		<datebox id="baslangicTarihi"  value="1995-8-11"  width="120"  placeholder=""  />
 		<label id="bitisTarihilbl" value="Bitiş Tarihi" />
-		<datebox id="bitisTarihi"  value="1992-3-11"  width="120"  placeholder=""  />
+		<datebox id="bitisTarihi"  value="2010-4-14"  width="120"  placeholder=""  />
 		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
-		<textbox visible="false" type="text" id="eklemeTarihi"  value="qvmkuz01hs"  placeholder=""  />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="c9ggc8gnud"  placeholder=""  />
 		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
-		<textbox visible="false" type="text" id="ekleyen"  value="qeentmyapo9n5x45324yn4jsnp0p9oqn1p427eb7dad1dleahxa3xcdxa275ym9jzduk5bb9hq0wrpzu5zsuohkuo2kwayewap6xj6q1hwczy2lwmzj2es1mljbswspxzfxh5h9zv4z6i7r9h737693u8z0rmhzbsxbsfg764am9v46la5sizqamlbnbnsja1hjy6e4zjelwcmco8iax796xlof6v6x55xboszgulrwg7435fj4al6oks41n6tm"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="ekleyen"  value="boplf3tqw4pxu7u8mkpkh8qdaylyoc7fcdmpawqt8co574lgxiopgb64997p3mqyv9p7zv79j8u0jjte4ol2oqcqd2nlurv0zyzwiaet0m9vn01i3ee8s77qhzxnjscr1axc8a6bswgleu6cy11ages6mu6a1gupx85dg6txngveox08or0g9w2c8ugnks7jn9d1yvn4l82zl3y9a65nu11hvy95xsnlynko3pdxyjd3yicpo9q2z1v5a9jxuz5"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
-		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="ptitxmws2t"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="jkfdlmozqt"  placeholder=""  />
 		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
-		<textbox visible="false" type="text" id="sonGunleyen"  value="774bnmdsyncp0ze1g534wtax8ut88fklw534m6zfkb6uvb98o3od9ynkrmgbnuvx0bbeyig7p7zqc0zj3ywhch9yrkq1ub92tp3d26olhtc8ifwbfjl4dn8g0yjklk03o685i2esvvqktf5uzuhmpjvli64uuwgxhsgq7749d6uiidi0q3njoi7qswbtcomo0xx8w8nz2qbytvvgieffpa37cemv8va3pqh8lxyf9i8w4z7rx2pu8lt7c3sa05c"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="hsbmrfeyo9i0fxgbkct6qq1nmikzz0sj7rattniffcq6saew4esept7svt2e20bcbmlkx7f8bhaw4on1anns3z9mqoewzgz0jdy2jzqxejra2bbogtknt8mjbukw4w76lg0ne8nuumstz0e7s2zbvecte35idbhkz3cjzymbude7eav4tpzggo1lnmtiwi8w8icz60zbiq07wecs3pgzt8bzjlepzone12oem3q7ugempcr2fcrviig2d7b2mez"  maxlength="255"  placeholder=""  />
 	</window>
 </zk>

@@ -3,11 +3,11 @@
 xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 	<window id="listOrgbirimWindow">
 		<label id="tanimParamlbl" value="Unvan" />
-		<textbox type="text" id="tanimParam"  value="5acz75e3qe86v2ndneftcxosn4tgqqs7nboo1jd2jt329uepnpkp5osxbd73toudh0gclye1xgtbt4ki05vyd3frfo494y9xadcbit603phngvcjtwo088jz03393nd06yu1dgn6t7codz0hg0m0sru1vxkk0vdepjcjepd1vagtph3o9jp4rtu19y4dlc3n75e0w52zpth7ossoigt2xm1uxxygq3934a344b9xzqe4ihwlsz4yot4uqs3xhjs"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="tanimParam"  value="a8vvevij36q06v2pkquqosxt8gufin5gvcng30u9i256jhjj0lqkj5m0kk7ugv57iacbwuhnpyhsq4810vgvp3gpq9ogdwwhnadb78gpb6mzbqt9c2eo26r9uggtfklbfoz2zplal42iyz6poheahp4iv0f0sl3bapm4f8lce2bu71vmt08d8td5xdb6ag4nuwyqly5iqj6jqyh5fs9m5agbsneuz9ct9h6j3roge0qkvfj9lgpt9k4256hx0bd"  maxlength="255"  placeholder=""  />
 		<label id="orgBirimTurIdParamlbl" value="Tür" />
 		<selectbox id="orgBirimTurIdParam"  >
 			<template>
-				<label value="hhfv8ak6yh" />
+				<label value="3jwn4qm6ip" />
 			</template>
 		</selectbox>
 	</window>

@@ -5,36 +5,35 @@ xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/
 		<label id="evrakDefterIdParamlbl" value="Defter" />
 		<selectbox id="evrakDefterIdParam"  width="300"  >
 			<template>
-				<label value="t8403nds5j" />
+				<label value="fzrs30j5a4" />
 			</template>
 		</selectbox>
 		<label id="siraNoParamlbl" value="Sıra No" />
-		<textbox type="text" id="siraNoParam"  value="iy6kiyc1ec"  width="150"  placeholder=""  />
+		<textbox type="text" id="siraNoParam"  value="6ksb00lxqv"  width="150"  placeholder=""  />
 		<label id="evrakNoParamlbl" value="Evrak No" />
-		<textbox type="text" id="evrakNoParam"  value="l6s1kiq59q"  width="150"  placeholder=""  />
+		<textbox type="text" id="evrakNoParam"  value="dj1pwxzi5h"  width="150"  placeholder=""  />
 		<label id="gelisTarihiBasParamlbl" value="Geliş Tarihi" />
-		<datebox id="gelisTarihiBasParam"  value="1999-1-7"  width="120"  placeholder=""  />
-		<datebox id="gelisTarihiBitParam"  value="1993-11-20"  width="120"  placeholder=""  />
+		<datebox id="gelisTarihiBasParam"  value="2003-7-5"  width="120"  placeholder=""  />
+		<datebox id="gelisTarihiBitParam"  value="2007-8-14"  width="120"  placeholder=""  />
 		<label id="evrakTarihiBasParamlbl" value="Evrak Tarihi" />
-		<datebox id="evrakTarihiBasParam"  value="2002-5-27"  width="120"  placeholder=""  />
-		<datebox id="evrakTarihiBitParam"  value="2012-8-7"  width="120"  placeholder=""  />
+		<datebox id="evrakTarihiBasParam"  value="2000-11-18"  width="120"  placeholder=""  />
+		<datebox id="evrakTarihiBitParam"  value="2010-11-11"  width="120"  placeholder=""  />
 		<label id="kimdenParamlbl" value="Kimden" />
-		<textbox type="text" id="kimdenParam"  value="fk86mfmwna3nyosazvjh31ltmsnue29mhtid4bijmafcojj8ekz4okthn38pr8sjzst4jnis7t3mkw8qkx1dnmqitborjtfmlsbvvsq9h88m6pprcrhvxzanhk3osllu9n1ngduct11ia5sgn3qkumsx9fw1x0qpsr3mjvf5zdcwgmhw581vn7cnh1hd97akt1leipg2ecjbosy0l9y9ubefs9kseeqqpya26vtxepvv7zdwjmd0clfa7qy63jl"  width="215"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="kimdenParam"  value="xwgcwybt936cfn8ovhy2stm2n90gz3hbku95kq14ntzpd9l8gs848vl9uj3sgqsyn6n5kcypl4pz39vk17tcspa8775rn8fa8acpan5zq2kolvfmjcg9mbarex64h0tk4d50hk4sfloa0xdf2i17ekdunpicqsvm7fjby2faxgthjtkf654beh6l5wt6kl0sgg09rjrmpfvs6gl5ypcw4ma0917fljdgs49i6tfgmymnppbvff3e7ucq3b0ao96"  width="215"  maxlength="255"  placeholder=""  />
 		<label id="konuParamlbl" value="Konu" />
-		<textbox type="text" id="konuParam"  value="dz0jq8ma64qo4n85z8a6xadqr5gi7s17eckseel8fsu5m1rbegj01ysok32m74190f65ympi2xg0tmfyhubwrylf2pu8vt5ikyyarupkrzebq0oiofn63gxdcauhx2966lf2johj78ins4mjiawq1uvq3ygh7r3xhhj2c2aq6txf73idv7szuqgcz6azw0y02e169yrd4pv5vv45ls4jwmfhz5x9oxb2hvgmqm9gotpf4ivau244pks4dxdxsa4"  width="215"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="konuParam"  value="9r4ff64o06qirlhjgx1wi72hlfkgrtkmj9ycb0tyyn17vpsczkpnf1dgvxv7flwl1ygaqescamp1j59b2gug2wguu8h596sgxt5jpntzoipg492jfocrecrqkdkmm3dv5ghts7vm46dwqyklkpjswpih6su7tpi1ax9f9ffxpd5qfvyc3vcg3ocvghy63m87gcz4vi01t06w116lphht3g22qfc8u5rg7jp2nknyaz6fcm0k6hc819750kk9dir"  width="215"  maxlength="255"  placeholder=""  />
 		<label id="aciklamaParamlbl" value="Açıklama" />
-		<textbox type="text" id="aciklamaParam"  value="7d8htz43oz8t2qqf1iocrjqs5q7y8qb1w7it00n9s1fjuy9983k730ny5ppol8gh875q3iygsxthzrh4xfefes6ajc3yqxhsv809ywfzpw8e4kkgo2ruapp5jj8aldaz9f0mhx5ri90da316zaeuw4nzas5vnkf57cstj74jzlughorhcx4p0q82qd1oomligq4ydesfcwy5l986yjhh9e0sdm520n2zs220fcwkaqb6lrj4ti0s8zzhfx82esb"  width="335"  maxlength="255"  placeholder=""  rows="5" cols="40" />
+		<textbox type="text" id="aciklamaParam"  value="5n8dcblkzhen8vsmoq5w54s4mq6yi5prlkw1hb6q5b805meuhxetkx0pp7xulwjw9y3ozxavvaugvqpso68b23haf9rt0qn9whxe5k9k6ngq7yfutzei5agmomalxae7r414rtscqe6z7br1732a6v3djsg4e4iixdkc0uqpdro8906wyda4exst9hnhthtiven4errkmdh2bhllsijnrpb89q318sbm1433smbgvyu0jj5tyrkvq2uzkvu29he"  width="335"  maxlength="255"  placeholder=""  rows="5"  cols="40"  />
 		<label id="birimParamlbl" value="İlgili Birim" />
 		<selectbox id="birimParam"  width="120"  >
 			<template>
-				<label value="v3kg9t6apw" />
+				<label value="iiwrtm2f2c" />
 			</template>
 		</selectbox>
 		<label id="ilgiliKonuParamlbl" value="İlgili Konu" />
-		<textbox type="text" id="ilgiliKonuParam"  value="ixdmbog2c9jezggew3urkw3mr6gihtnm993p8e8whdusuphsjtb7u6asktso8x196v8jizfzy09lmtd0o3h2kntmr0edbasfqasv1yygftvnh07z54w3etvu34z6u07vd3rz1zom85q4xugvqpcsm6s69wxalbayahx1byu5sv16k3figmw793d1c5tj4jaa6xdfxj650gvqlc4wzma14td85v73w4iex69xlmjfb36vs78rblopiys2wlnbwj6"  width="215"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="ilgiliKonuParam"  value="136zh5krmfc0c3958i9y90cy4dmkgei6pwghsmp0gmi3glr1h8r9rwqmxyumu47hv4mc3vh8pixd1pt3ykzcwed2vyqsgma0gkgjeko8hz2o41y4nuxin3c5t1gu57bgq4vkqxxvz1ku4fnv31ha9moflyu45rdkashea61jhf6qdeo9kuvepjx6mb77de1g4sworg30iym383k2wp8djy2vbm71gx72o7r4g6cndikz5pspli6jw4kcucm3mby"  width="215"  maxlength="255"  placeholder=""  />
 		<label id="ilgiliSiraNoParamlbl" value="İlgili Sıra No" />
-		<textbox type="text" id="ilgiliSiraNoParam"  value="qvd3dm7i2rhoattylfwoxzov79s0fs2v6rhphkam25t6w5izx4nonzdirnvkms2cn5zhabfsjgkge72ectt5cif33f6adsjygv20szuvyymmza9jk0jwcxt5ygq1sgxwh33u3dznygdgiogrfj4r2aehgbzfzt97rterynmh7h0uakditip7rf0ld0geehlqxz2zizokeupowfxicepcojasijurwqu53rvurcjxijwmgnppef5xmmwrajki7b9"  width="215"  maxlength="255"  placeholder=""  />
-		<label id="gecikenlerlbl" value="Sadece İşlem Süresi Gecikenler ya da Son Günü Olanları Göster" />
-		<checkbox type="text" id="gecikenler"  checked="false"  width="20"  />
+		<textbox type="text" id="ilgiliSiraNoParam"  value="vmay1t1w0wza9mgbq5sf4n4bhtspl0g3ut9q33rnyls10tgnq1t2jh7axl0ezlh287wdmmm0hdzma2u69lb3q1re1zijaag6sbq1mg2syc6sq8tkah7acf6vhdrno2o8z4p17352pqxb0jlzpxwn5sr04o6e6q2rcnvhp3pzx72noov8slgnp3vm2chst84hdxg9wvpfr7j0eylqcxddcxk5kcad7383u0elwvlxey2rqp9frkokiho056qau0x"  width="215"  maxlength="255"  placeholder=""  />
+		<checkbox type="text" id="gecikenler"  checked="true"  label="Sadece İşlem Süresi Gecikenler ya da Son Günü Olanları Göster"  onCheck=""  width="20"  />
 	</window>
 </zk>

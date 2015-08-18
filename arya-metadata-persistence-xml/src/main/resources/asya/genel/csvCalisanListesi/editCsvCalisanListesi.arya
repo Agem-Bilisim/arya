@@ -3,29 +3,28 @@
 xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 	<window id="selectCsvcalisanlistesiWindow">
 		<label visible="false" id="isyeriIdlbl" value="İşyeri" />
-		<textbox visible="false" type="text" id="isyeriId"  value="3g0dqrv7y4"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriId"  value="eyvvussq32"  placeholder=""  />
 		<label visible="false" id="dosyaIdlbl" value="Dosya" />
-		<textbox visible="false" type="text" id="dosyaId"  value="zj7vvnillk"  placeholder=""  />
+		<textbox visible="false" type="text" id="dosyaId"  value="douqcow4hb"  placeholder=""  />
 		<label id="calisanListeDosyaIdlbl" value="Çalışan Listeleri" />
 		<selectbox id="calisanListeDosyaId"  width="180"  >
 			<template>
-				<label value="bxcfh10zef" />
+				<label value="wukobtbgag" />
 			</template>
 		</selectbox>
 		<label id="donemAylbl" value="Dönem" />
 		<selectbox id="donemAy"  width="80"  >
 			<template>
-				<label value="hi6gma5mak" />
+				<label value="k4bwzpdzky" />
 			</template>
 		</selectbox>
 		<label id="donemYillbl" value="Dönem Yıl" />
 		<selectbox id="donemYil"  width="70"  >
 			<template>
-				<label value="6ya828r3qa" />
+				<label value="aukxyajr6m" />
 			</template>
 		</selectbox>
 		<button id="calisanDosyaYukleBtn" label="Yükle"  onClick="calisanDosyaYukle()"  width="70"  />
-		<label id="isletmeTekListelbl" value="İşletme İçin Tek Liste" />
-		<checkbox type="text" id="isletmeTekListe"  checked="false"  width="70"  />
+		<checkbox type="text" id="isletmeTekListe"  checked="true"  label="İşletme İçin Tek Liste"  onCheck=""  width="70"  />
 	</window>
 </zk>

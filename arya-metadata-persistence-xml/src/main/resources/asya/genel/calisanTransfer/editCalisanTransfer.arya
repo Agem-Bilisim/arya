@@ -3,6 +3,6 @@
 xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 	<window id="editCalisantransferWindow">
 		<label visible="false" id="girisIsyeri.isyeriIdlbl" value="Isyeri Id" />
-		<textbox visible="false" type="text" id="girisIsyeri.isyeriId"  value="gcd6q6uo5x"  width="80"  placeholder=""  />
+		<textbox visible="false" type="text" id="girisIsyeri.isyeriId"  value="hm9becozpc"  width="80"  placeholder=""  />
 	</window>
 </zk>
