@@ -1,40 +1,39 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listGidenevrakWindow">
 		<label id="evrakDefterIdParamlbl" value="Defter" />
 		<selectbox id="evrakDefterIdParam"  width="300"  >
 			<template>
-				<label value="vwy40igxo4" />
+				<label value="8vol32dat6" />
 			</template>
 		</selectbox>
 		<label id="siraNoParamlbl" value="Sıra No" />
-		<textbox type="text" id="siraNoParam"  value="by3z2tvo92"  width="150"  placeholder=""  />
+		<textbox type="text" id="siraNoParam"  value="m78vsl3s0r"  width="150"  placeholder=""  />
 		<label id="evrakNoParamlbl" value="Evrak No" />
-		<textbox type="text" id="evrakNoParam"  value="3csevcmytc"  width="150"  placeholder=""  />
+		<textbox type="text" id="evrakNoParam"  value="1r50vwx9vm"  width="150"  placeholder=""  />
 		<label id="gelisTarihiBasParamlbl" value="Gidiş Tarihi" />
-		<datebox id="gelisTarihiBasParam"  value="2003-2-7"  width="120"  placeholder=""  />
-		<datebox id="gelisTarihiBitParam"  value="2010-3-3"  width="120"  placeholder=""  />
+		<datebox id="gelisTarihiBasParam"  value="2000-11-11"  width="120"  placeholder=""  />
+		<datebox id="gelisTarihiBitParam"  value="2010-0-22"  width="120"  placeholder=""  />
 		<label id="evrakTarihiBasParamlbl" value="Evrak Tarihi" />
-		<datebox id="evrakTarihiBasParam"  value="2000-3-27"  width="120"  placeholder=""  />
-		<datebox id="evrakTarihiBitParam"  value="1996-6-8"  width="120"  placeholder=""  />
+		<datebox id="evrakTarihiBasParam"  value="2002-9-23"  width="120"  placeholder=""  />
+		<datebox id="evrakTarihiBitParam"  value="1998-10-12"  width="120"  placeholder=""  />
 		<label id="kimdenParamlbl" value="Kime" />
-		<textbox type="text" id="kimdenParam"  value="axqncggqzqxbn3ci0yu6zmu13vy17q8lf3ilmkr6kfn1wlhlt5z99jiwza1l329zw0ra7cypfkjjsjjgkp45lvl06bczl19guppeq4037ih1xbpsizg12h8psb2iazj7dxwg9gu0ldhai8g0m2qa0w9gbh938nnhlwn1vtjt90n4bq7curgwrin0927t1na9do8p1hox60vhgkqws243b6fdmutybu3fdm5719vgt0l6tc2xoaw2x34zc4j8c0f"  width="215"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="kimdenParam"  value="sx1ijqn5v7tuurxrnm0ynhe48kzwhhxd947flbhx5fz9jsg3fqvkiq9z61by4sfsxs1mn870o2yrx2exo31hwwj8ynyh6qdew6k3t1rtir73zdp5evajzh50t1dturugz9z6b2rxxvxjvq29ef54s4d2dszxxc4xperjws12t9khr3eg7eftj593srdmrvyhut42qpvk8nuvsmzr9lnzgkji1but8eo9qh9677b5ov4bley0l4i0ftd8xkrkkge"  width="215"  maxlength="255"  placeholder=""  />
 		<label id="konuParamlbl" value="Konu" />
-		<textbox type="text" id="konuParam"  value="3i9blslvmdh0e3l7mvjaz3feb98ucrppe0am5ju54066jsbrrh2rgrxqoh382x5pmb8uo96c58o1vyis8hnfe4dsmhxti0kwmq5r9emhal7z3wqe6h9u8ivy5hpvbpyh36596y7ehg5mj6fs0qpw8hrm2d4hz9z1nnlgdivic9prvxtyvzypoqg4w01q4bjf1owcjwfu6w5a2b4h9at4hzsf031gezertmvsciolo4hbt1kwwc1r6em7gt79318"  width="215"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="konuParam"  value="0a3ml0d78slsy8vozeq7dfduc71coq5g3tfchsf56d2ywr5j6kk3mpqpq7j4hn2md74zk15zddeahbhl8z6hqh68b1mc3zdgm9nusdwjdyh2xod4aoribe0i6uhzi60a3i09m12o84ex0ubayic1sywu75pteni07mu2ehhxltytm82aoh1z0ve2byarisey7tea85kglnt2mvirjahfhqblmtgt43n9msszkg3wm96pa77f70tyhzlr23qmy46"  width="215"  maxlength="255"  placeholder=""  />
 		<label id="aciklamaParamlbl" value="Açıklama" />
-		<textbox type="text" id="aciklamaParam"  value="yshmi8ngcdae6kkxfb8zwxqitqgwzph57cs0kabp6d54jv7wvjbyl4v5sdtng5sxfs86kfq6vkzad523gbprk4xxda3h9f055d4nkzc20b9xy49ncbxt2tw77bkiqbfn5hhnhixfkxqgwutcxj013blv625k35so47v0jcevf2ogto0rj4uzvtvdr3tqwkb0d3u7qs2om2gof9ge9pyaihpd9kiuplo0lddbyb5dxylljvk23q96891j1v5ohc8"  width="335"  maxlength="255"  placeholder=""  rows="5" cols="40" />
+		<textbox type="text" id="aciklamaParam"  value="fk6v9yfud8caxk0ttlztg5difx7gjexsp270vqi1b2uowpxpok78s62xzrdzr6gaj4o76jhtacxtvublmwx332cyef2bbjre94jb2nvsmnw1odvbaucms64l4t5sitcyooqh50dkuusrnniis18gba9bxaihh0vha4516ww8khotzkfqoqdypx16h1uv8w285je6jhlcf140x8sse88be52gkzv2eh35vlf9ccfk458rgmvq9g8xp9hwm7fdb6n"  width="335"  maxlength="255"  placeholder=""  rows="5"  cols="40"  />
 		<label id="birimParamlbl" value="İlgili Birim" />
 		<selectbox id="birimParam"  width="120"  >
 			<template>
-				<label value="init5ntfeb" />
+				<label value="dprslit851" />
 			</template>
 		</selectbox>
 		<label id="ilgiliKonuParamlbl" value="İlgili Konu" />
-		<textbox type="text" id="ilgiliKonuParam"  value="x0excccyrro1pbo23d1ukdfb5lwcuoigzts5x4ydh3kg35uc1chebdgu76uv50bktbe7ycy1bmtblcis83rfnnrz6s7fjg8o6wh7a861xw04g1d1gl4z5nivwrgb0ypwqh45v1w5sgg1gvpwdbnnglj9lq8csci3l9o9vaiufbq4hy8wvhlvulg2ndw6jxv9cilujnu7eodeye89rmtb9kkh864e4x8rukaaiwixplav1zjo8vcbepqib37ykt5"  width="215"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="ilgiliKonuParam"  value="qdc5ge6z52dnwyybtip0duh80bg506xr7i8jxhmfrcevs8in6mu1t84m12fo1qyaxnq3w2o9j0mij5cnhxv558q984pfwjzuzpjoyrr58du3if9xfyl4urfjox0j0skn9abng57gv4xblfrijaj8x9zy36h8jolpswlzg0tgrw96gokuln220e3xpmfl88y9rba5bgvq8hnzbsf5yjicouljuhr7eggl21ahxwranbqu2pw0mu7yx4fezjthikm"  width="215"  maxlength="255"  placeholder=""  />
 		<label id="ilgiliSiraNoParamlbl" value="İlgili Sıra No" />
-		<textbox type="text" id="ilgiliSiraNoParam"  value="cn5nny5k35jcn8hrorspbpf4mchpynv248j9mt639t9kanhuqq09rug9oknj05pvogmcco02sdd94w1q13s33kf4oqixbtu07j0nnbyzzm40ll399y4kmoxjja2yrdhp2h3zc5nt3fmkog2l7hzkuy8thd2zbbtqg7nrng9wromin320quyydqim41zvt8fzxsawjao7ztpa8uslbgxig09tvwxjvrw1agmpisu0s76n43yoxwjtrjvcjarmam5"  width="215"  maxlength="255"  placeholder=""  />
-		<label id="gecikenlerlbl" value="Sadece İşlem Süresi Gecikenler ya da Son Günü Olanları Göster" />
-		<checkbox type="text" id="gecikenler"  checked="true"  width="20"  />
+		<textbox type="text" id="ilgiliSiraNoParam"  value="eyc8mex4sfi8slc3hvawf3t4x0x5ssfj1vjdsi7qckja5g9d6r5iop1g4vyyr9mlof3lssa5nbuzsywc1mes4t8f6vydfbhn55bbmq6t38lcpxginj1rs6x5xxep3zgymyrg1virtym9hrq61enzcv534ntzg4fw4w3chm3l210dkhmolkn43ekcrlbzug13gn06koxtwp36hfw41wx9dh2zm2k8kqji1hkvn60657ctlqvi3q26f93edepr6dp"  width="215"  maxlength="255"  placeholder=""  />
+		<checkbox type="text" id="gecikenler"  checked="false"  label="Sadece İşlem Süresi Gecikenler ya da Son Günü Olanları Göster"  onCheck=""  width="20"  />
 	</window>
-</zk>
+</arya>

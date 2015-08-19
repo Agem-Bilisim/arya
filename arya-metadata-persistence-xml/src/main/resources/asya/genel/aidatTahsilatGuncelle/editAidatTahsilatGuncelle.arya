@@ -1,18 +1,18 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="editAidattahsilatguncelleWindow">
 		<label id="donemlbl" value="Dönem Ay/Yil" />
 		<selectbox id="donem"  width="200"  >
 			<template>
-				<label value="fluj7819s0" />
+				<label value="p4hkjuqjez" />
 			</template>
 		</selectbox>
 		<label id="dosyaIdlbl" value="Aidat Dosya" />
 		<selectbox id="dosyaId"  width="442"  >
 			<template>
-				<label value="pd1w5l9vy8" />
+				<label value="dxijer0m3f" />
 			</template>
 		</selectbox>
 	</window>
-</zk>
+</arya>

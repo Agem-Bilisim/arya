@@ -1,53 +1,53 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addSayfaWindow">
-		<textbox visible="false" type="text" id="sayfaId"  value="qf8ysvi1a1"  placeholder=""  />
-		<textbox visible="false" type="text" id="orgBirimId"  value="kz9c532yya"  placeholder=""  />
-		<textbox visible="false" type="text" id="fotoGaleriId"  value="12mvijvply"  placeholder=""  />
-		<textbox visible="false" type="text" id="videoGaleriId"  value="2tf4lnaebq"  placeholder=""  />
-		<textbox visible="false" type="text" id="sayfaAnketId"  value="2y4oy7zxz6"  placeholder=""  />
+		<textbox visible="false" type="text" id="sayfaId"  value="uqd06v61t0"  placeholder=""  />
+		<textbox visible="false" type="text" id="orgBirimId"  value="bxz6vc48tc"  placeholder=""  />
+		<textbox visible="false" type="text" id="fotoGaleriId"  value="l0wh3em01b"  placeholder=""  />
+		<textbox visible="false" type="text" id="videoGaleriId"  value="egpk1kwpml"  placeholder=""  />
+		<textbox visible="false" type="text" id="sayfaAnketId"  value="bdjsv0rdqt"  placeholder=""  />
 		<label id="basliklbl" value="Başlık" />
-		<textbox type="text" id="baslik"  value="3ngf26obxew0x65f21eqf4ba9umk5o3pqqjgng503y2uyeb38rlhy39wg2y17msjvrvglkto0i1p2p90e5jckig8ky67pdwwa34s44w4whacb17yw74lxad62ddoyui0cx908ir1ojl8mcauz2fwg3y6po80k1a7hdnbcfhln8hh7o4ymt8on5lgd92mxdcpogih6q9ua9fuiznft8dmc75g7itzv0cmphh7k5daftun79udhngax7qaae6jwwn"  width="420"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="baslik"  value="br4h24v4xfejplloe60jwmzx94uvbj24lg9clok6wyjqupyw2osct31v3o6eiacr4texti89p68j4g0i7kydpw0r0dp2xt6ki9ijx6v83jazw5et3u2u249xbt6zr66pgx2vugbnmfnlpy1t1xaiv50qe76g4g912gcpzkme58qrcxh6cl8au1dwwkvi2mr5gy20tidlmuw2psm8mvnaj1s95b8929j7ysflb6kwg471rhc0iibdjh8gl1qs7q7"  width="420"  maxlength="255"  placeholder=""  />
 		<label id="kisaOzetlbl" value="Kısa Özet" />
-		<textbox type="text" id="kisaOzet"  value="bksdtom0z1"  width="540"  placeholder=""  rows="5" cols="40" />
+		<textbox type="text" id="kisaOzet"  value="ht1k867rv7"  width="540"  placeholder=""  rows="5"  cols="40"  />
 		<label id="tarihlbl" value="Tarihi" />
-		<datebox id="tarih"  value="1996-9-27"  width="100"  placeholder=""  />
+		<datebox id="tarih"  value="2007-9-24"  width="100"  placeholder=""  />
 		<label id="guncellbl" value="Güncel" />
 		<selectbox id="guncel"  width="120"  left="305" >
 			<template>
-				<label value="s7114lktjq" />
+				<label value="meyalis3a5" />
 			</template>
 		</selectbox>
 		<label id="yayinBasTarihlbl" value="Yayına Başlama Tarihi" />
-		<datebox id="yayinBasTarih"  value="2009-1-15"  width="100"  placeholder=""  />
+		<datebox id="yayinBasTarih"  value="1990-6-15"  width="100"  placeholder=""  />
 		<label id="yayinBitTarihlbl" value="Yayın Bitiş Tarihi" />
-		<datebox id="yayinBitTarih"  value="1998-9-28"  width="120"  placeholder=""  left="305" />
+		<datebox id="yayinBitTarih"  value="2003-9-7"  width="120"  placeholder=""  left="305" />
 		<label id="fotoGaleriBasliklbl" value="Foto Galeri" />
-		<textbox type="text" id="fotoGaleriBaslik"  value="mg7ci76ck1"  width="420"  placeholder=""  onChange="autocomplete("function:prepareFotoGaleriUrl", "baslikParam", 5, "setFotoGaleri")" />
+		<textbox type="text" id="fotoGaleriBaslik"  value="4626pg5y8f"  width="420"  placeholder=""  onChange="autocomplete("function:prepareFotoGaleriUrl", "baslikParam", 5, "setFotoGaleri")" />
 		<label id="videoGaleriBasliklbl" value="Video Galeri" />
-		<textbox type="text" id="videoGaleriBaslik"  value="uvi2hdi4ib"  width="420"  placeholder=""  onChange="autocomplete("function:prepareVideoGaleriUrl", "baslikParam", 5, "setVideoGaleri")" />
+		<textbox type="text" id="videoGaleriBaslik"  value="zxxri8k1b2"  width="420"  placeholder=""  onChange="autocomplete("function:prepareVideoGaleriUrl", "baslikParam", 5, "setVideoGaleri")" />
 		<label id="sayfaTurlbl" value="Tür" />
 		<selectbox id="sayfaTur"  width="100"  >
 			<template>
-				<label value="4afm8ums46" />
+				<label value="37c1u0d56r" />
 			</template>
 		</selectbox>
 		<label id="dillbl" value="Dil" />
 		<selectbox id="dil"  width="80"  left="240" >
 			<template>
-				<label value="z6pugjk845" />
+				<label value="003vyi8uj5" />
 			</template>
 		</selectbox>
 		<label id="siralbl" value="Sıra No" />
-		<decimalbox id="sira"  value="-526746511"  width="100"  maxlength="6"  placeholder=""  left="380" />
+		<intbox id="sira"  value="1059832193"  width="100"  maxlength="6"  placeholder=""  left="380" />
 		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
-		<textbox visible="false" type="text" id="eklemeTarihi"  value="9qpacrpen9"  placeholder=""  />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="depipx2je9"  placeholder=""  />
 		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
-		<textbox visible="false" type="text" id="ekleyen"  value="lokahnzwo8m3kp5j1g8crasj77l6n4rbahp1adv96vc98jink669b6xcqae3n7v6qda8fh770rfzl7967gbz161lrv93a2q26jq3ei8rpykpiq24v0l6oi4xmrr9zu5371fs1xp9ayhc0kkpwhtroypqn05xaaz4srkmoi3dvb7zlkf4twzah54a5wd0rftj0ftmtgh34rjfbrcfsrc2w3vvdyd53xma2b92iowfxbbf28roz0qz82b3bmn9d37"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="ekleyen"  value="cw3s84kmvhdhnoxb1w6isz2p42ko6hit8efev0dq4h5hwefhpzdm7a83oc6e9vfa18jhvshc3n2vqh0xhg7m5kv5x5oorwqfkh7tz9gvqp9fmpxh9vr0h0izye43502t9z0yg9p4so01jqqmkw19bmewlsspavg4ssc4520ugw9t9lnnbfx9wb34paboiq4ztd5n77bekgjv9hnhrbr4n18slat6qoyrgeur8187itmrqqrna13itfusuyyxeut"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
-		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="3fxq22as9h"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="3civ5rn4yk"  placeholder=""  />
 		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
-		<textbox visible="false" type="text" id="sonGunleyen"  value="otzo531nmbxlcu3bsxz1r8wvfftm2s51l30v4507g99gi83o41s3qwm18gz8b4qt6bxulk2hldz874bkrtfg3vxf8hgqtxihjsfmthnzio6dc3r9rkgz0ax3om9wibbwo15x4rz6cgu358bkelo1u5ai2760cluj5on56r2ekn0bhwfcfmm0wj03o0mkr3bmzg2yu4wu00fc1va7mi66ronwc1lrdv6ps0xixn04miju5war8g5ybanvgi45omj"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="021ogyrxla35u8nh423s6e7ni8budm7gecl0g654nbsrs724o1a3ak8v7pedjforemf6pg27q2jscnww0clk9cu6irikiro5jy7pbvhaj3x760pla2710y8qicoghppqknqpr5npbmrty13bj72ipyrcp6uhsaru2xm6kjs3ff7pdzzxfvt56jio1otl7mzk90sle0zquvqc6t0te6wp7luqoa6yf4pa84gmph1s69l0a406bczn2ezyq9b47lc"  maxlength="255"  placeholder=""  />
 	</window>
-</zk>
+</arya>

@@ -1,8 +1,8 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="editCalisantransferWindow">
 		<label visible="false" id="girisIsyeri.isyeriIdlbl" value="Isyeri Id" />
-		<textbox visible="false" type="text" id="girisIsyeri.isyeriId"  value="gcd6q6uo5x"  width="80"  placeholder=""  />
+		<textbox visible="false" type="text" id="girisIsyeri.isyeriId"  value="4vny2tqxrk"  width="80"  placeholder=""  />
 	</window>
-</zk>
+</arya>

@@ -17,7 +17,7 @@ import java.io.StringReader;
 
 import tr.com.agem.arya.R;
 
-public class AryaWindow extends LinearLayout implements IAryaComponent {
+public class AryaWindow extends LinearLayout {
 
     private static final String TAG = "LinearLayout";
 

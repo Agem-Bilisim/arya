@@ -1,21 +1,21 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addSayfaanketWindow">
-		<textbox visible="false" type="text" id="sayfaAnketId"  value="0qq93ikwyh"  placeholder=""  />
+		<textbox visible="false" type="text" id="sayfaAnketId"  value="yslnb2q5zs"  placeholder=""  />
 		<label id="anketMetinlbl" value="Soru" />
-		<textbox type="text" id="anketMetin"  value="z964vh5narl7mntbkqzwmmiotpcve319dw6j51o9fmmwntm29ro3nr0mxpep1kxf651yh0e8bshu6vibm04b826tuq73ekx5t78swjhyaxa8yeccjks4uz0rznxblzm9235eiea2csmzomdj507fw5lm6tky5eoedzeny9dslxgrvzhyqj1k7if5yjijqb7s9imttke5wh4fhhg0fiur7c4w3eh3mb7z0pmaersvjri4aw5t9gvb7wlvt5wqitnvtzo26a1w20jh78qeax31zatiwkbchfcc8xbq8ofjbjuovtdxwyqpcuyx0wrw8g6nhpf6p3aozkfb7feghmwaqsep603majdf0ypusx8re8vq7pz6n12t8gahgojgs2tjx101ekzg4eda2sf7okz9e2h0rt4gxbpm01k4mywk9jpvd91v2v3z1i9cvak37wyh9ne654ndxajxv2yircjb97slowd4a7o5gioc6i0hlj8bggto9mm55f3536z4jln7t2seu4vnfv3iyjsar6kk2wy9u9kz9e6tdke4x2bn0mshmbhjwuesb7liuk20t6uderk9u0lddiwhbch7216j95zzobcwvdba14cq95d6sdh6ymge4wenbc18q7j7a6l46e1evzmc6jeg6sy8pia1ax3d1vq8yb0rm9s208ah03sehoy5bcc0tgdamshsp2f0ze3uzevgspxxfxy69dahhx3on9sj8pfl6wgtdny1cm0sxio9zd3sujkxm68092gko8zwx028q154qsgs1pk4fol7hg3wkvy83xyrb5x5oew17b4qnhn6gfahy2ku4qshxbn1xu1pwqiacgazt3mqqfv30lc4y4fnkztvc3jugs28g9ocvx9zt5jpew9j15b76c5tf4je7x87nvr7x3ab42bwyny6md87hrdag51os81r2xeazgfn7wwav7vn9byh7brbj108lewfp18c9k7hz4zxsjpfctcge4rk5q97"  width="500"  maxlength="1000"  placeholder=""  rows="5" cols="40" />
+		<textbox type="text" id="anketMetin"  value="9e0r0bb4i55hsgopneavkpqugjj0ajp03rtrg29vzobr8t0n21ggbzsnstffaxvajiymuodki7v5lby5oyn9sf5iti9oishi55kq3ah1pys9s5t3bjiebciy3sd66njnq69duk2kjh7x5gj1eqezdnh6yxyx17ligrs25h4mh0qlv4mi6iqlu77r6vkh7nfrpfmll1zrpfxf3c7016nrmpcp8coraod18xaz56rrxuzpd1ftc4r5sgb3z35egtjydn1jqtg2058ys20pc3hgdlq7yvrq540sgoatoohz2817djn6gn2jczor7ankb5usyc5ti34jj896cigmcvc6nr08a2onn53adirklxr2nbwxcsarsp7d3tkdxpfz8kgx3sz5pv8nemzjqgrjo8adv8qsdezsohdbzlpdt8l8dlhhuzm6podlp4bjndcr04a25haqqx3vz5nurwqmux15ijf36pz34ybjdc6ecdm9nwsyyt15iz56xu6oaskojrsl4m0sa5ierzhdaql8fmt2zj4mzxp6myxe8nsx95n5r3g4507bsu2skm9clww6d0ysbbufw05ft20i8ybtazn5gyhv51t7zcm04ej4p2k42tnnq9l03ltj2wfbd87xp7vmzcrgec3kj1lv55pqhw3knjh8npmde479s59hv2onzw2b2l7024yri0eua4nabksz311l5rpg2k765tr24l1tsu146llwsygq8x7zobr1g0g9xblbmcwop2fbjsxkt38vsr0807no9nvif8g9ojkns4kzhhe8xukpycc287b9uz27226affw2qbc3d8w614ki6o6rdi8e96tbndtz9wk677z51igm4988wgq3udadgu7vm03ns7lu2p9b31hi70s00u94sbhnum05e42kne7mckqma64kexr66nmcvtgkryl7x8b0ieo7l6qiatonw9renwpevm9s31hh81ig1k3n409aozhcjkyfuzju733m"  width="500"  maxlength="1000"  placeholder=""  rows="5"  cols="40"  />
 		<label id="sonucYayinlamaTarihilbl" value="Sonuç Yayınlama Tarihi" />
-		<datebox id="sonucYayinlamaTarihi"  value="1994-7-8"  width="100"  placeholder=""  />
+		<datebox id="sonucYayinlamaTarihi"  value="2010-3-13"  width="100"  placeholder=""  />
 		<label id="anketBitisTarihilbl" value="Anket Bitiş Tarihi" />
-		<datebox id="anketBitisTarihi"  value="2008-1-5"  width="100"  placeholder=""  />
+		<datebox id="anketBitisTarihi"  value="2005-9-3"  width="100"  placeholder=""  />
 		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
-		<textbox visible="false" type="text" id="eklemeTarihi"  value="1qt77ukdv7"  placeholder=""  />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="ndx5yizscu"  placeholder=""  />
 		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
-		<textbox visible="false" type="text" id="ekleyen"  value="ihkq30f42euivcsfbsxisjssthlz71975jt2qfnp1r5dvhw8hkwr9uh1ujyy5849fur4d2wmbz9okr9dokav8uigexf996e34zt3o1mg69f5lnhcwnavcla29xnxhg84hm4trhcmx63x8031qi4bamhqtlfnjh61hujgmkopkew4npzz99xreh70o5mtocl1wwbyws9onwb6r8pulzpnsrodxitccrb4es0xekr4nmj3780v75rjnekolw0wmyt"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="ekleyen"  value="9w2kawmaw2w9qmfmvhssxsldcdt46rwqoqz6vumrgl21hvmfyqx81gblik6fmqrmb7e5617zadnvkin4rhznliglsrgytynobdg24500duzkbumb3juqi805t4456onq7vg0lxwotp83adwa4flckoj12hu5grf2ouk0p6ohbd05h9rn9xp2zbtxmat6k63vx8xdk4l1qnwtkmd04heob1qh6d6f3gzwnn286z46zlzszq9cp44pki394c9szuo"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
-		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="r4pw74828n"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="v0j1snbz25"  placeholder=""  />
 		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
-		<textbox visible="false" type="text" id="sonGunleyen"  value="503tea1eq4jc4rdrnys7vgylkyehgmwc8w27c206gn6rsddnm76sber18ofzlvts1gj6oslrhtecmuo96c1ujht0v6q0duel1vo2k08ylplj2ixt75w4q3lnilzl693q7i02m6np5kc7whs0k5dsk2t1sl9qzhhcs0unhmln1twx546pagukd0oqr96y0qj6crna1gv1hl3hvx2t8z825zjbcux65sqo6v3wf0b90omj4dkvg23qtadbqvliqox"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="l652wnvwxi26tf9f2dflkhf3mnin7cbkbd1wz78eoo60w65kgr1xhpo9egihkar9lbo7oixu9om0t85943s3j6d8y3fj6xhr51ktue195sp41hdewgkb8ggkad9n92kru287rtsin8safmeqb70g5p4gn95fgf2kskalha2a7au05dilu7ds5mhwgwn5xua3clrn5lasu0ozp82c0y7qm0jxd6qm26s3d1i1vm28z25vcm3axi41u6aqru2uz7k"  maxlength="255"  placeholder=""  />
 	</window>
-</zk>
+</arya>

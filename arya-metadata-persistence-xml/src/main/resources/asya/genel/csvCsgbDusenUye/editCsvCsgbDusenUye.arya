@@ -1,13 +1,13 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="selectCsvcsgbdusenuyeWindow">
 		<label id="dosyaIdlbl" value="Yüklenen Dosyalar" />
 		<selectbox id="dosyaId"  width="320"  >
 			<template>
-				<label value="s74yzdcbk4" />
+				<label value="6oi6n682qq" />
 			</template>
 		</selectbox>
 		<button id="yukleBtn" label="Yükle"  onClick="dosyaYukle()"  width="90"  />
 	</window>
-</zk>
+</arya>

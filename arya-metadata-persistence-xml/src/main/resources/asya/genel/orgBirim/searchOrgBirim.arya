@@ -1,14 +1,14 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listOrgbirimWindow">
 		<label id="tanimParamlbl" value="Unvan" />
-		<textbox type="text" id="tanimParam"  value="5acz75e3qe86v2ndneftcxosn4tgqqs7nboo1jd2jt329uepnpkp5osxbd73toudh0gclye1xgtbt4ki05vyd3frfo494y9xadcbit603phngvcjtwo088jz03393nd06yu1dgn6t7codz0hg0m0sru1vxkk0vdepjcjepd1vagtph3o9jp4rtu19y4dlc3n75e0w52zpth7ossoigt2xm1uxxygq3934a344b9xzqe4ihwlsz4yot4uqs3xhjs"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="tanimParam"  value="cb44iokazeb51tsuvmxv5i4ddgy8hzl7cpvsp5ru5ofzemwkwkif8f9zxw54ew9knuy50krwsb6ec0fjuftth6l3bvvrvn82etbqo7cefj26fdlivpbuhhd41uy6e0td9z8ksgru8lscg2x8551h618d5zd8l2abjx6mkzgyhj5ji6kmlr9by5znkws5rxj7eo685tuc3vbst6ls7zlbweazys3ed7t5srjzmi2y2ksiamwiupzi1487y3y6tmw"  maxlength="255"  placeholder=""  />
 		<label id="orgBirimTurIdParamlbl" value="Tür" />
 		<selectbox id="orgBirimTurIdParam"  >
 			<template>
-				<label value="hhfv8ak6yh" />
+				<label value="w2ek6fyzed" />
 			</template>
 		</selectbox>
 	</window>
-</zk>
+</arya>

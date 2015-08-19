@@ -1,14 +1,14 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="editMailWindow">
 		<label id="smtpAuthUserlbl" value="E-posta Adresi" />
-		<textbox type="text" id="smtpAuthUser"  value="1ag07gb36t"  width="200"  placeholder=""  />
+		<textbox type="text" id="smtpAuthUser"  value="nxbj7vvc4l"  width="200"  placeholder=""  />
 		<label id="smtpAuthPwdlbl" value="E-posta Şifre" />
-		<textbox type="password" id="smtpAuthPwd"  value="9uxmcezver"  width="200"  placeholder=""  />
+		<textbox type="password" id="smtpAuthPwd"  value="8snxprzpi1"  width="200"  placeholder=""  />
 		<label id="smtpHostNamelbl" value="Host Name" />
-		<textbox type="text" id="smtpHostName"  value="5i5brzgehp"  width="200"  placeholder=""  />
+		<textbox type="text" id="smtpHostName"  value="p0bpst1155"  width="200"  placeholder=""  />
 		<label id="smtpPortlbl" value="Port" />
-		<textbox type="text" id="smtpPort"  value="pvir5byi8w"  width="200"  placeholder=""  />
+		<textbox type="text" id="smtpPort"  value="uh5v4apvl5"  width="200"  placeholder=""  />
 	</window>
-</zk>
+</arya>

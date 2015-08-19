@@ -1,8 +1,8 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addMetinWindow">
-		<textbox visible="false" type="text" id="dosyaId"  value="gs5hekmphq"  placeholder=""  />
-		<textbox visible="false" type="text" id="tur"  value="y5mwsk71c2"  placeholder=""  />
+		<textbox visible="false" type="text" id="dosyaId"  value="mde9vi2qkp"  placeholder=""  />
+		<textbox visible="false" type="text" id="tur"  value="y7pq87s39a"  placeholder=""  />
 	</window>
-</zk>
+</arya>

@@ -42,8 +42,8 @@ public class XMLTextareaElement implements XMLElement {
 		if (formAttrAnn.left() > 0) {
 			xml.append(" left=\"").append(formAttrAnn.left()).append("\"");
 		}
-		xml.append(" rows=\"").append(5).append("\"");
-		xml.append(" cols=\"").append(40).append("\"");
+		xml.append(" rows=\"").append(5).append("\" ");
+		xml.append(" cols=\"").append(40).append("\" ");
 
 		xml.append(" />\n");
 

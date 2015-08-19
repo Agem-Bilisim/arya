@@ -1,48 +1,47 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listUyeWindow">
 		<label id="durumParamlbl" value="Üyelik Durumu" />
 		<selectbox id="durumParam"  width="120"  >
 			<template>
-				<label value="euk9nu4lyb" />
+				<label value="vm6xccwe4x" />
 			</template>
 		</selectbox>
 		<label id="tarihParamlbl" value="Tarih" />
-		<datebox id="tarihParam"  value="1996-11-8"  width="150"  placeholder=""  />
+		<datebox id="tarihParam"  value="2000-7-26"  width="150"  placeholder=""  />
 		<label id="cikisNedeniParamlbl" value="Çıkış Nedeni" />
 		<selectbox id="cikisNedeniParam"  width="120"  >
 			<template>
-				<label value="9rm0ogqyhf" />
+				<label value="jdtfvdqzkl" />
 			</template>
 		</selectbox>
 		<label id="gecerlilikParamlbl" value="Geçerlilik" />
 		<selectbox id="gecerlilikParam"  width="120"  >
 			<template>
-				<label value="eck2ky8xsi" />
+				<label value="vt0evhyhnr" />
 			</template>
 		</selectbox>
 		<label id="basTarihParamlbl" value="Üyelik Düşme Baş. Tarihi" />
-		<datebox id="basTarihParam"  value="2010-5-22"  width="120"  placeholder=""  />
+		<datebox id="basTarihParam"  value="2007-10-22"  width="120"  placeholder=""  />
 		<label id="bitTarihParamlbl" value="Üyelik Düşme Bit. Tarihi" />
-		<datebox id="bitTarihParam"  value="1994-3-29"  width="120"  placeholder=""  />
+		<datebox id="bitTarihParam"  value="2003-3-17"  width="120"  placeholder=""  />
 		<label id="orgutDurumParamlbl" value="Örgüt Durumu" />
 		<selectbox id="orgutDurumParam"  width="120"  >
 			<template>
-				<label value="yft0e9ys5d" />
+				<label value="8f1osot732" />
 			</template>
 		</selectbox>
 		<label id="aciklamaParamlbl" value="Açıklama" />
-		<textbox type="text" id="aciklamaParam"  value="p6e8zhqde9"  width="120"  placeholder=""  />
+		<textbox type="text" id="aciklamaParam"  value="4eq3qinqiq"  width="120"  placeholder=""  />
 		<label id="cikisAciklamaParamlbl" value="Çıkış Açıklama" />
-		<textbox type="text" id="cikisAciklamaParam"  value="jq5fm4ojdf"  width="120"  placeholder=""  />
-		<label id="acikUyelikGostermeParamlbl" value="Açık üyelikleri gösterme" />
-		<checkbox type="text" id="acikUyelikGostermeParam"  checked="false"  width="50"  />
+		<textbox type="text" id="cikisAciklamaParam"  value="whmlfzg4fc"  width="120"  placeholder=""  />
+		<checkbox type="text" id="acikUyelikGostermeParam"  checked="true"  label="Açık üyelikleri gösterme"  onCheck=""  width="50"  />
 		<label id="girisYkKararNoParamlbl" value="YK Karar No" />
-		<textbox type="text" id="girisYkKararNoParam"  value="xjw3ardcmtn5sn0w1rmyri812du0j5qmtbfb384w5zz6bicj0i45tgz7k4mqw831nuye0z46khjb7kyskepu4lg25mcjsfyu1kttnnwiv4l13xpl4czj5qo8fudfh3yjhao3aepwpibrrpak1e7nrmnz74ew9bhqo3iwkl3b4lrpsvkzvymv2u4h1o1o003h625pmbhtiff0xsjkarihzm8f8q8rk6l9adk5yurh4mdzaox4tdxtppid1nq0nsf"  width="120"  maxlength="255"  placeholder=""  top="50" />
+		<textbox type="text" id="girisYkKararNoParam"  value="k66p3m02azvslsqh8bgmc4y41bmrvu90wyoku17kewd0ofooqmk5kd8be0nfnz1do5fo98dpcav6dsr3rerz73yyn7gcp0re3cuh1bhm6s7iay13klfp0klg22k0ng784y539eo2ec4syd3bdptd831tt33p4cgi7p4ihma7a4boihstfra8eouqxjdqdijkr7rrimbp49u2wfepor9irwbrfqf2lgbzutigr7u1xauub6aox0ysdm5zljn75d9"  width="120"  maxlength="255"  placeholder=""  top="50" />
 		<label id="onayBasTarihParamlbl" value="Onay Baş. Tarihi" />
-		<datebox id="onayBasTarihParam"  value="1995-8-28"  width="120"  placeholder=""  top="75" />
+		<datebox id="onayBasTarihParam"  value="1992-5-2"  width="120"  placeholder=""  top="75" />
 		<label id="onayBitTarihParamlbl" value="Onay Bit. Tarihi" />
-		<datebox id="onayBitTarihParam"  value="1993-7-31"  width="120"  placeholder=""  top="75" />
+		<datebox id="onayBitTarihParam"  value="2000-7-9"  width="120"  placeholder=""  top="75" />
 	</window>
-</zk>
+</arya>

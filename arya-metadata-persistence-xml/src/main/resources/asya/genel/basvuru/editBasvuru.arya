@@ -1,19 +1,19 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addBasvuruWindow">
-		<textbox visible="false" type="text" id="basvuruId"  value="tma8qzpkss"  placeholder=""  />
+		<textbox visible="false" type="text" id="basvuruId"  value="4h9z9jf8lw"  placeholder=""  />
 		<label visible="false" id="isyeriIdlbl" value="İsyeri" />
-		<textbox visible="false" type="text" id="isyeriId"  value="q15n28t304"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriId"  value="yxa2po96m2"  placeholder=""  />
 		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
-		<textbox visible="false" type="text" id="eklemeTarihi"  value="z3a4c8fbs7"  placeholder=""  />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="rcrrgoo4sg"  placeholder=""  />
 		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
-		<textbox visible="false" type="text" id="ekleyen"  value="br553q0pgn"  placeholder=""  />
+		<textbox visible="false" type="text" id="ekleyen"  value="137c305ush"  placeholder=""  />
 		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
-		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="b4fatndwgs"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="nk8sxb71p7"  placeholder=""  />
 		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
-		<textbox visible="false" type="text" id="sonGunleyen"  value="lm86nzt961"  placeholder=""  />
-		<textbox visible="false" type="text" id="sozlesmeId"  value="k7mlcyqoou"  placeholder=""  />
-		<textbox visible="false" type="text" id="oncekiSozlesmeId"  value="sko33zdns7"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="5nsj8cx094"  placeholder=""  />
+		<textbox visible="false" type="text" id="sozlesmeId"  value="c9ywdx0vxg"  placeholder=""  />
+		<textbox visible="false" type="text" id="oncekiSozlesmeId"  value="1a8p1eux8m"  placeholder=""  />
 	</window>
-</zk>
+</arya>

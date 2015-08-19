@@ -1,11 +1,11 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listCsvcsgbdusenuyeWindow">
-		<textbox visible="false" type="text" id="isyeriIdParam"  value="rwvsd3n84l"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriIdParam"  value="oulbknj2yx"  placeholder=""  />
 		<label id="isyeriUnvanParamlbl" value="İşyeri Ünvanı" />
-		<textbox type="text" id="isyeriUnvanParam"  value="us8ioftm1oxiw9oedfq8di5vxk9x10t78cqai3in16fg10nz76xcp1ybs5qw3293g2bkprcvxc0mszbz915xnqykd9g50vq46caxwqzi3apqxbtr0ewn1oh5nyof12n42xbo0pzfxh9zrz9bu058lsf85aqqyc7hoorlx3vvq3xe3cny9b9urh3bpwpjm1gw0byoicxi6xg1hxr2seagwwfnn7l0is0pnx26cufcdrmb4yldzzcyc1dnpxj851w"  width="200"  maxlength="255"  placeholder=""  onChange="autocomplete("function:prepareIsyeriUrl", "unvanParam", 5, "setIsyeri")" />
+		<textbox type="text" id="isyeriUnvanParam"  value="hzmf3hpzaroy10qx8nl9le4xwd73a8tvlqi0yj8w79ur984vfxcfal75ge1qwi3qrvtyt4vr34iciqsk2glx4g9hlsffv55mo8d3zag837a2e61rhs99329sh0fna0qvnd53oyhbr6fcfpcqy9aqjo7s6rnla0nkas12xvq4bmefgv4w7wpply9by0xx51fbr7d1hu4nrdt2lwpodv3hgbo3z33nij3if04gcj2869e93flj4kq3oo6u5gzdtpm"  width="200"  maxlength="255"  placeholder=""  onChange="autocomplete("function:prepareIsyeriUrl", "unvanParam", 5, "setIsyeri")" />
 		<label id="isyeriSgkKisaNoParamlbl" value="İşyeri SGK No" />
-		<textbox type="text" id="isyeriSgkKisaNoParam"  value="r4exavifxch8gl5lkbt2l77mh0lq85d1ff"  width="200"  maxlength="34"  placeholder=""  onChange="autocomplete("function:prepareIsyeriUrl", "sgkKisaNoParam", 5, "setIsyeri")" />
+		<textbox type="text" id="isyeriSgkKisaNoParam"  value="aqlceaxlzp0zttlt2gawiqh3x6kzo2v10n"  width="200"  maxlength="34"  placeholder=""  onChange="autocomplete("function:prepareIsyeriUrl", "sgkKisaNoParam", 5, "setIsyeri")" />
 	</window>
-</zk>
+</arya>

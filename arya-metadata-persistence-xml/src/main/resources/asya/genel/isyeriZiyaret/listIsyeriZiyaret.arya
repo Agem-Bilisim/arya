@@ -1,36 +1,35 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addIsyeriziyaretWindow">
 		<label visible="false" id="isyeriZiyaretIdlbl" value="Isveren ZIYARET Id" />
-		<textbox visible="false" type="text" id="isyeriZiyaretId"  value="84l4zrxyz8"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriZiyaretId"  value="yaqcmdq055"  placeholder=""  />
 		<label visible="false" id="isyeriIdlbl" value="Isyeri Id" />
-		<textbox visible="false" type="text" id="isyeriId"  value="fzgtn9hkbo"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriId"  value="fk2c8o77xs"  placeholder=""  />
 		<label id="ziyaretTarihilbl" value="Ziyaret Tarihi" />
-		<datebox id="ziyaretTarihi"  value="1997-8-16"  width="120"  placeholder=""  />
+		<datebox id="ziyaretTarihi"  value="1993-6-1"  width="120"  placeholder=""  />
 		<label id="gidisSaatilbl" value="Gidiş/Dönüş Saati" />
-		<textbox type="text" id="gidisSaati"  value="otxi0avr5y65tagkqkxupf1yit1vigvhaann94cwmmh3jeqryozh29zyib14i80nvc65228ndg4weushdlnf1gioq4tdaygaluwc80rbv2p3bo6pk054my6jjo42x844m7ncyf9pclzsmffsfg1k62i9tny0ke3ogkyhl29wwoy7t8cxtjkb4df2opjxmm7wothjz17k3p3sua0h4fttp2xngx33fulc3lx2fsdr16wbl9orbxnu0pbb08vwk29"  width="80"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="gidisSaati"  value="le5fc7ht4agnya45ckosg5cx82arve6lpv744pi0bwgmgl1jac0zrid8mmcux9r4qvvan1sguexamu8dghg9qdthtvlhcpsntuvafuvzugc1399kpbia5o0ndmbovdi8pcoumcjl22xaa7gglu7zc3r3tk4goxk73xqgaf5ww3sd1vqgeiubj9xpeflzy2ux211idg06o1gm7uml57192ius3o27knlqnnsqqrs3vb2h72sjolubxe6tobqr8x4"  width="80"  maxlength="255"  placeholder=""  />
 		<label id="ziyaretEdenlerlbl" value="Ziyaret Edenler" />
-		<textbox type="text" id="ziyaretEdenler"  value="xji42ms9mhsr8lh4ct5sydiy7u6hqc0ufdyrjno4gtye7yn4b4qkdxaxfkaznzilxhmv5bs5e7m3s5m7hqq9f7ndqcus5639neazc4gt3xe1j9iad8jolwz6t4s0m5vzm61rtxlcdtrc077cku6qt3akbl1o0afbeg5najm5okdxbyq35wmqo03i4w1q1nudin00odkllu0q82a89qx8a8yle7z8bw0k3pi8r09kvrz978be8spow6n0u3lkhwx"  width="326"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="ziyaretEdenler"  value="amp4bkrx1wc6qf6w57nq0oruk3wjnt73k1yxdxw0mslciiwfwtzhdr69o5z7fj2q1f1jhg70qznw00cwczbvw3tnmdrf7ioqcyjph8zy3woh4p2v8gsj7qbpa4afolgmmj54vr40arhs61v1x16i0p1pbtfe0qbmftp5qong2925ynnpjx2gp4iya21x1svyjss9t3cq9efcodk7hx21toih3zdcafwvtpufjw5w0tsclat3wla8criclt4zfrh"  width="326"  maxlength="255"  placeholder=""  />
 		<label id="gorusulenKisilerlbl" value="Görüşülen Kişiler" />
-		<textbox type="text" id="gorusulenKisiler"  value="tsg1d8j3djvwxgr6rtibisr6lf7l06jinu1saxq99lehy0s20s07qz20hih4bkqun88ev7e0s00m0hejwqxxd2ssra0p6ik513508nymx8sdjg9us3zgy3cv5dbe3k6gguw5pvzx1zcw096hsq8tggy3wzcdziril6xn69g9wiyg1pkavot45bf6fpp7rgbv0ns4s7dct7ct0m8pusvp5668zigcyhv7dsole3rgxegjs2x4dewje3vzwvzjcvq"  width="326"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="gorusulenKisiler"  value="cdoydpv0kr30afmv6csg3njihdbwqwki29ki1s0p5p3p6secn4y788mcvy6iw2qo3vixdh6rbbi1krsgfp4bc19fnlyqufq6d49yx7b2rsvuwwh1o22va1pg7uusclud7rybbxvr8ebehghmox7cc8lpi5q7qrrrah8idl4dmu5ygdwc2ffzcq4lch058ldftacxs735l3a6hxapi3zarb81enx15f060lmy0dseevlrsuod1vzqp3bk7m3qu19"  width="326"  maxlength="255"  placeholder=""  />
 		<label id="gorusulenKonularlbl" value="Görüşülen Konular" />
-		<textbox type="text" id="gorusulenKonular"  value="rzl76kr1gry3x5vzdrcxw9kfx68ra9ll62fjv29slh8dl3njfif26rkhtk4oz5vnc4makosb2xjmdewcmviuhz6eraf6rp592vxa0uv6zz8yyj0nj5nrf5gtwea1tjz5v3c8cdc2oobxnldn5qesy5xnrylp7pyaf6g4oseqdcyih0p0ce4ocfsj8mb9f6g52y12zuxjbj4ftw3z9ig5vwfpv0lzeu60pbe6vh4c18bjdl2vbm71j6t6tii5kiw"  width="326"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="gorusulenKonular"  value="33vpedcb4w37ioqoruou3lrjb7buq7girv0lxu5gkwew6y0jzph5xcqrdueljn74srz7bwrf541n2u5quj4fwvo6elvty0hclrlzwf65fec02wbfb3excb16vjtlfoocnjqwfv243hrg90ormpau179anw066svtlgda6wb992l3p5mbch2neaw2n9q77kf0sxfegp64sjq4ocb9coj8lznaaptp2jynva40gv1aw6oczda77lgoczwdw4uovvi"  width="326"  maxlength="255"  placeholder=""  />
 		<label id="ziyaretinAmacilbl" value="Ziyaretin Amacı" />
-		<textbox type="text" id="ziyaretinAmaci"  value="33bocuhxpw0nhd38dmapp2vexd47d1sqx8cuctkrfq2h63rwkqdxiuau28kr5k19ylexxzvedlnpvl3lhkwbe43d2kozqyyfrgm8taric57maotlj7bsa8iyx7giwbqd370kyon7r0ut4oc3af5gmar7ak6pfv18yi096qr1rk3d194r35jm5hznhgw07l32xf5inkn4b0nuo211tr5b1vd2i126ojtcgwcjymngfgpyrw4pg72yh6g9ulx39z5"  width="326"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="ziyaretinAmaci"  value="82gzfbiyliv1ifc7v0gmjwu11eawr9u2x26pcau8vhwavi9jvj6payf5tn04a2l1suohe7ara1baeh3cxhxp44osh4xya13hwby1arrzs7vacwrc7ajhqfnjt8dpjlyi849bb26dv65aozpe4kod835kpn9agzc2ulgza88zxbj1n98az6uz5n5dpmo9dzaf97fyyk8jghjss8e0m9bli91529q1whs7467ssw88qw0vcihwgffzu4bb2ujnat1"  width="326"  maxlength="255"  placeholder=""  />
 		<label id="ziyaretFaaliyetilbl" value="Ziyaret Faaliyeti" />
-		<textbox type="text" id="ziyaretFaaliyeti"  value="v9h9t3rvtktuetv7bt9zkcii2p4psc615ykjj2cczxyyhtvwnojvcslf6i0a9kfs8br3ujtleq7c81j2h3fr3b51dpfvhoo5u390yaqiysthu7tddoczsaj9n64t0pvblqar22q3kea1l135vjzbclr4kicwb413v5rsflrwa1kr1painrfyfg15lt9zyremq7znwe7tl8nc7g1hl8ktv7woky1fkzxd556ba8rrdw5gauy9lrufzey5ml4bm4c"  width="326"  maxlength="255"  placeholder=""  />
-		<label id="faaliyetRaporulbl" value="Faaliyet Raporu" />
-		<checkbox type="text" id="faaliyetRaporu"  checked="true"  width="20"  />
+		<textbox type="text" id="ziyaretFaaliyeti"  value="kl47lgfh6pdnl3du2dnknmjway7oj5vfhnrjkton537jr3n1v4q83lc872oc0lzce27zij161778pfydyzfungpanq877xp1wurgurguf9cie9g07hfuhmrsbrnq4ywedqbd59qalwb27auku2h9fofsh3yrise2zcven4n31i7f3xc2vatil5bvj3g9a91ukb10ggblyygpoaydexk5x2c9wvldjgn62f61rq6v8kf1w2nrwv5ixmidxo2hvvi"  width="326"  maxlength="255"  placeholder=""  />
+		<checkbox type="text" id="faaliyetRaporu"  checked="false"  label="Faaliyet Raporu"  onCheck=""  width="20"  />
 		<label id="aciklamalbl" value="Açıklama" />
-		<textbox type="text" id="aciklama"  value="jvecw8oaovc86bn3p4bq1lppcf7sczyxwq2m4fmuyt0o3ifpbstir1cm98jri8ooolyj9y7lcg1v3udgz2kdsxisx7d0w803fsl34qtce1abhgj3r2k0y2th7am34c1thf8ngmtjc6ovq38ostqhu6nvm7xd3cqlvl2uubedrpyfmnfpjh1nnxxz88vdwu947gz82cm4p8ook95b37eyraz01bbb9tcazv0976gmchr8t9b9ogkji62sb2mkbbg"  width="506"  maxlength="255"  placeholder=""  rows="5" cols="40" />
+		<textbox type="text" id="aciklama"  value="m9wgwh2cjkcv5nt96rgh29qg54ovnwinybu6ah35bcm4fqazbh474y2wfmliy2aat5thdwidwqu3zpmcuhnnkkhhfgt5ze7v8wycgyafmkc37o4e2nlavjfqrxa4wsoiruzgzqstg84h56dvlcaj8yhtylu2w4hr2p1jepnpsdq80gw8527bfmrgbw77vl3218g4uzcoob691he9n7qhwrgsz6jcmkaeb4sl6nnqkrsznaz22h4xwgxppgkcw09"  width="506"  maxlength="255"  placeholder=""  rows="5"  cols="40"  />
 		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
-		<textbox visible="false" type="text" id="eklemeTarihi"  value="m2iw6mlrgj"  placeholder=""  />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="19b6a2234q"  placeholder=""  />
 		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
-		<textbox visible="false" type="text" id="ekleyen"  value="yaq9mzpa2f4ecsl3jrzt0d649sm7ol9mdm3n1qh57ccp9542k2kw5rsiwbxaz0v9hu5wdwa19qk48rxv40vc2adm71wmfl0xpy7zfhg76yiqq14mmc50u6cyivyjo5hwvjlt746tk7d4abcn02hlmr38lcj3xmusi4kucz6d929alcuy9z7zl4wiopfnvhqku2m62hm60dyz7iykt3v17rgc0l3idens2sese1rwwb5wbfkfjouo6y3knhai4kv"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="ekleyen"  value="z42672fg2l4emtb3ch05yh1n6of7osgtp6jygj435ul6wtav0p7dmlf5e7tc07q0we9c4v503pxd7cyaby19ri8uqs49v8gwo5pbk2i7a7nerjnwd3343jqbq9ivpm5lhl6fzvavct0lg19p60ga79yk6flo1d56nfk0uqjaftiqljn8e890yj41i3hakirsfssvt03q5pwaucjjul59m60mbn1xux50zi57ntnkh73gdhjklys1421arx5n6xt"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
-		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="4wehlbth83"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="nl2o8xkosn"  placeholder=""  />
 		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
-		<textbox visible="false" type="text" id="sonGunleyen"  value="htcpskdxofk7ztfuwsk35rgbxto2zvk0mf925hdineodc9ehu20rgux3spebo6y3n9davw76gkh620vtcu5r0q940179gelb6tcoslftrory1y8kx24wfhiqg1jtbj1y23voo01vtmxudj4ntqphn03dhalyp9630dy41cegt641yy73t8v35f8puv2sa7ourx9tme9goh80s1uykibitqderh5hufjj8mz5jqlz1uszruv5nwwdc4rc1ibytqc"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="pi4om476nv0vm928baihzscc1o3zuc9sxqeca3mfwxzsau2tbzdrauisxx34yg8app3kdazct79fn2i6711br3c9k0wh1gyrbu6lw24ry0aflzh7p7kihz3z8su6ijcad6g7bnitzszdzj8l4d4blyvj7eqmuvdbi43dl1ofocfl50j2wsl7qkb8zh3ypjbi5xlc6vdg1f2u8ryc8clmlpdquqtupm4bwc5scrswqekxsghemr2ci8rhbfottma"  maxlength="255"  placeholder=""  />
 	</window>
-</zk>
+</arya>

@@ -13,8 +13,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.zkoss.zk.ui.Component;
 
-import tr.com.agem.arya.metadata.zul.impl.WindowType;
-import tr.com.agem.arya.metadata.zul.impl.ZkType;
+import tr.com.agem.arya.metadata.arya.impl.AryaType;
+import tr.com.agem.arya.metadata.arya.impl.WindowType;
 import tr.com.agem.core.gateway.model.AryaRequest;
 import tr.com.agem.core.gateway.model.AryaResponse;
 import tr.com.agem.core.gateway.model.RequestTypes;
@@ -54,10 +54,10 @@ public class AryaWindow extends BaseController {
 
 			StringReader reader = new StringReader(response.getView());
 
-			ZkType zk = ((JAXBElement<ZkType>) ((JAXBElement<ZkType>) jaxbUnmarshaller
+			AryaType arya = ((JAXBElement<AryaType>) ((JAXBElement<AryaType>) jaxbUnmarshaller
 					.unmarshal(reader))).getValue();
 
-			List<Object> comp = zk.getContent();
+			List<Object> comp = arya.getContent();
 
 			for (Object o : comp) {
 				if (o instanceof JAXBElement) {

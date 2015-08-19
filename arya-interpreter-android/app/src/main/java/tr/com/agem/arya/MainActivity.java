@@ -59,11 +59,10 @@ public class MainActivity extends Activity
         if(result != null){
             AryaResponse response = new AryaResponse();
             response.fromXMLString(result);
-            AryaInterpreter.handleViewResponse(response.getView(), mainLayout, this);
-        }else {
+            AryaInterpreter.handleViewResponse(response, mainLayout, this);
+        } else {
             AlertController.setAndShowPrimerAlert(this, "HATA!", "Sunucuyla Bağlantı Kurulamadı", "Tamam");
         }
-
     }
 
     public static AlertDialog getAlertDialog() {

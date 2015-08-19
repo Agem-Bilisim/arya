@@ -1,13 +1,13 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listDuyuruWindow">
 		<label visible="false" id="duyuruIdParamlbl" value="Duyuru Id" />
-		<textbox visible="false" type="text" id="duyuruIdParam"  value="wgwx5wb1v7"  placeholder=""  />
+		<textbox visible="false" type="text" id="duyuruIdParam"  value="irjusf4lh8"  placeholder=""  />
 		<label id="baslikParamlbl" value="Başlık" />
-		<textbox type="text" id="baslikParam"  value="x7m80o0jh61wuf0oem3abooji8s33srlc1idfyi8p21wusl337pju3gcsnjibwz1f707or159gbqf8dtp77uwvo2ws20u20bp2e143d0i3o5hdgs9lvcorawjdtp0ulfc8ej8lvbke6uwphq79r0ewdrpt0idk7cmnq2hirwjny489l86k1b7m7vuwjmibasc2s5qq0wmlh3ecbiz8r31kglteeaur595931o0bvi11whr0c6fc3yzxrznxttio"  width="200"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="baslikParam"  value="ehdsz1rpn06fkfj9kv2unbac0tuv78fgl7sen1mf484lj2evu2qiaw81zwd4yw3qatoy1fc09f8i0ud5sh6r88ge728u6nm5at90cq60r37y8uxzbyq75z5om93e3noymxzw17rl0hv9i7mgcis8iy4333u6fbchw22i38xettqkq3bx9dl5mskil1qb5fjdd733qwt9yenttpxl32a52hi2dzx5u0luhix570uq3lih2lzxenie59aeg9xxstt"  width="200"  maxlength="255"  placeholder=""  />
 		<label id="tarihBasParamlbl" value="Duyuru Tarihi" />
-		<datebox id="tarihBasParam"  value="2004-3-5"  width="100"  placeholder=""  />
-		<datebox id="tarihBitParam"  value="2010-6-26"  width="100"  placeholder=""  />
+		<datebox id="tarihBasParam"  value="1994-3-15"  width="100"  placeholder=""  />
+		<datebox id="tarihBitParam"  value="2000-5-28"  width="100"  placeholder=""  />
 	</window>
-</zk>
+</arya>

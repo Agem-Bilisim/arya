@@ -1,63 +1,59 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addIscicalisanWindow">
 		<label visible="false" id="calisanIdlbl" value="Uye Id" />
-		<textbox visible="false" type="text" id="calisanId"  value="96csyas1ar"  placeholder=""  />
+		<textbox visible="false" type="text" id="calisanId"  value="6najze18qs"  placeholder=""  />
 		<label visible="false" id="kisiIdlbl" value="Kisi Id" />
-		<textbox visible="false" type="text" id="kisiId"  value="ngshd00ug5"  placeholder=""  />
+		<textbox visible="false" type="text" id="kisiId"  value="ysc920abb5"  placeholder=""  />
 		<label visible="false" id="calisan.calisanIdlbl" value="Calisan Id" />
-		<textbox visible="false" type="text" id="calisan.calisanId"  value="htpvybp48g"  placeholder=""  />
+		<textbox visible="false" type="text" id="calisan.calisanId"  value="2o5mro2emn"  placeholder=""  />
 		<label visible="false" id="calisan.kisiIdlbl" value="İşçi" />
-		<textbox visible="false" type="text" id="calisan.kisiId"  value="9vcd0azo23"  placeholder=""  />
+		<textbox visible="false" type="text" id="calisan.kisiId"  value="h63l1hpshq"  placeholder=""  />
 		<label visible="false" id="calisan.isyeriIdlbl" value="İşyeri" />
-		<textbox visible="false" type="text" id="calisan.isyeriId"  value="9hbvglm46g"  placeholder=""  />
+		<textbox visible="false" type="text" id="calisan.isyeriId"  value="bgfjsiw72u"  placeholder=""  />
 		<label visible="false" id="calisan.isyeri.isyeriIdlbl" value="Isyeri Id" />
-		<textbox visible="false" type="text" id="calisan.isyeri.isyeriId"  value="s1ip54m9gf"  width="80"  placeholder=""  />
+		<textbox visible="false" type="text" id="calisan.isyeri.isyeriId"  value="7uf22q542i"  width="80"  placeholder=""  />
 		<label id="calisan.isyeri.unvanlbl" value="İşyeri Ünvanı" />
-		<textbox type="text" id="calisan.isyeri.unvan"  value="dtg876wc1ytkf6jwi64bwip3en7pl5qu1srvbt3zk9vz5y49u9oq3jfrp7njsu3kdfs7wqa9cgu0esiwkycc6d8dwymt7znoai1ttx94t06hvq0wwviyeumhd7v112tk7o5sziwbz4tszizlaet0qb30df2ha5r3jp8tlpiym41tklfz27uegoo8otf1fxbuoen4jxdt3pxe68gqsl4n050z2pb6sa53sqp1u83cwehx61ebg4z4r6q8w0pwc0v"  width="245"  maxlength="255"  placeholder=""  top="56" />
+		<textbox type="text" id="calisan.isyeri.unvan"  value="dxdjzdb34fi90m0gm2v8zkcn84xdl9w6nsyhd3ruwdxe4mcjzoav8yh6cic8z6kx2cjzzu329wtw85wolqvpmbc8ogn6qw1s2ogmqexjbmb3wv1amz21pwr8eb5776tfp62chsbs3mej3n53p33kk4bwcxy42d3yw98r2kvzzkrtudd9e6bg04o2obvfyoe4c17z2pemxj0coi9d90mnxbqz49fycworsm2m4f0d0doonudyntacq21mvsqhnkr"  width="245"  maxlength="255"  placeholder=""  top="56" />
 		<label visible="false" id="calisan.isci.kisiIdlbl" value="Kisi Id" />
-		<textbox visible="false" type="text" id="calisan.isci.kisiId"  value="kdyaj6g98y"  placeholder=""  />
+		<textbox visible="false" type="text" id="calisan.isci.kisiId"  value="lkwledztq4"  placeholder=""  />
 		<label visible="false" id="calisan.isci.kisi.kisiIdlbl" value="Kisi Id" />
-		<textbox visible="false" type="text" id="calisan.isci.kisi.kisiId"  value="zijf908vtz"  placeholder=""  />
+		<textbox visible="false" type="text" id="calisan.isci.kisi.kisiId"  value="phhls52uhq"  placeholder=""  />
 		<label id="calisan.girisTarihilbl" value="Giriş Tarihi" />
-		<datebox id="calisan.girisTarihi"  value="1997-4-4"  width="120"  placeholder=""  />
+		<datebox id="calisan.girisTarihi"  value="2011-3-1"  width="120"  placeholder=""  />
 		<label id="calisan.cikisTarihilbl" value="Çıkış Tarihi" />
-		<datebox id="calisan.cikisTarihi"  value="1999-5-1"  width="120"  placeholder=""  />
+		<datebox id="calisan.cikisTarihi"  value="1994-10-9"  width="120"  placeholder=""  />
 		<label id="calisan.unvanlbl" value="Ünvan" />
-		<textbox type="text" id="calisan.unvan"  value="ww3xfk55fkf7n292ziuakdtnjuw4zfbgws020fxgyrvqmmrmcf7w3iwc6r58vprjwzth8i3key0s4nddnch9jzaxj1uw4dcbwo5h9fwri0qd2c6j8ita8mm7o9aeb421boy0dbvlrigoedbt6tzro5t9z60w6sukdmigbrg05o8u6aviq4zjsa1f8ge33q308yeenhzqzgs78r260j4sln9yps23kze5mevh1jmz3p6f6rttnn40aampwitovda"  width="120"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="calisan.unvan"  value="wk89lhahq11km0zl695tjlbbwmpg704793i6eblfbkz3gk3au0o0a07mozo8i8q3lqsoq7zxsw5spdkebh5p97xbq063zy3eomdqtzpuzmzzz1u34sbq8cp5w9a3tin6sil27u8zmemgsq9513jxlyrdodtausim38tar8qb4kmn8ju7jw4w6976dtu5owo3cetou9le1z2ct4b50nz9c51hokutkby78skiwhgd64nmxdtoqiwlzz5dcvowl42"  width="120"  maxlength="255"  placeholder=""  />
 		<label id="calisan.cikisNedenilbl" value="İşten Çıkış Nedeni" />
 		<selectbox id="calisan.cikisNedeni"  width="200"  >
 			<template>
-				<label value="zg3f7poa12" />
+				<label value="ip3n9dwe3i" />
 			</template>
 		</selectbox>
 		<label id="calisan.aidatlbl" value="Aidat" />
-		<doublebox id="calisan.aidat"  value="0.025275033537044522"  width="120"  maxlength="18"  placeholder=""  />
-		<label id="calisan.dayanismaAidatilbl" value="Dayanışma Aidati" />
-		<checkbox type="text" id="calisan.dayanismaAidati"  checked="true"  width="20"  />
-		<label id="calisan.kapsamDisilbl" value="Kapsam Dışı" />
-		<checkbox type="text" id="calisan.kapsamDisi"  checked="true"  width="20"  />
+		<doublebox id="calisan.aidat"  value="0.9796847321331342"  width="120"  maxlength="18"  placeholder=""  />
+		<checkbox type="text" id="calisan.dayanismaAidati"  checked="false"  label="Dayanışma Aidati"  onCheck=""  width="20"  />
+		<checkbox type="text" id="calisan.kapsamDisi"  checked="true"  label="Kapsam Dışı"  onCheck=""  width="20"  />
 		<label id="calisan.sendikaTemsilcilbl" value="Temsilci" />
 		<selectbox id="calisan.sendikaTemsilci"  width="120"  >
 			<template>
-				<label value="lwazgfkt3e" />
+				<label value="qsb1u8f5bm" />
 			</template>
 		</selectbox>
-		<label id="calisan.ucretsizIzindelbl" value="Raporlu/Ü.siz İzinli/Askı" />
-		<checkbox type="text" id="calisan.ucretsizIzinde"  checked="true"  width="20"  />
-		<label id="calisan.mevsimlikDaimilbl" value="Geçici/Mevsimlik" />
-		<checkbox type="text" id="calisan.mevsimlikDaimi"  checked="false"  width="20"  />
+		<checkbox type="text" id="calisan.ucretsizIzinde"  checked="false"  label="Raporlu/Ü.siz İzinli/Askı"  onCheck=""  width="20"  />
+		<checkbox type="text" id="calisan.mevsimlikDaimi"  checked="true"  label="Geçici/Mevsimlik"  onCheck=""  width="20"  />
 		<label visible="false" id="calisan.eklemeTarihilbl" value="Ekleme Tarihi" />
-		<textbox visible="false" type="text" id="calisan.eklemeTarihi"  value="0alzwpxnhr"  placeholder=""  />
+		<textbox visible="false" type="text" id="calisan.eklemeTarihi"  value="g3dv6xy1jd"  placeholder=""  />
 		<label visible="false" id="calisan.ekleyenlbl" value="Ekleyen" />
-		<textbox visible="false" type="text" id="calisan.ekleyen"  value="i7rh4nm83lm343zj1l23sdzsulf9elodkekqynfcaq9gbjra2274uuf9fffo8kv31y3zsvav7iu9acilb20qcauuy2rqsrb7b8j7f2j4sk64oaor0ik173t4a87229fnsro32idjo983qg47yhvva2k970sxhqghiwuzndxljs0fzs4v3g1exjincbxexx78rthme53gk5bf0l6egqziqu1973ib3ce4e525k0rp9tvccmb59sos6zzbfov52dt"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="calisan.ekleyen"  value="vxrdrh9xjx5tqlxd093n3hmf5cxjhxxms3a0gbmnhwyf4cmdhirax67gy2d7b30dfhg014c46aa9sqsgn4np65bq42bb9rnq8dk3rdfky9imlywz94wd2hixvwimumhdggisdti71wda79a2v09tomb1z1uhz4opmzbro1bozbki4yyx62rlpxs58n8e0gmne8u98wcot225uns4wgkxw2berz3wg3xnchctcjvftorvyg3q7g3a3s2cjewbcsz"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="calisan.sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
-		<textbox visible="false" type="text" id="calisan.sonGunlemeTarihi"  value="6qdowl8p9t"  placeholder=""  />
+		<textbox visible="false" type="text" id="calisan.sonGunlemeTarihi"  value="xs0sz6qmx1"  placeholder=""  />
 		<label visible="false" id="calisan.sonGunleyenlbl" value="Son Gunleyen" />
-		<textbox visible="false" type="text" id="calisan.sonGunleyen"  value="j2ebouyqtckoppyod17rqeglf0uw7cj8ns4r0prc5sutufcqmbralvsijckla1ba2rj6wiyxda5kxof5glqyjlhtsyd11ktfwlaoxyxm80qvh1y1e8rs0si6exrg45238d3y743vyaxqfu8uwbnjk4mgy2z9y38magsri6otgmdmwnc8raq3zwm1bos9tzl0a5dgqaxq9avyes3zm9sathbo67g7wps19c0hmpk8aa2r2k2b658ttvuh5j4gu91"  maxlength="255"  placeholder=""  />
-		<textbox visible="false" type="text" id="calisan.calisanIsyeriYetki"  value="lv5yxob3le"  placeholder=""  />
+		<textbox visible="false" type="text" id="calisan.sonGunleyen"  value="v8kz618xcqys4b78qycc85o23u07sq2wic5u59mouxczt7m2dxt32r6rtn7uhj1ilwl3ou8f8o9t8m7ptipub1pttbslya3wszktnmhrs976wc0d4kxtq7mydkjg384cz9vp33ayl9pue5ln8473g08dwthhjsksqrlv0yb1au3wdlk6712hgi565f1qmpyf60aq1nw913ql6z3h3r6vf87di4fcmfs9196vjmlth1wot1nq6z7s0xb3yf3m8dw"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="calisan.calisanIsyeriYetki"  value="6op6a5vpdq"  placeholder=""  />
 		<label id="calisan.aciklamalbl" value="Açıklama" />
-		<textbox type="text" id="calisan.aciklama"  value="kw1wcycider5aiwr9wz9vkw7gqwm4p32unrk4dirhwiz5ilasnxnilydmi3armgpz71dotd8pk2dusoi82d9vpfhafiydm6bf541wxtpu7khrwl3h04biq44x1kjqxj5r183fezfb07g1ggyoi9lzq3um3ym2rlqqmsaee1xs88y766f44tj54duk2jxlh3z46xo9yo7avyzj4h89ekx54uk2tkheiofpie3gv4qgwqbrk2wobl3ca3d99k5e2uaqlsgqkayugk2sp104f49rjeczeg3598paxyfshgdl33w2rfixgaqt1c1bofmfvm7tv1cu24aj0wg4aqmf4vkcuy5mey6bc3d0ykv0nce2cu04zfqzc29dt2f2p42ylhq63o8hxuzauxa44zlg7o64uy05o6jkwfav6pz36glpkjspzsgmaokldkna0jq1rpqzuq3o4witwtkmnfpq5jh8a65y9oldx7t78z6hes9hq5rx45obngu"  width="425"  maxlength="500"  placeholder=""  />
+		<textbox type="text" id="calisan.aciklama"  value="jsvxqk9fl65c2w2plyhux2i3xhm8et5vh3za1q4xryq34go6l79glc5ifngrehlq837xntsijkagpdwbkuh1io41ad0vh9eyfndixweddyiru0e794u28g2lz957yojrf7q4pgxac2a135miwowzwimk1d4csk7lnfpb8h5s0npu048oiuy7sa6b950hs74cwwrxaquxe2s954x16ylu4mqbxrv3325scdc3yd84h2fftvcpdtotecsyo16pjwbtyfsfi0gpdzdjmf50m2dj5hhezr8gdrgf3kaxpscsnp7ie8fell9tddetp3n41x62uau0ixqdbhwnbc5j7nnbtcyhrb40z7v64kedzex876xb7d0crb9sfpx0wivh6c5gzbckqp1928mlb8x3alwxlxfcskzq0qfayi5vd8m857763hdhrxkxgswf0u1rkz9ta9kpqw8x687a4g3u68kogyhvz3cddg4tmc20a401063o7pj7ctxo"  width="425"  maxlength="500"  placeholder=""  />
 	</window>
-</zk>
+</arya>

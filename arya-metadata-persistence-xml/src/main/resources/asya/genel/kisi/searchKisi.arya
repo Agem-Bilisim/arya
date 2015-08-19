@@ -1,22 +1,22 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listKisiWindow">
 		<label visible="false" id="kisiIdParamlbl" value="Kisi Id" />
-		<textbox visible="false" type="text" id="kisiIdParam"  value="djsgprvmgd"  placeholder=""  />
+		<textbox visible="false" type="text" id="kisiIdParam"  value="7dc5wkpefi"  placeholder=""  />
 		<label id="adParamlbl" value="Ad" />
-		<textbox type="text" id="adParam"  value="cgfnn7i0b3yoopyc6j9hbmsojyod57etbrnnzskh0w3184dm3bze68fj77rhsx6ckh0xdwd7wd2t4yzrh1gma2355qgi24v6g8fdnada9ss00sk5w923u1rxwl5c2pepme8f8qut8cyec5tofvjko07phvz3vzafbtrgw9qhk45fc21a7341rnnisrarnvz87b4n2ywuma4rk2chbcxr7bor4exph8d9h9mwgucvlo5ndxfdkk600c5edd9w5ed"  width="120"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="adParam"  value="tvp6v1vd4u710raoi146ger9kcpshia3uzjliaupk42bpm1f48t72r5a56v2w8vv8qamc0o9mf75ipyqmtquyadxx7gpw1bqa99naam7haqropqdibthy854x6yifexuwnyue8btayf01zb4cek1gf45o0bx0dqp8574iafepbpyvp17ufxij0nkzkw6zcl3ou1x9s3rpcyncpyfeaekeko3in5gh1j6pfhc3qmuvllgyi5scep70h3w8kix8uj"  width="120"  maxlength="255"  placeholder=""  />
 		<label id="soyadParamlbl" value="Soyad" />
-		<textbox type="text" id="soyadParam"  value="qdnuz58flyza6hgknxxfy6k6komybiyuj81s4584003sr9mavjdbotdo0d68kmwsrmjojg3zfloqkabm1aara8fhn7xzi4iwnutddqss7pun9uc6g4xr8yl41b2qys3kz1ikwzgwc1t6k2scl4jyq43auwjuuq0euqcdezyyh0woavkr88um8rehhvrzgy3y122cy6aizjt18n3c84zprv53qjltmwnyv4fl0ox9t639p4qdq9l8uc4fn9vkqg1"  width="120"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="soyadParam"  value="wmgtbc4xlf3d0kbrwpo7mypremcnbmqp0wsikg67r0mrd3ei9984qxqkm8ygv9ga2jnw8rwcpvtk1diamc0sje66m93l4felby36rqmdmkc2prm2vxfyc3nr0yul8k7euyxy4cspeilapyou45jwvq3gg74q96uqn33vot6dte5wkl3ea7ktey13on4q8211fs9or5ww88ugog3f4h38ynoravffh5f9keq3182n2v4azzj9zonza22tpflzb64"  width="120"  maxlength="255"  placeholder=""  />
 		<label id="tckNoParamlbl" value="T.C. Kimlik No" />
-		<textbox type="text" id="tckNoParam"  value="s998v9y6u9w"  width="200"  maxlength="11"  placeholder=""  onChange="autocomplete("function:prepareKisiUrl()", "function:prepareTCKimlikNoParameterName()", 5, "setKisi")" />
+		<textbox type="text" id="tckNoParam"  value="90drqm3ogzw"  width="200"  maxlength="11"  placeholder=""  onChange="autocomplete("function:prepareKisiUrl()", "function:prepareTCKimlikNoParameterName()", 5, "setKisi")" />
 		<label id="unvanParamlbl" value="Unvan" />
-		<textbox type="text" id="unvanParam"  value="tft48tlz6vwasmu8rvfmsjzsij7m65xioo09p4a95lfxhug9frh254perdo1ketbtoieqflkd7j196srh8ls3mme093j4um3uv4y6durs2a7junje6xgq1j5lyzxjkw88owjeqgjwfdhoj9lasj2jtn32xbpgsfff50wlikjv95gek1sxjyzp3fzq7k88fen3430nmtw7mt989w4bzi9t5b935vzm4qlnudt59s1xwx6fram3gztiq7u0ehoa3i"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="unvanParam"  value="6hm65j2jpgsdasxuxnzkwq78nud0vqcrxvc64lgc9siu8kbh37xhz67wvsj9xi07wn76os44ard4fqq0lfphpgyd2aktf67pk8tht3nm5hpn5u2icvn66tfux90w2ex0l3r5fy3n5eun92ssa36a2s7g8hzisdnm6p9pumzvr6bgrw61ffg3hidrud0j2z4pbormayfail52rgu6emjnbqpi3bgotdghhpce3for2nwi9tszc6jlkk72oijfv6r"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="iletisimIdParamlbl" value="Iletisim Id" />
-		<textbox visible="false" type="text" id="iletisimIdParam"  value="49yu263pfl"  placeholder=""  />
+		<textbox visible="false" type="text" id="iletisimIdParam"  value="z4s9ztslq9"  placeholder=""  />
 		<label visible="false" id="resimIdParamlbl" value="Resim Id" />
-		<textbox visible="false" type="text" id="resimIdParam"  value="5tt28iazql"  placeholder=""  />
+		<textbox visible="false" type="text" id="resimIdParam"  value="vgrdbioody"  placeholder=""  />
 		<label visible="false" id="kullaniciIdParamlbl" value="Kullanici Id" />
-		<textbox visible="false" type="text" id="kullaniciIdParam"  value="44ze24ck05"  placeholder=""  />
+		<textbox visible="false" type="text" id="kullaniciIdParam"  value="lwhny9tsme"  placeholder=""  />
 	</window>
-</zk>
+</arya>

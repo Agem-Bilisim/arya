@@ -1,9 +1,9 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listAidatWindow">
-		<textbox visible="false" type="text" id="aidatIdParam"  value="cxj04ekgx3"  placeholder=""  />
-		<textbox visible="false" type="text" id="isyeriIdParam"  value="ert0lenunp"  placeholder=""  />
-		<textbox visible="false" type="text" id="subeParam"  value="jr7w2ti5zp"  placeholder=""  />
+		<textbox visible="false" type="text" id="aidatIdParam"  value="usi85q9k5u"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriIdParam"  value="6qtz7ckp8d"  placeholder=""  />
+		<textbox visible="false" type="text" id="subeParam"  value="aw55by6dvs"  placeholder=""  />
 	</window>
-</zk>
+</arya>

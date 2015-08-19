@@ -1,19 +1,19 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="editWebmesajcevapWindow">
-		<textbox visible="false" type="text" id="webMesajId"  value="o6t4iybw26"  width="250"  placeholder=""  />
+		<textbox visible="false" type="text" id="webMesajId"  value="1v0toyzndv"  width="250"  placeholder=""  />
 		<label id="gonderenlbl" value="Gönderen" />
-		<textbox type="text" id="gonderen"  value="w6ss6lzo5q"  width="250"  placeholder=""  readonly="true"  top="15" left="15" />
+		<textbox type="text" id="gonderen"  value="2tou60j4i9"  width="250"  placeholder=""  readonly="true"  top="15" left="15" />
 		<label id="gonderenEpostalbl" value="Gönderen E-Posta" />
-		<textbox type="text" id="gonderenEposta"  value="zk9hbqwx84"  width="250"  placeholder=""  readonly="true"  left="15" />
+		<textbox type="text" id="gonderenEposta"  value="562b0sdls9"  width="250"  placeholder=""  readonly="true"  left="15" />
 		<label visible="false" id="epostalbl" value="Cevaplayan E-Posta" />
-		<textbox visible="false" type="text" id="eposta"  value="2ohdnqb6nh"  width="250"  placeholder=""  readonly="true"  left="15" />
+		<textbox visible="false" type="text" id="eposta"  value="u8dtgq9ul1"  width="250"  placeholder=""  readonly="true"  left="15" />
 		<label id="konulbl" value="Konu" />
-		<textbox type="text" id="konu"  value="5o4p65s2ni"  width="250"  placeholder=""  readonly="true"  left="15" />
+		<textbox type="text" id="konu"  value="oohbcgov8g"  width="250"  placeholder=""  readonly="true"  left="15" />
 		<label id="iceriklbl" value="İçerik" />
-		<textbox type="text" id="icerik"  value="4v1r2jr74b"  width="350"  placeholder=""  readonly="true"  left="15" rows="5" cols="40" />
+		<textbox type="text" id="icerik"  value="dqx5c8wqru"  width="350"  placeholder=""  readonly="true"  left="15" rows="5"  cols="40"  />
 		<label id="cevaplbl" value="Cevap" />
-		<textbox type="text" id="cevap"  value="5ws6prp9r9"  width="350"  placeholder=""  left="15" rows="5" cols="40" />
+		<textbox type="text" id="cevap"  value="s11pggn8ty"  width="350"  placeholder=""  left="15" rows="5"  cols="40"  />
 	</window>
-</zk>
+</arya>

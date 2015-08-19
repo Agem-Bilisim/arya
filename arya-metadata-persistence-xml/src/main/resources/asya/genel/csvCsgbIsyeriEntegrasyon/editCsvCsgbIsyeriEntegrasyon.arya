@@ -1,27 +1,26 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="selectCsvcsgbisyerientegrasyonWindow">
 		<label id="dosyaIdlbl" value="Yüklenen Dosyalar" />
 		<selectbox id="dosyaId"  width="320"  >
 			<template>
-				<label value="6zsyzrg50y" />
+				<label value="xcns553gk2" />
 			</template>
 		</selectbox>
 		<button id="yukleBtn" label="Yükle"  onClick="dosyaYukle()"  width="90"  />
 		<label id="yillbl" value="Dönem" />
 		<selectbox id="yil"  width="70"  >
 			<template>
-				<label value="srvq3a8gco" />
+				<label value="5nq3rw1nj1" />
 			</template>
 		</selectbox>
 		<label id="aylbl" value="Ay" />
 		<selectbox id="ay"  width="100"  >
 			<template>
-				<label value="af39aqyccd" />
+				<label value="lys4t5yevk" />
 			</template>
 		</selectbox>
-		<label id="sonDonemlbl" value="Son Dönem" />
-		<checkbox type="text" id="sonDonem"  checked="false"  width="40"  />
+		<checkbox type="text" id="sonDonem"  checked="true"  label="Son Dönem"  onCheck=""  width="40"  />
 	</window>
-</zk>
+</arya>

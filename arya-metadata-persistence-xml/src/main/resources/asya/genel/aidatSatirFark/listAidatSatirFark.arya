@@ -1,9 +1,9 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listAidatsatirfarkWindow">
 		<label id="cikisTarihilbl" value="Çıkış Tarihi" />
-		<datebox id="cikisTarihi"  value="1994-5-30"  width="120"  placeholder=""  />
-		<label id="aciklamalbl" value="" />
+		<datebox id="cikisTarihi"  value="2014-5-12"  width="120"  placeholder=""  />
+		<label id="aciklamalbl" value=""  onClick=""  />
 	</window>
-</zk>
+</arya>

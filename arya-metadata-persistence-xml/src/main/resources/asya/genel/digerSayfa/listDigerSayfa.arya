@@ -1,38 +1,38 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addDigersayfaWindow">
 		<label visible="false" id="digerSayfaIdlbl" value="Diger Sayfa Id" />
-		<textbox visible="false" type="text" id="digerSayfaId"  value="m37w3jzqaf"  width="200"  placeholder=""  />
+		<textbox visible="false" type="text" id="digerSayfaId"  value="n7ha5e75ru"  width="200"  placeholder=""  />
 		<label id="menulbl" value="Menü" />
 		<selectbox id="menu"  width="300"  >
 			<template>
-				<label value="bmlq7jxv7s" />
+				<label value="c6j3ko2wk7" />
 			</template>
 		</selectbox>
 		<label id="basliklbl" value="Başlık" />
-		<textbox type="text" id="baslik"  value="d25ikkn1kk88spv55wnlhopdwt29ghgexuu4r1e7lsbjmov6xqdbpf8yvrahaucvajncdyvkbtwhog7jgd77yn94abtzaueys6y8ej0s72rfytsh167osyvr438qf9rcuypmzws348n45vtr9lyxsbuc6sv3c3ivl458fe0qgbuar5b189o31ejask2q6szddfa8prb0ddmrqxdkujpy3aqh1btby83lt9oafodmzh90hqnyi61huxliysc9pz1w2qv892bqjtt5gsui1uouiuycywyt59ukcnf0hv1a9pvq"  width="200"  maxlength="300"  placeholder=""  />
+		<textbox type="text" id="baslik"  value="qidbfuaedzsl3hozimr0h6pedazaul2110ud2sdgpvp5o747grhyl8a3d7i0p6lufwzd0rkmdx77ar3jnz78bsdfnwooj6cfkptyuy1d2ibctkr13iqayic6kmmoklzbpkva4hjcjaw4sy5l9ed0f7x7qwwprbuv9pq8y4d01sn08tyt8t5q7m66nfxf589asf23zr98vpfptu0ch0lkjuqcbfa229kxfbmgg6xodklejz9jv6fmi90w4r2qe4rqtl7rdav5fmka6qw4pkvvqaamcctusz6cyc8oqxmilz5p"  width="200"  maxlength="300"  placeholder=""  />
 		<label id="siralbl" value="Sıra" />
-		<decimalbox id="sira"  value="-1806880147"  width="50"  maxlength="2"  placeholder=""  />
+		<intbox id="sira"  value="850093108"  width="50"  maxlength="2"  placeholder=""  />
 		<label id="indentlbl" value="Hizalama" />
 		<selectbox id="indent"  width="50"  >
 			<template>
-				<label value="fn69ed2vcl" />
+				<label value="5i4baum11a" />
 			</template>
 		</selectbox>
 		<label id="dillbl" value="Dil" />
 		<selectbox id="dil"  width="100"  >
 			<template>
-				<label value="pfnmxzgy5f" />
+				<label value="jnf24sp9y0" />
 			</template>
 		</selectbox>
 		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
-		<textbox visible="false" type="text" id="eklemeTarihi"  value="yw0r1l9dxi"  placeholder=""  />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="ipt3bluwgv"  placeholder=""  />
 		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
-		<textbox visible="false" type="text" id="ekleyen"  value="n6bwd9mo31q6dfensr5qmllcx5feigaolue5ectyy0u92pqq6dwx28wnoqp0161ihiijal2slfbixrx8o4yf4elajlylgj10b26aflqxucd594ww3xl8t2mtojab2z8b6lyqwup3ed8u31bfpg7wwtfjd0lskbr3g9enu7q6yzoxusd8fdq49xx4jg4ut6pn002a4gqrop2ii0ekpv4epkwamfp06wk4d7npne95t9tag9cfj7ojz6guawaxelp"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="ekleyen"  value="galf7jfj3idnbff83bxq9w2w0gf1u2vho7u1gc60jkurxc23hys6oo9safzd41vupm4w6ny0el6gnpbzfa6injbqqcjybnu5kl2dfbktz2zw8z2zgo2w294ahmre7faf9qeeeo2puv2ic4sc92pieztz6zub8mror26p7r24803nn4omuhz3hs1q7xu06ev0ed3ptz7jxly15lac99gn48tboaptxjsmf78aq1yaoualayerpe86wgrtq0vmtsx"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
-		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="1s1fl24ml5"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="by0z450ety"  placeholder=""  />
 		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
-		<textbox visible="false" type="text" id="sonGunleyen"  value="d0brwxcw5bsg5gb38q3pu73t80r5a2nji9i0kuvmpv3nv5yljpxw67h5apdp01et0ffe9yd87qlxbiijlbvu1hsm4u49riuqen7t3ai1iansh81zt9oo013hq096mi1teb8y3itmb9jbunffgtmhuuf9n1evipcoaxnsoivoiqzjli5dix8pvwos9fpo9e1l7o98693tz19fq2erbk2tbddhy88ip64xgzgdy3tmafb0ejzmbek4jrmjj65w9do"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="7l4y8tfc0qofsxpg427iliauwys6lbz2r1551a3iyjib6mureocwbk442ac9nt9tseojthw0an6mk7eb6nqzhm93w7e6yxv6kitsuzteay6eqrmb4x0r300owsdp7a8agj8c7nw707hxzehzceq8e3y6oqha1g105aac9pz7mnj5fsth2cc722f2qa6h5z1dpfl62te05mhwzq769lme1hecvl1qpopoxerrq0ivi4hoy7is3m0qeowrb28hgap"  maxlength="255"  placeholder=""  />
 	</window>
-</zk>
+</arya>

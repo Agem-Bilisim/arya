@@ -5,7 +5,7 @@ import org.zkoss.zk.ui.event.Events;
 import org.zkoss.zul.Checkbox;
 
 import tr.com.agem.arya.interpreter.zkoss.OnCheckEventListener;
-import tr.com.agem.arya.metadata.zul.impl.CheckboxType;
+import tr.com.agem.arya.metadata.arya.impl.CheckboxType;
 import tr.com.agem.core.interpreter.IAryaComponent;
 
 public class ZkossCheckbox extends ZkossComponent implements IAryaComponent {
@@ -18,8 +18,7 @@ public class ZkossCheckbox extends ZkossComponent implements IAryaComponent {
 		component.setParent((Component) parent);
 		if (((CheckboxType) object).getOnCheck() != null) {
 			component.addEventListener(Events.ON_CHECK,
-					new OnCheckEventListener(component, (Component) parent,
-							((CheckboxType) object).getOnCheck()));
+					new OnCheckEventListener(component, (Component) parent, ((CheckboxType) object).getOnCheck()));
 		}
 		return this;
 	}

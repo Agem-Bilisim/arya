@@ -16,51 +16,47 @@ import java.util.concurrent.ExecutionException;
 
 import tr.com.agem.arya.gateway.*;
 import tr.com.agem.arya.interpreter.AlertController;
+import tr.com.agem.arya.script.ScriptHelper;
 
 public class AryaButton extends Button implements IAryaComponent {
+
+    private String componentId;
 
     public AryaButton(final Context context, XmlPullParser parser, final LinearLayout window) {
         super(context);
         this.setBackgroundResource(android.R.drawable.btn_default);
+        // Component ID
+        this.componentId = parser.getAttributeValue(null, "id");
+        // Label
         this.setText(parser.getAttributeValue(null, "label"));
-        this.setHeight(100);
-        this.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AryaRequest request = new AryaRequest();
-                request.setAction("myAction");
-                request.setRequestType(RequestTypes.DATA_ONLY);
-                Map<String, Object> params = new HashMap<String, Object>();
-                params.put("username", "alio");
-                request.setParams(params);
-
-                String url = "http://192.168.1.191:8080/arya/rest/arya";
-                WebServiceConnectionAsyncTask connectionThread = new WebServiceConnectionAsyncTask(url, request, context);
-
-                String responseStr = null;
-                try {
-                    responseStr = connectionThread.execute().get();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                } catch (ExecutionException e) {
-                    e.printStackTrace();
+        // Height
+        String height = parser.getAttributeValue(null, "height");
+        this.setHeight(height != null ? Integer.parseInt(height) : 150);
+        // OnClick
+        final String onClick = parser.getAttributeValue(null, "onClick");
+        if (onClick != null) {
+            this.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ScriptHelper.executeScript((IAryaComponent) v, onClick);
                 }
-
-                if(responseStr != null){
-                    AryaResponse response = new AryaResponse();
-                    response.fromXMLString(responseStr);
-                    EditText newTextbox = new EditText(getContext());
-                    newTextbox.setBackgroundResource(android.R.drawable.edit_text);
-                    newTextbox.setHint(response.getData());
-                    newTextbox.setTextColor(Color.parseColor("#FF000000"));
-                    newTextbox.setHintTextColor(Color.parseColor("#FF999999"));
-                    newTextbox.setHeight(150);
-                    window.addView(newTextbox, window.getChildCount() - 1);
-                }else {
-                    AlertController.setAndShowPrimerAlert(context, "HATA!", "Sunucuyla Bağlantı Kurulamadı", "Tamam");
-                }
-            }
-        });
+            });
+        }
         window.addView(this);
+    }
+
+    @Override
+    public String validate(){
+        return null;
+    }
+
+    @Override
+    public String getComponentId() {
+        return componentId;
+    }
+
+    @Override
+    public void setComponentId(String componentId) {
+        this.componentId = componentId;
     }
 }

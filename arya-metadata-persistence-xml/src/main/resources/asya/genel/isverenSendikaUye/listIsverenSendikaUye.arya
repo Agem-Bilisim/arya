@@ -1,10 +1,9 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addIsverensendikauyeWindow">
 		<label id="isyeri.unvanlbl" value="İşyeri Ünvanı" />
-		<textbox type="text" id="isyeri.unvan"  value="56k3hd7rbhwl5s2pkp57zd27i00mp8t2p5fqpeyfbzfiek7wnzpskbv4xtw83vw4ckl9getmmotp6wdqbwrnei6z5e7pypiwpz75xpkdkisy653p7wqq0euff60mg9bfss07qsw86pwgt1n4bmmbbwxp527bvnuwmotl527p2m5thu40nu83nby0tt5kwzpvq298zq2m6h97weak320mg79o6p6liyzto4x0o6672ab0jr58wop0mcaud4py7uc"  width="245"  maxlength="255"  placeholder=""  top="56" />
-		<label id="isyeri.orgutlulbl" value="Örgütlü İşyeri" />
-		<checkbox type="text" id="isyeri.orgutlu"  checked="true"  width="10"  />
+		<textbox type="text" id="isyeri.unvan"  value="u0jx4wij98nqad1ierumsddpfkekdgssu938kgf8dbdwrhx4nbo3cv1wvastyx7ly9x3m939ppl9sgzxykq60fctpqztjo5mtccbexcg6kkmblyr6nkrkks6643dt3q637x7j5tjjj6ahf2cfau8cfqpl5rcs4uj8d4870icx7qeuh722sbyk83siwocdgdwliw68cr2b2xt286z2u70g7mm62mydbcyifu8rrhkhm68lg5pgec4o87ys944n1x"  width="245"  maxlength="255"  placeholder=""  top="56" />
+		<checkbox type="text" id="isyeri.orgutlu"  checked="false"  label="Örgütlü İşyeri"  onCheck=""  width="10"  />
 	</window>
-</zk>
+</arya>

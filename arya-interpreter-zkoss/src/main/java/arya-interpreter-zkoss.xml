@@ -16,8 +16,8 @@
 		factory-method="newInstance">
 		<constructor-arg>
 			<list>
-				<value>tr.com.agem.arya.metadata.zul.impl.ZkType</value>
-				<value>tr.com.agem.arya.metadata.zul.impl.ObjectFactory</value>
+				<value>tr.com.agem.arya.metadata.arya.impl.AryaType</value>
+				<value>tr.com.agem.arya.metadata.arya.impl.ObjectFactory</value>
 			</list>
 		</constructor-arg>
 	</bean>

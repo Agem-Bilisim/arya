@@ -1,15 +1,15 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listCsvcsgbuyegeridonusWindow">
-		<textbox visible="false" type="text" id="isyeriIdParam"  value="mywz34qlig"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriIdParam"  value="ajb5j5t45o"  placeholder=""  />
 		<label id="subeParamlbl" value="Şube" />
 		<selectbox id="subeParam"  width="200"  >
 			<template>
-				<label value="h1dx5eo9zr" />
+				<label value="peg3oy0m6j" />
 			</template>
 		</selectbox>
 		<label id="isyeriParam.unvanParamlbl" value="İşyeri Ünvanı" />
-		<textbox type="text" id="isyeriParam.unvanParam"  value="v88to4l3g2utsyx1gh40jc72fa9dou7g0jc53gc7osvqs509dhjywrwqdmkkl4zcz2nq6jwcr5ot67efo1z7wi9a2g8nmr7l1zpb80ufq0wpjcm7694f7qx4c2uqb74m2uqme7tr02pj549eawyhupke4o314k1bteett49smuazivebem9e3o3nyb9vayj5fcxxqjz24lixxtpirswm8o1wx7197hdzcfi544am6uv92yzcx614sbek2zivth4"  width="361"  maxlength="255"  placeholder=""  top="56" onChange="autocomplete("genel/csgbIsyeri/autocomplete.do", "unvanParam", 5, "setIsyeri")" />
+		<textbox type="text" id="isyeriParam.unvanParam"  value="o4nnif1ac6wskj0yl4qblthwjfs8az1m1t1fn0bfbggowbhvq0rsg2ben6r0ttdi8dfry69jg9eljlawrqpwvbesr0eal10gfibyuzmlk8wb0rf4niotehx77g002ywzcu5y5btlur21t80ze33st3iyw3b9nn77v9mth04waqj9gw52oizh0442dcjgxuw169x53zy6hjoiubu4qjrcainyu817o7y0fw3gbxn954orjp0hz5f1gpnyrz1kwor"  width="361"  maxlength="255"  placeholder=""  top="56" onChange="autocomplete("genel/csgbIsyeri/autocomplete.do", "unvanParam", 5, "setIsyeri")" />
 	</window>
-</zk>
+</arya>

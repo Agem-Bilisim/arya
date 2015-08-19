@@ -1,31 +1,30 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="selectCsvcalisanlistesiWindow">
 		<label visible="false" id="isyeriIdlbl" value="İşyeri" />
-		<textbox visible="false" type="text" id="isyeriId"  value="3g0dqrv7y4"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriId"  value="nef1wxzl0m"  placeholder=""  />
 		<label visible="false" id="dosyaIdlbl" value="Dosya" />
-		<textbox visible="false" type="text" id="dosyaId"  value="zj7vvnillk"  placeholder=""  />
+		<textbox visible="false" type="text" id="dosyaId"  value="uujwzdvial"  placeholder=""  />
 		<label id="calisanListeDosyaIdlbl" value="Çalışan Listeleri" />
 		<selectbox id="calisanListeDosyaId"  width="180"  >
 			<template>
-				<label value="bxcfh10zef" />
+				<label value="m0wmni3iua" />
 			</template>
 		</selectbox>
 		<label id="donemAylbl" value="Dönem" />
 		<selectbox id="donemAy"  width="80"  >
 			<template>
-				<label value="hi6gma5mak" />
+				<label value="6abpbcbfjh" />
 			</template>
 		</selectbox>
 		<label id="donemYillbl" value="Dönem Yıl" />
 		<selectbox id="donemYil"  width="70"  >
 			<template>
-				<label value="6ya828r3qa" />
+				<label value="ugousy2try" />
 			</template>
 		</selectbox>
 		<button id="calisanDosyaYukleBtn" label="Yükle"  onClick="calisanDosyaYukle()"  width="70"  />
-		<label id="isletmeTekListelbl" value="İşletme İçin Tek Liste" />
-		<checkbox type="text" id="isletmeTekListe"  checked="false"  width="70"  />
+		<checkbox type="text" id="isletmeTekListe"  checked="true"  label="İşletme İçin Tek Liste"  onCheck=""  width="70"  />
 	</window>
-</zk>
+</arya>

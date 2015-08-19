@@ -1,10 +1,10 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listIskoluhataliisyerleriWindow">
 		<label id="basvuruBasTarihlbl" value="Başvuru Tarihi" />
-		<datebox id="basvuruBasTarih"  value="2010-3-17"  width="120"  placeholder=""  />
+		<datebox id="basvuruBasTarih"  value="2012-1-23"  width="120"  placeholder=""  />
 		<label id="basvuruBitTarihlbl" value="-" />
-		<datebox id="basvuruBitTarih"  value="2007-7-6"  width="120"  placeholder=""  />
+		<datebox id="basvuruBitTarih"  value="1995-5-26"  width="120"  placeholder=""  />
 	</window>
-</zk>
+</arya>

@@ -1,28 +1,28 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listOrgkisiWindow">
 		<label id="kisiParam.tckNoParamlbl" value="T.C. Kimlik No" />
-		<textbox type="text" id="kisiParam.tckNoParam"  value="n1eixzb0izq"  width="200"  maxlength="11"  placeholder=""  onChange="autocomplete("function:prepareKisiUrl()", "function:prepareTCKimlikNoParameterName()", 5, "setKisi")" />
+		<textbox type="text" id="kisiParam.tckNoParam"  value="o6vsrajf1na"  width="200"  maxlength="11"  placeholder=""  onChange="autocomplete("function:prepareKisiUrl()", "function:prepareTCKimlikNoParameterName()", 5, "setKisi")" />
 		<label id="kisiParam.adSoyadParamlbl" value="Ad Soyad" />
-		<textbox type="text" id="kisiParam.adSoyadParam"  value="x0bvsmzix1kr9hlov9ujiactx5n2h0q7do8bk5cldrgmnok75aljksx1cxocdqlir6p3h8m7zfhkw5g7ibisl94xzfh1mbgrty674j33j3u2yjxqy7wcqg1ikad9joxef87vf29i49ppijsdkb8mhp9w65jtwsuqmsgfsmogjnsmxxon1ci6s9znjt4zh7uz12sstv2orfc0l3h1802w53ri3j4hymmbt1k1w4tzcrknfj0fa4vdar5ebdem3g4"  width="200"  maxlength="255"  placeholder=""  onChange="autocomplete("function:prepareKisiUrl()", "function:prepareAdSoyadParameterName()", 5, "setKisi")" />
+		<textbox type="text" id="kisiParam.adSoyadParam"  value="0nesdh0xd3i3r2c6qxbq2vx4zll4vlz73jluftrtrqxe70omlydvaxewr7yicesjs7q9rzwy0893593kdv49qw8bedtvwdl0gy3tnbjpoo4yp9k8mwjz16gehc6oxgut6xf19dy4gbn2zk3nfcgf750cb0ohiowvnjlugd0mosvk83l4pb5b0j7t24p9fhuxzei9sjucoci4y4hknqrhgam6nhc58z1j9a27ab2cffhen8f2rh61otomdakxxj0"  width="200"  maxlength="255"  placeholder=""  onChange="autocomplete("function:prepareKisiUrl()", "function:prepareAdSoyadParameterName()", 5, "setKisi")" />
 		<label id="unvanParamlbl" value="Görevi" />
 		<selectbox id="unvanParam"  width="200"  >
 			<template>
-				<label value="siz0ezhcks" />
+				<label value="96ol74uzxa" />
 			</template>
 		</selectbox>
 		<label id="subeParamlbl" value="Şube" />
 		<selectbox id="subeParam"  width="200"  >
 			<template>
-				<label value="xibo5wsecn" />
+				<label value="z4te7sqqfa" />
 			</template>
 		</selectbox>
 		<label id="cikisParamlbl" value="Çıkış Durum " />
 		<selectbox id="cikisParam"  width="120"  >
 			<template>
-				<label value="fhuymvsn64" />
+				<label value="huvyte8zp3" />
 			</template>
 		</selectbox>
 	</window>
-</zk>
+</arya>

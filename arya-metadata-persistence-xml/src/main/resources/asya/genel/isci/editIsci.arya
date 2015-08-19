@@ -1,40 +1,40 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addIsciWindow">
 		<label visible="false" id="kisiIdlbl" value="Kisi Id" />
-		<textbox visible="false" type="text" id="kisiId"  value="260s396ybn"  placeholder=""  />
+		<textbox visible="false" type="text" id="kisiId"  value="2jclw6xbo5"  placeholder=""  />
 		<label visible="false" id="kisi.kisiIdlbl" value="Kisi Id" />
-		<textbox visible="false" type="text" id="kisi.kisiId"  value="3roihtw6ns"  placeholder=""  />
+		<textbox visible="false" type="text" id="kisi.kisiId"  value="jgtucaun82"  placeholder=""  />
 		<label id="kisi.tckNolbl" value="T.C. Kimlik No" />
-		<textbox type="text" id="kisi.tckNo"  value="jy4hj4pqq3p"  width="100"  maxlength="11"  placeholder=""  onChange="autocomplete("function:prepareKisiUrl()", "function:prepareTCKimlikNoParameterName()", 5, "setKisi")" />
+		<textbox type="text" id="kisi.tckNo"  value="7ugcuji1l1n"  width="100"  maxlength="11"  placeholder=""  onChange="autocomplete("function:prepareKisiUrl()", "function:prepareTCKimlikNoParameterName()", 5, "setKisi")" />
 		<label id="kisi.adlbl" value="Ad" />
-		<textbox type="text" id="kisi.ad"  value="0ffpia0ppevi30xnp2qvt7bpxjd6cs75nfy90c8groe3kpz99x63g9vuv9z1i9jetawyeesh4qgcfrmb5huzngiwdt7h3galhwoa5g6dhhmcr9zwa2rkox4rpfrnctmibxy1511wc33sujiluc85sfg31va10mt4vxzp2x4ijqb3qububvx6er4cj9u9od9ltcm4zpxm1kvpbi1rk3fbboi5qxvecukzays11xul2b7quqa8d5qhjv7nbb5hw27"  width="100"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="kisi.ad"  value="fcvwh13jl1fdjxxy955116sn0m6n7racc04n80l3bty6ew5jkok3d5m2lk5ugp6e34wheovppixlu6zrdx6m6cmc0gbknjrh1rk67uul7zyfyja9ify7dy8j9fgp97qk65c4oapb440q6yzfkmvqhsd5kjnj5zpx2aws471vdlram8ezarjd6e9jx26hvrw69b0oza992mz6ngub6sp68vb9nfwczpiwqedjivq4b48ukzr5mzwtoszv3q5uen8"  width="100"  maxlength="255"  placeholder=""  />
 		<label id="kisi.soyadlbl" value="Soyad" />
-		<textbox type="text" id="kisi.soyad"  value="r47s53skfiyhbfqx8mn0nxw8i07503gqw5oa2bfbwawrnm05k4ek6iqjymlz2eplwof7ardwcsnhma5g4hebwyx122lt4kp0d9pegvbouqyionnwofcfjcqujbky367r8834l8c637ku2neublqri545px4b4kntxan0kqpx7vn6rgieaja4mpt44862ed2cz52qdc15my2tbjtst9itizm2kgmfyj4mwrtv0gpdv99ojz284z3fy89mc2lgjf4"  width="100"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="kisi.soyad"  value="fult6rpr2vp1j5hymr36lh4i11j1i6dq757x8c9tdoz0wvujul46u7lsfpzkh61rgfcq59ibrk1cts1hhw60929o1i0ia397iocqugumugrxnei9735o17knbxory31b5zze7fuirrt719bi87pi25bk4emjkpm29han6a1aijkzcre9nof25p602h62od0lpab76b5mjmavb249eyekm59mry0wb8zknx844wbn25103mo3vdu4fz3bh8g1ktm"  width="100"  maxlength="255"  placeholder=""  />
 		<label id="sgkNolbl" value="SGK Sicil No" />
-		<decimalbox id="sgkNo"  value="921116604"  width="200"  maxlength="13"  placeholder=""  />
+		<intbox id="sgkNo"  value="723234256"  width="200"  maxlength="13"  placeholder=""  />
 		<label id="cinsiyetlbl" value="Cinsiyet" />
 		<selectbox id="cinsiyet"  width="200"  >
 			<template>
-				<label value="lafeju7wzf" />
+				<label value="ep0cwe0f1n" />
 			</template>
 		</selectbox>
 		<label id="aciklamalbl" value="Açıklama" />
-		<textbox type="text" id="aciklama"  value="ine6tnqr5e"  width="480"  placeholder=""  />
+		<textbox type="text" id="aciklama"  value="j02ftj64kz"  width="480"  placeholder=""  />
 		<label visible="false" id="kisi.iletisimIdlbl" value="Iletisim Id" />
-		<textbox visible="false" type="text" id="kisi.iletisimId"  value="hasailwt0x"  placeholder=""  />
+		<textbox visible="false" type="text" id="kisi.iletisimId"  value="in2xe64fy8"  placeholder=""  />
 		<label visible="false" id="kisi.resimIdlbl" value="Resim Id" />
-		<textbox visible="false" type="text" id="kisi.resimId"  value="0236dzsq4b"  placeholder=""  />
+		<textbox visible="false" type="text" id="kisi.resimId"  value="wms9xbhrjo"  placeholder=""  />
 		<label visible="false" id="kisi.kullaniciIdlbl" value="Kullanici Id" />
-		<textbox visible="false" type="text" id="kisi.kullaniciId"  value="ten6zotoyh"  placeholder=""  />
+		<textbox visible="false" type="text" id="kisi.kullaniciId"  value="7l2vp3t9z7"  placeholder=""  />
 		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
-		<textbox visible="false" type="text" id="eklemeTarihi"  value="kh7mq84jw8"  placeholder=""  />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="khm77qgny7"  placeholder=""  />
 		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
-		<textbox visible="false" type="text" id="ekleyen"  value="80c054p644tx503lolm2fnjqu77w5upgukjvjrnd35vn1l28oid0vhysdkf5hdzi6uri5cwywr5ty48f8auv1b1ydilgl9mbu1y2nkvfbkoyga5ijdob4ocqlwagyar5xqxulsjj98gb7ru1agcn1hzulu56j04ikojkrbu11pg3ffh472uoc2bcagrdvrfh5ahoc3fjv9pqb5c3pbx9xf23feg6qqbps3br6mnsc8n99a6fpbyqckyr9lchj6k"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="ekleyen"  value="1qpytd1m9cqzmawqtchpxh1g0tdjw4ayb7t4degjewo3ps29vd5o52ylgc0kjl3vw1veywlkvw9xsx8hpme6nmdaydw1piae1bfwdbarzfx9pfexsojee1wxb79x9vz7suefsb52o1pqtbvw1zopi705hfohfrqf28yfb83k9zguzllsue5jok9m9cxgkgzcctp32hbiqgq215ug0lzbofedr2yjgsl4ocztnonqz181jr61kwl25210wi5uex1"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
-		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="kwc0cbmw48"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="i0lbilbxxv"  placeholder=""  />
 		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
-		<textbox visible="false" type="text" id="sonGunleyen"  value="45soqne13p5hkyvnoapwfqd9rpcd70ydv86j17pt6lzk0up28fufpxvo3xre75o6cs0v3nss0bnt8zk0r2l2nyw0pmwn09lwzg9xztzmpjaf8304vsufr3j176rs73t5dxivabnc647kvo9v0x83fy0kbll5gocdtv3m0kytm34u31fv85r6kqm80cai3amaft6mt0hd20pbaaichb8wxfb2nb17fyv7b4ufpzht46b143i1mkb9kdipb6vcqd7"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="1tlizvx88vk8fsh2blgfxbu2psxekekootb1p3uu9ecsowaqyuue5v8gbd4mhu6t7cep1zuspxrt3h5dalocd5osnf4mf4nqhzzyybn0bg1p16dlj8h4xszgagg2vajznxu7e7kd8nt1uor8y9u7xp3zj7x1ve208yykz2eievw0m35kfc3k5cycj43bf1ld8v86mi3pxnx0p30vkwfo9wnpxc59pjei43ot3dp5kr5h3sdkftbadnmta2crsfb"  maxlength="255"  placeholder=""  />
 	</window>
-</zk>
+</arya>

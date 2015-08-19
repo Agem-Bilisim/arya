@@ -11,11 +11,12 @@ import javax.xml.bind.Unmarshaller;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-import tr.com.agem.arya.metadata.persistence.impl.xml.MetadataXml;
+import tr.com.agem.arya.metadata.arya.impl.AryaType;
+import tr.com.agem.arya.metadata.arya.impl.ButtonType;
+import tr.com.agem.arya.metadata.arya.impl.ObjectFactory;
+import tr.com.agem.arya.metadata.arya.impl.WindowType;
 import tr.com.agem.arya.metadata.persistence.impl.xml.MetadataPersistenceImplXml;
-import tr.com.agem.arya.metadata.zul.impl.ButtonType;
-import tr.com.agem.arya.metadata.zul.impl.WindowType;
-import tr.com.agem.arya.metadata.zul.impl.ZkType;
+import tr.com.agem.arya.metadata.persistence.impl.xml.MetadataXml;
 
 /**
  * Unit test for simple App.
@@ -46,20 +47,19 @@ public class AppTest extends TestCase {
 
 		MetadataPersistenceImplXml xml = new MetadataPersistenceImplXml();
 
-		MetadataXml mdxml = (MetadataXml) xml.findWithNameAsXML("arya", null);
+		MetadataXml mdxml = (MetadataXml) xml.findWithNameAsXML("arya", "master");
 
 		System.out.println(mdxml.getMetadata());
 
 		try {
 
-			JAXBContext jaxbContext = JAXBContext.newInstance(ZkType.class,
-					tr.com.agem.arya.metadata.zul.impl.ObjectFactory.class);
+			JAXBContext jaxbContext = JAXBContext.newInstance(AryaType.class, ObjectFactory.class);
 
 			Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
 
 			StringReader reader = new StringReader(mdxml.getMetadata());
 
-			ZkType zk = ((JAXBElement<ZkType>) ((JAXBElement<ZkType>) jaxbUnmarshaller
+			AryaType zk = ((JAXBElement<AryaType>) ((JAXBElement<AryaType>) jaxbUnmarshaller
 					.unmarshal(reader))).getValue();
 
 			List<Object> comp = zk.getContent();

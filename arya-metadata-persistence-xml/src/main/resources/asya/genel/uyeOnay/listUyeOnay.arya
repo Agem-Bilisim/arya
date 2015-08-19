@@ -1,21 +1,21 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listUyeonayWindow">
 		<label id="uyeParam.basTarihParamlbl" value="Üyelik Düşme Baş. Tarihi" />
-		<datebox id="uyeParam.basTarihParam"  value="2002-3-10"  width="120"  placeholder=""  />
+		<datebox id="uyeParam.basTarihParam"  value="1994-7-17"  width="120"  placeholder=""  />
 		<label id="uyeParam.bitTarihParamlbl" value="Üyelik Düşme Bit. Tarihi" />
-		<datebox id="uyeParam.bitTarihParam"  value="1998-3-28"  width="120"  placeholder=""  />
+		<datebox id="uyeParam.bitTarihParam"  value="2005-4-20"  width="120"  placeholder=""  />
 		<button id="listeleBtn" label="Listele"  onClick="listele()"  width="70"  />
 		<label id="uyeParam.subeParamlbl" value="Şube" />
 		<selectbox id="uyeParam.subeParam"  width="200"  >
 			<template>
-				<label value="kk4vl032vp" />
+				<label value="ywzfio2jyb" />
 			</template>
 		</selectbox>
-		<textbox visible="false" type="text" id="uyeParam.isyeriIdParam"  value="u3cedcbv3o"  placeholder=""  />
-		<textbox visible="false" type="text" id="uyeParam.isyeriParam.isyeriIdParam"  value="zqnrmxoko8"  placeholder=""  />
+		<textbox visible="false" type="text" id="uyeParam.isyeriIdParam"  value="bh3nrxutcz"  placeholder=""  />
+		<textbox visible="false" type="text" id="uyeParam.isyeriParam.isyeriIdParam"  value="41zr8nk7dg"  placeholder=""  />
 		<label id="uyeParam.isyeriParam.unvanParamlbl" value="İşyeri Ünvanı" />
-		<textbox type="text" id="uyeParam.isyeriParam.unvanParam"  value="pyywlij37rrtshwg9gbcl9b10n5t3wdv1vgqxencu0oyohw99rpr5xh8mz4cl8giukfsiqfa0v11t534x7lxryz25168uusy9wibzq5ldu0en7m954orx6is127knwyya41wxyxeo1htzqcp8sg7gcx9ph3kv667t089jz9x7263hzekk93eik9encffji7oqwfcykrp0bomcx8hf9ghenyaaldba2a2lwn3lefzhh4zgolkqqn29wouxhzzs53"  width="416"  maxlength="255"  placeholder=""  top="56" onChange="autocomplete("genel/isyeri/autocomplete.do", "unvanParam", 5, "setIsyeri")" />
+		<textbox type="text" id="uyeParam.isyeriParam.unvanParam"  value="r0gqvht11avzjp3f1b5ftttjvp96xpo4mg4xi5hiuxuayn946i20bbesfum1f83n2zwez63vq32zk4iebefos5min4qgrg28556vixi34y0lpjdwwrq4ydd9g8voz3acwdcdf53358wqto2340oqbhbqymvfsz2r292d6ekqwzlakgq7zzkk9txp0m3rqsqdgziuz93texwv6i4viq0t2c2u207f19btthici1bse36ib7skxemhsyzspfa3hy0"  width="416"  maxlength="255"  placeholder=""  top="56" onChange="autocomplete("genel/isyeri/autocomplete.do", "unvanParam", 5, "setIsyeri")" />
 	</window>
-</zk>
+</arya>

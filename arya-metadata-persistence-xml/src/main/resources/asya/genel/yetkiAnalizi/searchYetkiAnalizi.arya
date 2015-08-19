@@ -1,22 +1,22 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listYetkianaliziWindow">
 		<label visible="false" id="isyeriIdParamlbl" value="İşyeri" />
-		<textbox visible="false" type="text" id="isyeriIdParam"  value="s8uar8ghgw"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriIdParam"  value="7wr487t0bg"  placeholder=""  />
 		<label visible="false" id="turParamlbl" value="Liste Türü" />
-		<textbox visible="false" type="text" id="turParam"  value="rtl8xvmpgk"  width="200"  placeholder=""  />
+		<textbox visible="false" type="text" id="turParam"  value="pnjcmfagaz"  width="200"  placeholder=""  />
 		<label id="tarihParamlbl" value="Tarih" />
-		<datebox id="tarihParam"  value="2002-11-5"  width="100"  placeholder=""  />
+		<datebox id="tarihParam"  value="2001-6-4"  width="100"  placeholder=""  />
 		<label id="subeParamlbl" value="Şube" />
 		<selectbox id="subeParam"  width="200"  >
 			<template>
-				<label value="q11tut5vxs" />
+				<label value="l6ne2etlp4" />
 			</template>
 		</selectbox>
 		<label id="reqIsyeriAutocompleteParamlbl" value="İşyeri" />
-		<textbox type="text" id="reqIsyeriAutocompleteParam"  value="hbsamz4g27"  width="350"  placeholder=""  onChange="autocomplete("genel/isyeri/autocomplete.do?merkezYadaIsyeriIdParam=", "unvanParam", 5, "setIsyeri")" />
+		<textbox type="text" id="reqIsyeriAutocompleteParam"  value="ydnn6kodvj"  width="350"  placeholder=""  onChange="autocomplete("genel/isyeri/autocomplete.do?merkezYadaIsyeriIdParam=", "unvanParam", 5, "setIsyeri")" />
 		<label visible="false" id="reqIsyeriIdParamlbl" value="İşyeri" />
-		<textbox visible="false" type="text" id="reqIsyeriIdParam"  value="y3r43dthlz"  placeholder=""  />
+		<textbox visible="false" type="text" id="reqIsyeriIdParam"  value="4thwzn1rrm"  placeholder=""  />
 	</window>
-</zk>
+</arya>

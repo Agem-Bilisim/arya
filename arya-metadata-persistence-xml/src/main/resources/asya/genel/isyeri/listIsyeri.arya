@@ -1,9 +1,9 @@
 <?page title="DOCSYS" ?>
-<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listIsyeriWindow">
 		<label id="kisaAdParamlbl" value="Kısa Ad" />
-		<textbox type="text" id="kisaAdParam"  value="o79n3m7ch5rwrkzcvo9fe6d1kkgf84eiwjm47290dilikhssl1i0jq8t0rv6hqhqhbbfxnoijs6v5tnq693hcoh65hfhnc8vqnifuhdybrze2vonpnt56qur0e6pzqoucs78ufmgvrfvrun76jzp96hzry5163vhy1g39fpoqh7rfn8nli70tp08xuf62hjtwy7bbjlnt37a8mf5v6e3pfqxn127kmfv7fcujf6vesu39yxnka3lrk3qc3n18bf"  width="260"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="kisaAdParam"  value="n8v258cpqkqdow3lu4kdfarwpx5ngwuhpl598kyapka9c69m5dvdr69shj1fh7df1n0bls2ljq12s0ayb1bnq7w8uqod4dc67ugioknmwnafn7h5pplina2w4usukuxuvverjw76wu61ljkvw77s4ov8nigiuaqr5hcpnwg0j4fwvjpomqb69z58j2gspxxi900qa77bpgvv0l19h3w7bsako7xta3cx79yzkvstiq6v1s457xvtafcpaoy98rf"  width="260"  maxlength="255"  placeholder=""  />
 		<button id="kisaAdAtaBtn" label="Kısa Adları Düzenle"  onClick="kisaAdAta()"  width="140"  />
 	</window>
-</zk>
+</arya>
