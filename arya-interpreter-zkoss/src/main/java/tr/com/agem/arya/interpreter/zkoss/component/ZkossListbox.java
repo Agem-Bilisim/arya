@@ -18,6 +18,7 @@ public class ZkossListbox extends ZkossComponent implements IAryaComponent {
 	public IAryaComponent create(Object object, Object parent) {
 		setComponent(new Listbox());
 		Listbox component = (Listbox) getComponent();
+		component.setId(((ListboxType) object).getId());
 		component.setParent((Component) parent);
 		if (((ListboxType) object).getContent() != null) {
 			List<Object> componentsList = ((ListboxType) object).getContent();

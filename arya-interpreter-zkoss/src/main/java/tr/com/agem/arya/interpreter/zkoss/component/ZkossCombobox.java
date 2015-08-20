@@ -18,6 +18,7 @@ public class ZkossCombobox extends ZkossComponent implements IAryaComponent {
 	public IAryaComponent create(Object object, Object parent) {
 		setComponent(new Combobox());
 		Combobox component = (Combobox) getComponent();
+		component.setId(((ComboboxType) object).getId());
 		component.setParent((Component) parent);
 		if (((ComboboxType) object).getAttributeOrCustomAttributesOrTemplate() != null) {
 			List<Object> componentsList = ((ComboboxType) object).getAttributeOrCustomAttributesOrTemplate();

@@ -12,6 +12,7 @@ public class ZkossLabel extends ZkossComponent implements IAryaComponent {
 	public IAryaComponent create(Object object, Object parent) {
 		setComponent(new Label());
 		Label component = (Label) getComponent();
+		component.setId(((LabelType) object).getId());
 		component.setValue(((LabelType) object).getValue());
 		component.setParent((Component) parent);
 		return this;

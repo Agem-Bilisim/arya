@@ -12,6 +12,7 @@ public class ZkossTextbox extends ZkossComponent implements IAryaComponent {
 	public IAryaComponent create(Object object, Object parent) {
 		setComponent(new Textbox());
 		Textbox component = (Textbox) getComponent();
+		component.setId(((TextboxType) object).getId());
 		component.setValue(((TextboxType) object).getValue());
 		component.setParent((Component) parent);
 		return this;

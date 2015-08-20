@@ -7,9 +7,9 @@ import java.util.Map;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.EventListener;
+import org.zkoss.zk.ui.util.Clients;
 import org.zkoss.zul.Listbox;
 import org.zkoss.zul.Listitem;
-import org.zkoss.zul.Textbox;
 
 import tr.com.agem.core.gateway.model.AryaRequest;
 import tr.com.agem.core.gateway.model.AryaResponse;
@@ -32,39 +32,49 @@ public class OnClickEventListener implements EventListener {
 
 	@Override
 	public void onEvent(Event event) throws Exception {
+		/*
+		 * Request
+		 */
 		AryaRequest request = new AryaRequest();
-		request.setAction("ilceList");
+		request.setAction("ilceList"); // TODO onClick stringi çözümlenerek
+										// action ve parametreler
+										// ayrıştırılmalı...
 		request.setRequestType(RequestTypes.DATA_ONLY);
 
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("username", "alio");
 		params.put("ilKodu", "35");
-
 		request.setParams(params);
 
+		/*
+		 * Call Action
+		 */
 		String res = AryaInterpreterHelper.callUrl(
 				"http://localhost:8080/arya/rest/arya", request);
 
+		/*
+		 * Response
+		 */
 		AryaResponse response = new AryaResponse();
-
 		response.fromXMLString(res);
+		ObjectMapper mapper = new ObjectMapper().configure(
+				DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+		@SuppressWarnings("unchecked")
+		List<Map<String, Object>> dataList = mapper.readValue(
+				response.getData(), List.class);
 
-		if (response.getData().isEmpty()) {
-			Textbox tb = new Textbox();
-			tb.setValue("Boş");
-			tb.setParent(this.parent);
-		} else {
+		/*
+		 * TODO Java Script ????
+		 */
+		Clients.evalJavaScript("getComponentById('deneme2').setValue('Hedeeee');");
+
+		if (dataList != null && dataList.size() > 0) {
 			Listbox lb = new Listbox();
 			lb.setHeight("300px");
 			lb.setMold("paging");
 			lb.setPageSize(10);
 			lb.setParent(this.parent);
-			ObjectMapper mapper = new ObjectMapper().configure(
-					DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-
-			@SuppressWarnings("unchecked")
-			List<Map<String,Object>> list = mapper.readValue(response.getData(), List.class);
-			for (Map<String,Object> o : list) {
+			for (Map<String, Object> o : dataList) {
 				Listitem li = new Listitem();
 				li.setLabel((String) o.get("ilceAdi"));
 				li.setValue(o.get("ilceKodu"));

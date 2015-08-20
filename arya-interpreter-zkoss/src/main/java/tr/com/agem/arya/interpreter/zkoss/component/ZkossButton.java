@@ -6,6 +6,7 @@ import org.zkoss.zul.Button;
 
 import tr.com.agem.arya.interpreter.zkoss.OnClickEventListener;
 import tr.com.agem.arya.metadata.arya.impl.ButtonType;
+import tr.com.agem.arya.metadata.arya.impl.TextboxType;
 import tr.com.agem.core.interpreter.IAryaComponent;
 
 public class ZkossButton extends ZkossComponent implements IAryaComponent {
@@ -15,6 +16,7 @@ public class ZkossButton extends ZkossComponent implements IAryaComponent {
 	public IAryaComponent create(Object object, Object parent) {
 		setComponent(new Button());
 		Button component = (Button) getComponent();
+		component.setId(((ButtonType) object).getId());
 		component.setLabel(((ButtonType) object).getLabel());
 		component.setParent((Component) parent);
 		if (((ButtonType) object).getOnClick() != null) {

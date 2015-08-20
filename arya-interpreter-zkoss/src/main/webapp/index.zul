@@ -3,6 +3,7 @@
 	<div align="center" width="100%" height="100%">
 		<window id="aryaWindow" width="100%" height="100%" border="normal"
 			apply="tr.com.agem.arya.interpreter.zkoss.AryaWindow">
+			<script>function getComponentById(comp) {return zk.Widget.$('$'+comp);};</script>
 			<borderlayout style="border: none;" width="100%" height="100%">
 				<north size="35px" border="0"
 					style="border: none;background: SteelBlue;">

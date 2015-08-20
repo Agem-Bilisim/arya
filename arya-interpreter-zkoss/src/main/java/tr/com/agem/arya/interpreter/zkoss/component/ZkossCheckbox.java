@@ -14,6 +14,7 @@ public class ZkossCheckbox extends ZkossComponent implements IAryaComponent {
 	public IAryaComponent create(Object object, Object parent) {
 		setComponent(new Checkbox());
 		Checkbox component = (Checkbox) getComponent();
+		component.setId(((CheckboxType) object).getId());
 		component.setLabel(((CheckboxType) object).getLabel());
 		component.setParent((Component) parent);
 		if (((CheckboxType) object).getOnCheck() != null) {

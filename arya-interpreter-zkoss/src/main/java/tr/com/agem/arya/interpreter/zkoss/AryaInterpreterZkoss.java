@@ -46,7 +46,6 @@ public class AryaInterpreterZkoss implements IAryaInterpreter {
 		for (Object oo : componentsList) {
 			if (oo instanceof JAXBElement<?>) {
 				JAXBElement<?> j = (JAXBElement<?>) oo;
-				System.out.println(j.getDeclaredType());
 				String compStr = ((JAXBElement<?>) j).getName().getLocalPart();
 				if (compStr.equalsIgnoreCase("label")) {
 					components.add(new ZkossLabel().create(
