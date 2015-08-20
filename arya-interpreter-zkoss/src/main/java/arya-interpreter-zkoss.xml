@@ -23,6 +23,7 @@
 	</bean>
 
 	<bean id="aryaInterpreter" class="tr.com.agem.arya.interpreter.zkoss.AryaInterpreterZkoss">
+		<property name="jaxbContext" ref="jaxbContext" />
 	</bean>
 
 </beans>

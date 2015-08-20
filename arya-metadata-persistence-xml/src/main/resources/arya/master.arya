@@ -1,9 +1,9 @@
+<?page title="AGEM" ?>
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="aryaportal.org arya.xsd">
-<window>
-<button label="label" onClick="clikc()"></button>
-<button label="label" onClick="clikc()"></button>
-<button label="label" onClick="clikc()"></button>
-<button label="label" onClick="clikc()"></button>
-</window>
+	xsi:schemaLocation="aryaportal.org arya.xsd">
+	<window id="main" border="none">
+		<textbox id="deneme1" value="ARYA" />
+		<textbox id="deneme2" value="2" />
+		<button id="deneme6" label="Geri Dön" onClick="GeriDon" />
+	</window>
 </arya>

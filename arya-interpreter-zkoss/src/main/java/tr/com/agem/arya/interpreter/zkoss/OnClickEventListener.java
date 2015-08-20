@@ -23,11 +23,13 @@ public class OnClickEventListener implements EventListener {
 
 	Component parent;
 	String onClick;
+	AryaWindow aryaWindow;
 
-	public OnClickEventListener(Component comp, String onClick) {
+	public OnClickEventListener(Component comp, String onClick, AryaWindow aryaWindow) {
 		super();
 		this.parent = comp;
 		this.onClick = onClick;
+		this.aryaWindow = aryaWindow;
 	}
 
 	@Override
@@ -39,7 +41,7 @@ public class OnClickEventListener implements EventListener {
 		request.setAction("ilceList"); // TODO onClick stringi çözümlenerek
 										// action ve parametreler
 										// ayrıştırılmalı...
-		request.setRequestType(RequestTypes.DATA_ONLY);
+		request.setRequestType(RequestTypes.ALL);
 
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("username", "alio");
@@ -63,6 +65,8 @@ public class OnClickEventListener implements EventListener {
 		List<Map<String, Object>> dataList = mapper.readValue(
 				response.getData(), List.class);
 
+		aryaWindow.getInterpreter().interpretAryaResponse(response, parent, aryaWindow);
+		
 		/*
 		 * TODO Java Script ????
 		 */

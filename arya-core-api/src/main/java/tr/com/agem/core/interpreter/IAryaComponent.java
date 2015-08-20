@@ -1,7 +1,7 @@
 package tr.com.agem.core.interpreter;
 
 public interface IAryaComponent {
-	public IAryaComponent create(Object object, Object parent);
+	public IAryaComponent create(Object object, Object parent, Object masterWindow);
 
 	public void setProperty();
 

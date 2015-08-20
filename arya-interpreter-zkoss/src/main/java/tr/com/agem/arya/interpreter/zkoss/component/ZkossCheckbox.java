@@ -11,7 +11,7 @@ import tr.com.agem.core.interpreter.IAryaComponent;
 public class ZkossCheckbox extends ZkossComponent implements IAryaComponent {
 	@SuppressWarnings("unchecked")
 	@Override
-	public IAryaComponent create(Object object, Object parent) {
+	public IAryaComponent create(Object object, Object parent, Object masterWindow) {
 		setComponent(new Checkbox());
 		Checkbox component = (Checkbox) getComponent();
 		component.setId(((CheckboxType) object).getId());

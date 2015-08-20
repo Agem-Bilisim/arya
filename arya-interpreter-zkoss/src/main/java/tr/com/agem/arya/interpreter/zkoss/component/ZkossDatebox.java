@@ -9,7 +9,7 @@ import tr.com.agem.core.interpreter.IAryaComponent;
 public class ZkossDatebox extends ZkossComponent implements IAryaComponent {
 
 	@Override
-	public IAryaComponent create(Object object, Object parent) {
+	public IAryaComponent create(Object object, Object parent, Object masterWindow) {
 		setComponent(new Datebox());
 		Datebox component = (Datebox) getComponent();
 		component.setId(((DateboxType) object).getId());

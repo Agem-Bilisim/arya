@@ -9,7 +9,7 @@ import tr.com.agem.core.interpreter.IAryaComponent;
 public class ZkossTextbox extends ZkossComponent implements IAryaComponent {
 
 	@Override
-	public IAryaComponent create(Object object, Object parent) {
+	public IAryaComponent create(Object object, Object parent, Object masterWindow) {
 		setComponent(new Textbox());
 		Textbox component = (Textbox) getComponent();
 		component.setId(((TextboxType) object).getId());

@@ -15,7 +15,7 @@ import tr.com.agem.core.interpreter.IAryaComponent;
 public class ZkossCombobox extends ZkossComponent implements IAryaComponent {
 
 	@Override
-	public IAryaComponent create(Object object, Object parent) {
+	public IAryaComponent create(Object object, Object parent, Object masterWindow) {
 		setComponent(new Combobox());
 		Combobox component = (Combobox) getComponent();
 		component.setId(((ComboboxType) object).getId());
