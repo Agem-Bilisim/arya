@@ -14,12 +14,15 @@ import tr.com.agem.arya.script.ScriptHelper;
 public class AryaDatebox  extends DatePicker implements IAryaComponent {
 
     private String componentId;
+    private String className;
     private boolean mandatory;
 
     public AryaDatebox(Context context, XmlPullParser parser, final LinearLayout window) {
         super(context);
         // Component ID
         this.componentId = parser.getAttributeValue(null, "id");
+        // Class Name
+        this.className = parser.getAttributeValue(null,"class");
         // Mandatory
         String mandatory = parser.getAttributeValue(null, "mandatory");
         this.mandatory = mandatory != null && Boolean.parseBoolean(mandatory);
@@ -47,27 +50,20 @@ public class AryaDatebox  extends DatePicker implements IAryaComponent {
                 map.put("year", year);
                 map.put("monthOfYear", monthOfYear);
                 map.put("dayOfMonth", dayOfMonth);
-                ScriptHelper.executeScript((IAryaComponent) view, onChange, map);
+                ScriptHelper.executeScript((IAryaComponent) view, onChange, map,null);
             }
         } : null);
         window.addView(this);
     }
 
     @Override
-    public String validate(){
-        // TODO impl
-        return null;
-    }
+    public String validate(){ return null;  }
 
     @Override
-    public String getComponentId() {
-        return componentId;
-    }
+    public String getComponentId() {return componentId; }
 
     @Override
-    public void setComponentId(String componentId) {
-        this.componentId = componentId;
-    }
+    public void setComponentId(String componentId) {this.componentId = componentId; }
 
     public boolean isMandatory() {
         return mandatory;
@@ -76,4 +72,10 @@ public class AryaDatebox  extends DatePicker implements IAryaComponent {
     public void setMandatory(boolean mandatory) {
         this.mandatory = mandatory;
     }
+
+    @Override
+    public void setClassName(String className) { this.className=className;}
+
+    @Override
+    public String getClassName() {return className; }
 }

@@ -21,12 +21,15 @@ import tr.com.agem.arya.script.ScriptHelper;
 public class AryaButton extends Button implements IAryaComponent {
 
     private String componentId;
+    private String className;
 
     public AryaButton(final Context context, XmlPullParser parser, final LinearLayout window) {
         super(context);
         this.setBackgroundResource(android.R.drawable.btn_default);
         // Component ID
         this.componentId = parser.getAttributeValue(null, "id");
+        // Class Name
+        this.className = parser.getAttributeValue(null,"class");
         // Label
         this.setText(parser.getAttributeValue(null, "label"));
         // Height
@@ -38,7 +41,7 @@ public class AryaButton extends Button implements IAryaComponent {
             this.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    ScriptHelper.executeScript((IAryaComponent) v, onClick);
+                    ScriptHelper.executeScript((IAryaComponent) v, onClick,null,window );
                 }
             });
         }
@@ -46,17 +49,17 @@ public class AryaButton extends Button implements IAryaComponent {
     }
 
     @Override
-    public String validate(){
-        return null;
-    }
+    public String validate(){ return null; }
 
     @Override
-    public String getComponentId() {
-        return componentId;
-    }
+    public String getComponentId() { return componentId; }
 
     @Override
-    public void setComponentId(String componentId) {
-        this.componentId = componentId;
-    }
+    public void setComponentId(String componentId) { this.componentId = componentId;}
+
+    @Override
+    public void setClassName(String className) { this.className=className;}
+
+    @Override
+    public String getClassName() {return className; }
 }

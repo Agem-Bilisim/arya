@@ -1,21 +1,40 @@
 package tr.com.agem.arya.script;
 
-import java.util.HashMap;
+import android.content.Context;
+import android.util.Log;
+import android.view.View;
+import android.view.Window;
+import android.widget.Button;
+import android.widget.LinearLayout;
 
+import java.util.HashMap;
+import java.util.Objects;
+
+import tr.com.agem.arya.interpreter.components.AryaButton;
+import tr.com.agem.arya.interpreter.components.AryaScript;
 import tr.com.agem.arya.interpreter.components.IAryaComponent;
+import tr.com.agem.arya.rhino.util.JsRunner;
+
+import static tr.com.agem.arya.rhino.util.JsRunner.jsRun;
 
 /**
  * Created by emre on 18/08/15.
  */
 public class ScriptHelper {
 
-    public static Object executeScript(IAryaComponent component, String script) {
-        return executeScript(component, script, null);
+    public static Object executeScript(IAryaComponent component, String functionName) {
+        return executeScript(component, functionName, null,null);
     }
 
 
-    public static Object executeScript(IAryaComponent component, String script, HashMap<Object, Object> params) {
-        // TODO impl
+    public static Object executeScript(IAryaComponent component, String functionName, HashMap<Object, Object> params,LinearLayout window) {
+        //TODO rhino time
+        StringBuilder script = new StringBuilder();
+        script.append(AryaScript.script).append(functionName).append("();");
+        jsRun(script.toString(),window);
         return null;
     }
+
+
+
 }

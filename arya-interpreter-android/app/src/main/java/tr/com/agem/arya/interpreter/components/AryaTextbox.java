@@ -20,6 +20,7 @@ import tr.com.agem.arya.script.ScriptHelper;
 
 public class AryaTextbox extends EditText implements IAryaComponent {
 
+    private String className;
     private String componentId;
     private boolean mandatory;
 
@@ -27,6 +28,8 @@ public class AryaTextbox extends EditText implements IAryaComponent {
         super(context);
         // Component ID
         this.componentId = parser.getAttributeValue(null, "id");
+        // Class Name
+        this.className = parser.getAttributeValue(null,"class");
         // Placeholder
         this.setHint(parser.getAttributeValue(null, "placeholder"));
         this.setHintTextColor(Color.parseColor("#FF999999"));
@@ -70,7 +73,7 @@ public class AryaTextbox extends EditText implements IAryaComponent {
                 public boolean onKey(View v, int keyCode, KeyEvent event) {
                     HashMap<Object, Object> params = new HashMap<Object, Object>();
                     params.put("keyCode", new Integer(keyCode));
-                    ScriptHelper.executeScript((IAryaComponent) v, onChange, params);
+                    ScriptHelper.executeScript((IAryaComponent) v, onChange, params,null);
                     return true;
                 }
             });
@@ -121,4 +124,10 @@ public class AryaTextbox extends EditText implements IAryaComponent {
     public void setMandatory(boolean mandatory) {
         this.mandatory = mandatory;
     }
+
+    @Override
+    public void setClassName(String className) { this.className=className;}
+
+    @Override
+    public String getClassName() {return className; }
 }

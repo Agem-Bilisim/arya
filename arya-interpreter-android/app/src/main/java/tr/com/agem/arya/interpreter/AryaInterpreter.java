@@ -19,8 +19,11 @@ import tr.com.agem.arya.interpreter.components.AryaButton;
 import tr.com.agem.arya.interpreter.components.AryaCheckbox;
 import tr.com.agem.arya.interpreter.components.AryaDatebox;
 import tr.com.agem.arya.interpreter.components.AryaLabel;
+import tr.com.agem.arya.interpreter.components.AryaScript;
 import tr.com.agem.arya.interpreter.components.AryaTextbox;
 import tr.com.agem.arya.interpreter.components.AryaWindow;
+import tr.com.agem.arya.interpreter.components.IAryaComponent;
+import tr.com.agem.arya.script.ScriptHelper;
 
 public class AryaInterpreter
 {
@@ -82,6 +85,8 @@ public class AryaInterpreter
                         // TODO multiple combobox impl
                     } else if ("selectbox".equalsIgnoreCase(tagName)) {
                         // TODO single combobox impl
+                    }else if ("script".equals(tagName)){
+                       new AryaScript(parser.nextText());
                     }
                 } else if(parser.getEventType() == XmlPullParser.END_TAG) {
                     String tagName = parser.getName();

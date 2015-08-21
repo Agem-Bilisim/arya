@@ -2,6 +2,7 @@ package tr.com.agem.arya.interpreter.components;
 
 import android.content.Context;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -12,11 +13,14 @@ import tr.com.agem.arya.script.ScriptHelper;
 public class AryaLabel extends TextView implements IAryaComponent {
 
     private String componentId;
+    private String className;
 
     public AryaLabel(Context context, XmlPullParser parser, final LinearLayout window) {
         super(context);
         // Component ID
         this.componentId = parser.getAttributeValue(null, "id");
+        // Class Name
+        this.className = parser.getAttributeValue(null,"class");
         // Label
         this.setText(parser.getAttributeValue(null, "value"));
         // Height
@@ -36,18 +40,19 @@ public class AryaLabel extends TextView implements IAryaComponent {
     }
 
     @Override
-    public String validate(){
-        return null;
-    }
+    public String validate(){return null; }
 
     @Override
-    public void setComponentId(String componentId) {
-        this.componentId = componentId;
-    }
+    public void setComponentId(String componentId) {this.componentId = componentId;}
 
     @Override
     public String getComponentId(){
         return this.componentId;
     }
 
+    @Override
+    public void setClassName(String className) { this.className=className;}
+
+    @Override
+    public String getClassName() {return className; }
 }
