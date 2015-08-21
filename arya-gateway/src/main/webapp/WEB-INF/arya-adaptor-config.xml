@@ -22,7 +22,7 @@
 		<property name="actionViewMap">
 			<map>
 				<entry key="ilList" value="view1" />
-				<entry key="ilceList" value="view2" />
+				<entry key="ilceList" value="master" />
 			</map>
 		</property>
 	</bean>

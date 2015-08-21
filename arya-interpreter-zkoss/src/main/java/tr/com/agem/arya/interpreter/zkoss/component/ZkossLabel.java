@@ -9,9 +9,10 @@ import tr.com.agem.core.interpreter.IAryaComponent;
 public class ZkossLabel extends ZkossComponent implements IAryaComponent {
 
 	@Override
-	public IAryaComponent create(Object object, Object parent) {
+	public IAryaComponent create(Object object, Object parent, Object masterWindow) {
 		setComponent(new Label());
 		Label component = (Label) getComponent();
+		component.setId(((LabelType) object).getId());
 		component.setValue(((LabelType) object).getValue());
 		component.setParent((Component) parent);
 		return this;

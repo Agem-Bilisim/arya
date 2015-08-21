@@ -15,9 +15,10 @@ import tr.com.agem.core.interpreter.IAryaComponent;
 public class ZkossListbox extends ZkossComponent implements IAryaComponent {
 
 	@Override
-	public IAryaComponent create(Object object, Object parent) {
+	public IAryaComponent create(Object object, Object parent, Object masterWindow) {
 		setComponent(new Listbox());
 		Listbox component = (Listbox) getComponent();
+		component.setId(((ListboxType) object).getId());
 		component.setParent((Component) parent);
 		if (((ListboxType) object).getContent() != null) {
 			List<Object> componentsList = ((ListboxType) object).getContent();
