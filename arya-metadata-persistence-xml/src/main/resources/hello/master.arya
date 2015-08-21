@@ -21,12 +21,16 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 		<button id="deneme6" label="Arya" onClick="a" />
 		<button id="deneme7" class="klass" label="Yeni Ekran" onClick="b" />
 	</window>
-	<script>
+	<script src="">
 		a = function() {
 
-			print(getElementById('deneme6').getComponentId());
-			print(getElementsByName('button')[0].getComponentId());
-			print(getElementsByClass('klass')[0].getComponentId());
+	
+		
+		print(serializeForm());
+		
+			//print(getElementById('deneme6').getComponentId());
+			//print(getElementsByName('button')[0].getComponentId());
+			//print(getElementsByClass('klass')[0].getComponentId());
 
 		};
 		b = function() {

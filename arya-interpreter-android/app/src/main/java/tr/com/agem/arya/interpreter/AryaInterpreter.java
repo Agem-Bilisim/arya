@@ -86,7 +86,7 @@ public class AryaInterpreter
                     } else if ("selectbox".equalsIgnoreCase(tagName)) {
                         // TODO single combobox impl
                     }else if ("script".equals(tagName)){
-                       new AryaScript(parser.nextText());
+                       new AryaScript(context, parser, window);
                     }
                 } else if(parser.getEventType() == XmlPullParser.END_TAG) {
                     String tagName = parser.getName();

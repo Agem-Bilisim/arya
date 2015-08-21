@@ -1,12 +1,18 @@
 package tr.com.agem.arya.rhino.functions;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 
 
+import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.map.ObjectWriter;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import tr.com.agem.arya.interpreter.components.AryaScript;
 import tr.com.agem.arya.interpreter.components.IAryaComponent;
 import tr.com.agem.arya.rhino.util.AnnotatedScriptableObject;
 
@@ -22,7 +28,7 @@ public class ElementFunctions extends AnnotatedScriptableObject {
         this.window = window;
     }
 
-    @Expose
+    @AryaJsFunction
     public Object getElementById(String id) {
 
         View child=null;
@@ -40,7 +46,7 @@ public class ElementFunctions extends AnnotatedScriptableObject {
         return null;
     }
 
-    @Expose
+    @AryaJsFunction
     public Object[] getElementsByName(String name) {
         List objList = new ArrayList();
         View child=null;
@@ -49,7 +55,7 @@ public class ElementFunctions extends AnnotatedScriptableObject {
             child = window.getChildAt(i);
             if(child instanceof IAryaComponent) {
                 IAryaComponent o = (IAryaComponent) child;
-                    if(name.equalsIgnoreCase(o.getClass().toString().replace("class tr.com.agem.arya.interpreter.components.Arya",""))) {
+                    if(name.equalsIgnoreCase(o.getClass().toString().replace("class tr.com.agem.arya.interpreter.components.Arya", ""))) {
                         objList.add(o);
                     }
             }
@@ -58,7 +64,7 @@ public class ElementFunctions extends AnnotatedScriptableObject {
     }
 
 
-    @Expose
+    @AryaJsFunction
     public Object[] getElementsByClass(String className) {
         List objList = new ArrayList();
         View child=null;
@@ -74,4 +80,29 @@ public class ElementFunctions extends AnnotatedScriptableObject {
         }
         return objList.toArray(new Object[objList.size()]);
     }
+
+    @AryaJsFunction
+    public String serializeForm(){
+
+        //Log.d("*******",""+ AryaScript.srcList.toString());
+       /* String strSerialize="";
+        View child=null;
+        for (int i = 0 ; i<window.getChildCount();i++){
+
+            child = window.getChildAt(i);
+            if(child instanceof IAryaComponent) {
+                IAryaComponent o = (IAryaComponent) child;
+                ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
+                try {
+                    strSerialize+=ow.writeValueAsString(o);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }*/
+
+        return "";//strSerialize;
+    }
+
 }

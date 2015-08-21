@@ -17,6 +17,8 @@ public class AryaCheckbox extends CheckBox implements IAryaComponent {
     private String componentId;
     private String className;
     private boolean mandatory;
+    public String attribute;
+    public String value;
 
     public AryaCheckbox(final Context context, XmlPullParser parser, LinearLayout window) {
         super(context);
@@ -24,6 +26,10 @@ public class AryaCheckbox extends CheckBox implements IAryaComponent {
         this.componentId = parser.getAttributeValue(null, "id");
         // Class Name
         this.className = parser.getAttributeValue(null,"class");
+        //Value
+        this.value=parser.getAttributeValue(null,"value");
+        //Attribute
+        this.attribute=parser.getAttributeValue(null,"attribute");
         // Label
         this.setText(parser.getAttributeValue(null, "label"));
         // Height
@@ -51,23 +57,19 @@ public class AryaCheckbox extends CheckBox implements IAryaComponent {
     @Override
     public String validate(){ return null;}
 
-    @Override
-    public String getComponentId() {return componentId;}
+    public boolean isMandatory() { return mandatory;}
 
-    @Override
+    public void setMandatory(boolean mandatory) {this.mandatory = mandatory;}
+
+    public String getComponentId() {return componentId;}
     public void setComponentId(String componentId) {this.componentId = componentId;}
 
-    public boolean isMandatory() {
-        return mandatory;
-    }
-
-    public void setMandatory(boolean mandatory) {
-        this.mandatory = mandatory;
-    }
-
-    @Override
     public void setClassName(String className) { this.className=className;}
-
-    @Override
     public String getClassName() {return className; }
+
+    public void setAttribute(String attribute) { this.attribute=attribute;}
+    public String getAttribute() {return attribute; }
+
+    public void setValue(String value) { this.value=value;}
+    public String getValue() {return value; }
 }

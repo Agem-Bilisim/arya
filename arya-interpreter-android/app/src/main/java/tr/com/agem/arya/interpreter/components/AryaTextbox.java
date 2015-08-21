@@ -23,6 +23,8 @@ public class AryaTextbox extends EditText implements IAryaComponent {
     private String className;
     private String componentId;
     private boolean mandatory;
+    public String attribute;
+    public String value;
 
     public AryaTextbox(Context context, XmlPullParser parser, final LinearLayout window) {
         super(context);
@@ -30,6 +32,10 @@ public class AryaTextbox extends EditText implements IAryaComponent {
         this.componentId = parser.getAttributeValue(null, "id");
         // Class Name
         this.className = parser.getAttributeValue(null,"class");
+        //Value
+        this.value=parser.getAttributeValue(null,"value");
+        //Attribute
+        this.attribute=parser.getAttributeValue(null,"attribute");
         // Placeholder
         this.setHint(parser.getAttributeValue(null, "placeholder"));
         this.setHintTextColor(Color.parseColor("#FF999999"));
@@ -107,15 +113,6 @@ public class AryaTextbox extends EditText implements IAryaComponent {
         return null;
     }
 
-    @Override
-    public String getComponentId() {
-        return componentId;
-    }
-
-    @Override
-    public void setComponentId(String componentId) {
-        this.componentId = componentId;
-    }
 
     public boolean isMandatory() {
         return mandatory;
@@ -125,9 +122,16 @@ public class AryaTextbox extends EditText implements IAryaComponent {
         this.mandatory = mandatory;
     }
 
-    @Override
-    public void setClassName(String className) { this.className=className;}
+    public String getComponentId() { return componentId; }
 
-    @Override
+    public void setComponentId(String componentId) {this.componentId = componentId; }
+
+    public void setClassName(String className) { this.className=className;}
     public String getClassName() {return className; }
+
+    public void setAttribute(String attribute) { this.attribute=attribute;}
+    public String getAttribute() {return attribute; }
+
+    public void setValue(String value) { this.value=value;}
+    public String getValue() {return value; }
 }

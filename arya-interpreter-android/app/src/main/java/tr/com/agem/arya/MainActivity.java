@@ -40,7 +40,7 @@ public class MainActivity extends Activity
                 AryaRequest request = new AryaRequest();
                 request.setAction("master");
                 request.setRequestType(RequestTypes.VIEW_ONLY);
-                String url = "http://192.168.1.191:8080/arya/rest/hello/";
+                String url = "http://192.168.1.106:8080/arya/rest/hello/";
                 WebServiceConnectionAsyncTask connectionThread = new WebServiceConnectionAsyncTask(url, request, getApplicationContext());
                 try {
                     onGetEnd(connectionThread.execute().get());
