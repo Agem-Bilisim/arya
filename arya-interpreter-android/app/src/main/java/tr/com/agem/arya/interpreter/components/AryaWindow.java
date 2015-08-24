@@ -2,20 +2,9 @@ package tr.com.agem.arya.interpreter.components;
 
 import android.content.Context;
 import android.graphics.Typeface;
-import android.util.Log;
-import android.util.Xml;
 import android.view.Gravity;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
-
-import java.io.IOException;
-import java.io.StringReader;
-
-import tr.com.agem.arya.R;
 
 public class AryaWindow extends LinearLayout {
 

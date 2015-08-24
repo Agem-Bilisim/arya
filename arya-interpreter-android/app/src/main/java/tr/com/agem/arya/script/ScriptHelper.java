@@ -1,19 +1,10 @@
 package tr.com.agem.arya.script;
 
-import android.content.Context;
-import android.util.Log;
-import android.view.View;
-import android.view.Window;
-import android.widget.Button;
 import android.widget.LinearLayout;
 
 import java.util.HashMap;
-import java.util.Objects;
-
-import tr.com.agem.arya.interpreter.components.AryaButton;
 import tr.com.agem.arya.interpreter.components.AryaScript;
 import tr.com.agem.arya.interpreter.components.IAryaComponent;
-import tr.com.agem.arya.rhino.util.JsRunner;
 
 import static tr.com.agem.arya.rhino.util.JsRunner.jsRun;
 
@@ -31,7 +22,7 @@ public class ScriptHelper {
         //TODO rhino time
         StringBuilder script = new StringBuilder();
         script.append(AryaScript.script).append(functionName).append("();");
-        jsRun(script.toString(),window);
+        jsRun(AryaScript.srcList,script.toString(),window);
         return null;
     }
 
