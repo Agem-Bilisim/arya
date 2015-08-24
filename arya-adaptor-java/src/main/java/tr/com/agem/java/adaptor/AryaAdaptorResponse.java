@@ -2,10 +2,10 @@ package tr.com.agem.java.adaptor;
 
 import tr.com.agem.core.adaptor.IAryaAdaptorResponse;
 
-public class AryaAdaptorResponse implements IAryaAdaptorResponse 
-{
+public class AryaAdaptorResponse implements IAryaAdaptorResponse {
+
 	private String viewName;
-	
+
 	private String data;
 
 	@Override
@@ -26,5 +26,4 @@ public class AryaAdaptorResponse implements IAryaAdaptorResponse
 		this.data = data;
 	}
 
-	
 }

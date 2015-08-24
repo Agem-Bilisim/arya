@@ -12,23 +12,8 @@
            http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd
            http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-	<bean id="adaptorMapper" class="tr.com.agem.java.adaptor.AryaSampleMapper">
-		<property name="actionMap">
-			<map>
-				<entry key="ilList" value="il.list" />
-				<entry key="ilceList" value="ilce.list" />
-			</map>
-		</property>
-		<property name="actionViewMap">
-			<map>
-				<entry key="ilList" value="view1" />
-				<entry key="ilceList" value="master" />
-			</map>
-		</property>
-	</bean>
-
-	<bean id="adaptorConverter" class="tr.com.agem.java.adaptor.AryaSampleConverter" />
-
+	<bean id="adaptorMapper" class="tr.com.agem.java.mapper.AryaRestMapper"/>
+	<bean id="adaptorConverter" class="tr.com.agem.java.converter.AryaRestConverter" />
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName">
@@ -45,7 +30,7 @@
 		</property>
 	</bean>
 
-	<bean id="applicationAdaptor" class="tr.com.agem.java.adaptor.AryaSampleAdaptor">
+	<bean id="applicationAdaptor" class="tr.com.agem.java.adaptor.AryaRestAdaptor">
 		<property name="mapper" ref="adaptorMapper" />
 		<property name="converter" ref="adaptorConverter" />
 		<property name="dataSource" ref="dataSource" />

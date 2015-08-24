@@ -1,6 +1,5 @@
 package tr.com.agem.core.adaptor;
 
-public interface IAryaAdaptorConverter 
-{
+public interface IAryaConverter {
 	Object convert(Object request);
 }

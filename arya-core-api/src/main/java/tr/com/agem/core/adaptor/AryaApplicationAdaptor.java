@@ -4,28 +4,29 @@ import javax.sql.DataSource;
 
 import tr.com.agem.core.gateway.model.IAryaRequest;
 
-public abstract class AryaApplicationAdaptor {
-	private IAryaAdaptorMapper mapper;
+public abstract class AryaApplicationAdaptor implements IAryaAdaptor {
 
-	private IAryaAdaptorConverter converter;
+	private IAryaMapper mapper;
+
+	private IAryaConverter converter;
 
 	private DataSource dataSource;
 
 	public abstract IAryaAdaptorResponse processRequest(IAryaRequest request);
 
-	public IAryaAdaptorMapper getMapper() {
+	public IAryaMapper getMapper() {
 		return mapper;
 	}
 
-	public void setMapper(IAryaAdaptorMapper mapper) {
+	public void setMapper(IAryaMapper mapper) {
 		this.mapper = mapper;
 	}
 
-	public IAryaAdaptorConverter getConverter() {
+	public IAryaConverter getConverter() {
 		return converter;
 	}
 
-	public void setConverter(IAryaAdaptorConverter converter) {
+	public void setConverter(IAryaConverter converter) {
 		this.converter = converter;
 	}
 
