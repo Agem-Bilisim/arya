@@ -1,34 +1,45 @@
 package tr.com.agem.arya.interpreter.components;
 
-import android.content.Context;
-import android.util.Log;
-import android.view.View;
-import android.widget.LinearLayout;
-
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by volkan on 19.08.2015.
  */
-public class AryaScript extends View {
+public class AryaScript {
 
     public static String script;
-    public static   ArrayList<String> srcList;
+    public static List<String> srcList;
 
-
-    public AryaScript(Context context, XmlPullParser parser, LinearLayout window) throws IOException, XmlPullParserException {
-        super(context);
+    public AryaScript(XmlPullParser parser) throws IOException, XmlPullParserException {
+        this.srcList=parseSrc(parser);
         this.script=parser.nextText();
-        //parseSrc(parser);
     }
 
-    private void parseSrc(XmlPullParser parser) {
-        String strSrc = parser.getAttributeValue(null, "src"); //null?
-        Log.d("++++++++++", "parseSrc "+strSrc);
-        //this.srcList= (ArrayList<String>) Arrays.asList(strSrc.split(","));
+    private List<String> parseSrc(XmlPullParser parser) {
+        srcList=null;
+        if(parser.getAttributeValue(null, "import")!=null)
+            srcList= Arrays.asList(parser.getAttributeValue(null, "import").toString().split(";"));
+        return srcList;
+    }
+
+    public static String getScript() {
+        return script;
+    }
+
+    public static void setScript(String script) {
+        AryaScript.script = script;
+    }
+
+    public List<String> getSrcList() {
+        return srcList;
+    }
+
+    public void setSrcList(List<String> srcList) {
+        this.srcList = srcList;
     }
 }

@@ -1,4 +1,3 @@
-<?page title="ARYA" ?>
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="main" border="none" apply="demo.layout.business_portal.Kisi">
@@ -21,7 +20,7 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 		<button id="deneme6" label="Arya" onClick="a" />
 		<button id="deneme7" class="klass" label="Yeni Ekran" onClick="b" />
 	</window>
-	<script src="">
+	<script>
 		a = function() {
 
 	

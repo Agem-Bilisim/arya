@@ -1,18 +1,12 @@
 package tr.com.agem.arya.rhino.functions;
 
-import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
-
-
-import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.map.ObjectWriter;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import tr.com.agem.arya.interpreter.components.AryaScript;
 import tr.com.agem.arya.interpreter.components.IAryaComponent;
 import tr.com.agem.arya.rhino.util.AnnotatedScriptableObject;
 
@@ -82,27 +76,20 @@ public class ElementFunctions extends AnnotatedScriptableObject {
     }
 
     @AryaJsFunction
-    public String serializeForm(){
+    public String serializeForm() throws IOException {
 
-        //Log.d("*******",""+ AryaScript.srcList.toString());
-       /* String strSerialize="";
+        String strSerialize="";
         View child=null;
         for (int i = 0 ; i<window.getChildCount();i++){
-
             child = window.getChildAt(i);
             if(child instanceof IAryaComponent) {
                 IAryaComponent o = (IAryaComponent) child;
-                ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
-                try {
-                    strSerialize+=ow.writeValueAsString(o);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
+                strSerialize+=",\""+o.getComponentId()+"\":"+(o.getValue()==null?null:"\""+o.getValue()+"\"");
             }
-        }*/
+        }
 
-        return "";//strSerialize;
+        if(strSerialize.length()>0)
+            return "{"+strSerialize.substring(1,strSerialize.length())+"}";
+        return "{}";
     }
-
 }

@@ -8,7 +8,6 @@ import android.widget.LinearLayout;
 
 import org.xmlpull.v1.XmlPullParser;
 
-import tr.com.agem.arya.interpreter.AlertController;
 import tr.com.agem.arya.script.ScriptHelper;
 
 

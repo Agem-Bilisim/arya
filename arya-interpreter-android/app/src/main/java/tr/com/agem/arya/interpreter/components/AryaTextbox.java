@@ -14,7 +14,6 @@ import android.widget.LinearLayout;
 import org.xmlpull.v1.XmlPullParser;
 
 import java.util.HashMap;
-import java.util.Objects;
 
 import tr.com.agem.arya.script.ScriptHelper;
 
@@ -112,7 +111,6 @@ public class AryaTextbox extends EditText implements IAryaComponent {
         // TODO impl
         return null;
     }
-
 
     public boolean isMandatory() {
         return mandatory;

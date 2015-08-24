@@ -48,6 +48,7 @@ public class AryaButton extends Button implements IAryaComponent {
         window.addView(this);
     }
 
+
     @Override
     public String validate(){ return null; }
 

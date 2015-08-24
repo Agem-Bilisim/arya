@@ -22,7 +22,7 @@ public class ScriptHelper {
         //TODO rhino time
         StringBuilder script = new StringBuilder();
         script.append(AryaScript.script).append(functionName).append("();");
-        jsRun(script.toString(),window);
+        jsRun(AryaScript.srcList,script.toString(),window);
         return null;
     }
 

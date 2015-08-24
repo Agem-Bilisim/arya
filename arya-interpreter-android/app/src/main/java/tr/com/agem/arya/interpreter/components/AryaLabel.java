@@ -2,10 +2,10 @@ package tr.com.agem.arya.interpreter.components;
 
 import android.content.Context;
 import android.view.View;
-import android.webkit.WebView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
 import org.xmlpull.v1.XmlPullParser;
 
 import tr.com.agem.arya.script.ScriptHelper;
@@ -60,4 +60,10 @@ public class AryaLabel extends TextView implements IAryaComponent {
 
     public void setValue(String value) { this.value=value;}
     public String getValue() {return value; }
+
+    @JsonIgnore
+    @Override
+    public int getImportantForAccessibility() {
+        return super.getImportantForAccessibility();
+    }
 }
