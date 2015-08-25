@@ -9,13 +9,13 @@ import java.io.InputStreamReader;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.apache.commons.lang3.StringUtils;
 import org.codehaus.jackson.map.ObjectMapper;
 
 import tr.com.agem.core.metadata.model.IMetadata;
 import tr.com.agem.core.metadata.model.MetadataTypes;
 import tr.com.agem.core.metadata.persistence.IMetadataPersistence;
 import tr.com.agem.core.property.reader.PropertyReader;
+import tr.com.agem.core.utils.AryaUtils;
 
 public class MetadataPersistenceImplXml implements IMetadataPersistence {
 
@@ -85,7 +85,7 @@ public class MetadataPersistenceImplXml implements IMetadataPersistence {
 
 	private String findXMLFilePath(String appName, String viewName) {
 		String tmp = (viewName == null || viewName.isEmpty()) ? PropertyReader.property("master.metadata.file") : viewName;
-		String path = StringUtils.join(tmp.split("\\."), File.separator);
+		String path = AryaUtils.join(File.separator, tmp.split("\\."));
 		return appName + File.separator + path + "." + PropertyReader.property("metadata.file.extension");
 	}
 

@@ -1,18 +1,22 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+
 	<parent>
 		<groupId>tr.com.agem</groupId>
 		<artifactId>arya</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
+
 	<artifactId>arya-metadata-generator</artifactId>
 	<name>arya-metadata-generator</name>
-	<url>http://ofis.agem.com.tr:8082/root/arya</url>
-	<description>Automatically generates metadata XML files from AgemUtils projects (such as Asya, RCOP etc.) using *.jsp files and their corresponding *Form.java classes.</description>
+	<url>http://www.agem.com.tr</url>
+	<description>arya-metadata-generator automatically generates metadata *.arya files from AgemUtils projects (such as Asya, RCOP etc.) using *.jsp files and their corresponding *Form.java classes.</description>
+
 	<properties>
 		<reference.project.name>asya.jar</reference.project.name>
 	</properties>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -113,13 +117,7 @@
 			</plugins>
 		</pluginManagement>
 	</build>
-	<repositories>
-		<repository>
-			<id>agem-maven</id>
-			<name>Agem Maven Repository</name>
-			<url>http://192.168.1.51:8081/nexus/content/repositories/thirdparty</url>
-		</repository>
-	</repositories>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
@@ -154,4 +152,5 @@
 			<systemPath>${project.basedir}/reference-project/${reference.project.name}</systemPath>
 		</dependency>
 	</dependencies>
+
 </project>

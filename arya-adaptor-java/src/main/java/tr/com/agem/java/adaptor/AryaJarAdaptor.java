@@ -62,25 +62,25 @@ public class AryaJarAdaptor extends AryaApplicationAdaptor {
 						field = cls.getField(entry.getKey());
 					} catch (NoSuchFieldException e) {
 					}
-					
+
 					if (field != null) {
-						
+
 						Method setter = null;
 						try {
 							setter = cls.getMethod(findSetterName(field.getName()), entry.getValue().getClass());
 						} catch (NoSuchMethodException e) {
 						}
-						
+
 						if (setter != null) {
-							
+
 							setter.invoke(form, entry.getValue());
-							
+
 							logger.log(Level.FINE, "Setting value of {0} to: {1}",
 									new Object[] { field.getName(), entry.getValue() });
 						}
-						
+
 					}
-					
+
 				}
 
 			}
@@ -98,16 +98,22 @@ public class AryaJarAdaptor extends AryaApplicationAdaptor {
 			if (isListAction) {
 				PagedList pl = new PagedList();
 				pl.setParameters(form);
-				String pageSize = PropertyReader.property("paged.list.page.size");
+				// Set page size
+				Object tmpParam = request.getParams().get("pageSize");
+				String pageSize = tmpParam != null ? tmpParam.toString()
+						: PropertyReader.property("paged.list.page.size");
 				pl.setPageSize(pageSize != null ? Integer.parseInt(pageSize) : -1);
-				String pageNumber = (String) request.getParams().get("pageNumber");
+				// Set page number
+				tmpParam = request.getParams().get("pageNumber");
+				String pageNumber = tmpParam != null ? tmpParam.toString() : null;
 				pl.setPageNumber(pageNumber != null ? Integer.parseInt(pageNumber) : 1);
 				arg = pl;
 			}
 
 			Object returnVal = serviceMethod.invoke(service, arg);
 
-			logger.log(Level.INFO, "Response successful: {0}", returnVal != null ? returnVal.toString() : "");
+			logger.log(Level.INFO, "Response successful: {0}", returnVal != null
+					? ((isListAction || isSelectAction) ? AgemUtils.jsObject(returnVal) : returnVal.toString()) : "");
 			AryaAdaptorResponse response = new AryaAdaptorResponse();
 			// TODO return also these: edit result, number of deleted records,
 			// error message etc.
@@ -134,7 +140,7 @@ public class AryaJarAdaptor extends AryaApplicationAdaptor {
 
 			BDBase.DBMS_INTERFACE = new PostgreSqlDBMS();
 			BDBase.DBMS_INTERFACE.init();
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
