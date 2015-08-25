@@ -16,13 +16,13 @@ public class AnnotatedScriptableObject extends ScriptableObject {
 
 	@Target(METHOD)
 	@Retention(RUNTIME)
-	public @interface Expose {
+	public @interface AryaJsFunction {
 	}
 
 	public void addToScope(Scriptable scope) {
 		
 		for (Method method : this.getClass().getMethods()) {
-			if (method.isAnnotationPresent(Expose.class)) {
+			if (method.isAnnotationPresent(AryaJsFunction.class)) {
 				FunctionObject function = new FunctionObject(method.getName(), method, this);
 				scope.put(function.getFunctionName(), scope, function);
 			}

@@ -5,6 +5,7 @@ import android.util.Log;
 import android.widget.LinearLayout;
 
 import org.mozilla.javascript.Context;
+import org.mozilla.javascript.ContextFactory;
 import org.mozilla.javascript.Scriptable;
 import org.mozilla.javascript.tools.shell.Global;
 
@@ -27,7 +28,7 @@ public class JsRunner {
 
         try {
 
-            Context context = Context.enter();
+            Context context = ContextFactory.getGlobal().enterContext();//Context.enter();
             context.setOptimizationLevel(-1);
 
             Scriptable scope = new org.mozilla.javascript.tools.shell.Global();
@@ -39,7 +40,7 @@ public class JsRunner {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build(); //TODO incele
             StrictMode.setThreadPolicy(policy);
 
-            if(null!=srcList) //TODO açılacak
+            if(null!=srcList) 
                 script=getSourceScript(srcList)+" "+script;
 
             Log.d("script", script);
@@ -58,10 +59,8 @@ public class JsRunner {
     }
 
     private static String getSourceScript(List<String> srcList) {
-
-
         URL url;
-        String extendedScript="";
+        String extendedScript=" ";
 
         for (String strUrl:srcList) {
 
@@ -83,6 +82,6 @@ public class JsRunner {
                 e.printStackTrace();
             }
         }
-        return extendedScript;
+        return extendedScript+" ";
     }
 }
