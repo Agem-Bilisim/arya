@@ -24,8 +24,8 @@ import tr.com.agem.core.gateway.model.IAryaRequest;
 import tr.com.agem.core.property.reader.PropertyReader;
 import tr.com.agem.db.connection.DBConnectionFactory;
 import tr.com.agem.db.connection.DBConnectionInterface;
-import tr.com.agem.db.dbms.PostgreSqlDBMS;
 import tr.com.agem.db.operations.BDBase;
+import tr.com.agem.startup.db.PostgreSqlDBMS;
 
 public class AryaJarAdaptor extends AryaApplicationAdaptor {
 
@@ -39,7 +39,7 @@ public class AryaJarAdaptor extends AryaApplicationAdaptor {
 		String serviceName = actionURI + "Service";
 		boolean isListAction = "list".equalsIgnoreCase(serviceMethodName);
 		boolean isSelectAction = "select".equalsIgnoreCase(serviceMethodName);
-		String formName = isListAction ? "ParameterForm" : "Form";
+		String formName = actionURI + (isListAction ? "ParameterForm" : "Form");
 
 		logger.log(Level.INFO, "Calling jar method: {0} of service {1} with parameters: {2}",
 				new Object[] { serviceMethodName, serviceName, request.getParams() });
@@ -57,40 +57,61 @@ public class AryaJarAdaptor extends AryaApplicationAdaptor {
 
 				for (Entry<String, Object> entry : request.getParams().entrySet()) {
 
-					Field field = cls.getField(entry.getKey());
-					Method setter = cls.getMethod(findSetterName(field.getName()), entry.getValue().getClass());
-
-					setter.invoke(form, entry.getValue());
-
-					logger.log(Level.FINE, "Setting value of {0} to: {1}",
-							new Object[] { field.getName(), entry.getValue() });
+					Field field = null;
+					try {
+						field = cls.getField(entry.getKey());
+					} catch (NoSuchFieldException e) {
+					}
+					
+					if (field != null) {
+						
+						Method setter = null;
+						try {
+							setter = cls.getMethod(findSetterName(field.getName()), entry.getValue().getClass());
+						} catch (NoSuchMethodException e) {
+						}
+						
+						if (setter != null) {
+							
+							setter.invoke(form, entry.getValue());
+							
+							logger.log(Level.FINE, "Setting value of {0} to: {1}",
+									new Object[] { field.getName(), entry.getValue() });
+						}
+						
+					}
+					
 				}
 
 			}
 
 			// TODO AgemCrudService yerine AgemCrudAction nesnesi kullanilmali!
 			// TODO ActionMapping ve HttpServletRequest nesneleri?
-			
+
 			// Create service object
 			AgemService service = getServiceInstance(serviceName, serviceMethodName);
 
 			// Invoke service method using newly created form object
-			Method serviceMethod = AgemService.class.getMethod(serviceMethodName, isListAction ? PagedList.class : AgemForm.class);
+			Method serviceMethod = AgemService.class.getMethod(serviceMethodName,
+					isListAction ? PagedList.class : AgemForm.class);
 			Object arg = form;
 			if (isListAction) {
 				PagedList pl = new PagedList();
 				pl.setParameters(form);
 				String pageSize = PropertyReader.property("paged.list.page.size");
 				pl.setPageSize(pageSize != null ? Integer.parseInt(pageSize) : -1);
+				String pageNumber = (String) request.getParams().get("pageNumber");
+				pl.setPageNumber(pageNumber != null ? Integer.parseInt(pageNumber) : 1);
 				arg = pl;
 			}
-			
+
 			Object returnVal = serviceMethod.invoke(service, arg);
-			
+
 			logger.log(Level.INFO, "Response successful: {0}", returnVal != null ? returnVal.toString() : "");
 			AryaAdaptorResponse response = new AryaAdaptorResponse();
-			// TODO return also these: edit result, number of deleted records, error message etc.
-			response.setData( (isListAction || isSelectAction) ? AgemUtils.jsObject(returnVal) : "{ }");
+			// TODO return also these: edit result, number of deleted records,
+			// error message etc.
+			response.setData((isListAction || isSelectAction) ? AgemUtils.jsObject(returnVal) : "{ }");
 			return response;
 
 		} catch (Exception e) {
@@ -113,9 +134,7 @@ public class AryaJarAdaptor extends AryaApplicationAdaptor {
 
 			BDBase.DBMS_INTERFACE = new PostgreSqlDBMS();
 			BDBase.DBMS_INTERFACE.init();
-
-			logger.log(Level.INFO, "DB connection initialized: {0}", conn.toString());
-
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
