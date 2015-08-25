@@ -15,6 +15,11 @@
 	<description>arya-metadata-persistence-xml provides filesystem implementation of metadata engine.</description>
 	<url>http://www.agem.com.tr</url>
 
+	<properties>
+		<!-- needed for checkstyle/findbugs -->
+		<main.basedir>${project.parent.basedir}</main.basedir>
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>

@@ -15,6 +15,11 @@
 	<description>arya-core-api contains core functionalities and interfaces for all modules.</description>
 	<url>http://www.agem.com.tr</url>
 
+	<properties>
+		<!-- needed for checkstyle/findbugs -->
+		<main.basedir>${project.parent.basedir}</main.basedir>
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
