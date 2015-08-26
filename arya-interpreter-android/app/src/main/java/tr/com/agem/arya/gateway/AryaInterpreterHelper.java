@@ -2,16 +2,13 @@ package tr.com.agem.arya.gateway;
 
 import android.util.Log;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.params.BasicHttpParams;
-import org.apache.http.params.HttpConnectionParams;
-import org.apache.http.params.HttpParams;
-import org.apache.http.util.EntityUtils;
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class AryaInterpreterHelper {
 
@@ -19,32 +16,46 @@ public class AryaInterpreterHelper {
 
     public static String callUrl(String url, AryaRequest request)
     {
-        HttpPost httppost = new HttpPost(url);
-        httppost.setHeader("Content-Type", "application/json");
-        httppost.setHeader("Accept", "application/json");
-
         try {
-            StringEntity se = new StringEntity(request.toJSON());
-
-            httppost.setEntity(se);
+            URL urlObj = new URL(url);
+            HttpURLConnection urlConnection = (HttpURLConnection) urlObj.openConnection();
+            urlConnection.setRequestMethod("POST");
+            urlConnection.setRequestProperty("Content-Type", "application/json");
+            urlConnection.setRequestProperty("Accept", "application/json");
             // set the connection timeout value to 4 seconds (4000 milliseconds)
-            final HttpParams httpParams = new BasicHttpParams();
-            HttpConnectionParams.setConnectionTimeout(httpParams, 4000);
-            HttpClient httpClient = new DefaultHttpClient(httpParams);
-            HttpResponse response = httpClient.execute(httppost);
-            HttpEntity entity = response.getEntity();
-            Log.d(TAG, ">>>>>>>>>>>>>postcodee:" + response.getStatusLine().getStatusCode());
+            urlConnection.setConnectTimeout(4000);
+
+            urlConnection.setDoOutput(true);
+            DataOutputStream writer = new DataOutputStream(urlConnection.getOutputStream());
+            writer.writeBytes(request.toJSON());
+            writer.flush();
+            writer.close();
+
+            int responseCode = urlConnection.getResponseCode();
+            Log.d(TAG, ">>>>>>>>>>>>>responseCode:" + responseCode);
             String responseStr = null;
 
-            if(response.getStatusLine().getStatusCode() == 200) {
-                responseStr = EntityUtils.toString(entity, "UTF-8");
+            if(responseCode == HttpURLConnection.HTTP_OK) {
+                BufferedReader reader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream(), "UTF-8"));
+                String line = null;
+                StringBuffer responseText = new StringBuffer();
+                while( (line = reader.readLine()) != null )
+                {
+                    responseText.append("\n");
+                    responseText.append(line);
+                }
+                reader.close();
+                responseStr = responseText.toString();
             }
-            Log.d(TAG, ">>>>>>>>>>>>>postresponse:" + responseStr);
-
+            Log.d(TAG, ">>>>>>>>>>>>>responseString:" + responseStr);
             return responseStr;
-        } catch (Exception e) {
+
+        } catch (MalformedURLException e) {
             e.printStackTrace();
-            return null;
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+
+        return  null;
     }
 }
