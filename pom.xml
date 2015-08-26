@@ -8,6 +8,7 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>ARYA</name>
+	<description>Arya Cross Platform Application Development And Migration Platform</description>
 	<url>http://www.agem.com.tr</url>
 
 	<modules>
@@ -70,6 +71,11 @@
 			<id>vsahin</id>
 			<name>volkan sahin</name>
 			<email>volkan.sahin@agem.com.tr</email>
+		</developer>
+		<developer>
+			<id>ibasaran</id>
+			<name>ismail basaran</name>
+			<email>basaran.ismaill@gmail.com</email>
 		</developer>
 	</developers>
 
