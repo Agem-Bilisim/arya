@@ -12,6 +12,12 @@ Run the following command to pull the latest application `git pull origin master
 4. Run the following command to deploy the application `mvn tomcat7:deploy`. If you already deployed before, then type `mvn tomcat7:redeploy`
 5. Open web browser and go to address http://localhost:8080/arya/rest/YOUR_APP_NAME
 
+### Generating Metadata From AgemUtils-based Project
+
+1. Place AgemUtils-based project as a jar file under `$ARYA_HOME/arya-metadata-generator/reference-project` folder.
+2. Modify `config.properties` file as you wish. At least, output files directory and reference project name must be defined.
+3. Run `tr.com.agem.arya.metadata.generator.Main.java`!
+
 ### Testing
 
 TODO...
@@ -35,6 +41,6 @@ We also use checkstyle and findbugs plugins to do static analyzing on the change
 - **arya-metadata-persistence-xml** provides filesystem implementation of metadata engine.
 - **arya-metadata-engine** handles metadata operations.
 - **arya-metadata-generator** automatically generates metadata `*.arya` files from AgemUtils projects (such as Asya, RCOP etc.) using `*.jsp` files and their corresponding `*Form.java` classes.
-- **arya-interpreter-android**
-- **arya-interpreter-angularjs**
-- **arya-interpreter-zkoss** is the implementation of Zkoss web interpreter.
+- **arya-interpreter-android** is the Android implementation of interpreter.
+- **arya-interpreter-angularjs** is the AngularJS implementation of interpreter.
+- **arya-interpreter-zkoss** is the Zkoss implementation of interpreter.
