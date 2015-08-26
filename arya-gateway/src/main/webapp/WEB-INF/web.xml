@@ -2,7 +2,8 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee   http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 	<display-name>Arya</display-name>
 	<description>Arya Cross Platform Application Development And Migration
-		Platform</description>
+		Platform
+	</description>
 	<filter>
 		<filter-name>cors</filter-name>
 		<filter-class>tr.com.agem.filter.CorsFilter</filter-class>

@@ -2,23 +2,32 @@ package tr.com.agem.filter;
 
 import java.io.IOException;
 
+import javax.servlet.Filter;
 import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.web.filter.OncePerRequestFilter;
-
-public class CorsFilter extends OncePerRequestFilter {
+public class CorsFilter implements Filter {
 
 	@Override
-	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
-			throws ServletException, IOException {
-		response.addHeader("Access-Control-Allow-Origin", "*");
-		response.addHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-		response.addHeader("Access-Control-Allow-Headers", "Content-Type");
-		response.addHeader("Access-Control-Max-Age", "1800");
+	public void destroy() {
+	}
+
+	@Override
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain)
+			throws IOException, ServletException {
+		((HttpServletResponse) response).addHeader("Access-Control-Allow-Origin", "*");
+		((HttpServletResponse) response).addHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+		((HttpServletResponse) response).addHeader("Access-Control-Allow-Headers", "Content-Type");
+		((HttpServletResponse) response).addHeader("Access-Control-Max-Age", "1800");
 		filterChain.doFilter(request, response);
+	}
+
+	@Override
+	public void init(FilterConfig arg0) throws ServletException {
 	}
 
 }
