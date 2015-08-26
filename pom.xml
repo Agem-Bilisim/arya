@@ -43,6 +43,7 @@
 		<!--<maven.compiler.plugin.version>3.1</maven.compiler.plugin.version> -->
 		<maven.compiler.plugin.version>2.5.1</maven.compiler.plugin.version>
 		<findbugs.maven.plugin.version>3.0.0</findbugs.maven.plugin.version>
+		<checkstyle.maven.plugin.version>2.12</checkstyle.maven.plugin.version>
 		<main.basedir>${project.basedir}</main.basedir>
 		<springframework.version>3.2.4.RELEASE</springframework.version>
 		<tomcat.plugin.version>2.2</tomcat.plugin.version>
@@ -140,6 +141,40 @@
 						</configuration>
 					</plugin>
 
+				</plugins>
+			</build>
+		</profile>
+
+		<profile>
+			<id>checkstyle</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-checkstyle-plugin</artifactId>
+						<version>${checkstyle.maven.plugin.version}</version>
+						<executions>
+							<execution>
+								<phase>validate</phase>
+								<goals>
+									<goal>checkstyle</goal>
+								</goals>
+							</execution>
+						</executions>
+						<configuration>
+							<configLocation>${main.basedir}/checkstyle/checkstyle.xml</configLocation>
+<!-- 							<suppressionsLocation>${main.basedir}/checkstyle/suppressions.xml</suppressionsLocation> -->
+<!-- 							<headerLocation>${main.basedir}/checkstyle/ClassHeader.txt</headerLocation> -->
+							<enableRSS>false</enableRSS>
+							<linkXRef>true</linkXRef>
+							<consoleOutput>true</consoleOutput>
+							<failsOnError>true</failsOnError>
+							<failOnViolation>true</failOnViolation>
+							<includeTestSourceDirectory>false</includeTestSourceDirectory>
+							<enableRulesSummary>true</enableRulesSummary>
+							<propertyExpansion>main.basedir=${main.basedir}</propertyExpansion>
+						</configuration>
+					</plugin>
 				</plugins>
 			</build>
 		</profile>
