@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -52,7 +53,7 @@ public class MetadataPersistenceImplXml implements IMetadataPersistence {
 
 		try {
 
-			BufferedReader reader = new BufferedReader(new InputStreamReader(xmlStream));
+			BufferedReader reader = new BufferedReader(new InputStreamReader(xmlStream, StandardCharsets.UTF_8));
 			String line = null;
 			StringBuilder metadataStr = new StringBuilder();
 			String ls = System.getProperty("line.separator");

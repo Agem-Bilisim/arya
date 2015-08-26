@@ -1,36 +1,34 @@
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
-	<window id="main" border="none" apply="demo.layout.business_portal.Kisi">
-		<label id="deneme" value="Bu bir Ali Özkan Özerendir...asd. " />
-		<textbox id="deneme1" value="Ali ali ali" />
-		<textbox id="deneme2" value="2" />
-		<label id="deneme3" value="Hede Hödö" />
-		<checkbox id="deneme4" label="Deneme" onCheck="AryaOnCheck" />
-		<datebox id="deneme5" />
-		<listbox>
+	<window>
+		<label id="lbl1" value="Test label" />
+		<textbox id="tb1" value="Ali ali ali" />
+		<label id="lbl2" value="Test label" />
+		<textbox id="tb2" value="2" />
+		<label id="lbl3" value="Hede Hödö" />
+		<checkbox id="ch1" label="Deneme" onCheck="AryaOnCheck" />
+		<label id="lbl4" value="Test label" />
+		<datebox id="db1" />
+		<label id="lbl5" value="Test label" />
+		<listbox id="lb1">
 			<listitem label="item1" value="1" />
 			<listitem label="item2" value="2" />
 			<listitem label="item3" value="3" />
 		</listbox>
-		<combobox>
+		<label id="lbl6" value="Test label" />
+		<combobox id="cb1">
 			<comboitem label="item1" value="1" />
 			<comboitem label="item2" value="2" />
 			<comboitem label="item3" value="3" />
 		</combobox>
-		<button id="deneme6" label="Arya" onClick="a" />
-		<button id="deneme7" class="klass" label="Yeni Ekran" onClick="b" />
+		<button id="btn1" label="Arya" onClick="a()" />
+		<button id="btn2" label="Yeni Ekran" onClick="b()" />
 	</window>
 	<script>
 		a = function() {
-
-	
-		
-		print(serializeForm());
-		
 			//print(getElementById('deneme6').getComponentId());
 			//print(getElementsByName('button')[0].getComponentId());
 			//print(getElementsByClass('klass')[0].getComponentId());
-
 		};
 		b = function() {
 			print('b');
