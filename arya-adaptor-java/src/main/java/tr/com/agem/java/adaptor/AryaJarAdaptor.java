@@ -1,6 +1,7 @@
 package tr.com.agem.java.adaptor;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -44,9 +45,9 @@ public class AryaJarAdaptor extends AryaApplicationAdaptor {
 		logger.log(Level.INFO, "Calling jar method: {0} of service {1} with parameters: {2}",
 				new Object[] { serviceMethodName, serviceName, request.getParams() });
 
-		try {
+		initDBConnection();
 
-			initDBConnection();
+		try {
 
 			// Create form object...
 			Class<?> cls = Class.forName(formName);
@@ -85,9 +86,6 @@ public class AryaJarAdaptor extends AryaApplicationAdaptor {
 
 			}
 
-			// TODO AgemCrudService yerine AgemCrudAction nesnesi kullanilmali!
-			// TODO ActionMapping ve HttpServletRequest nesneleri?
-
 			// Create service object
 			AgemService service = getServiceInstance(serviceName, serviceMethodName);
 
@@ -114,15 +112,14 @@ public class AryaJarAdaptor extends AryaApplicationAdaptor {
 
 			logger.log(Level.INFO, "Response successful: {0}", returnVal != null
 					? ((isListAction || isSelectAction) ? AgemUtils.jsObject(returnVal) : returnVal.toString()) : "");
+
 			AryaAdaptorResponse response = new AryaAdaptorResponse();
-			// TODO return also these: edit result, number of deleted records,
-			// error message etc.
 			response.setData((isListAction || isSelectAction) ? AgemUtils.jsObject(returnVal) : "{ }");
 			return response;
 
-		} catch (Exception e) {
-			logger.log(Level.SEVERE, e.toString(), e);
-			e.printStackTrace();
+		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException | NoSuchMethodException
+				| SecurityException | IllegalArgumentException | InvocationTargetException e1) {
+			e1.printStackTrace();
 		}
 
 		return null;

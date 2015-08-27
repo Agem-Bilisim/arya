@@ -30,6 +30,7 @@ public class AryaRestAdaptor extends AryaApplicationAdaptor {
 		
 		URL url = null;
 		HttpURLConnection conn = null;
+		BufferedReader br = null;
 		
 		try {
 			url = new URL(actionURL);
@@ -48,7 +49,7 @@ public class AryaRestAdaptor extends AryaApplicationAdaptor {
 				throw new AryaRestFailedException("Failed: HTTP error code: " + conn.getResponseCode());
 			}
 			
-			BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+			br = new BufferedReader(new InputStreamReader(conn.getInputStream(), StandardCharsets.UTF_8));
 			
 			String output;
 			StringBuilder sb = new StringBuilder("");
@@ -67,6 +68,14 @@ public class AryaRestAdaptor extends AryaApplicationAdaptor {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
+		} finally {
+			if (br != null) {
+				try {
+					br.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
 		}
 		
 		return null;
