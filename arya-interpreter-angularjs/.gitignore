@@ -1,8 +1,21 @@
+# Logs
+*.log
+npm-debug.log*
 logs/*
 !.gitkeep
+
+# Dependency directories
 node_modules/
+bower_components/
+
 tmp
 .idea
 .DS_Store
-angular-phonecat-snapshots
-bower_components/
+
+# Compiled binary addons (http://nodejs.org/api/addons.html)
+build/Release
+
+# Runtime data
+pids
+*.pid
+*.seed
