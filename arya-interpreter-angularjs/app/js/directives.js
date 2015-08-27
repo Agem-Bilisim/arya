@@ -46,7 +46,8 @@ aryaDirectives.directive('aryaDynamicTemplate',
 					}
 					scope.aryaMetadata.viewJson[id] = { 'id': id, 'value': val };
 					var attrs = appendAttrs(this, ['id', 'class', 'mandatory', 'readonly', 'onChange']);
-					htmlStr += '<div class="col-md-2"><input type="date" ' + attrs + ' value="{{aryaMetadata.viewJson.' + id +'.value}}" /></div>';
+					htmlStr += '<div class="col-md-2"><input type="text" ' + attrs + ' value="{{aryaMetadata.viewJson.' + id +'.value}}" /></div>';
+					htmlStr += '<script>$(function(){ $("#' + id + '").datepicker(); })</script>'
 				} else if (thisTagName == 'listbox') {
 					scope.aryaMetadata.viewJson[id] = { 'id': id, 'value': val };
 					var attrs = appendAttrs(this, ['id', 'class', 'height', 'mandatory', 'readonly', 'onSelect']);
