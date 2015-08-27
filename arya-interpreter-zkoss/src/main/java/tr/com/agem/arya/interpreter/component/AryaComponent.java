@@ -1,8 +1,8 @@
-package tr.com.agem.arya.interpreter.zkoss.component;
+package tr.com.agem.arya.interpreter.component;
 
 import tr.com.agem.core.interpreter.IAryaComponent;
 
-public abstract class ZkossComponent implements IAryaComponent {
+public abstract class AryaComponent implements IAryaComponent {
 	private Object component;
 
 	@Override
