@@ -1,4 +1,4 @@
-package tr.com.agem.arya.interpreter.zkoss.component;
+package tr.com.agem.arya.interpreter.component;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import tr.com.agem.arya.metadata.arya.impl.ComboboxType;
 import tr.com.agem.arya.metadata.arya.impl.ComboitemType;
 import tr.com.agem.core.interpreter.IAryaComponent;
 
-public class ZkossCombobox extends ZkossComponent implements IAryaComponent {
+public class AryaCombobox extends AryaComponent implements IAryaComponent {
 
 	@Override
 	public IAryaComponent create(Object object, Object parent, Object masterWindow) {

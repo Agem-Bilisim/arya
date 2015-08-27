@@ -37,8 +37,7 @@ public class BaseController extends GenericForwardComposer {
 	 * @return
 	 */
 	public BaseNavObj getNavObj() {
-		BaseNavObj navObj = (BaseNavObj) Sessions.getCurrent().getAttribute(
-				"navObj");
+		BaseNavObj navObj = (BaseNavObj) Sessions.getCurrent().getAttribute("navObj");
 		Sessions.getCurrent().removeAttribute("navObj");
 		return navObj;
 	}

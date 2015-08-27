@@ -1,5 +1,7 @@
 package tr.com.agem.core.utils;
 
+import java.util.Collection;
+
 public class AryaUtils {
 
 	public static <T> String join(String separator, T... objects) {
@@ -14,7 +16,7 @@ public class AryaUtils {
 		}
 		return null;
 	}
-	
+
 	/**
 	 * Returns the first value in the array which is not null. If all the values
 	 * are null or the array is null or empty then null is returned.
@@ -32,9 +34,25 @@ public class AryaUtils {
 		}
 		return null;
 	}
-	
+
 	public static String capitalize(final String line) {
 		return Character.toUpperCase(line.charAt(0)) + line.substring(1);
+	}
+
+	public static boolean isEmpty(Object o) {
+		if (o == null)
+			return true;
+		if (o instanceof String)
+			return "".equals(o) ? true : false;
+		if (o instanceof Collection<?>)
+			return ((Collection<?>) o).size() < 1 ? true : false;
+		return false;
+	}
+
+	public static boolean isNotEmpty(Object o) {
+		if (isEmpty(o))
+			return false;
+		return true;
 	}
 
 }

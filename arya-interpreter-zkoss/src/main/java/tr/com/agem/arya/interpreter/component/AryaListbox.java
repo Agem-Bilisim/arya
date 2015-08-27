@@ -1,4 +1,4 @@
-package tr.com.agem.arya.interpreter.zkoss.component;
+package tr.com.agem.arya.interpreter.component;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import tr.com.agem.arya.metadata.arya.impl.ListboxType;
 import tr.com.agem.arya.metadata.arya.impl.ListitemType;
 import tr.com.agem.core.interpreter.IAryaComponent;
 
-public class ZkossListbox extends ZkossComponent implements IAryaComponent {
+public class AryaListbox extends AryaComponent implements IAryaComponent {
 
 	@Override
 	public IAryaComponent create(Object object, Object parent, Object masterWindow) {
