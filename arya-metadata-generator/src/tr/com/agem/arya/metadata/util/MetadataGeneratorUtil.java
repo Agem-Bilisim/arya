@@ -77,12 +77,8 @@ public class MetadataGeneratorUtil {
 		}
 
 		File resultDir = new File(resultFileDir);
-		if (!resultDir.exists()) {
-			if (resultDir.mkdirs()) {
-				System.out.println("Result file created: " + resultFileDir);
-			} else {
-				throw new RuntimeException("Cannot create file: " + resultFileDir);
-			}
+		if (!resultDir.exists() && !resultDir.mkdirs()) {
+			throw new RuntimeException("Cannot create file: " + resultFileDir);
 		}
 
 		if (!MetadataGeneratorUtil.getInstance().isEmpty(resultFileName)) {

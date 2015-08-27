@@ -15,7 +15,7 @@ public class XMLSelectElement implements XMLElement {
 			xml.append("\t\t<label id=\"").append(property).append("lbl").append("\" value=\"").append(formAttrAnn.label()).append("\" />\n");
 		}
 		
-		String componentName = formAttrAnn.selectBoxMultiple() ? "listbox" : "selectbox";
+		String componentName = formAttrAnn.selectBoxMultiple() ? "listbox" : "combobox";
 		
 		xml.append("\t\t<").append(componentName).append(" id=\"").append(property).append("\" ");
 		if (formAttrAnn.mandatory()) {
@@ -37,28 +37,13 @@ public class XMLSelectElement implements XMLElement {
 			xml.append(" left=\"").append(formAttrAnn.left()).append("\"");
 		}
 		
-//		Single Selection:
-//		<selectbox id="typesSelectbox" model="${win$composer.typesModel}" >
-//	    <template name="model">
-//	        <label value="${each}" />
-//	    </template>
-//	    </selectbox>
-//		Multiple Selection:
-//		<listbox id="salesmenListbox" model="${win$composer.salesmenModel}" checkmark="true">
-//	    <template name="model">
-//	        <listitem label="${each}" />
-//	    </template>
-//		</listbox>
-		
 		if (generateRandomVal) {
 			xml.append(" >\n");
-			xml.append("\t\t\t<template>\n"); // TODO model?
 			if (formAttrAnn.selectBoxMultiple()) {
-				xml.append("\t\t\t\t<listitem label=\"").append(new RandomStringGenerator(10).nextString()).append("\" />\n");
+				xml.append("\t\t\t<listitem label=\"").append(new RandomStringGenerator(10).nextString()).append("\" value=\"").append(new RandomStringGenerator(4).nextString()).append("\" />\n");
 			} else {
-				xml.append("\t\t\t\t<label value=\"").append(new RandomStringGenerator(10).nextString()).append("\" />\n");
+				xml.append("\t\t\t<comboitem label=\"").append(new RandomStringGenerator(10).nextString()).append("\" value=\"").append(new RandomStringGenerator(4).nextString()).append("\" />\n");
 			}
-			xml.append("\t\t\t</template>\n");
 			xml.append("\t\t</").append(componentName).append(">\n");
 		}
 		else {

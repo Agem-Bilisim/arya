@@ -1,6 +1,8 @@
 package tr.com.agem.arya.metadata.builder;
 
 import java.lang.reflect.Field;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import tr.com.agem.arya.metadata.util.MetadataGeneratorUtil;
 import tr.com.agem.arya.metadata.util.PropertyReader;
@@ -9,6 +11,8 @@ import tr.com.agem.arya.metadata.xml.XMLElementFactory;
 import tr.com.agem.tag.anotations.FormAttribute;
 
 public class MetadataBuilder {
+	
+	private static final Logger logger = Logger.getLogger(MetadataBuilder.class.getName());
 
 	public String start(Class<?> cls, String[] properties, String actionName, boolean isFirst) {
 
@@ -17,7 +21,7 @@ public class MetadataBuilder {
 
 		try {
 
-			System.out.println("Class name: " + cls.getName());
+			logger.log(Level.INFO, "Class: {0}", cls.getName());
 
 			if (isFirst) {
 
@@ -34,11 +38,11 @@ public class MetadataBuilder {
 				
 				if (!MetadataGeneratorUtil.getInstance().isEmpty(property)) {
 
-					System.out.println("Property: " + property);
+					logger.log(Level.INFO, "Property: {0}", property);
 					Field field = null;
 					
 					// Property belongs to another field (inner class)
-					// KisiParameterForm kisiParam.tckNoParam gibi
+					// such as KisiParameterForm > kisiParam.tckNoParam
 					try {
 						
 						if (property.contains(".")) {
@@ -57,7 +61,7 @@ public class MetadataBuilder {
 						}
 						
 					} catch (NoSuchFieldException e) {
-						e.printStackTrace();
+						logger.log(Level.SEVERE, e.toString(), e);
 					}
 					
 					if (field != null) {
@@ -78,7 +82,7 @@ public class MetadataBuilder {
 			}
 
 		} catch (SecurityException e) {
-			e.printStackTrace();
+			logger.log(Level.SEVERE, e.toString(), e);
 		}
 
 		return xml.toString();
