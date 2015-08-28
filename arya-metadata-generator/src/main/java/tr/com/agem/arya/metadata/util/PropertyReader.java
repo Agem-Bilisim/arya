@@ -15,9 +15,10 @@ public class PropertyReader {
 
 	public static void readProperties() {
 		PROPERTIES = new HashMap<String, String>();
+		InputStream inputStream = null;
 		try {
 			Properties properties = new Properties();
-			InputStream inputStream = PropertyReader.class.getResourceAsStream("/config.properties");
+			inputStream = PropertyReader.class.getResourceAsStream("/config.properties");
 			properties.load(inputStream);
 			if (inputStream == null) {
 				logger.warning("Properties dosyası bulunamadı. Dosya : config.properties");
@@ -36,6 +37,14 @@ public class PropertyReader {
 		} catch (IOException e) {
 			logger.log(Level.SEVERE, "Properties dosyası yüklenemedi.", e);
 			e.printStackTrace();
+		} finally {
+			if (inputStream != null) {
+				try {
+					inputStream.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
 		}
 	}
 

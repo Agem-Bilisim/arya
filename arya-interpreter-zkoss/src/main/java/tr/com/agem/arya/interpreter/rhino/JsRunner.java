@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 import org.mozilla.javascript.Context;
@@ -47,7 +48,7 @@ public class JsRunner {
 
 	private static String getSourceScript(List<String> srcList) {
 		URL url;
-		String extendedScript = " ";
+		StringBuilder extendedScript = new StringBuilder(" ");
 
 		for (String strUrl : srcList) {
 
@@ -55,11 +56,11 @@ public class JsRunner {
 				url = new URL(strUrl);
 				URLConnection conn = url.openConnection();
 
-				BufferedReader bufferReader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+				BufferedReader bufferReader = new BufferedReader(new InputStreamReader(conn.getInputStream(), StandardCharsets.UTF_8));
 				String inputLine;
 
 				while ((inputLine = bufferReader.readLine()) != null) {
-					extendedScript += inputLine;
+					extendedScript.append(inputLine);
 				}
 				bufferReader.close();
 
@@ -69,7 +70,7 @@ public class JsRunner {
 				e.printStackTrace();
 			}
 		}
-		return extendedScript + " ";
+		return extendedScript.append(" ").toString();
 	}
 
 }

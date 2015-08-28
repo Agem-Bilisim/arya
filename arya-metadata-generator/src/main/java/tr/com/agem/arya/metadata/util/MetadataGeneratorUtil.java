@@ -4,15 +4,20 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.Locale;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import tr.com.agem.core.utils.AryaUtils;
 
 public class MetadataGeneratorUtil {
+	
+	private static final Logger logger = Logger.getLogger(MetadataGeneratorUtil.class.getName());
 	
 	private static MetadataGeneratorUtil instance = null;
 	
@@ -27,7 +32,7 @@ public class MetadataGeneratorUtil {
 	}
 
 	public String readFile(JarFile jarFile, JarEntry jarEntry) throws IOException {
-		BufferedReader reader = new BufferedReader(new InputStreamReader(jarFile.getInputStream(jarEntry)));
+		BufferedReader reader = new BufferedReader(new InputStreamReader(jarFile.getInputStream(jarEntry), StandardCharsets.UTF_8));
 		StringBuilder fileStr = new StringBuilder();
 		String line;
 		while ((line = reader.readLine()) != null) {
@@ -79,7 +84,8 @@ public class MetadataGeneratorUtil {
 		if (AryaUtils.isNotEmpty(resultFileName)) {
 			resultFile = new File(resultDir, resultFileName);
 			if (!resultFile.exists()) {
-				resultFile.createNewFile();
+				boolean isCreated = resultFile.createNewFile();
+				logger.log(Level.FINE, "{0} created: {1}", new Object[]{ resultFileName, isCreated });
 			}
 		}
 

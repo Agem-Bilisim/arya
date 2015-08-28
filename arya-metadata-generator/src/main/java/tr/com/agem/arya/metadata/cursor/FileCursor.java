@@ -2,8 +2,10 @@ package tr.com.agem.arya.metadata.cursor;
 
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileWriter;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.nio.charset.StandardCharsets;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 import java.util.logging.Level;
@@ -120,8 +122,8 @@ public class FileCursor {
 				// then write to it.
 				File result = MetadataGeneratorUtil.getInstance().generateFileDir(jarEntry.getName());
 				logger.log(Level.INFO, "Target File: {0}", result.getName());
-				FileWriter fileWriter = new FileWriter(result);
-				BufferedWriter bufferWriter = new BufferedWriter(fileWriter);
+				FileOutputStream fileStream = new FileOutputStream(result);
+				BufferedWriter bufferWriter = new BufferedWriter(new OutputStreamWriter(fileStream, StandardCharsets.UTF_8));
 				bufferWriter.write(builder.getMetadata());
 				bufferWriter.flush();
 				bufferWriter.close();

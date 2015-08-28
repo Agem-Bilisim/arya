@@ -6,6 +6,8 @@ import tr.com.agem.arya.metadata.xml.XMLElement;
 import tr.com.agem.tag.anotations.FormAttribute;
 
 public class XMLCheckboxElement implements XMLElement {
+	
+	private static final Random random = new Random();
 
 	@Override
 	public String xml(String property, FormAttribute formAttrAnn, boolean generateRandomVal) {
@@ -14,7 +16,7 @@ public class XMLCheckboxElement implements XMLElement {
 
 		xml.append("\t\t<checkbox type=\"text\" id=\"").append(property).append("\" ");
 		if (generateRandomVal) {
-			xml.append(" checked=\"").append(new Random().nextBoolean()).append("\" ");
+			xml.append(" checked=\"").append(random.nextBoolean()).append("\" ");
 		}
 		if (formAttrAnn.label() != null && !formAttrAnn.label().isEmpty()) {
 			xml.append(" label=\"").append(formAttrAnn.label()).append("\" ");

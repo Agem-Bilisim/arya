@@ -6,6 +6,8 @@ import tr.com.agem.arya.metadata.xml.XMLElement;
 import tr.com.agem.tag.anotations.FormAttribute;
 
 public class XMLDoubleElement implements XMLElement {
+	
+	private static final Random random = new Random();
 
 	@Override
 	public String xml(String property, FormAttribute formAttrAnn, boolean generateRandomVal) {
@@ -17,7 +19,7 @@ public class XMLDoubleElement implements XMLElement {
 		}
 		xml.append("\t\t<doublebox id=\"").append(property).append("\" ");
 		if (generateRandomVal) {
-			xml.append(" value=\"").append(new Random().nextDouble()).append("\" ");
+			xml.append(" value=\"").append(random.nextDouble()).append("\" ");
 		}
 		if (formAttrAnn.mandatory()) {
 			// TODO xul mandatory attr?
