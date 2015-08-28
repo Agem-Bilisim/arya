@@ -17,8 +17,10 @@ import tr.com.agem.arya.R;
 import tr.com.agem.arya.gateway.AryaResponse;
 import tr.com.agem.arya.interpreter.components.AryaButton;
 import tr.com.agem.arya.interpreter.components.AryaCheckbox;
+import tr.com.agem.arya.interpreter.components.AryaComboBox;
 import tr.com.agem.arya.interpreter.components.AryaDatebox;
 import tr.com.agem.arya.interpreter.components.AryaLabel;
+import tr.com.agem.arya.interpreter.components.AryaListBox;
 import tr.com.agem.arya.interpreter.components.AryaScript;
 import tr.com.agem.arya.interpreter.components.AryaTextbox;
 import tr.com.agem.arya.interpreter.components.AryaWindow;
@@ -59,6 +61,11 @@ public class AryaInterpreter
 
     public static void createWindowComponents(Context context, LinearLayout window, XmlPullParser parser){
         try {
+
+            Log.d(TAG, "createWindowComponents "+parser.getNamespace("script")+"-"+parser.getProperty("script")+"-");
+                //new AryaScript(context,parser.getAttributeValue(),window);
+
+
             while(parser.nextTag() != XmlPullParser.END_DOCUMENT)
             {
                 if(parser.getEventType() == XmlPullParser.START_TAG){
@@ -80,11 +87,10 @@ public class AryaInterpreter
                     } else if ("doublebox".equalsIgnoreCase(tagName)) {
                         new AryaTextbox(context, parser, window);
                     } else if ("listbox".equalsIgnoreCase(tagName)) {
+                        new AryaListBox(context,parser,window);
                         // TODO multiple combobox impl
-                    } else if ("selectbox".equalsIgnoreCase(tagName)) {
-                        // TODO single combobox impl
-                    }else if ("script".equals(tagName)){
-                        new AryaScript(context,parser,window);
+                    } else if ("combobox".equalsIgnoreCase(tagName)) {
+                        new AryaComboBox(context,parser,window);
                     }
                 } else if(parser.getEventType() == XmlPullParser.END_TAG) {
                     String tagName = parser.getName();
@@ -97,7 +103,7 @@ public class AryaInterpreter
                 }
             }
         } catch (XmlPullParserException e) {
-            Log.e("XmlPullParserException: unexpected type","END_DOCUMENT");
+            Log.e("XmlPullParserException: unexpected type", "END_DOCUMENT");
             //e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();

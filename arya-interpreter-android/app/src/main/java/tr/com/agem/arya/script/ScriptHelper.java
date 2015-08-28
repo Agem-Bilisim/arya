@@ -1,5 +1,6 @@
 package tr.com.agem.arya.script;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -21,12 +22,14 @@ public class ScriptHelper {
 
     public static Object executeScript(IAryaComponent component, String functionName, HashMap<Object, Object> params,LinearLayout window) {
 
+        Log.d("----","script time");
         StringBuilder script = new StringBuilder();
 
         AryaScript scriptObj = getScript(window);
         if(scriptObj!=null){
+            Log.d("----","script time2");
             script.append(scriptObj.getScript()).append(functionName).append("();");
-            return jsRun(scriptObj.getSrcList(),script.toString(),window);
+            return jsRun(scriptObj.getSrcList(),script.toString(),window,params);
         }
 
         return null;

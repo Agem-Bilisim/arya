@@ -27,7 +27,11 @@ public class AryaDatebox extends Datebox implements IAryaComponentProperty {
 		this.componentClassName = attributes.getValue("class");
 		this.componentValue = attributes.getValue("value");
 		this.componentAttribute = attributes.getValue("attribute");
+		
+		this.setId(attributes.getValue("id"));
+		this.setClass(attributes.getValue("class"));
 		this.setText(attributes.getValue("value"));
+		
 		this.setHeight(attributes.getValue("height"));
 
 		if (AryaUtils.isNotEmpty(attributes.getValue("onClick"))) {

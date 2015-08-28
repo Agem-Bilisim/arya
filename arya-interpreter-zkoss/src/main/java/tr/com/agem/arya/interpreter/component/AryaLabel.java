@@ -26,8 +26,15 @@ public class AryaLabel extends Label implements IAryaComponentProperty {
 		this.componentId = attributes.getValue("id");
 		this.componentClassName = attributes.getValue("class");
 		this.componentValue = attributes.getValue("value");
+		this.componentAttribute = attributes.getValue("attribute");
+		
+		this.setId(attributes.getValue("id"));
+		this.setClass(attributes.getValue("class"));
 		this.setValue(attributes.getValue("value"));
-
+		
+		this.setWidth(attributes.getValue("width"));
+		this.setHeight(attributes.getValue("height"));
+		
 		if (AryaUtils.isNotEmpty(attributes.getValue("onClick"))) {
 			functionName = attributes.getValue("onClick");
 			this.addEventListener("onClick", new EventListener<Event>() {
