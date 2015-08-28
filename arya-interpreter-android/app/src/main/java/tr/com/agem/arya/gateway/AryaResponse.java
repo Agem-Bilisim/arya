@@ -72,12 +72,6 @@ public class AryaResponse implements IAryaResponse
 
             this.data = nodeList.item(0).getTextContent();
 
-            nodeList = doc.getElementsByTagName("script");
-
-            assert(nodeList != null && nodeList.getLength() == 1);
-
-            this.script = nodeList.item(0).getTextContent();
-
         } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException(e.getMessage());

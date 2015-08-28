@@ -21,11 +21,17 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 			<comboitem label="item2" value="2" />
 			<comboitem label="item3" value="3" />
 		</combobox>
-		<button id="btn1" label="Arya" onClick="a()" />
-		<button id="btn2" label="Yeni Ekran" onClick="b()" />
+		<button id="btn1" label="Arya" onClick="a" />
+		<button id="btn2" label="Yeni Ekran" onClick="b" />
 	</window>
 	<script>
 		a = function() {
+			print('a');
+			//if(getElementById('btn1').getText()=='Arya')
+			//	getElementById('btn1').setText('AGEM');
+			//else
+			//	getElementById('btn1').setText('Arya');
+				
 			//print(getElementById('deneme6').getComponentId());
 			//print(getElementsByName('button')[0].getComponentId());
 			//print(getElementsByClass('klass')[0].getComponentId());

@@ -28,12 +28,10 @@ public class ScriptHelper {
 		
 		for(int i=0; i<aryaWindow.getComponents().size();i++){
 			comp = aryaWindow.getComponents().get(i);
-			if("script".equalsIgnoreCase(comp.getClass().toString().replace("class tr.com.agem.arya.interpreter.component.Arya", ""))){
 				if(comp instanceof AryaScript){
 					AryaScript scriptObj=(AryaScript)comp;
 					return scriptObj;
 				}
-			}
 		}
 		return null;
 	}

@@ -47,7 +47,7 @@ public class AryaInterpreterHelper {
                 reader.close();
                 responseStr = responseText.toString();
             }
-            Log.d(TAG, ">>>>>>>>>>>>>responseString:" + responseStr);
+            //Log.d(TAG, ">>>>>>>>>>>>>responseString:" + responseStr);
             return responseStr;
 
         } catch (MalformedURLException e) {

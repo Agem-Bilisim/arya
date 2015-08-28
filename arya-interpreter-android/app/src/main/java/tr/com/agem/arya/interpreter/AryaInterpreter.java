@@ -84,7 +84,7 @@ public class AryaInterpreter
                     } else if ("selectbox".equalsIgnoreCase(tagName)) {
                         // TODO single combobox impl
                     }else if ("script".equals(tagName)){
-                       new AryaScript(parser);
+                        new AryaScript(context,parser,window);
                     }
                 } else if(parser.getEventType() == XmlPullParser.END_TAG) {
                     String tagName = parser.getName();
@@ -97,7 +97,8 @@ public class AryaInterpreter
                 }
             }
         } catch (XmlPullParserException e) {
-            e.printStackTrace();
+            Log.e("XmlPullParserException: unexpected type","END_DOCUMENT");
+            //e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }

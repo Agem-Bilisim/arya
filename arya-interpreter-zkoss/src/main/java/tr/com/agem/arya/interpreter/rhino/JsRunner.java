@@ -35,10 +35,9 @@ public class JsRunner {
 
 			return context.evaluateString(scope, script, "<rule>", 1, null);
 
-			// Log.d("--","----------------------------------------------------------");
-			// Log.d("Rhino",result.toString());
-			// Log.d("Rhino",Context.toString(result));
-			// Log.d("--","----------------------------------------------------------");
+			// result.toString();
+			// Context.toString(result);
+			
 
 		} finally {
 			Context.exit();

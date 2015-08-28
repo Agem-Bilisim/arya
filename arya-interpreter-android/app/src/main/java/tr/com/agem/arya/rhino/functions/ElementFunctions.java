@@ -67,7 +67,7 @@ public class ElementFunctions extends AnnotatedScriptableObject {
             child = window.getChildAt(i);
             if(child instanceof IAryaComponent) {
                 IAryaComponent o = (IAryaComponent) child;
-                if(className.equalsIgnoreCase(o.getClassName())) {
+                if(className.equalsIgnoreCase(o.getComponentClassName())) {
                     objList.add(o);
                 }
             }
@@ -84,7 +84,7 @@ public class ElementFunctions extends AnnotatedScriptableObject {
             child = window.getChildAt(i);
             if(child instanceof IAryaComponent) {
                 IAryaComponent o = (IAryaComponent) child;
-                strSerialize+=",\""+o.getComponentId()+"\":"+(o.getValue()==null?null:"\""+o.getValue()+"\"");
+                strSerialize+=",\""+o.getComponentId()+"\":"+(o.getComponentValue()==null?null:"\""+o.getComponentValue()+"\"");
             }
         }
 
