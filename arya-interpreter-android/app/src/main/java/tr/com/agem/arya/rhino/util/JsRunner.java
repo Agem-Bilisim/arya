@@ -24,7 +24,7 @@ import tr.com.agem.arya.rhino.functions.ElementFunctions;
  */
 public class JsRunner {
 
-    public static void jsRun(List<String> srcList, String script, LinearLayout window) {
+    public static Object jsRun(List<String> srcList, String script, LinearLayout window) {
 
         try {
 
@@ -35,22 +35,20 @@ public class JsRunner {
             ((Global) scope).init(context);
 
             ElementFunctions e = new ElementFunctions(window);
-             e.addToScope(scope);
+            e.addToScope(scope);
 
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build(); //TODO incele
             StrictMode.setThreadPolicy(policy);
 
-            if(null!=srcList) 
+            if(null!=srcList)
                 script=getSourceScript(srcList)+" "+script;
 
-            Log.d("script", script);
+           return context.evaluateString(scope, script, "<rule>", 1, null);
 
-            Object result = context.evaluateString(scope, script, "<rule>", 1, null);
-
-            Log.d("--","----------------------------------------------------------");
+            //Log.d("--","----------------------------------------------------------");
             //Log.d("Rhino",result.toString());
            // Log.d("Rhino",Context.toString(result));
-            Log.d("--","----------------------------------------------------------");
+            //Log.d("--","----------------------------------------------------------");
 
         } finally {
             Context.exit();

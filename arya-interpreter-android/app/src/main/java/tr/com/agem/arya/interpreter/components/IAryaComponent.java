@@ -5,14 +5,14 @@ public interface IAryaComponent {
     void setComponentId(String componentId);
     String getComponentId();
 
-    void setClassName(String className);
-    String getClassName();
+    void setComponentClassName(String componentClassName);
+    String getComponentClassName();
 
-    void setValue(String value);
-    String getValue();
+    void setComponentValue(String componentValue);
+    String getComponentValue();
 
-    void setAttribute(String attribute);
-    String getAttribute();
+    void setComponentAttribute(String componentAttribute);
+    String getComponentAttribute();
 
     String validate();
 }

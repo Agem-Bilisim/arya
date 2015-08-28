@@ -3,6 +3,7 @@ package tr.com.agem.arya;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -57,6 +58,7 @@ public class MainActivity extends Activity
     private void onGetEnd(String result)
     {
         if(result != null){
+            Log.e("",result);
             AryaResponse response = new AryaResponse();
             response.fromXMLString(result);
             AryaInterpreter.handleViewResponse(response, mainLayout, this);

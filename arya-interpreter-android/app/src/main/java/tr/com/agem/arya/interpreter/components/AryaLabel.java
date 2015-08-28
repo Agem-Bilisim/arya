@@ -13,20 +13,20 @@ import tr.com.agem.arya.script.ScriptHelper;
 public class AryaLabel extends TextView implements IAryaComponent {
 
     private String componentId;
-    private String className;
-    public String attribute;
-    public String value;
+    private String componentClassName;
+    private String componentAttribute;
+    private String componentValue;
 
     public AryaLabel(Context context, XmlPullParser parser, final LinearLayout window) {
         super(context);
         // Component ID
         this.componentId = parser.getAttributeValue(null, "id");
         // Class Name
-        this.className = parser.getAttributeValue(null,"class");
+        this.componentClassName = parser.getAttributeValue(null,"class");
         //Value
-        this.value=parser.getAttributeValue(null,"value");
+        this.componentValue=parser.getAttributeValue(null,"value");
         //Attribute
-        this.attribute=parser.getAttributeValue(null,"attribute");
+        this.componentAttribute=parser.getAttributeValue(null,"attribute");
         // Label
         this.setText(parser.getAttributeValue(null, "value"));
         // Height
@@ -52,14 +52,35 @@ public class AryaLabel extends TextView implements IAryaComponent {
         return this.componentId;
     }
 
-    public void setClassName(String className) { this.className=className;}
-    public String getClassName() {return className; }
+    @Override
+    public String getComponentClassName() {
+        return componentClassName;
+    }
 
-    public void setAttribute(String attribute) { this.attribute=attribute;}
-    public String getAttribute() {return attribute; }
+    @Override
+    public void setComponentClassName(String componentClassName) {
+        this.componentClassName = componentClassName;
+    }
 
-    public void setValue(String value) { this.value=value;}
-    public String getValue() {return value; }
+    @Override
+    public String getComponentAttribute() {
+        return componentAttribute;
+    }
+
+    @Override
+    public void setComponentAttribute(String componentAttribute) {
+        this.componentAttribute = componentAttribute;
+    }
+
+    @Override
+    public String getComponentValue() {
+        return componentValue;
+    }
+
+    @Override
+    public void setComponentValue(String componentValue) {
+        this.componentValue = componentValue;
+    }
 
     @JsonIgnore
     @Override

@@ -1,5 +1,9 @@
 package tr.com.agem.arya.interpreter.components;
 
+import android.content.Context;
+import android.view.View;
+import android.widget.LinearLayout;
+
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -10,14 +14,17 @@ import java.util.List;
 /**
  * Created by volkan on 19.08.2015.
  */
-public class AryaScript {
+public class AryaScript extends View{
 
-    public static String script;
-    public static List<String> srcList;
+    private String script;
+    private List<String> srcList;
 
-    public AryaScript(XmlPullParser parser) throws IOException, XmlPullParserException {
+    public AryaScript(Context context, XmlPullParser parser, LinearLayout window) throws IOException, XmlPullParserException {
+       super(context);
         this.srcList=parseSrc(parser);
         this.script=parser.nextText();
+
+        window.addView(this);
     }
 
     private List<String> parseSrc(XmlPullParser parser) {
@@ -27,13 +34,9 @@ public class AryaScript {
         return srcList;
     }
 
-    public static String getScript() {
-        return script;
-    }
+    public String getScript() {return script;}
 
-    public static void setScript(String script) {
-        AryaScript.script = script;
-    }
+    public void setScript(String script) {this.script = script;}
 
     public List<String> getSrcList() {
         return srcList;
