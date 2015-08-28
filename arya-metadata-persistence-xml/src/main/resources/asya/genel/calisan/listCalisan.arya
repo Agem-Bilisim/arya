@@ -3,51 +3,51 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addCalisanWindow">
 		<label visible="false" id="calisanIdlbl" value="Calisan Id" />
-		<textbox visible="false" type="text" id="calisanId"  value="9op74t4jx7"  placeholder=""  />
+		<textbox visible="false" type="text" id="calisanId"  value="90wdp9smrx"  placeholder=""  />
 		<label visible="false" id="kisiIdlbl" value="İşçi" />
-		<textbox visible="false" type="text" id="kisiId"  value="zfalb6sqmh"  placeholder=""  />
+		<textbox visible="false" type="text" id="kisiId"  value="0ro4s00pq9"  placeholder=""  />
 		<label visible="false" id="isyeriIdlbl" value="İşyeri" />
-		<textbox visible="false" type="text" id="isyeriId"  value="kbsj4jickr"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriId"  value="f3vwfd7e98"  placeholder=""  />
 		<label visible="false" id="isci.kisiIdlbl" value="Kisi Id" />
-		<textbox visible="false" type="text" id="isci.kisiId"  value="qp1054nt9w"  placeholder=""  />
+		<textbox visible="false" type="text" id="isci.kisiId"  value="n58wgtvlpx"  placeholder=""  />
 		<label id="isci.kisi.tckNolbl" value="T.C. Kimlik No" />
-		<textbox type="text" id="isci.kisi.tckNo"  value="3a49s1m6odb"  width="100"  maxlength="11"  placeholder=""  onChange="autocomplete("function:prepareKisiUrl()", "function:prepareTCKimlikNoParameterName()", 5, "setKisi")" />
+		<textbox type="text" id="isci.kisi.tckNo"  value="jd9pgnnztyz"  width="100"  maxlength="11"  placeholder=""  onChange="autocomplete("function:prepareKisiUrl()", "function:prepareTCKimlikNoParameterName()", 5, "setKisi")" />
 		<label id="isci.kisi.adSoyadlbl" value="Ad Soyad" />
-		<textbox type="text" id="isci.kisi.adSoyad"  value="3jdcx7d4lf8g21slz4ruxzekps9mztmushsji1s1y9ie513vscar3w21sivyylx9tmyzt6u3c3hywiuxmigboy3bi1sze3xydps16if8qk2dqm0uigzf654kvu81vvepy2pgqdhn69bnrmaanydn4txemon7tth0mjvynnjdmqkn7njujlgzemvssrp7opdh59x17omoatrvmfbdk4hbgw2q85mf9633cjj6tcgiw5j11zfjq48uvrgpzfd0iux"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="isci.kisi.adSoyad"  value="e0p2fxz3j2oc7fjw8jyiqf4kgdl3geh29mrvf4wlc0x0tg2nb71k57rfn72hptooh18bulb22pec1wnjyqmfde7sast0cz5n3d159r87wwowdbcvg1wyc5f5ee3xyz78ea2lwswrnef7mckrt24l1of8uc0rvoq0fdqt3mhlde3h4tjvivihnrzvj33bnd6l8xu6qah7h47vfguj6gpmz9vcsdtk2fspsfa3p073w8fxbe3v5ninazn2p8dfg26"  maxlength="255"  placeholder=""  />
 		<label id="isci.cinsiyetlbl" value="Cinsiyet" />
 		<combobox id="isci.cinsiyet"  width="200"  >
-			<comboitem label="enac9xv1fl" value="0g9n" />
+			<comboitem label="qw2tq8cfn9" value="rp6o" />
 		</combobox>
 		<label id="girisTarihilbl" value="Giriş Tarihi" />
-		<datebox id="girisTarihi"  value="2007-7-13"  width="120"  placeholder=""  />
+		<datebox id="girisTarihi"  value="1994-2-1"  width="120"  placeholder=""  />
 		<label id="cikisTarihilbl" value="Çıkış Tarihi" />
-		<datebox id="cikisTarihi"  value="2003-9-13"  width="120"  placeholder=""  />
+		<datebox id="cikisTarihi"  value="2014-7-3"  width="120"  placeholder=""  />
 		<label id="unvanlbl" value="Ünvan" />
-		<textbox type="text" id="unvan"  value="0ypix11xnf8losatk2j6pulnh7102ptb48hk64k04f3151s54kt81jo7ul6jtsjntyt4zdzn7rzshybm2voih8kmi0532rtu6gxp6zqa27emql8wrbsb7taeli70vbtd2orkwkwteozy4jcrtdmkr291wraxs8rafkt0reaw7xbt8cikxdx9uzfipxkf46lrn4minv48ebzv9k9p71ui74q1hr1d8dxy47rabpy4x1kbcjwcf47mz5bqlefsr1o"  width="120"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="unvan"  value="n4roihgitsgzg8vhpquqyg3y5latgn3ue4vu0li0fkkpbyt1uj4en3n9o9gb3x3ocbvoeb101tls7robvxfr15dzdbwvsxy0xdc9afgay6z7byt550pldfaaswk6c5yglu41ew427fl2ogkpn8xx6lacd3ffidkyku4hp30nklhiowshviyqxi8i3stmynjol28lgkpb9immdflbfli483corfmg1xpztpdj6iat10s365c8c4sc5z3qd0at6bi"  width="120"  maxlength="255"  placeholder=""  />
 		<label id="cikisNedenilbl" value="İşten Çıkış Nedeni" />
 		<combobox id="cikisNedeni"  width="200"  >
-			<comboitem label="llhzwkhbnl" value="va6l" />
+			<comboitem label="fcuhx7mkoq" value="ib8k" />
 		</combobox>
 		<label id="aidatlbl" value="Aidat" />
-		<doublebox id="aidat"  value="0.5453665532846174"  width="120"  maxlength="18"  placeholder=""  />
-		<checkbox type="text" id="dayanismaAidati"  checked="false"  label="Dayanışma Aidati"  onCheck=""  width="20"  />
-		<checkbox type="text" id="kapsamDisi"  checked="false"  label="Kapsam Dışı"  onCheck=""  width="20"  />
+		<doublebox id="aidat"  value="0.15120039709729527"  width="120"  maxlength="18"  placeholder=""  />
+		<checkbox type="text" id="dayanismaAidati"  checked="true"  label="Dayanışma Aidati"  onCheck=""  width="20"  />
+		<checkbox type="text" id="kapsamDisi"  checked="true"  label="Kapsam Dışı"  onCheck=""  width="20"  />
 		<label id="sendikaTemsilcilbl" value="Temsilci" />
 		<combobox id="sendikaTemsilci"  width="120"  >
-			<comboitem label="d4wpvm6ml6" value="abc8" />
+			<comboitem label="qt4udk9f89" value="cpjh" />
 		</combobox>
-		<checkbox type="text" id="ucretsizIzinde"  checked="false"  label="Raporlu/Ü.siz İzinli/Askı"  onCheck=""  width="20"  />
+		<checkbox type="text" id="ucretsizIzinde"  checked="true"  label="Raporlu/Ü.siz İzinli/Askı"  onCheck=""  width="20"  />
 		<checkbox type="text" id="mevsimlikDaimi"  checked="false"  label="Geçici/Mevsimlik"  onCheck=""  width="20"  />
 		<label id="aciklamalbl" value="Açıklama" />
-		<textbox type="text" id="aciklama"  value="wuym7qz2ntkonnizgral5e8q5fy6jwtv5wgbl68sn7oxoppl8q9akcn0o77dj90cye2qprte2qauwkor3o0c3c6mn5zhtopk4fmh1092ecpqolgltipwcbw2dx37tflmy8yqr50rkkff5658liqvdnmon87f78jqttr9l27ajo3nehencsh0w66ux24g7hbpxtmcyjt9soozblvaqnvig6cqyqc7ydeaxo9t64nnnlgu0181m0o4i8ujnl7hyv81ar129x003jhm5zihp2g7g172kvb391f28uikk65cl9sxqmdx6qbbo4sp56b0i5tumcbmyj8w5f24g9c9f0pbco72k9feld6gtu6fe8cfm7h7dq7adyudy300g6ufj8x8dfqee966hemark7mjzxb5nqg7pmdeqe6xvu4py8ba29cdnngbdgq5ihliz1w0buv60w1o3qg8r1ir6b9icphznu31oga3isi8768x5bh80c86rorrhly"  width="425"  maxlength="500"  placeholder=""  />
+		<textbox type="text" id="aciklama"  value="clfnkenpvnbrpi7beqdrfxrykf8122t3p3rnircuonbmh6acrk3btgvq0wj80h808u3j9qnmgi8he9cui27gtkr4i6alteeoms8vhwlrksm5hxu9s52v1xtrxl1pf5qnj1q2d937fl69i4558ogrcbbx9agrceghuzxcn4k31aoutf0arz819mfez0ecy4pans0u9rck7yo0hlmxbnfg6ds4irknfkf6ynkwdg711ixyoslszmhhx1aoyrx1kmg2gxptpgdte8ol5y58oyhkfqi2klu2pyrs1cqyqznymqckzosd93w30vuekszx67zlkag60kbaprqk4azob3qdg6s4dokqv2nxl6ulfhvzs0akasnnxwy8j1vkv2gi0bkthxp9z4u473o9yxjnz5lk5dvb6p80kyz33m974ew1cb720fjh2n32uu4rrt7ytjldfxuu1m9h6xvoggzn5lb6lfqtuayldh8xmunkgi1aqmu2m8bj5j2r"  width="425"  maxlength="500"  placeholder=""  />
 		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
-		<textbox visible="false" type="text" id="eklemeTarihi"  value="lqk2fvz15d"  placeholder=""  />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="k6ahydxz69"  placeholder=""  />
 		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
-		<textbox visible="false" type="text" id="ekleyen"  value="tfmvhbe2z8iaxyoxxhk0l7durrxojq1no7hpmk1z7759rrnoz32gftydkhr8etb05h1w34k5ix2b8ci8thg2ksoqeson0ikgt9xmtfy28ugzum0pjogt0w31u15kjs2zfzero4nzqztbyecvm3bd3wzqjie0y0bx40konsktknqvkrneaj8skpo1ex2ud22a3ve90zjqgqiwpvyidqszhbvueeynrujac9xpe1i44lvaqkqndqn1deftffdehsa"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="ekleyen"  value="60zqg9nopfa7eh6pgbpx0q5tisblbwib6zjgfuspswezs0c1shtwsmilwc9ixzejgwlsmi91a1knbgvdpvm63ctprrp9n96419m7q2zrf2r2o1px277mlvzrr3vpslqcz9x72emlnr4rfaglbrtx500l4ayulkipkf67z9epqsp5rbuks1nhsywkbuucexugzd2whjzw0pu5xlpk2kx1de7k69wouxe48i8o7m1xam619sen7f49azpxr53dqnd"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
-		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="psw1wwmktc"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="bbhclmjwyn"  placeholder=""  />
 		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
-		<textbox visible="false" type="text" id="sonGunleyen"  value="augi821em8zbi7iqekgo7zcqmpjgh133bnykbdwzjowci15i2j8ucr1zi6q4sp094tlkn9dg8jmxrxqogu3ofox28vkd9servdt1qeiit0ts15l3fw0i4wwj956z8ir0ie9ht604mw6ifnmr7u0sqq23owfmr8hloliucijzgngv7xht8njuf649lw36sl75aq3mzf8mapcr3pig7o4ktssqpwwnspdgvg5n101ho82uoyioypr9ghrxrdb1zk2"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="vhkyz9x9sz9walux0brusxn8ormqgk5rs0b1nys7ebii6tgs1dzhc01vm0wa5gr6peourdqxdbzmsz38zossegdxv4hn1y44ff1scq8v4nhx4pv505676za56yw9lowdc4dsl5elhgjm1t3gz31pt6izhzp7kz6q9c9abpoknpw7nsxjjia7vxznzq1ujjvi2gktlgmq67n1k37ce3chr0l1szf2143tonuqgsjl21d3ds96byjudvylo7b6fqi"  maxlength="255"  placeholder=""  />
 	</window>
 	<script>
 <% String exportId = request.getParameter("DISPLAYTAG_EXPORT_ID");if (exportId == null) {%>var calisanId = ('<bean:write name="p_cleanId"/>' == '1') ? '' : '<bean:write name="p_calisanId"/>';Other.KULLANICI_BILGI_TEK_SATIR = true;$(document).ready(	function () {		Agem.addElement('input','forward', {type:'hidden', name:'forward', value:'list'}, null, document.forms['genelCalisanForm']);		Agem.addElement('input','isyeriIdParamHidden', {type:'hidden', name:'isyeriIdParam', value:'<bean:write name="p_isyeriIdParam"/>'}, null, document.forms['genelCalisanForm']);		Agem.byId("isyeriId").value = '<bean:write name="p_isyeriIdParam"/>';		<logic:notEmpty name='r_message'>			Agem.message('<bean:write name='r_message' filter='false'/>');		</logic:notEmpty>		durumParamChanged();				if (calisanId == "") {			var f = AgemTable.first();			if (f) {				AgemTable.rowClick(f.id);			} else {				$('#isciyeGitBtn').hide();			}		} else {			AgemTable.rowClick(calisanId);		}				$('#isyeriIdParam').attr("noClear","1");				if ($('.exportlinks').length > 0) {			$('<a/>', {     				id: 'arama-link',     				href: "javascript:AgemForm.open('genelCalisanParameterForm', null, '---Par', true)",     				title: 'Arama'     			}).html("<span title='Arama' class='export-icon search-off' onmouseover=\"Other.changeClass(this, 'search-off', 'search-on')\" onmouseout=\"Other.changeClass(this, 'search-on', 'search-off')\"></span>").prependTo('.exportlinks');					$('.search-off').parent().attr("href", "javascript:AgemForm.open('genelCalisanParameterForm', null, '---Par', true)");		}				divAyarla();	});AgemTable.rowClick = function(id) {	if (!id) {		id = AgemTable.SELECTED_ID;		if (id == null) {			Agem.error("Lütfen kayıt seçiniz.");			return;		}	}	Agem.ajax("genel/calisan/select.do", {json:1,calisanId:id}, function (x) {		Agem.setValue(x);		Other.writeKullaniciBilgi();	});};function yeniKayit() {	Agem.setValue(		 {			 calisanId:'',			 kisiId:'',			 "isci.kisiId":'',			 "isci.kisi.kisiId":'',			 "isci.kisi.adSoyad":'',			 "isci.kisi.tckNo":'',			 girisTarihi:'',			 cikisTarihi:'',			 unvan:'',			 aidat:'',			 sendikaTemsilci:'',			 eklemeTarihi:'',			 ekleyen:'',			 sonGunlemeTarihi:'',			 sonGunleyen:''		}	);	    $('#isciyeGitBtn').hide();		 	Agem.byId("dayanismaAidati").checked = false;	Agem.byId("ucretsizIzinde").checked = false;		Agem.byId("kapsamDisi").checked = false;	Other.writeKullaniciBilgi();}function kayitSil(id, f) {	if (!Agem.byId(id).value) {		Agem.error("Lütfen kayıt seçiniz.");		return;	}	var x = [			'forward=list',			'calisanId='+Agem.byId(id).value,			'cleanId=1',			'durumParam=' + $('#durumParam').val(),			'sendikaTemsilciParam=' + ($('#sendikaTemsilciParam').val() ? $('#sendikaTemsilciParam').val() : ""),			'cikisNedeniParam=' + ($('#cikisNedeniParam').val() ? $('#cikisNedeniParam').val() : ""),			'isyeriIdParam=<bean:write name="p_isyeriIdParam"/>'		];	if (confirm('Kaydı silmek istediğinizden emin misiniz?\r\nBu kaydı sildiğinizde çalışma kaydıyla ilişkili tüm aidat kayıtları da silinecektir!..')) 		Agem.open( 'genel/calisan/delete.do?'+x.join('&')+(($('#dayanismaAidatiParam').attr("checked")) ? '&dayanismaAidatiParam=1' : ""));}var kaydet = function(){	$('#genelCalisanForm').append("<input type='hidden' name='isyeriIdParam' id='isyeriIdParam2' value='"+$('#isyeriIdParam').val()+"'/>");	$('#genelCalisanForm').append("<input type='hidden' name='durumParam' id='durumParam2' value='"+$('#durumParam').val()+"'/>");	$('#genelCalisanForm').append("<input type='hidden' name='dayanismaAidatiParam' id='dayanismaAidatiParam2' value='"+($('#dayanismaAidatiParam').val()) +"'/>");	$('#genelCalisanForm').append("<input type='hidden' name='mevsimlikDaimiParam' id='mevsimlikDaimiParam2' value='"+($('#mevsimlikDaimiParam').val()) +"'/>");	$('#genelCalisanForm').append("<input type='hidden' name='ucretsizIzindeParam' id='ucretsizIzindeParam2' value='"+($('#ucretsizIzindeParam').val()) +"'/>");	$('#genelCalisanForm').append("<input type='hidden' name='kapsamDisiParam' id='kapsamDisiParam2' value='"+($('#kapsamDisiParam').val()) +"'/>");	$('#genelCalisanForm').append("<input type='hidden' name='sendikaTemsilciParam' id='sendikaTemsilciParam2' value='"+$('#sendikaTemsilciParam').val()+"'/>");	$('#genelCalisanForm').append("<input type='hidden' name='cikisNedeniParam' id='cikisNedeniParam2' value='"+$('#cikisNedeniParam').val()+"'/>");		AgemForm.submit('calisanId', 'genelCalisanForm');}var setKisi = function (d) {	Agem.setValue(d.kisi, "isci.kisi");	$('#kisiId').val(d.kisi.kisiId);	$('#isci\\.kisiId').val(d.kisi.kisiId);	$('#isci\\.cinsiyet').val(d.cinsiyet);};var prepareKisiUrl = function () {	return "genel/isci/autocomplete.do?RxdE12=1";};var prepareAdSoyadParameterName = function () {	return "kisiParam.adSoyadParam";};var prepareTCKimlikNoParameterName = function () {	return "kisiParam.tckNoParam";};durumParamChanged = function(){	switch($('#durumParam').val()){	case '2':		$('#agem_label_input_div_cikisNedeniParam').css('display', function(){return ''});		break;	default:		$('#agem_label_input_div_cikisNedeniParam').css('display', function(){return 'none'});		$('#cikisNedeniParam').val('');		break;	}};function isciyeGit(id) {	var id = $('#' +id).val();	if (!id) {		Agem.error("Lütfen kayıt seçiniz.");		return;	}	AgemWM.window({ link:"genel/isci/select.do?kisiId="+id + '&kisiIdParam='+id, label: "İşçi Bilgileri",width: 800, height: 600});}var raporAl = function(){	Agem.open("rapor/isyeriCalisan/report.do?isyeriIdParam="+$('#isyeriId').val()+"&r="+Math.random());}<%}%>$(window).resize( function () {	divAyarla();});var divAyarla = function () {	var w = $(window).width();	$("#listeDis").width(w-25);};	</script>

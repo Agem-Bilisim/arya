@@ -3,7 +3,7 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listAidatsatirfarkWindow">
 		<label id="cikisTarihilbl" value="Çıkış Tarihi" />
-		<datebox id="cikisTarihi"  value="2011-1-2"  width="120"  placeholder=""  />
+		<datebox id="cikisTarihi"  value="1999-4-24"  width="120"  placeholder=""  />
 		<label id="aciklamalbl" value=""  onClick=""  />
 	</window>
 	<script>

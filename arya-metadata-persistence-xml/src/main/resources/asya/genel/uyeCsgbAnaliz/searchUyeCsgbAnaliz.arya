@@ -4,9 +4,9 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listUyecsgbanalizWindow">
 		<label id="subeParamlbl" value="Şube" />
 		<combobox id="subeParam"  width="140"  >
-			<comboitem label="f32h8b7iq1" value="l699" />
+			<comboitem label="ia9828lsns" value="unl3" />
 		</combobox>
-		<checkbox type="text" id="orgutluParam"  checked="true"  label="Örgütlenme Var"  onCheck=""  width="50"  />
+		<checkbox type="text" id="orgutluParam"  checked="false"  label="Örgütlenme Var"  onCheck=""  width="50"  />
 		<checkbox type="text" id="isletmeParam"  checked="false"  label="İşyeri / İşletme"  onCheck=""  width="50"  />
 		<checkbox type="text" id="farkOlanlarParam"  checked="true"  label="Fark Olanları Göster"  onCheck=""  width="50"  />
 	</window>

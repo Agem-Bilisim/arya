@@ -2,28 +2,28 @@
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listAidatsatirWindow">
-		<textbox visible="false" type="text" id="aidatIdParam"  value="dqg0rpv6c3"  placeholder=""  />
-		<textbox visible="false" type="text" id="aidatIdsString"  value="iu6x36bqd4"  placeholder=""  />
-		<textbox visible="false" type="text" id="satirTurParam"  value="72n5e42bdm"  placeholder=""  />
-		<textbox visible="false" type="text" id="isletmeParam"  value="q6uz7hodf8"  placeholder=""  />
-		<textbox visible="false" type="text" id="donemAyParam"  value="88lqjo8yar"  placeholder=""  />
-		<textbox visible="false" type="text" id="donemYilParam"  value="efhrg9xffi"  placeholder=""  />
-		<textbox visible="false" type="text" id="merkezIdParam"  value="zgpmpsy3rr"  placeholder=""  />
+		<textbox visible="false" type="text" id="aidatIdParam"  value="6htzqzcman"  placeholder=""  />
+		<textbox visible="false" type="text" id="aidatIdsString"  value="pjcsi62oh6"  placeholder=""  />
+		<textbox visible="false" type="text" id="satirTurParam"  value="n95x9zal5f"  placeholder=""  />
+		<textbox visible="false" type="text" id="isletmeParam"  value="qx7gd4nwll"  placeholder=""  />
+		<textbox visible="false" type="text" id="donemAyParam"  value="5izusb9nmv"  placeholder=""  />
+		<textbox visible="false" type="text" id="donemYilParam"  value="pcry43sl5x"  placeholder=""  />
+		<textbox visible="false" type="text" id="merkezIdParam"  value="1w57jx2h46"  placeholder=""  />
 		<label id="bildirimFarkiParamlbl" value="Üye/DA" />
 		<combobox id="bildirimFarkiParam"  width="120"  >
-			<comboitem label="vagf43cien" value="qek9" />
+			<comboitem label="wu8fccgghn" value="u3ph" />
 		</combobox>
 		<label id="istenCikislarParamlbl" value="İşten Çıkış" />
 		<combobox id="istenCikislarParam"  width="120"  >
-			<comboitem label="f9b6uq6674" value="bdmi" />
+			<comboitem label="dj461shl3l" value="q7ao" />
 		</combobox>
 		<label id="ucretsizIzinParamlbl" value="R/UI/A " />
 		<combobox id="ucretsizIzinParam"  width="120"  >
-			<comboitem label="suthirbbgy" value="89t5" />
+			<comboitem label="2ugxavz40f" value="dmco" />
 		</combobox>
 		<label id="subeParamlbl" value="Şube" />
 		<combobox id="subeParam"  width="120"  >
-			<comboitem label="a47emo4lbd" value="rqx7" />
+			<comboitem label="8rig1u56ok" value="yszy" />
 		</combobox>
 	</window>
 	<script>

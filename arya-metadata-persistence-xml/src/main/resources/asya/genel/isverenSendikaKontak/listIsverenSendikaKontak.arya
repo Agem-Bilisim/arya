@@ -3,45 +3,45 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addIsverensendikakontakWindow">
 		<label visible="false" id="isverenSendikaKontakIdlbl" value="Isveren Sendika Kontak Id" />
-		<textbox visible="false" type="text" id="isverenSendikaKontakId"  value="oyddciifro"  placeholder=""  />
+		<textbox visible="false" type="text" id="isverenSendikaKontakId"  value="s64gzd91c5"  placeholder=""  />
 		<label visible="false" id="isverenSendikaIdlbl" value="Isveren Sendika Id" />
-		<textbox visible="false" type="text" id="isverenSendikaId"  value="c3fym0l0yx"  placeholder=""  />
+		<textbox visible="false" type="text" id="isverenSendikaId"  value="7b3upt8cwg"  placeholder=""  />
 		<label id="unvanlbl" value="Ünvan" />
-		<textbox type="text" id="unvan"  value="7w048gdg61"  width="100"  placeholder=""  />
+		<textbox type="text" id="unvan"  value="8ehckp2mb1"  width="100"  placeholder=""  />
 		<label id="adlbl" value="Ad" />
-		<textbox type="text" id="ad"  value="05uqqw07zs"  width="100"  placeholder=""  />
+		<textbox type="text" id="ad"  value="cixdra51qm"  width="100"  placeholder=""  />
 		<label id="soyadlbl" value="Soyad" />
-		<textbox type="text" id="soyad"  value="5od3nu0bc8"  width="100"  placeholder=""  />
+		<textbox type="text" id="soyad"  value="i9xowup8el"  width="100"  placeholder=""  />
 		<label id="tellbl" value="Telefon" />
-		<textbox type="text" id="tel"  value="v8rczepwhlg8n12n0ldq"  width="100"  maxlength="20"  placeholder=""  />
+		<textbox type="text" id="tel"  value="7sswl5qgql91tiktqt9z"  width="100"  maxlength="20"  placeholder=""  />
 		<label id="ceplbl" value="Cep Tel." />
-		<textbox type="text" id="cep"  value="cwamlugdvtf77nbzbxfd"  width="100"  maxlength="20"  placeholder=""  />
+		<textbox type="text" id="cep"  value="pgf84i86v1khnezb8tcw"  width="100"  maxlength="20"  placeholder=""  />
 		<label id="fakslbl" value="Faks" />
-		<textbox type="text" id="faks"  value="y2u4vni8zzcyt6bty40i"  width="100"  maxlength="20"  placeholder=""  />
+		<textbox type="text" id="faks"  value="ckjhqtnq8wlo24gyyjy4"  width="100"  maxlength="20"  placeholder=""  />
 		<label id="epostalbl" value="E-posta" />
-		<textbox type="text" id="eposta"  value="3nw4r66hdk"  width="472"  placeholder=""  />
+		<textbox type="text" id="eposta"  value="w0f5v8puf5"  width="472"  placeholder=""  />
 		<label id="adres1lbl" value="Adres (1)" />
-		<textbox type="text" id="adres1"  value="glm99rf2o7"  width="472"  placeholder=""  />
+		<textbox type="text" id="adres1"  value="dw8z5r898q"  width="472"  placeholder=""  />
 		<label id="adres2lbl" value="Adres (2)" />
-		<textbox type="text" id="adres2"  value="cs0slfd3q4"  width="472"  placeholder=""  />
+		<textbox type="text" id="adres2"  value="c9e2ncxm5h"  width="472"  placeholder=""  />
 		<label visible="false" id="ilceKodulbl" value="İlçe" />
-		<textbox visible="false" type="text" id="ilceKodu"  value="bpb011xy46xkj8qlkz1upi"  maxlength="22"  placeholder=""  />
+		<textbox visible="false" type="text" id="ilceKodu"  value="9qs6rw9s3p58rpih4lquve"  maxlength="22"  placeholder=""  />
 		<label visible="false" id="ilKodulbl" value="İl" />
-		<textbox visible="false" type="text" id="ilKodu"  value="h3pul362wson45z4rtivig"  maxlength="22"  placeholder=""  />
+		<textbox visible="false" type="text" id="ilKodu"  value="cydibethbxved6jr33rkmy"  maxlength="22"  placeholder=""  />
 		<label id="ilce.valuelbl" value="İl/İlçe" />
-		<textbox type="text" id="ilce.value"  value="z8bm0gmspy"  width="288"  placeholder=""  onChange="autocomplete("genel/ilce/autocomplete.do", "dbParam", 5, "setIlIlce")" />
+		<textbox type="text" id="ilce.value"  value="3qasvhoiis"  width="288"  placeholder=""  onChange="autocomplete("genel/ilce/autocomplete.do", "dbParam", 5, "setIlIlce")" />
 		<label id="postaKodulbl" value="Posta Kodu" />
-		<textbox type="text" id="postaKodu"  value="8ksex"  width="101"  maxlength="5"  placeholder=""  />
+		<textbox type="text" id="postaKodu"  value="ik1p3"  width="101"  maxlength="5"  placeholder=""  />
 		<label id="aciklamalbl" value="Açıklama" />
-		<textbox type="text" id="aciklama"  value="1znlnzjh1q"  width="553"  placeholder=""  rows="5"  cols="40"  />
+		<textbox type="text" id="aciklama"  value="2te1jgi980"  width="553"  placeholder=""  rows="5"  cols="40"  />
 		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
-		<textbox visible="false" type="text" id="eklemeTarihi"  value="688njhhaj0"  width="200"  placeholder=""  />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="efxrb7j800"  width="200"  placeholder=""  />
 		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
-		<textbox visible="false" type="text" id="ekleyen"  value="gsk5wgvgjo"  width="200"  placeholder=""  />
+		<textbox visible="false" type="text" id="ekleyen"  value="mttfvrc36y"  width="200"  placeholder=""  />
 		<label visible="false" id="sonGunlemeTarihilbl" value="Son Günleme Tarihi" />
-		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="rsmjpj9ttw"  width="200"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="51alenuisw"  width="200"  placeholder=""  />
 		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
-		<textbox visible="false" type="text" id="sonGunleyen"  value="py3007nh7q"  width="200"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="wmg7tays8b"  width="200"  placeholder=""  />
 	</window>
 	<script>
 Other.KULLANICI_BILGI_TEK_SATIR = true;var yeniForm = function(){	var id = $('#isverenSendikaIdParam').val();	AgemForm.temizle();	$('#isverenSendikaId').val(id);	$('#isverenSendikaIdParam').val(id);}var _KONTAK_LISTE = []; $(document).ready(	function () {		var isverenSendikaKontakId = $('#isverenSendikaKontakId').val();		Agem.addElement('input','isverenSendikaIdParam', {type:'hidden', name:'isverenSendikaIdParam', value:'<bean:write name="p_isverenSendikaIdParam"/>', noClear:"1"}, null, document.forms['genelIsverenSendikaKontakForm']);		Agem.addElement('input','forward', {type:'hidden', name:'forward', value:'list', noClear:"1"}, null, document.forms['genelIsverenSendikaKontakForm']);		Agem.addElement('input','pageSize', {type:'hidden', name:'pageSize', value:'-1', noClear:"1"}, null, document.forms['genelIsverenSendikaKontakForm']);				$("#isverenSendikaId").val('<bean:write name="p_isverenSendikaIdParam"/>');		<%if (request.getAttribute(AgemConstant.AGEM_MESSAGE) != null) {%>		Agem.message('<%=request.getAttribute(AgemConstant.AGEM_MESSAGE)%>');		<%}%>				$('#yeniKontakDiv').hide();				var isverenSendikaKontakId = $('#isverenSendikaKontakId').val();		if (!isverenSendikaKontakId ) {			var f = AgemTable.first();			if (f) {				AgemTable.rowClick(f.id);			} 		} else {			kayitGetir(isverenSendikaKontakId );		}	});AgemTable.rowClick = function(id) {	if (!id) {		id = AgemTable.SELECTED_ID;		if (id == null) {			Agem.error("Lütfen kayıt seçiniz.");			return;		}	}	kayitGetir(AgemTable.DATA["d-"+id].id);};function kayitGetir(isverenSendikaKontakId) {		Agem.ajax("genel/isverenSendikaKontak/select.do", {json:1,isverenSendikaKontakId:isverenSendikaKontakId}, function (x) {		AgemForm.temizle();		Agem.setValue(x);		Other.writeKullaniciBilgi();	});}function kayitSil(id) {	idVal = $("#" + id).val();	if (!idVal) {		Agem.error("Lütfen kayıt seçiniz.");		return;	}	var x = [			'forward=list',			'isverenSendikaKontakId='+idVal,			'isverenSendikaIdParam='+$('#isverenSendikaIdParam').val()		];	if (confirm('Kaydı silmek istediğinizden emin misiniz?')) 		window.location = 'genel/isverenSendikaKontak/delete.do?'+x.join('&');}var setIlIlce = function (d) {	Agem.setValue( {		"ilceKodu": d.ilceKodu,		"ilKodu": d.ilKodu	});};	</script>

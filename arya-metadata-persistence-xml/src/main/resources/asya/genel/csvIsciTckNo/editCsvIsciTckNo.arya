@@ -4,15 +4,15 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="selectCsviscitcknoWindow">
 		<label id="dosyaIdlbl" value="TCK No,SGK No Listesi" />
 		<combobox id="dosyaId"  width="320"  >
-			<comboitem label="z9nvl2w0y4" value="kyyu" />
+			<comboitem label="r6n0w9bl4i" value="wrgy" />
 		</combobox>
 		<button id="dosyaYukleBtn" label="İncele"  onClick="dosyaIsle()"  width="90"  />
 		<label id="eslesenlbl" value="Eşleşen Kayıt Sayısı" />
-		<textbox type="text" id="eslesen"  value="6mreufn5dl"  width="320"  placeholder=""  readonly="true"  />
+		<textbox type="text" id="eslesen"  value="zc0rdrnzhe"  width="320"  placeholder=""  readonly="true"  />
 		<button id="guncelleBtn" label="Güncelle"  onClick="guncelle()"  width="90"  />
 		<label id="eslemeKriterlbl" value="Eşleştirme Kriteri" />
 		<combobox id="eslemeKriter"  width="320"  >
-			<comboitem label="d0dex02fnl" value="3mov" />
+			<comboitem label="4gnge3gzdf" value="drfp" />
 		</combobox>
 	</window>
 	<script>

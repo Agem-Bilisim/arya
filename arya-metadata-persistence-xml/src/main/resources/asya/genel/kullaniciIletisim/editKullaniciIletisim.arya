@@ -3,27 +3,27 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="editKullaniciiletisimWindow">
 		<label visible="false" id="iletisim.iletisimIdlbl" value="Iletisim Id" />
-		<textbox visible="false" type="text" id="iletisim.iletisimId"  value="pkw7075pr7"  placeholder=""  />
+		<textbox visible="false" type="text" id="iletisim.iletisimId"  value="0wlj862l9k"  placeholder=""  />
 		<label id="iletisim.adres1lbl" value="Adres (1)" />
-		<textbox type="text" id="iletisim.adres1"  value="9qptb25bija6vz30ajk75o544b3b2tgcc6u3esqt30g2vgjkos72gv2izjt5ddwb4m183plfaeoayukw6fqhtgttbsnkmrqhshk7orw47xeyeuxkebzm3fd59hihhsz1dfdd0ku8dodmayudo9jvmsru8os8v46s2uamgmsw5s796boeqh61rbqly5idjznpxjoaicpbqo68rhi8a25v8oet010jxmjwswvxgxixdlgz3dd5ksarfb8q53qclvx"  width="472"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="iletisim.adres1"  value="q70pgeo9rupcbeil7u3x1o0b7u1ahh6xsf3zynau7upfgtkcy63v3x9jur9cxo24sxyhwwb36paynwmph7m2w6em6a818cjr7llu473clzdqgjz35cjaz85vs58k8ua554if9dqdrl2az5de557oavq9vunmfugio4v3miojwi82gzk6t2ekzfvqkk9nbfsi2j83ci18his02leue805wf5p67w2qqhhb17i88idld6q7n0o3uor7s5ye0enpkt"  width="472"  maxlength="255"  placeholder=""  />
 		<label id="iletisim.adres2lbl" value="Adres (2)" />
-		<textbox type="text" id="iletisim.adres2"  value="d71niozyai2zmkdgziktvflntm0bi33y4vp8qw51b1c8w96rham0ww8zpbgtljbx64p6pr2g71ajee5j00lmamxx64avfipvi9wcryci671xsr8fi2dvgxwhssn8yva2dozkjnec928z2wdn1enugqaeggixoart9ma0e0wl7v4c4mig1orl4n5chrnzevipomcycry10akj13hq8mw6hy6nwqrorepc5ehkda0xsatwy10k0xramyytzhe9avv"  width="472"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="iletisim.adres2"  value="mecaloteqho54igjbpgjbp76gaef7sak7v21f998goemnei6zzr4hi1wptx4uzfgff2uxn02x74tus39wmpw02dzckilr1lru99biitk7xk5qdcs29prdxtz5m8mb4mbcidkvmi8g2k36f875coonnv9osv6pvkm9dk6s2hjxfvqrbhu1w4ozjt3x4fiqdozammhc4jm772b1dtyyc0jsvjbw9l9lkta96t5za3cwq4azlx2ls8p3hjsl0oh3is"  width="472"  maxlength="255"  placeholder=""  />
 		<label id="iletisim.postaKodulbl" value="Posta Kodu" />
-		<textbox type="text" id="iletisim.postaKodu"  value="y972r"  width="100"  maxlength="5"  placeholder=""  />
+		<textbox type="text" id="iletisim.postaKodu"  value="3bcrl"  width="100"  maxlength="5"  placeholder=""  />
 		<label visible="false" id="iletisim.ilKodulbl" value="İl" />
-		<textbox visible="false" type="text" id="iletisim.ilKodu"  value="p0ekssb2zf1qc47h97zr8v"  maxlength="22"  placeholder=""  />
+		<textbox visible="false" type="text" id="iletisim.ilKodu"  value="6m7lil93ualesd0lrnbicw"  maxlength="22"  placeholder=""  />
 		<label visible="false" id="iletisim.ilceKodulbl" value="İlçe" />
-		<textbox visible="false" type="text" id="iletisim.ilceKodu"  value="n6qfr63cqn7xk33ktzc12o"  maxlength="22"  placeholder=""  />
+		<textbox visible="false" type="text" id="iletisim.ilceKodu"  value="8nrwy78lnmde513kh192gi"  maxlength="22"  placeholder=""  />
 		<label id="iletisim.ilce.valuelbl" value="İl/İlçe" />
-		<textbox type="text" id="iletisim.ilce.value"  value="9x930lnrq5"  width="288"  placeholder=""  onChange="autocomplete("genel/ilce/autocomplete.do", "dbParam", 5, "setIlIlce")" />
+		<textbox type="text" id="iletisim.ilce.value"  value="wehjhf01hm"  width="288"  placeholder=""  onChange="autocomplete("genel/ilce/autocomplete.do", "dbParam", 5, "setIlIlce")" />
 		<label id="iletisim.tellbl" value="Telefon" />
-		<textbox type="text" id="iletisim.tel"  value="rnwkrozi3k4meth53xwflj1hgwstg4tbug8g5ttlqigpcynoe9oxh3q01olh0r6oq8uabgug5pn823kpm4skt3w9jrj7ef85qpxecytsox0tco8z6kofvf9hbhdydwnao624w96tm6pmubfjvmct6wbrlpc6zjsesqxpqwhqwjsac2ut4mro2dt58tgzq7euzmurolrglmayi1kgiry46qgccnxhkp1exz0wlo7zm9u8ljxx07pnwkuvyxmtw41"  width="100"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="iletisim.tel"  value="deeuwlg0irvv2ohpdh40725kutkeip81cwwohs3xma1eqz7rciwjyavu3ttopbpxguresyqx9d2dcowb2h9pp7z9h3wt4dsbpfeowi7sroj95xif7a2oob3gvd49gde2g8fyilnkes7uuxoech0leownddds5id7ohq069rfo5bzw8qp0tic91zncvky3kyptqp5zjld8aqeaerrznp9bmqv6xh6yshkrelzv831i9lafjh5iuxcg8nkddbahwv"  width="100"  maxlength="255"  placeholder=""  />
 		<label id="iletisim.ceplbl" value="Cep Tel." />
-		<textbox type="text" id="iletisim.cep"  value="917xvxtqaipa2ncag3pgmfmd0u9hlylb8jbr0st6qausad5pom4uiz55sj4k31miekr7jashzp4xef5sam25awswi9i3i7uixk7wxfcmoszc164ztylrme3wzpjwq33n7arcw7seeyb7rwvoj72kehn0rvrlvt96wzmdiuxrdc4gpvxhehxeal8ca6uoud02l2m8iktvw6akddfqufazj2olbz3j5bl8ug19gh8eof8zp3whoxl1fcxaipoqaj7"  width="100"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="iletisim.cep"  value="1b2oogrjbfjr6uojysvo9qd85t7ngxmeno1elj0voabdf0wtedqloff7y4d8qiw03aomrsj5zvv3a537ypuaockuc44yikg34ifd42l78bowtc19mh43fx6jq8bn12902vdax6wr0p509vq3swsdbyo41x00b9w4y5z22ombeljgqcaluixgq2n7cpgw8enpbst8mgdannek4o97c4svi35brab5w2chqdahnuzr241bjusl4thzgrvjvw87fkt"  width="100"  maxlength="255"  placeholder=""  />
 		<label id="iletisim.fakslbl" value="Faks" />
-		<textbox type="text" id="iletisim.faks"  value="yb8xb094ykvwps654k0qesjf315jf813in3wsmgc9uzklewlyqghy5w1heiikztwv3c3uyu920riwr30ft8ava9nel13ijjj6uwfe58heeukizan4ipgz3n6okirh5jbqda2vm8sjxdbn2chg4297kalb5sqpv50bsvlzxfl7drv7tbvbcb3nun5xpvglbav53fzse9c6ahspji0dmqw7b8h8jgx2oovtxte7pbaqnuiekcw7esmetulz8v5kas"  width="100"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="iletisim.faks"  value="jqzncg9bwknd13keb5h3rgqyd7t8b9606rag24myookm8z0f9kgb7ey1sobyg95k06bozl9m2qjft9rzb3nddq9kc51b3x55c3502t29gvlxmrhuti1s6wsrha4bgjmgh8kc7l1d5edwzzt804mxdozuq4eqe8svxf8fruhsdozzbjpaqxewvteypi9rxxa0f4y226b5snkfj0frku2sjt1u9x4vugdmret8je3tmavgnysjuy5ifuztegk5xih"  width="100"  maxlength="255"  placeholder=""  />
 		<label id="iletisim.epostalbl" value="E-Posta" />
-		<textbox type="text" id="iletisim.eposta"  value="15n9pkq329dn9icnsonsahjqejkfwzt60o8ojn2q4m3rgpv2f4djkspirvu8tf5jcvluer0t59efpe99aoy88rso53jjeza9ucme8l82wvmuiy7owvgpaeyu6j60t491hiihvhq7ur6lx9vipxkalstydoxikmhs2xai13q6q5k083nl66ps32fmc0uudxukciyyf2c18a1i8o28yj4jrcm4f6hn10ofnjd0l417xpcrlzwbyjxe8mtmm3bm41n"  width="472"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="iletisim.eposta"  value="ko9dziy5e3fg1ulka914hjy99kooy9b5psmq1p506zijb8xmcfg9rsrnhbw46n33i6412h1d7efleim8xafeutu8ur80cq1hk6v9fk9g7ofhhnog2gs6ifjiugplqjvw40wn428591qc5sq21fyasm2f36ay5x8k50b9d60gdtrg9lm0g1mto5r8rebzk1z02ey91lbkrgq3bhaxacazaoy1gmpctulip6wed3qu0m8kttnsnid8p0u9xvj20pj"  width="472"  maxlength="255"  placeholder=""  />
 	</window>
 	<script>
 function setIlIlce(ilce,n) {	if (ilce) {		$('#iletisim\\.ilKodu').val(ilce.ilKodu);		$('#iletisim\\.ilceKodu').val(ilce.ilceKodu);	} else {		$('#iletisim\\.ilKodu').val("");		$('#iletisim\\.ilceKodu').val("");	}}	</script>

@@ -4,7 +4,7 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listUyelistesiWindow">
 		<label id="subeParamlbl" value="Şube" />
 		<combobox id="subeParam"  width="206"  >
-			<comboitem label="4ype6vzsd4" value="y2c5" />
+			<comboitem label="yhorihcia4" value="jf2a" />
 		</combobox>
 	</window>
 	<script>

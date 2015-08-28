@@ -4,50 +4,50 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listAidatmatrisWindow">
 		<label id="raporTurParamlbl" value="Rapor Türü" />
 		<combobox id="raporTurParam"  width="240"  >
-			<comboitem label="ba53mvz6xc" value="3bbl" />
+			<comboitem label="6u8uwraf9h" value="avs7" />
 		</combobox>
 		<label id="listeTurParamlbl" value="Kaynak Liste" />
 		<combobox id="listeTurParam"  width="240"  >
-			<comboitem label="dxnob52sou" value="vq30" />
+			<comboitem label="4vxr3sl58g" value="uryx" />
 		</combobox>
 		<label id="aidatTurParamlbl" value="Üye / DA" />
 		<combobox id="aidatTurParam"  width="240"  >
-			<comboitem label="7qrcbcp5ue" value="6t3k" />
+			<comboitem label="ulrivunal8" value="cqn0" />
 		</combobox>
 		<label id="donemParamlbl" value="Dönem Ay/Yil" />
 		<combobox id="donemParam"  width="240"  >
-			<comboitem label="4vfc0hnzho" value="v00j" />
+			<comboitem label="vf4569urcz" value="ixt6" />
 		</combobox>
 		<label id="donemBasParamlbl" value="Dönem Ay/Yil" />
 		<combobox id="donemBasParam"  width="117"  top="75" >
-			<comboitem label="zzkxr7xnbl" value="u5g2" />
+			<comboitem label="wkzl046kmv" value="bqm5" />
 		</combobox>
 		<label id="donemBitParamlbl" value="Dönem Ay/Yil" />
 		<combobox id="donemBitParam"  width="117"  top="75" >
-			<comboitem label="0yifizj3bp" value="l33r" />
+			<comboitem label="a11f1weodj" value="wnvn" />
 		</combobox>
 		<label id="tutarAraliklbl" value="Tutar Aralık" />
 		<combobox id="tutarAralik"  width="240"  top="100" >
-			<comboitem label="4fey3u54da" value="2owq" />
+			<comboitem label="17sbrej0en" value="wwsf" />
 		</combobox>
 		<label id="turParamlbl" value="Liste Türü" />
 		<combobox id="turParam"  width="240"  >
-			<comboitem label="xlal230one" value="487h" />
+			<comboitem label="j9x068bx0i" value="lyr7" />
 		</combobox>
 		<label id="subeParamlbl" value="Şube" />
 		<combobox id="subeParam"  width="240"  >
-			<comboitem label="i6fnz4wqvo" value="qhql" />
+			<comboitem label="74quo9gp0x" value="nl51" />
 		</combobox>
 		<label id="ilKoduParamlbl" value="İl" />
 		<combobox id="ilKoduParam"  width="117"  >
-			<comboitem label="uo5a8rzsr7" value="71xy" />
+			<comboitem label="tg46ob4pu7" value="svy7" />
 		</combobox>
 		<combobox id="ilceKoduParam"  width="117"  >
-			<comboitem label="lifitduozj" value="dry9" />
+			<comboitem label="30ufmhe9dn" value="xdim" />
 		</combobox>
 		<label id="isyeriKategoriIdParamlbl" value="Kategori" />
 		<combobox id="isyeriKategoriIdParam"  width="240"  >
-			<comboitem label="roofky8603" value="rosa" />
+			<comboitem label="3pr9r6yaut" value="kudm" />
 		</combobox>
 	</window>
 	<script>

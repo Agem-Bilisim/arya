@@ -3,24 +3,24 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addUnvanlarWindow">
 		<label visible="false" id="gorevIdlbl" value="Görev Id" />
-		<textbox visible="false" type="text" id="gorevId"  value="ooc1n7d41n"  placeholder=""  />
+		<textbox visible="false" type="text" id="gorevId"  value="5ialhh2io0"  placeholder=""  />
 		<label id="tanimlbl" value="Tanım" />
-		<textbox type="text" id="tanim"  value="qruufcdgbtfslztvewtraxwmovmc64l7ay7m3409sxpvcko3yq89fordqqv5k9bkn41keq95e88oy6yjg95rgbowkv808w7jflujiztws77xsck5vg0pmj8nkdnrwa3iz8soloz825okk2tbkspyvptiu8inax67eud3izkburpyokdo7tjwtrz1klfwxatex6ukxuz1ioffvmttrmwxersx40ky86al45ju7bh0ztfyxc44hzvissfe2sj1ab5"  width="357"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="tanim"  value="8giaef7wmtpu4z9yoyjn6obm8cqa7p25rfvk98o86xqsatjbq8mm5d236za1rxxgqgkugairg0netn8oogq2daplty1yytq1jep9uq31p1c3pvo6qgonff5gh1mwc2v0qh9090mecwine6wvmkz8ff8009rc5s6hitpokorqp513rs7df6kd1bg5w9dl8zpw7rsgmeaml0lvatca2033lrj3ttv8jialaicxk5jk7yl2tw90hxgej333utng8ng"  width="357"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
-		<textbox visible="false" type="text" id="eklemeTarihi"  value="ama4bqk964"  placeholder=""  />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="0aiuy3ii9w"  placeholder=""  />
 		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
-		<textbox visible="false" type="text" id="ekleyen"  value="yfp2if7dxfuu1dijahw4ndkki5xsofiii4aaodxi8xbx0gvbayov0q0yomlbe88lp2u5aunlj2rnsccmiedocckfpf6t43hk9wpwsjciigzhsw57pgexxxmsobau58ck78eiiz8sbov4ykybtqtctae524nck0x15xe3svn83ya3l845erkwv9yluguwnfpe3uxjiiums6u21t63l2c9mlg1d1n7djygodfu4hk5qwthpjpuxhw8ojb9n594qni"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="ekleyen"  value="yu02yt9vtyp6vbzf2hmgwrtkjt5lx41bd77njxvthqt0qrs9bb2v20kfmzqba0ocqag5vjx6k39bx0qzpzriwlxruh6hcif45h54ipmbmuyh8c2uex5fkw0xrikzxega2wawnt0vfzvg7pm1o7pm4cycan9sngkrtky9vpeqgu5ld6v4ivrhhx98a45uaggqrtq7i8790i7ovnikp5ivvv6afhngwjqwzi95krdf7ce29k14rn6wtyxipd05z4b"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
-		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="n9w85med6c"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="z2hsl8gnli"  placeholder=""  />
 		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
-		<textbox visible="false" type="text" id="sonGunleyen"  value="vogvxc1b6ejc2jgn5leiopqtkritkm1rd6gy3aaf288uitb9p7nhw1i9q97zgmhi1lkyeamchfaxw027h3nfm0rwcqbt8hrei33vhh0fjrpngosi5d043lg7jm2w4fqzdhrlg5tv4g9vs620x8gw2hq2zlgaf10knrfogp9hwtmhi0j5he5fwflory54xyn565s8clcovb0xi0wscttxcroppiy7z6n33u01lqhwh64vj65iclnqi902g1hxwlp"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="v54z16oyrw7dj73l9ni5rs62jblflty0wx9xnvpads6x4i9i48kng7a1vxnp87mhb5kqsebhf9rirb0drg54zmdina1yrdi9jahfal5xqsbjf3agyjivwonesbcm935d9ongcm3xdsmic04588b38o3stf8k2d4c12k9qblemuod2s0fqooph4tof0dljvaieoqx02oem1d9qt96ofld16uaqvfhadrk9jmpeug39itq2hwjlvxfz493tqqs1jo"  maxlength="255"  placeholder=""  />
 		<label id="aktifParamlbl" value="Aktif" />
 		<combobox id="aktifParam"  width="152"  >
-			<comboitem label="qenljuzwn5" value="2df1" />
+			<comboitem label="xird9dugte" value="ok0w" />
 		</combobox>
 		<label id="amirParamlbl" value="Amir" />
 		<combobox id="amirParam"  width="150"  >
-			<comboitem label="wau7cri314" value="z764" />
+			<comboitem label="74tivyy7l3" value="aldi" />
 		</combobox>
 	</window>
 	<script>

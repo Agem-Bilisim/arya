@@ -3,7 +3,7 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addAidattutararalikWindow">
 		<label id="metinlbl" value="Her satıra '-' ile ayrılmış rakamlar girin." />
-		<textbox type="text" id="metin"  value="4j4qlelhli"  width="400"  height="200"  placeholder=""  rows="5"  cols="40"  />
+		<textbox type="text" id="metin"  value="ip00bqlft9"  width="400"  height="200"  placeholder=""  rows="5"  cols="40"  />
 	</window>
 	<script>
 $(document).ready(		function () {		});	</script>

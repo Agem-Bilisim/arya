@@ -4,13 +4,13 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listIsciaidatfarkanalizWindow">
 		<label id="donemParamlbl" value="Dönem Ay/Yil" />
 		<combobox id="donemParam"  width="150"  >
-			<comboitem label="64oest8c8z" value="7gaf" />
+			<comboitem label="eluko2uwd6" value="0qrb" />
 		</combobox>
 		<label id="subeParamlbl" value="Şube" />
 		<combobox id="subeParam"  width="240"  >
-			<comboitem label="uv7pkpl32y" value="4r1m" />
+			<comboitem label="kxfshabt2l" value="s73u" />
 		</combobox>
-		<checkbox type="text" id="isletmeParam"  checked="false"  label="İşyeri / İşletme Merkezleri"  onCheck=""  width="50"  />
+		<checkbox type="text" id="isletmeParam"  checked="true"  label="İşyeri / İşletme Merkezleri"  onCheck=""  width="50"  />
 	</window>
 	<script>
 var listele = function() {	AgemWM.submit(null, 'genelIsciAidatFarkAnalizParameterForm');}	</script>

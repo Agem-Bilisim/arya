@@ -2,12 +2,12 @@
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="editKullanicisifreWindow">
-		<textbox visible="false" type="text" id="kullaniciId"  value="1ojk1kgrur"  placeholder=""  />
+		<textbox visible="false" type="text" id="kullaniciId"  value="m0cv2svghm"  placeholder=""  />
 		<label id="kullaniciAdilbl" value="Kullanıcı Adı" />
-		<textbox type="text" id="kullaniciAdi"  value="hzmcaj9whi"  width="200"  placeholder=""  readonly="true"  />
+		<textbox type="text" id="kullaniciAdi"  value="qi4pg7d5d2"  width="200"  placeholder=""  readonly="true"  />
 		<label id="parolalbl" value="Parola" />
-		<textbox type="password" id="parola"  value="gr4hdzr88e"  width="200"  placeholder=""  />
+		<textbox type="password" id="parola"  value="8m8wst0879"  width="200"  placeholder=""  />
 		<label id="parolaTekrarlbl" value="Parola (Tekrar)" />
-		<textbox type="password" id="parolaTekrar"  value="139a5ltg6i"  width="200"  placeholder=""  />
+		<textbox type="password" id="parolaTekrar"  value="p4ndseblhw"  width="200"  placeholder=""  />
 	</window>
 </arya>

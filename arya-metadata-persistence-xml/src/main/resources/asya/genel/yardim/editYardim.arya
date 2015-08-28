@@ -2,20 +2,20 @@
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addYardimWindow">
-		<textbox visible="false" type="text" id="yardimId"  value="gdhndurdn6"  placeholder=""  />
+		<textbox visible="false" type="text" id="yardimId"  value="ygttji1khm"  placeholder=""  />
 		<label id="yardimSozcuklbl" value="Anahtar Sözcük" />
-		<textbox type="text" id="yardimSozcuk"  value="qw5i7c144svqjleumncpipoxb2qy1r6ge1lr3vh1sh3l9sg5fqa142drj1u0w4ml46k786vl1yov5sgh5y8my1hf9acozwwhmzbz"  width="200"  maxlength="100"  placeholder=""  />
+		<textbox type="text" id="yardimSozcuk"  value="15s3wisbl30eden5gl2ukch5r2gm7y6ipfjr093z0rupz1u8c6cizokhwtkdgmop24083yj0hmtp7booawbon0ywyqzzj9nzbkxg"  width="200"  maxlength="100"  placeholder=""  />
 		<label id="aciklamalbl" value="Açıklama" />
-		<textbox type="text" id="aciklama"  value="4ey1mh5a4hkdwostw390ybkyn82zjgppxfc57oelh92zw92xl3l842bzzk1gjdnrf8ftkd3lydbtdvgeuqltlh1i4f9xz2g1o15k5n5gt8j0z8p4frhbvj0ki1m05r1dqbcbito8io6gb6qs73l4gnabovsh74c1aelawdnta5z4o3lhbdwef7ndbh724t0g7to166i99o4upauznu4z1qi5vqqh3umeidtwvsqyrsc4kq8ri5vp4kjcznznz3k"  width="400"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="aciklama"  value="9f9pgl42a7cm0r2glelcjwzgwyq56eplv70utwrwy6r242ji8lb4gc5gjpijtjgtpuqpoey0em1yzima4ykapeqr9yio9reudd4bswl4z2ph1vppi8diiml6uq7l2a4feflmbe49we49vlituvepvry3h0190z8vl8fabcobyb2i3nbjrr2uk2tjyksl7w84gov2tmr7cgydhuyvt5rqtnmzybfcz7jlr44fi3jnaddm3mux8n6xeephk73fwx5"  width="400"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
-		<textbox visible="false" type="text" id="eklemeTarihi"  value="c6lc6lqibn"  placeholder=""  />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="q83ro8tfx5"  placeholder=""  />
 		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
-		<textbox visible="false" type="text" id="ekleyen"  value="iif9p7rx3ecysrl83k8h8u11m9kkqi9ii0fme0pg0max414ur3fquz95rs2uzvyrv0r8syh6nddnj6l0e2ufj3del0cklc8z5300d9d4s42r991ztmr6w3sevzlfkaem5pmhs23ylf9ueuuv33j5p6myunj64ghsnq5f10rr32uuqm7jd927r4zpla4p12ccuitu8org4pw818po6c7t86k19a8oz5ve7txqd910kb5xnxuubojhqw0bq4xbqpi"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="ekleyen"  value="qnksj7yxwamiffeg7ftid6ie14agizvk8zbkp5wkx51f5bjngsz89j7evvkim0qwau8y3xokgc4z586gkegs3mwy4z7urc78pgzsqh3xwqw3bc9sq1508tty8w7375ws7sjgevb354f0v3m2iwmacjuczcfn71vtmvh33e97smx0hrrzkfmsmwb321rl3yf69csxkamxbz1s09qd9sd3ccwgo3047vbk5lt6yrc0l8gk9ad7s9sb0v5dp42de4d"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
-		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="o5f2fnw4k6"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="ugf7axa5ob"  placeholder=""  />
 		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
-		<textbox visible="false" type="text" id="sonGunleyen"  value="evw48x0sh7g30znj4d22k2ghgcecooczoex85qbg6grcsd4caumbwmrab7abd2gu3w87xuqrxtpeorv6eq6d52o56b7csh3clr55foj20gezbkn5o9icaz05jb5kgtmov8lf8or50jal50h8zx2t7fbfjwcxejgjyrufbm1ve0tv7kp39ciytwgimqs4ch3l0oe6kvrhc744c7j88b2wr2o3l9ild58dues84mq6nm9e9lq4yyfbqbri2444nv6"  maxlength="255"  placeholder=""  />
-		<textbox visible="false" type="text" id="metinId"  value="jjrge6f933"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="ppb8hf7p3j0jii2amcduivsstrdd58679h3smrlp15etvrmehi6lbf7p91fuac54poz7df9n4rk5009l3qd7dw2tkjkjgv5qhtijmy4vgkk0o5cvq5ym3euiys3ljf390kyleopegcd2f2yl2598xwqvumygfmy6ju91fcpmd9a3dz76pyyv3k6ctxb443f4my0ezcfx7c07vdkq17w0hl3mmu8of5xgwtwe93gbpocpbuseut9msfwkmx3uya0"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="metinId"  value="4evf75lb6g"  placeholder=""  />
 	</window>
 	<script>
 _YARDIM_SOZCUK = 'genel/yardim/edit#deneme';$(document).ready( function () {	if ($("#yardimId").val()) {		var json = <bean:write name="genelYardimForm" filter='false'/>		AgemWM.addQueryString(Agem.json2Param( {yardimId : json.yardimId, yardimIdParam:json.yardimId}));		var resimDegistirme = "";		AgemWM.addSideInfo(			{				id:"yardimInfo",				info: [					{value: json.yardimSozcuk, clazz: "pointer",						onclick: function () {							AgemWM.link('#genelYardimSelect', {url: 'genel/yardim/select.do'});						}					},					{label: "Açıklama", value: json.aciklama, clazz: "not-bold"}				],				type: 1			}		);	} else{		AgemWM.removeSideInfo({type: 1, id: "yardimInfo"});	}});function yardimIcerik() {	if (Agem.byId('yardimId') && Agem.byId('yardimId').value) {		Other.metinGir(710, 600, 'Yardım İçeriği', {yardimId: Agem.byId('yardimId').value, tur: "yardim", height: 410, width: 710});	}}	</script>

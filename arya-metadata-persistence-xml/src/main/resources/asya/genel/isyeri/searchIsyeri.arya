@@ -2,59 +2,59 @@
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listIsyeriWindow">
-		<textbox visible="false" type="text" id="isyeriIdParam"  value="ivqn8yeqpz"  placeholder=""  />
-		<textbox visible="false" type="text" id="merkezIdParam"  value="0unjnp6gvl"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriIdParam"  value="q3qyh9v74g"  placeholder=""  />
+		<textbox visible="false" type="text" id="merkezIdParam"  value="6w5k9ue0kv"  placeholder=""  />
 		<label id="sgkSiraNoParamlbl" value="İşyeri SGK No" />
-		<intbox id="sgkSiraNoParam"  value="-648677881"  width="57"  maxlength="7"  placeholder="Sıra No"  />
-		<intbox id="sgkIlKodParam"  value="-2119367574"  width="33"  maxlength="3"  placeholder="İl Kodu"  />
+		<intbox id="sgkSiraNoParam"  value="1967531287"  width="57"  maxlength="7"  placeholder="Sıra No"  />
+		<intbox id="sgkIlKodParam"  value="-321195993"  width="33"  maxlength="3"  placeholder="İl Kodu"  />
 		<label id="unvanParamlbl" value="İşyeri Ünvanı" />
-		<textbox type="text" id="unvanParam"  value="ad500p62kt5b9t5xz9eeip5e3ywxw4x499bnuka75ocx4o8fwk7lxqukqirxdrdegobnzwyaifewo52c6w87tplby86s5rvhyiqboswe3tkgkstep4l3j4cjtrbnninf7lmgwipoka1vdcj140m2j1n1m8dunhha64h208cxurhz2z93l9cf4l4jlapga0c8xgf83nba3zk480jhbzqjmdhfhq9u8b903bybewwp0vjz2yo8y04e3rj0ofrzc6s"  width="416"  maxlength="255"  placeholder=""  top="56" onChange="autocomplete("genel/isyeri/autocomplete.do", "unvanParam", 5, "setIsyeri")" />
+		<textbox type="text" id="unvanParam"  value="ebxvilamo7wakpdjzxygtqzwoq7jz0hs9mdsewi1kz4dopd1h8t62ui7bt75gsdcabl08ztd4ux7gau1igd9zljxbp2lr0otpqjq97g5xwex35vf7c33on550auarst2qc5r0rqj2tyuh2pr4k9yendth0ko5jh2so5h2ko2mazz34g51s1uw628gskgr2r38tkrxemtkxsnc9zdq9h66woprgzxf07zyh3qf9ie9gtqgaq7id3mhogdb6701ar"  width="416"  maxlength="255"  placeholder=""  top="56" onChange="autocomplete("genel/isyeri/autocomplete.do", "unvanParam", 5, "setIsyeri")" />
 		<label id="kisaAdParamlbl" value="Kısa Ad" />
-		<textbox type="text" id="kisaAdParam"  value="voc8bk1sgumxglnxv2uzn0wqa1xadeddzwskj2v6ejpjjwt2ujlyg3smd4pr2cojdnmnosakrkrz7s1z5lgh2kva99e1e77ni9jrih98o64n5tb4w0jko6kv6ossap9dxmue8h2rfbdix6fwnkbgw2x515wkiu8haqb8rtw1ml1pir9wn93sjvtg10y2yxaz59vf25eyciwjd5p0373oo23z6541xnhae851eomdh8nslgrwvv00gy48cw0dg8z"  width="260"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="kisaAdParam"  value="72cdtbs73p6idvaaii69r8ry17hisfskbr099i7vp7v73yf28in9cb4dfphad7t1v32dcvcmwtf85s13fi4l6mtacz29sc233wjjh2x5wlihmpitxth3c678keplwrbxraep1rnc9ghy6a4voc3i66147qs8mm70znbybzdqr967uhz25bsxpmx6ha50x7fjema5kx80qqjsd99ds2ii9n8t1gbbtyjo2yro7xo551ftcfc0p9s4s8mxlayozdq"  width="260"  maxlength="255"  placeholder=""  />
 		<label id="orgutluParamlbl" value="Örgütlenme Var" />
 		<combobox id="orgutluParam"  width="80"  >
-			<comboitem label="r616hzmmvt" value="pacz" />
+			<comboitem label="jdo7e0jcq6" value="n6iu" />
 		</combobox>
 		<label id="orgutlenmeTarihiBasParamlbl" value="Başlangıç Tarihi" />
-		<datebox id="orgutlenmeTarihiBasParam"  value="2004-10-19"  width="90"  placeholder=""  />
+		<datebox id="orgutlenmeTarihiBasParam"  value="2008-8-23"  width="90"  placeholder=""  />
 		<label id="orgutlenmeTarihiBitParamlbl" value="Bitiş Tarihi" />
-		<datebox id="orgutlenmeTarihiBitParam"  value="2008-2-11"  width="90"  placeholder=""  />
-		<checkbox type="text" id="merkezIdIsNullParam"  checked="true"  label="İşyeri / İşletme Merkezleri"  onCheck=""  width="50"  />
+		<datebox id="orgutlenmeTarihiBitParam"  value="2000-1-11"  width="90"  placeholder=""  />
+		<checkbox type="text" id="merkezIdIsNullParam"  checked="false"  label="İşyeri / İşletme Merkezleri"  onCheck=""  width="50"  />
 		<label id="isyeriDurumParamlbl" value="İşyeri Durum " />
 		<combobox id="isyeriDurumParam"  width="120"  >
-			<comboitem label="nnwjnedvs9" value="pbpe" />
+			<comboitem label="tk9wnuzslm" value="7fdm" />
 		</combobox>
 		<label id="sozlesmeDurumParamlbl" value="Sözleşme Durum " />
 		<combobox id="sozlesmeDurumParam"  width="120"  >
-			<comboitem label="ayy5uf9hc5" value="470s" />
+			<comboitem label="27eh95b87k" value="0l27" />
 		</combobox>
 		<label id="isyeriTurParamlbl" value="İşyeri Tür" />
 		<combobox id="isyeriTurParam"  width="120"  >
-			<comboitem label="j8snr4fzcf" value="q48w" />
+			<comboitem label="0ocsandthk" value="qp21" />
 		</combobox>
 		<label id="isyeriKategoriIdParamlbl" value="Kategori" />
 		<combobox id="isyeriKategoriIdParam"  width="300"  >
-			<comboitem label="nfk1940z3f" value="4z4n" />
+			<comboitem label="2phbnvs0mw" value="1cfe" />
 		</combobox>
 		<label id="calisanSayisiBasParamlbl" value="Çalışan Sayısı" />
-		<intbox id="calisanSayisiBasParam"  value="-1497103395"  width="98"  maxlength="5"  placeholder=""  />
-		<intbox id="calisanSayisiBitParam"  value="921267906"  width="98"  maxlength="5"  placeholder=""  />
+		<intbox id="calisanSayisiBasParam"  value="-484825491"  width="98"  maxlength="5"  placeholder=""  />
+		<intbox id="calisanSayisiBitParam"  value="1669058300"  width="98"  maxlength="5"  placeholder=""  />
 		<label id="ilKoduParamlbl" value="İl" />
 		<combobox id="ilKoduParam"  width="98"  >
-			<comboitem label="6lcncp313s" value="qni5" />
+			<comboitem label="vvqynmdw23" value="787i" />
 		</combobox>
 		<combobox id="ilceKoduParam"  width="98"  >
-			<comboitem label="b48e9ltxxm" value="op1h" />
+			<comboitem label="fisubtpa2t" value="v25r" />
 		</combobox>
 		<label id="subeParamlbl" value="Şube" />
 		<combobox id="subeParam"  width="300"  >
-			<comboitem label="e6zmvcrwi1" value="dof5" />
+			<comboitem label="kqtm5p9dme" value="adxo" />
 		</combobox>
 		<checkbox type="text" id="isletmeTekAidatParam"  checked="false"  label="İşletme Tek Aidat Listesi"  onCheck=""  width="50"  />
 		<label visible="false" id="ilKodlariParamlbl" value="İl" />
-		<textbox visible="false" type="text" id="ilKodlariParam"  value="5giwlrrv9z"  placeholder=""  />
+		<textbox visible="false" type="text" id="ilKodlariParam"  value="gcptdzqey0"  placeholder=""  />
 		<label id="ilAdlariParamlbl" value="İller" />
-		<textbox type="text" id="ilAdlariParam"  value="sv682ntxs5"  width="361"  placeholder=""  readonly="true"  />
+		<textbox type="text" id="ilAdlariParam"  value="y5i5sce21e"  width="361"  placeholder=""  readonly="true"  />
 	</window>
 	<script>
 AgemForm.submitMessage('Arama yapılıyor...');Agem.ready(	function () {		orgTarihiKontrol();		$("#orgutluParam").change(orgTarihiKontrol);	});	var setIlIlceParam = function (d) {	Agem.setValue( {		"iletisim.ilce.param": d.value	});};var setIsyeri = function (d) {	if (d.isyeriId) {		AgemWM.addQueryString(Agem.json2Param( {isyeriIdParam: d.id, isyeriId: d.id}));		AgemWM.link('#genelIsyeriSelect', {url: 'genel/isyeri/select.do'});	}};var orgTarihiKontrol = function (){	if ($("#orgutluParam").val() == 1) {		$("#orgutlenmeTarihiBasParam").parent().show();		$("#orgutlenmeTarihiBitParam").parent().show();	}	else {		$("#orgutlenmeTarihiBasParam").val('');		$("#orgutlenmeTarihiBitParam").val('');		$("#orgutlenmeTarihiBasParam").parent().hide();		$("#orgutlenmeTarihiBitParam").parent().hide();	}}function ilKoduDegisti() {	var ilKodu = $('#ilKoduParam').val();		$('#ilceKoduParam').children().remove();	if (ilKodu) {		Agem.ajax("genel/ilce/list.do", {ilKoduParam:ilKodu, pageSize:10000, sort:'ILCE.ILCE_ADI',dir:'asc', json:1}, function (x) {			$("#ilceKoduParam").append("<option value=''></option>");			for (var i=0; i < x.results.length; i++) {				$("#ilceKoduParam").append("<option value='"+x.results[i].ilceKodu+"'>"+x.results[i].ilceAdi+"</option>");			}		});		}}function iller_ata() {	var ids = [];	var labels = [];	$(".iller_checks:checked").each(		function () {			ids.push( $(this).val() );			labels.push( $(this).attr("label") );		}	);	$("#ilKodlariParam").val(ids.join(","));	$("#ilAdlariParam").val(labels.join(","));	$('#iller_form').hide();	Agem.perde(false);}function iller_temizle() {	$("#ilKodlariParam").val("");	$("#ilAdlariParam").val("");	$(".iller_checks:checked").each(			function () {				$(this).attr("checked", "");			}		);}$(document).ready( function () {	$("#ilAdlariParam").click(function () {		AgemForm.open('#iller_form', null, null, true);		});});	</script>

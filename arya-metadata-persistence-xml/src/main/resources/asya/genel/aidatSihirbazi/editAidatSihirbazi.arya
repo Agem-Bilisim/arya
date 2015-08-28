@@ -4,12 +4,12 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="selectAidatsihirbaziWindow">
 		<label id="dosyaIdlbl" value="Yüklenen Dosyalar" />
 		<combobox id="dosyaId"  width="490"  >
-			<comboitem label="mrqfom2zom" value="bqo0" />
+			<comboitem label="mk49b5hf0y" value="9nh8" />
 		</combobox>
 		<button id="dosyaEkleBtn" label="Yeni Dosya Ekle"  onClick="dosyaEkle()"  width="120"  />
 		<label id="sheetNolbl" value="Excel Sheet" />
 		<combobox id="sheetNo"  width="490"  >
-			<comboitem label="shdznoh7bj" value="fulf" />
+			<comboitem label="ws5xl8dgj5" value="8ul3" />
 		</combobox>
 	</window>
 	<script>

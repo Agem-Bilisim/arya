@@ -3,31 +3,31 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addDigersayfaWindow">
 		<label visible="false" id="digerSayfaIdlbl" value="Diger Sayfa Id" />
-		<textbox visible="false" type="text" id="digerSayfaId"  value="vo0siianaw"  width="200"  placeholder=""  />
+		<textbox visible="false" type="text" id="digerSayfaId"  value="ceca6eld39"  width="200"  placeholder=""  />
 		<label id="menulbl" value="Menü" />
 		<combobox id="menu"  width="300"  >
-			<comboitem label="7latu8pess" value="79h6" />
+			<comboitem label="wiz1iadphy" value="uc9j" />
 		</combobox>
 		<label id="basliklbl" value="Başlık" />
-		<textbox type="text" id="baslik"  value="bl1h5vnl7cbzjas745g12ahurb46lm9vu8fgo2al5rr0a2jtwmlwok6naoqkltls15rpd8meh9ig50ge080r3m0xcjrm0hbyyj8jfcwtjlgqkbpur1394l1qrfddtyg9goeawfblnpz21h7hhuy6j1brq0kzly8gbn6b10moy4m996ufa80fnd789uze4e3tgc3kafpwf6mp7nd7y9p7txthldm6hgkytnd7umjqhw10d3yamaa28al1c5ul1chgkkpoiuauesbagfgkdg2lto714bq94xpz77fld6gjmrel"  width="200"  maxlength="300"  placeholder=""  />
+		<textbox type="text" id="baslik"  value="58n75pahc1wms7q2aw4v0y04fud6xqbgku6gtnhz9lyiuv809z874zgnvati5strhpfemnrsp7q0ttmxm02cfz6atfe4tzlb1h5fd5abt786s1hx3nchandu8j7uaxgtpas5p7b9h0cag4lhdepi0mubez06v96s7cc1yjdp1rf6ndtxc3hn68ps1e1bp8at8e1gt460lgsx0gq88n10fpptv6mov05no9n8hu61pjem4d4ed2nlbx7v2trrak3vjhv3fmjt1o73adr0vk5ubdvaz057cov41pc8envnkuu7"  width="200"  maxlength="300"  placeholder=""  />
 		<label id="siralbl" value="Sıra" />
-		<intbox id="sira"  value="1807875150"  width="50"  maxlength="2"  placeholder=""  />
+		<intbox id="sira"  value="1243232424"  width="50"  maxlength="2"  placeholder=""  />
 		<label id="indentlbl" value="Hizalama" />
 		<combobox id="indent"  width="50"  >
-			<comboitem label="cv2dmlenoi" value="7xn1" />
+			<comboitem label="jzyied2j6w" value="cpy7" />
 		</combobox>
 		<label id="dillbl" value="Dil" />
 		<combobox id="dil"  width="100"  >
-			<comboitem label="eumw76gc18" value="p4bn" />
+			<comboitem label="zz4tibdzhq" value="7pic" />
 		</combobox>
 		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
-		<textbox visible="false" type="text" id="eklemeTarihi"  value="rt57kaawj3"  placeholder=""  />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="sb4x2z5v9o"  placeholder=""  />
 		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
-		<textbox visible="false" type="text" id="ekleyen"  value="sgpk99v8nuul0ymrh1fgh8aqhfd9mujlzo3b1gf0xr4aho1gzq23zj4q4qqz3vruxz77isnty0mu05yzaxsodfkyuudc9rlwaicb638g1pirmkfcixaobm2old7yk5rh29fsbysrzfcpbgiosevrx2a9gur603nni2ohf89jid653syhjlow34sxsubvtzn9ez3fsz25tv23y1f8w1lvoggx3o0afei7svfxfhffh9omf359qyy9e2jbl09qabl"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="ekleyen"  value="l9dj3ljeshfhf7h1sv41q4jkf3v5is6itifc4di0ywrj3h781moaxprw5gvyf4obzzthamz618s8ed57268k7muqcwll8cua8o9e27icjt124ehkgh2fe15dqv52vf511lqd09yqdjyw80w94yqk3r02mhkaiepekbt4fvd34lwubg2blhzix73hhq2gl4myzo5682ton5eg4206fl59q5269ya8xm49lxrb3x8puis349n2m85tfi14vpce6s3"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
-		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="kjmwgkvs6t"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="u7b5kf5sq5"  placeholder=""  />
 		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
-		<textbox visible="false" type="text" id="sonGunleyen"  value="ga2s1o9xkyunh0htu48t4i2sdsjv1t3ejmco4xemcdx52edv36ry7ucdypz866476042tyt05lyadz54i6hnlm26owfy4kbgil1f993wj4jfe3zfzei9a14qkso3hq6iahw8v1mdf390ksxwvjvxpzup4emay4nsiocreewjoh71pbdkg88d8k03fekuyq0vul615c3f2beevhdf5qg6pcy5t3q9jojuzl5qdwd49tt7b10fnhnk9c8n36mt3iz"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="c32niye2p6n4u4skfc7osv63oq4pa2fc3ii0wg7r8xm04yqz8ny6p85qu3zcja7bwep4cdlydonw9hisk1399139zryxo4bfdytfdcsqkmcbwvgbrdrp5gczxfvce8nn7ndhcb839hzbi5vgt7194n70um49lq3vu4i1wgs1sd31y84cmnp26ke8kohvsybrqxnra8x8p25otufp6afrslyblq8rjzy7f7shxsn885cmvostaccy27iqjn3sovp"  maxlength="255"  placeholder=""  />
 	</window>
 	<script>
 <logic:present parameter="digerSayfaId" scope="request"><bean:parameter name="digerSayfaId" id="p_digerSayfaId"/> var digerSayfaId = '<bean:write name="p_digerSayfaId"/>';</logic:present><logic:notPresent parameter="digerSayfaId" scope="request">var digerSayfaId = null;</logic:notPresent>Other.KULLANICI_BILGI_TEK_SATIR = true; Agem.addLoadFunction(	function () {		Agem.addElement('input','forward', {type:'hidden', name:'forward', value:'list'}, null, document.forms['genelDigerSayfaForm']);		Agem.addElement('input','pageSize', {type:'hidden', name:'pageSize', value:'-1'}, null, document.forms['genelDigerSayfaForm']);		<logic:notEmpty name='r_message'>			Agem.message('<bean:write name="r_message" filter="false"/>');		</logic:notEmpty>		prepareButtons();		if (!digerSayfaId) {			if (AgemTable.DATA[0]) {				AgemTable.rowClick("0");			}		} else {			kayitGetir(digerSayfaId);		}		<agem:access not="true" right="digerSayfa.super">			$("#yayinla").parent().hide();		</agem:access>	});function kayitGetir(id) {	Agem.ajax("genel/digerSayfa/select.do", {json:1,digerSayfaId:id}, function (x) {		Agem.setValue(x);		prepareButtons();		<agem:access not="true" right="digerSayfa.super">		if (x.yayinla == 1) {			$(":input").attr("disabled", "disabled");			y = "1";		}		else {			$(":input").removeAttr("disabled");						y = "0";					}		$("#metinBtn").removeAttr("disabled");		</agem:access>		Other.writeKullaniciBilgi();	});}function prepareButtons(){	if(Agem.byId("digerSayfaId").value){		$("#silBtn").css({display:''});	} else{		$("#silBtn").css({display:'none'});	}}AgemTable.rowClick = function(id) {	if (!id) {		id = AgemTable.SELECTED_ID;		if (id == null) {			Agem.error("Lütfen kayıt seçiniz.");			return;		}	}		kayitGetir(AgemTable.DATA[id].id);}function yeniForm() {	return {digerSayfaId:'',menu:'',baslik:'',metin:'',yayinla:'',sira:'',indent:'0'};}function yeniKayit() {	Agem.setValue(yeniForm());	prepareButtons();}function kayitSil(id, f) {	idVal = $("#" + id).val();	if (!idVal) {		Agem.error("Lütfen kayıt seçiniz.");		return;	}	var x = [			'forward=list',			'digerSayfaId='+idVal		];	if (confirm('Kaydı silmek istediğinizden emin misiniz?')) 		window.location = Agem.baseURL()+'genel/digerSayfa/delete.do?'+x.join('&');}function metinGirisi() {	if (Agem.byId('digerSayfaId') && Agem.byId('digerSayfaId').value) {		Other.metinGir(710, 600, 'Diğer Sayfalar', {digerSayfaId: Agem.byId('digerSayfaId').value, tur: "digerSayfa", height: 410, width: 710, "_y": $("#kaydetBtn").length > 0 ? "0" : "1"});	}}AgemTable.DATA[<bean:write name="n"/>]=<%=AgemUtils.jsObject(item, new String[] {"id","digerSayfaId"})%>	</script>

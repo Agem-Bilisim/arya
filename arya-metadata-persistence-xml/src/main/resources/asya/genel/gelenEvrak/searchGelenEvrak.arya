@@ -4,32 +4,32 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listGelenevrakWindow">
 		<label id="evrakDefterIdParamlbl" value="Defter" />
 		<combobox id="evrakDefterIdParam"  width="300"  >
-			<comboitem label="vhgyrotl0x" value="h3i1" />
+			<comboitem label="zyku77r9vq" value="i6tg" />
 		</combobox>
 		<label id="siraNoParamlbl" value="Sıra No" />
-		<textbox type="text" id="siraNoParam"  value="51fwd2jvgu"  width="150"  placeholder=""  />
+		<textbox type="text" id="siraNoParam"  value="xzlv8ppkqw"  width="150"  placeholder=""  />
 		<label id="evrakNoParamlbl" value="Evrak No" />
-		<textbox type="text" id="evrakNoParam"  value="ay4xbt7bfy"  width="150"  placeholder=""  />
+		<textbox type="text" id="evrakNoParam"  value="cdm6rzniqv"  width="150"  placeholder=""  />
 		<label id="gelisTarihiBasParamlbl" value="Geliş Tarihi" />
-		<datebox id="gelisTarihiBasParam"  value="2000-5-29"  width="120"  placeholder=""  />
-		<datebox id="gelisTarihiBitParam"  value="2007-9-1"  width="120"  placeholder=""  />
+		<datebox id="gelisTarihiBasParam"  value="1993-5-19"  width="120"  placeholder=""  />
+		<datebox id="gelisTarihiBitParam"  value="2000-5-29"  width="120"  placeholder=""  />
 		<label id="evrakTarihiBasParamlbl" value="Evrak Tarihi" />
-		<datebox id="evrakTarihiBasParam"  value="2013-10-7"  width="120"  placeholder=""  />
-		<datebox id="evrakTarihiBitParam"  value="2009-2-18"  width="120"  placeholder=""  />
+		<datebox id="evrakTarihiBasParam"  value="1998-1-5"  width="120"  placeholder=""  />
+		<datebox id="evrakTarihiBitParam"  value="2012-7-8"  width="120"  placeholder=""  />
 		<label id="kimdenParamlbl" value="Kimden" />
-		<textbox type="text" id="kimdenParam"  value="tb2ayd1q1dkkiebb1jk7ghdvfypqw2pot97ez1nk4u2417g92bj16qinwbgt4ndrtknyf0nw8o4n051dhiq8ycnz8fha4njacw35cqrp5kxncge86omwt0irbkkda90mbggfxs6kiey3yeru44flppyvwhhf0mnade18p5818e7z85d6gk0n3nc24dvzswxrrxhpuemr708fch3plnnnv72hmi3o3uoddwn4z2v824t081ljbwiz686nyihsehm"  width="215"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="kimdenParam"  value="yjysyej6qhxqicobselr5qq2h09tdvsjzk0vjpnx4hq63e1vhx7dl4558oun9e95diqivwss2w7vsvfknfqyq0bdx9pln4llq9v2a6siv7l3sd6583qncxfe81enzf4odckvonkbn94wwbmqe2wpfblt3t6xccu1vk45dzd8ng7rklfs8gczm6td8xpiv0z52pkc4j91qtaoz7lmutp82v7eqoew06jv8y4j2d2c4wyb7mw9tc8834b91v6dz6y"  width="215"  maxlength="255"  placeholder=""  />
 		<label id="konuParamlbl" value="Konu" />
-		<textbox type="text" id="konuParam"  value="wl5gfspvt12dsudwrzkmp2b8lai9r8omzqqwx9ge9th198ejy18qw1nenviur4slamgeami5ylvt2ov2n0e8o9cqg0uat8n2vhvwarozgm6d7glhsxvipoj35uqbq6wxgsr4dohw5s0ww2rlqvntkgneyketd44mi78bs15x32vjql9tgry9jvhd6fm2ilae41aop2dkyt0i3kc1ox0h4vkuial514rwbvthqr4ws0355x4ajkojyq0lafltmf6"  width="215"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="konuParam"  value="ftg78jv6828bgm08gw98y9vxi69c3kokunbptjfnmu6kb9je436mk0fh3g0h4uw5zcubw137gqdt84i0wf9x8fwr3f1ohyvh37qxj2fk92mnj29vsaryrjqrfjru3w7p1h2yfyxcm4963owv1mztqs5h958f84mzxobbxdq1ey6h2qwsejuhzi6log565ln80ulrzab2ebglmwfzvj4avo8vxk9jpkaxm747avn6lk49davalcohmb2zfapjqpv"  width="215"  maxlength="255"  placeholder=""  />
 		<label id="aciklamaParamlbl" value="Açıklama" />
-		<textbox type="text" id="aciklamaParam"  value="gbs8c2w3mrjo07nf3h8ot1v68he83qhv2ftdex9d87s3ite34deqoxtelcs8azmfjsd6n77jtqcso3l0xw1kkaimrfxb4fih6m5pydcfpym3itu57p6881xsihsunpwdkgc4h11kkn3bcc8y9hxndwlkzntds52ozbb8i1qjraqm5qvbrc99rhgtxgxsb7fyhvxpms8j97havtr2y17qubpbcmwzozrdxn7vp251ju4hssgc06qe26cn1fta2am"  width="335"  maxlength="255"  placeholder=""  rows="5"  cols="40"  />
+		<textbox type="text" id="aciklamaParam"  value="cx97i9qtvbg5itf7awqn6b32275xefwvmnmrxao0whz4jnxn86nxww4j2olpnzhk08t3nsgh1ulxtn2j26t9rcia4yrk20zsonu4960lprfr7lu7ilzs0akxlu9fkoj2c4ii2aelqnjfmhnnut59nkjavbl1tpp6eosdjar7jec1i2bwky8enobkbi3vwh9gkik8rgb1sxrptavlymnthvg32qlhq1v0s6z37ixa1ve660vye4aagu1jivday12"  width="335"  maxlength="255"  placeholder=""  rows="5"  cols="40"  />
 		<label id="birimParamlbl" value="İlgili Birim" />
 		<combobox id="birimParam"  width="120"  >
-			<comboitem label="ss44iafij3" value="28hl" />
+			<comboitem label="rk1sof5niq" value="1skr" />
 		</combobox>
 		<label id="ilgiliKonuParamlbl" value="İlgili Konu" />
-		<textbox type="text" id="ilgiliKonuParam"  value="vmzfo7taepc27tpzj8g8d5ajn8sf44b5q96bu5r3gk6mznn9h17z067a3tty45riapyqecsh6hu2r4icidpxb6cfhvhhxblilame16nkqgkjvfsyu0s8ahvonwdn8l5up8zvahy8fx6eu52dzrf2mgebg2sso7jthwzf6pn4dov3ldliu4nunnbugvus6nexlwt09ff1oxoobcbt4kihtxsb8tgsyqkw9xjxmaznt43vxpt2cb8tj72uujp2sec"  width="215"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="ilgiliKonuParam"  value="n3ra9hzxfjg5a6v5dboi67lyt7mvih1xwygo3thj3eat3ssaheygyonx22c0u5bvgalve9fv5eiw4wg2o2jl04ln0069etml1tvqx93k37a4r9owod2c9is8n0au2wo8ojszoeir88of07kt4l874qo9mber03rkliytnuwkgynky3vp3f3d9kou3d5ce0jc80w4zs82ad3u98avu7tmdptysagi45q55vu4kdrlz1d7629vy8wi3cfqnedrlei"  width="215"  maxlength="255"  placeholder=""  />
 		<label id="ilgiliSiraNoParamlbl" value="İlgili Sıra No" />
-		<textbox type="text" id="ilgiliSiraNoParam"  value="jqjhy23puuprjfl7oiigwm4t5soph7n5qmfvgphm91otkxoh5uz6etxla4edego45vvi2axu956cve9yns3bde9eas8lny6hz0si4efgmehtfnwwzg3aby9ktvt832odl931m56yc0238jmygbpfj00qbufi6ofmraepdenjjzla2r330gmvh2jirfdzhfe9973uw2h2ujffubuktqvtu9hifj3gfoyt7gorzx4xu9axrisusj2uh8zg1bpd0bz"  width="215"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="ilgiliSiraNoParam"  value="uf8l0hrwqcdvus1bq94y0kpplac68txbk8272ux0lrzvzfq58c9ay7pssml1pdsmyrsi54fvxl1w98o2kfsgnwroff9kngarprttt6pkmyomamfozi45n07wk5cas6bqht246cc5l2jh9q89odrrq6x5qsm7lc8a4i77kffzyp4he7p1nvngguyijsqgzhok1wnaz6zl0zdaxeodqm979pptjkdr4mb4icolbeuxcfnxuepdaoxwhnecb2jam6i"  width="215"  maxlength="255"  placeholder=""  />
 		<checkbox type="text" id="gecikenler"  checked="true"  label="Sadece İşlem Süresi Gecikenler ya da Son Günü Olanları Göster"  onCheck=""  width="20"  />
 	</window>
 	<script>

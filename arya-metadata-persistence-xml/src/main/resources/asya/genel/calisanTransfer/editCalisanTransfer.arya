@@ -3,7 +3,7 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="editCalisantransferWindow">
 		<label visible="false" id="girisIsyeri.isyeriIdlbl" value="Isyeri Id" />
-		<textbox visible="false" type="text" id="girisIsyeri.isyeriId"  value="37tn67doxm"  width="80"  placeholder=""  />
+		<textbox visible="false" type="text" id="girisIsyeri.isyeriId"  value="rpuvcbnw8f"  width="80"  placeholder=""  />
 	</window>
 	<script>
 var setIsyeri = function (d) {	if (d.id) {		Agem.setValue(d, "girisIsyeri");	}	else {		Agem.setValue( {"girisIsyeri.isyeriId": "", "girisIsyeri.unvan": "", "girisIsyeri.sgkKisaNo": ""})	}}var gonder = function (form){	var text = Agem.byId("cikisIsyeri.unvan").value +  " şirketi çalışanları  toplu olarak işten çıkarılacaktır. Devam etmek istediğinize emin misiniz?";	if(Agem.byId("girisIsyeri.isyeriId") && Agem.byId("girisIsyeri.isyeriId").value){		text = Agem.byId("cikisIsyeri.unvan").value +  " şirketi çalışanları " + Agem.byId("girisIsyeri.unvan").value + " şirketine transfer edilecektir. Devam etmek istediğinize emin misiniz?";	}	var h = 180;	var w = 300;	var btn = [{id:'tamam', label:'Tamam', func : function() { AgemForm.submit(null, form); return true; }},	               {id:'iptal', label:'İptal', func : function() { return true;}}	               ];	AgemWM.alertBox({title:'Uyarı', height:h, width:w, message:text, buttons: btn});	}	</script>

@@ -3,18 +3,18 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="editSendikaWindow">
 		<label visible="false" id="sendikaIdlbl" value="Sendika Id" />
-		<textbox visible="false" type="text" id="sendikaId"  value="mot6zd1l65"  placeholder=""  />
+		<textbox visible="false" type="text" id="sendikaId"  value="3881dk0v49"  placeholder=""  />
 		<label id="sendikaKodulbl" value="Sendika Kodu" />
-		<textbox type="text" id="sendikaKodu"  value="ma5"  width="110"  maxlength="3"  placeholder=""  />
+		<textbox type="text" id="sendikaKodu"  value="xjm"  width="110"  maxlength="3"  placeholder=""  />
 		<label id="isKolulbl" value="İş Kolu" />
-		<textbox type="text" id="isKolu"  value="ox"  width="110"  maxlength="2"  placeholder=""  />
+		<textbox type="text" id="isKolu"  value="co"  width="110"  maxlength="2"  placeholder=""  />
 		<label id="maxAidatTutarilbl" value="Maksimum Aidat Tutarı" />
-		<doublebox id="maxAidatTutari"  value="0.26231478397910646"  width="110"  maxlength="18"  placeholder=""  />
+		<doublebox id="maxAidatTutari"  value="0.928852888656612"  width="110"  maxlength="18"  placeholder=""  />
 		<label id="ortalamaAidatTutarilbl" value="Ortalama Üye Aidatı" />
-		<doublebox id="ortalamaAidatTutari"  value="0.19405252458520883"  width="110"  maxlength="18"  placeholder=""  />
-		<checkbox type="text" id="oncekiIssizlik"  checked="true"  label="Geçmişteki 12 ay işsizlikleri ele al"  onCheck=""  width="30"  />
+		<doublebox id="ortalamaAidatTutari"  value="0.3466829175244309"  width="110"  maxlength="18"  placeholder=""  />
+		<checkbox type="text" id="oncekiIssizlik"  checked="false"  label="Geçmişteki 12 ay işsizlikleri ele al"  onCheck=""  width="30"  />
 		<checkbox type="text" id="turkceAramaDuzelt"  checked="false"  label="Türkçe Arama Düzelt"  onCheck=""  width="110"  />
-		<checkbox type="text" id="calisanSil"  checked="true"  label="İşyeri Silerken Çalışanları Otomatik Sil"  onCheck=""  width="110"  />
+		<checkbox type="text" id="calisanSil"  checked="false"  label="İşyeri Silerken Çalışanları Otomatik Sil"  onCheck=""  width="110"  />
 	</window>
 	<script>
 $(document).ready( function () {	if ($("#sendikaKodu").val() && $("#isKolu").val()) {		AgemWM.addQueryString(Agem.json2Param( {sendikaIdParam: $("#sendikaId").val(), sendikaId: $("#sendikaId").val()}));	} else {		$("#dosyaEkleBtn").hide();	}});function dosyaEkle() {	if (Agem.byId('sendikaId') && Agem.byId('sendikaId').value) {		AgemWM.window(		{			modal : true,			label: "Sendika - Logo Ekle", 			url:"genel/nesneDosya/list.do?maxFileCount=1&denetimTip=logo&pageSize=-1&nesneKodParam=sendikaId&nesneIdParam="+Agem.byId('sendikaId').value,			id : "nesneDosyaWindow",			width: 800, 			height: 600						});	}};	</script>

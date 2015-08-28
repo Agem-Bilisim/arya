@@ -4,11 +4,11 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listAidatnakilWindow">
 		<label id="donemParamlbl" value="Dönem Ay/Yil" />
 		<combobox id="donemParam"  width="180"  >
-			<comboitem label="fuelahvzji" value="wxgc" />
+			<comboitem label="obd27axhpe" value="q21b" />
 		</combobox>
 		<label id="unvanParamlbl" value="İşyeri Ünvanı" />
-		<textbox type="text" id="unvanParam"  value="mq9oo0kokrzq5nefgd1440bxc0sxlcun2lv68zv0m2ixu1gzvvx64ywmd1glkfafuuae5j0nnfqn1a2qy0bxupd4vjmjrnuawpclec7u3enlhq6x81atu3jopx26h4wbfo9aus4f1oh3pxuxlsfd4hho0nyfl5v2gp2eylzn9v38j2hs635dsajp398xssjvu334jgtufie01m3s3qme1ktnm8h5b3wr2385rdswpa60c1x0qbboxtv2uzozsnr"  width="180"  maxlength="255"  placeholder=""  onChange="autocomplete("genel/isyeri/autocomplete.do?merkezOlanParam=1&isletmeTekAidatParam=0", "unvanParam", 5, "setIsyeri")" />
-		<textbox visible="false" type="text" id="isyeriIdParam"  value="8bc4grwqe8"  placeholder=""  />
+		<textbox type="text" id="unvanParam"  value="fg1sef1ezoz55ythbp0ryto00govgl0zy4mjd0jteprm87v8lgz7g8jxjrw55ieoi7kfsvluzc45bwuo9rhxohln3kp3pf3m4781q5eh6vcfkgm01yjfelccyq2tjfn0iytgkp8hr9nndcvv3pow961lqgn4w8lkm3vs6c9f6149uj5kt0phy8c5q0t7zabsrhzy3aj30dzitazkynlspm5yahbmxu79x6wxg2c53s9440jz3ec3t1omi3hlmvz"  width="180"  maxlength="255"  placeholder=""  onChange="autocomplete("genel/isyeri/autocomplete.do?merkezOlanParam=1&isletmeTekAidatParam=0", "unvanParam", 5, "setIsyeri")" />
+		<textbox visible="false" type="text" id="isyeriIdParam"  value="apd3d1k6kl"  placeholder=""  />
 	</window>
 	<script>
 var listele = function() {	AgemWM.submit(null, 'genelAidatNakilParameterForm');}var setIsyeri = function (d) {	if (d.isyeriId) {		$("#unvanParam").val(d.unvan);		$("#isyeriIdParam").val(d.isyeriId);	}};	</script>

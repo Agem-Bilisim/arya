@@ -3,20 +3,20 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listOrgkisiWindow">
 		<label id="kisiParam.tckNoParamlbl" value="T.C. Kimlik No" />
-		<textbox type="text" id="kisiParam.tckNoParam"  value="7si4qe1ktkv"  width="200"  maxlength="11"  placeholder=""  onChange="autocomplete("function:prepareKisiUrl()", "function:prepareTCKimlikNoParameterName()", 5, "setKisi")" />
+		<textbox type="text" id="kisiParam.tckNoParam"  value="r7ddbu6mh1a"  width="200"  maxlength="11"  placeholder=""  onChange="autocomplete("function:prepareKisiUrl()", "function:prepareTCKimlikNoParameterName()", 5, "setKisi")" />
 		<label id="kisiParam.adSoyadParamlbl" value="Ad Soyad" />
-		<textbox type="text" id="kisiParam.adSoyadParam"  value="v860p4c9u2pg40kws7520cx4mh1je3swu3izjesami61o6n6qtjvl4l8t6oce6txclyg8l9m8uw40u96o8s4q741kufazltcv1ouq5n5htltz9ptxsnojaqgc36k41uljdud3fi589rx0vkmqcxvo0410ps6nhr1x0xpaafgyoqi92gjy6ul11hb0y2wj9g8h5s2fjl67fsuphgcy01zma5321gagmmyml9p19pweubc8ptrh3gbsu95z2a920w"  width="200"  maxlength="255"  placeholder=""  onChange="autocomplete("function:prepareKisiUrl()", "function:prepareAdSoyadParameterName()", 5, "setKisi")" />
+		<textbox type="text" id="kisiParam.adSoyadParam"  value="ib4jl1hqr09skpjdqq0s0wc1vv18kxyoie886ualb84xxiwwcc0et9s1chpwaogpb8h8p80i71puohoh0yotel9skxxnoconcosroa8g8h92lezhehrd57yaojq798o91v5l0emw7dgrk2qj7x25buqs36np6f1gulzdpbr1nwl4lznjqe8jnvrt16x978gb05a1uyhrprggrz02gnyanjgyfpjncsn768zk1dtb8mid7hr0rd3ddj520turp08"  width="200"  maxlength="255"  placeholder=""  onChange="autocomplete("function:prepareKisiUrl()", "function:prepareAdSoyadParameterName()", 5, "setKisi")" />
 		<label id="unvanParamlbl" value="Görevi" />
 		<combobox id="unvanParam"  width="200"  >
-			<comboitem label="qo1yk6t5az" value="hc0i" />
+			<comboitem label="j8yqdc648c" value="8zdh" />
 		</combobox>
 		<label id="subeParamlbl" value="Şube" />
 		<combobox id="subeParam"  width="200"  >
-			<comboitem label="kg14vdv5ur" value="cus7" />
+			<comboitem label="5qbtf8eqdu" value="pwzq" />
 		</combobox>
 		<label id="cikisParamlbl" value="Çıkış Durum " />
 		<combobox id="cikisParam"  width="120"  >
-			<comboitem label="nl9ecgbclt" value="ebkb" />
+			<comboitem label="x1txjfa2ls" value="kwzd" />
 		</combobox>
 	</window>
 	<script>

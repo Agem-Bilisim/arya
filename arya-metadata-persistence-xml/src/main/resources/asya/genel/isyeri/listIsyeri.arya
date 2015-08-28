@@ -3,7 +3,7 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listIsyeriWindow">
 		<label id="kisaAdParamlbl" value="Kısa Ad" />
-		<textbox type="text" id="kisaAdParam"  value="mutfu2wxdg6r9ulqjkelvcvfsah4lukrwv13movmoypf5hg0ogko8j18wclhx3xi4rpr62tdhp22qda10eorc1sdklr6dvatmkq52dlhy98q9u4swxqgqabttlxn0mituwrj3c8v9uzldg6qorqp3c65rkqc6l76jkc3kv5ifjjh2ojioy9x6h79zhmpszhb7v9namyjwuk0lhshgn2j7g0kbdiepomsk3ixw2k1k92c545qkustnduqrk8n11w"  width="260"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="kisaAdParam"  value="9no2bmpdip16tlfu87lsksoy5gbqzr4qu2dyp0vgjv9ypvgwjtuhhoek2rv4e4g8xyolnzeme55zjzjbe04k5ny8ke7xfsn6hvx1y3x1f2khdpzsw7xos59in11scl2jvsokpplkwbtv9xx2b7qr82abqrnnc9wfi2c2gzw0b35j27kp07c72yym2smcnipyzgrhv29wlchzl7liyxp936gcmtnwdmqtqu4zyiachavkghnrn5ikywg8ru8v3re"  width="260"  maxlength="255"  placeholder=""  />
 		<button id="kisaAdAtaBtn" label="Kısa Adları Düzenle"  onClick="kisaAdAta()"  width="140"  />
 	</window>
 	<script>

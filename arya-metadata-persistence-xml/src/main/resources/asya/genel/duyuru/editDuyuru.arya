@@ -2,24 +2,24 @@
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addDuyuruWindow">
-		<textbox visible="false" type="text" id="duyuruId"  value="y2wkzdmk0e"  placeholder=""  />
+		<textbox visible="false" type="text" id="duyuruId"  value="qwwj6ezcw3"  placeholder=""  />
 		<label id="basliklbl" value="Başlık" />
-		<textbox type="text" id="baslik"  value="f0r2s7ftrfxc555g9vmqjgvhdkfqg2s5q5gogr15zv8h1npgumth9zonxl12gw1nbtp6c7tu1ei0mxjir9tzb8sf64uxyna9swlofef3le1knjgpyxuz0doe2pg2bt8u7qpqdsqhbhpx5p05xts4hwogeztvmxbvy7jhfx3nbg0yu0jvqj8k1lzcq7ojszi33mpjstaakenplngbml0apruay9t2gkuf8sl1px2hc5jlnesw5om279czulkkavn"  width="419"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="baslik"  value="8r29n5wtfowcspffzlrtkpfldxsbnpigwwquku4vw63rw5q95lnh4arsy6hplq7kg43ugc3wrn59xr6nx6luplf7zq3829mitc9ljq2o32wfix9t35jwne59cktqsfjqi73rxbon4s5dnk24pugabqw3w8yplxb8tujfaxx5g44bkti3p03mfb5v3bgnwttlfg7uf3izlk4pa6nejoq6pm4kndx1pdiovmpcfxfgk0buo9hi8hbfbw7e25yi039"  width="419"  maxlength="255"  placeholder=""  />
 		<label id="aciklamalbl" value="Açıklama" />
-		<textbox type="text" id="aciklama"  value="ymtx4hswd1n3emi6abkprua3fand57sgh95oelvv9w5no22nfwtpvb3xxe65luzqkhwuo40dairz3qunwsmmpt6uaeoj8s9tty5cbulww19fjuipojkpxx2vhd7eqsxwjblc5wxcmmuvsbn38pfkvu7o7xjkn2z4wqsw851mk9j8qwsqjpbxfc21jka1jjk00hp3mx8a32w16191e1grtcy1e0qb26butiu51t2kv5diyriegjpihhvhn7hjt8wjwz5mzpfzrhmrru4xnwzyjnikn6g2m8jmvdfe2jkoggawho20v567frp3ttyvmmxl25k1k2jql0yt84gplkhya5a62oyqpzdpo5nkjzvu7zij1b3owqayevh5q3f3c6766qui605ktrpsyz2757rqckcj0yqe5skrfjbvpg37khhekzt8km9os1p1w83bxc75kar7vsk13tg08sdjgts8mwji739bx6cfs2pa2bkbvvjekxkah7ng"  width="520"  maxlength="500"  placeholder=""  rows="5"  cols="40"  />
-		<checkbox type="text" id="ilerikiTarih"  checked="false"  label="İleriki Tarih"  onCheck=""  width="20"  />
+		<textbox type="text" id="aciklama"  value="9jobl57bhop87xwy6okbsrz4mt8b9pdv58ti57hihyf68z19anszj413y3t8lplr6plmzl7dky1bxtzzygepynsillttjv9tib500d5n2nv15n9mng9imyeo077eze8y1ihp8cjw7aymhali8re1vvlmpwsvxkx5xl8k73d54bukh4etlcks1grmvpvnksuechzw4pbhc1ygpfru3ckefvusyq509nma5il55q1p85zax6mepex76b0zq2uosn949nyi8mjwifkak5yvfrgmek4fgih1tmax35k56pa2wa9wrsv5tr5ofnlljemxnyvcn00oefg4qrgvevxbci3ege9kw52tk1jmp790y5iy66v9tbvp3ruq33v0hwlxyeeey74h8ewymau83uvgmnnpuojmgaqpai4shs4ch23i9kui2ugj2d6vxjxpllutzzlpahjjc5dyf72542q2dmq8m4camj49bqpcl7le3jfdxp3ipylimawc"  width="520"  maxlength="500"  placeholder=""  rows="5"  cols="40"  />
+		<checkbox type="text" id="ilerikiTarih"  checked="true"  label="İleriki Tarih"  onCheck=""  width="20"  />
 		<label id="tarihlbl" value="Tarih" />
-		<datebox id="tarih"  value="1996-9-28"  width="120"  placeholder=""  />
-		<checkbox type="text" id="yayinla"  checked="false"  label="Yayınla"  onCheck=""  width="20"  />
-		<checkbox type="text" id="subeSec"  checked="true"  label="Şube"  onCheck=""  width="20"  />
+		<datebox id="tarih"  value="2009-7-19"  width="120"  placeholder=""  />
+		<checkbox type="text" id="yayinla"  checked="true"  label="Yayınla"  onCheck=""  width="20"  />
+		<checkbox type="text" id="subeSec"  checked="false"  label="Şube"  onCheck=""  width="20"  />
 		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
-		<textbox visible="false" type="text" id="eklemeTarihi"  value="rtvfddud3n"  placeholder=""  />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="35qgpsog0g"  placeholder=""  />
 		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
-		<textbox visible="false" type="text" id="ekleyen"  value="nagqfcpmg0"  placeholder=""  />
+		<textbox visible="false" type="text" id="ekleyen"  value="gefmnrk4uv"  placeholder=""  />
 		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
-		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="jv60urk7h3"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="unwifjhius"  placeholder=""  />
 		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
-		<textbox visible="false" type="text" id="sonGunleyen"  value="0h5ano5cgo"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="7nqn281d4c"  placeholder=""  />
 	</window>
 	<script>
 _PREPARE_LIST_ON_LOAD = false;$(document).ready(	function () {				AgemTable.prepareDisplayTable("liste",200,true);				if ($("#duyuruId").val()) {			AgemWM.addQueryString(Agem.json2Param( {duyuruIdParam: $("#duyuruId").val(), duyuruId: $("#duyuruId").val()}));			var json = <bean:write name="genelDuyuruForm" filter='false'/>			var baslik = (json.baslik.toString().length < 35)? json.baslik : json.baslik.toString().substring(0,json.baslik.toString().lastIndexOf(' ',33));			AgemWM.addSideInfo(			{				id:"duyuruInfo",				info: [					{						value: baslik, clazz: "pointer",						onclick: function () {							AgemWM.link('#genelDuyuruSelect', {url: 'genel/duyuru/select.do'});						}					},						{label: "Duyuru Tarihi", value: json.tarih, clazz: "not-bold"}					],					type: 1				}			);		}		else{			AgemWM.removeSideInfo({type: 1, id: "duyuruInfo"});		}				ilerikiTarihKontrol();		$("#ilerikiTarih").change(ilerikiTarihKontrol);				subeKontrol();		$("#subeSec").change(subeKontrol);	});function dosyaEkle() {	if (Agem.byId('duyuruId') && Agem.byId('duyuruId').value) {		AgemWM.window(				{					modal : true,					label: "Duyuru - Ekli Dosyalar", 					url:"genel/nesneDosya/list.do?pageSize=-1&nesneKodParam=duyuruId&nesneIdParam="+Agem.byId('duyuruId').value,					id : "nesneDosyaWindow",					width: 800, 					height: 600								});	}		};var ilerikiTarihKontrol = function (){	if ($("#ilerikiTarih").attr('checked')) {		$("#tarih").parent().show();	}	else {		$("#tarih").parent().hide();		$("#tarih").val(AgemDate.bugun());	}}var subeKontrol = function (){	if($("#subeSec").attr('checked')){		$("#sube").show();	}	else{		$("#sube").hide();	}}	</script>

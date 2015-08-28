@@ -3,9 +3,9 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listWebmesajWindow">
 		<combobox id="okunduParam"  width="100"  >
-			<comboitem label="4bnpmiawze" value="pzgm" />
+			<comboitem label="wtawqgl94j" value="sqlj" />
 		</combobox>
-		<textbox type="text" id="aramaParam"  value="p1g5u5iqwt"  width="200"  placeholder=""  />
+		<textbox type="text" id="aramaParam"  value="zf7wajjkla"  width="200"  placeholder=""  />
 		<button id="yenileBtn" label="Listele"  onClick="yenile()"  width="80"  top="2" />
 		<button id="raporAlBtn" label="Rapor Al"  onClick="raporAl()"  width="80"  top="2" />
 		<button id="silBtn" label="Sil"  onClick="mesajSil()"  width="80"  top="2" />
