@@ -3,54 +3,52 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addDavaWindow">
 		<label visible="false" id="davaIdlbl" value="Dava Id" />
-		<textbox visible="false" type="text" id="davaId"  value="raq0fvivla"  width="200"  placeholder=""  />
+		<textbox visible="false" type="text" id="davaId"  value="yts3oveyxg"  width="200"  placeholder=""  />
 		<label id="mahkemesilbl" value="Mahkemesi" />
-		<textbox type="text" id="mahkemesi"  value="lysk4n9x5k0lfoh2gza726ktmquzpbh7ysykt623e3jz5yh93gokn9ie2ih54v6tjahzfalqdttdq54enj63b08wlrlgjjk78em5msyytf8ztjz2ui3mdl5graaie4kqmstyhm5ges3plbotgpwmuyrkknfxdk8hca92tmzf9hofn6glnl8r36dfxehynl18aiuxy76g"  width="200"  maxlength="200"  placeholder=""  onChange="autocomplete("autocomplete/autocomplete/autocomplete.do?tip=davaMahkemesi", "param", 5, "Other.empty")" />
+		<textbox type="text" id="mahkemesi"  value="vkfszves5ukpul1sr5d9uihiziecmem6zv7rbtmyh8dde4q3f1s7417eag89163n1zqxj931tcxjmmb33ez372rc2mrgz6nb0wewfp4wfx8hnpjgznal1b20n4fixuq35982zfxbnkmrevbreugk9rfrx9we5e5h0uxg42fqmc33hndfxj76zh38bax6x6bj8wfi5u5d"  width="200"  maxlength="200"  placeholder=""  onChange="autocomplete("autocomplete/autocomplete/autocomplete.do?tip=davaMahkemesi", "param", 5, "Other.empty")" />
 		<label id="esasNolbl" value="Mahkeme Esas No" />
-		<textbox type="text" id="esasNo"  value="16vxn6g8t6wgp57yp6v92egchs9ngxzm6bi2ssmipbbj3fwco8"  width="200"  maxlength="50"  placeholder=""  />
+		<textbox type="text" id="esasNo"  value="oiifio1007eprzxvpiwgga1tqvzki6s91hdw0we3ix8yi8ddhd"  width="200"  maxlength="50"  placeholder=""  />
 		<label id="eskiEsasNolbl" value="Eski Mahkeme Esas No" />
-		<textbox type="text" id="eskiEsasNo"  value="ey8nzkveu3n5uxo7ms05om3e2jcwyyv7mhdh0x2ion6902s7xl"  width="200"  maxlength="50"  placeholder=""  />
+		<textbox type="text" id="eskiEsasNo"  value="g52u6imux5b0f5gaim7poeka2ha8c4t9cp3eelzqcykzqqmxfx"  width="200"  maxlength="50"  placeholder=""  />
 		<label id="davaTarihilbl" value="Dava Tarihi" />
-		<datebox id="davaTarihi"  value="2009-2-9"  width="120"  placeholder=""  />
+		<datebox id="davaTarihi"  value="1999-6-2"  width="120"  placeholder=""  />
 		<label id="davaAdilbl" value="Dava Adı" />
-		<textbox type="text" id="davaAdi"  value="14skg483nlcvxc56v6tqagwxijr01afigtg9rwas156nifa18g0j965rn9tobhvcx0yko84bus4nur39ll3t1lj7d5w9nw6pz2od"  width="200"  maxlength="100"  placeholder=""  />
+		<textbox type="text" id="davaAdi"  value="cpofmixthjdqlflssvq1m2mflfq2udml9vlir434ao1fnyktrzibbru0u0qf9awpwvf548xotp6htr7t67cpp8fkg6zxf5pu847y"  width="200"  maxlength="100"  placeholder=""  />
 		<label id="konulbl" value="Konu" />
-		<textbox type="text" id="konu"  value="w1haha6vm1g4e3kzd48yj213c2nar9gxaahusf8ptdi03xh6et1wi9tfucz7xv0ra8xj5jib7a1frosdytlprciw5epr1evosrt19e059x8fcaok34mx392nubmgfksnt2ckb965qqsdock4d9o4py8zkoxxm4t5k6y4prw2iw4p3by0uxg63xzw79717vhp175c5oal"  width="200"  maxlength="200"  placeholder=""  />
+		<textbox type="text" id="konu"  value="cfvq6dvqzdv0g3uexqv8ehoe8atsl4kx1l9tac2trqcudwsqeh0sk1y8j0c6jy34k9vv3er7am6itkd2yvnsyysqckam6mr5w8ge7zmbj2t20lhxev8gg8modtreq4prftq7xrsd8mksz1lftrv3frlz4k7noocyy5ba5yh5mhhws9sttzce1jwe2kpxje8fd3dijckv"  width="200"  maxlength="200"  placeholder=""  />
 		<label id="davaYonulbl" value="Dava Yönü" />
-		<selectbox id="davaYonu"  width="150"  >
-			<template>
-				<label value="h0kbj2xpsb" />
-			</template>
-		</selectbox>
+		<combobox id="davaYonu"  width="150"  >
+			<comboitem label="1zq856z5vc" value="vlo4" />
+		</combobox>
 		<label id="davacilbl" value="Davacı" />
-		<textbox type="text" id="davaci"  value="taqpljcpcymr33oseewkk0waizqpta6o06uy9s6976vexsqmb4e3ijqtf1t0a3xw1w3py1tt86eaiz258guth1neu5wvz137vpxku8xowrydq98c4cy3b6j986fbyjaca2rx8hjzvjsqx8xcw9wglbnpga2j6yhkjxen0v61wrs2fzcp0vhcfrqzkv4qzp9qibu99ay8"  width="200"  maxlength="200"  placeholder=""  onChange="autocomplete("autocomplete/autocomplete/autocomplete.do?tip=davaDavaci", "param", 5, "Other.empty")" />
+		<textbox type="text" id="davaci"  value="79i2n7n6apnwa9ry9gctpj131yfagsv2n5xhnf8cpgxfvpdy07knw4ov294ozne1r1bmermoukaxpv2lzpgk8kbw7b7vnxxiwhzs1shi8iv6uqxjv0e1e2cwr9n66f4rhpqkqd66jhssf8mlm2nt4c156r9mq5whb6kimwblsihuvjplnzuwfw86lb52lf3odqgdt3it"  width="200"  maxlength="200"  placeholder=""  onChange="autocomplete("autocomplete/autocomplete/autocomplete.do?tip=davaDavaci", "param", 5, "Other.empty")" />
 		<label id="davalilbl" value="Davalı" />
-		<textbox type="text" id="davali"  value="rjevcwx6fmdfeupawb225ppzm0qmp3req2ln4j84lqvpspycpwc2ox1v4c47jp6zmmu8jki7fbtqbgnryzdvs5hhfimx30uwxupwdo6qkdtv5hvv4c3zlyungw1xl9wl3duumf9e9zjaw3jpfzokbv76ipxi5suajldmq0tumblxaz292wdc3s8xmwxrzviu6c5gtrg4"  width="200"  maxlength="200"  placeholder=""  onChange="autocomplete("autocomplete/autocomplete/autocomplete.do?tip=davaDavali", "param", 5, "Other.empty")" />
+		<textbox type="text" id="davali"  value="q7hac4es7xpgernqcnqjtkrxb0ndeb6bx6kwx39jx2l6r1tjyu14rlbaq5x7zorvya4ixk7wp95pliq4fcyijybh9n1nv9mutcnxuuvc0rfvztf1jutwpz4kxtswhnt2ly2vq2hsxewknkmqnq1fhcodtzmnnrm0yuwwfwtqpofpb95qrr6qm0te92ufznjd8gqzrono"  width="200"  maxlength="200"  placeholder=""  onChange="autocomplete("autocomplete/autocomplete/autocomplete.do?tip=davaDavali", "param", 5, "Other.empty")" />
 		<label id="dosyaSayisilbl" value="Dosya Sayısı" />
-		<intbox id="dosyaSayisi"  value="-1899394491"  width="100"  maxlength="6"  placeholder=""  />
+		<intbox id="dosyaSayisi"  value="-602937547"  width="100"  maxlength="6"  placeholder=""  />
 		<label id="bitTarihilbl" value="Karar Tarihi" />
-		<datebox id="bitTarihi"  value="2009-9-17"  width="120"  placeholder=""  />
+		<datebox id="bitTarihi"  value="2014-6-1"  width="120"  placeholder=""  />
 		<label id="kesTarihilbl" value="Kesinleşme Tarihi" />
-		<datebox id="kesTarihi"  value="2008-0-14"  width="120"  placeholder=""  />
+		<datebox id="kesTarihi"  value="2012-4-10"  width="120"  placeholder=""  />
 		<label id="sonuclbl" value="Sonuç" />
-		<textbox type="text" id="sonuc"  value="m76rd7svdnqtne5mn236vl7q0ff57dle2s9or6dmxzi2wo35205j936lbu3j5t8k1v30ytm762ijm3tsiov81nxs6xtwhjynvano8nm9j3blteop8r7vbga334wrckybaaz6fl5plhau6ie9w18acfdq6fqoabw4b7h4e6njnpasbmtbhapb634ooalz8xxpghu1gixf"  width="200"  maxlength="200"  placeholder=""  />
+		<textbox type="text" id="sonuc"  value="zsidh1brymqmecd5i959enqzoy8931b0wva5zr8c41fvs86o3c6khh2kmqd5vw2gzcmdqsgdpny0nsf9pff9e3s2lfe072yj47vsqhfyag6t8jde7363qmyf16n5notk44x273i7jho7guq9tbrnwa1prhvpqtm960zpx1fgj4kellwh03f46qa2mmnze3xhaueav60y"  width="200"  maxlength="200"  placeholder=""  />
 		<label id="durumlbl" value="Durum" />
-		<textbox type="text" id="durum"  value="iwl6h24c3if9yt9qt155wl8r5rylvyekxoh8xjor7geko8bfcv44831l6f18etui1i0alwompm5854j8p2g2m0gw9c6v582b5yqsri8j871azig1q8ienjiclp3g0exlqfhi5soq9ivc7dqpsqmskxag0cmxvvzt0bfpdas9rw48q61dd9swo50y2jf9l0o6axlkl55u"  width="200"  maxlength="200"  placeholder=""  readonly="true"  />
+		<textbox type="text" id="durum"  value="qjhp0k5a7kan78o4ywzou0209q6fz9sfxis15vjrz98ff6z5okm0hy6xr4iko7rc78xhst92bes5t9zkjl5q85vua5b8hst98orqd37ibzj5ix4gsvcugjbmw8pc733215vzb1ins58ejxnzy62pji5dtxjjrm7n94olwfol97446ivgu3ob2z5nw5airnnhlvsj7w74"  width="200"  maxlength="200"  placeholder=""  readonly="true"  />
 		<label id="subelbl" value="İlgili Şube" />
-		<selectbox id="sube"  width="120"  >
-			<template>
-				<label value="i6r1ewd5p3" />
-			</template>
-		</selectbox>
+		<combobox id="sube"  width="120"  >
+			<comboitem label="vpf5wgv7ih" value="ifte" />
+		</combobox>
 		<label id="aciklamalbl" value="Açıklama" />
-		<textbox type="text" id="aciklama"  value="kq2c9zofcs0ox9osbfvgu5s2rfdvr0zhp7olru2sv67052behixssvihb69w27cncywkk9feuvujk0nl2d10awvrcv87ningx2kyc4rd24ppv4bn8smsgctsugwa0o5qnxna1x3tavw35q3aho3t2uw88fbjr2ms8mggxmvmpyche1lzu0im87du43bmkwldiupl8wa7"  width="320"  maxlength="200"  placeholder=""  rows="5"  cols="40"  />
+		<textbox type="text" id="aciklama"  value="jg572wofqukt1qn6dsxrl6xvxop43h0jgw13uuay0vbyrptfch0i9t97w2g14vbxyvvyzct31x1jj523nnv102k7lbemwe9u7142l9dnp2u7x648r6yxx8ug2eg5l4ocaqzt751v9s7uln4ceauk9wuu1ro6ohmvneszq9jswpj1uwedufi84hups2pvkox96tgildm9"  width="320"  maxlength="200"  placeholder=""  rows="5"  cols="40"  />
 		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
-		<textbox visible="false" type="text" id="eklemeTarihi"  value="mgrxammme3"  placeholder=""  />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="hnmqpy2tt9"  placeholder=""  />
 		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
-		<textbox visible="false" type="text" id="ekleyen"  value="asvij04semdh2neb51c61aehe56do32njiedvcxmj7kq6c0vsi3tjlttlhpp7t7cosaxpc2tl20nglv02e0x9qupw4v7e67wr35ls6xyum6vlvl0m9f5urfn8as7a1qorm97wfo7dvcbtwo2eut23lydvg1sat2d0y28qz0i2asrnt1zhxdvr4squ5hzvsdimeqfq6t65m5mghbh3nnejc9qyh1v9gcbpbvtnw3f9sshz6c1sjbx3xo9phvyf6v"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="ekleyen"  value="ad1gkplzgynqr0j3ugq8p4eol8phn8xcbth4md3us7mbx1as78amdjjuwsssfwtk8q8yeuevyoclvcgcy7k83w2nh7rcx3ttan52tcjmtrbrlxosrruedfol3exwcm6g88te7zsglvwjnnumbmdn0qir350wexinz68hsmv738mh542r639kc3fw7256dw7j6g1lcyn8y7bmrq4omf10dz2ebjb7m24pl2lurfk7n3se9mg3h1242u5oxffmpwd"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
-		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="glgwiqdpeg"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="3d0c5ll68t"  placeholder=""  />
 		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
-		<textbox visible="false" type="text" id="sonGunleyen"  value="nsnp3q4suqgp7mnwc1x9naxi5lam9gxx8pmx8ql3jvh0yvlobqbch4uonnsc4casuvovw8gxyy9edvmj1n6ctaoj1hcfhhfdpzxltz9zkw3f6idbfvnse0qnj7o8y3yoy8m9hlobk0dhnzsuga2wyq8dmeyip1mh06rnp8ii7u452wai4869w3u7i8n23g3kjxsw9lhcge45138hgefjb9kqto2vhkiugys71rrtg1cxp44xfj3ld6audrsaxxx"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="0gge7rl3d3v9oouvi9liqe3lz9qxstowiwwk3gjjvpmxs9f11c0dc3nii1o5n6xt6401wfbtsg994696umc6a5ojpg0fj78fjfhyj8firney6pzrcowlbizwxddt0i6jpjx8bbtpgzcpek1isd95087e55cl6ixghxcxu8jy8whciarms7rkd2rw5wg08zbuaopmmkc2xetkov5o7e9xes1jpdmajxmm06dnk5nw2cxphsbqpk7zya3ayddbbl4"  maxlength="255"  placeholder=""  />
 	</window>
+	<script>
+$(document).ready( function () {	if ($("#davaId").val()) {		// Agem.addMaskEvents("isyeri.sgkNo");// 		Agem.addMaskEvents("davaSurec.gelisme");		AgemWM.addQueryString(Agem.json2Param( {davaIdParam: $("#davaId").val(), davaId: $("#davaId").val()}));		var json = <bean:write name="genelDavaForm" filter='false'/> 		AgemWM.addSideInfo(			{				id:"davaInfo",				info: [					{value: json.mahkemesi + " - " + json.esasNo, clazz: "pointer", 							onclick: function () {								AgemWM.link('#genelDavaSelect', {url: 'genel/dava/select.do'});							}						},					{label: "Dava Tarihi", value: json.davaTarihi, clazz:"not-bold"},					{label: "", value: json.davaAdi, clazz:"not-bold"}				],				type: 1			}		);		if(<%=request.getParameter("davaSurecId")%>)			AgemWM.link('#genelDavaSurecList', {url: 'genel/davaSurec/list.do?davaSurecId='+<%=request.getParameter("davaSurecId")%>});	}	else{		AgemWM.removeSideInfo({type: 1, id: "davaInfo"});	}});var prepareDavaSurecUrl = function() {	return  'genel/davaSurec/autocomplete.do'; };var setDavaSurec = function (d) {	Agem.setValue(			{davaId: d.davaId, "davaSurec.gelisme" : d.gelisme  });};function dosyaEkle() {	if (Agem.byId('davaId') && Agem.byId('davaId').value) {		AgemWM.window(				{					modal : true,					label: "Dava Bilgileri - Ekli Dosyalar", 					url:"genel/nesneDosya/list.do?pageSize=-1&nesneKodParam=davaId&nesneIdParam="+Agem.byId('davaId').value,					id : "nesneDosyaWindow",					width: 800, 					height: 600								});	}		};	</script>
 </arya>

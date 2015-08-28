@@ -3,26 +3,22 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listWebWindow">
 		<label id="sayfaTurParamlbl" value="Tür" />
-		<selectbox id="sayfaTurParam"  width="200"  >
-			<template>
-				<label value="hscink9o9b" />
-			</template>
-		</selectbox>
+		<combobox id="sayfaTurParam"  width="200"  >
+			<comboitem label="lhbnrwjc4m" value="xnc7" />
+		</combobox>
 		<label id="baslikParamlbl" value="Başlık" />
-		<textbox type="text" id="baslikParam"  value="e3idhesb8o81u66jbdnp7ymmkk7sk4fn9w"  width="200"  maxlength="34"  placeholder=""  onChange="autocomplete("genel/sayfa/autocomplete.do", "baslikParam", 5, "setBaslik")" />
+		<textbox type="text" id="baslikParam"  value="2uorfkcskrnxmy4lyb7rre5ab0g0meffoq"  width="200"  maxlength="34"  placeholder=""  onChange="autocomplete("genel/sayfa/autocomplete.do", "baslikParam", 5, "setBaslik")" />
 		<label id="dilRequestParamlbl" value="Dil" />
-		<selectbox id="dilRequestParam"  >
-			<template>
-				<label value="l047y8ievi" />
-			</template>
-		</selectbox>
+		<combobox id="dilRequestParam"  >
+			<comboitem label="3bucopv07a" value="dk89" />
+		</combobox>
 		<label id="subeParamlbl" value="Web Yayın Şube" />
-		<selectbox id="subeParam"  >
-			<template>
-				<label value="rhxdp0yn04" />
-			</template>
-		</selectbox>
-		<checkbox type="text" id="onayBekleyenParam"  checked="false"  label="Onay Bekleyen "  onCheck=""  width="120"  />
-		<checkbox type="text" id="yayinlananParam"  checked="true"  label="Yayında Olanlar"  onCheck=""  width="120"  />
+		<combobox id="subeParam"  >
+			<comboitem label="fcf2el4qmu" value="t02z" />
+		</combobox>
+		<checkbox type="text" id="onayBekleyenParam"  checked="true"  label="Onay Bekleyen "  onCheck=""  width="120"  />
+		<checkbox type="text" id="yayinlananParam"  checked="false"  label="Yayında Olanlar"  onCheck=""  width="120"  />
 	</window>
+	<script>
+$(document).ready(		function () {		<%if (request.getAttribute(AgemConstant.AGEM_MESSAGE) != null) {%>		Agem.message('<%=request.getAttribute(AgemConstant.AGEM_MESSAGE)%>');		<%}%>		<%if (request.getParameter("ikinciGiris") == null) {%>			AgemForm.open('genelWebParameterForm', null, 'sayfaTurParam', true);			$('#onayBekleyenParam').attr("checked","checked");		<%}%>		Agem.addElement('input','ikinciGiris', {type:'hidden', name:'ikinciGiris', value:'1'}, null, document.forms['genelWebParameterForm']);				if ($('.exportlinks').length > 0) {			$('<a/>', {     				id: 'arama-link',     				href: "javascript:AgemForm.open('genelWebParameterForm', null, 'sayfaTurParam', true)",     				title: 'İçerik Arama '     			}).html("<span title='İçerik Arama' class='export-icon arama-off' onmouseover=\"Other.changeClass(this, 'arama-off', 'arama-on')\" onmouseout=\"Other.changeClass(this, 'arama-on', 'arama-off')\"></span>").prependTo('.exportlinks');					$('.arama-off').parent().attr("href", "javascript:AgemForm.open('genelWebParameterForm', null, 'sayfaTurParam', true)");		}					});AgemTable.rowDblClick = function(id) {	if (!id) {		id = AgemTable.SELECTED_ID;		if (id == null) {			Agem.error("Lütfen kayıt seçiniz.");			return;		}	}	var d = AgemTable.get(id);	var pname = d.sayfaTurLabel.toLowerCase();	if (pname != 'haberler' && pname != 'duyurular')		pname = 'diger';	AgemWM.link('#genelSayfa'+d.sayfaTur, {url: 'genel/sayfa/list.do?sayfaTurParam='+d.sayfaTur+'&sayfaId='+d.sayfaId+'&name='+pname, refresh:true});}var setBaslik = function(d) {	$('#baslikParam').val(d.baslik);}var xmlIndir = function() {	$("form").append("<input type='hidden' name='xml' id='xml_inp' value='1'>")	$("form")[0].submit();}var gonder = function() {	$("#xml_inp").val("0");	AgemForm.submit(null, 'genelWebParameterForm');}	</script>
 </arya>

@@ -3,20 +3,22 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listKisiWindow">
 		<label visible="false" id="kisiIdParamlbl" value="Kisi Id" />
-		<textbox visible="false" type="text" id="kisiIdParam"  value="7dc5wkpefi"  placeholder=""  />
+		<textbox visible="false" type="text" id="kisiIdParam"  value="3tnqubfbm5"  placeholder=""  />
 		<label id="adParamlbl" value="Ad" />
-		<textbox type="text" id="adParam"  value="tvp6v1vd4u710raoi146ger9kcpshia3uzjliaupk42bpm1f48t72r5a56v2w8vv8qamc0o9mf75ipyqmtquyadxx7gpw1bqa99naam7haqropqdibthy854x6yifexuwnyue8btayf01zb4cek1gf45o0bx0dqp8574iafepbpyvp17ufxij0nkzkw6zcl3ou1x9s3rpcyncpyfeaekeko3in5gh1j6pfhc3qmuvllgyi5scep70h3w8kix8uj"  width="120"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="adParam"  value="iqpo9sfq4gxb297lingjhuhuwf38p1yjej2j3bqsmzwnqj8ywkhvxcym4cq08wqxrpkcv5tzift2hlzadstzlbxtwpx4ct5vpj7p8m9vww39eicwhej0s7vgpswzc8tu5axo7ty14jfo2g78sevy7fkdlodbk148pl4ez0s4a8zz4tkyuludqp3eeqqxtk3rmxkittb8m9l9tne6bqz84viemselb5xmg1ftcua9kpoz8cihg660uzzhrt5qdfk"  width="120"  maxlength="255"  placeholder=""  />
 		<label id="soyadParamlbl" value="Soyad" />
-		<textbox type="text" id="soyadParam"  value="wmgtbc4xlf3d0kbrwpo7mypremcnbmqp0wsikg67r0mrd3ei9984qxqkm8ygv9ga2jnw8rwcpvtk1diamc0sje66m93l4felby36rqmdmkc2prm2vxfyc3nr0yul8k7euyxy4cspeilapyou45jwvq3gg74q96uqn33vot6dte5wkl3ea7ktey13on4q8211fs9or5ww88ugog3f4h38ynoravffh5f9keq3182n2v4azzj9zonza22tpflzb64"  width="120"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="soyadParam"  value="1vp37x5mjol9wytkxzsfcrvjwz6w18cmo72jjvfzq2735easwhx7yvoe5siypz24j9z3an0kryeiy9bpl67lcw6r65qj3ynufn4gs9ofwk3abz4sknt9m39gpx9jrf5onai9g8ruzhpbj39xl6c05al3oy770z9pe3dqbkxibj1iv9lwtca8l5q923tuw5vvyswj96insnqz26q5u6nnh8rxk4qosbv82eb1py9wrlsspuaji2q5jxax4dbm3xp"  width="120"  maxlength="255"  placeholder=""  />
 		<label id="tckNoParamlbl" value="T.C. Kimlik No" />
-		<textbox type="text" id="tckNoParam"  value="90drqm3ogzw"  width="200"  maxlength="11"  placeholder=""  onChange="autocomplete("function:prepareKisiUrl()", "function:prepareTCKimlikNoParameterName()", 5, "setKisi")" />
+		<textbox type="text" id="tckNoParam"  value="wveyvc3g3yy"  width="200"  maxlength="11"  placeholder=""  onChange="autocomplete("function:prepareKisiUrl()", "function:prepareTCKimlikNoParameterName()", 5, "setKisi")" />
 		<label id="unvanParamlbl" value="Unvan" />
-		<textbox type="text" id="unvanParam"  value="6hm65j2jpgsdasxuxnzkwq78nud0vqcrxvc64lgc9siu8kbh37xhz67wvsj9xi07wn76os44ard4fqq0lfphpgyd2aktf67pk8tht3nm5hpn5u2icvn66tfux90w2ex0l3r5fy3n5eun92ssa36a2s7g8hzisdnm6p9pumzvr6bgrw61ffg3hidrud0j2z4pbormayfail52rgu6emjnbqpi3bgotdghhpce3for2nwi9tszc6jlkk72oijfv6r"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="unvanParam"  value="cfk43zoan5wzt7fhfbv819fq2hiyxa78hbe1f1okfefw6gy2y79jrxs8jwyuyi08ssocv9umdjy8n00jda8fz58qrn9r1fbrcba673yypx245elgvlt88h92hifzz8z3l63ibix6gyawxghl9fg58xinm5rrwyt2wvotfj5xp53nh8o62skihgwgwtiqodjy5a1ebuwat2x9drvv6d2wcsxvzhbmndut6ihyrid7vuvrb9k4ahaztzzbq137dyf"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="iletisimIdParamlbl" value="Iletisim Id" />
-		<textbox visible="false" type="text" id="iletisimIdParam"  value="z4s9ztslq9"  placeholder=""  />
+		<textbox visible="false" type="text" id="iletisimIdParam"  value="mtjd8r58rg"  placeholder=""  />
 		<label visible="false" id="resimIdParamlbl" value="Resim Id" />
-		<textbox visible="false" type="text" id="resimIdParam"  value="vgrdbioody"  placeholder=""  />
+		<textbox visible="false" type="text" id="resimIdParam"  value="0a9q95pm0n"  placeholder=""  />
 		<label visible="false" id="kullaniciIdParamlbl" value="Kullanici Id" />
-		<textbox visible="false" type="text" id="kullaniciIdParam"  value="lwhny9tsme"  placeholder=""  />
+		<textbox visible="false" type="text" id="kullaniciIdParam"  value="6tp8v1aiyx"  placeholder=""  />
 	</window>
+	<script>
+AgemForm.submitMessage('Arama yapılıyor...');Agem.addLoadFunction(	function () {		AgemTab.show(1, <%="1".equals(request.getParameter("showTab"))%>);	});	</script>
 </arya>

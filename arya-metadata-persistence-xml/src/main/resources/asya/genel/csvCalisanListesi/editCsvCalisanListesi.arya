@@ -3,28 +3,24 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="selectCsvcalisanlistesiWindow">
 		<label visible="false" id="isyeriIdlbl" value="İşyeri" />
-		<textbox visible="false" type="text" id="isyeriId"  value="nef1wxzl0m"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriId"  value="i2oohj3i69"  placeholder=""  />
 		<label visible="false" id="dosyaIdlbl" value="Dosya" />
-		<textbox visible="false" type="text" id="dosyaId"  value="uujwzdvial"  placeholder=""  />
+		<textbox visible="false" type="text" id="dosyaId"  value="8pvlrkr4xt"  placeholder=""  />
 		<label id="calisanListeDosyaIdlbl" value="Çalışan Listeleri" />
-		<selectbox id="calisanListeDosyaId"  width="180"  >
-			<template>
-				<label value="m0wmni3iua" />
-			</template>
-		</selectbox>
+		<combobox id="calisanListeDosyaId"  width="180"  >
+			<comboitem label="c8yhioj4ct" value="7wx8" />
+		</combobox>
 		<label id="donemAylbl" value="Dönem" />
-		<selectbox id="donemAy"  width="80"  >
-			<template>
-				<label value="6abpbcbfjh" />
-			</template>
-		</selectbox>
+		<combobox id="donemAy"  width="80"  >
+			<comboitem label="e2wwjop9z2" value="c3gg" />
+		</combobox>
 		<label id="donemYillbl" value="Dönem Yıl" />
-		<selectbox id="donemYil"  width="70"  >
-			<template>
-				<label value="ugousy2try" />
-			</template>
-		</selectbox>
+		<combobox id="donemYil"  width="70"  >
+			<comboitem label="55e2zpm714" value="8970" />
+		</combobox>
 		<button id="calisanDosyaYukleBtn" label="Yükle"  onClick="calisanDosyaYukle()"  width="70"  />
-		<checkbox type="text" id="isletmeTekListe"  checked="true"  label="İşletme İçin Tek Liste"  onCheck=""  width="70"  />
+		<checkbox type="text" id="isletmeTekListe"  checked="false"  label="İşletme İçin Tek Liste"  onCheck=""  width="70"  />
 	</window>
+	<script>
+var calisanDosyaYukle = function() {	if (Agem.byId("calisanListeDosyaId").value) {		Agem.byId("dosyaId").value = Agem.byId("calisanListeDosyaId").value;		AgemWM.submit();	}	else {		Agem.error("Çalışan listesi seçin.");	}};function dosyaEkle() {	if (Agem.byId('isyeriId') && Agem.byId('isyeriId').value) {		AgemWM.window(				{					modal : true,					label: " Çalışan Listeleri", 					url:"genel/nesneDosya/list.do?pageSize=-1&nesneKodParam=calisanListesiId&nesneIdParam="+Agem.byId('isyeriId').value,					id : "nesneDosyaWindow",					width: 800, 					height: 600,					opener: window				});	}		};AgemWM.onClose = function (id) {	if (id == 'nesneDosyaWindow') {		AgemWM.link('#genelCsvCalisanListesiSelect', {url: 'genel/csvCalisanListesi/select.do?isyeriId='+Agem.byId("isyeriId").value, refresh:true});	}};AgemTable.rowDblClick = function(id) {		<agem:access URL="genel/isci/select">	if (parseInt(id)) {		AgemWM.window({ link:"genel/isci/select.do?kisiId="+id, label: "İşçi İşlemleri",width: 800, height: 600});	} else {		var tckNoAdSoyad = id.toString().substring(1).split("&");		AgemWM.window(				{					label: 'İşçi İşlemleri',					link:"genel/isci/list.do?kisiParam.checkTckNoAdSoyadParam=" + tckNoAdSoyad[0] + "&kisiParam.checkTckNoAdSoyadParam=" + tckNoAdSoyad[1]+ "&kisiParam.checkTckNoAdSoyadParam=" + tckNoAdSoyad[2],					tab:"#genelIsciList",					paramSelector:"#genelIsciList",					width: 800,					height: 600								});	}	</agem:access>};$(document).ready( function () {	AgemTable.loadOnRowSelect('eslesen');		AgemTable.loadOnRowSelect('sendika');		AgemTable.loadOnRowSelect('isyeri');	Agem.addElement('input','merkez', {type:'hidden', name:'merkez', value:'<bean:write name="p_merkez"/>'}, null, document.forms['genelCsvCalisanListesiForm']);	$("[id='refresh-link']").hide();		if ('<bean:write name="p_merkez"/>' == '0') {		$('#isletmeTekListe').attr('checked',false);		$('#agem_label_input_div_isletmeTekListe').hide();	} 		divAyarla();});// liste satirlarinin class tanimi icinde icinde // cikisNedeni,izinde,mevsimlikDaimi,isverenCikisNedeni,isverenIzinde,isverenMevsimlikDaimi// bilgileri saklivar _DUZENLE_LIST = [];var eslesenDuzenle = function (item) {		var attr= $(item).attr('class').split('calisanAttr')[1].split(',');	var m = $("td:nth-child(2)", item).html();	var cikTar = $("td:nth-child(7)", item).html();	var cId= $(item).attr('class').split('CalisanId')[1];		Agem.ajax("genel/csvCalisanListesi/edit.do", 		{			cikisTarihi : (cikTar == '' || cikTar == '&nbsp;') ? null : cikTar,			cikisNedeni : attr[0],			izinde : attr[1],			mevsimlikDaimi : attr[2],			json: 1,			calisanId: cId,			islem: 1		}, 		function (d) {			if (!d["@hata"]) {				$("td:nth-child(3)", item).html(cikTar);				$("td:nth-child(4)", item).html($("td:nth-child(8)", item).html());				$("td:nth-child(5)", item).html($("td:nth-child(9)", item).html());				$("td:nth-child(6)", item).html($("td:nth-child(10)", item).html());			}			topluDuzenle('eslesen');		},		null,		null,		m	);};var sendikaDuzenle = function (item) {	var m = $("td:nth-child(2)", item).html();	var cikTar = $("td:nth-child(4)", item).html();	var cId= $(item).attr('class').split('CalisanId')[1];		Agem.ajax("genel/csvCalisanListesi/edit.do", 		{			json: 1,			calisanId: cId,			islem: 2,			cikisTarihi:  (cikTar == '' || cikTar == '&nbsp;') ? Agem.byId("sendikaCikisTarihi").value : cikTar,			isyeriId: <bean:write name="genelCsvCalisanListesiForm" property="isyeriId"/>		}, 		function (d) {			if (!d["@hata"]) {				$(item).remove();				Agem.countDown('sendikaSizeSpan');			}			topluDuzenle('sendika');		},		null,		null,		m	);};var isyeriDuzenle= function(item) {	var attr= $(item).attr('class').split('calisanAttr')[1].split(',');	var m = $("td:nth-child(2)",item).html();	var girTar = $("td:nth-child(3)", item).html();	var cikTar = $("td:nth-child(4)", item).html();	Agem.ajax("genel/csvCalisanListesi/edit.do", 		{			json: 1,			tckNo: $("td:nth-child(1)", item).html(),			adSoyad: m,			islem: 3,			isyeriId: <bean:write name="genelCsvCalisanListesiForm" property="isyeriId"/>,			girisTarihi: (girTar == '' || girTar == '&nbsp;') ? Agem.byId("isyeriGirisTarihi").value : girTar,			cikisTarihi:  (cikTar == '' || cikTar == '&nbsp;') ? null : cikTar,			cikisNedeni : attr[0],			izinde : attr[1],			mevsimlikDaimi : attr[2]		}, 		function (d) {			if (!d["@hata"]) {				$(item).remove();				Agem.countDown('isyeriSizeSpan');			}			topluDuzenle('isyeri');		},		null,		null,		m	);};var duzenle = function (id) {		_DUZENLE_LIST = [];	$('#'+id + ' tbody tr' ).each( function () {		_DUZENLE_LIST.push( this );	});		topluDuzenle(id);};var topluDuzenle = function (id){	var _tid = _DUZENLE_LIST.pop();	if (_tid) {		if (id == "isyeri") {			isyeriDuzenle(_tid);		} else if (id == "sendika") {			sendikaDuzenle(_tid);		} else if (id == "eslesen") {			eslesenDuzenle(_tid);		}	} else {		Agem.message('<span class=\"agem-error\">İstenilen düzenlemeler yapılmıştır. Güncel listeler için lütfen dosya yükleme ekranından Yükle tuşuna tekrar basınız...</span>');	}};var kaydetKontrol = function (kontrol) {	var btn = [{id:'tamam', label:'Tamam', func : function() { duzenle(kontrol); return true; }},	           {id:'iptal', label:'İptal', func : function() { return true; }}];	var text ='';	if(kontrol == 'isyeri'){		if (!Agem.byId("isyeriGirisTarihi").value) {			Agem.error("Lütfen giriş tarihini girin.");			return;		}		text = "Listedeki kişiler sendika kayıtlarına eklenecektir. Devam etmek istediğinize emin misiniz?";	}	else if(kontrol == 'sendika'){		if (!Agem.byId("sendikaCikisTarihi").value) {			Agem.error("Lütfen çıkış tarihini girin.");			return;		}		text = "Listedeki kişilerin sendika kayıtlarında işyerinden çıkışları yapılacaktır. Devam etmek istediğinize emin misiniz?";	}	else if(kontrol == 'eslesen'){		text = "Listedeki kişiler için değişiklikler sendika kayıtlarına yansıtılacaktır. Devam etmek istediğinize emin misiniz?";	}	else{		alert("Yetkisiz giriş.");		return;	}	AgemWM.alertBox({title:'Uyarı', height:180, width:300, message:text, buttons: btn});};$(window).resize( function () {	divAyarla();});var divAyarla = function () {	var h = $(window).height();	var w = $(window).width();	$("#yuklenenlerDiv").width(w < 660 ? 602 : w-60);	$(".tabbertab").height(h < 550 ? 490 : h-60);	$(".tabbertab").width(w < 660 ? 600 : w-60);	$("#displaytag_scroll_div").width(w < 660 ? 600 : w-61);	};							AgemDate.attachEvents("sendikaCikisTarihi", true);														AgemDate.attachEvents("isyeriGirisTarihi", true);								</script>
 </arya>

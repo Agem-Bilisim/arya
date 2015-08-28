@@ -2,14 +2,14 @@
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listCsvcsgbuyeentegrasyonWindow">
-		<textbox visible="false" type="text" id="isyeriIdParam"  value="nxsvailm22"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriIdParam"  value="jz932aa0ta"  placeholder=""  />
 		<label id="subeParamlbl" value="Şube" />
-		<selectbox id="subeParam"  width="200"  >
-			<template>
-				<label value="4uo37zdcj8" />
-			</template>
-		</selectbox>
+		<combobox id="subeParam"  width="200"  >
+			<comboitem label="ldgj7ar8ww" value="bakp" />
+		</combobox>
 		<label id="isyeriParam.unvanParamlbl" value="İşyeri Ünvanı" />
-		<textbox type="text" id="isyeriParam.unvanParam"  value="zgaaq368sssgitfgc89xkn5xnuy77drg8pwdyhqfc3f55tx85hh5q48x066aeojit8bf06xy19xaawg6baxblhd79jzynk2bxpox89i07pezs2lrzvllszirxsp4ui17m7cpn7jqldmbkkbuxkhtopdg7zwpm5o12rm5gy9ktjekkxrlll65gjqqdyhr7lz2a5e3wk7ltwchcldwyhy7oqyrlqr7hippfh8lmd6dj02em444u1vp5dl8kiuqp4e"  width="361"  maxlength="255"  placeholder=""  top="56" onChange="autocomplete("genel/csgbIsyeri/autocomplete.do", "unvanParam", 5, "setIsyeri")" />
+		<textbox type="text" id="isyeriParam.unvanParam"  value="dhx5hyx7gbwptiydah5l6rpv1elg41uzcwslialybfnnqkqgj1ni5x4r853x3nr0slarmbhj2emgr3sdssqfj6huzlg0zgq2ykzs0popf8l9ogx4kclpma3zvernt2fjaiqftzjbzhgtwbz5d06z9w7scsvpobnd0t5dc21zedolq3ughwg5xhlnija7sftqs3ntti3zwonsthx15tnc40k5g7vc13iv5r0osa0wsze2qhtnd9ffwys3ohpx8z6"  width="361"  maxlength="255"  placeholder=""  top="56" onChange="autocomplete("genel/csgbIsyeri/autocomplete.do", "unvanParam", 5, "setIsyeri")" />
 	</window>
+	<script>
+var _YARDIM_SOZCUK = 'genel/csgbUye/search';AgemForm.submitMessage('Arama yapılıyor...');var setIsyeri = function(d) {	Agem.setValue({ isyeriIdParam:d.isyeriId, 'isyeriParam.sgkKisaNoParam' : d.sgkKisaNo, 'isyeriParam.unvanParam':d.unvan});};var prepareIsyeriUrl = function() {//	var url = 'genel/isyeri/autocomplete.do?orgutluParam=1';	var url = 'genel/csgbIsyeri/autocomplete.do';	return url;};$(document).ready(	function () {		$('#listeTurParam').val(0);		Agem.addMaskEvents("isyeriParam.sgkKisaNoParam");	});function listele() {	var f = document.forms['genelCsvCsgbUyeEntegrasyonParameterForm'];	f.action = "genel/csvCsgbUyeEntegrasyon/list.do?listeTurParam=4";	f.target = "genelCsvCsgbUyeEntegrasyonList";	AgemWM.submit(null, 'genelCsvCsgbUyeEntegrasyonParameterForm');	f.target = "genelCsvCsgbUyeEntegrasyonUyeList";	f.action = "genel/csvCsgbUyeEntegrasyon/list.do?listeTurParam=0";	AgemWM.submit(null, 'genelCsvCsgbUyeEntegrasyonParameterForm');}function uye_listele() {}	</script>
 </arya>

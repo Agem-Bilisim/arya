@@ -3,15 +3,15 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="selectCsvcalisanlistesiaktarWindow">
 		<label visible="false" id="isyeriIdlbl" value="İşyeri" />
-		<textbox visible="false" type="text" id="isyeriId"  value="3mqj5n02uu"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriId"  value="bppekb36v8"  placeholder=""  />
 		<label visible="false" id="dosyaIdlbl" value="Dosya" />
-		<textbox visible="false" type="text" id="dosyaId"  value="hf0tmx78db"  placeholder=""  />
+		<textbox visible="false" type="text" id="dosyaId"  value="5ykoa7ikh7"  placeholder=""  />
 		<label id="calisanListeDosyaIdlbl" value="Çalışan Listeleri" />
-		<selectbox id="calisanListeDosyaId"  width="370"  >
-			<template>
-				<label value="6c3wunpsnh" />
-			</template>
-		</selectbox>
+		<combobox id="calisanListeDosyaId"  width="370"  >
+			<comboitem label="yovtfb8f9z" value="4x4t" />
+		</combobox>
 		<button id="calisanDosyaYukleBtn" label="Yükle"  onClick="calisanDosyaYukle()"  width="70"  />
 	</window>
+	<script>
+var calisanDosyaYukle = function() {	if (Agem.byId("calisanListeDosyaId").value) {		Agem.byId("dosyaId").value = Agem.byId("calisanListeDosyaId").value;		AgemWM.submit();	}	else {		Agem.error("Çalışan listesi seçin.");	}};function dosyaEkle() {	if (Agem.byId('isyeriId') && Agem.byId('isyeriId').value) {		AgemWM.window(				{					modal : true,					label: " Çalışan Listeleri", 					url:"genel/nesneDosya/list.do?pageSize=-1&nesneKodParam=calisanListesiAktarId&nesneIdParam="+Agem.byId('isyeriId').value,					id : "nesneDosyaWindow",					width: 800, 					height: 600,					opener: window				});	}		};AgemWM.onClose = function (id) {	if (id == 'nesneDosyaWindow') {		AgemWM.link('#genelCsvCalisanListesiSelect', {url: 'genel/csvCalisanListesiAktar/select.do?isyeriId='+Agem.byId("isyeriId").value, refresh:true});	}};AgemTable.rowDblClick = function(id) {		<agem:access URL="genel/isci/select">	if (parseInt(id)) {		AgemWM.window({ link:"genel/isci/select.do?kisiId="+id, label: "İşçi İşlemleri",width: 800, height: 600});	} else {		var tckNoAdSoyad = id.toString().substring(1).split("&");		AgemWM.window(				{					label: 'İşçi İşlemleri',					link:"genel/isci/list.do?kisiParam.checkTckNoAdSoyadParam=" + tckNoAdSoyad[0] + "&kisiParam.checkTckNoAdSoyadParam=" + tckNoAdSoyad[1]+ "&kisiParam.checkTckNoAdSoyadParam=" + tckNoAdSoyad[2],					tab:"#genelIsciList",					paramSelector:"#genelIsciList",					width: 800,					height: 600								});	}	</agem:access>};$(document).ready( function () {	AgemTable.loadOnRowSelect('yuklenen');	$("[id='refresh-link']").hide();	divAyarla();});// liste satirlarinin class tanimi icinde icinde // cikisNedeni,izinde,mevsimlikDaimi,isverenCikisNedeni,isverenIzinde,isverenMevsimlikDaimi// bilgileri saklivar _DUZENLE_LIST = [];var yuklenenDuzenle= function(item) {	var attr= $(item).attr('class').split('calisanAttr')[1].split(',');	var m = $("td:nth-child(2)",item).html();	if ("#" == attr[0]) {		topluDuzenle('yuklenen');	}	else {		Agem.ajax("genel/csvCalisanListesiAktar/edit.do", 			{				json: 1,				tckNo: $("td:nth-child(1)", item).html(),				adSoyad: m,				calisanId: attr[0],				isyeriId: <bean:write name="genelCsvCalisanListesiAktarForm" property="isyeriId"/>			}, 			function (d) {				topluDuzenle('yuklenen');			},			null,			null,			m		);	} };var duzenle = function (id) {		_DUZENLE_LIST = [];	$('#'+id + ' tbody tr' ).each( function () {		_DUZENLE_LIST.push( this );	});		topluDuzenle(id);};var topluDuzenle = function (id){	var _tid = _DUZENLE_LIST.pop();	if (_tid) {		if (id == "yuklenen") {			yuklenenDuzenle(_tid);		} 	} else {		Agem.message('<span class=\"agem-error\">İstenilen düzenlemeler yapılmıştır.</span>');	}};var kaydetKontrol = function (kontrol) {	var btn = [{id:'tamam', label:'Tamam', func : function() { duzenle(kontrol); return true; }},	           {id:'iptal', label:'İptal', func : function() { return true; }}];	var text ='';	if(kontrol == 'yuklenen'){		text = "Listedeki kişilerin çalışma kayıtları güncellenecektir. Devam etmek istediğinize emin misiniz?";	}	AgemWM.alertBox({title:'Uyarı', height:180, width:300, message:text, buttons: btn});};$(window).resize( function () {	divAyarla();});var divAyarla = function () {	var h = $(window).height();	var w = $(window).width();	$("#yuklenenlerDiv").width(w < 660 ? 602 : w-60);	$(".tabbertab").height(h < 550 ? 490 : h-60);	$(".tabbertab").width(w < 660 ? 600 : w-60);	$("#displaytag_scroll_div").width(w < 660 ? 600 : w-61);	};	</script>
 </arya>

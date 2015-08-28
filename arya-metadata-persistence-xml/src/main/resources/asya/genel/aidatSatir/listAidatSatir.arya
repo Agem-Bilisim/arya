@@ -2,36 +2,30 @@
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listAidatsatirWindow">
-		<textbox visible="false" type="text" id="aidatIdParam"  value="9p9ezw67g2"  placeholder=""  />
-		<textbox visible="false" type="text" id="aidatIdsString"  value="wrsb576qfm"  placeholder=""  />
-		<textbox visible="false" type="text" id="satirTurParam"  value="p5vt74s65f"  placeholder=""  />
-		<textbox visible="false" type="text" id="isletmeParam"  value="e62ch77siv"  placeholder=""  />
-		<textbox visible="false" type="text" id="donemAyParam"  value="0pwrg1voy2"  placeholder=""  />
-		<textbox visible="false" type="text" id="donemYilParam"  value="zj7t4192ji"  placeholder=""  />
-		<textbox visible="false" type="text" id="merkezIdParam"  value="r50viva0tk"  placeholder=""  />
+		<textbox visible="false" type="text" id="aidatIdParam"  value="dqg0rpv6c3"  placeholder=""  />
+		<textbox visible="false" type="text" id="aidatIdsString"  value="iu6x36bqd4"  placeholder=""  />
+		<textbox visible="false" type="text" id="satirTurParam"  value="72n5e42bdm"  placeholder=""  />
+		<textbox visible="false" type="text" id="isletmeParam"  value="q6uz7hodf8"  placeholder=""  />
+		<textbox visible="false" type="text" id="donemAyParam"  value="88lqjo8yar"  placeholder=""  />
+		<textbox visible="false" type="text" id="donemYilParam"  value="efhrg9xffi"  placeholder=""  />
+		<textbox visible="false" type="text" id="merkezIdParam"  value="zgpmpsy3rr"  placeholder=""  />
 		<label id="bildirimFarkiParamlbl" value="Üye/DA" />
-		<selectbox id="bildirimFarkiParam"  width="120"  >
-			<template>
-				<label value="hwc5nwwkn6" />
-			</template>
-		</selectbox>
+		<combobox id="bildirimFarkiParam"  width="120"  >
+			<comboitem label="vagf43cien" value="qek9" />
+		</combobox>
 		<label id="istenCikislarParamlbl" value="İşten Çıkış" />
-		<selectbox id="istenCikislarParam"  width="120"  >
-			<template>
-				<label value="f86yqyv0xh" />
-			</template>
-		</selectbox>
+		<combobox id="istenCikislarParam"  width="120"  >
+			<comboitem label="f9b6uq6674" value="bdmi" />
+		</combobox>
 		<label id="ucretsizIzinParamlbl" value="R/UI/A " />
-		<selectbox id="ucretsizIzinParam"  width="120"  >
-			<template>
-				<label value="z52669ad96" />
-			</template>
-		</selectbox>
+		<combobox id="ucretsizIzinParam"  width="120"  >
+			<comboitem label="suthirbbgy" value="89t5" />
+		</combobox>
 		<label id="subeParamlbl" value="Şube" />
-		<selectbox id="subeParam"  width="120"  >
-			<template>
-				<label value="tgluxasjij" />
-			</template>
-		</selectbox>
+		<combobox id="subeParam"  width="120"  >
+			<comboitem label="a47emo4lbd" value="rqx7" />
+		</combobox>
 	</window>
+	<script>
+var tur = null;<%    String satirTurParam = request.getParameter("satirTurParam");   String mevsimlikDaimiParam = request.getParameter("mevsimlikDaimiParam");   String ucretsizIzindeParam = request.getParameter("ucretsizIzindeParam");   String isletmeParam = request.getParameter("isletmeParam");   boolean izinDuzenle = false;      if ("1".equals(satirTurParam)) {		  if("D".equals(mevsimlikDaimiParam)){%>		  	var _YARDIM_SOZCUK = 'genel/aidatSatirUcretsizIzinde';		  	tur = 'D';	<% 			izinDuzenle = true;	     } else if("M".equals(mevsimlikDaimiParam)){%>		  	var _YARDIM_SOZCUK = 'genel/aidatSatirMevsimlikDaimi';		  	tur = 'M';	<%      izinDuzenle = true;	    } else {%>			var _YARDIM_SOZCUK = 'genel/aidatSatirSendika';<% 		}   } else { %>		var _YARDIM_SOZCUK = 'genel/aidatSatirIsyeri';<% } %>$(document).ready( function () {<% if (izinDuzenle) { %><agem:access URL="genel/aidatSatir/edit">	if ($('.exportlinks').length > 0) {		$('<a/>', {     			id: 'kaydet-link',     			href: "javascript:degistir()",     			title: 'Değiştir'     		}).html("<span title='Değiştir' class='export-icon save-off' onmouseover=\"Other.changeClass(this, 'save-off', 'save-on')\" onmouseout=\"Other.changeClass(this, 'save-on', 'save-off')\"></span>").prependTo('.exportlinks');				$('.save-off').parent().attr("href", "javascript:degistir()");	}</agem:access><% } else { %>		$('<a/>', {     			id: 'arama-link',     			href: "javascript:filtrele()",     			title: 'Filtrele'     		}).html("<span title='Filtrele' class='export-icon search-off' onmouseover=\"Other.changeClass(this, 'search-off', 'search-on')\" onmouseout=\"Other.changeClass(this, 'search-on', 'search-off')\"></span>").prependTo('.exportlinks');				$('.search-off').parent().attr("href", "javascript:filtrele()");	<%		if (AgemUtils.isEmpty(isletmeParam) || "0".equals(isletmeParam)) { %>			$("#subeParam").parent().hide();<%		}  } %>});<% if (izinDuzenle) { %><agem:access URL="genel/aidatSatir/edit">var mevsimlikEkleCikar= function(tid) {	Agem.ajax("genel/aidatSatir/edit.do", 		{			json: 1,			aidatSatirId: tid.substring(3),			mevsimlikDaimi: tur == 'M' ? 'D' : 'M'		}, 		function (d) {			if (!d["@hata"]) {				$("#"+tid).parent().parent().remove();			}			topluDuzenle();		},		null,		null,		null	);};var duzenle = function () {		_DUZENLE_LIST = [];	$('.geciciMevsimlikCheckbox').each( function () {		if ( ((tur == 'M') && !$(this).attr("checked"))			|| ((tur == 'D') && $(this).attr("checked"))){			_DUZENLE_LIST.push( $(this).attr("id"));					}	});		topluDuzenle();};var topluDuzenle = function (){	var _tid = _DUZENLE_LIST.pop();	if (_tid) {		mevsimlikEkleCikar(_tid);	}}var degistir = function () {		if ($("#liste tr.empty").length > 0) {		alert("Listede işlenecek kayıt yok...");		return;	}		var btn = [{id:'tamam', label:'Tamam', func : function() { duzenle(); return true; }},	           {id:'iptal', label:'İptal', func : function() { return true; }}	        ];	var text = (tur == 'M') ? 'Seçimi kaldırılan işçilerin geçiçi/mevsimlik işçilikten çıkartılacaklardır.' 				: 'Seçimi yapılan işçiler geçiçi/mevsimlik işçi olarak tanımlanacaklardır.' ;	AgemWM.alertBox({title:'Uyarı', height:120, width:300, message:text, buttons: btn});};</agem:access><% } else {%>var filtrele = function() {	AgemForm.open('genelAidatSatirParameterForm', null, '---Par', true);};var listele = function() {		AgemWM.submit(null, 'genelAidatSatirParameterForm');};<% } %>AgemTable.rowDblClick = function(id) {	if (id) {		var d= AgemTable.get(id);		if (d.kisiId) {			AgemWM.window(					{						label: 'İşçi İşlemleri', 						link:"genel/isci/select.do?kisiId=" + d.kisiId + "&kisiIdParam=" +d.kisiId,						width: 800,						height: 600									});		} else {			AgemWM.window(					{						label: 'İşçi İşlemleri',						link:"genel/isci/list.do?kisiParam.tckNoParam=" + d.tckNo,						tab:"#genelIsciList",						paramSelector:"#genelIsciList",						width: 800,						height: 600									});		}	}};	</script>
 </arya>

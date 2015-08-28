@@ -1,0 +1,6 @@
+<?page title="DOCSYS" ?>
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
+	<script>
+$(document).ready( function () {				<%if (request.getAttribute(AgemConstant.AGEM_MESSAGE) != null) {%>			Agem.message('<%=request.getAttribute(AgemConstant.AGEM_MESSAGE)%>');		<%}%>		addRemoveHover();	});var _SELECTED = null;function selectImage(r) {		if (_SELECTED != null) {		_SELECTED.removeClass("dosyaCerceveSelected")	} 	if (r) {		_SELECTED = r;		_SELECTED.addClass("dosyaCerceveSelected");	} else {		_SELECTED = null;	}}function changeRemoveIcon() {	if ($(this).attr('className') =='kapat_icon_16')		$(this).removeClass('kapat_icon_16').addClass('kapat_icon_24');	else			$(this).removeClass('kapat_icon_24').addClass('kapat_icon_16');}function addRemoveHover() {		$('.kapat_icon_16').hover( changeRemoveIcon );		$('.dosya').dblclick(function() { window.open( "getDosya.do?id=" + $(this).attr('id')); });		$('.dosyaCerceve').click( function() { selectImage($(this)); } );}	</script>
+</arya>

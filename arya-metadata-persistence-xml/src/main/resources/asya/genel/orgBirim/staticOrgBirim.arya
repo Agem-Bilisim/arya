@@ -1,0 +1,6 @@
+<?page title="DOCSYS" ?>
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
+	<script>
+$(document).ready( function () {	<agem:access right="organizasyon.super">	var baslik = $('#baslikBilgi h1 span');	baslik.html( '<a href="javascript:goster()">' + baslik.html() +'</a>');	</agem:access>});var _id = <bean:write name="genelOrgBirimForm" property="orgBirimId"/>;function goster(id) {	AgemWM.window({ link:"genel/orgBirim/select.do?orgBirimId="+_id + "&orgBirimIdParam="+_id, label: "Organizasyon Birim",width: 800, height: 600});}	</script>
+</arya>

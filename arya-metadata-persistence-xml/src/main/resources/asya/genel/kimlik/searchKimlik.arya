@@ -3,42 +3,44 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listKimlikWindow">
 		<label visible="false" id="kisiIdParamlbl" value="Kisi Id" />
-		<textbox visible="false" type="text" id="kisiIdParam"  value="v617tlegvm"  placeholder=""  />
+		<textbox visible="false" type="text" id="kisiIdParam"  value="1f2purt0zc"  placeholder=""  />
 		<label id="seriParamlbl" value="Seri" />
-		<textbox type="text" id="seriParam"  value="7ioxg"  maxlength="5"  placeholder=""  />
+		<textbox type="text" id="seriParam"  value="bso9a"  maxlength="5"  placeholder=""  />
 		<label id="noParamlbl" value="No" />
-		<textbox type="text" id="noParam"  value="x1qttybmqr"  maxlength="10"  placeholder=""  />
+		<textbox type="text" id="noParam"  value="9ejhyad3tz"  maxlength="10"  placeholder=""  />
 		<label id="babaAdiParamlbl" value="Baba Adi" />
-		<textbox type="text" id="babaAdiParam"  value="apia6315bmgkdsf80qttqce26tw4unfqtxeg2x8ep1l1rp792okqylwxfl09hiq4uel08ypk1a1wvsxw25z6u7uq3t9rosuwb86hmrtxbe06mb0nx5255kpc7lrubhr8o8wgmk8iio2ez6l8al9cvysdfxxxnd2in81osk9vfoakmzblzj1ux98wjyxsrbb7qq816c5lz2q54cbvmd4su6wkrm2knrh3u8dg2bndnmxpwpoa42f92dlru7oobjx"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="babaAdiParam"  value="mpa3vlcar3ct017hxj0oh7lhsu0h3suy2pizvnbjudlnlzzz9tf1muptglmc031w7182mxebqvs5al62wk5rc83q5vnuqxuwlkn4gjkm02xjvlbghx1hn3z0x89hj32rrnjohku93l0dg1fr1j9948nct7yam3sfexv36m7vg9hqebob3an5pouto5f1bnlu1fkxxszw7e087hi6dkti05xzndx2eh03xgra4u3kz745htvqlyhncg63uc6pj3i"  maxlength="255"  placeholder=""  />
 		<label id="anaAdiParamlbl" value="Ana Adi" />
-		<textbox type="text" id="anaAdiParam"  value="anosx4vni24jfq7w6cunu5m631ozo4puw9h46mayrjpgrvur3gtqaswolc57x5ecpvoziqo08hf85haq5ywplugbt6i0qvpthano23qskdkjaiasknx1c76ukx0i08bmgm8zoh0zdbrhyub2zvq8azx57jdpuawm1jt8rpukh24vcvtkk21kvz2plx39tlb2iw83smj4a7svsb39hf07wusy5vh7w3m5ljg0ugc2mrxm6l2qjvbftkw778nxvi2"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="anaAdiParam"  value="zy5muugm81knmfl2mn6o29q1gk9vdbgm5zia8vulvhuvid3gbgcyp7xka6h4fovg5tyvt80bxed23vdzb4cbx3veto7snompbwu5tr20b5sir6xzwfkjmfqg65odoyogortog6c5s6zgf8que832sxwkcqzec64hnrvgpk298k0wjj7nrwvc6s0un7xalcg1kcl42wcpzskafqyr1nc4lsp5k7xj0l3cnarildvcaqpmuxq4r4n81pxlur87575"  maxlength="255"  placeholder=""  />
 		<label id="dogumYeriParamlbl" value="Dogum Yeri" />
-		<textbox type="text" id="dogumYeriParam"  value="93y6finor6o1gjidyz2wac6e0m1p4zpyaoewdv8s3yqu9z4a9nwkmfb6b82fc340tdujw5qk5aniy5hq90xg2mjvdrb2y704ts0kdduwluds1xwkb2wb5gaup5k4s88of1ueoim70m1h3simq1aghdlqk0wrbmke7qtx99sqitvrlledf53utqz8p5xa0zgqsmh9dt7oytekts0gl9videlgx019xipmexpu264uc8giwyowe31xhat9z5w1osq"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="dogumYeriParam"  value="01wcgyop205fot47um832ubvrdrenfwx39mhozmbgpitcgf9wcm6bz3uml6a0s391n1d8mw1q6dc9fjwqzvto1vwuzd9wm4sdw1x1d47yxhglx601mn2bt1gky02sqbazbqcbm8m2ob3mbq8oyl5d84a3qi5cb5784ffqlvom3vw22a6jq7t6t8i8j8zjf8zzwp6mk6n5cctr7q9vaqb222gaqtgf82uhd0o75f57tzimh2ev6le49wriqnzjbm"  maxlength="255"  placeholder=""  />
 		<label id="dogumTarihiBasParamlbl" value="Başlangıç Dogum Tarihi" />
-		<datebox id="dogumTarihiBasParam"  value="2002-11-22"  placeholder=""  />
+		<datebox id="dogumTarihiBasParam"  value="1992-1-25"  placeholder=""  />
 		<label id="dogumTarihiBitParamlbl" value="Bitiş Dogum Tarihi" />
-		<datebox id="dogumTarihiBitParam"  value="1995-0-23"  placeholder=""  />
+		<datebox id="dogumTarihiBitParam"  value="1993-1-25"  placeholder=""  />
 		<label id="medeniHaliParamlbl" value="Medeni Hali" />
-		<intbox id="medeniHaliParam"  value="204190243"  maxlength="22"  placeholder=""  />
+		<intbox id="medeniHaliParam"  value="1790608674"  maxlength="22"  placeholder=""  />
 		<label id="diniParamlbl" value="Dini" />
-		<textbox type="text" id="diniParam"  value="jj2n1l9l0h4jrnazx29m0cd54h8os3zbcg39ob1s95r02oh036t2507o1r8rko713vus9qb96fe3792np1d9ugxf7iryv1ir5kgzzn2ajodrn1ipg0uj24q8gywlrs7tm6xsmfutnbkxkjg4jvwfpsz1liysb3bf161tec4tn1zls14mfl3e0gfp5inmwwoeffk3kwbb79azilv3gqz05gvlq3l1guqlomyui9sli8x755gh9f81eclccxhr1kb"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="diniParam"  value="ophjlwdvjhifc7unjgzqnyog9vcftq40trgf6j076qdm3q0b5xkadrb8dtmgxu60dc8gz76y0jolybskov14deoqn160sdfa1rzp73mgzqunpe5d0xj52op17634p0xr7p8vyspxl6rmx2eixjwxdev5uh2bhvhpot4hmnfp05cv25abbiqn1yav29m702qmkft4gmkxzfc9fuqobd54fdedsavhhdylj8p0ieo75cj1lwymf03obb69cddo8wj"  maxlength="255"  placeholder=""  />
 		<label id="kanGrubuParamlbl" value="Kan Grubu" />
-		<intbox id="kanGrubuParam"  value="587144843"  maxlength="22"  placeholder=""  />
+		<intbox id="kanGrubuParam"  value="389288625"  maxlength="22"  placeholder=""  />
 		<label id="mahKoyParamlbl" value="Mah Koy" />
-		<textbox type="text" id="mahKoyParam"  value="kbbfl21at5hc4sozan4u"  maxlength="20"  placeholder=""  />
+		<textbox type="text" id="mahKoyParam"  value="i2oktk3m94hlfb0a8sse"  maxlength="20"  placeholder=""  />
 		<label id="ciltNoParamlbl" value="Cilt No" />
-		<textbox type="text" id="ciltNoParam"  value="41g8elf38d"  maxlength="10"  placeholder=""  />
+		<textbox type="text" id="ciltNoParam"  value="60on6y18au"  maxlength="10"  placeholder=""  />
 		<label id="aileSiraNoParamlbl" value="Aile Sira No" />
-		<textbox type="text" id="aileSiraNoParam"  value="028xszu3vx"  maxlength="10"  placeholder=""  />
+		<textbox type="text" id="aileSiraNoParam"  value="r6hj1kypdn"  maxlength="10"  placeholder=""  />
 		<label id="verildigiYerParamlbl" value="Verildigi Yer" />
-		<textbox type="text" id="verildigiYerParam"  value="aw5mk0epy2sgb4ghbrmjey90g18pnpqy1ygl8ey2jxkcw6pewqh9fb7vgg1j90cddc1rnbykj974f8h383otpsl7safjs84sqao9sal5tieamkhjnqtj165v9b373idp47azayblpnscrg1eu7uea7ujai59zkt40sb9yqg345yfkmmdshvcz94wbos68sjk95q3w3wr1kjz70uvx99jn6z9x01qepjlvtkps2rq0rwokxagxr7wjkrqnr79pnd"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="verildigiYerParam"  value="irer3uippvd13yod4eedwnm7volng2jfa65gsxz4vmpd7uyob9lk9a8imzgwiebadotkjl5r9zv1do88jpm36j3ec95zx20nznnwj19ic8stqrxgxj8cnzx0kfkphelj9md39qadiyuxuvcpjk3a3mrs2jaty9cemdjx98iz961ecuenrqb1wvt66rerrfnwx8wmuu0pcznqxtoe47laj34h858okhn9gf0jdgzzaofkgj05yd9jjhevxj9anao"  maxlength="255"  placeholder=""  />
 		<label id="verilisNedeniParamlbl" value="Verilis Nedeni" />
-		<textbox type="text" id="verilisNedeniParam"  value="cfxgfl0l79rp6l97pdui"  maxlength="20"  placeholder=""  />
+		<textbox type="text" id="verilisNedeniParam"  value="svarfyrxx9vi5vxvptt2"  maxlength="20"  placeholder=""  />
 		<label id="kayitNoParamlbl" value="Kayit No" />
-		<textbox type="text" id="kayitNoParam"  value="srasc95a70"  maxlength="10"  placeholder=""  />
+		<textbox type="text" id="kayitNoParam"  value="m2y02bsske"  maxlength="10"  placeholder=""  />
 		<label id="verilisTarihiBasParamlbl" value="Başlangıç Verilis Tarihi" />
-		<datebox id="verilisTarihiBasParam"  value="2009-5-30"  placeholder=""  />
+		<datebox id="verilisTarihiBasParam"  value="2006-7-15"  placeholder=""  />
 		<label id="verilisTarihiBitParamlbl" value="Bitiş Verilis Tarihi" />
-		<datebox id="verilisTarihiBitParam"  value="1994-9-3"  placeholder=""  />
+		<datebox id="verilisTarihiBitParam"  value="2013-9-25"  placeholder=""  />
 	</window>
+	<script>
+AgemForm.submitMessage('Arama yapılıyor...');Agem.addLoadFunction(	function () {		AgemTab.show(1, <%="1".equals(request.getParameter("showTab"))%>);	});	</script>
 </arya>

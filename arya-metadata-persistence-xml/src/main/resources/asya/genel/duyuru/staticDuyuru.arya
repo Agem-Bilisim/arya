@@ -1,0 +1,6 @@
+<?page title="DOCSYS" ?>
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
+	<script>
+$(document).ready( function () {	AgemTable.loadOnRowSelect('eklerTable');	divAyarla();});$(window).resize( function () {	divAyarla();});var divAyarla = function () {	var h = $(window).height();	var w = $(window).width();	$("#duyuruDiv").height(h-30);	$("#duyuruDiv").width(w-20);};AgemTable.rowDblClick = function(id) {	if (!id) {		id = AgemTable.SELECTED_ID;		if (id == null) {			Agem.error("Lütfen kayıt seçiniz.");			return;		}	}		window.open("getDosya.do?id=" + AgemTable.DATA['d-'+id].dosyaId);};	</script>
+</arya>

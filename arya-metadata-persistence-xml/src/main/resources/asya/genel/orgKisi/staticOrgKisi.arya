@@ -1,0 +1,6 @@
+<?page title="DOCSYS" ?>
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
+	<script>
+$(document).ready( function () {	$("#genelOrgKisiForm").hide();	<agem:access right="organizasyon.super">	$("#adSoyad").html(			'<a href="javascript:goster()">' + $("#kisi\\.ad").html() + " " + $("#kisi\\.soyad").html() + "</a> <br/>" + $("#gorevId").html() +			(($("#cikisTarihi").html() != "") ? " [" + ($("#girisTarihi").html() != "" ? $("#girisTarihi").html() : "?") + "-" + $("#cikisTarihi").html() + "]" : "")	);	</agem:access>	<agem:access not="true" right="organizasyon.super">	$("#adSoyad").html(			$("#kisi\\.ad").html() + " " + $("#kisi\\.soyad").html() + "<br/>" + $("#gorevId").html()  +			(($("#cikisTarihi").html() != "") ? " [" + ($("#girisTarihi").html() != "" ? $("#girisTarihi").html() : "?") + "-" + $("#cikisTarihi").html() + "]" : "")	);	</agem:access>});var _id = <bean:write name="genelOrgKisiForm" property="orgKisiId"/>;function goster() {		AgemWM.window({ link: "genel/orgKisi/select.do?orgKisiId="+_id + "&orgBirimIdParam="+_id, label: "Organizasyon Kişi",width: 800, height: 600});}	</script>
+</arya>

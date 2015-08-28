@@ -1,0 +1,6 @@
+<?page title="DOCSYS" ?>
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
+	<script>
+$(document).ready( function () {	divAyarla();	Other.addHelpHistory(window.location.href);});$(window).resize( function () {	divAyarla();});var divAyarla = function () {	var h = $(window).height();	var w = $(window).width();	$("#yardimDiv").height(h-60);	$("#yardimDiv").width(w-20);};	</script>
+</arya>

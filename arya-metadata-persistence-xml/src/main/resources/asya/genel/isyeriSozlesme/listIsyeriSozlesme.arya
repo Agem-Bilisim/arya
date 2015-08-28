@@ -1,0 +1,6 @@
+<?page title="DOCSYS" ?>
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
+	<script>
+$(document).ready( 	function () {	});AgemTable.rowDblClick = function(id) {	if (id) {		var d= AgemTable.get(id);		if (d.secilebilir == "1") {			if (AgemWM.exists('#genelSozlesmeSelect')) {				AgemWM.addQueryString(Agem.json2Param({sozlesmeIdParam: id, sozlesmeId: id}));				AgemWM.link('#genelSozlesmeSelect', {url: 'genel/sozlesme/select.do'});				Agem.message('Bilgiler okunuyor...');			} else {				<agem:access URL="genel/sozlesme/select">				AgemWM.window({ link:"genel/sozlesme/select.do?sozlesmeId="+id + "&sozlesmeIdParam="+id, label: "Sözleşmeler",width: 800, height: 600});				</agem:access>			}		}		}};	</script>
+</arya>

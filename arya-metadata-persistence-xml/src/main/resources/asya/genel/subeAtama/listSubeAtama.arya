@@ -1,0 +1,6 @@
+<?page title="DOCSYS" ?>
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
+	<script>
+AgemTable.rowDblClick = function(id) {	Agem.open('genel/subeAtama/select.do?ilKodu='+id);	Agem.message('Bilgiler okunuyor...');}	</script>
+</arya>

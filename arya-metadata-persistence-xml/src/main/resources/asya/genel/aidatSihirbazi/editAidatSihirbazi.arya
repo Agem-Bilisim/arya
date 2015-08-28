@@ -3,17 +3,15 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="selectAidatsihirbaziWindow">
 		<label id="dosyaIdlbl" value="Yüklenen Dosyalar" />
-		<selectbox id="dosyaId"  width="490"  >
-			<template>
-				<label value="c6mg7it1v8" />
-			</template>
-		</selectbox>
+		<combobox id="dosyaId"  width="490"  >
+			<comboitem label="mrqfom2zom" value="bqo0" />
+		</combobox>
 		<button id="dosyaEkleBtn" label="Yeni Dosya Ekle"  onClick="dosyaEkle()"  width="120"  />
 		<label id="sheetNolbl" value="Excel Sheet" />
-		<selectbox id="sheetNo"  width="490"  >
-			<template>
-				<label value="q29usfc31j" />
-			</template>
-		</selectbox>
+		<combobox id="sheetNo"  width="490"  >
+			<comboitem label="shdznoh7bj" value="fulf" />
+		</combobox>
 	</window>
+	<script>
+$(document).ready(function () {	if (Agem.byId('eslestirme.sgkKisaNo')) {		Agem.addMaskEvents('eslestirme.sgkKisaNo');	}	if ($("#dosyaId").val()) {		$("#eslestirBtn").show();	} else {		$("#eslestirBtn").hide();	}		$("#dosyaId").change( function() {		$("#sheetNo").val("");		if ($("#dosyaId").val() != null && $("#dosyaId").val().length > 0) {			dosyaYukle();		}	});	$("#sheetNo").change( function() {		if ($("#dosyaId").val() != null && $("#dosyaId").val().length > 0) {			dosyaYukle();		}	});	if(!$("#eslestirme\\.isyeriId").val()) {		$("#eslestirme\\.isyeriGozatBtn").hide();	}});function eslestir() {	if (validate()) {		var params = $(":input").serialize();		Agem.perde(true);		AgemWM.window(		{			modal : true,			label: "Aidat Sihirbazi Dosyaları", 			url:"genel/aidatSihirbazi/list.do?" + params,			id : "sihirbaz",			width: 800, 			height: 600,			opener: window		});		Agem.perde(false);	}}function validate () {	var retVal = true;	if (!$("#eslestirme\\.isyeriId").val()) 	{		Agem.error("Lütfen yüklemek istediğiniz aidat listesinin ait olduğu şirketi seçin!");		$("#eslestirme\\.unvan").focus();		retVal = false;	} 	else if ($("#eslestirme\\.satirBas").val() && $("#eslestirme\\.satirBit").val() 			&& (parseInt($("#eslestirme\\.satirBit").val()) < parseInt($("#eslestirme\\.satirBas").val()))) 	{		Agem.error("Bitiş satırı başlangıç satırından önce olamaz.");		retVal = false;	}	return retVal;}var dosyaYukle = function() {	if (Agem.byId("dosyaId").value) {		AgemWM.submit(null, null, true);	}	else {		Agem.error("Dosya seçin.");	}};function dosyaEkle() {	AgemWM.window(		{			modal : true,			label: "Aidat Sihirbazi Dosyaları", 			url:"genel/nesneDosya/list.do?pageSize=-1&nesneKodParam=aidatSihirbazi&nesneIdParam=1&size=20",			id : "nesneDosyaWindow",			width: 800, 			height: 600,			opener: window		});	};AgemWM.onClose = function (id) {	if (id == 'nesneDosyaWindow') {		if ($("#dosyaId").val() != null && $("#dosyaId").val().length > 0) {			$("#sheetNo").change();		}		else {			window.location.reload();		}	}};var setIsyeri = function (d) {	Agem.setValue(		{			 "isyeriId":d.id,			 "unvan":d.unvan,			 "sgkKisaNo":d.sgkKisaNo,			 "sgkNo":d.isyeriSgkNoBitisik		},		"eslestirme"	);	if ($("#eslestirme\\.isyeriId").val())		$("#eslestirme\\.isyeriGozatBtn").show();};function isyeriGozat() {	Other.isyeriGozat($("#eslestirme\\.isyeriId").val());}	</script>
 </arya>

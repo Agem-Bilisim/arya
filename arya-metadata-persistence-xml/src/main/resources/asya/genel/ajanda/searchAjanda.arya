@@ -3,21 +3,21 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listAjandaWindow">
 		<label visible="false" id="isyeriZiyaretIdParamlbl" value="Isveren Ziyaret Id" />
-		<textbox visible="false" type="text" id="isyeriZiyaretIdParam"  value="z4h1comwlp"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriZiyaretIdParam"  value="ohv8m7fpyk"  placeholder=""  />
 		<label visible="false" id="isyeriIdParamlbl" value="Isyeri Id" />
-		<textbox visible="false" type="text" id="isyeriIdParam"  value="68bsknhkbb"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriIdParam"  value="kvdnyapk05"  placeholder=""  />
 		<label id="subeParamlbl" value="Şube" />
-		<selectbox id="subeParam"  width="240"  >
-			<template>
-				<label value="jih6cu4g2u" />
-			</template>
-		</selectbox>
+		<combobox id="subeParam"  width="240"  >
+			<comboitem label="nprk9njwea" value="boti" />
+		</combobox>
 		<label id="isyeriAdiParamlbl" value="Kurum/Kişi Adı" />
-		<textbox type="text" id="isyeriAdiParam"  value="ff7usdxqjz7pfdfbsys97i9kv3ls6dm0qu2oer0zzt438sqxxif6tnfczsf2j75dzvugkd33w742pdscbq3108rd5wygygdbjjxcu5g2c8vz7zzfuejy5bj7xg7iwtz4qdj0zlw49tem6sh7bzn78xczjmgnp2eewmnl4ari1l3n5y3e8gbq4ilz4av0onk7i89r04kueh9ldn9lyms49qg9y6kgx87aee5ekjg6n8pl5p7den9s05rwak5gh98"  width="416"  maxlength="255"  placeholder=""  onChange="autocomplete("genel/isyeri/autocomplete.do", "unvanParam", 5, "setIsyeri")" />
+		<textbox type="text" id="isyeriAdiParam"  value="ldvpcfue7zqh7hqn4fd1lpjvut0ef67zgt7owcvqv2opsx2bri43gbgq0rfe28tjbzmf38imphjx54co45008f1ozgto7b9jchd6toe21strqgdz5mayyr6gtm1lutwuxtqp368nf2r5otp40j8etp3fj2bm8dltck3oxp8gmlu5ntnaq9g521bserfp4z28banuqel60n5ppi0acbllstywgblkq7cu7ua1ebsxf98z5jvv8frgbvym2su6jm2"  width="416"  maxlength="255"  placeholder=""  onChange="autocomplete("genel/isyeri/autocomplete.do", "unvanParam", 5, "setIsyeri")" />
 		<label id="ziyaretTarihiBasParamlbl" value="Ziyaret Tarihi" />
-		<datebox id="ziyaretTarihiBasParam"  value="2003-4-23"  width="120"  placeholder=""  />
-		<datebox id="ziyaretTarihiBitParam"  value="1995-2-25"  width="120"  placeholder=""  />
-		<checkbox type="text" id="faaliyetRaporuParam"  checked="false"  label="Faaliyet Raporu"  onCheck=""  width="50"  />
-		<checkbox type="text" id="benimKayitlarimParam"  checked="false"  label="Benim kayıtlarım"  onCheck=""  width="50"  />
+		<datebox id="ziyaretTarihiBasParam"  value="1994-1-5"  width="120"  placeholder=""  />
+		<datebox id="ziyaretTarihiBitParam"  value="1993-6-3"  width="120"  placeholder=""  />
+		<checkbox type="text" id="faaliyetRaporuParam"  checked="true"  label="Faaliyet Raporu"  onCheck=""  width="50"  />
+		<checkbox type="text" id="benimKayitlarimParam"  checked="true"  label="Benim kayıtlarım"  onCheck=""  width="50"  />
 	</window>
+	<script>
+AgemForm.submitMessage('Arama yapılıyor...');var setIsyeri = function (d) {};	</script>
 </arya>

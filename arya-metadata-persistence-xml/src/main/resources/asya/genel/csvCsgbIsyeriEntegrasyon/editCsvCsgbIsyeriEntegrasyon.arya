@@ -3,24 +3,20 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="selectCsvcsgbisyerientegrasyonWindow">
 		<label id="dosyaIdlbl" value="Yüklenen Dosyalar" />
-		<selectbox id="dosyaId"  width="320"  >
-			<template>
-				<label value="xcns553gk2" />
-			</template>
-		</selectbox>
+		<combobox id="dosyaId"  width="320"  >
+			<comboitem label="driw3fxtzh" value="nnhq" />
+		</combobox>
 		<button id="yukleBtn" label="Yükle"  onClick="dosyaYukle()"  width="90"  />
 		<label id="yillbl" value="Dönem" />
-		<selectbox id="yil"  width="70"  >
-			<template>
-				<label value="5nq3rw1nj1" />
-			</template>
-		</selectbox>
+		<combobox id="yil"  width="70"  >
+			<comboitem label="p7bh5sio1z" value="md2e" />
+		</combobox>
 		<label id="aylbl" value="Ay" />
-		<selectbox id="ay"  width="100"  >
-			<template>
-				<label value="lys4t5yevk" />
-			</template>
-		</selectbox>
+		<combobox id="ay"  width="100"  >
+			<comboitem label="snebw705q3" value="el2y" />
+		</combobox>
 		<checkbox type="text" id="sonDonem"  checked="true"  label="Son Dönem"  onCheck=""  width="40"  />
 	</window>
+	<script>
+$(document).ready(function () {	Agem.addElement('input','yukleniyorMuParam', {type:'hidden', name:'yukleniyorMuParam', value:'<bean:write name="p_yukleniyorMu"/>'}, null, document.forms[0]);	yuklemeYonet();	<agem:access not="true" URL="genel/csvCsgbIsyeriEntegrasyon/edit">		$("button").attr("disabled", "disabled");	</agem:access>	$(".log").animate({ scrollTop: 2000	}, 30 );});var dosyaYukle = function() {	if (Agem.byId("dosyaId").value) {		$("#yukleniyorMuParam").val("true");		AgemWM.submit();	}	else {		Agem.error("Dosya seçin.");	}};var guncelle = function() {		document.forms[0].action = "genel/csvCsgbIsyeriEntegrasyon/edit.do";		$("#yukleniyorMuParam").val("true");		AgemWM.submit();};function dosyaEkle() {	AgemWM.window(			{				modal : true,				label: "C.S.G.B İşyeri Entegrasyon Dosyaları", 				url:"genel/nesneDosya/list.do?pageSize=-1&nesneKodParam=csgbIsyeriEntegrasyon&nesneIdParam=1&size=20",				id : "nesneDosyaWindow",				width: 800, 				height: 600,				opener: window			});		};AgemWM.onClose = function (id) {	if (id == 'nesneDosyaWindow') {		AgemWM.link('#genelCsvCsgbIsyeriEntegrasyonSelect', {url: 'genel/csvCsgbIsyeriEntegrasyon/select.do', refresh:true});	}};var yenile = function(){	AgemForm.submit(null, 'genelCsvCsgbIsyeriEntegrasyonSelect', true);};var yukleniyorMu = '<bean:write name="p_yukleniyorMu"/>';function yuklemeYonet(){	if(yukleniyorMu == 'true'){// 		$("#sftp").hide();		$("#zip").hide();		$("#log").html('Yükleniyor...');		Agem.perde(true, null, 'Yükleniyor. Lütfen bekleyin...');		logYenile();		} else {		Agem.perde(false);		Agem.message("");		$("#log").html('');		$("#zip").show();	}}function logYenile(){	$.ajax({		url: "genel/csvCsgbIsyeriEntegrasyon/select.do",		data: {},		timeout: 300000,		type: "post",		dataType: "html", 		success: function(h){			var l = $("#log", h);			if(l != 'undefined'){				var s = $(l).html();				var attr = $(s).attr('finallog');				if(s && s.length > 0){					var c = $(s).css('color');					if(c != 'red'){						if (typeof attr !== 'undefined' && attr !== false) {							$("#log").html('Yükleme başarıyla tamamlandı.');							yukleniyorMu = false;							Agem.message(s);							Agem.perde(false);						} else {							Agem.message(s);							setTimeout(function(){								logYenile();							}, 1000);												}							} else {						if (typeof attr !== 'undefined' && attr !== false) {							$("#log").html(s);						}						yukleniyorMu = false;						Agem.message(s);						Agem.perde(false);					}				}			}		},		error: function(xhr,err,e){ Agem.error("Hata oluştu."); }	});}var sftpDosyaYukle = function(){	if (confirm('SFTP sunucusundaki dosyayı yüklemek istediğinizden emin misiniz?')) {		Agem.open('genel/csvCsgbIsyeriEntegrasyon/select.do?tur='+"isyeri&sftp="+"E");	}};	</script>
 </arya>

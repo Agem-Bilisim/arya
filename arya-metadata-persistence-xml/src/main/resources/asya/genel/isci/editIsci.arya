@@ -3,38 +3,38 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addIsciWindow">
 		<label visible="false" id="kisiIdlbl" value="Kisi Id" />
-		<textbox visible="false" type="text" id="kisiId"  value="2jclw6xbo5"  placeholder=""  />
+		<textbox visible="false" type="text" id="kisiId"  value="dwrr1kxwzi"  placeholder=""  />
 		<label visible="false" id="kisi.kisiIdlbl" value="Kisi Id" />
-		<textbox visible="false" type="text" id="kisi.kisiId"  value="jgtucaun82"  placeholder=""  />
+		<textbox visible="false" type="text" id="kisi.kisiId"  value="l1dv7y1r59"  placeholder=""  />
 		<label id="kisi.tckNolbl" value="T.C. Kimlik No" />
-		<textbox type="text" id="kisi.tckNo"  value="7ugcuji1l1n"  width="100"  maxlength="11"  placeholder=""  onChange="autocomplete("function:prepareKisiUrl()", "function:prepareTCKimlikNoParameterName()", 5, "setKisi")" />
+		<textbox type="text" id="kisi.tckNo"  value="nk8gqsebzr2"  width="100"  maxlength="11"  placeholder=""  onChange="autocomplete("function:prepareKisiUrl()", "function:prepareTCKimlikNoParameterName()", 5, "setKisi")" />
 		<label id="kisi.adlbl" value="Ad" />
-		<textbox type="text" id="kisi.ad"  value="fcvwh13jl1fdjxxy955116sn0m6n7racc04n80l3bty6ew5jkok3d5m2lk5ugp6e34wheovppixlu6zrdx6m6cmc0gbknjrh1rk67uul7zyfyja9ify7dy8j9fgp97qk65c4oapb440q6yzfkmvqhsd5kjnj5zpx2aws471vdlram8ezarjd6e9jx26hvrw69b0oza992mz6ngub6sp68vb9nfwczpiwqedjivq4b48ukzr5mzwtoszv3q5uen8"  width="100"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="kisi.ad"  value="f12qkegv8r325dzoocckt6hxxpmn5vqj5fa6ccfzjue1qhr92ywi2mwit544jw0cszb7gay6r4gaotoszpvvyupbebiq6f2ycxuevatlmtc5non2c32kae77st14lba999idqswbvur7iu67rigfpfk3h48ru59twf72hdb3d9n72x2uit1f99mviw3l55vdvb6djcycj3vhiyntbzq9bfya4mv4ciw2khqciqtzu4cqkgdm4u3zuy1ymk4ntc4"  width="100"  maxlength="255"  placeholder=""  />
 		<label id="kisi.soyadlbl" value="Soyad" />
-		<textbox type="text" id="kisi.soyad"  value="fult6rpr2vp1j5hymr36lh4i11j1i6dq757x8c9tdoz0wvujul46u7lsfpzkh61rgfcq59ibrk1cts1hhw60929o1i0ia397iocqugumugrxnei9735o17knbxory31b5zze7fuirrt719bi87pi25bk4emjkpm29han6a1aijkzcre9nof25p602h62od0lpab76b5mjmavb249eyekm59mry0wb8zknx844wbn25103mo3vdu4fz3bh8g1ktm"  width="100"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="kisi.soyad"  value="wie79vvcsz14p90bmgd3czdx50z9zw8evlw6b9uqaj4vas5r40oacy1j4uo2ire8f68zbqkhr4ng5jdgymyworynn01z6wxlbz3hrjw7to0rfvkpyc9qztyk9nchfn6swqb01r2dxalhrrno1s0stww0ch3gr5cqet1dpbwcjy8plwlfbsfpeae2u88qsqgw5y6fprfiaxjbuuv3bnmln9cdgbtipah400wm72psrtwook94311gbpnb5mg9vkg"  width="100"  maxlength="255"  placeholder=""  />
 		<label id="sgkNolbl" value="SGK Sicil No" />
-		<intbox id="sgkNo"  value="723234256"  width="200"  maxlength="13"  placeholder=""  />
+		<intbox id="sgkNo"  value="-2084235626"  width="200"  maxlength="13"  placeholder=""  />
 		<label id="cinsiyetlbl" value="Cinsiyet" />
-		<selectbox id="cinsiyet"  width="200"  >
-			<template>
-				<label value="ep0cwe0f1n" />
-			</template>
-		</selectbox>
+		<combobox id="cinsiyet"  width="200"  >
+			<comboitem label="rco53ytym6" value="05n1" />
+		</combobox>
 		<label id="aciklamalbl" value="Açıklama" />
-		<textbox type="text" id="aciklama"  value="j02ftj64kz"  width="480"  placeholder=""  />
+		<textbox type="text" id="aciklama"  value="0qa16ccmk3"  width="480"  placeholder=""  />
 		<label visible="false" id="kisi.iletisimIdlbl" value="Iletisim Id" />
-		<textbox visible="false" type="text" id="kisi.iletisimId"  value="in2xe64fy8"  placeholder=""  />
+		<textbox visible="false" type="text" id="kisi.iletisimId"  value="u3xs19pkdh"  placeholder=""  />
 		<label visible="false" id="kisi.resimIdlbl" value="Resim Id" />
-		<textbox visible="false" type="text" id="kisi.resimId"  value="wms9xbhrjo"  placeholder=""  />
+		<textbox visible="false" type="text" id="kisi.resimId"  value="835302fflh"  placeholder=""  />
 		<label visible="false" id="kisi.kullaniciIdlbl" value="Kullanici Id" />
-		<textbox visible="false" type="text" id="kisi.kullaniciId"  value="7l2vp3t9z7"  placeholder=""  />
+		<textbox visible="false" type="text" id="kisi.kullaniciId"  value="153epufzq9"  placeholder=""  />
 		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
-		<textbox visible="false" type="text" id="eklemeTarihi"  value="khm77qgny7"  placeholder=""  />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="43w8tcemla"  placeholder=""  />
 		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
-		<textbox visible="false" type="text" id="ekleyen"  value="1qpytd1m9cqzmawqtchpxh1g0tdjw4ayb7t4degjewo3ps29vd5o52ylgc0kjl3vw1veywlkvw9xsx8hpme6nmdaydw1piae1bfwdbarzfx9pfexsojee1wxb79x9vz7suefsb52o1pqtbvw1zopi705hfohfrqf28yfb83k9zguzllsue5jok9m9cxgkgzcctp32hbiqgq215ug0lzbofedr2yjgsl4ocztnonqz181jr61kwl25210wi5uex1"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="ekleyen"  value="un681su3dqkbl68qhmfe8u6ob1givlz5aq4a6vs4fitdwmdiu8tlhsd9oiolcn4uopg3wguv09465cuxzt3gugqeffg91ybwetp6ktjc2ot6sxtk2t00akg14fslzd5keqb6l804nypcqc8214xnp31vzrkzudiiiov9ko9f0evaa13022wigdjfjrg210a1s2r6o9ls2vrzpo4tjmfxqemi6rtys0o1pihhecx7nilf6mhytdo1c7wz2qtfc59"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
-		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="i0lbilbxxv"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="ctqclpc5dc"  placeholder=""  />
 		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
-		<textbox visible="false" type="text" id="sonGunleyen"  value="1tlizvx88vk8fsh2blgfxbu2psxekekootb1p3uu9ecsowaqyuue5v8gbd4mhu6t7cep1zuspxrt3h5dalocd5osnf4mf4nqhzzyybn0bg1p16dlj8h4xszgagg2vajznxu7e7kd8nt1uor8y9u7xp3zj7x1ve208yykz2eievw0m35kfc3k5cycj43bf1ld8v86mi3pxnx0p30vkwfo9wnpxc59pjei43ot3dp5kr5h3sdkftbadnmta2crsfb"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="j9y1uq60np4pfijdp2dod4rg3fc9d4ytevkjsp2wsd76nbdtsvw06ykqwdh3cftlastj47qt0wve9xnrfkg1nbb73zo2kpzaoa5er75vibepjlts6116sm3fqm9etzbroj0vcffafots074ywjzcyk1qi3ooz9anu2ayvgtxvl5u1ys2u0uuo9krihx7z3roi7rch6jy9hofhzkz8myxqxh4sfs030vkbnv8xgc7vc4golova8fs1jrrq7xq291"  maxlength="255"  placeholder=""  />
 	</window>
+	<script>
+$(document).ready( function () {	Agem.addPreviousNextButtons();	AgemTable.loadOnRowSelect('uyelikTable');		AgemTable.loadOnRowSelect('calisanTable');	Agem.byId("kisi.tckNo").onblur = tckNoValidation;	if ($("#kisiId").val()) {		var json = <bean:write name="genelIsciForm" filter='false'/>		AgemWM.addQueryString(Agem.json2Param( {kisiId: json.kisi.kisiId, kisiIdParam: json.kisi.kisiId}));		AgemWM.addSideInfo(			{				id:"isciInfo",				info: [					{value: json.kisi.ad+" "+json.kisi.soyad, clazz:"pointer", 						onclick: function () {							AgemWM.link('#genelIsciSelect', {url: 'genel/isci/select.do'});						}					},					{label: "T.C.K. No", value: json.kisi.tckNo, clazz: "not-bold"}				],				type: 1			}		);		tckNoValidation();	}	else{		AgemWM.removeSideInfo({type: 1, id: "isciInfo"});	}		if ($('#kisi\\.tckNo').is('[readonly="true"]')) {		$('#silBtn').hide();	}});var tckNoValidation = function (){	var tckNo = Agem.byId("kisi.tckNo").value;	if (!AgemValidation.tckNoValidate(tckNo)) {		Agem.byId("tckNoBilgiDiv").innerHTML = "<span class='agem-error bold'>Geçersiz T.C. Kimlik No</span>";	}	else{		Agem.byId("tckNoBilgiDiv").innerHTML = "<span class='agem-error bold'></span>";	}	}var dosyaEkle = function() {	if (Agem.byId('kisiId') && Agem.byId('kisiId').value) {		AgemWM.window(				{					modal : true,					label: " İşçi Bilgileri - Ekli Dosyalar", 					url:"genel/nesneDosya/list.do?pageSize=-1&nesneKodParam=kisiId&nesneIdParam="+Agem.byId('kisiId').value,					id : "nesneDosyaWindow",					width: 800, 					height: 600								});	}		};var yeniUye = function(){	AgemWM.window({		link:"genel/uye/select.do?_YENI_KAYIT=1&kisiId="+$("#kisiId").val(), 		label: "Üye İşlemleri",		width: 800, 		height: 600});}var CURRENT_TABLE = null;var setCurrentTable = function(x){CURRENT_TABLE=x;}AgemTable.CALISAN_DATA = {};AgemTable.UYE_DATA = {};AgemTable.rowDblClick = function (id){	if(CURRENT_TABLE == 'U')		AgemWM.window({link:"genel/uye/select.do?uyeId="+id, label: "Üyelik İşlemleri",width: 800, height: 600});	else if(CURRENT_TABLE == 'C'){			AgemWM.link('#genelIsciCalisanList', {url: 'genel/isciCalisan/list.do?kisiId='+AgemTable.CALISAN_DATA[id].kisiId+"&calisanId="+AgemTable.CALISAN_DATA[id].calisanId})	}}function isciSil() {    var f = document.forms['genelIsciForm'];	var d = f.action.split('/');	d.pop();	f.action = d.join('/')+"/delete.do";	if(confirm("Bu kayd\u0131 silmek istedi\u011finizden emin misiniz? \r\nBu kaydı sildiğinizde işçiye ait tüm çalışma hayatı, üyelik bilgileri ve aidat kayıtları da silinecektir!..")){	            Agem.message(AgemForm.SUBMIT_MESSAGE);        if (f.target != "_self" && !f.target)	        AgemForm.disableButtons();        AgemForm.serverSideValidation(f, function () {        	AgemForm._submit(f);        });    }    return true;}<agem:access URL="genel/csgbIsyeriUye/list">function csgb() {	if ($('#kisi\\.tckNo').val()) {		AgemWM.window( { url:'genel/csgbIsyeriUye/list.do?listeTurParam=0&tckNoParam='+$('#kisi\\.tckNo').val(), refresh:true, width: 800, height: 600, label: ""});	}}</agem:access>AgemTable.UYE_DATA[<bean:write name="uyelikTable" property="id"/>]=<%=AgemUtils.jsObject(uyelikTable)%>;AgemTable.CALISAN_DATA[<bean:write name="calisanTable" property="id"/>]=<%=AgemUtils.jsObject(calisanTable)%>;	</script>
 </arya>

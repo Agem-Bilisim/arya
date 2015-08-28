@@ -3,26 +3,22 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listOrgkisiWindow">
 		<label id="kisiParam.tckNoParamlbl" value="T.C. Kimlik No" />
-		<textbox type="text" id="kisiParam.tckNoParam"  value="o6vsrajf1na"  width="200"  maxlength="11"  placeholder=""  onChange="autocomplete("function:prepareKisiUrl()", "function:prepareTCKimlikNoParameterName()", 5, "setKisi")" />
+		<textbox type="text" id="kisiParam.tckNoParam"  value="7si4qe1ktkv"  width="200"  maxlength="11"  placeholder=""  onChange="autocomplete("function:prepareKisiUrl()", "function:prepareTCKimlikNoParameterName()", 5, "setKisi")" />
 		<label id="kisiParam.adSoyadParamlbl" value="Ad Soyad" />
-		<textbox type="text" id="kisiParam.adSoyadParam"  value="0nesdh0xd3i3r2c6qxbq2vx4zll4vlz73jluftrtrqxe70omlydvaxewr7yicesjs7q9rzwy0893593kdv49qw8bedtvwdl0gy3tnbjpoo4yp9k8mwjz16gehc6oxgut6xf19dy4gbn2zk3nfcgf750cb0ohiowvnjlugd0mosvk83l4pb5b0j7t24p9fhuxzei9sjucoci4y4hknqrhgam6nhc58z1j9a27ab2cffhen8f2rh61otomdakxxj0"  width="200"  maxlength="255"  placeholder=""  onChange="autocomplete("function:prepareKisiUrl()", "function:prepareAdSoyadParameterName()", 5, "setKisi")" />
+		<textbox type="text" id="kisiParam.adSoyadParam"  value="v860p4c9u2pg40kws7520cx4mh1je3swu3izjesami61o6n6qtjvl4l8t6oce6txclyg8l9m8uw40u96o8s4q741kufazltcv1ouq5n5htltz9ptxsnojaqgc36k41uljdud3fi589rx0vkmqcxvo0410ps6nhr1x0xpaafgyoqi92gjy6ul11hb0y2wj9g8h5s2fjl67fsuphgcy01zma5321gagmmyml9p19pweubc8ptrh3gbsu95z2a920w"  width="200"  maxlength="255"  placeholder=""  onChange="autocomplete("function:prepareKisiUrl()", "function:prepareAdSoyadParameterName()", 5, "setKisi")" />
 		<label id="unvanParamlbl" value="Görevi" />
-		<selectbox id="unvanParam"  width="200"  >
-			<template>
-				<label value="96ol74uzxa" />
-			</template>
-		</selectbox>
+		<combobox id="unvanParam"  width="200"  >
+			<comboitem label="qo1yk6t5az" value="hc0i" />
+		</combobox>
 		<label id="subeParamlbl" value="Şube" />
-		<selectbox id="subeParam"  width="200"  >
-			<template>
-				<label value="z4te7sqqfa" />
-			</template>
-		</selectbox>
+		<combobox id="subeParam"  width="200"  >
+			<comboitem label="kg14vdv5ur" value="cus7" />
+		</combobox>
 		<label id="cikisParamlbl" value="Çıkış Durum " />
-		<selectbox id="cikisParam"  width="120"  >
-			<template>
-				<label value="huvyte8zp3" />
-			</template>
-		</selectbox>
+		<combobox id="cikisParam"  width="120"  >
+			<comboitem label="nl9ecgbclt" value="ebkb" />
+		</combobox>
 	</window>
+	<script>
+AgemForm.submitMessage('Arama yapılıyor...');var setKisi = function (d) {	if (d)	{		Agem.byId('kisiParam.tckNoParam').value = d.kisi.tckNo;		Agem.byId('kisiParam.adSoyadParam').value = d.kisi.adSoyad;	}};var prepareKisiUrl = function () {	return "genel/orgKisi/autocomplete.do";};var prepareAdSoyadParameterName = function () {	return "kisiParam.adSoyadParam";}var prepareTCKimlikNoParameterName = function () {	return "kisiParam.tckNoParam";}	</script>
 </arya>

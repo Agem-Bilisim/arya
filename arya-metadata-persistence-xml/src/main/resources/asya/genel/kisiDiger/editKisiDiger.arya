@@ -3,54 +3,56 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addKisidigerWindow">
 		<label visible="false" id="kisiIdlbl" value="Kisi Id" />
-		<textbox visible="false" type="text" id="kisiId"  value="7yr7pmvki2"  width="200"  placeholder=""  />
+		<textbox visible="false" type="text" id="kisiId"  value="3x0q51tm5h"  width="200"  placeholder=""  />
 		<label id="metin01lbl" value="metin01" />
-		<textbox type="text" id="metin01"  value="xpbdkj7akj4qn30e0hy90sf4p23vcdg8mm9agncsoscc8xmba83c1fyhw2wb9uqaqh2ws53q34bwvemjsndqa292tnjcqwd8sl2v5xz2ur6avjx4zugb1ofijszgsnc6xby2o7s7501q2ydg3s4e8vwdrqu897jd9jo7bbjl0rgvrclfgehthyln5s233p37nr4osm3dedmujymblrr6ike1174353kr4m4ymux6wi9rouymncqm2vqyye0unvh"  width="300"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="metin01"  value="dzw6eec1qkmeeacmtgj4yhtgt4gs0e7134n2vqm0siwbasqk4cg4c044f3xbed360snr7o3m9c9lzh8a0dh30d4u8gfe38sycmqhnuj8a9p94cmp9yjcpdocfy30230gfvw7y1pw7pd6m1cf2zpwz9e409zav6p8l2fexe2od93a8juqd1jbbbogm6h0k142db1mz3iri0h3bgvkd761tgiufks1ycw7h312ph9l7mbtuusj651lwoy5ykh6nbb"  width="300"  maxlength="255"  placeholder=""  />
 		<label id="metin02lbl" value="metin02" />
-		<textbox type="text" id="metin02"  value="24mbd9swgltktr9hz9oishm93oeqp172iuwl89k43emiepcmfswmm01vq1iegjsbarbhhn7es7qd8xl9s0kkilblpz7oe2j126z9qyjt2bxvwrens03m96qrrbhs50e0j5qnshye93y59vx3ayp1f254l86lz3bucy1oyiq8izu75e497rzibl48d3951e5ipxf4a00zsesxui9a6ykz3zvrdw8qadn5ynpnif507xhfp1uhfx5xlgij0yg20gv"  width="300"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="metin02"  value="lo50fyfyahkf5a21y8kkoxrn23tjmvqvm6md9b7b7uur77kp6j3bhfosvmc2jdgp1chcr00yyz2v78o6hnbbx3xeajgqjeb1yg6xmgm09pe1k1uelh37cokk1y1cm9di1fys9zg8meqzjviiobcn9znwin03lzoeudky2bgg3kp87a0qo25btvkogeor0jmbmule3tgag2rsu9ol82ecwt1lw75or6oev2kpcvdjnz9chg5kwbglhsorkqonlgu"  width="300"  maxlength="255"  placeholder=""  />
 		<label id="metin03lbl" value="metin03" />
-		<textbox type="text" id="metin03"  value="5ckel3w7mn4c1q9a7q1q4itxhfusbtz3imwn2xp4etz6n5oon492w948vdggaenpvcm3mg4zng1i8126ioueokvnoufp7bjkofzwtbgj9s65irxvbas9mlhztqgrqzyc5eqiizhud2nfz3qbq6ic49yudu39bcec3p92jofv6sgf1ha60ll6kwy58570u0vm6o5wayqt9gpxepgj0mhg4qu0nj9bz8n1lgtj9wrahulafev0vtp52uoz51lv9wn"  width="300"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="metin03"  value="arylyu9jzthqfnh5892euhx6mdj5bjccx5ox1xaydrufputea5xsocsj1c73cciidltb65nybw072zixl69fit476s0mf13cfnt8xhvf7762bhsnrfv7k15yjlvivej5rcxbnybha7gpj17ym4pffgg3sb8o02pfku3orjqcr5xbyv9f0t8ntxtgny0ki2l4sn1saxlfcyfd1fd6tix7olj4yjhc6i0i5q9nu8747rtunk1v3wiokgv6iswf7ya"  width="300"  maxlength="255"  placeholder=""  />
 		<label id="metin04lbl" value="metin04" />
-		<textbox type="text" id="metin04"  value="pwsffughdfw5es1t00bieg1if32mvqfcqwcsdq0fy2kd85yazbzwibjz68i1w0a9gg4rl5cvo2usxmxwhdtiunozpdl5u1pyncph67ys148bon9t69udp0byx50cr70vb96etkofgzoehg3bys44c22s8ca3mr7c4qkuto0id7dcqgzgt9t57gzuwnzpldpaaod4vawn4hjm8d9vzkpadsrz75v8gdb71a38qscg9wnve1xs0qifekl6zmfl8n1"  width="300"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="metin04"  value="n0jx7hjhx16j6culpox1m71grrn2ydpy4le36e0vvalpq07aul7wfvpb0xrhn9jt5bb9cm0s7pj7x05bpmdlirk7rrsf6e62qzbhk0ekbsclgrwp9n3nk0t5pf2miksa7aw5e8cgcdljy9q83r5dvsdkaneorf904xckruagah0xjn1n40ohjhn9mr6j6snddv6hi3qvo7jf4oijmw6qbf57sh0di6o89m2urqeys14dsgwnys5fzsgbann8zpg"  width="300"  maxlength="255"  placeholder=""  />
 		<label id="metin05lbl" value="metin05" />
-		<textbox type="text" id="metin05"  value="995mk7kefkdokd9ej8iexzmntiv6o5z7ruwkmh8w7pfi5g6htgt4848jbakc4uolxpbbflar0cvmuleml2uts0vmp1vqaw4qf4bqy2bv3psqak6xajhjw4gkp1jf162jp4b5gpvsq8yw2i65yrjod3xsl91vat1c4dz1xya9vmu09m27cf7jiiv47kva10mguo8x4kwzxxbg4h9f9dapkgda9s5hh4555ra56jhmo6uynjt1vmz9zytfust70cj"  width="300"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="metin05"  value="u6gs2v7n019pzgn87of0qby7sbjf2yq1vyb5t62oxi4pxn2tt8abukg07qa4aycde7vfums6jdu98ich6ey6r6nwotf6zsvornu0f6k1bwrjiv1a1h9hhgh6ual6jfvsrjajjb74ogehgdmsfb7hzmwc5ej6t3d6i3s8mbjob2oluxx97ry4zdkza9ucdpk13bozktupv8hd5mcy7osks8ba572fjpw7bjaxp6nuezpgjd7azbu0inbfp43byxx"  width="300"  maxlength="255"  placeholder=""  />
 		<label id="metin06lbl" value="metin06" />
-		<textbox type="text" id="metin06"  value="hooolz4d6ktyhdrdtbraf7vear8y53p293lyeqjrjxjbqk2wm2e8v38rh6z9h1a7d3n4b8r9c8ui3dvfxrltuc0em9fkl88hsirnghcxur7mazmra6u33dwtqizf89uy4a37ms49507kfk9mpz3k2rsedr3crn1x75d3giojxi07gctpqzqco63farbmkrtxql432uz0lx8jnlc80gle711tbuv6t1lc0xr3gyysf9p1nxen0wj625jwaw32tc9"  width="300"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="metin06"  value="hhf5kx9v08fbm50sjsh8shjrj38osk7wn5rqu8n4ym7lgwq5q1s1g54ftezub8rwgpqtyu38uv19gq4ijfljd6kgu3h9mewmh266kfpvt80osx15xec81t5talxxfqmw5r15ofqbq9r5fz6wxplpyobewl1xxgm0ytddu2a6bl029mqa2wvyb85oxqbfwwjdlzojq5v31p5x645v114aspvpdhwpoaik9bjbhi3v88j3qrwgi1ff9nuzj1c8eua"  width="300"  maxlength="255"  placeholder=""  />
 		<label id="metin07lbl" value="metin07" />
-		<textbox type="text" id="metin07"  value="kbic0r3w757hsxdjumxrpa6dgc2jal922921yy8y9flyxrwpdxdbqd32hobvh0okrfmsgtbrabpyjr3nfz0qtx26ykq3nqwidtb4ulhxl7ybr12bemobzhovxeprhzel1ro5clm4o1orjj4xwviosq4u5jrjik6wr0l2w5xly2bdaj6iryvcuiwtdbt4i4rwm92d75fcylvo58n2xmijkkw0q2x82v64k6rpv6f0xdt2m61k7xelf46ytrdcpmq"  width="300"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="metin07"  value="4o1itmyiw7qioxeecxa7nufdagboj4dfhrmdwx5icfdmjsk37l8yzorxocn64sle39pcyisynb2btybk1riaytskfy43xp3m3z7nhh5nfggh3fm9z2d06bulybair33or1od9uhz6qkwmrcl8j4015yqqf65eu1v2v384q9ezxpclyzos2oesben6hk7heentw560obr2kxgjkqe8i1ine04yebbefodu0hdfo9ms4wub2lob4pk1suiuuk3f6c"  width="300"  maxlength="255"  placeholder=""  />
 		<label id="metin08lbl" value="metin08" />
-		<textbox type="text" id="metin08"  value="lwnlyrb61v9zihmuo1xl6tr4wonvccgti9zfoc0ws5ufgl7a737nyi4aew6htqht4pnoj5e4pxgccqxuphyig0f1u1omlwdmy6gmny48bkmm99pe5rkwed8trvcmlghpxp74kkexrt21x51ikw3nb18qjykqu5wi5zrf6nomguumf3f11eg5gr23ute0etapp6u15d39zafrzpjgl4flzvet1e3ergfttnm8t8anbs56h233vhjjly1o4gqnnek"  width="300"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="metin08"  value="08xjfnqpk0074uzkadsv87nq9j4qdtuz57dx1kihoadtok677i251qtyof5e63jr3otwfwc3mbjvcc1uvvl7hjkcvh57e3hu2x8at91lfid914o9nvtaa9jq26ji9v4ujtbff0fhnvgqvydkam4qe77qy002rkkd95ejppwt4iwii71r4hceboqrn6zgkai1drg8fsjckgomma5een5ra5a0wgm7ko98666t0ootfnpem94ljktc3ml3xrrwzk8"  width="300"  maxlength="255"  placeholder=""  />
 		<label id="metin09lbl" value="metin09" />
-		<textbox type="text" id="metin09"  value="j2hsyyglntub254p5w6i7y4i7yadz0og2guf54sw602fnvrlbzgya2n1b0pa28ar82dew4cck1efdfbpwtdo6ltu7d2ec5i66x583w18crsgtidj5pi3d4ya1h31t2u0vcw2r9uonrldx6due07xmdoo6t1ymmaddvg8yngl9xh0zc1aaycktda09tsu6j56x0f6uzd6dgwni40kne4dqxdnkcsm9gjlq4nv6fsboo6zxu77yk94ijr8w3gnzk9"  width="300"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="metin09"  value="xw6goe2zasmr9w6ykk0mta29nq1ieckq7o3pd7adinyi0zq7nokc07z9glsgap18chmq9xcst9l1iipj6bvxuab9i3w9swnrvoybkar63d684ae2pmxvhfjqw2gdzn5bj0s3dz5q88x95kf19pv6tli2w9g3nswtuumvggoo3dr52e2jk6zn2uajxt4flo00jpmqe1x8207buhkz7bj22gxn3t8b5npc6ljmze3fgi116xpbj87v49c4mhp1a5j"  width="300"  maxlength="255"  placeholder=""  />
 		<label id="metin10lbl" value="metin10" />
-		<textbox type="text" id="metin10"  value="olup06gn5qiq4jjcfep6l3kc3cimkkhmje8pdini6emapl1acpxqvn9f8tzpo867spy3auu9s1bsos9yrsje3pss4rd8yo3b5pdjrq39frym7lwc3uwv5lb86q2c7awqdugtnb4utnuiz3wasgbn17kayhm670lpluwgb4zvsq7ivyq6f2lnaspuw1ac5tqv3jp6fhasj3zgpizcf313eqs5tpevq9bxhlidruvtr8jxzfh6osczbfrb8qxvbtc"  width="300"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="metin10"  value="tzr6lm30jdup8ua8feclhe3vhyq6u9adjlmi3gkuu1log9kvdpr39kfurf4s5dy476q7to4yz4ux8raw61y9735w8tppzb08rtglvzlg2vd8x96z7wo967luqkjjsyuplist90hnfkzef7m6fkdhjnr4vxqhbnyfg50q6kl9asr2t8g0uryslnne529s5pelsyac3uagjrmkw4ms4zbi1gxzbc0bi1w4xuabnrqlz5vob0dzp7zovioxl34iq3p"  width="300"  maxlength="255"  placeholder=""  />
 		<label id="tarih01lbl" value="tarih01" />
-		<datebox id="tarih01"  value="1999-10-15"  width="300"  placeholder=""  />
+		<datebox id="tarih01"  value="2005-9-20"  width="300"  placeholder=""  />
 		<label id="tarih02lbl" value="tarih02" />
-		<datebox id="tarih02"  value="1994-3-3"  width="300"  placeholder=""  />
+		<datebox id="tarih02"  value="2013-8-28"  width="300"  placeholder=""  />
 		<label id="tarih03lbl" value="tarih03" />
-		<datebox id="tarih03"  value="2013-7-13"  width="300"  placeholder=""  />
+		<datebox id="tarih03"  value="2011-6-21"  width="300"  placeholder=""  />
 		<label id="tarih04lbl" value="tarih04" />
-		<datebox id="tarih04"  value="2010-3-14"  width="300"  placeholder=""  />
+		<datebox id="tarih04"  value="2015-11-21"  width="300"  placeholder=""  />
 		<label id="tarih05lbl" value="tarih05" />
-		<datebox id="tarih05"  value="2011-6-6"  width="300"  placeholder=""  />
+		<datebox id="tarih05"  value="2000-8-11"  width="300"  placeholder=""  />
 		<label id="sayi01lbl" value="sayi01" />
-		<intbox id="sayi01"  value="-182294701"  width="300"  maxlength="22"  placeholder=""  />
+		<intbox id="sayi01"  value="443532592"  width="300"  maxlength="22"  placeholder=""  />
 		<label id="sayi02lbl" value="sayi02" />
-		<intbox id="sayi02"  value="-1124766397"  width="300"  maxlength="22"  placeholder=""  />
+		<intbox id="sayi02"  value="1077184010"  width="300"  maxlength="22"  placeholder=""  />
 		<label id="sayi03lbl" value="sayi03" />
-		<intbox id="sayi03"  value="-52275334"  width="300"  maxlength="22"  placeholder=""  />
+		<intbox id="sayi03"  value="1826932970"  width="300"  maxlength="22"  placeholder=""  />
 		<label id="sayi04lbl" value="sayi04" />
-		<intbox id="sayi04"  value="-739771915"  width="300"  maxlength="22"  placeholder=""  />
+		<intbox id="sayi04"  value="-1927077100"  width="300"  maxlength="22"  placeholder=""  />
 		<label id="sayi05lbl" value="sayi05" />
-		<intbox id="sayi05"  value="-214469286"  width="300"  maxlength="22"  placeholder=""  />
+		<intbox id="sayi05"  value="-2128337640"  width="300"  maxlength="22"  placeholder=""  />
 		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
-		<textbox visible="false" type="text" id="eklemeTarihi"  value="ajyvv27hrm"  width="200"  placeholder=""  />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="oj3vc7uqgt"  width="200"  placeholder=""  />
 		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
-		<textbox visible="false" type="text" id="ekleyen"  value="zyx6xevedx7h116i0j0qzxfr8tqhsbiegmo2dski1h7ielgpql2v5eyz0sn0q35rkvl2idn7xjq0dp9rxvhsuviu9zyrwg8rrey8fg091w29vkk7hkcnt8k44j76xigs1eaaikidof9femd21h51l9mqofy8n4ghpwclfntdzlweg293ehi6nmwnb0zi2gw3kkmtgcuvqq0ovejm4p1p4kxfjpa0sph4lha96ygvg53fttszus0k9hlboj2ii7e"  width="200"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="ekleyen"  value="2yr38m8ayexj0qe0v8d8xh9fep27cyw9b084z3x5mgl0n13i5xlgusa8b1xn5uavu0ba690kmawrqqnd7yd04qgd2yiq0hqr07d4wr2ih8bniugcajxuzrj8vpcxd905e8972rv358xxif47rh9qo3v0vhrztpkq6br2jkzjx5yl3yo2ofiyb5ku82v5k8xh21rmwphj14ba8vg9f97vbvlcn9pf5ggu0emj1wbxwnr161bpas4clrrkh544p3l"  width="200"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
-		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="2p3da2nbz6"  width="200"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="9qknx4zj78"  width="200"  placeholder=""  />
 		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
-		<textbox visible="false" type="text" id="sonGunleyen"  value="qi013fn97wpgqlqgldv9asckjnozqs1sv1f00gw9hhpjr8gwchpgiybylkzl3udl5so0k49hv78dhqxv3ki3roumk4nw6e9euz2ivub24y13us6brgmydfpopb707rfqyxv79n4k9edbsmep8ujxgf8yvdkl1queogdueyb6urlmpmdt563s4igyryycq6iudmkjuz0dmkm1ayvmygosdmc545dk5bwmcpu2ljc01nnb8i9lcco8nfwibstx6yf"  width="200"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="mumliv87oark3yl474t7mcq65azo8d80nc0456sk8k95pieuuym010529zd39n0wxy0vlpsf0yuvmyyxid6j8frgjvtlrrrg9b6vs3ky08p3m7mm4lmtzzi63xpn6npolvaw02071334x5v2n62ludwbeyu56gn8pnbhnw0xrao3jge0ol1s1gcyzoz6rdnw0yhun6x31prrgctnixct3uy5i5dvd9bse8aw1g23fh5lzo25qardy5mj0ogjjbq"  width="200"  maxlength="255"  placeholder=""  />
 	</window>
+	<script>
+$(document).ready( function () {	$("#kisiId").val(<%=request.getParameter("kisiId")%>);});	</script>
 </arya>

@@ -2,7 +2,7 @@
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addKullaniciozgecmisWindow">
-		<textbox visible="false" type="text" id="dosyaId"  value="1xbfo1gm4t"  placeholder=""  />
-		<textbox visible="false" type="text" id="tur"  value="mzvww54mfh"  placeholder=""  />
+		<textbox visible="false" type="text" id="dosyaId"  value="3nz1jtihbe"  placeholder=""  />
+		<textbox visible="false" type="text" id="tur"  value="g1fdt1vsom"  placeholder=""  />
 	</window>
 </arya>

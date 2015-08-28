@@ -2,44 +2,40 @@
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listCsgbisyeriWindow">
-		<textbox visible="false" type="text" id="isyeriIdParam"  value="61r8rfzqqr"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriIdParam"  value="5fi7pg53x0"  placeholder=""  />
 		<label id="unvanParamlbl" value="İşyeri Ünvanı" />
-		<textbox type="text" id="unvanParam"  value="ikj8dzhkmi60ghupoybp92cwcd8b85jgipbi1zr15mte5yzz3qp10kdnyh3ke88mudrygsns1r1eq9lhxkrpgx17ul0takphridnmd8dfm4ijpmad8agl5g6qjy3py2hfjumv4jo2eqbbrcycvanubyyhpeyp1zypodq6jegm30z83x29k2qxwsxc20l33hgqmfzhbf7kpym0p888b7o90t8ynnc3q2sl8wnz4skwpcr1t9tm1thd64skfw490w"  width="361"  maxlength="255"  placeholder=""  top="56" onChange="autocomplete("genel/csgbIsyeri/autocomplete.do", "unvanParam", 5, "setIsyeri")" />
+		<textbox type="text" id="unvanParam"  value="55xajm6qk30fw94rno5j0h96vfatxoo17a7084dtnb005gubkob5uvksac3ssaeegdh6vw87j8miqxlbuoe0xda2e8u508ogcj2jul07msgwbdi5ltj0pjaodmkdf3xrulowg59wdsbbp052w8ii6lcy5uyf42ej8amset6vzdguj9dq98vlhehff0y4w2y8wqvf7cw0um9tplm82p6ulywpn5ljif6m3p52b060cb793492f7kw67fzhb4teh1"  width="361"  maxlength="255"  placeholder=""  top="56" onChange="autocomplete("genel/csgbIsyeri/autocomplete.do", "unvanParam", 5, "setIsyeri")" />
 		<label id="calisanSayisiBasParamlbl" value="ÇSGB Çalışan Sayısı" />
-		<intbox id="calisanSayisiBasParam"  value="1880875935"  width="98"  maxlength="5"  placeholder=""  />
-		<intbox id="calisanSayisiBitParam"  value="-1162197442"  width="98"  maxlength="5"  placeholder=""  />
+		<intbox id="calisanSayisiBasParam"  value="1607820873"  width="98"  maxlength="5"  placeholder=""  />
+		<intbox id="calisanSayisiBitParam"  value="30348083"  width="98"  maxlength="5"  placeholder=""  />
 		<label id="uyeSayisiBasParamlbl" value="ÇSGB Üye Sayısı" />
-		<intbox id="uyeSayisiBasParam"  value="552998202"  width="98"  maxlength="5"  placeholder=""  />
-		<intbox id="uyeSayisiBitParam"  value="-234767374"  width="98"  maxlength="5"  placeholder=""  />
+		<intbox id="uyeSayisiBasParam"  value="1384767655"  width="98"  maxlength="5"  placeholder=""  />
+		<intbox id="uyeSayisiBitParam"  value="-571275837"  width="98"  maxlength="5"  placeholder=""  />
 		<label id="oranBasParamlbl" value="ÇSGB Üye Oran" />
-		<intbox id="oranBasParam"  value="2060069288"  width="98"  maxlength="5"  placeholder=""  />
-		<intbox id="oranBitParam"  value="-120185283"  width="98"  maxlength="5"  placeholder=""  />
+		<intbox id="oranBasParam"  value="430561535"  width="98"  maxlength="5"  placeholder=""  />
+		<intbox id="oranBitParam"  value="-1183238947"  width="98"  maxlength="5"  placeholder=""  />
 		<label id="ilKoduParamlbl" value="İl" />
-		<selectbox id="ilKoduParam"  width="98"  >
-			<template>
-				<label value="4venkf5ffh" />
-			</template>
-		</selectbox>
-		<selectbox id="ilceKoduParam"  width="98"  >
-			<template>
-				<label value="6dzhi0dy9v" />
-			</template>
-		</selectbox>
+		<combobox id="ilKoduParam"  width="98"  >
+			<comboitem label="gg3zouyhxq" value="0rhy" />
+		</combobox>
+		<combobox id="ilceKoduParam"  width="98"  >
+			<comboitem label="xyri27fc77" value="k48p" />
+		</combobox>
 		<label id="orgutluParamlbl" value="Örgütlü" />
-		<selectbox id="orgutluParam"  width="120"  >
-			<template>
-				<label value="ufwrn1aet1" />
-			</template>
-		</selectbox>
+		<combobox id="orgutluParam"  width="120"  >
+			<comboitem label="p830s5kta5" value="p98s" />
+		</combobox>
 		<label id="kanunKapsaminaAlinisTarihiBasParamlbl" value="Kan. Kap. Alınış Baş." />
-		<datebox id="kanunKapsaminaAlinisTarihiBasParam"  value="2001-8-23"  width="100"  placeholder=""  />
+		<datebox id="kanunKapsaminaAlinisTarihiBasParam"  value="2009-4-22"  width="100"  placeholder=""  />
 		<label id="kanunKapsaminaAlinisTarihiBitParamlbl" value="Kan. Kap. Alınış Bit." />
-		<datebox id="kanunKapsaminaAlinisTarihiBitParam"  value="2008-11-4"  width="100"  placeholder=""  />
-		<checkbox type="text" id="onaylananUyelerParam"  checked="false"  label="Onaylanan Üye"  onCheck=""  width="50"  />
+		<datebox id="kanunKapsaminaAlinisTarihiBitParam"  value="1994-2-5"  width="100"  placeholder=""  />
+		<checkbox type="text" id="onaylananUyelerParam"  checked="true"  label="Onaylanan Üye"  onCheck=""  width="50"  />
 		<checkbox type="text" id="istifaEdenUyeParam"  checked="false"  label="İstifa Eden Üye"  onCheck=""  width="50"  />
 		<label visible="false" id="ilKodlariParamlbl" value="İl" />
-		<textbox visible="false" type="text" id="ilKodlariParam"  value="dehexpu27j"  placeholder=""  />
+		<textbox visible="false" type="text" id="ilKodlariParam"  value="9byxp06tb4"  placeholder=""  />
 		<label id="ilAdlariParamlbl" value="İller" />
-		<textbox type="text" id="ilAdlariParam"  value="djw6utta8l"  width="361"  placeholder=""  readonly="true"  />
+		<textbox type="text" id="ilAdlariParam"  value="ko7mqt3izp"  width="361"  placeholder=""  readonly="true"  />
 	</window>
+	<script>
+AgemForm.submitMessage('Arama yapılıyor...');var setIlIlceParam = function (d) {	Agem.setValue( {		"iletisim.ilce.param": d.value	});};var setIsyeri = function (d) {	if (d.isyeriId) {		AgemWM.addQueryString(Agem.json2Param( {isyeriIdParam: d.id, isyeriId: d.id}));		AgemWM.link('#genelCsgbIsyeriSelect', {url: 'genel/csgbIsyeri/select.do'});	}};function ilKoduDegisti() {	var ilKodu = $('#ilKoduParam').val();		$('#ilceKoduParam').children().remove();	if (ilKodu) {		Agem.ajax("genel/ilce/list.do", {ilKoduParam:ilKodu, pageSize:10000, sort:'ILCE.ILCE_ADI',dir:'asc', json:1}, function (x) {			$("#ilceKoduParam").append("<option value=''></option>");			for (var i=0; i < x.results.length; i++) {				$("#ilceKoduParam").append("<option value='"+x.results[i].ilceKodu+"'>"+x.results[i].ilceAdi+"</option>");			}		});		}}$(document).ready( function () {	$("#ilAdlariParam").click(function () {		AgemForm.open('#iller_form', null, null, true);		});});function iller_ata() {	var ids = [];	var labels = [];	$(".iller_checks:checked").each(		function () {			ids.push( $(this).val() );			labels.push( $(this).attr("label") );		}	);	$("#ilKodlariParam").val(ids.join(","));	$("#ilAdlariParam").val(labels.join(","));	$('#iller_form').hide();	Agem.perde(false);}function iller_temizle() {	$("#ilKodlariParam").val("");	$("#ilAdlariParam").val("");	$(".iller_checks:checked").each(			function () {				$(this).attr("checked", "");			}		);}	</script>
 </arya>

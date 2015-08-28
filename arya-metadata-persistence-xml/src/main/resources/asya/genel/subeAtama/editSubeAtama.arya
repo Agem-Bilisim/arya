@@ -3,13 +3,13 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addSubeatamaWindow">
 		<label visible="false" id="ilKodulbl" value="İl Kodu" />
-		<textbox visible="false" type="text" id="ilKodu"  value="755rfcbf1i"  placeholder=""  />
+		<textbox visible="false" type="text" id="ilKodu"  value="5hsqk8wkko"  placeholder=""  />
 		<label id="ilAdilbl" value="İl Adı"  onClick=""  />
 		<label id="subelbl" value="Şube" />
-		<selectbox id="sube"  width="240"  >
-			<template>
-				<label value="izjt4pkdjt" />
-			</template>
-		</selectbox>
+		<combobox id="sube"  width="240"  >
+			<comboitem label="vgygph2ifq" value="70xk" />
+		</combobox>
 	</window>
+	<script>
+var subeleriSifirla = function(x){		var ilKodu;		var u = "genel/subeAtama/add.do";				Agem.ajax(u, {		json : 1,		ilKodu : $("#ilKodu").val() ,		sube : $("#sube").val() ,	}, function(d) {		if (!d["@hata"]) {					}	});}var subeAtama = function(){	if(confirm('Bu ile bağlı tüm ilçelerin şubeleri seçili şube atanacaktır. Emin misiniz?')){		$("[name='ilceSube']").val($("#sube").val());		$("#kaydetBtn").click();	}};	</script>
 </arya>

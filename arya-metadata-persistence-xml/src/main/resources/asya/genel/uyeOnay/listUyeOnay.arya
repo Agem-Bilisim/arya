@@ -3,19 +3,19 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listUyeonayWindow">
 		<label id="uyeParam.basTarihParamlbl" value="Üyelik Düşme Baş. Tarihi" />
-		<datebox id="uyeParam.basTarihParam"  value="1994-7-17"  width="120"  placeholder=""  />
+		<datebox id="uyeParam.basTarihParam"  value="2000-4-19"  width="120"  placeholder=""  />
 		<label id="uyeParam.bitTarihParamlbl" value="Üyelik Düşme Bit. Tarihi" />
-		<datebox id="uyeParam.bitTarihParam"  value="2005-4-20"  width="120"  placeholder=""  />
+		<datebox id="uyeParam.bitTarihParam"  value="1990-3-6"  width="120"  placeholder=""  />
 		<button id="listeleBtn" label="Listele"  onClick="listele()"  width="70"  />
 		<label id="uyeParam.subeParamlbl" value="Şube" />
-		<selectbox id="uyeParam.subeParam"  width="200"  >
-			<template>
-				<label value="ywzfio2jyb" />
-			</template>
-		</selectbox>
-		<textbox visible="false" type="text" id="uyeParam.isyeriIdParam"  value="bh3nrxutcz"  placeholder=""  />
-		<textbox visible="false" type="text" id="uyeParam.isyeriParam.isyeriIdParam"  value="41zr8nk7dg"  placeholder=""  />
+		<combobox id="uyeParam.subeParam"  width="200"  >
+			<comboitem label="ktsnrccv4n" value="koug" />
+		</combobox>
+		<textbox visible="false" type="text" id="uyeParam.isyeriIdParam"  value="vdrkb1u3nz"  placeholder=""  />
+		<textbox visible="false" type="text" id="uyeParam.isyeriParam.isyeriIdParam"  value="fh87lsjmhp"  placeholder=""  />
 		<label id="uyeParam.isyeriParam.unvanParamlbl" value="İşyeri Ünvanı" />
-		<textbox type="text" id="uyeParam.isyeriParam.unvanParam"  value="r0gqvht11avzjp3f1b5ftttjvp96xpo4mg4xi5hiuxuayn946i20bbesfum1f83n2zwez63vq32zk4iebefos5min4qgrg28556vixi34y0lpjdwwrq4ydd9g8voz3acwdcdf53358wqto2340oqbhbqymvfsz2r292d6ekqwzlakgq7zzkk9txp0m3rqsqdgziuz93texwv6i4viq0t2c2u207f19btthici1bse36ib7skxemhsyzspfa3hy0"  width="416"  maxlength="255"  placeholder=""  top="56" onChange="autocomplete("genel/isyeri/autocomplete.do", "unvanParam", 5, "setIsyeri")" />
+		<textbox type="text" id="uyeParam.isyeriParam.unvanParam"  value="vim2p54i2j11cljs5h5dtp64bjsc028dt4ukjnpewznvf5kdpz4h40u513itno35ftgjzla7mr4yi7mx9dif21gui8yovdxpkuwqxinsqffng4tb8h4ctg1igoqnzpvusqxe8n8bdrdecrt6v6hgjs0566mig4ficx8yucdb1sharnjk8sr6lv8nhmkc79fy78ozqtv0dhgfdf5snwgibb3sfpmee99qqe3sb1dme6eu78127t4x95h4s6gkqcb"  width="416"  maxlength="255"  placeholder=""  top="56" onChange="autocomplete("genel/isyeri/autocomplete.do", "unvanParam", 5, "setIsyeri")" />
 	</window>
+	<script>
+var prepareIsyeriUrl = function() {//	var url = 'genel/isyeri/autocomplete.do?orgutluParam=1';	var url = 'genel/isyeri/autocomplete.do';	if (Agem.byId("uyeParam.subeParam").value) {		url += "?subeParam="+Agem.byId("uyeParam.subeParam").value;	}	return url;};$(document).ready( function () {	if (!Agem.byId("uye.girisOnayTarihi").value )		Agem.byId("uye.girisOnayTarihi").value = "<%=AgemUtils.getDate()%>";	Agem.addElement('input','forward', {type:'hidden', name:'forward', value:'list', noClear:"1"}, null, document.forms['genelUyeOnayParameterForm']);	$(".uyeTumuCheckbox").click( function ()  {		$(".uyeCheckbox").attr("checked", $(this).attr("checked"));	});	$('#uyeParam\\.subeParam').width('115px');	$('#genelUyeOnayParameterForm div.agem-form-div:first').append($('#agem_label_input_div_listeleBtn').html());	$('#agem_label_input_div_listeleBtn').remove();	$('#listeleBtn').css('position','absolute');	$('#listeleBtn').css('right','7px');	$('#listeleBtn').css('top',$('#agem_label_input_div_uyeParam\\.isyeriParam\\.unvanParam').css('top'));		$('#genelUyeOnayFormDiv div.agem-form-div').append($('#agem_label_input_div_kaydetBtn').html());	$('#agem_label_input_div_kaydetBtn').remove();	$('#kaydetBtn').css('position','absolute');	$('#kaydetBtn').css('right','7px');	$('#kaydetBtn').css('top',$('#agem_label_input_div_uye\\.girisArsivReferansNo').css('top'));			$('#uyeParam\\.isyeriParam\\.unvanParamLabel').width($('#uyeParam\\.isyeriParam\\.unvanParamLabel').width()-16);		divAyarla();});var setIsyeri = function (d) {	if (d.id) {		Agem.setValue(d, "uyeParam.isyeriParam", "Param");		Agem.byId("uyeParam.isyeriIdParam").value = d.id;	}	else {		Agem.setValue( {			"uyeParam.isyeriIdParam": "",			"uyeParam.isyeriParam.unvanParam": "",			"uyeParam.isyeriParam.isyeriIdParam": ""		} );	}};var listele = function() {	AgemWM.submit(null, "genelUyeOnayParameterForm", true);};var kaydet = function() {	document.forms[0].action = "genel/uyeOnay/add.do";	AgemWM.submit(null, "genelUyeOnayParameterForm");	}var ek3Yukle = function(id) {	var d = AgemTable.DATA["d-"+id];	Other.nesneDosyaYukle('uyeEk3',d.uyeId,d.isci.kisi.adSoyad + ' - Üye Ek3');};AgemTable.rowDblClick = function(id) {	AgemWM.addQueryString(Agem.json2Param({uyeIdParam: id, uyeId: id}));	AgemWM.link('#genelUyeSelect', {url: 'genel/uye/select.do', refresh:true});	Agem.message('Bilgiler okunuyor...');	};$(window).resize( function () {	divAyarla();});var divAyarla = function () {	var h = $(window).height();	var w = $(window).width();	$("#genelUyeOnayFormDiv").css('top', (h-100));	$("#listeDis").width(w-20);};	</script>
 </arya>

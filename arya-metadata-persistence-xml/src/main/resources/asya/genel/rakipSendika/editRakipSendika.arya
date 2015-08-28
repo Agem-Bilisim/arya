@@ -3,28 +3,28 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addRakipsendikaWindow">
 		<label visible="false" id="rakipSendikaIdlbl" value="Rakip Sendika Id" />
-		<textbox visible="false" type="text" id="rakipSendikaId"  value="7qpe7ixpn8"  placeholder=""  />
+		<textbox visible="false" type="text" id="rakipSendikaId"  value="obdebf77ce"  placeholder=""  />
 		<label id="kodlbl" value="Sendika Kodu" />
-		<textbox type="text" id="kod"  value="ysns"  width="50"  maxlength="4"  placeholder=""  />
+		<textbox type="text" id="kod"  value="kemm"  width="50"  maxlength="4"  placeholder=""  />
 		<label id="adilbl" value="Sendika Adı" />
-		<textbox type="text" id="adi"  value="tupmeoxfaej99n5g2fqms2o5u0jwfbku55l3o2iowvt7wl7659c5v6qjqt19xx5l82291zxd3wlc2o9v6r8susnu07zyttg1422hovfju0lfgiucwaiv67e1yab8x7h73x2g1u33m8uhokn4lqdl5vwwtrir7uvip2u7o8l63g82wqn3zhzz9wf38icbykeavhe5q5yzounybl3lametlqf7hix8e8rg5nah111nih3td3yb3bnzlljvpw5xsmt"  width="80"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="adi"  value="a7pjjwrylporfthd5ulo3lfc0f2wegyy1v36cf1yppj5xxx3t4pyws9ztsngxsfvtv6j3goinmnoa6j7zrf85dimxr3282rb7ng8f8wc8tkm1mn5tlbkleakyaaa4tnoqc37hw5za9fwv65utyl31o1dfcxbprjh19u0c66v36e1z2cw19a0p36t0m79e6re6j6sdf8gttw2qup1k6pt87mopz06b8yr3h9fjbznax6zvesk5mrea09e6vhw5j2"  width="80"  maxlength="255"  placeholder=""  />
 		<label id="unvanlbl" value="Sendika Ünvanı" />
-		<textbox type="text" id="unvan"  value="frk9e3sv1onc6nu8w2cuh1drcb7nra29jgfl5nujp0gaenwuszmfeuqwk0spii4h8htk69313s1cxzqn7lh6vigd5422uuckj5p0g1zucwa8nmpry1ojgrryai21zcy0qeojoji9a5akb80vsuzqdwog4bvk0vyx49mi7cgfcfl6y5m3x63f2p5vi3a9qzw3mh15n6qf32xgwtpdaysl66rxomu11h0bugctobmdh9bvxdnz2ddearal638sdba"  width="300"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="unvan"  value="dyj1pnir28fqzvek1msih06jwvbxj0g9iiqm1cngnxe7jt13sucgkatbhg2c5vn8satmojkt9b6dnqpvxcbcwfcmlqdeovkqeo1bl7sjccc4m6odoqpz0sdso7b0off08vhsmhqucz4x9kk9qfxwd02pug45rs4vybqmklkytvo3s8jaevvfnkp5gp9p2tn9482nuqo60i2zqnaygmzcxr43cm21s336neo5msj03zuzkldvgw6v06ogkgtjf1u"  width="300"  maxlength="255"  placeholder=""  />
 		<label id="konfederasyonlbl" value="Konfederasyon" />
-		<selectbox id="konfederasyon"  width="80"  >
-			<template>
-				<label value="xjz5vw6dit" />
-			</template>
-		</selectbox>
+		<combobox id="konfederasyon"  width="80"  >
+			<comboitem label="wdhlvdc9ak" value="y3dh" />
+		</combobox>
 		<label id="aciklamalbl" value="Açıklama" />
-		<textbox type="text" id="aciklama"  value="hdzw76ppdv0ut78tm8m17rjtdcu5r75bp3gz5pqknhwhzwc8th3qc1sdkqhsmpbnq0eky7y5ys3tcmgjmfz0ilp2tvcxopn28plgquauffr0yel6tfmrx3gkveibr1lnv6cilt9ze7pz0a2ar9fvlk1n0zh857efm1hsb00amblazsceo84nzqm4lvne18e4ade4pzqtlgr81uamsh3kle2qhqqivl74uk1bi93vke6j0i83u7m6llahtrscr0r"  width="420"  maxlength="255"  placeholder=""  rows="5"  cols="40"  />
+		<textbox type="text" id="aciklama"  value="9o6e58xcs5ob186koqh88bqq2qxeupxrz36apf6kurb9y37n7xyrxydyhqw9115fge1hgespsat6k1gr7djqb1416pthqungcs15im1296latu35svnpmcbr4nabxw6wyrbcnt855fkiv7rc9r0l7wn384w9qs2sz6zl7j1w14eo071ey14g843htz7916s0eg4caa975vyq6vrpshcsiwzjs2m6mkzfc2gystmb0uejv5gxrrs0l1jb0fuk9w7"  width="420"  maxlength="255"  placeholder=""  rows="5"  cols="40"  />
 		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
-		<textbox visible="false" type="text" id="eklemeTarihi"  value="fbuwtxschy"  width="200"  placeholder=""  />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="mtkph55vsu"  width="200"  placeholder=""  />
 		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
-		<textbox visible="false" type="text" id="ekleyen"  value="sot22jgzibla9g61by7lj6jpcglc7411agnt865bs3ckwk8ohwsa1jenmx57m4pl5dsoamy1ymw74s3bu63g96jyrrjs9zpch4ewqqgavkpv7bj258wt94iqr6go86rchijjrqmd5tzh7q98jpjcwks7vyww371tddovg38gcpmser0i0fnxpyws7ryvbt61eup6rgn5lv102e4c2o6subq1axrx2hia8lauruacr5dp522lc26mezm45vzat9q"  width="200"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="ekleyen"  value="nwf1ccf2arcxf46mb7jmao0fr8zpsxqs8haim87i0bwikdz1ehg1lnepxs3dya4ym5pgfztmbi0dr73mpchj9fo9vfs7upbzpzu2bd42ltts5o69izcqjlqfk3x0seqw51bnjuk007u8oyfdtoczazrk2lbhs5ucyxbl7zb15y2encn6k94ebnzs0tvo83j44oejpfz000b4ff2tyq3fx48mlvaip35nm10x0qha92dffy7ybhmrkbg6362cxaj"  width="200"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
-		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="4y6em4chaz"  width="200"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="6iymy950y4"  width="200"  placeholder=""  />
 		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
-		<textbox visible="false" type="text" id="sonGunleyen"  value="52je3sywvfxh1t3bz6e49tlt5ailz83dp8ekixratnrad6etrct7wnfg96zkp4jwfyr9y6v3u4nnfe76840jaxms4ezkhk1gcmsgv5njvfxfczkn2r2qc2r4d9ghkca61irpi12xk0tug3d7hhztxq65jwov4dd6onbg2ay61nssdlbvd2j8ldffnvlehdnfmsssk0l5hj8xqi2ii66slk1pama2abcy6z2rn8jailzlkc61k4crhixnypobf4b"  width="200"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="0uwcxr4qkiwhywlovxcjym8uh6kazpedpb1dkec5ggrj3rn22e4olpmkf6avosm0a582f7d617xzi2nz7t2vb1cmwdkj4or1wbj4z34ej7gop924xz8gealdnfi6o6570ogar1g11g2quzj16uw8snxl64w8vyng1jatsv6j5q9ys1f604s3olxq7wae9r5iqdo89adw99vzg7tjnoj3qg54n4w4veciq3s7elmce2quo4ib1e0iv74ryqqt0rc"  width="200"  maxlength="255"  placeholder=""  />
 	</window>
+	<script>
+$(document).ready( function () {	if ($("#rakipSendikaId").val()) {		AgemWM.addQueryString(Agem.json2Param( {rakipSendikaIdParam: $("#rakipSendikaId").val(), rakipSendikaId: $("#rakipSendikaId").val()}));		var json = <bean:write name="genelRakipSendikaForm" filter='false'/> 		AgemWM.addSideInfo(			{				id:"rakipSendikaInfo",				info: [					{value: json.adi, clazz: "pointer", 							onclick: function () {								AgemWM.link('#genelRakipSendikaSelect', {url: 'genel/rakipSendika/select.do'});							}					},					{value: json.unvan, clazz: "not-bold"}				],				type: 1			}		);		Other.writeKullaniciBilgi();			} else {		AgemWM.removeSideInfo({type: 1, id: "rakipSendikaInfo"});		$("#agem_label_input_div_dosyaEkleBtn").hide();	}});function dosyaEkle() {	if (Agem.byId('rakipSendikaId') && Agem.byId('rakipSendikaId').value) {		AgemWM.window(				{					modal : true,					label: " Rakip Sendika - Ekli Dosyalar", 					url:"genel/nesneDosya/list.do?pageSize=-1&nesneKodParam=rakipSendikaId&nesneIdParam="+Agem.byId('rakipSendikaId').value,					id : "nesneDosyaWindow",					width: 800, 					height: 600								});	}		};	</script>
 </arya>

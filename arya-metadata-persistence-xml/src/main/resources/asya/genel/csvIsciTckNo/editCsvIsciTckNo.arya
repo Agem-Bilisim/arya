@@ -3,20 +3,18 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="selectCsviscitcknoWindow">
 		<label id="dosyaIdlbl" value="TCK No,SGK No Listesi" />
-		<selectbox id="dosyaId"  width="320"  >
-			<template>
-				<label value="dlu8wodfv0" />
-			</template>
-		</selectbox>
+		<combobox id="dosyaId"  width="320"  >
+			<comboitem label="z9nvl2w0y4" value="kyyu" />
+		</combobox>
 		<button id="dosyaYukleBtn" label="İncele"  onClick="dosyaIsle()"  width="90"  />
 		<label id="eslesenlbl" value="Eşleşen Kayıt Sayısı" />
-		<textbox type="text" id="eslesen"  value="hs1b25if59"  width="320"  placeholder=""  readonly="true"  />
+		<textbox type="text" id="eslesen"  value="6mreufn5dl"  width="320"  placeholder=""  readonly="true"  />
 		<button id="guncelleBtn" label="Güncelle"  onClick="guncelle()"  width="90"  />
 		<label id="eslemeKriterlbl" value="Eşleştirme Kriteri" />
-		<selectbox id="eslemeKriter"  width="320"  >
-			<template>
-				<label value="z6z7z9lqt0" />
-			</template>
-		</selectbox>
+		<combobox id="eslemeKriter"  width="320"  >
+			<comboitem label="d0dex02fnl" value="3mov" />
+		</combobox>
 	</window>
+	<script>
+var dosyaIsle = function() {	if (Agem.byId("dosyaId").value) {		AgemWM.submit();	}	else {		Agem.error("TCK No - İşyeri SGK No dosyası seçin.");	}};var guncelle = function() {	if (Agem.byId("eslesen").value && Agem.byId("eslesen").value != '0') {		document.forms[0].action = "genel/csvIsciTckNo/edit.do";		AgemWM.submit();	}	else {		Agem.error("Eşleşen kayıt bulunmadı.");	}};function dosyaEkle() {	AgemWM.window(			{				modal : true,				label: " T.C. Kimlik No - İşyeri SGK No Listeleri", 				url:"genel/nesneDosya/list.do?pageSize=-1&nesneKodParam=tckNoSgkNoListesi&nesneIdParam=1",				id : "nesneDosyaWindow",				width: 800, 				height: 600,				opener: window			});		};AgemWM.onClose = function (id) {	if (id == 'nesneDosyaWindow') {		AgemWM.link('#genelCsvIsciTckNoSelect', {url: 'genel/csvIsciTckNo/select.do', refresh:true});	}};	</script>
 </arya>

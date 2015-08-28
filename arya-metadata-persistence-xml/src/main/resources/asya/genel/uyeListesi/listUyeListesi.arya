@@ -3,10 +3,10 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listUyelistesiWindow">
 		<label id="subeParamlbl" value="Şube" />
-		<selectbox id="subeParam"  width="206"  >
-			<template>
-				<label value="b6osnbdkjv" />
-			</template>
-		</selectbox>
+		<combobox id="subeParam"  width="206"  >
+			<comboitem label="4ype6vzsd4" value="y2c5" />
+		</combobox>
 	</window>
+	<script>
+ 	var _sube = ('<bean:write name="p_subeParam"/>' == '') ? '' : '<bean:write name="p_subeParam"/>';	var _tur = '<bean:write name="p_tur"/>';AgemTable.rowDblClick = function(id) {	<%if(("ISY_OLM_UYE").equals(request.getParameter("turParam"))){%>		var obj = AgemTable.get(id);			<agem:access URL="genel/isci/select">				AgemWM.window( {link: "genel/isci/select.do?kisiId="+obj.kisiId, width: 800, height: 600, label: "İşçi İşlemleri"});		</agem:access>	<%}%>	<logic:notEmpty name="listIsyeri">		var obj = AgemTable.get(id);			//isyeri subesine gitme yetkisi var mı kontrol edilcek			<agem:access URL="genel/isyeri/select">			<%if(("ISLETME").equals(request.getParameter("turParam"))){%>			if(obj.yetki == 1){				AgemWM.window( {link: "genel/isyeri/select.do?isyeriId="+obj.isyeriId, width: 800, height: 600, label: "İşyeri İşlemleri"});			}		<%} else {%>				AgemWM.window( {link: "genel/isyeri/select.do?isyeriId="+obj.isyeriId, width: 800, height: 600, label: "İşyeri İşlemleri"});		<%}%>		</agem:access>	</logic:notEmpty>};$(document).ready( function () {	if ($('.exportlinks').length > 0 && <%=("ISY_OLM_UYE").equals(request.getParameter("turParam"))%>) {		Agem.addElement('input','subeParam', {type:'hidden', noClear:1, name:'subeParam', value:_sube}, null, document.forms['genelUyeListesiParameterForm']);		Agem.addElement('input','turParam', {type:'hidden', noClear:1, name:'turParam', value:'ISY_OLM_UYE'}, null, document.forms['genelUyeListesiParameterForm']);				$('<a/>', {     			id: 'arama-link',     			href: "javascript:filtrele()",     			title: 'Filtrele'     		}).html("<span title='Filtrele' class='export-icon search-off' onmouseover=\"Other.changeClass(this, 'search-off', 'search-on')\" onmouseout=\"Other.changeClass(this, 'search-on', 'search-off')\"></span>").prependTo('.exportlinks');				$('.search-off').parent().attr("href", "javascript:filtrele()");			}	});var filtrele = function() {	AgemForm.open('genelUyeListesiParameterForm', {subeParam:_sube, turParam:'ISY_OLM_UYE'}, '---Par', true);};function listele() {	AgemWM.submit(null, 'genelUyeListesiParameterForm');	}	</script>
 </arya>

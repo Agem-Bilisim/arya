@@ -3,8 +3,10 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listYardimWindow">
 		<label id="yardimSozcukParamlbl" value="Anahtar Sözcük" />
-		<textbox type="text" id="yardimSozcukParam"  value="kj0zb5jzksdzhn5s84obqofsy9nktszrb484rtla3ukpzsta97jo7f17ul4vaq6yil27ahk649z69z8vx0mlhq3eh9yy1rhdejbw"  width="120"  maxlength="100"  placeholder=""  />
+		<textbox type="text" id="yardimSozcukParam"  value="j2g93jttxns5hgi5og5uhbst9aujjqjwrmdcrdnynkpkn0zkdhkepkknd7l24qjymlbzvd65517karaqv76g6cq4qtg3okuccvdd"  width="120"  maxlength="100"  placeholder=""  />
 		<label id="aciklamaParamlbl" value="Açıklama" />
-		<textbox type="text" id="aciklamaParam"  value="sqwtmhq9rg5imb5e82jlb7izf9x6bp3p1cmhyzcngng9292ig6n85pcne2oogbt1l2o8v26fifxvxtbq9t9veaz8zvkqpaaazeg95egqnpkfajwtf2nibr466rgefp9shi1b5gh8l1e39o7k5uwp3q"  width="180"  maxlength="150"  placeholder=""  />
+		<textbox type="text" id="aciklamaParam"  value="rvgi3qbktc7bqrhwdk622ed3bq5cgoj7xis5xo74ggpeh76xgcdbblumkh70kpxcnvg679xpzzdpt52fl7vtqm92istayta0gu8hcv3rfkuu6fzu0erq6x4xg430y04wtv1u94bl24wysrbr7da7ti"  width="180"  maxlength="150"  placeholder=""  />
 	</window>
+	<script>
+AgemForm.submitMessage('Arama yapılıyor...');	</script>
 </arya>

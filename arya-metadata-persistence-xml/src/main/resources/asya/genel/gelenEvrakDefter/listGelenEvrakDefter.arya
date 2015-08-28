@@ -3,20 +3,22 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addGelenevrakdefterWindow">
 		<label visible="false" id="evrakDefterIdlbl" value="Evrak Defter Id" />
-		<textbox visible="false" type="text" id="evrakDefterId"  value="20b2ubpkxz"  placeholder=""  />
+		<textbox visible="false" type="text" id="evrakDefterId"  value="84u3cze26v"  placeholder=""  />
 		<label id="basliklbl" value="Başlık" />
-		<textbox type="text" id="baslik"  value="kmqbmf9wfdmozobxb1sf0x3f3on44xyxqog7l70hfeqi92f8ltgraoikkxz0ysi1uyx9iqoyq0vmnbwu4nj2ocva6i1s52tr85qbvcbi0ggnclyunj7t3tyy56etipgc84mya1zyyydnm8yiaromnsj3qjedobx8vpp6f2jxz2gknaauppbaojq5oasxlbpywqxfctakjji0ww76pl75dkbdv2swz9kav3vp3wu6meq547e30dd7zajms1nwzt3"  width="220"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="baslik"  value="srpdpsfk7ppecsipyrt870xtwiuza0ip8nih8vcv8rj69ldtcdos2xjq2zc38l6btghuuwh7nvu82m5n5bn35norcov8228qbo44w8qphfloxuaxhtxlziibu36keudqup2zmq3915dy3qwspfyvatevknhlceobvtcgvbcnfnlvbt7z7lnr64dvb7lyt9btxykasmoij4idvrjxxnr8dd1jxxe8t15nk2upl89rdcqfrpwpedjrd9fvo0ieweu"  width="220"  maxlength="255"  placeholder=""  />
 		<label id="baslangicTarihilbl" value="Başlangıç Tarihi" />
-		<datebox id="baslangicTarihi"  value="2009-6-2"  width="120"  placeholder=""  />
+		<datebox id="baslangicTarihi"  value="2009-7-29"  width="120"  placeholder=""  />
 		<label id="bitisTarihilbl" value="Bitiş Tarihi" />
-		<datebox id="bitisTarihi"  value="2014-11-9"  width="120"  placeholder=""  />
+		<datebox id="bitisTarihi"  value="2007-0-7"  width="120"  placeholder=""  />
 		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
-		<textbox visible="false" type="text" id="eklemeTarihi"  value="9p5y4xaab9"  placeholder=""  />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="yogpy9l5yq"  placeholder=""  />
 		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
-		<textbox visible="false" type="text" id="ekleyen"  value="upc1ut9pf1kitg9ish01swe5sroeb587s6xtdte1r2r6pr19ydj5ctdbnhl2vlcs0io54rcibc6zusixkfzyz0zr8u6s350th8x9ft77ht08gcxjmoahcuvegi9695b9hy0cf16wl2geghhm3cquvg6riicez5h41sdka19ydtvld1r642xxk5fy41kog9jmkrw3qblw2eq1vyqklnw5vcr378aa45gcofca2d9az4zteliv6u785f43enwyv1l"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="ekleyen"  value="usulnt0yvqm2ivur0nkdxhadrd3xbar4opgb40y51osmgglek12927zj5v3phyi55okt5j6wre1ayos26v9bw5029q709m6whi211rexi0t19qb9dl84b1b7jaxzoy8x867phckasklhp19hdkvcksulqgvitm44ykml5rleikgzg7chm3z3zuu8s3wosuip7lzjj11h1g3z9ea5o6n0j3yss4paeapx3wecipb3jfggi389jezvxvk9624wrha"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
-		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="h9jbgu168u"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="ruegncu4x1"  placeholder=""  />
 		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
-		<textbox visible="false" type="text" id="sonGunleyen"  value="8v2ejcfucew4odpi1ntdp1t1jrnupz34pu4n6f4to9qqhbq7iz731lpysphbzxaxcc7u88j1jbx6d5gwzjgvpbckulz7ay18xcn2sqvsx274vo1ewd8b52ydkkds21tiegruh9cuk9i11mglskaatrrrn8edyrpmi7gw1mfl7nf3i6ygobbg1ogea98ikihdb8ew6c73kx6ci5e8vkr1td405x5nzapf9h1o2cogzomqpywxu1d62xjbajm8bmm"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="hhnvud9bur68ie8a2o1m5pe0ig2xc01kjhj9k7dsbc7h39n07hqgtistomyy7f9msh2wvoqa05jn8500pom88109p7nn69ntkkq7bdzp6y93fxmq1ou3zhzkgqorat5nsujqqeg2sfqg2mheaxuszb72u7aa4dve0be2bepvedyff0pccwqw6zusme8mynzp78nnp2ut1bk77buw0v5btpv0sgcw9rajt31oqq308uphqvdiuss0o06nl4fel79"  maxlength="255"  placeholder=""  />
 	</window>
+	<script>
+var evrakDefterId = ('<bean:write name="p_cleanId"/>' == '1') ? '' : '<bean:write name="p_evrakDefterId"/>';Other.KULLANICI_BILGI_TEK_SATIR = true;$(document).ready(	function () {		Agem.addElement('input','forward', {type:'hidden', name:'forward', value:'list'}, null, document.forms['genelGelenEvrakDefterForm']);		Agem.addElement('input','pageSize', {type:'hidden', name:'pageSize', value:'-1'}, null, document.forms['genelGelenEvrakDefterForm']);		<%if (request.getAttribute(AgemConstant.AGEM_MESSAGE) != null) {%>		Agem.message('<%=request.getAttribute(AgemConstant.AGEM_MESSAGE)%>');		<%}%>				var evrakDefterId = $('#evrakDefterId').val();		if (!evrakDefterId ) {			var f = AgemTable.first();			if (f) {				AgemTable.rowClick(f.id);			} 		} else {			kayitGetir(evrakDefterId );		}	});function kayitGetir(id) {	Agem.ajax("genel/gelenEvrakDefter/select.do", {json:1,evrakDefterId:id}, function (x) {		Agem.setValue(x);		Other.writeKullaniciBilgi();	});}AgemTable.rowClick = function(id) {	if (!id) {		id = AgemTable.SELECTED_ID;		if (id == null) {			Agem.error("Lütfen kayıt seçiniz.");			return;		}	}		kayitGetir(AgemTable.DATA["d-"+id].id);};function yeniKayit() {	Agem.setValue(		 {			evrakDefterId:'',		    baslik:'',			baslangicTarihi:'',			bitisTarihi:''		}	);	Other.writeKullaniciBilgi();}function kayitSil(id, f) {	if (!Agem.byId(id).value) {		Agem.error("Lütfen kayıt seçiniz.");		return;	}	var x = [			'forward=list',			'evrakDefterId='+Agem.byId(id).value,			'cleanId=1'		];	if (confirm('Kaydı silmek istediğinizden emin misiniz?')) 		Agem.open( 'genel/gelenEvrakDefter/delete.do?'+x.join('&'));}	</script>
 </arya>

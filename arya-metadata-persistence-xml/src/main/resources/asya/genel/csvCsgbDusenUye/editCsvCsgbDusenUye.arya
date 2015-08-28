@@ -3,11 +3,11 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="selectCsvcsgbdusenuyeWindow">
 		<label id="dosyaIdlbl" value="Yüklenen Dosyalar" />
-		<selectbox id="dosyaId"  width="320"  >
-			<template>
-				<label value="6oi6n682qq" />
-			</template>
-		</selectbox>
+		<combobox id="dosyaId"  width="320"  >
+			<comboitem label="6f7i9kecz7" value="awkv" />
+		</combobox>
 		<button id="yukleBtn" label="Yükle"  onClick="dosyaYukle()"  width="90"  />
 	</window>
+	<script>
+var _YARDIM_SOZCUK = 'genel/csvCsgbDusenUye/edit';$(document).ready(function () {	<agem:access not="true" URL="genel/csvCsgbDusenUye/edit">		$("button").attr("disabled", "disabled");	</agem:access>		$(".log").animate({ scrollTop: 2000	}, 30 );});var dosyaYukle = function() {	if (Agem.byId("dosyaId").value) {		AgemWM.submit();	}	else {		Agem.error("Dosya seçin.");	}};function dosyaEkle() {	AgemWM.window(		{			modal : true,			label: "C.S.G.B Düşen Üye Dosyaları", 			url:"genel/nesneDosya/list.do?pageSize=-1&nesneKodParam=csgbDusenUye&nesneIdParam=1&size=20",			id : "nesneDosyaWindow",			width: 800, 			height: 600,			opener: window		});	};AgemWM.onClose = function (id) {	if (id == 'nesneDosyaWindow') {		AgemWM.link('#genelCsvCsgbDusenUyeSelect', {url: 'genel/csvCsgbDusenUye/select.do', refresh:true});	}};	</script>
 </arya>

@@ -3,10 +3,10 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="editAidatucretguncelleWindow">
 		<label id="donemlbl" value="Dönem Ay/Yil" />
-		<selectbox id="donem"  width="200"  >
-			<template>
-				<label value="51f9h1txbw" />
-			</template>
-		</selectbox>
+		<combobox id="donem"  width="200"  >
+			<comboitem label="zbf1yynykt" value="x8df" />
+		</combobox>
 	</window>
+	<script>
+	$(document).ready(			function () {				$("#donem").change( function () {					AgemWM.onClose();				});			}	);			AgemWM.onClose = function (id) {		Agem.open("genel/aidatUcretGuncelle/empty.do?donem="+Agem.byId("donem").value);	};		function ucretGuncelle() {		 		 <agem:access URL="genel/aidatUcretGuncelle/edit">			if (!confirm('Kayıtları işyeri listesine göre güncellemek istediğinizden emin misiniz ? (Varolan bilgiler silinecektir)')) {				return;			}						if (Agem.byId('donem').value) {				   Agem.perde(true, null, 'Lütfen bekleyin...');					$.ajax({"url":"genel/aidatUcretGuncelle/edit.do",						data:{ donem: Agem.byId('donem').value,json:1 },						async : false,						timeout: 30000, 						dataType:"json", 						success:function(data){							if (data['@message']){								Agem.message(data['@message'],'x');							}							if (!data['@hata']) {								Other.displayTagYenile();							}						},						error:function(xhr,err,e){ alert( "Hata: " + err );}});					Agem.perde(false);				}		</agem:access>		}	</script>
 </arya>

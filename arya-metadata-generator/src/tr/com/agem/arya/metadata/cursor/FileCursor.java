@@ -20,20 +20,19 @@ public class FileCursor {
 
 	private static final Pattern formPattern = Pattern.compile("<agem:form(.*)(/>|</agem:form>)",
 			Pattern.CASE_INSENSITIVE | Pattern.DOTALL);
-	private static final Pattern scriptPattern = Pattern.compile(
-			"<script(?:[^>]*src=['\"]([^'\"]*)['\"][^>]*>|[^>]*>([^<]*)</script>)",
+	private static final Pattern scriptBodyPattern = Pattern.compile("<script[^>]*>([\\w\\W]*?)</script>",
 			Pattern.CASE_INSENSITIVE | Pattern.DOTALL);
+	private static final Pattern scriptSrcPattern = Pattern.compile("<script.*?src=\"(.*?)\"", Pattern.CASE_INSENSITIVE | Pattern.DOTALL);
 
 	MetadataBuilder builder = null;
 
-	public FileCursor(MetadataBuilder builder) {
-		this.builder = builder;
+	public FileCursor(MetadataBuilder viewBuilder) {
+		this.builder = viewBuilder;
 	}
 
-	public boolean execute(JarFile jarFile, JarEntry jarEntry) {
+	public void execute(JarFile jarFile, JarEntry jarEntry) {
 
 		boolean isFirst = true;
-		StringBuilder metadata = new StringBuilder();
 
 		try {
 
@@ -42,8 +41,13 @@ public class FileCursor {
 			logger.log(Level.FINE, "Source file has been read successfully!");
 
 			if (!MetadataGeneratorUtil.getInstance().isEmpty(jsp)) {
-				
-				// Find <agem:form>, iterate over its properties and generate metadata XML
+
+				// Begin metadata file.
+				builder.beginFile();
+
+				//
+				// Find <agem:form> tags, append to metadata file.
+				//
 				Matcher formMatcher = formPattern.matcher(jsp);
 				while (formMatcher.find()) {
 
@@ -54,47 +58,79 @@ public class FileCursor {
 
 					if (properties.length > 0 && !MetadataGeneratorUtil.getInstance().isEmpty(className)
 							&& !MetadataGeneratorUtil.getInstance().isEmpty(actionName)) {
+
 						logger.log(Level.FINE, "Found agem:form element!");
-						metadata.append(builder.start(Class.forName(className), properties, actionName, isFirst));
+
+						Class<?> cls = Class.forName(className);
+
+						if (isFirst) {
+							builder.beginViewMetadata(actionName, cls);
+						}
+						builder.appendViewBody(cls, properties, actionName);
+
 						isFirst = false;
 					}
+
+				}
+
+				if (builder.isViewTagOpened()) {
+					builder.endViewMetadata();
+				}
+				isFirst = true;
+
+				//
+				// Find <script> tags, append to metadata file.
+				//
+				Matcher scriptBodyMatcher = scriptBodyPattern.matcher(jsp);
+				while (scriptBodyMatcher.find()) {
+
+					String scriptBody = scriptBodyMatcher.group(1);
+					
+					if (!MetadataGeneratorUtil.getInstance().isEmpty(scriptBody)) {
+						
+						if (isFirst) {
+							builder.beginScriptMetadata();
+						}
+						builder.appendScriptBody(scriptBody);
+						
+						isFirst = false;
+					}
+
 				}
 				
-				// Find <script> tags and append to metadata XML
-				Matcher scriptMatcher = scriptPattern.matcher(jsp);
-				while (scriptMatcher.find()) {
+				Matcher scriptSrcMatcher = scriptSrcPattern.matcher(jsp);
+				while (scriptSrcMatcher.find()) {
 					
-					String src = scriptMatcher.group(0);
-					String script = scriptMatcher.group(1);
+					String scriptSrc = scriptSrcMatcher.group(1);
 					
-					// TODO append src as include attr, else append script as text to metadata
-					
+					if (!MetadataGeneratorUtil.getInstance().isEmpty(scriptSrc)) {
+						builder.appendScriptSrc(scriptSrc);
+					}
+
 				}
 
-				if (metadata.length() > 0) {
-
-					metadata.append(builder.end());
-
-					// Generate file and its parent directories if not exists,
-					// then write to it.
-					File result = MetadataGeneratorUtil.getInstance().generateFileDir(jarEntry.getName());
-					logger.log(Level.INFO, "Target File: {0}", result.getName());
-					FileWriter fileWriter = new FileWriter(result);
-					BufferedWriter bufferWriter = new BufferedWriter(fileWriter);
-					bufferWriter.write(metadata.toString());
-					bufferWriter.flush();
-					bufferWriter.close();
+				if (builder.isScriptTagOpened()) {
+					builder.endScriptMetadata();
 				}
+				builder.endFile();
+				
+				// Generate metadata file and its parent directories if not
+				// exists,
+				// then write to it.
+				File result = MetadataGeneratorUtil.getInstance().generateFileDir(jarEntry.getName());
+				logger.log(Level.INFO, "Target File: {0}", result.getName());
+				FileWriter fileWriter = new FileWriter(result);
+				BufferedWriter bufferWriter = new BufferedWriter(fileWriter);
+				bufferWriter.write(builder.getMetadata());
+				bufferWriter.flush();
+				bufferWriter.close();
 
 			}
 
-		} catch (IOException e) {
-			logger.log(Level.SEVERE, e.toString(), e);
-		} catch (ClassNotFoundException e) {
+		} catch (IOException | ClassNotFoundException e) {
 			logger.log(Level.SEVERE, e.toString(), e);
 		}
 
-		return false;
 	}
 
 }

@@ -3,8 +3,10 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listIskoluhataliisyerleriWindow">
 		<label id="basvuruBasTarihlbl" value="Başvuru Tarihi" />
-		<datebox id="basvuruBasTarih"  value="2012-1-23"  width="120"  placeholder=""  />
+		<datebox id="basvuruBasTarih"  value="1994-5-10"  width="120"  placeholder=""  />
 		<label id="basvuruBitTarihlbl" value="-" />
-		<datebox id="basvuruBitTarih"  value="1995-5-26"  width="120"  placeholder=""  />
+		<datebox id="basvuruBitTarih"  value="2014-0-28"  width="120"  placeholder=""  />
 	</window>
+	<script>
+AgemForm.submitMessage('Arama yapılıyor...');function listele() {	AgemWM.submit(null, 'genelIskoluHataliIsyerleriParameterForm');}function temizle(){	AgemForm.reset('genelIskoluHataliIsyerleriParameterForm');}	</script>
 </arya>

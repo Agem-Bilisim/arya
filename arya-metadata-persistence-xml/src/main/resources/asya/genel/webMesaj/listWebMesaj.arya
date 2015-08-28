@@ -2,14 +2,14 @@
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listWebmesajWindow">
-		<selectbox id="okunduParam"  width="100"  >
-			<template>
-				<label value="jk8arz4j50" />
-			</template>
-		</selectbox>
-		<textbox type="text" id="aramaParam"  value="77eado2fja"  width="200"  placeholder=""  />
+		<combobox id="okunduParam"  width="100"  >
+			<comboitem label="4bnpmiawze" value="pzgm" />
+		</combobox>
+		<textbox type="text" id="aramaParam"  value="p1g5u5iqwt"  width="200"  placeholder=""  />
 		<button id="yenileBtn" label="Listele"  onClick="yenile()"  width="80"  top="2" />
 		<button id="raporAlBtn" label="Rapor Al"  onClick="raporAl()"  width="80"  top="2" />
 		<button id="silBtn" label="Sil"  onClick="mesajSil()"  width="80"  top="2" />
 	</window>
+	<script>
+AgemTable.rowDblClick = function(id) {};$(document).ready( function() {	});var yenile = function(){	AgemForm.submit(null, 'genelWebMesajParameterForm', true);};var checkAll = function(c){	$('.chck').attr("checked",c);};var raporAl = function(){	if($(".chck:checked").length > 0)		Other.submitRaporForm(Agem.byId('raporWebMesajForm'));	else alert("Lütfen kayıt seçiniz");};function mesajSil() {			sil();//	yenile();	}function sil(b) {		if (!b) {		if ($(".chck:checked").length == 0) {			Agem.error('Lütfen kayıt seçiniz.');			return;		} 		if (!confirm($(".chck:checked").length + ' adet mesajı silmek istediğinizden emin misiniz?')) {			return;		}	}	if ($(".chck:checked").length > 0) {		var id = $(".chck:checked").first().val();		_sil(id);	}	else 		yenile();}function _sil (id) {	if (!id) {		if (id == null) {			Agem.error('Lütfen kayıt seçiniz.');			return;		}	}	var u = "genel/webMesaj/delete.do";			Agem.ajax(u, {		json : 1,		webMesajId : id	}, function(d) {		$(".chck[value='"+id+"']").remove();		sil(true);	});	};function cevap(webMesajIdParam, konuParam) {	AgemWM.window({ 		url:"genel/webMesajCevap/select.do?webMesajId="+webMesajIdParam,		label: "Web Mesaj Cevap",		q: "webMesajId="+webMesajIdParam, 		width: 800, height: 600	});}	</script>
 </arya>

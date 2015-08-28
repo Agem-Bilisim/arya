@@ -3,34 +3,28 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listEdevletperformansWindow">
 		<label id="turParamlbl" value="Liste Türü" />
-		<selectbox id="turParam"  width="150"  >
-			<template>
-				<label value="lspbdllqa7" />
-			</template>
-		</selectbox>
+		<combobox id="turParam"  width="150"  >
+			<comboitem label="v4eq59gl39" value="j5bm" />
+		</combobox>
 		<label id="basTarihParamlbl" value="Tarih Başlangıç" />
-		<datebox id="basTarihParam"  value="1992-3-20"  width="150"  placeholder=""  />
+		<datebox id="basTarihParam"  value="1995-7-6"  width="150"  placeholder=""  />
 		<label id="bitTarihParamlbl" value="Tarih Bitiş" />
-		<datebox id="bitTarihParam"  value="1996-9-13"  width="150"  placeholder=""  />
+		<datebox id="bitTarihParam"  value="2010-2-25"  width="150"  placeholder=""  />
 		<label id="subeParamlbl" value="Şube" />
-		<selectbox id="subeParam"  width="150"  >
-			<template>
-				<label value="23s67e8yiw" />
-			</template>
-		</selectbox>
+		<combobox id="subeParam"  width="150"  >
+			<comboitem label="i664j0hvku" value="gm2d" />
+		</combobox>
 		<label id="isyeriKategoriIdParamlbl" value="Kategori" />
-		<selectbox id="isyeriKategoriIdParam"  width="150"  >
-			<template>
-				<label value="rr5or469te" />
-			</template>
-		</selectbox>
+		<combobox id="isyeriKategoriIdParam"  width="150"  >
+			<comboitem label="2ml7rcvwgh" value="ct5k" />
+		</combobox>
 		<label id="orgutDurumParamlbl" value="Örgüt Durumu" />
-		<selectbox id="orgutDurumParam"  width="150"  >
-			<template>
-				<label value="ucq6l37lki" />
-			</template>
-		</selectbox>
+		<combobox id="orgutDurumParam"  width="150"  >
+			<comboitem label="mgx6zkelse" value="e3ie" />
+		</combobox>
 		<checkbox type="text" id="onayTarihineGoreParam"  checked="false"  label="Onay Tarihine Göre"  onCheck=""  width="50"  />
-		<checkbox type="text" id="islemParam"  checked="false"  label="İşlem Olmayanları Gösterme"  onCheck=""  width="50"  />
+		<checkbox type="text" id="islemParam"  checked="true"  label="İşlem Olmayanları Gösterme"  onCheck=""  width="50"  />
 	</window>
+	<script>
+AgemForm.submitMessage('Arama yapılıyor...');$(document).ready(function(){	turParamChanged();	$("#turParam").change(turParamChanged);	$("#islemParam").attr("checked", "true");});function turParamChanged() {	var v = $("#turParam").val();	$("[tur]").each( function () {		$(this).parent().hide();		if (!$(this).hasClass("date-inp") && $(this).attr("type") != "checkbox") {			$(this).val("");		}	});	$('[tur*="'+v+'"]').each( function () {		$(this).parent().show();	});}	</script>
 </arya>

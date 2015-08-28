@@ -1,0 +1,6 @@
+<?page title="DOCSYS" ?>
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
+	<script>
+$(document).ready( 	function () {	});AgemTable.rowDblClick = function(id) {	if (parseInt(id)) {				<agem:access URL="genel/isci/select">			AgemWM.window(					{						label: 'İşçi İşlemleri', 						link:"genel/isci/select.do?kisiId=" + id + "&kisiIdParam=" +id,						width: 800,						height: 600									});		</agem:access>	} else {		<agem:access URL="genel/isci/list">			var tckNoAdSoyad = id.toString().substring(1).split("&");			AgemWM.window(					{						label: 'İşçi İşlemleri',						link:"genel/isci/list.do?kisiParam.checkTckNoAdSoyadParam=" + tckNoAdSoyad[0] + "&kisiParam.checkTckNoAdSoyadParam=" + tckNoAdSoyad[1]+ "&kisiParam.checkTckNoAdSoyadParam=" + tckNoAdSoyad[2],						tab:"#genelIsciList",						paramSelector:"#genelIsciList",						width: 800,						height: 600									});		</agem:access>	}};	</script>
+</arya>

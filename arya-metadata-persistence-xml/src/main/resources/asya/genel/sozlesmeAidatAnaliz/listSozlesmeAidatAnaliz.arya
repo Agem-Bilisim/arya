@@ -1,0 +1,6 @@
+<?page title="DOCSYS" ?>
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
+	<script>
+function zamAnalizRaporu() {	alert('henüz gerçekleştirilmedi...');};AgemTable.rowDblClick = function(id) {	id = id.toString();	var url = 'rapor/aidatIsveren/report.do?sozlesmeIdParam=<%=request.getParameter("sozlesmeId")%>&r=' + Math.random() + "&donemAyParam="+id.substr(4,2) + "&donemYilParam="+id.substr(0,4);	Other.submitRaporForm(null,url);}	</script>
+</arya>

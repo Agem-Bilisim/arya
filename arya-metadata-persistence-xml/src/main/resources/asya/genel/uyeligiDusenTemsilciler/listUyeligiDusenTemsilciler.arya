@@ -1,0 +1,6 @@
+<?page title="DOCSYS" ?>
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
+	<script>
+$(document).ready( function () {	<agem:access URL="genel/uyeligiDusenTemsilciler/edit">	if ($('.exportlinks').length > 0) {			$('<a/>', {     				id: 'kaydet-link',     				title: 'Tutarsızlığı Düzelt'     			}).html("<span title='Tutarsızlığı Düzelt' class='export-icon save-off' onmouseover=\"Other.changeClass(this, 'save-off', 'save-on')\" onmouseout=\"Other.changeClass(this, 'save-on', 'save-off')\"></span>").prependTo('.exportlinks');					$('.save-off').parent().attr("href", "javascript:islem()");	}	</agem:access>});AgemTable.rowDblClick = function(id) {	if (id) {		var d=AgemTable.get(id);		if (d.id) {			AgemWM.window(					{						label: 'İşçi İşlemleri', 						link:"genel/isci/select.do?kisiId=" + d.id + "&kisiIdParam=" +d.id,						width: 800,						height: 600									});		}	}}function islem() {	var text = "Üyeliği olmayan temsilcilerin bilgileri güncellenecektir. Devam etmek istiyor musunuz?";	if(confirm(text)){	  Agem.open("genel/uyeligiDusenTemsilciler/edit.do?forward=list");	 return true;	}	return false;}	</script>
+</arya>

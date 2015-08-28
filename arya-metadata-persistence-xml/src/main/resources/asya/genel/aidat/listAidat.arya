@@ -1,0 +1,6 @@
+<?page title="DOCSYS" ?>
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
+	<script>
+<%	String kisaAdGruplaParam = (String) request.getAttribute("kisaAdGruplaParam");	if (kisaAdGruplaParam == null || "0".equals(kisaAdGruplaParam)) {%>		AgemTable.rowDblClick = function(id) {			if (AgemWM.exists('#genelAidatSelect')) {				AgemWM.addQueryString(Agem.json2Param({aidatIdParam: id, aidatId: id}));				AgemWM.link('#genelAidatSelect', {url: 'genel/aidat/select.do'});				Agem.message('Bilgiler okunuyor...');			} else {				<agem:access URL="genel/aidat/select">				AgemWM.window({ link:"genel/aidat/select.do?aidatId="+id + "&aidatIdParam="+id, label: "Aidat İşlemleri",width: 800, height: 600});				</agem:access>			}		};<%	}%>		</script>
+</arya>

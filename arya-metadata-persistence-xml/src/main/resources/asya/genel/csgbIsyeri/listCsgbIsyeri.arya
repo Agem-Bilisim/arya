@@ -3,10 +3,10 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listCsgbisyeriWindow">
 		<label id="subelbl" value="Şube" />
-		<selectbox id="sube"  width="200"  >
-			<template>
-				<label value="jewlnwa0i3" />
-			</template>
-		</selectbox>
+		<combobox id="sube"  width="200"  >
+			<comboitem label="gvx6jho2bu" value="ib8e" />
+		</combobox>
 	</window>
+	<script>
+$(document).ready( 	function () {		AgemWM.exportXLS();		$("#ekleBtn").html("Şubeleri Düzenle");		if ($('.exportlinks').length > 0) {			$('<a/>', {     				id: 'kaydet-link',     				href: "javascript:AgemForm.open('genelCsgbIsyeriForm', null, 'sube', true)",     				title: 'Şube Ata'     			}).html("<span title='Şube Ata' class='export-icon save-off' onmouseover=\"Other.changeClass(this, 'save-off', 'save-on')\" onmouseout=\"Other.changeClass(this, 'save-on', 'save-off')\"></span>").prependTo('.exportlinks');					$('.save-off').parent().attr("href", "javascript:AgemForm.open('genelCsgbIsyeriForm', null, 'sube', true)");		}			});var sube;var orgutlu;var liste = [];var size;function ekle() {	sube = $("#sube").val();	orgutlu = $("#orgutlu").attr("checked") ? "1" : "0";	var url = $("#refresh-link").attr("href");	AgemForm.close("genelCsgbIsyeriForm");	Agem.ajax(url, {		json : 1,		kontrol : 1	}, function(d) {		if (!d["@hata"]) {			Agem.ajax(url, {					json : 1,					kontrol : 2			},function(p){				if (!p["@hata"]) {					liste = p.results;					size = liste.length;					var toplam = liste.length;					var eklenecek = d.results.length;					if (liste && liste.length > 0) {						if (confirm(toplam + " adet işyeri bilgisi düzenlenecektir. " + eklenecek + " adet kayıt eklenecektir. Emin misiniz?")) {							duzenle(liste.pop());						}					}					else {						Agem.error("İşlem yapılacak kayıt bulunamadı.");					}				}				else {					Agem.message(p["@message"]);				}			});		}		else {			Agem.message(d["@message"]);		}	});}function duzenle(x) {	var p = {		isyeriId: x.isyeriId,		kontrol: 1,		json: 1,		orgutlu: orgutlu,		sube: sube	};	Agem.ajax("genel/csgbIsyeri/edit.do", p, function (d) {		if (!d["@hata"]) {			if (liste && liste.length > 0) {				Agem.message("Durum: "+ (size - liste.length)+"/"+size);								duzenle(liste.pop());			}			else {				Agem.message("Tamamlandı."+ (size - liste.length)+"/"+size);								Agem.open($("#refresh-link").attr("href"));			}		}		else {			Agem.message(d["@message"]);		}	});}AgemTable.rowDblClick = function(id) {	if (AgemWM.exists('#genelCsgbIsyeriSelect')) {		AgemWM.addQueryString(Agem.json2Param({isyeriIdParam: id, isyeriId: id}));		AgemWM.link('#genelCsgbIsyeriSelect', {url: 'genel/csgbIsyeri/select.do?isyeriId='+id, refresh:true});		Agem.message('Bilgiler okunuyor...');	}};	</script>
 </arya>

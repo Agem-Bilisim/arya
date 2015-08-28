@@ -2,18 +2,20 @@
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="editWebmesajcevapWindow">
-		<textbox visible="false" type="text" id="webMesajId"  value="1v0toyzndv"  width="250"  placeholder=""  />
+		<textbox visible="false" type="text" id="webMesajId"  value="r8ltoajy41"  width="250"  placeholder=""  />
 		<label id="gonderenlbl" value="Gönderen" />
-		<textbox type="text" id="gonderen"  value="2tou60j4i9"  width="250"  placeholder=""  readonly="true"  top="15" left="15" />
+		<textbox type="text" id="gonderen"  value="l665e9d6vu"  width="250"  placeholder=""  readonly="true"  top="15" left="15" />
 		<label id="gonderenEpostalbl" value="Gönderen E-Posta" />
-		<textbox type="text" id="gonderenEposta"  value="562b0sdls9"  width="250"  placeholder=""  readonly="true"  left="15" />
+		<textbox type="text" id="gonderenEposta"  value="zsnew2tr4c"  width="250"  placeholder=""  readonly="true"  left="15" />
 		<label visible="false" id="epostalbl" value="Cevaplayan E-Posta" />
-		<textbox visible="false" type="text" id="eposta"  value="u8dtgq9ul1"  width="250"  placeholder=""  readonly="true"  left="15" />
+		<textbox visible="false" type="text" id="eposta"  value="wup5uxsf0j"  width="250"  placeholder=""  readonly="true"  left="15" />
 		<label id="konulbl" value="Konu" />
-		<textbox type="text" id="konu"  value="oohbcgov8g"  width="250"  placeholder=""  readonly="true"  left="15" />
+		<textbox type="text" id="konu"  value="ly21akoiuv"  width="250"  placeholder=""  readonly="true"  left="15" />
 		<label id="iceriklbl" value="İçerik" />
-		<textbox type="text" id="icerik"  value="dqx5c8wqru"  width="350"  placeholder=""  readonly="true"  left="15" rows="5"  cols="40"  />
+		<textbox type="text" id="icerik"  value="kpwunb0tk4"  width="350"  placeholder=""  readonly="true"  left="15" rows="5"  cols="40"  />
 		<label id="cevaplbl" value="Cevap" />
-		<textbox type="text" id="cevap"  value="s11pggn8ty"  width="350"  placeholder=""  left="15" rows="5"  cols="40"  />
+		<textbox type="text" id="cevap"  value="w8sjv3ky7r"  width="350"  placeholder=""  left="15" rows="5"  cols="40"  />
 	</window>
+	<script>
+$(document).ready( function () { 	<logic:notEmpty name="mailGonderildi"> 		setTimeout(function () { AgemWM.close(); }, 3000); 	</logic:notEmpty> 	<logic:notEmpty name="mesajSiniriAsildi"> 		alert("Mesajınız karakter sınırını aştığı için gönderilemedi."); 	</logic:notEmpty>});function gonder(){	AgemWM.submit(null, 'genelWebMesajCevapForm', false, "edit");}	</script>
 </arya>

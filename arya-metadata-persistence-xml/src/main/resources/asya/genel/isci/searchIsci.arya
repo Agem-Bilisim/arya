@@ -3,81 +3,77 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listIsciWindow">
 		<label id="kisiParam.tckNoParamlbl" value="T.C. Kimlik No" />
-		<textbox type="text" id="kisiParam.tckNoParam"  value="vgu5knriljg"  width="200"  maxlength="11"  placeholder=""  onChange="autocomplete("function:prepareKisiUrl()", "function:prepareTCKimlikNoParameterName()", 5, "setKisi")" />
+		<textbox type="text" id="kisiParam.tckNoParam"  value="8yobrrrsqnq"  width="200"  maxlength="11"  placeholder=""  onChange="autocomplete("function:prepareKisiUrl()", "function:prepareTCKimlikNoParameterName()", 5, "setKisi")" />
 		<label id="kisiParam.adSoyadParamlbl" value="Ad Soyad" />
-		<textbox type="text" id="kisiParam.adSoyadParam"  value="4wjpzm8zjf8bfz5qkgkmfc24c8sqwjilaoz3yz2ayikh79q1clccme0m1cmcq6ae2auiatpjdkrx0uqtp9yd8zur79nacmzv96zi4qe1wxyas6ggr5s5msrj7aqwb7sp2nviex8has166h96tw7fihjrw4f2dgpzu13w22fps9wfej49gf8syrfhsmxoczvl1tp2qcgva67a0j1bctlc50af15m5mvdw3zagcdiqzsy2pflr0jn3vtklrgcydwv"  width="200"  maxlength="255"  placeholder=""  onChange="autocomplete("function:prepareKisiUrl()", "function:prepareAdSoyadParameterName()", 5, "setKisi")" />
+		<textbox type="text" id="kisiParam.adSoyadParam"  value="b1ap1psudzz7r5tpgi9d2o7c9836kpyrzssbn9ts97anxzhb5jmelcme2janktgb3ssndaqypnm1fbazwdkhjcepm1jzzq4fq2docdz5ubtlc6vrt5jd801s2xah6goqugg3nbw8x4dl64e91aggnw9w88g38j2o2ibf7a4ykmtz1cxsyt67swemhxvqaff5eix17fox4germkwcx9dlw7ire8uh77i9tf6lwm8hy67zhjllnqxrbjzldq2aopp"  width="200"  maxlength="255"  placeholder=""  onChange="autocomplete("function:prepareKisiUrl()", "function:prepareAdSoyadParameterName()", 5, "setKisi")" />
 		<label id="sgkNoParamlbl" value="SGK Sicil No" />
-		<textbox type="text" id="sgkNoParam"  value="rz2eonomvk9dd"  width="200"  maxlength="13"  placeholder=""  onChange="autocomplete("genel/isci/autocomplete.do", "sgkNoParam", 5, "setKisi")" />
+		<textbox type="text" id="sgkNoParam"  value="4hqby9zcg0ggp"  width="200"  maxlength="13"  placeholder=""  onChange="autocomplete("genel/isci/autocomplete.do", "sgkNoParam", 5, "setKisi")" />
 		<label id="cinsiyetParamlbl" value="Cinsiyet" />
-		<selectbox id="cinsiyetParam"  width="200"  >
-			<template>
-				<label value="zu72lsh4w3" />
-			</template>
-		</selectbox>
+		<combobox id="cinsiyetParam"  width="200"  >
+			<comboitem label="p8ig6ljds2" value="j682" />
+		</combobox>
 		<label id="kanGrubuParamlbl" value="Kan Grubu" />
-		<selectbox id="kanGrubuParam"  width="200"  >
-			<template>
-				<label value="ap3cgjcmeq" />
-			</template>
-		</selectbox>
+		<combobox id="kanGrubuParam"  width="200"  >
+			<comboitem label="1edj6btpj5" value="nm4j" />
+		</combobox>
 		<label id="isyeriBilgileriLabellbl" value="İşyeri Bilgileri"  onClick=""  />
 		<label id="isyeriParam.subeParamlbl" value="Şube" />
-		<selectbox id="isyeriParam.subeParam"  width="300"  >
-			<template>
-				<label value="y7pt4lz1ox" />
-			</template>
-		</selectbox>
-		<textbox visible="false" type="text" id="isyeriParam.isyeriIdParam"  value="ol8wcfrpp9"  placeholder=""  />
+		<combobox id="isyeriParam.subeParam"  width="300"  >
+			<comboitem label="4bxxb9877x" value="u64l" />
+		</combobox>
+		<textbox visible="false" type="text" id="isyeriParam.isyeriIdParam"  value="f5d5asoby8"  placeholder=""  />
 		<label id="isyeriParam.unvanParamlbl" value="İşyeri Ünvanı" />
-		<textbox type="text" id="isyeriParam.unvanParam"  value="p40t5dmvsd1hbdiq5oq49vmz76fy9u2s854116e0rltx35v8w92cl85rw6kz8ucq774jy700fr9h6iya3wrikvv0v54avxqq4cgt1l0kmd2lfh5echa1nxug076cs126di721ca4y47h7tq6i065epo5s0b0l3iguk9acziny842mzzfm97i1c6g1km3mtnp1t7mfinymtqrfm69aw6l7eos5kvwwz1hr34dprversg8njo07hf9hm2zfqr77g4"  width="416"  maxlength="255"  placeholder=""  top="56" onChange="autocomplete("genel/isyeri/autocomplete.do", "unvanParam", 5, "setIsyeri")" />
+		<textbox type="text" id="isyeriParam.unvanParam"  value="542uyvnj47j5ygn4b7i7ug2mmepa4f19tt4ldlarymkef6bm42ws74nmtqad7cql5z6x06pmwr7rlfrxnuf963dbscuspazo977y00crg71et0pdpcvt4qhfhcscnliblvnu1xarlcs8ujjbprow08ftabwtpx8gt7r7m3sryafd5cltug3kzf7xu0n6emcl1mp1z3e8twa8xx59ymzj8ygbgzcs7g85lswux14w5qay3hpune0tsojfq1rbnni"  width="416"  maxlength="255"  placeholder=""  top="56" onChange="autocomplete("genel/isyeri/autocomplete.do", "unvanParam", 5, "setIsyeri")" />
 		<label id="isyeriParam.sgkKisaNoParamlbl" value="İşyeri SGK No" />
-		<textbox type="text" id="isyeriParam.sgkKisaNoParam"  value="bt49bsb48rzqiaalbmx9i6ccnfrd4bl0x2"  maxlength="34"  placeholder=""  onChange="autocomplete("genel/isyeri/autocomplete.do", "sgkKisaNoParam", 5, "setIsyeri")" />
+		<textbox type="text" id="isyeriParam.sgkKisaNoParam"  value="z16pk8x6dl01iqnvk72b0ajoln2tmr6729"  maxlength="34"  placeholder=""  onChange="autocomplete("genel/isyeri/autocomplete.do", "sgkKisaNoParam", 5, "setIsyeri")" />
 		<checkbox type="text" id="isletmeParam"  checked="true"  label="İşletme Bazında"  onCheck=""  width="50"  />
 		<label id="digerBilgilerLabellbl" value="Diğer Bilgiler"  onClick=""  />
 		<checkbox type="text" id="issizParam"  checked="false"  label="İşsiz"  onCheck=""  width="25"  />
-		<checkbox type="text" id="uyeDurumParam"  checked="true"  label="Üyeler"  onCheck=""  width="25"  />
-		<checkbox type="text" id="tckNoHataliParam"  checked="false"  label="T.C. Kimlik No Hatalı"  onCheck=""  width="25"  />
-		<checkbox type="text" id="cepTelParam"  checked="false"  label="Cep Tel. Kayıtlı"  onCheck=""  width="25"  />
+		<checkbox type="text" id="uyeDurumParam"  checked="false"  label="Üyeler"  onCheck=""  width="25"  />
+		<checkbox type="text" id="tckNoHataliParam"  checked="true"  label="T.C. Kimlik No Hatalı"  onCheck=""  width="25"  />
+		<checkbox type="text" id="cepTelParam"  checked="true"  label="Cep Tel. Kayıtlı"  onCheck=""  width="25"  />
 		<checkbox type="text" id="epostaParam"  checked="true"  label="E-posta Kayıtlı"  onCheck=""  width="25"  />
 		<label id="kisiDigerParam.metin01Paramlbl" value="metin01" />
-		<textbox type="text" id="kisiDigerParam.metin01Param"  value="udwdonbort0vypg6q0xrpudhbaj3991xo8t3e551hdmf3k1rdc1s5rh6jxtcpbcxufhnd48qr9duepe1uuac3p2gt2htcm5nzx4xzt2zu5733y9wq28szaqxzaw3r1aotffhfgf47te3xagl7y4gikvov5sulmtpzo127pxe0ye6d0w2ut9og5ihfpjxr3fw54eonnev3w1va1t5ownfkivkp486ptkrbsedgo39idp71yrdvln1z7d1bisi217"  width="200"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="kisiDigerParam.metin01Param"  value="fubjf3ynbmxnl5fxty2j5nm7swmm37f53mdnnsvu3uzup7bsg4nn3zxyae35w6jif5cjph9yn7o2xjlipeo95e2c1jcnibj2iv04wamn3sr4f3rec69l8uxkzpqhtjxm1di5qqg1cp93ccbsc3ipu4mk7a5ihmrbbu6b9vy05qlb8a8z1xai3blfm18ne8wv1j0qnn30y8ohzhmd4w6mx9fpz3wfc4lbtyv926upsqep5ci1cl6tnwamb7hf7wo"  width="200"  maxlength="255"  placeholder=""  />
 		<label id="kisiDigerParam.metin02Paramlbl" value="metin02" />
-		<textbox type="text" id="kisiDigerParam.metin02Param"  value="ptr2bdf8nvwxid51ahwc4og5d3eaoy56iz2l2nn55laurzfhos4imwlwmrk2um27v5gfg25lnblmj2w14yhlzqqzamp4c6ozmn15b5qqyvtvprcxklgqhrvdo34pghut152ao54ykk553lmfm7wwy2boco1koo2v23u221wmb9lm610hlu5v60oyiwhlxyzjr5ypih65a8ps121ld0kkzhg5brokqfgijntgbfmo90mqepwcyssmjsxx94gi4hn"  width="200"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="kisiDigerParam.metin02Param"  value="8m5g43usnypumqoabhj5y55geldebr6mcqzjkyhq2djy1tpkv8asmickl1p8an3k1ddzxb5lqwyzt4b6txvyof0ag8cqgx6t1r6pui03v410b1lat6xwx53r1546ej1telmw3numdgp72mh7b2ca46rp1tz20z282q95xdp9s8dsrd51n618271i8rhq9zeyv78w0yv1xt5d27mdl06dfck4ewdfek90j7lxjktkyu5sas316ktqe5elkybpy6a"  width="200"  maxlength="255"  placeholder=""  />
 		<label id="kisiDigerParam.metin03Paramlbl" value="metin03" />
-		<textbox type="text" id="kisiDigerParam.metin03Param"  value="c3q06no448ho9i2b9spy5ep54m1g6rxyld853wbfbzbynocw3chhd61t81d9pemysziboe5txf1gyargdwnlj0k52ik1petge3s3rrhdsa9n21wn4uzzmn5x652bkfxy3jj8es9m2y661wn9st1b6919gjzkdcslfe13p8d9c6w1hdnehp0b7zz9r6zftmm9xgbyaxqzeuz1plpi6yydqpvp0869a0sdf224bwv6za7q5fwhc9uh6qbkz4wpac9"  width="200"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="kisiDigerParam.metin03Param"  value="w8zn3vpfr482i7sqngo66rylskojcaxawtmjb33lrspbq2rdeg6fanziqzjl7txqjucjg4byn048l6ppimyee639hipyrgmvdaaerthvblvpu5aa7u36ijk23nexrmz4if7gk7ecjkq3rwdn55hwl2sg6gxr8wes2c466prpbb5hyhke19xezw9os3a6q1eeat8b2svu48d7r8hpxnyeaxd28eawgmuv1anzoct2whu2c0m1bglswg5uabwlfyj"  width="200"  maxlength="255"  placeholder=""  />
 		<label id="kisiDigerParam.metin04Paramlbl" value="metin04" />
-		<textbox type="text" id="kisiDigerParam.metin04Param"  value="3f2se4l1v974qq45fn80moj0goixjxn2myizjrrwuqnj3vcfr7lk86rpb3up4dkbdvh982fjrjkqx46bfv7aoqkf3zcc0khna4jwsgoi5gh2ny38dp2a5zbdmx4v11jrfvw2b5jza4yjpvrrqfy042vd9tj81tu2ldk96usz597dg9x3qq0s8ie70jsoo2p4c63486jwl9k1fg21mxav53d4ry7foa134pqipd3mste53q2psumr0h7fawcmcx1"  width="200"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="kisiDigerParam.metin04Param"  value="vafiebftet8bdjyhtauh6e61jjsc77upxjbcxk4uuej0wcdrfq7bmv69zt7rscud7k8q3z56qb49jcuoh711v4ddsqednlxl3flbs82rtsy3b3o80a6ei5u1ntn8c20269yg1yhmkq4i7hcjshkr59m1v642896vn7szkhvs3j05vd5poqhaitclmxwf2obugk1zcnav2dt8sswuuofzh1hke2zumw42rs61yiac936fht1tc381g05gghc3cst"  width="200"  maxlength="255"  placeholder=""  />
 		<label id="kisiDigerParam.metin05Paramlbl" value="metin05" />
-		<textbox type="text" id="kisiDigerParam.metin05Param"  value="4d7g1qjdckczmylcq9z7dgxdh933vl52mzppw71gzmgl0j0d8gp9d2lze7jkb1sw6yclmzm9aer3wsg14r48rpcx9qmgvc9fj2zs1aqcm0i9wp0bedrw8dre386qhxsazq96kw2onox4a6k8lxg96voyff1q3geu2cd87u9uzyveookwa5p4iiq791l0jm6e928ha0zape5hkvliw7zc9fdzbragreg33qakphw4vrob0y9rokpph5ubqhu2tcl"  width="200"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="kisiDigerParam.metin05Param"  value="ypnrz4u6nntls2ab8jzvw1nv3zn1vxth4alcdp8fvdvx4j8atzwb9nxjq57px4nt6e6xa14sivluh9e39v7ibigux050a21gpgbbis2ybtocuzamlwuraregkp1ixhkv2t3sa7twlqq38ldq3uni3lf0bo7jajj6rt6p91ara45rycef0x9vxch7i5jj2nkvl80vrzhbctc8w6uqghwel1lohbiqcult0t5wljhqsyfab1dff9gea7ajokqghe6"  width="200"  maxlength="255"  placeholder=""  />
 		<label id="kisiDigerParam.metin06Paramlbl" value="metin06" />
-		<textbox type="text" id="kisiDigerParam.metin06Param"  value="5x2mnwhp3tvpmu5vj9k9bkof2ovj3flgzvn2qn5pngob1c88lcn9qodzphxyh3hh68t07iogi0oxlco22816mfjn4l7rar20yck1rt676c12ol1452u0wnjhiy9qtu22y80o3k0dfxons6i245yub2w48762ab1tfs4bm3h6j2d0ntj9petqu3us6qw81o6w1nmgcuma4r4wj9sjksqechy57v5030xg0u9c5l6umutdj2zuuw3b22jow33emvv"  width="200"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="kisiDigerParam.metin06Param"  value="6fid9rrvfqmiprx7twn61diy6ae99k91i4tdbnyqsavip2pr5pscetyumtt6ptfvqafrgr5ctc3xqy05et34xqciynfpslu7m4j1mvbinczhwr13pf71a96tvmanenc3l07qbisri6m1f8pvt4b7p5no80vefo4wfktelw0px6uhbxaqbhca6q8e32y40nvaelmley0ld39pdz33vw6eiln44o3bjsvsv36g03uq5jk5b5krky1ovy3iwiuploa"  width="200"  maxlength="255"  placeholder=""  />
 		<label id="kisiDigerParam.metin07Paramlbl" value="metin07" />
-		<textbox type="text" id="kisiDigerParam.metin07Param"  value="73s8zt4xljcotrct6zuuhdxmkla8l0df4yawk4r8fhnlp4y4mvxtvd1e21v9jkqizvjq1rrb94zf042fql522j4scxamamdjpnk8whmcxhgcgp7ryhrimy1j0kkbz6829lkvy51dd44ezt5balfxrecv9o9g15uonrkjvl1a1pybi20z73wvlb11gncdyh70fe8cup8mzn0hxng8ccncblfwsh26g0jvy6jqpbvh1fudwtlqy7fkq1gst32ecpm"  width="200"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="kisiDigerParam.metin07Param"  value="f06o1u81ay4baigq6ursfms0o6c2h62wutm1a3wqafcqb6egn6n42bznln688z7f2trtqpz31ttw38e6fgmtbujvlfr8w6m1n11g1nuzdnoeciaw6b7ri414et5tzpr99ksa7hc67q905i2vffcytzhmumup36b7r7ji9jyhylsy3q2q3x4dxg6ei9oqqi2weysqh8vvn1x040nu19edjw4vl2d9r6mf9sxstujg6hvtqux5rmrm2d318uipa1d"  width="200"  maxlength="255"  placeholder=""  />
 		<label id="kisiDigerParam.metin08Paramlbl" value="metin08" />
-		<textbox type="text" id="kisiDigerParam.metin08Param"  value="wrelsus34j957u6nvn19yalvarpt3e0hfqjj4tx22rc9nkkm1t6skn3sevvintdqxwldg4pqf3xt92pfgbt1ody3es8mjn8exs36yecd0ef1lsrk367r8nuo4uhoc65t4q2ykmed5svanxdqat8viujwg1xhgbxz1mxq3hnx5exouzrducoxva5xdax04arss1paoqgccb1q08it67e7v75kzwxu8q3lauq9xrrsefep7lsn7bigu0y1n7hf4op"  width="200"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="kisiDigerParam.metin08Param"  value="4p175kgzkuigmcifxj1gkysk9bpngw67gqmnkmi6cw0r3tihxh1ju3abipqcg3zn6zzrqrslvka7on0zqefl9h5fczepuxatqdjosf2v9xsacyu2auui58f4f1d2etl2k8ae0bkcz87a5s6erxv6ita3wu5zkf79xzh525a53pr4df7yluphw2kb2vlobvb28b00wv094zn0wxpm669e6lokt4v8stzmtkilk8iljz82cofbcojbhptbuorhftm"  width="200"  maxlength="255"  placeholder=""  />
 		<label id="kisiDigerParam.metin09Paramlbl" value="metin09" />
-		<textbox type="text" id="kisiDigerParam.metin09Param"  value="cipoc76qckmhwclb98nae0qbgcoo6fsludnue9k4n25pwc2qc5voxhxmh7ivffqns2npc1xpbufn0p6xdj3s25patzp9zna405hwl6hh7fcf1kused44pfyoe49rqanrcr10enjtv2tw65mzlnp9ddr6lr3tr660ews1zudj25xvsnxvsmmu3hh2vbqe7hrvsi9zy5xt68o4v4xy5e0hihcbqdur5cawwf81eaj229ua6jwae6anff0ck0kkavi"  width="200"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="kisiDigerParam.metin09Param"  value="ts5cej01oixlejrj826qetfd3n4u9wcspar9hh73rccnoquod0da9uhj5zcgtn51te6mo9it1x5lzdim3zgoukw2ofjw9780qw9ixtffqxs85kdt1i9o2694shqeth1f2xdquj8ez9wvdrhp8dph1x302wtj154p54qhkgc8zwijy1ci7hnzjxyae8jbpbhqhxzk3wni2z6j5v0c2dk3sxeiu9dhhalul4h6buxtlcb47d5bapwp83b4lsqutfe"  width="200"  maxlength="255"  placeholder=""  />
 		<label id="kisiDigerParam.metin10Paramlbl" value="metin10" />
-		<textbox type="text" id="kisiDigerParam.metin10Param"  value="vob93tv9ayv8qtb7qxywsx00gzkjsdq1dudhbvpth2nt0haxm0eyfx4hgo6nwj91ckx7bhc1f2zh8eq0edn9py7j10hko7g36hokkjw696bp135umj58iptqkaar7ibmu8pq1c93tmugv89gnhbndpeq3l472vlcg78zndzzl28y0mvq41tfzrdm4jgkxz8rgtiauthlsbaja17f5qwvru8jyagfjhi8jpnsp1peafv8lkp5uw3b63exd8jr5ut"  width="200"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="kisiDigerParam.metin10Param"  value="5mmo4s7urjhiiui9jndb0zddgoc09w6unyu3y10nhtdygf4po7usl5kxht5svs30w9kvz0eeou5gme1uyc3kndwa5n4xnjmo5llcv74tmr40h3aalq4evt8wf3o92fqnw905bo47pv6ed1nbxgp703lngsthbi832il3zp0okuf5xev4y2z7n4wzafwcn9w27i4xu32t61ouedza595xgxmo6z3wh02e712w1y2413bov53n00kq6g6f0oc22r5"  width="200"  maxlength="255"  placeholder=""  />
 		<label id="kisiDigerParam.tarih01Paramlbl" value="tarih01" />
-		<datebox id="kisiDigerParam.tarih01Param"  value="2009-5-13"  placeholder=""  />
+		<datebox id="kisiDigerParam.tarih01Param"  value="2011-8-30"  placeholder=""  />
 		<label id="kisiDigerParam.tarih02Paramlbl" value="tarih02" />
-		<datebox id="kisiDigerParam.tarih02Param"  value="1996-6-28"  placeholder=""  />
+		<datebox id="kisiDigerParam.tarih02Param"  value="2000-8-4"  placeholder=""  />
 		<label id="kisiDigerParam.tarih03Paramlbl" value="tarih03" />
-		<datebox id="kisiDigerParam.tarih03Param"  value="2015-9-19"  placeholder=""  />
+		<datebox id="kisiDigerParam.tarih03Param"  value="2007-0-29"  placeholder=""  />
 		<label id="kisiDigerParam.tarih04Paramlbl" value="tarih04" />
-		<datebox id="kisiDigerParam.tarih04Param"  value="2014-0-31"  placeholder=""  />
+		<datebox id="kisiDigerParam.tarih04Param"  value="2014-1-25"  placeholder=""  />
 		<label id="kisiDigerParam.tarih05Paramlbl" value="tarih05" />
-		<datebox id="kisiDigerParam.tarih05Param"  value="2001-2-18"  placeholder=""  />
+		<datebox id="kisiDigerParam.tarih05Param"  value="1993-7-16"  placeholder=""  />
 		<label id="kisiDigerParam.sayi01Paramlbl" value="sayi01" />
-		<textbox type="text" id="kisiDigerParam.sayi01Param"  value="zrpykxkpazfngagpe3vivgqmse4uczmvfqs7mm27co373xgyn0ue09yxjrmwisg19jamyj95e7viuq5qo5zyd4jggel6a9wz6mf0hhz4auwtncinw39nmqzl5q3anq0pbfnlmw8gtccjwg43s5g8smntnvjvdm5zz3qrtzxd3pc1xqj04v4151h4dllawel91g8lmblrjt9uwlevoxtzzjx6549e1hwb0stoaw1qikhafqt1sj32eziydcbof1p"  width="200"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="kisiDigerParam.sayi01Param"  value="lfuak37273png4gfc4oiqdyaq0zntmi6u9lkdxogc2qdyj8fepwtkubwnmfabcx5mmu56yxt11y7m1euo48891eaxrhrlgf2776ocr41x8i8fxyianhsdlxwk5c1yb2pb6ppmrgsh6dou9k1ocyz7u38p5sh7lwx48iwpv4xftwgmxo7y9zbchvcizu2g1bv0u5i166mkcerwaaup4h846nqdghow41rq2f6ydcxpzr9wri0b7cs6cxjku2flt7"  width="200"  maxlength="255"  placeholder=""  />
 		<label id="kisiDigerParam.sayi02Paramlbl" value="sayi02" />
-		<textbox type="text" id="kisiDigerParam.sayi02Param"  value="chqdacdtlg3imukdk3amss6diumfunc9a4asfsnsq9wy9j96hmoerrkt4s1tvjebfc0qx7d605tr7cqrv1v0vzxrym5th94gsy4v3sskuj9jho608ce23egmi12ro86b2fi7yboy51swb3vm7jplzu1fqpo7sp0hzgzrw453mp3obyeh49khom6qs2fxib9a0guxdwu4bbk1ww20u7j6helqtood62ihheva0u48phlafhps2pzhbrmr1qhba2u"  width="200"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="kisiDigerParam.sayi02Param"  value="h6mbknkc25qw6hxcui4b1rcumtn87c5p1l11lwu0rstczssb0lhi6y1ayv53t8b76l6mjbftq6kwn5f5mc81k90ayfy4grcl1gfi0isrcr3727m8jzndepcofj0251fb25ezwyhaxw6tlj6993cyghqshhhe60hxko1n1q9a5n1z21b0qqiv63p4jnvzda5edprqlv46kukgsw4xeup4cwqbn38lmj4gfcgj3dk0pkz18pq8fqkarklwvkilf91"  width="200"  maxlength="255"  placeholder=""  />
 		<label id="kisiDigerParam.sayi03Paramlbl" value="sayi03" />
-		<textbox type="text" id="kisiDigerParam.sayi03Param"  value="6y1am5ma0spgiyhs4huqshcriwe8bt8au62ze0d6f0s7no12510i035q26iwqc6ihfl2sqtdism94molyrx2miy3h62x25z92wlkq7d606j6xf2m4fa68pwgwmwjg8cch0o8imavehizps08e5vfksq3ldeb1fjn7kguu3mpr81iqspw95n3sg84sihgbhju0tmu8bwrs565bz5mcjggqpjogypx3bg8fpecylg60qxzw641suc0wa6byyywavn"  width="200"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="kisiDigerParam.sayi03Param"  value="hvx3isvq3h9yx80st3qpguidp46n7uqtn1xqgjiwycpu0v4r0winamr2o5269a20g87cw8u225hhz1iat7229dqh7g6rpve9xqnxnj2ssubwa6y6kj7m41o24b0tbyawux1h0hzoadpn7r76wzrb4i9087uuy6izz6lon95x1jqnwfinmqg1sasz3gql2rp7sgna17v9lk22hzmwbhxg07vdtq7e020y9hsf5r6o2z9tx5569gyot4fvuoetbif"  width="200"  maxlength="255"  placeholder=""  />
 		<label id="kisiDigerParam.sayi04Paramlbl" value="sayi04" />
-		<textbox type="text" id="kisiDigerParam.sayi04Param"  value="llt3wuhq6skks11be98klkjtt5owcm123h9q7e0n24b5wiuhx2n3yw4tdapathfk0st3fo2mwfr9n7bulfxng2ackoldgl8ys59mquhfheow6o4rzysi55h0uwk5b0dq15hznjnfswqenlvf3ohlq8c929x544s7d3k1qi85r19nwu72s7g8klzd1wyv6nhdocs1r5v9y2ki071wzntnanzy6dmtp8z40w7rrbg0v7tkzw7ywb0hoqz32q0klqq"  width="200"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="kisiDigerParam.sayi04Param"  value="suvq30i9j85sxgfp5pqfxfp7juzdyvj1wav76932pmq5w74ur3tl30vx98re991fnfd28gq3rue68dl1f3buaalmwmgne1dcwr8bpa0o179a3rh2v9hgq9fdtu6itx1toomv9a06y4esf80t0hj6v0mrkyweu84mm4hwo165jannasyl578ctfkofcfod7rbbcykb6yhj2mwisovquqmhzjz51fie4sfnc090dp16m3ci78m9gf8tvztopz51i2"  width="200"  maxlength="255"  placeholder=""  />
 		<label id="kisiDigerParam.sayi05Paramlbl" value="sayi05" />
-		<textbox type="text" id="kisiDigerParam.sayi05Param"  value="lbuv3so0swj6hd65bm4tn29f0ha6n2zjrhqu1g0ej13p0vb63adk90ykqnn2c12prsxpsqej98ukfjg6r8n8r34pw32l55qgbq3wpuwqobx0wf5ehzhnoezfaeuzjlt9537bowlrayrhg6bpvogvtknlt3zwuv2w0opq5t1rejpzuc0n1b7emjozwfq8yqhz95vxf3ott47ug9th17fivyaivirvunqcru6jn4mqupsmc9b3td88oa96ej593g1"  width="200"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="kisiDigerParam.sayi05Param"  value="f50h9ozym6n08th1rfzjfys6e8gdauil6h8nzz3pjgtjrljciacoe4l6lamvgpve9c4jgumnizg1ppd336k1gwmjry7ebfeo0231ybbqw07qaci5xb5hz0kjknv67a2nbyz9rju5o2gmiw2u0705yimgrlpiobjr54mulvw5sqi01wd7u5lxm0ktt17kr3eh61edyphopbchk80v9zwop3n223b26cu44d9qpzntazfh5cr6yhs310b0pmf9rjc"  width="200"  maxlength="255"  placeholder=""  />
 	</window>
+	<script>
+AgemForm.submitMessage('Arama yapılıyor...');$(document).ready(	function() {		AgemDouble.attachEvents("kisiParam.tckNoParam", 0);		AgemDouble.attachEvents("sgkNoParam", 0);		Agem.addMaskEvents("isyeriParam.sgkKisaNoParam");	});var setKisi = function (d) {	if (d.id) {		Agem.setValue(d.kisi, "kisiParam", "Param");		Agem.setValue(d, null, "Param");		AgemWM.addQueryString(Agem.json2Param( {kisiId: d.id}));		AgemWM.link('#genelIsciSelect', {url: 'genel/isci/select.do', refresh:true});	}};var prepareKisiUrl = function () {	return "genel/isci/autocomplete.do";};var prepareIsyeriUrl = function () {	if (Agem.byId("isyeriParam.subeParam").value) {		return "genel/isyeri/autocomplete.do?subeParam="+Agem.byId("isyeriParam.subeParam").value;	}	return "genel/isyeri/autocomplete.do";};var prepareAdSoyadParameterName = function () {	return "kisiParam.adSoyadParam";};var prepareTCKimlikNoParameterName = function () {	return "kisiParam.tckNoParam";};var setIsyeri = function (d) {	if (d.id) {		Agem.setValue(d, "isyeriParam", "Param");		if (!Agem.byId("isyeriParam.unvanParam").value) 			Agem.byId("isyeriParam.isyeriIdParam").value = "";	}	else {		Agem.byId("isyeriParam.isyeriIdParam").value = "";	}}	</script>
 </arya>

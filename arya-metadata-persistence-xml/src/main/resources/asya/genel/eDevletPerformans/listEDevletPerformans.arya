@@ -1,0 +1,6 @@
+<?page title="DOCSYS" ?>
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
+	<script>
+AgemTable.rowDblClick = function(id) {	<logic:notEmpty name="listIsyeri">		var obj = AgemTable.get(id);			<agem:access URL="genel/isyeri/select">				AgemWM.window( {link: "genel/isyeri/select.do?isyeriId="+obj.isyeriId, width: 800, height: 600, label: "İşyeri İşlemleri"});		</agem:access>	</logic:notEmpty>};	</script>
+</arya>

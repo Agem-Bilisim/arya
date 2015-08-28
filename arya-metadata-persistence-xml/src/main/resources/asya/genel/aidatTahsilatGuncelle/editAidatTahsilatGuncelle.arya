@@ -3,16 +3,14 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="editAidattahsilatguncelleWindow">
 		<label id="donemlbl" value="Dönem Ay/Yil" />
-		<selectbox id="donem"  width="200"  >
-			<template>
-				<label value="p4hkjuqjez" />
-			</template>
-		</selectbox>
+		<combobox id="donem"  width="200"  >
+			<comboitem label="h0mvum0qoy" value="d2yi" />
+		</combobox>
 		<label id="dosyaIdlbl" value="Aidat Dosya" />
-		<selectbox id="dosyaId"  width="442"  >
-			<template>
-				<label value="dxijer0m3f" />
-			</template>
-		</selectbox>
+		<combobox id="dosyaId"  width="442"  >
+			<comboitem label="p2yvixoprg" value="eipu" />
+		</combobox>
 	</window>
+	<script>
+$(document).ready(		function () {			$("#donem").change( function () {				AgemWM.onClose();			});		});function dosyaEkle() {	if (Agem.byId('donem') && Agem.byId('donem').value) {		AgemWM.window(				{					modal : true,					label: "Aidat Tahsilatları - Ekli Dosyalar", 					url:"genel/nesneDosya/list.do?pageSize=-1&nesneKodParam=aidatTahsilat&nesneIdParam="+Agem.byId('donem').value,					id : "nesneDosyaWindow",					width: 800, 					height: 600,					opener: window				});	}}AgemWM.onClose = function (id) {	Agem.open("genel/aidatTahsilatGuncelle/empty.do?donem="+Agem.byId("donem").value);}function tahsilatGuncelle() {	AgemWM.submit();}	</script>
 </arya>

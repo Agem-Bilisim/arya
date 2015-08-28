@@ -1,0 +1,6 @@
+<?page title="DOCSYS" ?>
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
+	<script>
+var json = <bean:write name="genelIsyeriForm" filter='false'/> $(document).ready( function () {	if (json.isyeriId) {		AgemWM.addQueryString(Agem.json2Param( {isyeriIdParam: json.isyeriId, isyeriId: json.isyeriId, merkez: (json.merkezId ? '0' : '1')}));		var unvan = (json.unvan.toString().length < 35)? json.unvan : json.unvan.toString().substring(0,json.unvan.toString().lastIndexOf(' ',33));		AgemWM.addSideInfo(			{				id:"isyeriInfo",				info: [					{						value: unvan, clazz: "pointer",						onclick: function () {							AgemWM.window(									{										label: 'İşyeri İşlemleri', 										link:"genel/isyeri/select.do?isyeriId=" + json.isyeriId + "&isyeriIdParam=" +json.isyeriId,										width: 800,										height: 600													});						}					},					{label: "SGK No", value: json.sgkKisaNo, clazz: "not-bold"}				],				type: 1			}		);		$('#genelCsvCalisanListesiSelect').click();	}	else{		AgemWM.removeSideInfo({type: 1, id: "isyeriInfo"});	}});	</script>
+</arya>

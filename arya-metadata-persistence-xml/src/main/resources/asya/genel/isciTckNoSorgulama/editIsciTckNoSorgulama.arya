@@ -3,18 +3,18 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="selectIscitcknosorgulamaWindow">
 		<label visible="false" id="kisiIdlbl" value="Kisi Id" />
-		<textbox visible="false" type="text" id="kisiId"  value="zrfb5ygi9b"  placeholder=""  />
+		<textbox visible="false" type="text" id="kisiId"  value="xconno32g8"  placeholder=""  />
 		<label id="tckNolbl" value="T.C. Kimlik No" />
-		<textbox type="text" id="tckNo"  value="osa0bk2pjop"  width="200"  maxlength="11"  placeholder=""  onChange="autocomplete("genel/isciTckNoSorgulama/autocomplete.do", "function:prepareTCKimlikNoParameterName()", 5, "setKisi")" />
+		<textbox type="text" id="tckNo"  value="pbvg8mn8wxn"  width="200"  maxlength="11"  placeholder=""  onChange="autocomplete("genel/isciTckNoSorgulama/autocomplete.do", "function:prepareTCKimlikNoParameterName()", 5, "setKisi")" />
 		<label id="adSoyadlbl" value="Ad Soyad" />
-		<textbox type="text" id="adSoyad"  value="mi478kdpoi"  width="200"  placeholder=""  readonly="true"  />
+		<textbox type="text" id="adSoyad"  value="7ghobg6zq9"  width="200"  placeholder=""  readonly="true"  />
 		<label id="sgkNolbl" value="SGK Sicil No" />
-		<intbox id="sgkNo"  value="-1750751479"  width="200"  maxlength="13"  placeholder=""  readonly="true"  />
+		<intbox id="sgkNo"  value="-875799164"  width="200"  maxlength="13"  placeholder=""  readonly="true"  />
 		<label id="cinsiyetlbl" value="Cinsiyet" />
-		<selectbox id="cinsiyet"  width="200"  readonly="true"  >
-			<template>
-				<label value="mdb79wys7l" />
-			</template>
-		</selectbox>
+		<combobox id="cinsiyet"  width="200"  readonly="true"  >
+			<comboitem label="i2foq3xx9k" value="g0mn" />
+		</combobox>
 	</window>
+	<script>
+var tckNoValidation = function (){	var tckNo = Agem.byId("tckNo").value;	if (!AgemValidation.tckNoValidate(tckNo)) {		Agem.byId("tckNoBilgiDiv").innerHTML = "<span class='agem-error bold'>Geçersiz T.C. Kimlik No</span>";	}	else{		Agem.byId("tckNoBilgiDiv").innerHTML = "<span class='agem-error bold'></span>";	}	}var tckNoIleKisiGetir = function () {	var tckNo = Agem.byId("tckNo").value;	if (tckNo || Agem.valueOf(tckNo) != "") {		Agem.ajax("genel/isciTckNoSorgulama/autocomplete.do", {"tckNoParam": tckNo}, function (r) {			if (r && r.results && r.results.length > 0) {				setKisi(r.results[0]);			}			else {				Agem.setValue({"kisiId" : "", "adSoyad": ""});				Agem.byId("uyelikBilgiDiv").innerHTML = "<span class='agem-error bold'>İşçi bulunamadı.</span>";				if (!AgemValidation.tckNoValidate(tckNo)) {					Agem.byId("tckNoBilgiDiv").innerHTML = "<span class='agem-error bold'>Geçersiz T.C. Kimlik No</span>";				}				else{					Agem.byId("tckNoBilgiDiv").innerHTML = "";				}			}		});	}	else if (!tckNo) {		Agem.setValue({"kisiId" : "", "adSoyad": "", "sgkNo":"", "cinsiyet":""});		Agem.byId("uyelikBilgiDiv").innerHTML = "";		Agem.byId("tckNoBilgiDiv").innerHTML = "";	}};var setKisi = function (d) {	if (d.kisiId) {		Agem.open("genel/isciTckNoSorgulama/select.do?kisiId="+d.kisiId);	}};var prepareTCKimlikNoParameterName = function () {	return "tckNoParam";};var temizle = function() {	Agem.setValue({"tckNo":"", "kisiId" : "", "adSoyad": "", "sgkNo":"", "cinsiyet":""});	Agem.byId("uyelikBilgiDiv").innerHTML = "";	Agem.byId("tckNoBilgiDiv").innerHTML = "";		Agem.byId("bilgiDiv").innerHTML = "";		};	</script>
 </arya>

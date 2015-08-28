@@ -3,30 +3,24 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listYonetimlogWindow">
 		<label id="subeParamlbl" value="Şube" />
-		<selectbox id="subeParam"  width="120"  >
-			<template>
-				<label value="oubcvf1otq" />
-			</template>
-		</selectbox>
+		<combobox id="subeParam"  width="120"  >
+			<comboitem label="p7oy6qvpb8" value="9ttt" />
+		</combobox>
 		<label id="modulParamlbl" value="Modül" />
-		<selectbox id="modulParam"  width="120"  >
-			<template>
-				<label value="o0hf92uow8" />
-			</template>
-		</selectbox>
+		<combobox id="modulParam"  width="120"  >
+			<comboitem label="4gdvicqef3" value="b68g" />
+		</combobox>
 		<label id="islemParamlbl" value="İşlem" />
-		<selectbox id="islemParam"  width="120"  >
-			<template>
-				<label value="arg1z37jlk" />
-			</template>
-		</selectbox>
+		<combobox id="islemParam"  width="120"  >
+			<comboitem label="sgmsxe1zyv" value="xevb" />
+		</combobox>
 		<label id="zamanParamlbl" value="Zaman" />
-		<selectbox id="zamanParam"  width="90"  >
-			<template>
-				<label value="f79kndij2t" />
-			</template>
-		</selectbox>
+		<combobox id="zamanParam"  width="90"  >
+			<comboitem label="4m3jcitqk1" value="z9yr" />
+		</combobox>
 		<label id="kullaniciParamlbl" value="Kullanıcı" />
-		<textbox type="text" id="kullaniciParam"  value="6rjf4pgq1bxshzm1w29ajbrnu3hpf8rasysyhaeeuj9kd3vjhe0v6rf5bshkq4ci34tl66t3cmu2p4eb4f426w2pw2z5sur27dttfph0sxn5hdckepdrcah9cbcu8zm5gwkkf03yzcoteqpvyrvezyzm1xzrjalseuz8eu3h3fpmcvt3qi6fjj2fm976c3lv5wcn5n9kd5bklt71hq3yh2b9yjigj6ydczpn37wvhjskfjzwqvdfhdprricht70"  width="80"  maxlength="255"  placeholder=""  onChange="autocomplete("autocomplete/autocomplete/autocomplete.do?tip=kullanici", "param", 5, "setKullanici")" />
+		<textbox type="text" id="kullaniciParam"  value="ntb8lebgenpa2t2a5xm94f3h4teq09edfrscazlvc4eqs2h78timr7lhub4ag8aizmew4j15mrunwibodweq8jct24n6nwa8r5xtdu6lxbzacrk0sstpkhtjxgt1als32gs2zvdp1ojemengtv7ihz3trjjood9ltb5zafujirdg9yo9gbo1x1r9351yhikhcaz5lx4lbydv5d8xk2wqo549nv7f20izvqibo6v5yfy8747167e6gl72xousuwi"  width="80"  maxlength="255"  placeholder=""  onChange="autocomplete("autocomplete/autocomplete/autocomplete.do?tip=kullanici", "param", 5, "setKullanici")" />
 	</window>
+	<script>
+AgemTable.rowDblClick = function(id) {};var ISLEM_LIST = [];<logic:iterate name="ISLEM_LIST" id="islem">	ISLEM_LIST.push({'modul':'<bean:write name="islem" property="value"/>', 'islem':'<bean:write name="islem" property="label"/>'});</logic:iterate>var LAST_KULLANICI = "";$(document).ready( function() { 	setTimeout(function(){$("#refreshButton").trigger("click");}, 5*60*1000);	$("#subeParam").change( function () { yenile()} );	$("#modulParam").change( function () { $("#islemParam").val(null); yenile()} );	$("#zamanParam").change( function () { yenile()} );	$("#islemParam").change( function () { yenile()} );	LAST_KULLANICI = Agem.byId("kullaniciParam").value;	setIslemParam('<%=request.getParameter("islemParam")%>');	});var yenile = function(){	Agem.perde(true,null,'Lütfen Bekleyiniz');	AgemForm.submit(null, 'genelYonetimLogParameterForm', true);};var setIslemParam = function(islem){	var j = 0;	if($("#modulParam").val()){		$("#islemParam").children().remove('option');		var empty = $("<option value=''> </option>");		empty.appendTo($("#islemParam"));		for(var i = 0; i < ISLEM_LIST.length; i++){			if($("#modulParam").val() == ISLEM_LIST[i].modul){				$("#islemParam").append("<option value='"+ISLEM_LIST[i].islem+"'>"+ISLEM_LIST[i].islem+"</option>");				j++;			}		}		if(islem && islem!= 'null') {			$("#islemParam").val(islem);		}	}};var setKullanici = function (d) {	if (!d.value)		d.value = "";	if (d.value != LAST_KULLANICI) {		LAST_KULLANICI = d.value;		yenile();	}}	</script>
 </arya>

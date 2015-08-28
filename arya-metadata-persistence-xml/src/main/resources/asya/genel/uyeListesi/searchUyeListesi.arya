@@ -3,50 +3,38 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listUyelistesiWindow">
 		<label id="turParamlbl" value="Liste Türü" />
-		<selectbox id="turParam"  width="206"  >
-			<template>
-				<label value="cia0a6ycbn" />
-			</template>
-		</selectbox>
+		<combobox id="turParam"  width="206"  >
+			<comboitem label="5gll4qxjbk" value="vaxk" />
+		</combobox>
 		<label id="tarihParamlbl" value="Tarih" />
-		<datebox id="tarihParam"  value="1993-1-7"  width="206"  placeholder=""  />
+		<datebox id="tarihParam"  value="2004-0-19"  width="206"  placeholder=""  />
 		<label id="subeParamlbl" value="Şube" />
-		<selectbox id="subeParam"  width="206"  >
-			<template>
-				<label value="zwd56xk1dp" />
-			</template>
-		</selectbox>
+		<combobox id="subeParam"  width="206"  >
+			<comboitem label="o5yrbaxhfi" value="6i27" />
+		</combobox>
 		<label id="ilKoduParamlbl" value="İl" />
-		<selectbox id="ilKoduParam"  width="100"  >
-			<template>
-				<label value="2wti1cjh28" />
-			</template>
-		</selectbox>
-		<selectbox id="ilceKoduParam"  width="100"  >
-			<template>
-				<label value="1i67wstlk7" />
-			</template>
-		</selectbox>
+		<combobox id="ilKoduParam"  width="100"  >
+			<comboitem label="stzbf5850v" value="zfym" />
+		</combobox>
+		<combobox id="ilceKoduParam"  width="100"  >
+			<comboitem label="vhlao8elvv" value="btz4" />
+		</combobox>
 		<label id="isyeriKategoriIdParamlbl" value="Kategori" />
-		<selectbox id="isyeriKategoriIdParam"  width="206"  >
-			<template>
-				<label value="8qkyq4kp2g" />
-			</template>
-		</selectbox>
+		<combobox id="isyeriKategoriIdParam"  width="206"  >
+			<comboitem label="xu2tcc7964" value="ud07" />
+		</combobox>
 		<label id="orgutDurumParamlbl" value="Örgüt Durumu" />
-		<selectbox id="orgutDurumParam"  width="206"  >
-			<template>
-				<label value="pktceyz82k" />
-			</template>
-		</selectbox>
+		<combobox id="orgutDurumParam"  width="206"  >
+			<comboitem label="qrmp4uqlt6" value="hrtr" />
+		</combobox>
 		<checkbox type="text" id="bakanlikIssizParam"  checked="false"  label="Bakanlık Kayıtlarında İşsiz Olan Üyeler"  onCheck=""  width="40"  />
 		<label id="uyeDetayParamlbl" value="Üye Detay" />
-		<selectbox id="uyeDetayParam"  width="206"  >
-			<template>
-				<label value="lnb41lfz13" />
-			</template>
-		</selectbox>
+		<combobox id="uyeDetayParam"  width="206"  >
+			<comboitem label="yrbl4cvtfc" value="obey" />
+		</combobox>
 		<checkbox type="text" id="isciSayilariniGosterParam"  checked="true"  label="İşçi Sayılarını Göster"  onCheck=""  width="40"  />
-		<checkbox type="text" id="uyesiOlmayaniGostermeParam"  checked="true"  label="Üyesi Olmayan İşyerlerini Gösterme"  onCheck=""  width="40"  />
+		<checkbox type="text" id="uyesiOlmayaniGostermeParam"  checked="false"  label="Üyesi Olmayan İşyerlerini Gösterme"  onCheck=""  width="40"  />
 	</window>
+	<script>
+AgemForm.submitMessage('Arama yapılıyor...');$(document).ready(function () {	turParamChanged();	$("#turParam").change(turParamChanged);});function turParamChanged() {	var v = $("#turParam").val();	$("[tur]").each( function () { 		$(this).parent().hide();		if (!$(this).hasClass("date-inp") && $(this).attr("type") != "checkbox") {			$(this).val("");		}	});	$('[tur*="'+v+'"]').each( function () {		$(this).parent().show();	});}function ilKoduDegisti() {	var ilKodu = $('#ilKoduParam').val();		$('#ilceKoduParam').children().remove();	if (ilKodu) {		Agem.ajax("genel/ilce/list.do", {ilKoduParam:ilKodu, pageSize:10000, sort:'ILCE.ILCE_ADI',dir:'asc', json:1}, function (x) {			$("#ilceKoduParam").append("<option value=''></option>");			for (var i=0; i < x.results.length; i++) {				$("#ilceKoduParam").append("<option value='"+x.results[i].ilceKodu+"'>"+x.results[i].ilceAdi+"</option>");			}		});		}}	</script>
 </arya>

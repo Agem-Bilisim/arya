@@ -3,24 +3,20 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listGiriscikislogWindow">
 		<label id="subeParamlbl" value="Şube" />
-		<selectbox id="subeParam"  width="120"  >
-			<template>
-				<label value="1yhmtwd92z" />
-			</template>
-		</selectbox>
+		<combobox id="subeParam"  width="120"  >
+			<comboitem label="pjnx9tw0go" value="uhfx" />
+		</combobox>
 		<label id="islemParamlbl" value="İşlem" />
-		<selectbox id="islemParam"  width="120"  >
-			<template>
-				<label value="tysfxictyj" />
-			</template>
-		</selectbox>
+		<combobox id="islemParam"  width="120"  >
+			<comboitem label="dyge7z93k5" value="a4rc" />
+		</combobox>
 		<label id="zamanParamlbl" value="Zaman" />
-		<selectbox id="zamanParam"  width="90"  >
-			<template>
-				<label value="oga4oq2pu8" />
-			</template>
-		</selectbox>
+		<combobox id="zamanParam"  width="90"  >
+			<comboitem label="hv6y0odf5a" value="qsq6" />
+		</combobox>
 		<label id="kullaniciParamlbl" value="Kullanıcı" />
-		<textbox type="text" id="kullaniciParam"  value="0rzoxbtnlu2wyago0yfg6b3su32e3990wrozmuheap7nxp0ptvjytjhbuhqi478o4ntxzjlxh30hpadvxmtnqico81lb8l9uki5wxedd8qlqirwjimop5xdz6g6ggh9g8pghfn8wdi31y26kt8cm40zcyx9uopgt02mzepzwyx53u86qzb2j0csbm1qhviuxzckvu2e8hyvrppb5qzh70f658re4d0iw38xduw50li9vsdk5kp1zthigez85zf9"  width="80"  maxlength="255"  placeholder=""  onChange="autocomplete("autocomplete/autocomplete/autocomplete.do?tip=kullanici", "param", 5, "setKullanici")" />
+		<textbox type="text" id="kullaniciParam"  value="81uip8d3u7s38elyttae25w6je0k3qlqjtuqik4n89jsw9a9rpc0n0rx9ldz4cmzbrpleb9qoyvz5z7zv5dwfqz5kopkrzon5ybqa2obq18zf8bpv0jok8ba7wbj9bnt5m1yawdwfadumsuzz3ygcen4ug0j6krh1rvk109guhvwirk2ug3xlc7bm0w5q5cbnq94lxyns79u3ktwgl2yo6z7ewasgfv7fyeol0qasfd0xs2z6dr09rvkjtjxmmm"  width="80"  maxlength="255"  placeholder=""  onChange="autocomplete("autocomplete/autocomplete/autocomplete.do?tip=kullanici", "param", 5, "setKullanici")" />
 	</window>
+	<script>
+AgemTable.rowDblClick = function(id) {};var LAST_KULLANICI = "";$(document).ready( function() { 	setTimeout(function(){$("#refreshButton").trigger("click");}, 5*60*1000);	$("#subeParam").change( function () { yenile();} );	$("#zamanParam").change( function () { yenile();} );	$("#islemParam").change( function () { yenile();} );	LAST_KULLANICI = Agem.byId("kullaniciParam").value;});var yenile = function(){	Agem.perde(true,null,'Lütfen Bekleyiniz');	AgemForm.submit(null, 'genelGirisCikisLogParameterForm', true);};var setKullanici = function (d) {	if (!d.value)		d.value = "";	if (d.value != LAST_KULLANICI) {		LAST_KULLANICI = d.value;		yenile();	}};	</script>
 </arya>

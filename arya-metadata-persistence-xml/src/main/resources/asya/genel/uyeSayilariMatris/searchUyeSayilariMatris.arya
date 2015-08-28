@@ -3,45 +3,39 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listUyesayilarimatrisWindow">
 		<label id="durumParamlbl" value="Üyelik Durumu" />
-		<selectbox id="durumParam"  width="120"  >
-			<template>
-				<label value="3jxrjn6l3l" />
-			</template>
-		</selectbox>
+		<combobox id="durumParam"  width="120"  >
+			<comboitem label="vwn3ef9eh3" value="omzb" />
+		</combobox>
 		<label id="tarihParamlbl" value="Tarih" />
-		<datebox id="tarihParam"  value="2001-7-5"  width="150"  placeholder=""  />
+		<datebox id="tarihParam"  value="2007-4-17"  width="150"  placeholder=""  />
 		<label id="cikisNedeniParamlbl" value="Çıkış Nedeni" />
-		<selectbox id="cikisNedeniParam"  width="120"  >
-			<template>
-				<label value="2owvqmlzcn" />
-			</template>
-		</selectbox>
+		<combobox id="cikisNedeniParam"  width="120"  >
+			<comboitem label="yimgjw33g8" value="e21r" />
+		</combobox>
 		<label id="gecerlilikParamlbl" value="Geçerlilik" />
-		<selectbox id="gecerlilikParam"  width="120"  >
-			<template>
-				<label value="ttg6olht3m" />
-			</template>
-		</selectbox>
+		<combobox id="gecerlilikParam"  width="120"  >
+			<comboitem label="s3igfy3sc4" value="q81o" />
+		</combobox>
 		<label id="basTarihParamlbl" value="Üyelik Düşme Baş. Tarihi" />
-		<datebox id="basTarihParam"  value="2002-4-5"  width="120"  placeholder=""  />
+		<datebox id="basTarihParam"  value="1990-8-10"  width="120"  placeholder=""  />
 		<label id="bitTarihParamlbl" value="Üyelik Düşme Bit. Tarihi" />
-		<datebox id="bitTarihParam"  value="2001-9-25"  width="120"  placeholder=""  />
+		<datebox id="bitTarihParam"  value="1993-2-13"  width="120"  placeholder=""  />
 		<label id="orgutDurumParamlbl" value="Örgüt Durumu" />
-		<selectbox id="orgutDurumParam"  width="120"  >
-			<template>
-				<label value="chl689ce97" />
-			</template>
-		</selectbox>
+		<combobox id="orgutDurumParam"  width="120"  >
+			<comboitem label="a2pi0cfrzw" value="zlam" />
+		</combobox>
 		<label id="aciklamaParamlbl" value="Açıklama" />
-		<textbox type="text" id="aciklamaParam"  value="pygtkzjj8t"  width="120"  placeholder=""  />
+		<textbox type="text" id="aciklamaParam"  value="0jmzp1igry"  width="120"  placeholder=""  />
 		<label id="cikisAciklamaParamlbl" value="Çıkış Açıklama" />
-		<textbox type="text" id="cikisAciklamaParam"  value="a7rzthtl4g"  width="120"  placeholder=""  />
+		<textbox type="text" id="cikisAciklamaParam"  value="jnfvpqa6gj"  width="120"  placeholder=""  />
 		<checkbox type="text" id="acikUyelikGostermeParam"  checked="true"  label="Açık üyelikleri gösterme"  onCheck=""  width="50"  />
 		<label id="girisYkKararNoParamlbl" value="YK Karar No" />
-		<textbox type="text" id="girisYkKararNoParam"  value="wlmuhne8loarnuasyh7amqpdht6rga2bs8twrd3zwnw54xr4661vmud6t6itxflu10n5dtznssnztelugfi32bqv9o5hk9qc6ij09v6ox33rexniomtx7ajtsmcpw3xvrkjynioqbwh0v30znga5gy2bvwaxh6e1o0n9lnhde093rw6jku6rm5y085krddx61of45tk4rpqvq3rgyut45zuf0bldat2c2x4fnk78ckg0y1xb72lfhhgpw5tip6l"  width="120"  maxlength="255"  placeholder=""  top="50" />
+		<textbox type="text" id="girisYkKararNoParam"  value="x78v73vkyiptxbuo5wqgw3m4zd99896sqkw4txt37s6fat8h4jwmwb8jvgc33rlz1ch9p7lqzet75lsjnw1c1i13nlgire0ldi3g7gddtv957876u2ohxsu54feso6nh74tsj2v7mc0x8ekdcwfhyqqo6gx7qyagakt5td3tdqwc0xntibsoi0duc302auq674x71t36vz6cjz0x7kwmv44kfzulqjamlqmzwj57fk1jisszb537kgelyy8d3s2"  width="120"  maxlength="255"  placeholder=""  top="50" />
 		<label id="onayBasTarihParamlbl" value="Onay Baş. Tarihi" />
-		<datebox id="onayBasTarihParam"  value="2010-1-14"  width="120"  placeholder=""  top="75" />
+		<datebox id="onayBasTarihParam"  value="2012-7-3"  width="120"  placeholder=""  top="75" />
 		<label id="onayBitTarihParamlbl" value="Onay Bit. Tarihi" />
-		<datebox id="onayBitTarihParam"  value="2013-9-29"  width="120"  placeholder=""  top="75" />
+		<datebox id="onayBitTarihParam"  value="1997-5-20"  width="120"  placeholder=""  top="75" />
 	</window>
+	<script>
+$(document).ready(	function () {		$("#isyeriParam\\.ilAdlariParamLabel").width(120);		$("#isyeriParam\\.ilAdlariParam").width(270);		$("#isyeriParam\\.ilAdlariParam").click(function () {			AgemForm.open('#iller_form', null, null, true);			});				$('#durumParam')[0].options[0].value = "99";		<%--sorgulama turune gore iki altindaki parametreler ayni yerde cikacagi icin aynı yere pozisyonluyoruz--%>		$('#agem_label_input_div_cikisNedeniParam').css('top', function(){return $('#agem_label_input_div_tarihParam').position().top;});		$('#agem_label_input_div_gecerlilikParam').css('top', function(){return $('#agem_label_input_div_tarihParam').position().top;});		$('#agem_label_input_div_basTarihParam').css('top', function(){return $('#agem_label_input_div_girisYkKararNoParam').position().top;});		$('#agem_label_input_div_bitTarihParam').css('top', function(){return $('#agem_label_input_div_girisYkKararNoParam').position().top;});		$('#agem_label_input_div_basTarihParam').css('left', function(){return $('#agem_label_input_div_girisYkKararNoParam').position().left;});		$('#agem_label_input_div_bitTarihParam').css('left', function(){return '275';});		$('#tarihParam').val(AgemDate.bugun);		durumParamChanged();				$("#subeParam").parent().hide();	});var setKisi = function (d) {	Agem.setValue({ kisiIdParam:d.kisiId, 'kisiParam.tckNoParam' : d.tckNo, 'kisiParam.adSoyadParam':d.adSoyad});};durumParamChanged = function(){			$('#agem_label_input_div_tarihParam').css('display', function(){return 'none';});	$('#agem_label_input_div_cikisNedeniParam').css('display', function(){return 'none';});	$('#agem_label_input_div_girisYkKararNoParam').css('display', function(){return 'none';});	$('#agem_label_input_div_basTarihParam').css('display', function(){return 'none';});	$('#agem_label_input_div_bitTarihParam').css('display', function(){return 'none';});	$('#agem_label_input_div_onayBasTarihParam').css('display', function(){return 'none';});	$('#agem_label_input_div_onayBitTarihParam').css('display', function(){return 'none';});	$("#orgutDurumParam").parent().hide();		$("#aciklamaParam").parent().hide();		$("#cikisAciklamaParam").parent().hide();		$('#agem_label_input_div_gecerlilikParam').css('display', function(){return 'none';});	$('#tarihParam').attr('disabled', 'disabled');	$('#cikisNedeniParam').attr('disabled', 'disabled');	$('#girisYkKararNoParam').attr('disabled', 'disabled');	$('#basTarihParam').attr('disabled', 'disabled');	$('#bitTarihParam').attr('disabled', 'disabled');	$('#basvuruAsamaDurum').attr('disabled', 'disabled');	$('#cikisBildirimDurum').attr('disabled', 'disabled');	$('#acikUyelikGostermeParam').attr('checked', false);	$('#acikUyelikGostermeParam').parent().hide();	$('#gecerlilikParam').val("");	$('#cikisNedeniParam').val("");	$('#aciklamaParam').val("");	$('#cikisAciklamaParam').val("");		if ($('#durumParam').val()) {		switch($('#durumParam').val()){		case '1':			$('#tarihParam').removeAttr('disabled');			$('#girisYkKararNoParam').removeAttr('disabled');			$('#agem_label_input_div_tarihParam').css('display', function(){return '';});			$('#agem_label_input_div_girisYkKararNoParam').css('display', function(){return '';});			$('#agem_label_input_div_girisYkKararNoParam').css("top", "50px");			$('#agem_label_input_div_orgutDurumParam').css("top", "75px");			$("#orgutDurumParam").parent().show();			break;		case '2':			$('#cikisNedeniParam').removeAttr('disabled');			$('#basTarihParam').removeAttr('disabled');			$('#bitTarihParam').removeAttr('disabled');			$('#agem_label_input_div_cikisNedeniParam').css('display', function(){return '';});			$('#agem_label_input_div_basTarihParam').css('display', function(){return '';});			$('#agem_label_input_div_bitTarihParam').css('display', function(){return '';});			$('#basTarihParamLabel').html("Üyelik Düşme Baş. Tarihi");			$('#bitTarihParamLabel').html("Üyelik Düşme Bit. Tarihi");			$('#agem_label_input_div_orgutDurumParam').css("top", "75px");			$("#orgutDurumParam").parent().show();			$('#agem_label_input_div_acikUyelikGostermeParam').css("top", "100px");			$("#acikUyelikGostermeParam").parent().show();			break;		case '3':			$('#gecerlilikParam').removeAttr('disabled');			$('#basTarihParam').removeAttr('disabled');			$('#bitTarihParam').removeAttr('disabled');			$('#onayBasTarihParam').removeAttr('disabled');			$('#onayBitTarihParam').removeAttr('disabled');			$('#girisYkKararNoParam').removeAttr('disabled');			$('#agem_label_input_div_gecerlilikParam').css('display', function(){return '';});			$('#agem_label_input_div_basTarihParam').css('display', function(){return '';});			$('#agem_label_input_div_bitTarihParam').css('display', function(){return '';});			$('#basTarihParamLabel').html("Üyelik Başvuru Baş. Tarihi");			$('#bitTarihParamLabel').html("Üyelik Başvuru Bit. Tarihi");			$('#agem_label_input_div_onayBasTarihParam').css('display', function(){return '';});			$('#agem_label_input_div_onayBitTarihParam').css('display', function(){return '';});			$('#agem_label_input_div_girisYkKararNoParam').css('display', function(){return '';});			$("#orgutDurumParam").parent().show();			$("#aciklamaParam").parent().show();				$('#agem_label_input_div_girisYkKararNoParam').css("top", "100px");			$('#agem_label_input_div_orgutDurumParam').css("top", "125px");			$('#agem_label_input_div_acikUyelikGostermeParam').css("top", "150px");			$("#acikUyelikGostermeParam").parent().show();			break;		case '4':			$('#gecerlilikParam').removeAttr('disabled');			$('#basTarihParam').removeAttr('disabled');			$('#bitTarihParam').removeAttr('disabled');			$('#onayBasTarihParam').removeAttr('disabled');			$('#onayBitTarihParam').removeAttr('disabled');			$('#arsivReferansNoBasParam').removeAttr('disabled');			$('#arsivReferansNoBitParam').removeAttr('disabled');			$('#agem_label_input_div_gecerlilikParam').css('display', function(){return '';});			$('#agem_label_input_div_basTarihParam').css('display', function(){return '';});			$('#agem_label_input_div_bitTarihParam').css('display', function(){return '';});			$('#basTarihParamLabel').html("Çekilme Başvuru Baş. Tarihi");			$('#bitTarihParamLabel').html("Çekilme Başvuru Bit. Tarihi");			$("#orgutDurumParam").parent().show();			$("#cikisAciklamaParam").parent().show();				$('#agem_label_input_div_orgutDurumParam').css("top", "75px");			$('#agem_label_input_div_acikUyelikGostermeParam').css("top", "100px");			$('#agem_label_input_div_cikisAciklamaParam').css("top", "125px");			$("#acikUyelikGostermeParam").parent().show();						break;		default:			break;		}	}	};function basvuruAsamaDurumChanged() {	$('#agem_label_input_div_onayBasTarihParam').css('display', function(){return 'none';});	$('#agem_label_input_div_onayBitTarihParam').css('display', function(){return 'none';});	$('#agem_label_input_div_arsivReferansNoBasParam').css('display', function(){return 'none';});	$('#agem_label_input_div_arsivReferansNoBitParam').css('display', function(){return 'none';});	if ($("#basvuruAsamaDurum").val() == "O") {		$('#agem_label_input_div_onayBasTarihParam').css('display', function(){return '';});		$('#agem_label_input_div_onayBitTarihParam').css('display', function(){return '';});		$('#onayBasTarihParam').html("Onay Baş. Tarihi");		$('#onayBitTarihParam').html("Onay Bit. Tarihi");		$('#agem_label_input_div_arsivReferansNoBasParam').css('display', function(){return '';});		$('#agem_label_input_div_arsivReferansNoBitParam').css('display', function(){return '';});		$('#arsivReferansNoBasParam').html("Arşiv Ref. Baş. No");		$('#arsivReferansNoBitParam').html("Arşiv Ref. Bit. No");	}}function listele() {	if (!$('#tarihParam').val()) {		$('#tarihParam').val(AgemDate.bugun);	}	AgemWM.submit(null, 'genelUyeSayilariMatrisParameterForm');}function temizle(){	$("#isletmeParam").parent().hide();	AgemForm.reset('genelUyeSayilariMatrisParameterForm');	durumParamChanged();}function dikeyAlanChanged() {	if ($("#dikeyAlan").val() == 'isyeri.ilAdi') {		$("#subeParam").parent().show();	} else {		$("#subeParam").parent().hide();		$("#subeParam").val("");	}}	</script>
 </arya>

@@ -3,11 +3,11 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="selectCsvcsgbuyegeridonusWindow">
 		<label id="dosyaIdlbl" value="Yüklenen Dosyalar" />
-		<selectbox id="dosyaId"  width="320"  >
-			<template>
-				<label value="2r2ddfjaph" />
-			</template>
-		</selectbox>
+		<combobox id="dosyaId"  width="320"  >
+			<comboitem label="0o1chavlj7" value="xpo3" />
+		</combobox>
 		<button id="yukleBtn" label="Yükle"  onClick="dosyaYukle()"  width="90"  />
 	</window>
+	<script>
+var _YARDIM_SOZCUK = 'genel/csvCsgbUyeGeriDonus/edit';$(document).ready(function () {	Agem.addElement('input','yukleniyorMuParam', {type:'hidden', name:'yukleniyorMuParam', value:'<bean:write name="p_yukleniyorMu"/>'}, null, document.forms[0]);	yuklemeYonet();		<agem:access not="true" URL="genel/csvCsgbUyeGeriDonus/edit">		$("button").attr("disabled", "disabled");	</agem:access>		$(".log").animate({ scrollTop: 2000	}, 30 );});var dosyaYukle = function() {	if (Agem.byId("dosyaId").value) {		$("#yukleniyorMuParam").val("true");		AgemWM.submit();	}	else {		Agem.error("Dosya seçin.");	}};function dosyaEkle() {	AgemWM.window(		{			modal : true,			label: "Ç.S.G.B Düşen Üye Dosyaları", 			url:"genel/nesneDosya/list.do?pageSize=-1&nesneKodParam=csgbUyeGeriDonus&nesneIdParam=1&size=20",			id : "nesneDosyaWindow",			width: 800, 			height: 600,			opener: window		});		};AgemWM.onClose = function (id) {	if (id == 'nesneDosyaWindow') {		AgemWM.link('#genelCsvCsgbUyeGeriDonusSelect', {url: 'genel/csvCsgbUyeGeriDonus/select.do', refresh:true});	}};var yukleniyorMu = '<bean:write name="p_yukleniyorMu"/>';function yuklemeYonet(){	if(yukleniyorMu == 'true'){		$("#zip").hide();		$("#log").html('Yükleniyor...');		Agem.perde(true, null, 'Yükleniyor. Lütfen bekleyin...');		logYenile();		} else {		Agem.perde(false);		Agem.message("");		$("#log").html('');		$("#zip").show();	}}function logYenile(){	$.ajax({		url: "genel/csvCsgbUyeGeriDonus/select.do",		data: {},		timeout: 300000,		type: "post",		dataType: "html", 		success: function(h){			var l = $("#log", h);			if(l != 'undefined'){				var s = $(l).html();				var attr = $(s).attr('finallog');				if(s && s.length > 0){					var c = $(s).css('color');					if(c != 'red'){						if (typeof attr !== 'undefined' && attr !== false) {							$("#log").html('Yükleme başarıyla tamamlandı.');							yukleniyorMu = false;							Agem.message(s);							Agem.perde(false);						} else {							Agem.message(s);							setTimeout(function(){								logYenile();							}, 1000);												}							} else {						if (typeof attr !== 'undefined' && attr !== false) {							$("#log").html(s);						}						yukleniyorMu = false;						Agem.message(s);						Agem.perde(false);					}				}			}		},		error: function(xhr,err,e){ Agem.error("Hata oluştu."); }	});}var sftpDosyaYukle = function(){	if (confirm('SFTP sunucusundaki dosyayı yüklemek istediğinizden emin misiniz?')) {		Agem.open('genel/csvCsgbUyeGeriDonus/select.do?tur='+"dusen&sftp="+"E");	}};	</script>
 </arya>

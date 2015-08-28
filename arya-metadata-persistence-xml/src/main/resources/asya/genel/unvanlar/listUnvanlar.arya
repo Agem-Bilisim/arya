@@ -3,28 +3,26 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addUnvanlarWindow">
 		<label visible="false" id="gorevIdlbl" value="Görev Id" />
-		<textbox visible="false" type="text" id="gorevId"  value="o3x9oks74k"  placeholder=""  />
+		<textbox visible="false" type="text" id="gorevId"  value="ooc1n7d41n"  placeholder=""  />
 		<label id="tanimlbl" value="Tanım" />
-		<textbox type="text" id="tanim"  value="v2e07f31sbyjs2hi2rdtpb6tc4zsa70rbmp2hcsod6w3ed0ala7uwxm2w9pra87011wb6wd1myvdtxldwp84obl8346owe7uuyjgztn4juiy4toi4m7omcalzulvho9su424azd5febczzwbhdb9txqfk9kh3n4wtkmrd788z2x72stib4esp55k0jilo3p4b7he397h3m0iqjol1sngeiy1pzzsszfqr68055zjnrs9a61qpux2pm2as9r9lsz"  width="357"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="tanim"  value="qruufcdgbtfslztvewtraxwmovmc64l7ay7m3409sxpvcko3yq89fordqqv5k9bkn41keq95e88oy6yjg95rgbowkv808w7jflujiztws77xsck5vg0pmj8nkdnrwa3iz8soloz825okk2tbkspyvptiu8inax67eud3izkburpyokdo7tjwtrz1klfwxatex6ukxuz1ioffvmttrmwxersx40ky86al45ju7bh0ztfyxc44hzvissfe2sj1ab5"  width="357"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
-		<textbox visible="false" type="text" id="eklemeTarihi"  value="4mfr2ei78a"  placeholder=""  />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="ama4bqk964"  placeholder=""  />
 		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
-		<textbox visible="false" type="text" id="ekleyen"  value="399e6fetpq41toz1xegluszkkbz6hgqeojdn2edm11xuhswwrgqzwgj18649y5bxxytvk8nbeuj4vrlks9a4nn0p8hkogrdv6ait5y8mcxice5923xgurmhf2lvqwadywvfe4ejlbuqhg9iqb01f3ckszk6fxtvohd94q8y9od086wvwaq1jg608kg4n10z7jo7yfj4i62jn817ck7j4ugwq4fln5wxlssaciwk75l48dtb1vv3gkducbba68ll"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="ekleyen"  value="yfp2if7dxfuu1dijahw4ndkki5xsofiii4aaodxi8xbx0gvbayov0q0yomlbe88lp2u5aunlj2rnsccmiedocckfpf6t43hk9wpwsjciigzhsw57pgexxxmsobau58ck78eiiz8sbov4ykybtqtctae524nck0x15xe3svn83ya3l845erkwv9yluguwnfpe3uxjiiums6u21t63l2c9mlg1d1n7djygodfu4hk5qwthpjpuxhw8ojb9n594qni"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
-		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="iyx5m8fctt"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="n9w85med6c"  placeholder=""  />
 		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
-		<textbox visible="false" type="text" id="sonGunleyen"  value="eaeufosgu6m3u0sha3l4m2k830hx2a0ut2uqsw9g1v3eur7qym6uvihqjg0g8bkguve68ksayqh6x75b6mnlq7ipj03erz10xhc6600ayci7xth2l0fj4vv7swnv3eewqxwiugzsxced3yth12rp48omupr2xsh2u2ox5zfcwb3re5nrdopqvn41afjkhx49jpmnzboi5w3eb54k88j0glggut4d25nxm19infobiz1hdqz881to8cor43cssbg"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="vogvxc1b6ejc2jgn5leiopqtkritkm1rd6gy3aaf288uitb9p7nhw1i9q97zgmhi1lkyeamchfaxw027h3nfm0rwcqbt8hrei33vhh0fjrpngosi5d043lg7jm2w4fqzdhrlg5tv4g9vs620x8gw2hq2zlgaf10knrfogp9hwtmhi0j5he5fwflory54xyn565s8clcovb0xi0wscttxcroppiy7z6n33u01lqhwh64vj65iclnqi902g1hxwlp"  maxlength="255"  placeholder=""  />
 		<label id="aktifParamlbl" value="Aktif" />
-		<selectbox id="aktifParam"  width="152"  >
-			<template>
-				<label value="zz264lided" />
-			</template>
-		</selectbox>
+		<combobox id="aktifParam"  width="152"  >
+			<comboitem label="qenljuzwn5" value="2df1" />
+		</combobox>
 		<label id="amirParamlbl" value="Amir" />
-		<selectbox id="amirParam"  width="150"  >
-			<template>
-				<label value="5yta363s4t" />
-			</template>
-		</selectbox>
+		<combobox id="amirParam"  width="150"  >
+			<comboitem label="wau7cri314" value="z764" />
+		</combobox>
 	</window>
+	<script>
+	Other.KULLANICI_BILGI_YAZMA = true;	Agem.addLoadFunction(function () {		AgemTable.loadOnRowSelect('liste');		Agem.addElement('input','forward', {type:'hidden', name:'forward', value:'list'}, null, document.forms['genelUnvanlarForm']);		Agem.message('<bean:write name='r_message' filter='false' />');		if (!$("#gorevId").val()){			var f = AgemTable.first();			if (f) {				AgemTable.rowClick(f.id);							}		}		if ($("#liste tr").length == 0)			AgemForm.open('genelUnvanlarForm', yeniForm(), '---', true);			});		AgemTable.rowClick = function(id) {		if (!id) {			id = AgemTable.SELECTED_ID;			if (id == null) {				Agem.error("Lütfen kayıt seçiniz.");				return;			}		}		Agem.ajax("genel/unvanlar/select.do", {json:1,gorevId:id}, function (x) {		Agem.setValue(x);		Other.writeKullaniciBilgi();		});	};			function yeniKayit() {		Agem.setValue(			 {				 tanim: '',				 gorevId: ''						}		);	}		function kaydet() {		AgemForm.submit('gorevId', 'genelUnvanlarForm');	}			function sil() {		if (Agem.byId("gorevId").value) {			var x = {				'forward': 'list',				'gorevId':Agem.byId("gorevId").value			};						Agem.open( "genel/unvanlar/delete.do?"+Agem.json2Param(x));		}	};	</script>
 </arya>

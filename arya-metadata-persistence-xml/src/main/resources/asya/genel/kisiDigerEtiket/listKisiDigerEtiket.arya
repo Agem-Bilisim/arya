@@ -3,17 +3,17 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addKisidigeretiketWindow">
 		<label visible="false" id="kisiDigerEtiketIdlbl" value="Kisi Diger Etiket Id" />
-		<textbox visible="false" type="text" id="kisiDigerEtiketId"  value="xyb5zbxqhw"  width="200"  placeholder=""  />
+		<textbox visible="false" type="text" id="kisiDigerEtiketId"  value="t4d4nx9b4u"  width="200"  placeholder=""  />
 		<label id="sutunlbl" value="Sütun" />
-		<selectbox id="sutun"  width="200"  >
-			<template>
-				<label value="6qcl52pna7" />
-			</template>
-		</selectbox>
+		<combobox id="sutun"  width="200"  >
+			<comboitem label="ptwqdw4u1h" value="fcat" />
+		</combobox>
 		<label id="etiketlbl" value="Etiket" />
-		<textbox type="text" id="etiket"  value="ky8dibdprmuf8m9mz12idrmdgfzm3qxvkb1p195e2rc5ahgh895or94qv1t6jlviwwb668k4eqi7hreu8g69d7m5yym552mdw21kqtbzgnjni3k0am6wo458fon7s2owlpo15ocq2e9tchpd288lj11xwyzddbrj5ur7ugviyr4v5irnc49p812twjedr9s92ji1e96336w7am9jlbcq81s8r9dlfwn7bhqk98k9pgy4mwuknylyegqyxrr9dqk"  width="200"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="etiket"  value="rdenfnk4p1er6nfoex54hsfbmppnszlxz82ny34hdx2s6v8lps1y0wug64qpwpp4y1goc1aql51jqclq8ki70b110mcyijjxs4c1fr01xo04vg6jx4feliucb8s3y1wkx2bj1eco6jxqsl6xjlkktv3khc9syjt9hjsuuejeyxmauh67eqe0lzpxltj83xxpchfh3vxvqjj4hmile7v73y37fkygzbf6an8xrhdbnoynghe3jl917w7yrg3bmta"  width="200"  maxlength="255"  placeholder=""  />
 		<label id="degerlerlbl" value="Değerler" />
-		<textbox type="text" id="degerler"  value="581qfm1lkhvaf6gg4k71hgzmayh1jwmvzm9mmy3sflsvuyrtpb8o2fx22nnu1hm09zbfdxn3bjohjdt7wovow6fs0bcu6gefi91x9a4wctdoi4x00vibaulyomeyv97kbqpb8y2s6tx51v4d7075tbyp0voxyz468o515433keqoa6tev84prty5ypio5umfh6rz1ewdr568kklzx2zfzraajtwicoddlwqqu6gqv47lgpzst5ywd5e4f4ubh7khdfpuj0p2kp3g07wwrbkzq59ze7sgyzgnx1eucdr12ug0mcbhiv4oltzfclmk6qcw50kqedb3c5chmcdy3asoe9y7sqxkhm86xzrv3w87fxd8mda6qazfy3b1jizb0329gi641h7bza14g8t67l9cndp7ll566f7bzhfpwpwhglby74ezq9izvz5rpnv4joijqsxzfbmfl8blrzmfysacuvezpd9h8egllgodekl74xwm9a5rsdk0ibdcju06s6g8j3kchwaebfk74ti3k1y7xflu82yqb0cum3dfo7d0v5ur4vpbemnz6pkxs9cl9o8xsbr6s8phbeebyxcjlljni7qhu7vgv9pqyz6yw8vt970i0nweazqck1c2rwtmc8uxv0uv1yeoj1ctpg4q1ncws4lwjxgsc94alwvbxbbly9qaqtl5y9urasieyk2lfjj1ep9cif16mmq4o92d55ej25zu8ftiib6yvlsez9h5yncs45w0179v52rukhbuwoltba8o1eu4zywxyha3vc7s24z4w2i15n668ztu3yxtl7ukc1anz6k06bqq2u8o6860cs01lslhw46cogsixvs3c64humni6zjt4irgbhnksq85h7l1oic4zuzdegaghrx38n78m9r2oa0wnxojt3anem8isaodslv04t5gcnwb2buk7jy6guj423modjfdlkeq3rrkg4ibcdfasx3hxwkdddurlzq52lpe7dep7say"  width="200"  maxlength="1000"  placeholder=""  />
-		<checkbox type="text" id="aramaKriter"  checked="false"  label="Arama Kriteri"  onCheck=""  width="200"  />
+		<textbox type="text" id="degerler"  value="uvekun08y7o1kbvu9hocdg8nat6tzbi30zgazjrm5wkc2n2p84quoz4ks9spqv0ucqty120ry4f1fc7g28dd6j2qfjp1w1l6qw3drgivj1524hdrda5hj5gonrrn6quga59aqu897xru8meqco5ke0w7clma8t85oxc1qc3v6eppd8pprvxkv1czi9ej6zlqlh6uf1sfp29s8zu7qriskoaw13w5ngyukvji0il9mvaa820dt4fg7w3mmzcswv701oq4einfjo57jecrlf5xk5jknxk8o04zg0n44aini4kriev4k6zidkmsmpbyw0o8t4u785ye1hergbze0qhb0oskeo608bp78ec7v0as3e8ujgxn0c40h78kzsvpfoabi8p7sqoxgf14cylcoyjmuy8a5iae6ram6s40p0f4truqug315qu0l7z45jdx15yq0klgblyz4wanmn3hdq2iy2obqh3p82vww6pehab87lhf8at2e8ztmqo37lpi69rgecva8yo7d64un64m2ys414gkekxhf735qw70ku22mbndkbeyb61fn76ui8z0dzjwl4q1km5fuo037ctlwimjv0nkzjlye6j5pmgsq9xj9ptsnh3p600ma6bny7qwervwkkjdzweaw6upx0u8vvv2oaubli7gv3jddlxheqos1rphtajvwa634rjzuiqxn123sk27tzz52odkapua2zhz7iklghvr6e2n13hv8gioid76tlvtgpls8vkrfi16225dhlqu5djypqxw2pu76kpdokaajo0f1c55yyyial8fv0r5gebl4vdqnwo5k1dhbsc7ius9rt3mp9o94ruzug2wd9k2voz1mrbisg1r6425pe0921qxxefy18jn3cyxktiz4yoy9jya9nwvp7tio110gohhz3n35l1ye3ho0pva8pjxyutbupv71lyktsyu2ngrrvlc1v54mqlfh9gcxqhi5oqw83pffp3xhqrbydgq"  width="200"  maxlength="1000"  placeholder=""  />
+		<checkbox type="text" id="aramaKriter"  checked="true"  label="Arama Kriteri"  onCheck=""  width="200"  />
 	</window>
+	<script>
+Agem.addLoadFunction(	function () {		Agem.addElement('input','forward', {type:'hidden', name:'forward', value:'list'}, null, document.forms['genelKisiDigerEtiketForm']);		<logic:notEmpty name='r_message'>			Agem.message('<bean:write name="r_message" filter="false"/>');		</logic:notEmpty>		if ($("#liste tr").length == 0)			AgemForm.open('genelKisiDigerEtiketForm', yeniForm(), 'sutun', true);	});AgemTable.rowDblClick = function(id) {	if (!id) {		id = AgemTable.SELECTED_ID;		if (id == null) {			Agem.error("Lütfen kayıt seçiniz.");			return;		}	}	var d = AgemTable.get(id);	AgemForm.open('genelKisiDigerEtiketForm', d, 'sutun', true);};function yeniForm() {	return {kisiDigerEtiketId:'',sutun:'',etiket:'',eklemeTarihi:'',ekleyen:'',sonGunlemeTarihi:'',sonGunleyen:'',degerler:'',aramaKriter:''};}function sil(id) {	if (!id) {		id = AgemTable.SELECTED_ID;		if (id == null) {			Agem.error('Lütfen kayıt seçiniz.');			return;		}	}	var d = AgemTable.get(id);	if (!d.kisiDigerEtiketId) {		Agem.error('Lütfen kayıt seçiniz.');		return;	}	var x = [			'forward=list',			'kisiDigerEtiketId='+d.kisiDigerEtiketId		];	if (confirm('Kaydı silmek istediğinizden emin misiniz?')) 		Agem.open('genel/kisiDigerEtiket/delete.do?'+x.join('&'));}	</script>
 </arya>

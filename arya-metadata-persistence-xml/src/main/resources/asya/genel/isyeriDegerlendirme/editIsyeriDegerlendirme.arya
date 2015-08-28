@@ -3,9 +3,11 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="selectIsyeridegerlendirmeWindow">
 		<label visible="false" id="isyeriIdlbl" value="Isyeri Id" />
-		<textbox visible="false" type="text" id="isyeriId"  value="ihw57tjz75"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriId"  value="32ncgoq6kz"  placeholder=""  />
 		<label id="tarihlbl" value="Tarih" />
-		<datebox id="tarih"  value="2007-9-8"  width="100"  placeholder=""  />
+		<datebox id="tarih"  value="1990-1-16"  width="100"  placeholder=""  />
 		<button id="degerlendirmeBtn" label="Değerlendir"  onClick="degerlendir()"  width="100"  left="200" />
 	</window>
+	<script>
+$(document).ready( function () {	if ($("#baraj").val() == "Başarılı") {		$("#baraj").css("color", "#0A0");	} 	else {		$("#baraj").css("color", "#A00");			}	if ($("#toplamBaraj").val() == "Başarılı") {		$("#toplamBaraj").css("color", "#0A0");	} 	else {		$("#toplamBaraj").css("color", "#A00");			}});var degerlendir = function() {	AgemForm.SUBMIT_MESSAGE = "Değerlendiriliyor...";	AgemForm.submit();	}	</script>
 </arya>

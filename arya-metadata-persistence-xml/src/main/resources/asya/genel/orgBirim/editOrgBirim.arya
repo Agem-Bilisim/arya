@@ -2,28 +2,30 @@
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="editOrgbirimWindow">
-		<textbox visible="false" type="text" id="orgBirimId"  value="w1t3qxdiq8"  placeholder=""  />
-		<textbox visible="false" type="text" id="orgBirimTurId"  value="7dc6eca23r"  placeholder=""  />
-		<textbox visible="false" type="text" id="ustOrgBirimId"  value="jfa9pzrwe5"  placeholder=""  />
+		<textbox visible="false" type="text" id="orgBirimId"  value="e27470ew8n"  placeholder=""  />
+		<textbox visible="false" type="text" id="orgBirimTurId"  value="83xd675fah"  placeholder=""  />
+		<textbox visible="false" type="text" id="ustOrgBirimId"  value="vcpwvuvybb"  placeholder=""  />
 		<label id="tanimlbl" value="Ünvan" />
-		<textbox type="text" id="tanim"  value="x7s298ol31ij3nwpjj9dldgtjgigmccnwqi8k5adx6p7uitjpc7aem8ebaf4qauxbh2mk1wf4qa5sdgetmxq30mlha98jv6ztgrwneedfb28x9zwmu7knk9ga0godv5lbtebrit9u0p5xav3pashwp7md1nfgqg3ve3flqfu2x6north5c9dh1z6n47q3z6hce9n9664mjibly8xeoq71qeer1ccw73v7dhkzd56zk8p650e1o2f2xudx9tmuab"  width="300"  maxlength="255"  placeholder=""  readonly="true"  />
+		<textbox type="text" id="tanim"  value="p98dls0ie7ls72n95a1vxax78ubj7sjq8pqoezw8x9wzthb9lg1ep9lnh714dtigl574uxt08nmrv0jy14s8acc1bc95hophxe85lrupm01q9r8flrwy85wdih06ulq47gs7qrqgnql6nri9a9hmmium61ljtgilnzgyvjfzzap81ea77p44t9ek0mxkatu9y6ziuqc2vjql2qmxkwxi5547i1gptkcr6m6nk81fe67r0aswdyrzeehkv1thuqd"  width="300"  maxlength="255"  placeholder=""  readonly="true"  />
 		<label id="orgBirimTurTanimlbl" value="Birim Tür"  onClick=""  />
 		<label id="baslangicTarihilbl" value="Açılış Tarihi" />
-		<datebox id="baslangicTarihi"  value="2013-8-15"  width="120"  placeholder=""  />
+		<datebox id="baslangicTarihi"  value="2007-11-16"  width="120"  placeholder=""  />
 		<label id="bitisTarihilbl" value="Kapanış Tarihi" />
-		<datebox id="bitisTarihi"  value="1994-6-3"  width="120"  placeholder=""  />
+		<datebox id="bitisTarihi"  value="1994-1-13"  width="120"  placeholder=""  />
 		<checkbox type="text" id="yayinla"  checked="true"  label="Yayınlansın mı ? "  onCheck=""  width="100"  />
 		<label visible="false" id="iletisimIdlbl" value="Iletisim Id" />
-		<textbox visible="false" type="text" id="iletisimId"  value="6e4f1jlouw"  placeholder=""  />
+		<textbox visible="false" type="text" id="iletisimId"  value="72uod41ltg"  placeholder=""  />
 		<label visible="false" id="resimIdlbl" value="Resim Id" />
-		<textbox visible="false" type="text" id="resimId"  value="2lgedpu166"  placeholder=""  />
+		<textbox visible="false" type="text" id="resimId"  value="79rh2mfzyu"  placeholder=""  />
 		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
-		<textbox visible="false" type="text" id="eklemeTarihi"  value="qq6pnaibbw"  placeholder=""  />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="n4kzjkgoyo"  placeholder=""  />
 		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
-		<textbox visible="false" type="text" id="ekleyen"  value="si05uibhknbhdp405k8f5ivaohrdei0v1o6jjf5df2tvgkm1vffih9rmkgvahlgosakgk6gmta8t356xt81vjsuz7tam1xk16rblsu7uohsoe1vxc1xpa6jzy1ol0yn3j6tlb8bnethb5f1b0knoypnuk6169rmafarwl3bzcdfnxkhgx8np0qhqz1dpx14qykmvnhk865yep8b3qu5764y21ng2f02zflgi0ruf8pejaq6aoggujt5ewjeer3w"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="ekleyen"  value="2aqnvubkempmefptn539dzxm4jrjvfewvhnvt3be9fpf6mt2finw7afh02kvxniafo3dccnjk4dr3ummwv7mrajhmqe4z676qhpp35druxji3qea0aspygeqhoub9cbwi6inyd79bae9kqoil6x8nn875hk6q03z8948bci7vbvjy7neiy7s04d9avvobbzgp02bgr272oosn58538lr6ihw9s7uw4q7oqe4ymfmhh9p1nwpdmvnwawswjliwk6"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
-		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="83emrk0k49"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="z9uks8oho2"  placeholder=""  />
 		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
-		<textbox visible="false" type="text" id="sonGunleyen"  value="mzbyfv0fcmv8uz5p1rptrhje9h43m6ryy19n7d0z0iyj3bcj1325ztj703l6210zz4206180u49az20zff10dlzceu98ghvwowgebeyl1oq8z3z2wpu1utsbvh8h35z1lpe0m90j2z1um7u1uuqhls3hrj7m41y5q3lutaga3rhyxttzjyh7gz2er61mqjalg7w4igbtx5engacj26ujc9ixdczx2o5t1j4f9fhmlldxrmr8f0tdsrf4vz8sgvp"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="q594llk2iq8o0yhtv8rs3eec2c2rijozvw86xkqwrt4ne36b6s9os52plz6vbzjv43ap89puh19dr2g2qu47vxwp349nv0li954dowfc39m19pz6d1l25442nwl40xa42yxollie3lbokyvjyynhhj1azuw2b7aiwjpomrzw4apltrzq4o37szlwijasnvsmlj5lsopfizfl4ut19bvluqq4sydnt796anvpja791l5c4gbywsdvahxqpznbo8t"  maxlength="255"  placeholder=""  />
 	</window>
+	<script>
+$(document).ready( function () {	if ($("#orgBirimId").val()) {		var json = <bean:write name="genelOrgBirimForm" filter='false'/>		AgemWM.addQueryString(Agem.json2Param( {orgBirimId: json.orgBirimId, orgBirimIdParam: json.orgBirimId}));		if (json.orgBirimTurId != 'sendika' && json.orgBirimTurId != 'sube' && json.orgBirimTurId != 'irtibat' && json.orgBirimTurId != 'merkez') {			parent.$('#genelOrgBirimIletisimEdit').parent().parent().hide();		} else {			if (json.orgBirimTurId == 'sendika' || json.orgBirimTurId == 'merkez') {				$('#agem_label_input_div_baslangicTarihi').hide();				$('#agem_label_input_div_bitisTarihi').hide();			}			parent.$('#genelOrgBirimIletisimEdit').parent().parent().show();		}		var resimDegistirme = "";		<agem:access URL="genel/orgBirim/edit">		resimDegistirme = "style='cursor:pointer' onclick='Other.resimYukle(this,\"genel/orgBirim/edit.do?json=1&type=resim&orgBirimId="+json.orgBirimId+"\",null);'";		</agem:access>		AgemWM.addSideInfo(			{				id:"orgBirimInfo",				info: [					{						value: json.tanim, clazz: "pointer",						onclick: function () {							AgemWM.link('#genelOrgBirimSelect', {url: 'genel/orgBirim/select.do'});						}					},/*					{label: "Konum", value: '<%=request.getAttribute(Constant.C_HIYERARSIDEKI_YER)%>', clazz: "not-bold"},*/					{label: "Tür", value: json.orgBirimTurTanim, clazz: "not-bold"},					{value: "<div style='width:90px; height:120px;margin-top: 10px; margin-bottom: 10px; overflow:hidden'><img resimId='"+(json.resimId ?json.resimId : '')+ "' src='getDosya.do?dosyaId="+json.resimId+"' width='95px' "+resimDegistirme+"/></div>"}				],				type: 1			}		);	}});function aciklama() {	if (Agem.byId('orgBirimId') && Agem.byId('orgBirimId').value) {		Other.metinGir(710, 600, 'Açıklama', {orgBirimId: Agem.byId('orgBirimId').value, tur: "birimAciklama", height: 410, width: 710});	}}	</script>
 </arya>

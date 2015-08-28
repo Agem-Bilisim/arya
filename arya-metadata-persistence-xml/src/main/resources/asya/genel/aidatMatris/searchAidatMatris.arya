@@ -3,75 +3,53 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listAidatmatrisWindow">
 		<label id="raporTurParamlbl" value="Rapor Türü" />
-		<selectbox id="raporTurParam"  width="240"  >
-			<template>
-				<label value="az88z2vbse" />
-			</template>
-		</selectbox>
+		<combobox id="raporTurParam"  width="240"  >
+			<comboitem label="ba53mvz6xc" value="3bbl" />
+		</combobox>
 		<label id="listeTurParamlbl" value="Kaynak Liste" />
-		<selectbox id="listeTurParam"  width="240"  >
-			<template>
-				<label value="mebcjj2iyw" />
-			</template>
-		</selectbox>
+		<combobox id="listeTurParam"  width="240"  >
+			<comboitem label="dxnob52sou" value="vq30" />
+		</combobox>
 		<label id="aidatTurParamlbl" value="Üye / DA" />
-		<selectbox id="aidatTurParam"  width="240"  >
-			<template>
-				<label value="8qaikkhg56" />
-			</template>
-		</selectbox>
+		<combobox id="aidatTurParam"  width="240"  >
+			<comboitem label="7qrcbcp5ue" value="6t3k" />
+		</combobox>
 		<label id="donemParamlbl" value="Dönem Ay/Yil" />
-		<selectbox id="donemParam"  width="240"  >
-			<template>
-				<label value="zvnc8a305l" />
-			</template>
-		</selectbox>
+		<combobox id="donemParam"  width="240"  >
+			<comboitem label="4vfc0hnzho" value="v00j" />
+		</combobox>
 		<label id="donemBasParamlbl" value="Dönem Ay/Yil" />
-		<selectbox id="donemBasParam"  width="117"  top="75" >
-			<template>
-				<label value="ewvq2wmklb" />
-			</template>
-		</selectbox>
+		<combobox id="donemBasParam"  width="117"  top="75" >
+			<comboitem label="zzkxr7xnbl" value="u5g2" />
+		</combobox>
 		<label id="donemBitParamlbl" value="Dönem Ay/Yil" />
-		<selectbox id="donemBitParam"  width="117"  top="75" >
-			<template>
-				<label value="iio3r4h1mr" />
-			</template>
-		</selectbox>
+		<combobox id="donemBitParam"  width="117"  top="75" >
+			<comboitem label="0yifizj3bp" value="l33r" />
+		</combobox>
 		<label id="tutarAraliklbl" value="Tutar Aralık" />
-		<selectbox id="tutarAralik"  width="240"  top="100" >
-			<template>
-				<label value="qq5r13ob57" />
-			</template>
-		</selectbox>
+		<combobox id="tutarAralik"  width="240"  top="100" >
+			<comboitem label="4fey3u54da" value="2owq" />
+		</combobox>
 		<label id="turParamlbl" value="Liste Türü" />
-		<selectbox id="turParam"  width="240"  >
-			<template>
-				<label value="fv65c9ep5f" />
-			</template>
-		</selectbox>
+		<combobox id="turParam"  width="240"  >
+			<comboitem label="xlal230one" value="487h" />
+		</combobox>
 		<label id="subeParamlbl" value="Şube" />
-		<selectbox id="subeParam"  width="240"  >
-			<template>
-				<label value="o1naplqtar" />
-			</template>
-		</selectbox>
+		<combobox id="subeParam"  width="240"  >
+			<comboitem label="i6fnz4wqvo" value="qhql" />
+		</combobox>
 		<label id="ilKoduParamlbl" value="İl" />
-		<selectbox id="ilKoduParam"  width="117"  >
-			<template>
-				<label value="5o1tee5oj6" />
-			</template>
-		</selectbox>
-		<selectbox id="ilceKoduParam"  width="117"  >
-			<template>
-				<label value="pvwrmt5sws" />
-			</template>
-		</selectbox>
+		<combobox id="ilKoduParam"  width="117"  >
+			<comboitem label="uo5a8rzsr7" value="71xy" />
+		</combobox>
+		<combobox id="ilceKoduParam"  width="117"  >
+			<comboitem label="lifitduozj" value="dry9" />
+		</combobox>
 		<label id="isyeriKategoriIdParamlbl" value="Kategori" />
-		<selectbox id="isyeriKategoriIdParam"  width="240"  >
-			<template>
-				<label value="xc2715er61" />
-			</template>
-		</selectbox>
+		<combobox id="isyeriKategoriIdParam"  width="240"  >
+			<comboitem label="roofky8603" value="rosa" />
+		</combobox>
 	</window>
+	<script>
+AgemForm.submitMessage('Arama yapılıyor...');function listele() {	AgemWM.submit(null, 'genelAidatMatrisParameterForm');}$(document).ready(function () {	$("#raporTurParam").change(function () {		if ($(this).val() == "1") {			$("#donemParam").parent().show();			$("#tutarAralik").parent().show();			$("#donemBasParam").parent().hide();			$("#donemBitParam").parent().hide();		}		else {			$("#donemParam").parent().hide();			$("#tutarAralik").parent().hide();			$("#donemBasParam").parent().show();			$("#donemBitParam").parent().show();		}	});	$("#raporTurParam").change();		turParamChanged();	$("#turParam").change(turParamChanged);});function turParamChanged() {	var v = $("#turParam").val();	$("[tur]").each( function () {		$(this).parent().hide();		if (!$(this).hasClass("date-inp") && $(this).attr("type") != "checkbox") {			$(this).val("");		}	});	$('[tur*="'+v+'"]').each( function () {		$(this).parent().show();	});}function ilKoduDegisti() {	var ilKodu = $('#ilKoduParam').val();		$('#ilceKoduParam').children().remove();	if (ilKodu) {		Agem.ajax("genel/ilce/list.do", {ilKoduParam:ilKodu, pageSize:10000, sort:'ILCE.ILCE_ADI',dir:'asc', json:1}, function (x) {			$("#ilceKoduParam").append("<option value=''></option>");			for (var i=0; i < x.results.length; i++) {				$("#ilceKoduParam").append("<option value='"+x.results[i].ilceKodu+"'>"+x.results[i].ilceAdi+"</option>");			}		});		}}	</script>
 </arya>

@@ -1,0 +1,6 @@
+<?page title="DOCSYS" ?>
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
+	<script>
+AgemTable.rowDblClick = function(id) {<agem:access URL="genel/aidatFarkAnaliz/select">	if (AgemWM.exists('#genelAidatFarkAnalizSelect')) {		AgemWM.addQueryString(Agem.json2Param({aidatIdParam: id, aidatId: id}));		AgemWM.link('#genelAidatFarkAnalizSelect', {url: 'genel/aidatFarkAnaliz/select.do'});		Agem.message('Bilgiler okunuyor...');	} else {		<agem:access URL="genel/aidatFarkAnaliz/select">		AgemWM.window({ link:"genel/aidatFarkAnaliz/select.do?aidatId="+id + "&aidatIdParam="+id, label: "Aidat Fark Analizi", width: 800, height: 600});		</agem:access>	}</agem:access>};	</script>
+</arya>
