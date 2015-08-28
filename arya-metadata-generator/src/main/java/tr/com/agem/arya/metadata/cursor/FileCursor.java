@@ -37,7 +37,7 @@ public class FileCursor {
 
 		try {
 
-			// Read jsp file as String
+			// Read JSP file as String
 			String jsp = MetadataGeneratorUtil.getInstance().readFile(jarFile, jarEntry);
 			logger.log(Level.FINE, "Source file has been read successfully!");
 
