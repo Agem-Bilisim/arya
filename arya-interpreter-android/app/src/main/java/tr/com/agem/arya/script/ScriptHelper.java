@@ -22,13 +22,11 @@ public class ScriptHelper {
 
     public static Object executeScript(IAryaComponent component, String functionName, HashMap<Object, Object> params,LinearLayout window) {
 
-        Log.d("----","script time");
         StringBuilder script = new StringBuilder();
 
         AryaScript scriptObj = getScript(window);
         if(scriptObj!=null){
-            Log.d("----","script time2");
-            script.append(scriptObj.getScript()).append(functionName).append("();");
+            script.append(scriptObj.getScript()).append(functionName).append(";");
             return jsRun(scriptObj.getSrcList(),script.toString(),window,params);
         }
 
@@ -47,6 +45,5 @@ public class ScriptHelper {
         }
         return null;
     }
-
 
 }

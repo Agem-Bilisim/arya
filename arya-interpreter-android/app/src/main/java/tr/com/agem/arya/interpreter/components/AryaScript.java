@@ -19,12 +19,10 @@ public class AryaScript extends View{
     private String script;
     private List<String> srcList;
 
-    public AryaScript(Context context, XmlPullParser parser, LinearLayout window) throws IOException, XmlPullParserException {
+    public AryaScript(Context context, XmlPullParser parser) throws IOException, XmlPullParserException {
        super(context);
         this.srcList=parseSrc(parser);
         this.script=parser.nextText();
-
-        window.addView(this);
     }
 
     private List<String> parseSrc(XmlPullParser parser) {

@@ -16,10 +16,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Objects;
 
-import tr.com.agem.arya.R;
 import tr.com.agem.arya.rhino.functions.ElementFunctions;
 import tr.com.agem.arya.script.ScriptHelper;
 
@@ -32,8 +29,9 @@ public class AryaComboBox extends Spinner implements IAryaComponent{
     private String componentId;
     private String componentAttribute;
     private String componentValue;
+    private boolean spinnerInit =false;
 
-    public AryaComboBox(Context context, XmlPullParser parser, final LinearLayout window) {
+    public AryaComboBox(Context context,XmlPullParser parser, final LinearLayout window) {
         super(context);
 
         this.componentId= parser.getAttributeValue(null, "id");
@@ -43,30 +41,35 @@ public class AryaComboBox extends Spinner implements IAryaComponent{
 
         final String onChange = parser.getAttributeValue(null, "onChange");
 
-
-        //TODO clone parser for getAdapter
-
-
         this.setAdapter(getAdapter(context, parser, window));
 
-            this.setOnItemSelectedListener(new OnItemSelectedListener() {
-                @Override
-                public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+        this.setOnItemSelectedListener(new OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
 
+                if(isInit()){
                     HashMap<Object, Object> params = new HashMap<>();
                     params.put("comboitem", new ElementFunctions(window).getElementById(Long.toString(id)));
 
                     ScriptHelper.executeScript(getMyself(), onChange, params, window);
                 }
+            }
 
-                @Override
-                public void onNothingSelected(AdapterView<?> parent) {
-
-                }
-            });
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
 
         window.addView(this);
+    }
 
+    private boolean isInit() {
+        if(spinnerInit)
+            return true;
+        else{
+            spinnerInit=true;
+            return false;
+        }
     }
 
 
@@ -74,7 +77,7 @@ public class AryaComboBox extends Spinner implements IAryaComponent{
         return  this;
     }
 
-    private SpinnerAdapter getAdapter(Context context, XmlPullParser parser, LinearLayout window){
+    private SpinnerAdapter getAdapter(Context context,XmlPullParser parser, LinearLayout window){
 
         List<AryaItem> list = new ArrayList<>();
 
