@@ -15,6 +15,7 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.HashMap;
 import java.util.List;
 
 import tr.com.agem.arya.rhino.functions.ElementFunctions;
@@ -24,7 +25,7 @@ import tr.com.agem.arya.rhino.functions.ElementFunctions;
  */
 public class JsRunner {
 
-    public static Object jsRun(List<String> srcList, String script, LinearLayout window) {
+    public static Object jsRun(List<String> srcList, String script, LinearLayout window,HashMap<Object, Object> params) {
 
         try {
 

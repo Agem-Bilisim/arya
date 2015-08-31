@@ -28,6 +28,10 @@ public class AryaButton extends Button implements IAryaComponentProperty {
 		this.componentClassName = attributes.getValue("class");
 		this.componentValue = attributes.getValue("value");
 		this.componentAttribute = attributes.getValue("attribute");
+		
+		this.setId(attributes.getValue("id"));
+		this.setClass(attributes.getValue("class"));
+		
 		this.setLabel(attributes.getValue("label"));
 		this.setHeight(attributes.getValue("height"));
 

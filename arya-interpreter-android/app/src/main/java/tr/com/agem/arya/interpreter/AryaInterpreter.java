@@ -17,6 +17,7 @@ import tr.com.agem.arya.R;
 import tr.com.agem.arya.gateway.AryaResponse;
 import tr.com.agem.arya.interpreter.components.AryaButton;
 import tr.com.agem.arya.interpreter.components.AryaCheckbox;
+import tr.com.agem.arya.interpreter.components.AryaComboBox;
 import tr.com.agem.arya.interpreter.components.AryaDatebox;
 import tr.com.agem.arya.interpreter.components.AryaLabel;
 import tr.com.agem.arya.interpreter.components.AryaScript;
@@ -34,14 +35,17 @@ public class AryaInterpreter
             parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
             parser.setInput(new StringReader(response.getView()));
 
+            AryaScript script =getScript(new StringReader(response.getView()),context);
+
             while(parser.next() != XmlPullParser.END_DOCUMENT)
             {
-
                 if(parser.getEventType() == XmlPullParser.START_TAG){
                     String tagName = parser.getName();
                     Log.d(TAG, ">>>>>>>>>>>>>tagname:" + tagName);
                     if(tagName.equals("window")) {
                         AryaWindow window = new AryaWindow(context, mainLayout);
+                        if(script!=null)
+                            window.addView(script);
                         createWindowComponents(context, window, parser);
                     }
                 }
@@ -57,8 +61,41 @@ public class AryaInterpreter
 
     }
 
+    private static AryaScript getScript(StringReader stringReader, Context context) {
+
+        XmlPullParser parser = Xml.newPullParser();
+        try {
+            parser.setInput(stringReader);
+
+        while(parser.next() != XmlPullParser.END_DOCUMENT)
+        {
+            if(parser.getEventType() == XmlPullParser.START_TAG){
+                String tagName = parser.getName();
+                if(tagName.equals("script")) {
+                   return  new AryaScript(context,parser);
+                }
+            }
+        }
+
+        } catch (XmlPullParserException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public static void createWindowComponents(Context context, LinearLayout window, XmlPullParser parser){
         try {
+
+           // XmlPullParser parser2=getNewParser();
+//            BeanUtils.copyProperties(parser2,parser);
+            //Log.d(TAG, "createWindowComponents " + parser2.next() + "-" + parser2.nextText() + "-");
+
+
+                //new AryaScript(context,parser.getAttributeValue(),window);
+                //new AryaScript(context,parser,window);
+
             while(parser.nextTag() != XmlPullParser.END_DOCUMENT)
             {
                 if(parser.getEventType() == XmlPullParser.START_TAG){
@@ -79,13 +116,13 @@ public class AryaInterpreter
                         new AryaTextbox(context, parser, window);
                     } else if ("doublebox".equalsIgnoreCase(tagName)) {
                         new AryaTextbox(context, parser, window);
-                    } else if ("listbox".equalsIgnoreCase(tagName)) {
-                        // TODO multiple combobox impl
-                    } else if ("selectbox".equalsIgnoreCase(tagName)) {
-                        // TODO single combobox impl
-                    }else if ("script".equals(tagName)){
-                        new AryaScript(context,parser,window);
+                    } /*else if ("listbox".equalsIgnoreCase(tagName)) {
+                    //TODO multiple selectbox
+                        new AryaListBox(context,parser,window);
+                    }*/ else if ("combobox".equalsIgnoreCase(tagName)) {
+                        new AryaComboBox(context,parser,window);
                     }
+
                 } else if(parser.getEventType() == XmlPullParser.END_TAG) {
                     String tagName = parser.getName();
                     if(tagName.equals("window")) {
@@ -97,10 +134,11 @@ public class AryaInterpreter
                 }
             }
         } catch (XmlPullParserException e) {
-            Log.e("XmlPullParserException: unexpected type","END_DOCUMENT");
+            Log.e("XmlPullParserException: unexpected type", "END_DOCUMENT");
             //e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
 }

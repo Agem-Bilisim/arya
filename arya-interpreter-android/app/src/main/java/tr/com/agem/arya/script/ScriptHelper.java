@@ -1,5 +1,6 @@
 package tr.com.agem.arya.script;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -25,8 +26,8 @@ public class ScriptHelper {
 
         AryaScript scriptObj = getScript(window);
         if(scriptObj!=null){
-            script.append(scriptObj.getScript()).append(functionName).append("();");
-            return jsRun(scriptObj.getSrcList(),script.toString(),window);
+            script.append(scriptObj.getScript()).append(functionName).append(";");
+            return jsRun(scriptObj.getSrcList(),script.toString(),window,params);
         }
 
         return null;
@@ -44,6 +45,5 @@ public class ScriptHelper {
         }
         return null;
     }
-
 
 }

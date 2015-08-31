@@ -1,6 +1,10 @@
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window>
+	
+		<label id="label1"  value="Project Name:" class="definition"/>
+		<textbox id="textbox1" width="1000px" value="Arya" class="definition"/>
+	
 		<label id="lbl1" value="Test label" />
 		<textbox id="tb1" value="Ali ali ali" />
 		<label id="lbl2" value="Test label" />
@@ -10,23 +14,29 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 		<label id="lbl4" value="Test label" />
 		<datebox id="db1" />
 		<label id="lbl5" value="Test label" />
-		<listbox id="lb1">
-			<listitem label="item1" value="1" />
-			<listitem label="item2" value="2" />
-			<listitem label="item3" value="3" />
+		
+		<listbox id="lb1" onChange="a(getElementById('btn1'))">
+			<listitem id="l1" label="item1" value="1" />
+			<listitem id="l2" label="item2" value="2" />
+			<listitem id="l3" label="item3" value="3" />
 		</listbox>
+		
+		
 		<label id="lbl6" value="Test label" />
-		<combobox id="cb1">
-			<comboitem label="item1" value="1" />
-			<comboitem label="item2" value="2" />
-			<comboitem label="item3" value="3" />
+		
+		<button id="btn1" label="Arya" onClick="a(getElementById('btn1'))" />
+		<button id="btn2" label="Yeni Ekran" onClick="b()" />
+		
+		<combobox id="cb1" value="hulo" onChange="a(getElementById('btn1'))" >
+			<comboitem id="1" label="item1" value="1" />
+			<comboitem id="2"  label="item2" value="2" />
+			<comboitem id="3" label="item3" value="3" />
 		</combobox>
-		<button id="btn1" label="Arya" onClick="a" />
-		<button id="btn2" label="Yeni Ekran" onClick="b" />
+		
 	</window>
 	<script>
-		a = function() {
-			print('a');
+		a = function(o) {
+			print(o.getComponentId());
 			//if(getElementById('btn1').getText()=='Arya')
 			//	getElementById('btn1').setText('AGEM');
 			//else
