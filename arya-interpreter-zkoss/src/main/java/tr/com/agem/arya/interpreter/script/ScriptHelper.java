@@ -16,7 +16,7 @@ public class ScriptHelper {
 		AryaScript scriptObj = getScriptComponent(aryaWindow);
 		
 		if(AryaUtils.isNotEmpty(scriptObj)){
-			script.append(scriptObj.getScript()).append(functionName).append("();");
+			script.append(scriptObj.getScript()).append(functionName).append(";");
 			return JsRunner.jsRun(scriptObj.getSrcList(), script.toString(), aryaWindow);
 		}
 		return null;

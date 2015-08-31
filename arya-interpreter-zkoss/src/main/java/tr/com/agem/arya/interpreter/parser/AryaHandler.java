@@ -8,6 +8,7 @@ import org.xml.sax.helpers.DefaultHandler;
 
 import tr.com.agem.arya.interpreter.component.AryaButton;
 import tr.com.agem.arya.interpreter.component.AryaCheckbox;
+import tr.com.agem.arya.interpreter.component.AryaCombobox;
 import tr.com.agem.arya.interpreter.component.AryaDatebox;
 import tr.com.agem.arya.interpreter.component.AryaLabel;
 import tr.com.agem.arya.interpreter.component.AryaScript;
@@ -54,8 +55,8 @@ public class AryaHandler extends DefaultHandler {
 			components.add(new AryaTextbox(this.parent, this.aryaWindow, attributes));
 		} else if ("listbox".equalsIgnoreCase(tagName)) {
 			// TODO multiple combobox impl
-		} else if ("selectbox".equalsIgnoreCase(tagName)) {
-			// TODO single combobox impl
+		} else if ("combobox".equalsIgnoreCase(tagName)) {
+			components.add(new AryaCombobox(this.parent, this.aryaWindow, attributes));
 		} else if ("script".equalsIgnoreCase(tagName)) {
 			script = true;
 			scriptSource = attributes.getValue("src");

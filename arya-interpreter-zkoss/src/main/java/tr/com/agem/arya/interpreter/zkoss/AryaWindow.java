@@ -12,8 +12,10 @@ import tr.com.agem.core.gateway.model.AryaRequest;
 import tr.com.agem.core.gateway.model.RequestTypes;
 import tr.com.agem.core.interpreter.IAryaInterpreter;
 
-@SuppressWarnings("serial")
 public class AryaWindow extends BaseController {
+	
+	private static final long serialVersionUID = 8576119465618112119L;
+
 	IAryaInterpreter interpreter;
 	List<IAryaComponentProperty> components;
 
@@ -32,7 +34,7 @@ public class AryaWindow extends BaseController {
 		AryaRequest request = new AryaRequest();
 		request.setAction("master");
 		request.setRequestType(RequestTypes.VIEW_ONLY);
-		String masterWindow = AryaInterpreterHelper.callUrl("http://192.168.1.106:8080/arya/rest/hello/", request);
+		String masterWindow = AryaInterpreterHelper.callUrl("http://192.168.1.106:8080/arya/rest/asya/", request);
 		interpreter.interpretAryaResponse(masterWindow, getIcerik(), this);
 	}
 

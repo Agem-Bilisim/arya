@@ -11,21 +11,28 @@ import java.util.List;
 
 import org.mozilla.javascript.Context;
 import org.mozilla.javascript.ContextFactory;
+import org.mozilla.javascript.NativeJSON;
 import org.mozilla.javascript.Scriptable;
 import org.mozilla.javascript.tools.shell.Global;
 
 import tr.com.agem.arya.interpreter.zkoss.AryaWindow;
 
 public class JsRunner {
+	
+	public static Scriptable scope;
+	public static Context context;
 
 	public static Object jsRun(List<String> srcList, String script, AryaWindow window) {
 
 		try {
+			
 
-			Context context = ContextFactory.getGlobal().enterContext();// Context.enter();
+			
+
+			context = ContextFactory.getGlobal().enterContext();// Context.enter();
 			context.setOptimizationLevel(-1);
 
-			Scriptable scope = new org.mozilla.javascript.tools.shell.Global();
+			scope = new org.mozilla.javascript.tools.shell.Global();
 			((Global) scope).init(context);
 
 			ElementFunctions e = new ElementFunctions(window);
