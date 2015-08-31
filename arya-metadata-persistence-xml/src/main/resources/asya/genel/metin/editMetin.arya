@@ -2,8 +2,8 @@
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addMetinWindow">
-		<textbox visible="false" type="text" id="dosyaId"  value="9apl263iv3"  placeholder=""  />
-		<textbox visible="false" type="text" id="tur"  value="d7ac5ypffb"  placeholder=""  />
+		<textbox visible="false" type="text" id="dosyaId"  value="vs8nglgmt8"  placeholder=""  />
+		<textbox visible="false" type="text" id="tur"  value="awqk8qzujm"  placeholder=""  />
 	</window>
 	<script>
 function kapat() {	AgemWM.close("genelMetinWindow");};function kaydet() {	if ($('#dosyaId').val()) {		document.forms["genelMetinForm"].action = "genel/metin/edit.do";	} else {		"genel/metin/add.do";	}	document.forms["genelMetinForm"].submit();};	</script>

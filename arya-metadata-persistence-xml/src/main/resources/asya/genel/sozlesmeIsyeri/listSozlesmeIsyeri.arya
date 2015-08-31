@@ -1,6 +1,17 @@
 <?page title="DOCSYS" ?>
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
+	<window id="listSozlesmeisyeriWindow">
+		<listbox id="list">
+			<listhead>
+				<listheader label="<input type='checkbox' class='inp' name='selectall' onclick='toggleSelect(this)' />" id="secili" />
+				<listheader label="Şube" id="sube" />
+				<listheader label="İşyeri SGK No" id="sgkKisaNo" />
+				<listheader label="Ünvan" id="unvan" />
+				<listheader label="Katılma Tarihi&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" id="katilmaTarihi" />
+			</listhead>
+		</listbox>
+	</window>
 	<script>
 var _sozlesmeId = <bean:write name="p_sozlesmeIdParam"/>;$(document).ready( 		function () {			<agem:access URL="genel/sozlesmeIsyeri/edit">			if ($('.exportlinks').length > 0) {				$('<a/>', {     					id: 'kaydet-link',     					href: "javascript:degisiklikleriSakla()",     					title: 'Değişiklikleri Sakla'     				}).html("<span title='Değişiklikleri Sakla' class='export-icon save-off' onmouseover=\"Other.changeClass(this, 'save-off', 'save-on')\" onmouseout=\"Other.changeClass(this, 'save-on', 'save-off')\"></span>").prependTo('.exportlinks');						$('.save-off').parent().attr("href", "javascript:degisiklikleriSakla()");			}			</agem:access>			<%if (request.getAttribute(AgemConstant.AGEM_MESSAGE) != null) {%>			Agem.message('<%=request.getAttribute(AgemConstant.AGEM_MESSAGE)%>');			<%}%>		});function degisiklikleriSakla() {	Agem.perde(true, null, 'Lütfen bekleyin...');	 $('input[id^=sec]').each(function(idx, item) {			sec(item);	});	Agem.perde(false);	Agem.message('Değişiklikler saklandı...');}var sec = function(ele) {	var isyeri = $(ele);	var id = isyeri.parents('tr:first').attr("id").split('-')[1];	if (id) {		var d = AgemTable.get(id);		var _url;		var _data;		if (isyeri.attr('checked')) {			if (d.sozlesmeId) {				_url = 'genel/sozlesmeIsyeri/edit.do';			} else {				_url = 'genel/sozlesmeIsyeri/add.do';			}			_data = { sozlesmeId: _sozlesmeId, isyeriId: d.isyeriId, katilmaTarihi : $('#isyeri\\[' + id + '\\]\\.katilmaTarihi').val(), json:1 };					} else {			if (!d.sozlesmeId) { // zaten ekli degil				return;							}			_url = 'genel/sozlesmeIsyeri/delete.do';			_data = { sozlesmeId: _sozlesmeId, isyeriId: d.isyeriId, json:1 };		}				<agem:access not="true" URL="genel/sozlesmeIsyeri/add">		if (_url == 'genel/sozlesmeIsyeri/add.do') {			Agem.error("Sözleşmeye yeni işyeri eklemezsiniz. Yetkiniz yok.");			return;		}		</agem:access>		<agem:access not="true" URL="genel/sozlesmeIsyeri/delete">		if (_url == 'genel/sozlesmeIsyeri/delete.do') {			Agem.error("Sözleşmeden işyeri çıkartamazsınız. Yetkiniz yok.");			return;		}		</agem:access>		$.ajax({"url": _url,			data: _data,			async : false,			timeout: 30000, 			dataType:"json", 			success:function(data){				if (isyeri.attr('checked')) {					d.sozlesmeId = _sozlesmeId;				} else {					d.sozlesmeId = null;				}			},			error:function(xhr,err,e){ 				alert( "Hata: " + err );				isyeri.attr("checked", !$(isyeri).attr('checked'));				}});			}};var toggleSelect = function(s) {	$('input[id^=sec]').attr("checked", $(s).attr('checked'));};	</script>
 </arya>

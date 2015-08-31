@@ -2,31 +2,31 @@
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="editOrgbirimiletisimWindow">
-		<textbox visible="false" type="text" id="orgBirimId"  value="qsop9o20sw"  placeholder=""  />
+		<textbox visible="false" type="text" id="orgBirimId"  value="3a0j66yq9q"  placeholder=""  />
 		<label visible="false" id="iletisim.iletisimIdlbl" value="Iletisim Id" />
-		<textbox visible="false" type="text" id="iletisim.iletisimId"  value="07w4oi35pn"  placeholder=""  />
+		<textbox visible="false" type="text" id="iletisim.iletisimId"  value="j9z80xyhjf"  placeholder=""  />
 		<label id="iletisim.adres1lbl" value="Adres (1)" />
-		<textbox type="text" id="iletisim.adres1"  value="up5zq0m5oihlr38esyb16vsembb96fdxxenoqwnkuomidwhah4yvm9rd9tqx094o4z4o5xph8iwcbo3mugyr2ztwe9ccj4b5tupoc0bzlhjxpn044ptcowdnt85h1gti9hvv2h60ekrv0wplzbqezunuig5lxk3krnsekcp6vr0a3p89fqd2o7lxwa4vgh9btklc8wtygmm9u7h0jaajenggw3iwc7ue19jl4ai8xp58thbxsfllxnuqiizj3p6"  width="472"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="iletisim.adres1"  value="omflab316wslo2s0ptlr7d74t5xrr0mekrz14cr0g601p1whdhn3mznzh84q7bnfa61myxhlvbifg18butqd3chcbs7kheajffqbf2yqa78ziz315td2m7j64ucudo3skzl505q617xsujrb8m9ium99i9ivsbycnaev095qju97ypu5lb0w3wlqytysqlah171u452k2x9falsnegodmsljwzb1aogxnyvab3r5lrgpnrfadqll7sbexq1l5as"  width="472"  maxlength="255"  placeholder=""  />
 		<label id="iletisim.adres2lbl" value="Adres (2)" />
-		<textbox type="text" id="iletisim.adres2"  value="rgc8uzank1cxkhlnaumqdhrzda73wpk2563mqyn0ip4m4h042pu9bvrujgmic4v23bdnlwu2qh08klx7ccvm5u2surbtimfx3imtw1q94pkcxxdnpddd1m1xsgzqfuw73suer90c0twkzqolaeca7fnnq7gqmh2hod9kpxc458klc3phlkkdey51skgtk1kfa9s9a82wh7c7yo51fm2qaq796e6jb8b0lslvi6hkyu9j1ygc46054n17oam5y2e"  width="472"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="iletisim.adres2"  value="jv03zaduq44i9sftco1d79uc97r8qmoanngxc1pbm75bq25brlsu0pnni8d4tqium2i61vxwhqp8dds5m6zzjqzz0ekulgkriv34scun7htcmsyjth6x6dr7wjtxkpyuh47lrps10847cvdo8kqjadl4sh36aow36bsd3iz2xzu2gri2gdf5erhqqmbv1mqtlysaf6feku8jqg9fjv0bsq5g04w2bm36i43uklblv1hl59qjbu5ptbw4kpyzklp"  width="472"  maxlength="255"  placeholder=""  />
 		<label id="iletisim.postaKodulbl" value="Posta Kodu" />
-		<textbox type="text" id="iletisim.postaKodu"  value="xl1u1"  width="100"  maxlength="5"  placeholder=""  />
+		<textbox type="text" id="iletisim.postaKodu"  value="o1ts0"  width="100"  maxlength="5"  placeholder=""  />
 		<label visible="false" id="iletisim.ilKodulbl" value="İl" />
-		<textbox visible="false" type="text" id="iletisim.ilKodu"  value="6fa26gtbw8x80agy76yoec"  maxlength="22"  placeholder=""  />
+		<textbox visible="false" type="text" id="iletisim.ilKodu"  value="ydpidgq92rp4f138dupkpv"  maxlength="22"  placeholder=""  />
 		<label visible="false" id="iletisim.ilceKodulbl" value="İlçe" />
-		<textbox visible="false" type="text" id="iletisim.ilceKodu"  value="8hupjla1yvmcczf364z6t1"  maxlength="22"  placeholder=""  />
+		<textbox visible="false" type="text" id="iletisim.ilceKodu"  value="acyeykqcr5kvgi2filld2s"  maxlength="22"  placeholder=""  />
 		<label id="iletisim.ilce.valuelbl" value="İl/İlçe" />
-		<textbox type="text" id="iletisim.ilce.value"  value="r312ku7on4"  width="288"  placeholder=""  onChange="autocomplete("genel/ilce/autocomplete.do", "dbParam", 5, "setIlIlce")" />
+		<textbox type="text" id="iletisim.ilce.value"  value="jqhzbeutbg"  width="288"  placeholder=""  onChange="autocomplete("genel/ilce/autocomplete.do", "dbParam", 5, "setIlIlce")" />
 		<label id="iletisim.tellbl" value="Telefon" />
-		<textbox type="text" id="iletisim.tel"  value="xp1j3lko5s8006e53bjxswwtnbin7mpqfjnf9kb2bun7uxvbgazzl5pfrehd3yq5g47ufv2iww46h4yl56gyl71770uxf2w6355eqanpxat0ao7ib4lagf3zxf4iqf59gkax5j8zlket9kl0k2mxpks8v8c0djiaj39mpd24v215upydq6gh17ltrkpcsifxk86ym2m49btl0vlucnihjrwkkxvlmjgpg9mgzm6mn534vxdy2kteltefbxzbcjl"  width="100"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="iletisim.tel"  value="sffm422rtwrdfpyzxgdw11jcfv8bdefnmn3dhx8dltrf3uiuge3z28jnuavec97su87ayv4mo4fx5v4533bbpsgzdit7ho1a8vrtnmqipu4lfii88wkfdgsw1fidp437vrfow3m146eqmcf0h4jc3f1el7lgw9rmzs24h1s3m80yytjryc3pkeyh1g8qq3cf1bp3uuxsecb9nsuayae7m5zt65g8jl7a8rgljov0xvugxetml4eqe3wqom04702"  width="100"  maxlength="255"  placeholder=""  />
 		<label id="iletisim.ceplbl" value="Cep Tel." />
-		<textbox type="text" id="iletisim.cep"  value="jqp18qin7fr9idfv78zgad0frq6c2eherhfhqkmtr6qj4km4fr6nfzlj4zirfoqvknpcb4ljilo058iaz1jf1wzpxozrpdyjkbu6mcwz3b2cljeez0ljuofrkn79s5rkdmhavoyck0o4ovnorrkskzg87n97lhc4oqcgaes5b0mbbswsiyr5a47v74k0zh3ttd6tksxw8zc9hsaul98itckmgfatahgtjtnwoq5bxp2fuk8dkcuwryqfpii8280"  width="100"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="iletisim.cep"  value="bwg6tbocbeob6bne1o1z4w6q09cq2x87a62wosq3xdjcsrzzdmiiso0vzfabxn5wbuaxpsh46vphag2zwcez8iutzqseq3ffaayad530ub5n7hr9wddutmwf0xn8dfx73t1j3xi9l2fa8b8wv1rme0ltaodxotgty4gow1rt4fru0f7hr99cvbfn244k6uwrvx1gw1pi5qyyb38xvwhvi501qkwa5qo2mj30utyepc3vng99q6y4wwskb97zh1m"  width="100"  maxlength="255"  placeholder=""  />
 		<label id="iletisim.fakslbl" value="Faks" />
-		<textbox type="text" id="iletisim.faks"  value="1c07ay2mowr98uj7jzox7endff38hknzpy5a2f2utf8rduzib1fx15bbaagzb7uk9mhs0m2l7ckp95tyo3ja4d25wifxuj00pzilt3oki7bsdcpavl7k4tvllbvhjw26p7198r6a26pygtibdzv7gxmfhg5jljojd4zc60kg6jic6yt9o5bfghlyki7v179q4nveakr2c7nnke1j5yos1umb6d31txuzokt3o3vbv2qhdu4xg302i7m5u9nxw72"  width="100"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="iletisim.faks"  value="fnz2vid4so020d64ka8tnrh9jp2fub3s1y4rqt1slnjkboxiiauo07puxp7cov4jk0j5dz8ino0bth87fh3yqkyqs9t0l8orc37c8bgycgza1v5vnln3psdinfb5gemztcc42drbe0xudnbte5yovu2und9ii60hcojuvyreryipa0pmd1d4i8ph240rvgwnb9bp9uy7ms0ej40mmpob3y5oed8xmfs2gw5ty4dq3shx1bhxr5ux9l4sdb8v4cu"  width="100"  maxlength="255"  placeholder=""  />
 		<label id="iletisim.epostalbl" value="E-Posta" />
-		<textbox type="text" id="iletisim.eposta"  value="ofylr5ns7uk1kp9o45o99vogxuah303efzr3us2hbfkbal7xcvli51h5ysf4rp4y4a9gkavjn874lx0kg0m7jsf111dx5vfact1m1e712idcwv9lo3a0pydfy6oe1n2pesmz2c4t1p6c6tpwiv2esa8w0lw8zh8gnba6pp8dj26ulzc0ra6z8pisnfcczbmybybnj8u5pi8cs8e5t2u9uxt2soptm4d0thuyxijaa45hq409ww17s1wj6fz3it6"  width="472"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="iletisim.eposta"  value="pymw3jpwaf8hq0mqj7dfzhw8qtlodo6z65l02nk39krzq3dob6xbov4fplhgbs6ff1vumn6axgg70obv255rk61vcud9ya7yxz2lvvalq2hqt8wvge9rojyia6vvxm2w8xsaie14eqx7bq9g57h2yyg6cf6hstmdgxjw6tuif4jn84u6gaps9qi8675zszo1w21k3oidvcpsfai4vx12qwk4zwmyvsgf9o5l6et3sy6dl6ycgv5j3s4211g987h"  width="472"  maxlength="255"  placeholder=""  />
 		<label id="iletisim.gmapLinklbl" value="Google Map" />
-		<textbox type="text" id="iletisim.gmapLink"  value="utj7spai0brldtkp2sssd4ao7riqaskwfcetrcwf6vvw007p1b23vczgpcc6mwpkxasypf9imvrtzjy11s22p59s2bw2czmxxen8h4x4p2pdk90wntktn4z06gcjininqsx8f9yc21fc9ol6rq4rirp80i6le26aeera3w2ibnnql7unwkhlp84dhu7o7isah1dxlf5vh9rrs2uojetbceva9fv39co81gna2wa93zkaatig0dbxjov87eb3s187codq9ltae0qsbgp36di2a0j28us45fzg7sratlfaa5x54rgaqdvjdw3o34d26seyd6h5o73bax9lrihc0eqwdmky1ndptj3gzmq9hpl3z4pja1rdfbndwpdc2sosdrixxtwod2iilzbg8xzx00mi457jq7l8i26qiatwe2amviegt0r97r3akddqkfm9gvz93uztek31ekh3hvnkftymwb0u5w1zrx2lv9ct36c62ip5tqmah1ru"  width="300"  maxlength="500"  placeholder=""  />
+		<textbox type="text" id="iletisim.gmapLink"  value="9vf2vh46yi7mo0atwg5xjbtjam6vw4dfp6f2yjm5w3e41bm0yel57a4c3vk3gphjgxxg8hz3yljicno6k0peicd87rdkkq4h3ezwelkc4hqzuxug38j2dav2g87e53mgg37p62w3qfn3nuc1f31q7v7cgwcsiwfskckxrkpsofi65l02g8m3x84i14asvmqzrrezuf41qocc73rr2lin6b4xk0gxp036lu1zao8fk0ntif0u1wm3mas8egvgob4otzmt4yjp1pt1s5lmleg0msro9j9v61vix035vpu8fbxk5pv95rqcpqj5uiwb1opnwxyzb61ncszmfo23fbv13rlil1ustflchkivxgzr1as4lo1yd5ftd357pcp65vs4lrftsnt37q20o0xrkaa2bqeaciwx5r2opvtdk4ets0fzq9pg9qczb518lpjpa7mj7cxn6t71x019flnhm1i74r9373jbnfhn8adfe80g2tui6zo90nu8"  width="300"  maxlength="500"  placeholder=""  />
 	</window>
 	<script>
 function setIlIlce(ilce,n) {	if (ilce) {		$('#iletisim\\.ilKodu').val(ilce.ilKodu);		$('#iletisim\\.ilceKodu').val(ilce.ilceKodu);	} else {		$('#iletisim\\.ilKodu').val("");		$('#iletisim\\.ilceKodu').val("");	}}$(document).ready( function () {});	</script>

@@ -1,6 +1,19 @@
 <?page title="DOCSYS" ?>
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
+	<window id="listIsciWindow">
+		<listbox id="list">
+			<listhead>
+				<listheader label="T.C. Kimlik No" id="kisi.tckNo" />
+				<listheader label="Ad Soyad" id="kisi.adSoyad" />
+				<listheader label="İşyeri" id="isyeri.unvan" />
+				<listheader label="Şube" id="isyeri.birim.tanim" />
+				<listheader label="Üye Baş. Tar." id="uye.girisGecerlilikTarihi" />
+				<listheader label="Cep Telefonu" id="cepTel" />
+				<listheader label="e-Posta" id="eposta" />
+			</listhead>
+		</listbox>
+	</window>
 	<script>
 AgemTable.rowDblClick = function(id) {	AgemWM.addQueryString(Agem.json2Param( {kisiId: id}));	AgemWM.link('#genelIsciSelect', {url: 'genel/isci/select.do', refresh:true});	Agem.message('Bilgiler okunuyor...');}	</script>
 </arya>

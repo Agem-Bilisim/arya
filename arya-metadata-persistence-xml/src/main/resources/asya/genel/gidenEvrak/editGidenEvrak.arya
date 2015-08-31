@@ -3,54 +3,54 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addGidenevrakWindow">
 		<label visible="false" id="evrakIdlbl" value="Evrak Id" />
-		<textbox visible="false" type="text" id="evrakId"  value="ti1lqpyz15"  width="200"  placeholder=""  />
+		<textbox visible="false" type="text" id="evrakId"  value="f70kynhfm1"  width="200"  placeholder=""  />
 		<label id="evrakDefterIdlbl" value="Defter" />
 		<combobox id="evrakDefterId"  width="406"  >
-			<comboitem label="zhsvb1wug1" value="rdm5" />
+			<comboitem label="xdnt8jsk9a" value="8ppk" />
 		</combobox>
 		<label id="siraNolbl" value="Sıra No" />
-		<textbox type="text" id="siraNo"  value="0eg0tqb277v9u99akcj8"  width="150"  maxlength="20"  placeholder=""  />
+		<textbox type="text" id="siraNo"  value="v1zgos7i15pixav4yew9"  width="150"  maxlength="20"  placeholder=""  />
 		<label id="gelisTarihilbl" value="Gidiş Tarihi" />
-		<datebox id="gelisTarihi"  value="2012-5-14"  width="120"  placeholder=""  />
+		<datebox id="gelisTarihi"  value="2003-7-21"  width="120"  placeholder=""  />
 		<label id="evrakTarihilbl" value="Evrak Tarihi" />
-		<datebox id="evrakTarihi"  value="2011-9-30"  width="120"  placeholder=""  />
+		<datebox id="evrakTarihi"  value="2012-7-13"  width="120"  placeholder=""  />
 		<label id="evrakNolbl" value="Evrak No" />
-		<textbox type="text" id="evrakNo"  value="3zwkn3s7y4b98hqekmqo"  width="150"  maxlength="20"  placeholder=""  />
+		<textbox type="text" id="evrakNo"  value="eo82fpxs8l8jofsjqg50"  width="150"  maxlength="20"  placeholder=""  />
 		<label id="konulbl" value="Konu" />
-		<textbox type="text" id="konu"  value="outet7pficgv36aq76h7r2v16jnj1kdncxglfr9r4w6qejzfkydzkklotmzqclfny4yw9wysmwlen2crx4jtrl2sfomcy0ls8dd6urcfss5mbtrtj23hrnl4igckajbaod3gyb2khd2z8ygjmu52ksj3m6tucr4krtyxiysvq9wggy6kempczon75ydr54o4k0cq09jorqfmuganmczwfw2yhggq8pscdmreajvfkv0kjho1s77900n97l289zw"  width="406"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="konu"  value="uy992ucpe728j14tzvqdp94rv7o6mb8pvmn9wyzax7jb444gldysgwso0xgw0fin6s41lk6tpnzxppkwbsbqkl1ro42pxqxgd06etqr85azojkwzz7x7lukatopvhlu7yvbz1ebl9s25tl33bmay09abh5l4v5w8j421ga2ehqlvcfu61y0gtvy5agr90s5s2bk0z3c2p7zzkc1afaqwjtn0xd59zfnhp5gzqmc1h849g24afvpojlg87rq19qv"  width="406"  maxlength="255"  placeholder=""  />
 		<label id="kimdenlbl" value="Kime" />
-		<textbox type="text" id="kimden"  value="m4jph4qzg04tuxtmryo1cy4roz3kg09b0mvogcv0etdb13bbrx9t8e7t39cgzqxa7nn6eo1xbpvug5sx64jf1zum6gbb7ucw7eppvvuexp4n38skclbs0e0u9yk9z0dy8hfw8int182s7natligq8di0w1bn8dqr6iw2hwnbws3ucizcdweqmi8svqlz4j045q0xl1g78b92lez0gzhkh497xwc3btyw0of8ct7faq8umxlxx2dhtcaxod6pwwi"  width="406"  maxlength="255"  placeholder=""  onChange="autocomplete("autocomplete/autocomplete/autocomplete.do?tip=gidenEvrakKimden", "param", 5, "Other.empty")" />
+		<textbox type="text" id="kimden"  value="huuu7k9zkh8ok4banwknh0oiama3dpgpvnge0149xpznt5dobhlayrqxw8ryck7hqfd1urxmi1mmkz96n8n694200o5ebimephlmkf79htk0od7k88x5r6qp99g3e9k5h37duni7cp2aq4jqh4wdkdhybh9xokjm7sfeqb9oqh7imj13yejdjia4mnv1a9x188eamm6gs5ganzl8blruhsn6eeb63c3mzfj8yt7jc6ke2vbp09225s2iooglp6y"  width="406"  maxlength="255"  placeholder=""  onChange="autocomplete("autocomplete/autocomplete/autocomplete.do?tip=gidenEvrakKimden", "param", 5, "Other.empty")" />
 		<label id="cinsilbl" value="Cinsi" />
-		<textbox type="text" id="cinsi"  value="opmyf61fneteobp64ejn7foblqvyy3ulvy6r2snx4g38ut6ud5k1zquo4sb8rpmaup9wdiy9pvanaceon7edijesdj086xg7h0zo7fri354qeizlv9gm6xiblh0ap3olr4fjy389e0ipsawcg1ccpsszfb1brcvrg139pvoyxe3gqtmb3kwz1lr2wh0d7gsutz5y0ajwo1h7i5zkfmp0knwkz6der9oqm6qfvglwcvqmbqtrdjrd4z5v5kst6p5"  width="120"  maxlength="255"  placeholder=""  onChange="autocomplete("autocomplete/autocomplete/autocomplete.do?tip=gidenEvrakCinsi", "param", 5, "Other.empty")" />
+		<textbox type="text" id="cinsi"  value="gvg75sb1wgercfsuaaevf0mcqawzcyjkwjhpfilwwmeuix14ag0vp619jeye1uauq41h88ytb020jl3ff1jkq3mh9310bnsoyf4gjzvixpjlnihxzbnioy88g9jyv6opv1e5x74f65jajhwcn18kaj7av4n70mqny8jpc8oet98e2io9i06yo49zrh5wqlclrunre1fm3j8agt0kqe95n7zqo65fx0bqmuurnrazghh9qtc9d9tw6l4pa5jr2vi"  width="120"  maxlength="255"  placeholder=""  onChange="autocomplete("autocomplete/autocomplete/autocomplete.do?tip=gidenEvrakCinsi", "param", 5, "Other.empty")" />
 		<label id="ilisigilbl" value="İlişiği" />
-		<intbox id="ilisigi"  value="760650791"  width="30"  maxlength="4"  placeholder=""  />
+		<intbox id="ilisigi"  value="696162771"  width="30"  maxlength="4"  placeholder=""  />
 		<label id="aciklamalbl" value="Açıklama" />
-		<textbox type="text" id="aciklama"  value="e6atmmezal"  width="526"  placeholder=""  rows="5"  cols="40"  />
+		<textbox type="text" id="aciklama"  value="krwpmdex83"  width="526"  placeholder=""  rows="5"  cols="40"  />
 		<label id="birimlbl" value="İlgili Birim" />
 		<combobox id="birim"  width="406"  >
-			<comboitem label="6zisfsd03q" value="on84" />
+			<comboitem label="q9su79ocra" value="f195" />
 		</combobox>
 		<label id="arsivRefNolbl" value="Arsiv Referans No" />
-		<textbox type="text" id="arsivRefNo"  value="1p642no17hz0xyrst27s"  width="120"  maxlength="20"  placeholder=""  />
+		<textbox type="text" id="arsivRefNo"  value="6xxrpoxfh54a7iljvqmq"  width="120"  maxlength="20"  placeholder=""  />
 		<label id="ilgiliSiraNolbl" value="İlgili Sıra No" />
-		<textbox type="text" id="ilgiliSiraNo"  value="tbgeehhd8fiku8f6qwxz"  width="120"  maxlength="20"  placeholder=""  />
+		<textbox type="text" id="ilgiliSiraNo"  value="qya7t7e0vl497cexcjf6"  width="120"  maxlength="20"  placeholder=""  />
 		<label id="ilgiliKonulbl" value="İlgili Konu" />
-		<textbox type="text" id="ilgiliKonu"  value="lx89354dywawpf1tao3t"  width="406"  maxlength="20"  placeholder=""  />
+		<textbox type="text" id="ilgiliKonu"  value="q9zq39pwyj12bektfhlb"  width="406"  maxlength="20"  placeholder=""  />
 		<label id="kategoriKodlbl" value="Kategori" />
-		<textbox type="text" id="kategoriKod"  value="xuyacx9efg"  width="100"  placeholder=""  onChange="autocomplete("autocomplete/autocomplete/autocomplete.do?tip=kategori", "param", 5, "setKategori")" />
-		<textbox type="text" id="kategoriAciklama"  value="0c7v7lwcg0"  width="300"  placeholder=""  onChange="autocomplete("autocomplete/autocomplete/autocomplete.do?tip=kategoriLabel", "param", 5, "setKategori")" />
+		<textbox type="text" id="kategoriKod"  value="ko66qwshxb"  width="100"  placeholder=""  onChange="autocomplete("autocomplete/autocomplete/autocomplete.do?tip=kategori", "param", 5, "setKategori")" />
+		<textbox type="text" id="kategoriAciklama"  value="4obbkltv51"  width="300"  placeholder=""  onChange="autocomplete("autocomplete/autocomplete/autocomplete.do?tip=kategoriLabel", "param", 5, "setKategori")" />
 		<label id="evrakSurelbl" value="İşlem Süresi" />
-		<intbox id="evrakSure"  value="-837734053"  width="30"  maxlength="4"  placeholder=""  />
+		<intbox id="evrakSure"  value="-268335106"  width="30"  maxlength="4"  placeholder=""  />
 		<checkbox type="text" id="sureIptal"  checked="false"  label="Tamamlandı"  onCheck=""  width="20"  />
 		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
-		<textbox visible="false" type="text" id="eklemeTarihi"  value="pert5ockc0"  placeholder=""  />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="q3zrgwarw3"  placeholder=""  />
 		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
-		<textbox visible="false" type="text" id="ekleyen"  value="3mjvbx5l24ff67itmkwvbnptm55leb1xf0qhydhon80s6k277q46a63oid2w13oo9ebyiqyl55gldbylomuepzzkx0uc8fyput01s5eke8adqozti9shmk8od0zxs77naaju755n396wxglyx394n4n1wz0zck7qmm3tbyczs8pavb3mhwtn0z4iceh60ttonwwd91ba4o9zjbydunc30i6gmhq2tqmyomigs8m01i0ra6eggqyijcefbknz3zx"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="ekleyen"  value="kko4iscxcr7dhwsbqnpi3izyk7cabbnd8pa11c930nqwmzpcjtk4g21fh48jhunnnnr5n5tda67obhi325hp3u4gphvc1e9xrn1mr48kpip2bxr008tzehg7cdlw2f5mvvrbax6ktgd52z0brfvcus19mavrldwkjkut4jnda02h6s400ojzeeb1jf81eigdb317w3v6s78yh4d6gta04cxdbc5m11exb25prcltjvc5kahya8kg569vf59v9sl"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
-		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="usum18hs4y"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="uszlvpiisw"  placeholder=""  />
 		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
-		<textbox visible="false" type="text" id="sonGunleyen"  value="edqbzqi3fw2edn6tmo9oxz43u2s2syn6cg0q2zsq30tsqu1hw6w2b0f0m8xy7f8zgdh880ir1st5pf9jaoohlfwpk70ag5wn5gycr7no7zgewyeyo1u0bdz0mbx0ydijcytbmx0znxsjri7gubov6mqilo4sqajvt9bwqtkayz77w04oj2njphw4hf15zmzrojkbdl3awnbit3nlsor71b7oeex75ypv0bxhembbwz7g905g1rx0kgbz33630hx"  maxlength="255"  placeholder=""  />
-		<textbox visible="false" type="text" id="gecikme"  value="r6xsdx815r"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="pxd6m5s6n7egaxsmq8jez3qcs9y9zzkqu0msa5s0ohunf6gv2bbifzitnqs8oihl4o9qjyy91ydfbde8ztqn3oiy2vkpzsqhphhn8upnchyruccokzo6kcm3vdj6ol8e3s6suia0nulkl88k1cheit94hbzxnhj8s04p4d9e0qeas9fue0pkkgd1jdb2i8vkyu49k1xvp0mk2e9kkoxwf6gj3wj202s9zl15uxgf1x7fsxptxj8tq9edc341zv5"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="gecikme"  value="il9vhv4cok"  placeholder=""  />
 	</window>
 	<script>
 var setCinsi = function(d) {	Agem.setValue({ cinsi : d.cinsi});};var prepareGidenEvrakUrl = function() {	return  'genel/gidenEvrak/autocomplete.do'; };$(document).ready(	function () {		if ($("#evrakId").val()) {			AgemWM.addQueryString(Agem.json2Param( {evrakIdParam: $("#evrakId").val(), evrakId: $("#evrakId").val()}));			var json = <bean:write name="genelGidenEvrakForm" filter='false'/> 			AgemWM.addSideInfo(				{					id:"gidenEvrakInfo",					info: [						{label: "Sıra No", value: json.siraNo, clazz: "pointer", 							onclick: function () {								AgemWM.link('#genelGidenEvrakSelect', {url: 'genel/gidenEvrak/select.do'});							}						},						{label: "Gidiş Tarihi", value: json.gelisTarihi, clazz:"not-bold"},						{label: "Kime", value: json.kimden, clazz:"not-bold"},						{label: "Konu", value: json.konu, clazz:"not-bold"}					],					type: 1				}			);			$('#gecikmeMsg').css('top',parseInt($('#agem_label_input_div_evrakSure').css('top'))+8);			if (json.gecikme == 'gecikme') {				$('#gecikmeMsg').html('Evrağın işlem tarihi geçmiş ya da son gününde...');			} else {				$('#gecikmeMsg').html('');			}					} else {			$('#agem_label_input_div_dosyaEkleBtn').hide();			AgemWM.removeSideInfo({type: 1, id: "gidenEvrakInfo"});		}		$('#genelGidenEvrakForm .agem-form-div').append('<div id="siraNoAciklamaDiv" style="position:absolute; color:#942730">Boş geçilirse sıradaki numara verilecektir</div>');		$('#siraNoAciklamaDiv').css('top', function() { return $('#agem_label_input_div_siraNo').position().top+7; });		$('#siraNoAciklamaDiv').css('left', function() { return $('#agem_label_input_div_siraNo').position().left+$('#agem_label_input_div_siraNo').width() + 5;});	});function dosyaEkle() {	if (Agem.byId('evrakId') && Agem.byId('evrakId').value) {		AgemWM.window(				{					modal : true,					label: " Giden Evrak - Ekli Dosyalar", 					url:"genel/nesneDosya/list.do?pageSize=-1&nesneKodParam=evrakId&nesneIdParam="+Agem.byId('evrakId').value,					id : "nesneDosyaWindow",					width: 800, 					height: 600								});	}		};function setKategori(d) {	if (d && d.value) {		$('#kategoriKod').val(d.value);				$('#kategoriAciklama').val(d.label);	}}	</script>

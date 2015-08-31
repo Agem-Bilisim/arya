@@ -4,7 +4,7 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="selectCsvcsgbuyegeridonusWindow">
 		<label id="dosyaIdlbl" value="Yüklenen Dosyalar" />
 		<combobox id="dosyaId"  width="320"  >
-			<comboitem label="vk57wa28f7" value="zehk" />
+			<comboitem label="9rpvbjiar2" value="0w73" />
 		</combobox>
 		<button id="yukleBtn" label="Yükle"  onClick="dosyaYukle()"  width="90"  />
 	</window>

@@ -2,26 +2,34 @@
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addSozlesmedonemWindow">
-		<textbox visible="false" type="text" id="sozlesmeDonemId"  value="dcp5vzvf4c"  placeholder=""  />
-		<textbox visible="false" type="text" id="sozlesmeId"  value="2dcbrcnusk"  placeholder=""  />
+		<textbox visible="false" type="text" id="sozlesmeDonemId"  value="mj791lq6ms"  placeholder=""  />
+		<textbox visible="false" type="text" id="sozlesmeId"  value="h65a9zx9ua"  placeholder=""  />
 		<label id="donemAylbl" value="Dönem Ay" />
 		<combobox id="donemAy"  width="100"  >
-			<comboitem label="8jrflwle08" value="xm9v" />
+			<comboitem label="khj8mf7ge0" value="wih5" />
 		</combobox>
 		<label id="donemYillbl" value="Dönem Yıl" />
 		<combobox id="donemYil"  width="100"  >
-			<comboitem label="uhnycjtl8g" value="52ax" />
+			<comboitem label="40aj90z7i3" value="rfz5" />
 		</combobox>
 		<label id="anlasilanDegerlbl" value="Anlaşılan" />
-		<textbox type="text" id="anlasilanDeger"  value="vbkoxwtgo2bvvwuyj55nmig26ud8i4271lb3vkgb4btfkodh9syolb7hn3aeh3tokw7trncy70lcw0qqi6m3flda8iy6r4o9nvgd800fjny0ab4x1rs6g4mbtapna7zzoy40nlylewkzfj02oqw91n9j24j26gy9ue5d0xsk3efb32qi23rmqo76vqpzqbs7pqed9v301dwqtqinbz7ridssloalrou14ebw9d65meaoh5gj7xiga0rq6dutcbk"  width="500"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="anlasilanDeger"  value="6c0tdtj02h2vg2ga56f0d3zsj60tf76jqheq3e8xrqboji6nz3xf6plqm2xn6r80ez4pca6yk6x1vmudtchvhh5ni6dbzqnk1nbe5vx0l5p8700xpgoixj8m572388hgb4j5u45tjmzrd3ca2wxl7ku4ylh1398ocgvqa12kgl9wrzygtzhpjub0240f1luqlgswze1vyo6w21a41erchvf6zzfq6h5pl791rz4a19sj9ncuqtwfkej7vbl6dnk"  width="500"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
-		<textbox visible="false" type="text" id="eklemeTarihi"  value="7hzli2l3oh"  placeholder=""  />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="q8ffzip45r"  placeholder=""  />
 		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
-		<textbox visible="false" type="text" id="ekleyen"  value="4mvks7lxm4"  placeholder=""  />
+		<textbox visible="false" type="text" id="ekleyen"  value="4fx2zolcok"  placeholder=""  />
 		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
-		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="vx76uj9un6"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="dq7py5zfzn"  placeholder=""  />
 		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
-		<textbox visible="false" type="text" id="sonGunleyen"  value="7murwbi5w4"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="1a3q1doqzy"  placeholder=""  />
+		<listbox id="list">
+			<listhead>
+				<listheader label="Dönem Yıl" id="donemYil" />
+				<listheader label="Dönem Ay" id="donemAy" />
+				<listheader label="Anlaşılan" id="null" />
+				<listheader label="&nbsp;" id="null" />
+			</listhead>
+		</listbox>
 	</window>
 	<script>
 var _sozlesmeId = <bean:write name="p_sozlesmeIdParam"/>;var _sozlesmeDonemId = ('<bean:write name="p_cleanId"/>' == '1') ? '' : '<bean:write name="p_sozlesmeDonemId"/>';Other.KULLANICI_BILGI_TEK_SATIR=true;$(document).ready( 		function () {			Agem.addElement('input','forward', {type:'hidden', name:'forward', value:'list', noClear:"1"}, null, document.forms['genelSozlesmeDonemForm']);			Agem.addElement('input','sozlesmeIdParam', {type:'hidden', name:'sozlesmeIdParam', value: _sozlesmeId, noClear:"1"}, null, document.forms['genelSozlesmeDonemForm']);			<logic:notEmpty name='r_message'>				Agem.message('<bean:write name="r_message" filter="false"/>');			</logic:notEmpty>						if (_sozlesmeDonemId == "") {				var f = AgemTable.first();				if (f) {					AgemTable.rowClick(f.id);				} else {					yeniKayit();				}			} else {				AgemTable.rowClick(_sozlesmeDonemId);			}		});AgemTable.rowClick = function(id) {	if (!id) {		id = AgemTable.SELECTED_ID;		if (id == null) {			Agem.error("Lütfen kayıt seçiniz.");			return;		}	}	Agem.ajax("genel/sozlesmeDonem/select.do", {json:1,sozlesmeDonemId:id}, function (x) {		Agem.setValue(x);		Other.writeKullaniciBilgi();	});};function yeniKayit() {	Agem.setValue(		{sozlesmeDonemId:'',		 donemAy:AgemDate.defaultMonth(), 		 donemYil:AgemDate.defaultYear(), 		 anlasilanDeger:'',		 eklemeTarihi:'',		 ekleyen:'',		 sonGunlemeTarihi:'',		 sonGunleyen:''	});	Other.writeKullaniciBilgi();}function kayitSil(id, f) {	if (!Agem.byId(id).value) {		Agem.error("Lütfen kayıt seçiniz.");		return;	}	var x = [			'forward=list',			'sozlesmeDonemId='+Agem.byId(id).value,			'cleanId=1',						'sozlesmeIdParam=<bean:write name="p_sozlesmeIdParam"/>'		];	if (confirm('Kaydı silmek istediğinizden emin misiniz?')) 		Agem.open( 'genel/sozlesmeDonem/delete.do?'+x.join('&'));}var kaydet = function(){	$('#sozlesmeId').val(_sozlesmeId);	AgemForm.submit('sozlesmeDonemId', 'genelSozlesmeDonemForm');};	</script>

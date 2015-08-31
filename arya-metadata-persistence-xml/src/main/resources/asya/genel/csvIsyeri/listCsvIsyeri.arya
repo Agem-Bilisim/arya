@@ -1,6 +1,14 @@
 <?page title="DOCSYS" ?>
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
+	<window id="listCsvisyeriWindow">
+		<listbox id="list">
+			<listhead>
+				<listheader label="null" id="csvDetayId" />
+				<listheader label="<%=CsvIsyeriService.getNitelikLabel(values[i])%>" id="<%=values[i]%>" />
+			</listhead>
+		</listbox>
+	</window>
 	<script>
 $(document).ready( 		function () {		}	);AgemTable.rowDblClick = function(id) {};var checkAll = function (checked){	$(".chck").attr("checked",checked);};var AKTARILACAKLAR = null;var seciliAktar = function(){	Agem.perde(true,10000,"Lütfen Bekleyin");	AKTARILACAKLAR = $(".chck:checked");	if(AKTARILACAKLAR.length > 0)		aktar(0);	else 		alert("Lütfen kayıt seçiniz");}var aktar = function(i){	if(AKTARILACAKLAR.length > i){		Agem.ajax("genel/csvIsyeriAktar/edit.do", {json:1,csvDetayId:$(AKTARILACAKLAR[i]).attr("value")}, function (x) {			$(AKTARILACAKLAR[i]).remove();			aktar(i+1);		});	} else {		if(i > 0)			alert(i + " adet işyeri aktarılmıştır.")		AKTARILACAKLAR = null;			Agem.perde(false);	}}	</script>
 </arya>

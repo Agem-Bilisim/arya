@@ -3,11 +3,11 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addSubeatamaWindow">
 		<label visible="false" id="ilKodulbl" value="İl Kodu" />
-		<textbox visible="false" type="text" id="ilKodu"  value="0lre1a7clj"  placeholder=""  />
+		<textbox visible="false" type="text" id="ilKodu"  value="1yf4yrwip3"  placeholder=""  />
 		<label id="ilAdilbl" value="İl Adı"  onClick=""  />
 		<label id="subelbl" value="Şube" />
 		<combobox id="sube"  width="240"  >
-			<comboitem label="l7uojri4tg" value="u0qr" />
+			<comboitem label="62cdmuga9g" value="9oil" />
 		</combobox>
 	</window>
 	<script>

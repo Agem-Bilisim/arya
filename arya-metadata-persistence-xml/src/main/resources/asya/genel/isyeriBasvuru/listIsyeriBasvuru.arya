@@ -1,6 +1,19 @@
 <?page title="DOCSYS" ?>
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
+	<window id="listIsyeribasvuruWindow">
+		<listbox id="list">
+			<listhead>
+				<listheader label="Şube" id="sube" />
+				<listheader label="SGK No/Kod" id="kod" />
+				<listheader label="Taraf" id="taraf" />
+				<listheader label="Basvuru" id="basvuruTarihi" />
+				<listheader label="Durum" id="durum" />
+				<listheader label="Süre" id="kalanGun" />
+				<listheader label="Sözleşme" id="sozlesmeTarihi" />
+			</listhead>
+		</listbox>
+	</window>
 	<script>
 $(document).ready( 		function () {		}	);AgemTable.rowDblClick = function(id) {	if (id) {		var d= AgemTable.get(id);		if (d.secilebilir == "1") {			if (AgemWM.exists('#genelBasvuruSelect')) {				AgemWM.addQueryString(Agem.json2Param({basvuruIdParam: id, basvuruId: id}));				AgemWM.link('#genelBasvuruSelect', {url: 'genel/basvuru/select.do'});				Agem.message('Bilgiler okunuyor...');			} else {				<agem:access URL="genel/basvuru/select">				AgemWM.window({ link:"genel/basvuru/select.do?basvuruId="+id + "&basvuruIdParam="+id, label: "Başvuru İşlemleri",width: 800, height: 600});				</agem:access>			}	   }    }	};	</script>
 </arya>

@@ -4,33 +4,33 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listUyelistesiWindow">
 		<label id="turParamlbl" value="Liste Türü" />
 		<combobox id="turParam"  width="206"  >
-			<comboitem label="4jq003n1ag" value="9r8n" />
+			<comboitem label="1oyljsxqt1" value="17js" />
 		</combobox>
 		<label id="tarihParamlbl" value="Tarih" />
-		<datebox id="tarihParam"  value="2010-9-30"  width="206"  placeholder=""  />
+		<datebox id="tarihParam"  value="2004-3-26"  width="206"  placeholder=""  />
 		<label id="subeParamlbl" value="Şube" />
 		<combobox id="subeParam"  width="206"  >
-			<comboitem label="6ynjh0cclv" value="pwyj" />
+			<comboitem label="liflqgvxb4" value="7mvy" />
 		</combobox>
 		<label id="ilKoduParamlbl" value="İl" />
 		<combobox id="ilKoduParam"  width="100"  >
-			<comboitem label="8q94f8kkav" value="jj2l" />
+			<comboitem label="4yg8556wcz" value="atd5" />
 		</combobox>
 		<combobox id="ilceKoduParam"  width="100"  >
-			<comboitem label="79elh94ygr" value="1nwi" />
+			<comboitem label="o4opuk8lbh" value="9126" />
 		</combobox>
 		<label id="isyeriKategoriIdParamlbl" value="Kategori" />
 		<combobox id="isyeriKategoriIdParam"  width="206"  >
-			<comboitem label="e56w8oa0f0" value="jzra" />
+			<comboitem label="2dlf81dqxg" value="5hw4" />
 		</combobox>
 		<label id="orgutDurumParamlbl" value="Örgüt Durumu" />
 		<combobox id="orgutDurumParam"  width="206"  >
-			<comboitem label="3t8ez6wgdg" value="z4tz" />
+			<comboitem label="n0yknl02ku" value="w4k8" />
 		</combobox>
 		<checkbox type="text" id="bakanlikIssizParam"  checked="false"  label="Bakanlık Kayıtlarında İşsiz Olan Üyeler"  onCheck=""  width="40"  />
 		<label id="uyeDetayParamlbl" value="Üye Detay" />
 		<combobox id="uyeDetayParam"  width="206"  >
-			<comboitem label="fc5bqlf7ih" value="p3jr" />
+			<comboitem label="kdg2lld9eh" value="l9c5" />
 		</combobox>
 		<checkbox type="text" id="isciSayilariniGosterParam"  checked="true"  label="İşçi Sayılarını Göster"  onCheck=""  width="40"  />
 		<checkbox type="text" id="uyesiOlmayaniGostermeParam"  checked="false"  label="Üyesi Olmayan İşyerlerini Gösterme"  onCheck=""  width="40"  />

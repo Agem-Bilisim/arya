@@ -2,9 +2,9 @@
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listAidatWindow">
-		<textbox visible="false" type="text" id="aidatIdParam"  value="525sfs2087"  placeholder=""  />
-		<textbox visible="false" type="text" id="isyeriIdParam"  value="agif0z8ugm"  placeholder=""  />
-		<textbox visible="false" type="text" id="subeParam"  value="88mc1o39tc"  placeholder=""  />
+		<textbox visible="false" type="text" id="aidatIdParam"  value="7ikd1w7xi3"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriIdParam"  value="ethunzfd8q"  placeholder=""  />
+		<textbox visible="false" type="text" id="subeParam"  value="u7qvr1daoa"  placeholder=""  />
 	</window>
 	<script>
 AgemForm.submitMessage('Arama yapılıyor...');var setIsyeri = function(d) {	Agem.setValue({ isyeriIdParam : d.isyeriId, 'isyeriParam.subeParam' : d.sube, 'isyeriParam.sgkKisaNoParam' : d.sgkKisaNo, 'isyeriParam.unvanParam':d.unvan});};var prepareIsyeriUrl = function() {	var orgutluParam = ($("#isyeriParam\\.orgutluParam").val() ? "orgutluParam=1" : "");	var subeParam = ($("#isyeriParam\\.subeParam").val() ? "subeParam=" + $('#isyeriParam\\.subeParam').val(): "");	var param = orgutluParam + ((orgutluParam == "") ? "" : "&") + subeParam;	return "genel/isyeri/autocomplete.do" + (param == "" ? "" : "?"+param); };$(document).ready(function () {		$("#isyeriParam\\.kisaAdParam").keyup(function() {		if ($(this).val()) {			$("#kisaAdaGoreGruplaParam").attr("checked", true);		} else {			$("#kisaAdaGoreGruplaParam").attr("checked", false);		}	});	Agem.addMaskEvents("isyeriParam.sgkKisaNoParam");});var listele = function() {	if (! ($('#isyeriIdParam').val())) {		$('#subeParam').val($('#isyeriParam\\.subeParam').val());	} else {		$('#subeParam').val(null);	}	AgemWM.submit(null, 'genelAidatParameterForm');}	</script>

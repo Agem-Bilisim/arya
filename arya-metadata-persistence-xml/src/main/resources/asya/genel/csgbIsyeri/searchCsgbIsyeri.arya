@@ -2,39 +2,39 @@
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listCsgbisyeriWindow">
-		<textbox visible="false" type="text" id="isyeriIdParam"  value="hsqh1kattg"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriIdParam"  value="6m3eeagcrb"  placeholder=""  />
 		<label id="unvanParamlbl" value="İşyeri Ünvanı" />
-		<textbox type="text" id="unvanParam"  value="bohwjr78egcp2rberc231a9vtc37cfzlrl3f09khmjrjk74edq5bwdiafnnd8e8mkicxh2tjrghd832xkcwgtyc0ffxpchjfnxf2rni7kjr31c0n1chr7gnni6kn7986js2fgjdp6ftery67sbq6g04pgll7l0w1l87z1fwgg6m0ezsu8xgb75u68gkp6hyckhjyyumdfi33il2r5azxsjlnjjtd21qdefpowx74ncgqf0xrhyr4vnl88ynklbo"  width="361"  maxlength="255"  placeholder=""  top="56" onChange="autocomplete("genel/csgbIsyeri/autocomplete.do", "unvanParam", 5, "setIsyeri")" />
+		<textbox type="text" id="unvanParam"  value="o1cf34au7uke0arm9t61r6ljt6glyfrygspf2j94da75wnc456wgx59zovldm2uxqp1yguwn5pmn4xph6v433ava7e36v1zwtk42826jh4odj1vfp5snalq8waftp4qv79fqmz8gn2viqrtntudjx4n9xq5lpuwyeocv64h6s22qzi4u1s8rc9u5zgx7a4lpmx8b1pu1gb0mg07a4unsvomguoce89kvx9sy2wmkfej15uf43srhzjwx9o0y3qt"  width="361"  maxlength="255"  placeholder=""  top="56" onChange="autocomplete("genel/csgbIsyeri/autocomplete.do", "unvanParam", 5, "setIsyeri")" />
 		<label id="calisanSayisiBasParamlbl" value="ÇSGB Çalışan Sayısı" />
-		<intbox id="calisanSayisiBasParam"  value="-1000795418"  width="98"  maxlength="5"  placeholder=""  />
-		<intbox id="calisanSayisiBitParam"  value="217719541"  width="98"  maxlength="5"  placeholder=""  />
+		<intbox id="calisanSayisiBasParam"  value="655000570"  width="98"  maxlength="5"  placeholder=""  />
+		<intbox id="calisanSayisiBitParam"  value="-658356821"  width="98"  maxlength="5"  placeholder=""  />
 		<label id="uyeSayisiBasParamlbl" value="ÇSGB Üye Sayısı" />
-		<intbox id="uyeSayisiBasParam"  value="-707762346"  width="98"  maxlength="5"  placeholder=""  />
-		<intbox id="uyeSayisiBitParam"  value="1334192020"  width="98"  maxlength="5"  placeholder=""  />
+		<intbox id="uyeSayisiBasParam"  value="-257128910"  width="98"  maxlength="5"  placeholder=""  />
+		<intbox id="uyeSayisiBitParam"  value="-268605603"  width="98"  maxlength="5"  placeholder=""  />
 		<label id="oranBasParamlbl" value="ÇSGB Üye Oran" />
-		<intbox id="oranBasParam"  value="-1730328268"  width="98"  maxlength="5"  placeholder=""  />
-		<intbox id="oranBitParam"  value="770117317"  width="98"  maxlength="5"  placeholder=""  />
+		<intbox id="oranBasParam"  value="1281233024"  width="98"  maxlength="5"  placeholder=""  />
+		<intbox id="oranBitParam"  value="363686872"  width="98"  maxlength="5"  placeholder=""  />
 		<label id="ilKoduParamlbl" value="İl" />
 		<combobox id="ilKoduParam"  width="98"  >
-			<comboitem label="mnq7xxf4sn" value="9x9d" />
+			<comboitem label="ip327evqdg" value="8if0" />
 		</combobox>
 		<combobox id="ilceKoduParam"  width="98"  >
-			<comboitem label="3wm9hz8cob" value="hwob" />
+			<comboitem label="vns12p2n0j" value="ahdy" />
 		</combobox>
 		<label id="orgutluParamlbl" value="Örgütlü" />
 		<combobox id="orgutluParam"  width="120"  >
-			<comboitem label="orgpjsuzdr" value="k42f" />
+			<comboitem label="w0nh8cukef" value="zu21" />
 		</combobox>
 		<label id="kanunKapsaminaAlinisTarihiBasParamlbl" value="Kan. Kap. Alınış Baş." />
-		<datebox id="kanunKapsaminaAlinisTarihiBasParam"  value="2007-5-18"  width="100"  placeholder=""  />
+		<datebox id="kanunKapsaminaAlinisTarihiBasParam"  value="1999-9-25"  width="100"  placeholder=""  />
 		<label id="kanunKapsaminaAlinisTarihiBitParamlbl" value="Kan. Kap. Alınış Bit." />
-		<datebox id="kanunKapsaminaAlinisTarihiBitParam"  value="1992-7-15"  width="100"  placeholder=""  />
+		<datebox id="kanunKapsaminaAlinisTarihiBitParam"  value="2012-5-4"  width="100"  placeholder=""  />
 		<checkbox type="text" id="onaylananUyelerParam"  checked="false"  label="Onaylanan Üye"  onCheck=""  width="50"  />
 		<checkbox type="text" id="istifaEdenUyeParam"  checked="false"  label="İstifa Eden Üye"  onCheck=""  width="50"  />
 		<label visible="false" id="ilKodlariParamlbl" value="İl" />
-		<textbox visible="false" type="text" id="ilKodlariParam"  value="7accuc0v78"  placeholder=""  />
+		<textbox visible="false" type="text" id="ilKodlariParam"  value="a19blka417"  placeholder=""  />
 		<label id="ilAdlariParamlbl" value="İller" />
-		<textbox type="text" id="ilAdlariParam"  value="y32ipif17g"  width="361"  placeholder=""  readonly="true"  />
+		<textbox type="text" id="ilAdlariParam"  value="czfrtbg7n2"  width="361"  placeholder=""  readonly="true"  />
 	</window>
 	<script>
 AgemForm.submitMessage('Arama yapılıyor...');var setIlIlceParam = function (d) {	Agem.setValue( {		"iletisim.ilce.param": d.value	});};var setIsyeri = function (d) {	if (d.isyeriId) {		AgemWM.addQueryString(Agem.json2Param( {isyeriIdParam: d.id, isyeriId: d.id}));		AgemWM.link('#genelCsgbIsyeriSelect', {url: 'genel/csgbIsyeri/select.do'});	}};function ilKoduDegisti() {	var ilKodu = $('#ilKoduParam').val();		$('#ilceKoduParam').children().remove();	if (ilKodu) {		Agem.ajax("genel/ilce/list.do", {ilKoduParam:ilKodu, pageSize:10000, sort:'ILCE.ILCE_ADI',dir:'asc', json:1}, function (x) {			$("#ilceKoduParam").append("<option value=''></option>");			for (var i=0; i < x.results.length; i++) {				$("#ilceKoduParam").append("<option value='"+x.results[i].ilceKodu+"'>"+x.results[i].ilceAdi+"</option>");			}		});		}}$(document).ready( function () {	$("#ilAdlariParam").click(function () {		AgemForm.open('#iller_form', null, null, true);		});});function iller_ata() {	var ids = [];	var labels = [];	$(".iller_checks:checked").each(		function () {			ids.push( $(this).val() );			labels.push( $(this).attr("label") );		}	);	$("#ilKodlariParam").val(ids.join(","));	$("#ilAdlariParam").val(labels.join(","));	$('#iller_form').hide();	Agem.perde(false);}function iller_temizle() {	$("#ilKodlariParam").val("");	$("#ilAdlariParam").val("");	$(".iller_checks:checked").each(			function () {				$(this).attr("checked", "");			}		);}	</script>

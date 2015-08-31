@@ -1,6 +1,7 @@
 package tr.com.agem.arya.metadata.builder;
 
 import java.lang.reflect.Field;
+import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -19,6 +20,7 @@ public class MetadataBuilder {
 	private StringBuilder xml = null;
 	private boolean isScriptTagOpened = false;
 	private boolean isViewTagOpened = false;
+	private boolean isListTagOpened = false;
 	
 	public MetadataBuilder() {
 		super();
@@ -31,10 +33,10 @@ public class MetadataBuilder {
 		xml.append("xsi:schemaLocation=\"aryaportal.org arya.xsd\">\n");
 	}
 
-	public void beginViewMetadata(String actionName, Class<?> cls) {
+	public void beginViewMetadata(String actionName, String className) {
 		isViewTagOpened = true;
 		xml.append("\t<window id=\"")
-				.append(MetadataGeneratorUtil.getInstance().generateWindowId(actionName, cls.getName()))
+				.append(MetadataGeneratorUtil.getInstance().generateWindowId(actionName, className))
 				.append("\">\n");
 	}
 	
@@ -43,7 +45,7 @@ public class MetadataBuilder {
 		xml.append("\t<script>\n");
 	}
 
-	public void appendViewBody(Class<?> cls, String[] properties, String actionName) {
+	public void appendViewBody(Class<?> cls, String[] properties) {
 
 		boolean generateRandomVal = Boolean.parseBoolean(PropertyReader.property("generate.random.values"));
 
@@ -104,6 +106,17 @@ public class MetadataBuilder {
 
 	}
 	
+	public void appendViewBody(HashMap<String, String> properties) {
+		
+		if (!isListTagOpened) {
+			xml.append("\t\t<listbox id=\"list\">\n");
+			xml.append("\t\t\t<listhead>\n");
+			isListTagOpened = true;
+		}
+		// TODO remember to other attributes too.
+		xml.append("\t\t\t\t<listheader label=\"").append(properties.get("title")).append("\" id=\"").append(properties.get("property")).append("\" />\n");
+	}
+	
 	public void appendScriptBody(String script) {
 		xml.append(script);
 	}
@@ -125,8 +138,13 @@ public class MetadataBuilder {
 	}
 
 	public void endViewMetadata() {
+		if (isListTagOpened) {
+			xml.append("\t\t\t</listhead>\n");
+			xml.append("\t\t</listbox>\n");
+		}
 		xml.append("\t</window>\n");
 		isViewTagOpened = false;
+		isListTagOpened = false;
 	}
 
 	public void endFile() {
@@ -144,5 +162,5 @@ public class MetadataBuilder {
 	public boolean isViewTagOpened() {
 		return isViewTagOpened;
 	}
-	
+
 }

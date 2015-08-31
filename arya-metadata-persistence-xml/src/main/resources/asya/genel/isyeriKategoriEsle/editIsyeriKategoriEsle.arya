@@ -3,7 +3,7 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addIsyerikategoriesleWindow">
 		<label visible="false" id="merkezIdlbl" value="Merkez Id" />
-		<textbox visible="false" type="text" id="merkezId"  value="7ro5guqilg"  placeholder=""  />
+		<textbox visible="false" type="text" id="merkezId"  value="snbg6n3nx5"  placeholder=""  />
 	</window>
 	<script>
 		</script>

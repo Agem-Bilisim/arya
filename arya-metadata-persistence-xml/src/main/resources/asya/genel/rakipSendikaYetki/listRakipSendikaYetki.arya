@@ -3,35 +3,44 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addRakipsendikayetkiWindow">
 		<label visible="false" id="rakipSendikaYetkiIdlbl" value="Rakip Sendika Yetki Id" />
-		<textbox visible="false" type="text" id="rakipSendikaYetkiId"  value="1o7p7kdsch"  placeholder=""  />
+		<textbox visible="false" type="text" id="rakipSendikaYetkiId"  value="mge6ypa3sh"  placeholder=""  />
 		<label id="unvanlbl" value="İşyeri Ünvanı" />
-		<textbox type="text" id="unvan"  value="qi64nefqgt57onlzessr072n33pftalgf4mvrc7xrifmp92s2kd7acvzxgbug2b83u0p4lhn6ket7b6d0xghiy74ulh4qbuvsgaw0d5gq8gjeds5klrusp3eqg3xkilnkz6s1k14zovpfe9e535x9wu1df9mpz8xct7f3p83xeh11z0rl75ak04ladfi9l1184g8o5clzldnwke7a5x2h9u5jdxagt9jczfoegldu5iad86odmo9s70fiiwdn76"  width="260"  maxlength="255"  placeholder=""  onChange="autocomplete("genel/csgbIsyeri/autocomplete.do", "unvanParam", 5, "setCsgbIsyeri")" />
+		<textbox type="text" id="unvan"  value="1ssu0zvmce2w276qsvj4a53k3u64yofwc8u9i1uv03rdd4kt7azy0mtzb95rgipqfnw0gahopwotdwrs070p8jhcyaa47heo3ad6ngbxfuaj7vzxnxibibbn89lgxgip6o6dn8dbac0vec4y486o8oycyvz6yxx06uqyvlnleaufjde5v1bx0okra7r88ei3x7hdvxdf8xlh14khkf9a2szlhulvs1n59jj9gnix2trmlunyzu873kscjz530ge"  width="260"  maxlength="255"  placeholder=""  onChange="autocomplete("genel/csgbIsyeri/autocomplete.do", "unvanParam", 5, "setCsgbIsyeri")" />
 		<label id="isvSendikasilbl" value="İşveren Sendikası" />
 		<combobox id="isvSendikasi"  width="260"  >
-			<comboitem label="jz2vdotwdu" value="qqqr" />
+			<comboitem label="7cfpa6isnp" value="kbtu" />
 		</combobox>
 		<label id="yetkiTespitTarihilbl" value="Yetki Tespit Tarihi" />
-		<datebox id="yetkiTespitTarihi"  value="1998-9-6"  width="120"  placeholder=""  />
+		<datebox id="yetkiTespitTarihi"  value="2012-6-15"  width="120"  placeholder=""  />
 		<label id="yetkiBelgesiTarihilbl" value="Yetki Belgesi Tarihi" />
-		<datebox id="yetkiBelgesiTarihi"  value="2008-1-19"  width="120"  placeholder=""  />
+		<datebox id="yetkiBelgesiTarihi"  value="1999-9-7"  width="120"  placeholder=""  />
 		<label visible="false" id="rakipSendikaIdlbl" value="Rakip Sendika Id" />
-		<textbox visible="false" type="text" id="rakipSendikaId"  value="wds2wq12dd"  placeholder=""  />
+		<textbox visible="false" type="text" id="rakipSendikaId"  value="0jl1n5nigi"  placeholder=""  />
 		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
-		<textbox visible="false" type="text" id="eklemeTarihi"  value="579ivhm8p2"  width="200"  placeholder=""  />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="e83cbsknjc"  width="200"  placeholder=""  />
 		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
-		<textbox visible="false" type="text" id="ekleyen"  value="hcfbtkbnow"  width="200"  placeholder=""  />
+		<textbox visible="false" type="text" id="ekleyen"  value="ua6oodpxc6"  width="200"  placeholder=""  />
 		<label visible="false" id="sonGunlemeTarihilbl" value="Son Günleme Tarihi" />
-		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="c2wrk8pew2"  width="200"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="rtgcgo6zjs"  width="200"  placeholder=""  />
 		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
-		<textbox visible="false" type="text" id="sonGunleyen"  value="zutcn8hive"  width="200"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="8fud8xof9g"  width="200"  placeholder=""  />
 		<label id="isciSayisilbl" value="İşçi Sayısı" />
-		<textbox type="text" id="isciSayisi"  value="ltgmdlz7s0"  width="90"  placeholder=""  />
+		<textbox type="text" id="isciSayisi"  value="fs12rb36k3"  width="90"  placeholder=""  />
 		<label id="uyeSayisilbl" value="Üye Sayısı" />
-		<textbox type="text" id="uyeSayisi"  value="kjve3vplsm"  width="89"  placeholder=""  />
+		<textbox type="text" id="uyeSayisi"  value="164ub5pdp2"  width="89"  placeholder=""  />
 		<checkbox type="text" id="yeniOrgutlenme"  checked="false"  label="Yeni Örgütlenme"  onCheck=""  width="20"  />
-		<checkbox type="text" id="isletme"  checked="false"  label="İşletme"  onCheck=""  width="20"  />
+		<checkbox type="text" id="isletme"  checked="true"  label="İşletme"  onCheck=""  width="20"  />
 		<label id="aciklamalbl" value="Açıklama" />
-		<textbox type="text" id="aciklama"  value="24iitj56b3i5244tfg0atqs9boe6tndha1miyyd4vqi5ay3la7crwq6llrtztbkn8sr1g3hj31sonor917i6ahpbcbbapgy09t8onq0570g17vrfw742jmdvt8dc8gxok5efj53s2pduwgjio3v4ff31nr2181z7mil98usqwmsvr2zf8fm356dcfz80w4716a4u16csmv4xsjs0h4js7hl689g6vhh6glgn094bb6jsrt8iaxji80haurdurv9ul5dk0vvlspmz41d546pmblbsenxhqcriocikcjd0nvw676ihi8qfpqes3wxydqwomxgb9mqqb036brbyoly6ngi763g2oqex21ef48ypqdo72f007vc2ffwvuj8lj37lo21lblew0xqk7nlsmah4yjulrke6ijq8dq1bjpwulsm2pjb8potc03ehi2hdd83btt6ds72da60gpb1xlb75907nqpbzwrqwit7ma8z43k4bz2qk6yozlmhvbitkn4096klfcov76tle05wv2u03rdcey5ev1zzsht7fozuti98yy8ykgqextloi7wnogntuys6f940085k26vphxiv4adeg91o4yx14dmej2c63ukafjqvbni3cpy4hobgjc97wjibihfjyse2lboqzqblnjgsvgq9oqznojws84h6ht7rztmlo4f2ahjt4izow5q9m59l2kml0pgyl4sr14p18ly3eysge3kmomvcrxhwrw0f0qmqgvewew2eur37vdvc9ttvxjnta3jtcp3efzk8jurfl1gpuefl0vwbl24xpm21ki0h806kknx0yle8wk6s3viflq0dkwwzgi5xqw82sms7kexmciu5xm5453m8ndlytfuwgazvttzn1g9brbh8p7k6cg3266hjf2z0gn5fjjr0nge9xx1exqc4jbgf9qtit7b4lx8xf3o2w59ihqml00fnpuujc98m41vsjwgmxb69foxivjqvyg8br3g6wgegz2jhmnkdod9a48jmgp7vnffro841fecw3lnhuuwjka8vmy1mw22l7bhkt6wjm0kpn52e2y0sa642v4xeifz9ar9y1t1oetokk0ia4e48q1t2y9q5vna8stjsdhmwdug1q0t77m1un7evba5ki42g91b3siifwmyvzmbljjiuac1l6alr39x3xbazr0clsd43qvii8sgiasc9riy5kitg8g3zebxzzcu0plgzjehs47ctqsonyainycisgexv7qu70dnxugj9b0tz7vc0w6esja89pjsfejeg8a1air5c4pqqmotizjb7fac76sduastnt2u0z6cqukg2veniqf256deuzbdshlbzeko6997z6i4faei3vbb0oayunqwxh0th031ls9i63njxrjnni3qiathmvaiqcce4ipyjhh58a4o125xv4numyziz6721k66p1ondud95vvi67hgmg3lcpfpgtpuwwc9ggu4ggqk0hl0zyetljn54cuv3vogmn105k5sbcopewl7io1bgl63f5z3dx4pvvaqbsek2k5xvhl3rbp635im3pal9ek4fvy3ux1s1d8uu4ojw4uy9k20il0t1nqb3nyocmygogub8ohcmcp4ydxnjbgcmfgkhn14jotcsjd45lqra9xz88kwel7dfvow3bo78y6rf41akd55fonntvb6ntow9b4ro7hhaxs2nl4s2tfhpi69e3bv2pgp0ipdgebbe1hpb8laicse0t6omze5g3qtvkf972v8glj0f0to6bgjcbc8ucw9rp6vgeakh6f8vdg6fwqv45jplqf5il3z92dsssamzmz4wyiwsi8es09w0kcg93mrthiea5vrvryfvoymcl9hj8mbnjmwsx1kvc1bwht6774pjic85w0p5mqwg91xr9bzfirmy20cynlix9wyidqxq1g9y5ygprq4efs0qhz5knv358qbj3pxl2yjpmhwbc8faqycikk5hb7rig28c6"  width="420"  maxlength="2000"  placeholder=""  rows="5"  cols="40"  />
+		<textbox type="text" id="aciklama"  value="ehwdk45sxejvxf3p265iuxqt3s5bzcj7tk8hsm7afsq9z7w06ywbhsv6d31um99hs1fnbowyeu6ygbxmkytvshdyuw5authsqh37zw88avyap79fcbgzbyvr9b8uzyf00onw2jqgi8wgo3toaodj31akrr5c6xtee1az3u2f34ea6msgdig6ik5hjxe65j2l45tkevd48wqus22jlhtl69gr7g5h2ijhdn077kinqoi8dawtgv35h2sp9pbtczarlrw7i0x0hzby9qpborofpt8j9rkhrbzean720uf88ld6wya4ej6a50x5g3pmnsduawdaw0r20f0hyumgxwr9h9ykuokgl8kndxwjxwezldgzsqdc2t1re3b337hrz1cadobfhs79uetglyc3lix9q5pqe72nbtz2kl21fnvewvnkkailpcbr7dvugtuncfybitgskt1h7vqubygyffrckuqek4w4ai7i1j71alpzbuhjd3tvne5y9o1qwpi6do9mb41vzlczni63vf6jki1nuus66gattw5fc4fkxc51bk3pr7hmzuzkrqwny4mkb1itm2t2eu118f1fyj5k3f6slvlg5lopx5spne4i1nrwuccblgviqsg9qxhdvs1ax7gq71mkffvktmgevombi2ftg0imrtp82b2kj3j0emygw7tbggvcz5ll6ks0fbg2c1svj7l5rc75wfn88p4ry705wdy2c3yar9osz6vtjd3d5fmzstwuzfddnzsdlgv6s226yv4mthp7aqah2t4s6j8sdm378zezx2x25ryc9o9781uasqzuq7pv7iimi3x0c4liblfx7u8yb88yl623g0o2qrl1q5yj88nkuu5b33pquymsxncv7yldl61l1cnytz6fbler639eqgmh8k9ydcnbk56x3922fb781371m73ral2dmcyl3vo2f5upfv8z2ptdms4xtxfjvx7gftivc6qg3urlu7dtjhwwr2pbeiypdmtecpxk6qbiah5a05tzhfl5r0m6dmnx0lg60uogie9baorng4gvnbjegcrr2yrvrxsd7jzgzr1pm8lc3ge7zxv9byzqu0tgb7xrtkx3agrmaik1tqb7d2817fce3lt3fu68y8a9bez3y0jvx265rwmzi781vecdo89bypavhw9gacblc7dz68yqpt1hlh9oeh9pi6acmrdgm83jme6errjmvudzhw5upypykfm8ni7xnyjamyv65re7p152j97vkey2ucp3bqrlc0gd1s278629jflcnek9veshvljq4n89xwp46r8sw2790vhjyijq0u0y32doyowgykfr3w5vxpau929gn045dlcmvzm9b1xovi9nhilmjpy1yrpzl6om3r01hwym5nojgxvbfmohncogm3h4afamlt63nte24y2iagib3rqmzon5yp9uximgg3tnoe5pq91hglx462vv5nbge2sibd5gwc1f77ob95a3hnt94eq2cv1bp60gibbfk5h5roq99hxqb2pyco9toes88grs402nhxzm95fawq5gmhpj3428efxebweu3jdav5dlezcysvwe02i14l25wi7a1jpthipgxsco3cg9hpd0ywkv4z26gajq7lkmd0070z9tud8cwfr1hj19b88k9dwcc9z18h5585alp7ru1mo2433coxxr7u63iryqkh51s3gbfw2gw9y37w67d0pf2dyob59oe83c9d7tsdk8wl2sm6dqv1kn6uj6jc40ruskneytdbl8qu8ptd0ptvx0vhhxfiqqq7jz1y34c0qbu3k9w509xf662ipx7zdmz74twa1ujueqf8u9gmkp8gm9m1vnvenguaswzuvfdzd06qqt8osd9fg8byhmmkun35y6f9bmut09ex0pk8ppxn1dlphqdxc03ijqkz78yub504kxoczewt66k2rfz7mz0ua9mlw1lslh409so1ob5t9k8he2ptsg8l49snq905e8"  width="420"  maxlength="2000"  placeholder=""  rows="5"  cols="40"  />
+		<listbox id="list">
+			<listhead>
+				<listheader label="Ünvan" id="unvan" />
+				<listheader label="İşv. Sendikası" id="isvSendikaKodu" />
+				<listheader label="Yetki Tespit Tarihi" id="yetkiTespitTarihi" />
+				<listheader label="İşçi Sayısı" id="isciSayisi" />
+				<listheader label="Üye Sayısı" id="uyeSayisi" />
+			</listhead>
+		</listbox>
 	</window>
 	<script>
 Other.KULLANICI_BILGI_TEK_SATIR = true;var rakipSendikaYetkiId = ('<bean:write name="p_cleanId"/>' == '1') ? '' : '<bean:write name="p_rakipSendikaYetkiId"/>';var setCsgbIsyeri = function(d) {<%--	Agem.setValue({ isyeriId : d.isyeriId, 'isyeri.sgkKisaNo' : d.sgkKisaNo, 'isyeri.unvan':d.unvan});--%>};var prepareIsyeriUrl = function() {	return  'genel/csgbIsyeri/autocomplete.do?merkezIdIsNullParam=1'; };var yeniForm = function(){	var id = $('#rakipSendikaIdParam').val();	AgemForm.temizle();	$('#rakipSendikaId').val(id);	$('#rakipSendikaIdParam').val(id);	Other.writeKullaniciBilgi();};var _UYE_LISTE = []; $(document).ready(	function () {		Agem.addElement('input','forward', {type:'hidden', name:'forward', value:'list', noClear:"1"}, null, document.forms['genelRakipSendikaYetkiForm']);		Agem.addElement('input','pageSize', {type:'hidden', name:'pageSize', value:'-1', noClear:"1"}, null, document.forms['genelRakipSendikaYetkiForm']);		Agem.addElement('input','rakipSendikaIdParam', {type:'hidden', name:'rakipSendikaIdParam', value:'<bean:write name="p_rakipSendikaIdParam"/>', noClear:"1"}, null, document.forms['genelRakipSendikaYetkiForm']);		$("#rakipSendikaId").val('<bean:write name="p_rakipSendikaIdParam"/>');		<%if (request.getAttribute(AgemConstant.AGEM_MESSAGE) != null) {%>		Agem.message('<%=request.getAttribute(AgemConstant.AGEM_MESSAGE)%>');		<%}%>				$('#yeniYetkiDiv').hide();				if (rakipSendikaYetkiId == "") {			var f = AgemTable.first();			if (f) {				AgemTable.rowClick(f.id);			}  		} else {			kayitGetir(rakipSendikaYetkiId);		}	});AgemTable.rowClick = function(id) {	if (!id) {		id = AgemTable.SELECTED_ID;		if (id == null) {			Agem.error("Lütfen kayıt seçiniz.");			return;		}	}	kayitGetir(AgemTable.DATA["d-"+id].id);};function kayitGetir(rakipSendikaYetkiId) {		Agem.ajax("genel/rakipSendikaYetki/select.do", {json:1,rakipSendikaYetkiId:rakipSendikaYetkiId}, function (x) {		AgemForm.temizle();		Agem.setValue(x);		Other.writeKullaniciBilgi();	});}function kayitSil(id) {	idVal = $("#" + id).val();	if (!idVal) {		Agem.error("Lütfen kayıt seçiniz.");		return;	}	var x = [			'forward=list',			'rakipSendikaYetkiId='+idVal,			'rakipSendikaIdParam='+$('#rakipSendikaIdParam').val(),			'cleanId=1',			'pageSize=-1'		];	if (confirm('Kaydı silmek istediğinizden emin misiniz?')) 		window.location = 'genel/rakipSendikaYetki/delete.do?'+x.join('&');}	</script>

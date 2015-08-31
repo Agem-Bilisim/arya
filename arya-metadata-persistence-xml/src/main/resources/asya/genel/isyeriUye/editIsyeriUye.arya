@@ -2,17 +2,28 @@
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="selectIsyeriuyeWindow">
-		<textbox visible="false" type="text" id="isyeriId"  value="sadpkajhy3"  width="100"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriId"  value="kn7pvnqfpi"  width="100"  placeholder=""  />
 		<label id="degerlendirmeTarihilbl" value="Tarih" />
-		<datebox id="degerlendirmeTarihi"  value="2007-2-17"  width="100"  placeholder=""  />
+		<datebox id="degerlendirmeTarihi"  value="2003-6-21"  width="100"  placeholder=""  />
 		<label id="degerlendirmeTurlbl" value="İşci Sayısı" />
 		<combobox id="degerlendirmeTur"  width="120"  >
-			<comboitem label="jehmy35dxi" value="vy21" />
+			<comboitem label="ge22uid5qz" value="2p8m" />
 		</combobox>
 		<button id="degerlendirBtn" label="Değerlendir"  onClick="degerlendir()"  width="100"  />
 		<label id="isyeriSayisilbl" value="İşyeri Sayısı" />
-		<textbox type="text" id="isyeriSayisi"  value="d9vfh9h7no"  width="100"  placeholder=""  readonly="true"  top="40" />
-		<textbox visible="false" type="text" id="merkezId"  value="7g5yi67jdu"  width="100"  placeholder=""  />
+		<textbox type="text" id="isyeriSayisi"  value="ba4qkkroxw"  width="100"  placeholder=""  readonly="true"  top="40" />
+		<textbox visible="false" type="text" id="merkezId"  value="3fcejr4543"  width="100"  placeholder=""  />
+		<listbox id="list">
+			<listhead>
+				<listheader label="#" id="null" />
+				<listheader label="null" id="subeAdi" />
+				<listheader label="SGK No" id="sgkKisaNo" />
+				<listheader label="null" id="unvan" />
+				<listheader label="null" id="isciSayisi" />
+				<listheader label="null" id="uyeSayisi" />
+				<listheader label="null" id="oran" />
+			</listhead>
+		</listbox>
 	</window>
 	<script>
 var basvuruGirisi = function () {	var isyeriId = $('#merkezId').val() ? $('#merkezId').val() : <bean:write name='p_isyeriIdParam'/>;  	AgemWM.window({ link:"genel/basvuru/empty.do?isyeriId="+isyeriId+"&basvuruTarihi="+$('#degerlendirmeTarihi').val()+"&t="+Math.random(), paramSelector: "#genelBasvuruEmpty", label: "Başvuru İşlemleri",width: 800, height: 600});};var uyeListesi = function () {	var tarihParam ='';	if ($('#degerlendirmeTarihi').val()) {		tarihParam='tarihParam=' + $('#degerlendirmeTarihi').val() + '&';	}	AgemWM.window({ link:"genel/uye/list.do?"+tarihParam+"durumParam=1&isyeriIdParam=<bean:write name='p_isyeriIdParam'/>&t="+Math.random(), paramSelector:"#genelUyeList", label: "Üye İşlemleri",width: 800, height: 600});};var topluUyeGirisi = function () {	AgemWM.window({ q:"isyeriId=<bean:write name='p_isyeriIdParam'/>&t="+Math.random(), paramSelector: "#genelUyeKayitEmpty",			url:"genel/uye/main.do", id:"genelUyeMain", tab:"#genelUyeKayitEmpty", label: "Üye İşlemleri",width: 800, height: 600, refresh: true});};var raporAl = function(detayli){	if(detayli){		var c = $('<div align="left"><br/>&nbsp;<span>Rapor türü seçiniz:</span><br/>'+			'<p><input type="radio" id="reportType" name="reportType" value="1"> Excel</p>'+			'<p><input type="radio" id="reportType" name="reportType" value="0" checked> Pdf</p></div>');					AgemWM.modal({			id:'raporTuruModal',			width: 500,			height: 150,			label : "",			close : true,			content : c,			buttons : [{				id : 'raporAlBtn',				label : 'Rapor Al',				func : function(obj) {					if(obj.reportType == 1) {						Agem.open("rapor/isyeriCalisanDetayli/report.do?isyeriIdParam="+$('#isyeriId').val()+"&tarihParam="+$('#degerlendirmeTarihi').val()+"&r="+Math.random()+"&excel=1");					}					else if(obj.reportType == 0) {						Agem.open("rapor/isyeriCalisanDetayli/report.do?isyeriIdParam="+$('#isyeriId').val()+"&tarihParam="+$('#degerlendirmeTarihi').val()+"&r="+Math.random());					}					return true;				}			}],		});			} else		Agem.open("rapor/isyeriCalisan/report.do?yetkiTespiti=1&isyeriIdParam="+$('#isyeriId').val()+"&tarihParam="+$('#degerlendirmeTarihi').val()+"&r="+Math.random());};var degerlendir = function () {	$('#genelIsyeriUyeForm')[0].submit();};AgemTable.rowDblClick = function(tr) {		var json = {			isyeriId: $(tr).attr("id"),			unvan: $("td:nth-child(4)", tr).html(),			sgkKisaNo: $("td:nth-child(3)", tr).html()		};				if (AgemTable.DATA[json.isyeriId] == '1') {			AgemWM.addQueryString(Agem.json2Param( {isyeriIdParam: json.isyeriId, isyeriId: json.isyeriId}));						var unvan = (json.unvan.toString().length < 35)? json.unvan : json.unvan.toString().substring(0,json.unvan.toString().lastIndexOf(' ',33));			AgemWM.addSideInfo(				{					id:"isyeriInfo",					info: [						{							value: unvan, clazz: "pointer",							onclick: function () {								AgemWM.link('#genelIsyeriSelect', {url: 'genel/isyeri/select.do'});							}						},						{label: "SGK No", value: json.sgkKisaNo, clazz: "not-bold"}					],					type: 1				}			);					}};function yetkiAnalizi() {	AgemWM.window({ 		url:"genel/yetkiAnalizi/main.do",		link:"genel/yetkiAnalizi/search.do",				label: "Üye Listesi",		tab:"#genelYetkiAnaliziSearch",		q:"tarihParam="+$("#degerlendirmeTarihi").val()+"&isyeriIdParam="+$("#isyeriId").val(),		width: 800, height: 600});}function excel() {<%	String q = AgemUtils.getRequestParemeterString(request);%>			Agem.open("genel/isyeriUye/select.do?d-148661-e=2&excel=1&<%=q%>");}AgemTable.DATA[<bean:write name="item" property="isyeriId"/>]='<bean:write name="item" property="secilebilir"/>';	</script>

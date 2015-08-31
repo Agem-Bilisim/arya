@@ -4,22 +4,22 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listYonetimlogWindow">
 		<label id="subeParamlbl" value="Şube" />
 		<combobox id="subeParam"  width="120"  >
-			<comboitem label="vf5u69pqes" value="gg3d" />
+			<comboitem label="berbg4nqfr" value="dpod" />
 		</combobox>
 		<label id="modulParamlbl" value="Modül" />
 		<combobox id="modulParam"  width="120"  >
-			<comboitem label="0utbzq2w9t" value="cand" />
+			<comboitem label="amrh8fovli" value="op5u" />
 		</combobox>
 		<label id="islemParamlbl" value="İşlem" />
 		<combobox id="islemParam"  width="120"  >
-			<comboitem label="8d8fuq33pg" value="8d72" />
+			<comboitem label="u9k2kxosqg" value="4zt4" />
 		</combobox>
 		<label id="zamanParamlbl" value="Zaman" />
 		<combobox id="zamanParam"  width="90"  >
-			<comboitem label="c8y69g2yv8" value="r9kn" />
+			<comboitem label="21u48oikbb" value="mzhu" />
 		</combobox>
 		<label id="kullaniciParamlbl" value="Kullanıcı" />
-		<textbox type="text" id="kullaniciParam"  value="cpqaezeb7w6km046f47ugysrgp5eli2ihrcu1yvax5131uhc66bmak5ac1jynif7mivfu1xjxxavixk9no5ku94rttbms5kp4biob833jcnc2eg2yepw18ubgr2peokdyigl94a6228mfsda0nrvsuulgq74wyb7djaqlswzemvlyzsmxhmk5ah7ztop642m4afbltj3xqaub0j6syvemc9mtm3xgdkjg350bizag86vrqs1evmvp9gxb39pu19"  width="80"  maxlength="255"  placeholder=""  onChange="autocomplete("autocomplete/autocomplete/autocomplete.do?tip=kullanici", "param", 5, "setKullanici")" />
+		<textbox type="text" id="kullaniciParam"  value="kd8ko3g29160068es3sq16gya5lyx89naonhlqxny44azjl9n3tod77fdolbc20sbi2qpz3ivg0v973z7gn4uxd596hqgsbfojtyl2hrjw1doxr74qg9dypim90wrbpmuj4xoys53kvk0qpz6tn8d2nb67ygo3frkyw06ony792johw5paos3qc1v3zrfb0ggtveos31zl6eorgycf22diciuxrb1khu4r6oo1f5m2ai8ceaciropyajbtint6d"  width="80"  maxlength="255"  placeholder=""  onChange="autocomplete("autocomplete/autocomplete/autocomplete.do?tip=kullanici", "param", 5, "setKullanici")" />
 	</window>
 	<script>
 AgemTable.rowDblClick = function(id) {};var ISLEM_LIST = [];<logic:iterate name="ISLEM_LIST" id="islem">	ISLEM_LIST.push({'modul':'<bean:write name="islem" property="value"/>', 'islem':'<bean:write name="islem" property="label"/>'});</logic:iterate>var LAST_KULLANICI = "";$(document).ready( function() { 	setTimeout(function(){$("#refreshButton").trigger("click");}, 5*60*1000);	$("#subeParam").change( function () { yenile()} );	$("#modulParam").change( function () { $("#islemParam").val(null); yenile()} );	$("#zamanParam").change( function () { yenile()} );	$("#islemParam").change( function () { yenile()} );	LAST_KULLANICI = Agem.byId("kullaniciParam").value;	setIslemParam('<%=request.getParameter("islemParam")%>');	});var yenile = function(){	Agem.perde(true,null,'Lütfen Bekleyiniz');	AgemForm.submit(null, 'genelYonetimLogParameterForm', true);};var setIslemParam = function(islem){	var j = 0;	if($("#modulParam").val()){		$("#islemParam").children().remove('option');		var empty = $("<option value=''> </option>");		empty.appendTo($("#islemParam"));		for(var i = 0; i < ISLEM_LIST.length; i++){			if($("#modulParam").val() == ISLEM_LIST[i].modul){				$("#islemParam").append("<option value='"+ISLEM_LIST[i].islem+"'>"+ISLEM_LIST[i].islem+"</option>");				j++;			}		}		if(islem && islem!= 'null') {			$("#islemParam").val(islem);		}	}};var setKullanici = function (d) {	if (!d.value)		d.value = "";	if (d.value != LAST_KULLANICI) {		LAST_KULLANICI = d.value;		yenile();	}}	</script>

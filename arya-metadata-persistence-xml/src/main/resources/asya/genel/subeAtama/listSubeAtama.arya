@@ -1,6 +1,15 @@
 <?page title="DOCSYS" ?>
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
+	<window id="listSubeatamaWindow">
+		<listbox id="list">
+			<listhead>
+				<listheader label="İl Kodu" id="ilKodu" />
+				<listheader label="il Adı" id="ilAdi" />
+				<listheader label="Şube" id="subeAdi" />
+			</listhead>
+		</listbox>
+	</window>
 	<script>
 AgemTable.rowDblClick = function(id) {	Agem.open('genel/subeAtama/select.do?ilKodu='+id);	Agem.message('Bilgiler okunuyor...');}	</script>
 </arya>

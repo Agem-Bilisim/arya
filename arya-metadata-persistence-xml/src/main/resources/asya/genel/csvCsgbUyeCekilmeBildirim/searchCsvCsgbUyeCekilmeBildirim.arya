@@ -2,15 +2,15 @@
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listCsvcsgbuyecekilmebildirimWindow">
-		<textbox visible="false" type="text" id="isyeriIdParam"  value="0xwxyu1y81"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriIdParam"  value="d2d9sif232"  placeholder=""  />
 		<label id="subeParamlbl" value="Şube" />
 		<combobox id="subeParam"  width="200"  >
-			<comboitem label="cw1smcqfq8" value="6ra4" />
+			<comboitem label="v6uujmtd4g" value="tlhr" />
 		</combobox>
 		<label id="isyeriUnvanParamlbl" value="İşyeri Ünvanı" />
-		<textbox type="text" id="isyeriUnvanParam"  value="rm743a7k6034d5empbxxi59mqhbiy0ac0x8n027v5ifs34u3cjflkwwfmle8cb3nmysp0h1vvdepecsmeamrz06ve2zplocmp1fn8vh4unqf6bt23v2bkq8h1a39gfep10h62hucngyuqjhrr8n5yppa5r8gi5t36d2o1mpmiyvqug079fp91pe9lu4umto40p7736h0rrj7rcpf3udzqqzn4be0kzs16k21kibyuh0toxs601ujdtk3gl2ot85"  width="200"  maxlength="255"  placeholder=""  onChange="autocomplete("function:prepareIsyeriUrl", "unvanParam", 5, "setIsyeri")" />
+		<textbox type="text" id="isyeriUnvanParam"  value="yxw7t0p6c2zlr1k6uwkmpot4zs10kod7akv8vugs6pp375bf9c92zrqnau0m7ux9s50ga8g9nlhtlp0zwgbzj0pnqdollyolld3eadct75mr16n3rl97z3w4smte314mztdfeqer25drn3svucnwxv1x69kgdeb5czax2ehp1p0v2hfqd366twe3yfw3jhqirlou0qg9jlzymnsltgy7109uyeer8b6lx9hpu60zvcthdi6h99ex7c3ascxg88p"  width="200"  maxlength="255"  placeholder=""  onChange="autocomplete("function:prepareIsyeriUrl", "unvanParam", 5, "setIsyeri")" />
 		<label id="isyeriSgkKisaNoParamlbl" value="İşyeri SGK No" />
-		<textbox type="text" id="isyeriSgkKisaNoParam"  value="aiip440757e4417jpbqclh1cebedvgf2iq"  width="200"  maxlength="34"  placeholder=""  onChange="autocomplete("function:prepareIsyeriUrl", "sgkKisaNoParam", 5, "setIsyeri")" />
+		<textbox type="text" id="isyeriSgkKisaNoParam"  value="xk1tz14tdrwimxyvjlk2n7z96n3dz5z8kx"  width="200"  maxlength="34"  placeholder=""  onChange="autocomplete("function:prepareIsyeriUrl", "sgkKisaNoParam", 5, "setIsyeri")" />
 	</window>
 	<script>
 var _YARDIM_SOZCUK = 'genel/csvCsgbUyeCekilmeBildirim/search';AgemForm.submitMessage('Arama yapılıyor...');var setIsyeri = function(d) {	Agem.setValue({ isyeriIdParam:d.isyeriId, 'isyeriSgkKisaNoParam' : d.sgkKisaNo, 'isyeriUnvanParam':d.unvan});};var prepareIsyeriUrl = function() {	var url = 'genel/isyeri/autocomplete.do';	return url;};function listele() {	AgemWM.submit(null, 'genelCsvCsgbUyeCekilmeBildirimParameterForm');};function openIsyeri() {	AgemWM.window({ link:"genel/csgbIsyeri/list.do?istifaEdenUyeParam=1", paramSelector:"#genelCsgbIsyeriList", label: "ÇSGB Entegrasyon",width: 800, height: 600});};	</script>

@@ -3,27 +3,34 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addIscisayisiWindow">
 		<label visible="false" id="isciSayisiIdlbl" value="Isci Sayısı Id" />
-		<textbox visible="false" type="text" id="isciSayisiId"  value="i86zfn9gnh"  placeholder=""  />
+		<textbox visible="false" type="text" id="isciSayisiId"  value="xq85tuq2ji"  placeholder=""  />
 		<label visible="false" id="isyeriIdlbl" value="Isyeri Id" />
-		<textbox visible="false" type="text" id="isyeriId"  value="tu1ed8ocma"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriId"  value="9hs8lrpl24"  placeholder=""  />
 		<label id="yillbl" value="Yıl" />
 		<combobox id="yil"  width="100"  >
-			<comboitem label="01frtoc1t2" value="1iyo" />
+			<comboitem label="cy8r46i5em" value="uaki" />
 		</combobox>
 		<label id="aylbl" value="Ay" />
 		<combobox id="ay"  width="100"  >
-			<comboitem label="p4zvytvvoy" value="qwxq" />
+			<comboitem label="89g40aidbb" value="frq2" />
 		</combobox>
 		<label id="isciSayisilbl" value="İşçi Sayısı" />
-		<intbox id="isciSayisi"  value="244645210"  width="100"  maxlength="255"  placeholder=""  />
+		<intbox id="isciSayisi"  value="173950962"  width="100"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
-		<textbox visible="false" type="text" id="eklemeTarihi"  value="h37esiynvg"  placeholder=""  />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="mapj1gj9dq"  placeholder=""  />
 		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
-		<textbox visible="false" type="text" id="ekleyen"  value="ig9406xslespnqlm983r0sc1vlzj0o0c7e80ozpwufd3ft6bozixd20l3ff6pu0ix77d8fk9diqf03t89z6vlorbda64z1y863aoh4zdcoktqodbxtrkcqrfap7orloggz3paspi0nuzugpryga99wtd2tfs02wom34c0x0z26sf8byg1xayohpxiox5zkvzwlgsise4k6itj08miffvyrr8o69un7cqp8bl1l8pjehb3tax6217f0ileivpl69"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="ekleyen"  value="3svgkfvtrgzjlletkw0p33w8eyo202hr78kv1nizt44wuw22ysxl8kdw7sqsedbko9cjlbtd3d4z7wsj1u5dfrcxmqaa7ixaga4bvmwes5ptcznczneomn4fagxj5dibuv359sf3pijgljzq2ug27ojzw13sdzmuna2st5vf8ct8d3r45ogen6nl7ijefa0g2lo3sdie3xgvtz1qxh1l5xizrzh3agmcrw24x8htqjzc504pglo8wijjsfagbkf"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
-		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="nnlatckeus"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="v2xrl2vskr"  placeholder=""  />
 		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
-		<textbox visible="false" type="text" id="sonGunleyen"  value="3ofl9xy7b9qqufjeg0fw70bd63aw17fto7tlr6b6xyebz286xbfew6rfv9hkrx18trqe42q0xsp80vcoc8j3u3ylnl9p4ivf7fylhg2fa086h1p2tkgwamofe9b7z3ps1b5xcvn5ohq46usa5x5t2d9h4sndvrfdorm7yul00ns7v0iy8ib1jy1jqa4r2s9ofsuqzedup2misgap8siclm11scnnms386thrrb9lc7j79d0yj19z854fhww28o2"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="6jntosk0v11jv29rn2hnqjowygj19w1ww7v8xl0gg7dfurkf3seruyvv3wyn63m46kesqv8dzrwcqxskaobqdcpemsenuizzf5mra2s6dgyevqund8ozpdtykjvn96by9bg20i93urns5l5iztxdspo5o2phn5is1uwk9fv4dn3rhi9bd6t554h6cdfmpx1t79av2pk6nspjhx7qjsev0241hrve107a6g290sucsw343an55iqqxn2nnk41pz9"  maxlength="255"  placeholder=""  />
+		<listbox id="list">
+			<listhead>
+				<listheader label="Yıl" id="yil" />
+				<listheader label="Ay" id="ay" />
+				<listheader label="İşçi Sayısı" id="isciSayisi" />
+			</listhead>
+		</listbox>
 	</window>
 	<script>
 	Other.KULLANICI_BILGI_YAZMA = true;	Other.KULLANICI_BILGI_TEK_SATIR = true;	Agem.addLoadFunction(function () {		AgemTable.loadOnRowSelect('liste');		Agem.addElement('input','forward', {type:'hidden', name:'forward', value:'list'}, null, document.forms['genelIsciSayisiForm']);		Agem.addElement('input','isyeriIdParamHidden', {type:'hidden', name:'isyeriIdParam', value:'<bean:write name="p_isyeriIdParam"/>'}, null, document.forms['genelIsciSayisiForm']);		Agem.byId("isyeriId").value = '<bean:write name="p_isyeriIdParam"/>';		Agem.message('<bean:write name="r_message" filter="false"/>');		<logic:notEqual value="list" name="p_forward">		yeniKayit();		</logic:notEqual>	});		AgemTable.rowClick = function(id) {		if (!id) {			id = AgemTable.SELECTED_ID;			if (id == null) {				Agem.error("Lütfen kayıt seçiniz.");				return;			}		}		Agem.setValue(AgemTable.get(id));		Other.writeKullaniciBilgi();	};		function yeniKayit() {		Agem.setValue(			 {				 isciSayisiId: '',				 isciSayisi: '',				 eklemeTarihi: '',				 ekleyen:'',				 sonGunlemeTarihi:'',				 sonGunleyen:'',				 yil: <%=AgemUtils.getTarihYil(AgemUtils.getDate())%>,				 ay: <%=AgemUtils.getTarihAy(AgemUtils.getDate())%>			}		);			}		function kaydet() {		AgemForm.submit('isciSayisiId', 'genelIsciSayisiForm');	}	function sil() {		if (Agem.byId("isciSayisiId").value) {			var x = {				'forward': 'list',				'isyeriIdParam':Agem.byId("isyeriId").value,				'isciSayisiId':Agem.byId("isciSayisiId").value			};						Agem.open( "genel/isciSayisi/delete.do?"+Agem.json2Param(x));		}	};	</script>

@@ -1,6 +1,25 @@
 <?page title="DOCSYS" ?>
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
+	<window id="listAidatWindow">
+		<listbox id="list">
+			<listhead>
+				<listheader label="Şube" id="sube" />
+				<listheader label="İşyeri Sgk No" id="isyeri.sgkKisaNoExcel" />
+				<listheader label="İşyeri" id="isyeri.unvan" />
+				<listheader label="Dönem Yıl" id="donemYil" />
+				<listheader label="Dönem Ay" id="donemAy" />
+				<listheader label="İşv. İşçi" id="isyeriSayi" />
+				<listheader label="İşv. Tutar" id="isyeriTutar" />
+				<listheader label="Sen. İşçi" id="sendikaSayi" />
+				<listheader label="Sen. Tutar" id="sendikaTutar" />
+				<listheader label="Tahsilat Tarihi" id="tahsilatTarihi" />
+				<listheader label="Tahsilat Tutar" id="tahsilatTutar" />
+				<listheader label="Adres" id="adres" />
+				<listheader label="Tel." id="tel" />
+			</listhead>
+		</listbox>
+	</window>
 	<script>
 <%	String kisaAdGruplaParam = (String) request.getAttribute("kisaAdGruplaParam");	if (kisaAdGruplaParam == null || "0".equals(kisaAdGruplaParam)) {%>		AgemTable.rowDblClick = function(id) {			if (AgemWM.exists('#genelAidatSelect')) {				AgemWM.addQueryString(Agem.json2Param({aidatIdParam: id, aidatId: id}));				AgemWM.link('#genelAidatSelect', {url: 'genel/aidat/select.do'});				Agem.message('Bilgiler okunuyor...');			} else {				<agem:access URL="genel/aidat/select">				AgemWM.window({ link:"genel/aidat/select.do?aidatId="+id + "&aidatIdParam="+id, label: "Aidat İşlemleri",width: 800, height: 600});				</agem:access>			}		};<%	}%>		</script>
 </arya>

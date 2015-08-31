@@ -1,6 +1,30 @@
 <?page title="DOCSYS" ?>
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
+	<window id="listUyeWindow">
+		<listbox id="list">
+			<listhead>
+				<listheader label="T.C. Kimlik No" id="isci.kisi.tckNo" />
+				<listheader label="Ad Soyad" id="isci.kisi.adSoyad" />
+				<listheader label="Üye Baş.Tar." id="girisGecerlilikTarihi" />
+				<listheader label="Doğrulama" id="dogrulamaKodu" />
+				<listheader label="Cep No" id="isci.cepTel" />
+				<listheader label="Giriş YK Karar No" id="girisYkKararNo" />
+				<listheader label="İstifa Tar." id="cikisBasvuruTarihi" />
+				<listheader label="Üye Bit.Tar." id="cikisGecerlilikTarihi" />
+				<listheader label="Çıkış Noter Yev.Ref.No" id="cikisNoterYevmiyeNo" />
+				<listheader label="Çıkış Nedeni" id="cikisNedeni" />
+				<listheader label="Arşiv No" id="girisArsivReferansNo" />
+				<listheader label="Şube" id="sube" />
+				<listheader label="İşyeri SGK No" id="isyeri.sgkKisaNo" />
+				<listheader label="Ünvan" id="isyeri.unvan" />
+				<listheader label="İl" id="isyeri.ilAdi" />
+				<listheader label="İlçe" id="isyeri.ilceAdi" />
+				<listheader label="Açıklama" id="aciklama" />
+				<listheader label="Çıkış Açıklama" id="cikisAciklama" />
+			</listhead>
+		</listbox>
+	</window>
 	<script>
 AgemTable.rowDblClick = function(id) {	AgemWM.addQueryString(Agem.json2Param({uyeIdParam: id, uyeId: id}));	AgemWM.link('#genelUyeSelect', {url: 'genel/uye/select.do', refresh:true});	Agem.message('Bilgiler okunuyor...');};	</script>
 </arya>

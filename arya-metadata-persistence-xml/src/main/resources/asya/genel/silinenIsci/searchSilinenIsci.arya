@@ -3,13 +3,13 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listSilinenisciWindow">
 		<label id="adParamlbl" value="Ad" />
-		<textbox type="text" id="adParam"  value="t215jim63mwuk43uj09oe3e93zh4rlyi348637r3yfus23fs1l3zqm9lehwmqkk2h4nc8x1aavhozzku553g1jq90zhjmnmwoy55i66gc9lky1ew8qxzoyha67s8hlar8ifvdok1nfeybl6ula0gh0joo3jkdy2gs01o6768gjkhi1r35qqbhkvmpdx3gf9mwkvyva1y23utrz5cnbxss7xttbxlwgnq5eswx10vudpy3j88gjysyglc9mwugs1"  width="120"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="adParam"  value="n7z112dpvk8bw5m5ymlrh3ssf38icjayvzc6ztf34w7big7c111boqydflz0ndrx1fhacxm39kwn8aid0uwss8ztplavxncii125s3ip9ldvjqqlcw071eehx7zpa65n2v7k3mag9i00ud8906qjjkch6f0qk2tdsk0mm3iy9zvxhjvz2jbc7mgpeivhlig8ek90webhdsgz4bsw88tr83flfme6o7js24u9du5vk9298qy4nmqv3n81yp4q1hq"  width="120"  maxlength="255"  placeholder=""  />
 		<label id="soyadParamlbl" value="Soyad" />
-		<textbox type="text" id="soyadParam"  value="03deuodrfgehoo4pcjzpufrs4dnlrbny01zbts16d6aecjmb0lrd2o9xd80uav1uxwak7ma2p3pzd0maom7r4r1ojr6d57b5kvvs2wbu5hj1e3vrf9an0tkqldw3z69wwrr153067scsxsux2mq92rxag7o046hqmvwlowyujpgo5oa00aq1jf08vgh8gu6fug7t71onr46h7l3oulhaab6cn9ymomdob98x20e88k46x4e60m59z9zfwmt4m9c"  width="120"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="soyadParam"  value="x5mnd2cb6gugrk36fvek9rw496esc1jgrqckla85zf4w24oj046dsrgj4h9ct72p2vc1cd9oa1hltt2qhx00gy3vkxj3brqfhagqnfs8n8vjpegf53rgq13fbbydlar7uk735ph0iy5phb8hbqfryi15znc51icrbhygi2vxvcfpagbg5md4y0kt683hbpxni1fhv6jmu2uaye5lpyrmcsqwxvdobnfyxnkb09hkmw84881sg0fjcok2ohxuiie"  width="120"  maxlength="255"  placeholder=""  />
 		<label id="silenParamlbl" value="Silen" />
-		<textbox type="text" id="silenParam"  value="4y76g675hd6gol6udlu02artg69wochvnvmnwhkpzg1gr6hkxek3lnj67c5tihhk9lp67txlh2ein73fr71ad2f68ak6chtynh4uatotzzs37jijafs984lcw2mc8kl6szspwdvhxuov4vnxqzmc8bvo2ikngepe0vx9nxsqgstay0v87bejadwbrji79s56cwesdlu4vtgslbd16mhy9lnktw78i0xxzm3kbe8qusgx5mwni9e4f3i7eqs6iwd"  width="120"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="silenParam"  value="9h47gfgoile7jt2fke6oypqmarv3fwkm0u02tuitp1vajnlptr0ijzlbp60c378auwngvtgnho0dgqc1dnc5abygu5jiuyjvjjshczc45cxwex701qghj8wxdfrr8yw9wjte90kuta9f1oqxr0q6dqr1guh6953vckct7pvlimuqpk6dvpsl66754txzd7464xmgg162f8auy4iwo0uxxoh80vmakmjmw0eeu5chikyew0e1r7ia62c3ulh76ll"  width="120"  maxlength="255"  placeholder=""  />
 		<label id="silinmeTarihiBasParamlbl" value="Silinme Tarihi" />
-		<datebox id="silinmeTarihiBasParam"  value="2006-8-14"  width="120"  placeholder=""  />
-		<datebox id="silinmeTarihiBitParam"  value="2014-10-6"  width="120"  placeholder=""  />
+		<datebox id="silinmeTarihiBasParam"  value="2002-7-22"  width="120"  placeholder=""  />
+		<datebox id="silinmeTarihiBitParam"  value="2010-3-3"  width="120"  placeholder=""  />
 	</window>
 </arya>

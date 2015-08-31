@@ -1,6 +1,20 @@
 <?page title="DOCSYS" ?>
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
+	<window id="listUyecsgbanalizWindow">
+		<listbox id="list">
+			<listhead>
+				<listheader label="Şube" id="subeAdi" />
+				<listheader label="SGK No" id="isyeriSgkNo" />
+				<listheader label="İşyeri Ünvanı" id="unvan" />
+				<listheader label="Eşleşen" id="eslesen" />
+				<listheader label="Üye Sndk +" id="uyeSndkFazlasi" />
+				<listheader label="Üye ÇSGB +" id="uyeCsgbFazlasi" />
+				<listheader label="İşçi Sndk +" id="isciSndkFazlasi" />
+				<listheader label="İşçi ÇSGB +" id="isciCsgbFazlasi" />
+			</listhead>
+		</listbox>
+	</window>
 	<script>
 AgemTable.rowDblClick = function(id) {	<agem:access URL="genel/isyeri/select">		var d = AgemTable.get(id);		AgemWM.window( {link: "genel/isyeri/select.do?isyeriId="+d.isyeriId, width: 800, height: 600, label: "İşyeri İşlemleri"});	</agem:access>};	</script>
 </arya>

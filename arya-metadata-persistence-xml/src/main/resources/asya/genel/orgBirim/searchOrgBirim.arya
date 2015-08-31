@@ -3,10 +3,10 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listOrgbirimWindow">
 		<label id="tanimParamlbl" value="Unvan" />
-		<textbox type="text" id="tanimParam"  value="uu28tnb6ndowg594mbwuqpbvlsfmo1j6k5fx7ik7cp9010ejwg4ufhsjxf2qjycuwa3ipgi8gkugv3nk5f5l6edy14fogtt942n3a1f91gzihrlulurdmle7p3tyoifb8xhouitjof0tr7ne0lzgs4ufhcu7u6pxa3n5eyomu2aguzr72ajgr9il125yawg3p7kqdhiplp01582ej3pvjoa2kq3tposklbjrsnd5mfpfdh8qme4fx3pu086zr3w"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="tanimParam"  value="qni2g541szn8b02451zypgpm7736mmm7uzilur83amedolwmy8rut694812hrbicfivnd95gfc0m7j7fyoka810mahxxlm1zfsfzc3epwe2u3hwt61k79e2pey6apg1ot1exkcpv3l7uxj7q7jho5gu1fqglesg79mae1sgty3o1xycnnqfhz0a1p4c5mz8vwd2xecxlg6wbzmy80a9egps601lyu4v5o7fugo6ttxjwqmz4t378gox9o7815ga"  maxlength="255"  placeholder=""  />
 		<label id="orgBirimTurIdParamlbl" value="Tür" />
 		<combobox id="orgBirimTurIdParam"  >
-			<comboitem label="591f4mdd19" value="ane5" />
+			<comboitem label="lv435ibkr6" value="zuhv" />
 		</combobox>
 	</window>
 	<script>

@@ -3,9 +3,9 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listIskoluhataliisyerleriWindow">
 		<label id="basvuruBasTarihlbl" value="Başvuru Tarihi" />
-		<datebox id="basvuruBasTarih"  value="2001-2-6"  width="120"  placeholder=""  />
+		<datebox id="basvuruBasTarih"  value="1992-5-2"  width="120"  placeholder=""  />
 		<label id="basvuruBitTarihlbl" value="-" />
-		<datebox id="basvuruBitTarih"  value="2008-10-15"  width="120"  placeholder=""  />
+		<datebox id="basvuruBitTarih"  value="2011-11-9"  width="120"  placeholder=""  />
 	</window>
 	<script>
 AgemForm.submitMessage('Arama yapılıyor...');function listele() {	AgemWM.submit(null, 'genelIskoluHataliIsyerleriParameterForm');}function temizle(){	AgemForm.reset('genelIskoluHataliIsyerleriParameterForm');}	</script>

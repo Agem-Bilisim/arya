@@ -1,6 +1,13 @@
 <?page title="DOCSYS" ?>
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
+	<window id="listYardimWindow">
+		<listbox id="list">
+			<listhead>
+				<listheader label="Anahtar Sözcük" id="yardimSozcuk" />
+			</listhead>
+		</listbox>
+	</window>
 	<script>
 AgemTable.rowDblClick = function(id) {	AgemWM.addQueryString(Agem.json2Param( {yardimId: id, yardimIdParam:id, yardimId: id}));	AgemWM.link('#genelYardimSelect', {url: 'genel/yardim/select.do', refresh:true});	Agem.message('Bilgiler okunuyor...');}	</script>
 </arya>

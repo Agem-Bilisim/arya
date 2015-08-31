@@ -3,19 +3,19 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listYetkianaliziWindow">
 		<label visible="false" id="isyeriIdParamlbl" value="İşyeri" />
-		<textbox visible="false" type="text" id="isyeriIdParam"  value="8vdddfsi8u"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriIdParam"  value="2ycs2bwyca"  placeholder=""  />
 		<label visible="false" id="turParamlbl" value="Liste Türü" />
-		<textbox visible="false" type="text" id="turParam"  value="34d754k9mq"  width="200"  placeholder=""  />
+		<textbox visible="false" type="text" id="turParam"  value="rkntpobwcn"  width="200"  placeholder=""  />
 		<label id="tarihParamlbl" value="Tarih" />
-		<datebox id="tarihParam"  value="1993-7-16"  width="100"  placeholder=""  />
+		<datebox id="tarihParam"  value="1994-6-17"  width="100"  placeholder=""  />
 		<label id="subeParamlbl" value="Şube" />
 		<combobox id="subeParam"  width="200"  >
-			<comboitem label="u7l3wb1b8k" value="bm16" />
+			<comboitem label="4m228jaguk" value="yyej" />
 		</combobox>
 		<label id="reqIsyeriAutocompleteParamlbl" value="İşyeri" />
-		<textbox type="text" id="reqIsyeriAutocompleteParam"  value="vexwb2mm8z"  width="350"  placeholder=""  onChange="autocomplete("genel/isyeri/autocomplete.do?merkezYadaIsyeriIdParam=", "unvanParam", 5, "setIsyeri")" />
+		<textbox type="text" id="reqIsyeriAutocompleteParam"  value="zfbxr0991z"  width="350"  placeholder=""  onChange="autocomplete("genel/isyeri/autocomplete.do?merkezYadaIsyeriIdParam=", "unvanParam", 5, "setIsyeri")" />
 		<label visible="false" id="reqIsyeriIdParamlbl" value="İşyeri" />
-		<textbox visible="false" type="text" id="reqIsyeriIdParam"  value="l9o0f5rjf2"  placeholder=""  />
+		<textbox visible="false" type="text" id="reqIsyeriIdParam"  value="dvnta33hc1"  placeholder=""  />
 	</window>
 	<script>
 AgemForm.submitMessage('Analiz yapılıyor...');$(document).ready(function () {	//AgemWM.addQueryString(Agem.json2Param( {isyeriIdParam: $("#isyeriIdParam").val(), isyeriId: $("#isyeriIdParam").val()}));	var json = <bean:write name="REQ_MERKEZ" filter='false'/> 	var unvan = (json.unvan.toString().length < 35)? json.unvan : json.unvan.toString().substring(0,json.unvan.toString().lastIndexOf(' ',33));	AgemWM.addSideInfo(		{			id:"isyeriInfo",			info: [				{					value: unvan, clazz: "pointer",					onclick: function () {						AgemWM.link('#genelYetkiAnaliziSearch', {url: 'genel/yetkiAnalizi/search.do'});					}				},				{label: "SGK No", value: json.sgkKisaNo, clazz: "not-bold"}			],			type: 1		}	);});function gonder() {	AgemWM.addQueryString(			Agem.json2Param( {				isyeriIdParam: $("#isyeriIdParam").val(), 				isyeriId: $("#isyeriIdParam").val(),				tarihParam: $("#tarihParam").val(),				subeParam: $("#subeParam").val(),				reqIsyeriIdParam: $("#reqIsyeriIdParam").val()			}), "[id^='genelYetkiAnaliziList']");	if ($("#turParam").val() == "UYELER") {		$("form").attr("target", "genelYetkiAnaliziListUyeler");	}	else if ($("#turParam").val() == "ILERI_TARIHLI_GIRIS") {		$("form").attr("target", "genelYetkiAnaliziListIleriTarihliGiris");	}	else if ($("#turParam").val() == "ILERI_TARIHLI_CIKIS") {		$("form").attr("target", "genelYetkiAnaliziListIleriTarihliCikis");	}	else if ($("#turParam").val() == "HAREKETLI") {		$("form").attr("target", "genelYetkiAnaliziListHareketli");	}	else if ($("#turParam").val() == "PROJEKSIYON") {		$("form").attr("target", "genelYetkiAnaliziListProjeksiyon");	}	else if ($("#turParam").val() == "CSGB_ISYERI") {		$("form").attr("target", "genelYetkiAnaliziListCsgbIsyeri");	}	else if ($("#turParam").val() == "CSGB_FAZLA_UYE") {		$("form").attr("target", "genelYetkiAnaliziListCsgbFazlaUye");	}	else if ($("#turParam").val() == "TUM_UYE_HAREKETLERI") {		$("form").attr("target", "genelYetkiAnaliziListTumUyeHareketleri");	}	AgemWM.submit();}var setIsyeri = function (d) {	if (d.isyeriId) {		$("#reqIsyeriIdParam").val(d.isyeriId);	}	else {		$("#reqIsyeriIdParam").val("");	}};	</script>

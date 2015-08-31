@@ -3,17 +3,22 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addIsyerikategoriWindow">
 		<label visible="false" id="isyeriKategoriIdlbl" value="Isyeri Kategori Id" />
-		<textbox visible="false" type="text" id="isyeriKategoriId"  value="wc6fee4r16"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriKategoriId"  value="hkqbr7hqv1"  placeholder=""  />
 		<label id="tanimlbl" value="Tanım" />
-		<textbox type="text" id="tanim"  value="p9l9hz3nvntkicqjnnvh"  width="160"  maxlength="20"  placeholder=""  />
+		<textbox type="text" id="tanim"  value="mqpyphvfemj6mmd3mfk9"  width="160"  maxlength="20"  placeholder=""  />
 		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
-		<textbox visible="false" type="text" id="eklemeTarihi"  value="xp1rvgr0s3"  placeholder=""  />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="73y69wum02"  placeholder=""  />
 		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
-		<textbox visible="false" type="text" id="ekleyen"  value="122cjsopcqzfud78mqsct5pi6rg4dhkd54q3y7s3yw4lpbn80826i4c5js74ay3ha8znizrfplq7a3b0xn9fuym4flou4a6iw2zivf3i70pj95wwchvrtxlfisxg9qk5au7q184n6j5c6jrzuvaw403v9vct7tltkkimhscv2g9atwsime375sns0oj5o7hr03ialit2sgede5dot0ax5ryi61kxy1tf31hmis23rocexco62yntcpas8znb86z"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="ekleyen"  value="1v0dp2d1qivsnjlfu8ploqgloeebgegs5pzffg6zcs2683aefjx4im20w0zxkjj2g2e8i8ov3vhospwx5fj5een6tk216g9lqll9f9yo99an52zungoreqnw1mhgqpvqe08pcgg0j0b2i5hyfuaeoi92ezyhd4hj2nvp05fdcnmq0obp7djfftukx5nsavqpgcy4r335u72e9o0rctld4jdmeiqmu7igxs922bnezyamfwqw2ze11ijsdtpqbvu"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
-		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="tvt47sy3vo"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="b0gksrtvlk"  placeholder=""  />
 		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
-		<textbox visible="false" type="text" id="sonGunleyen"  value="qb7is88ushzvt5b5ua1teqs0ybbo01mqfie56125y6nwnryqaj1vazh512g87rv27y6jhsfijslscy7yvjxda8zzes9prxjolr3a6g4l981wr0rqduoy9c7temec2vqvblpvwhg3f50aw09pvgrkbrdwvgzva27kw8o2jnk8oh9bsmj870gugywvim0wf57mbv0swbwzxyz4ijqijc40p8prms9d4kaxa363ywfprlwnzqd8l2kqe9ko9x7cd4j"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="mozaqdox6oykwc5parc3gmwrfbpgs1yd17cwz63oudp89fzndk5x61u4diu11q1dpma3zc4crssufowvfzky84o8m5q1o0uylzgyhotx9om5ckmxaiaxfycvet6nw79q5tqeeugbw3ktw2rhkwe2vgkplw1ma66ma8p1l1ihkoxeobge4ttlrdtx8z37meoi6805v5klyu6lc79lehav4uk0imlgffld7dcdorwxp7554tqua4p6yuz262ewybr"  maxlength="255"  placeholder=""  />
+		<listbox id="list">
+			<listhead>
+				<listheader label="Tanım" id="tanim" />
+			</listhead>
+		</listbox>
 	</window>
 	<script>
 	Other.KULLANICI_BILGI_YAZMA = true;	Agem.addLoadFunction(function () {		AgemTable.loadOnRowSelect('liste');		Agem.addElement('input','forward', {type:'hidden', name:'forward', value:'list'}, null, document.forms['genelIsyeriKategoriForm']);		Agem.message('<bean:write name='r_message' filter='false' />');		if ($("#liste tr").length == 0)			AgemForm.open('genelIsyeriKategoriForm', yeniForm(), '---', true);		});		AgemTable.rowClick = function(id) {		if (!id) {			id = AgemTable.SELECTED_ID;			if (id == null) {				Agem.error("Lütfen kayıt seçiniz.");				return;			}		}		Agem.ajax("genel/isyeriKategori/select.do", {json:1,isyeriKategoriId:id}, function (x) {			Agem.setValue(x);			Other.writeKullaniciBilgi();		});	};		function yeniKayit() {		Agem.setValue(			 {				 tanim: '',				 isyeriKategoriId: ''						}		);	}		function kaydet() {		AgemForm.submit('isyeriKategoriId', 'genelIsyeriKategoriForm');	}		function sil() {		if (Agem.byId("isyeriKategoriId").value) {			var x = {				'forward': 'list',				'isyeriKategoriId':Agem.byId("isyeriKategoriId").value			};						Agem.open( "genel/isyeriKategori/delete.do?"+Agem.json2Param(x));		}	};	</script>

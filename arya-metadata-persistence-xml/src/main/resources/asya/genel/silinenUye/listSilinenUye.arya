@@ -1,6 +1,15 @@
 <?page title="DOCSYS" ?>
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
+	<window id="listSilinenuyeWindow">
+		<listbox id="list">
+			<listhead>
+				<listheader label="Ad Soyad" id="adSoyad" />
+				<listheader label="Silme Tarihi" id="silinmeTarihi" />
+				<listheader label="Silen" id="silen" />
+			</listhead>
+		</listbox>
+	</window>
 	<script>
 Other.KULLANICI_BILGI_TEK_SATIR = true;$(document).ready(	function () {		<logic:notEmpty name='r_message'>			Agem.message('<bean:write name='r_message' filter='false'/>');		</logic:notEmpty>	});	</script>
 </arya>

@@ -3,16 +3,16 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="selectIscitcknosorgulamaWindow">
 		<label visible="false" id="kisiIdlbl" value="Kisi Id" />
-		<textbox visible="false" type="text" id="kisiId"  value="5mqulqsrjc"  placeholder=""  />
+		<textbox visible="false" type="text" id="kisiId"  value="9rk8n54tuw"  placeholder=""  />
 		<label id="tckNolbl" value="T.C. Kimlik No" />
-		<textbox type="text" id="tckNo"  value="h42itwvljly"  width="200"  maxlength="11"  placeholder=""  onChange="autocomplete("genel/isciTckNoSorgulama/autocomplete.do", "function:prepareTCKimlikNoParameterName()", 5, "setKisi")" />
+		<textbox type="text" id="tckNo"  value="l7di5z6ehff"  width="200"  maxlength="11"  placeholder=""  onChange="autocomplete("genel/isciTckNoSorgulama/autocomplete.do", "function:prepareTCKimlikNoParameterName()", 5, "setKisi")" />
 		<label id="adSoyadlbl" value="Ad Soyad" />
-		<textbox type="text" id="adSoyad"  value="v6l5dgmuw8"  width="200"  placeholder=""  readonly="true"  />
+		<textbox type="text" id="adSoyad"  value="o7yexdhigz"  width="200"  placeholder=""  readonly="true"  />
 		<label id="sgkNolbl" value="SGK Sicil No" />
-		<intbox id="sgkNo"  value="1097298123"  width="200"  maxlength="13"  placeholder=""  readonly="true"  />
+		<intbox id="sgkNo"  value="1164126224"  width="200"  maxlength="13"  placeholder=""  readonly="true"  />
 		<label id="cinsiyetlbl" value="Cinsiyet" />
 		<combobox id="cinsiyet"  width="200"  readonly="true"  >
-			<comboitem label="pa2ga9z7qy" value="m8to" />
+			<comboitem label="qwlhsl7t88" value="qbvk" />
 		</combobox>
 	</window>
 	<script>

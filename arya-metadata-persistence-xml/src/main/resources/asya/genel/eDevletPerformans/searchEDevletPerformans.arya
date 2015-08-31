@@ -4,26 +4,26 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listEdevletperformansWindow">
 		<label id="turParamlbl" value="Liste Türü" />
 		<combobox id="turParam"  width="150"  >
-			<comboitem label="e5ly4d48k4" value="reut" />
+			<comboitem label="5ms1d4jyja" value="7wmp" />
 		</combobox>
 		<label id="basTarihParamlbl" value="Tarih Başlangıç" />
-		<datebox id="basTarihParam"  value="2014-0-21"  width="150"  placeholder=""  />
+		<datebox id="basTarihParam"  value="1998-7-19"  width="150"  placeholder=""  />
 		<label id="bitTarihParamlbl" value="Tarih Bitiş" />
-		<datebox id="bitTarihParam"  value="2007-4-29"  width="150"  placeholder=""  />
+		<datebox id="bitTarihParam"  value="2007-1-5"  width="150"  placeholder=""  />
 		<label id="subeParamlbl" value="Şube" />
 		<combobox id="subeParam"  width="150"  >
-			<comboitem label="is59v3dqci" value="ntq2" />
+			<comboitem label="rpkcrdak8c" value="0fqj" />
 		</combobox>
 		<label id="isyeriKategoriIdParamlbl" value="Kategori" />
 		<combobox id="isyeriKategoriIdParam"  width="150"  >
-			<comboitem label="4xpqboig7c" value="q7qv" />
+			<comboitem label="bgvitjn1xh" value="qu4e" />
 		</combobox>
 		<label id="orgutDurumParamlbl" value="Örgüt Durumu" />
 		<combobox id="orgutDurumParam"  width="150"  >
-			<comboitem label="8p7vu2zhs0" value="nbbb" />
+			<comboitem label="qs0z4yr0mq" value="bini" />
 		</combobox>
-		<checkbox type="text" id="onayTarihineGoreParam"  checked="true"  label="Onay Tarihine Göre"  onCheck=""  width="50"  />
-		<checkbox type="text" id="islemParam"  checked="false"  label="İşlem Olmayanları Gösterme"  onCheck=""  width="50"  />
+		<checkbox type="text" id="onayTarihineGoreParam"  checked="false"  label="Onay Tarihine Göre"  onCheck=""  width="50"  />
+		<checkbox type="text" id="islemParam"  checked="true"  label="İşlem Olmayanları Gösterme"  onCheck=""  width="50"  />
 	</window>
 	<script>
 AgemForm.submitMessage('Arama yapılıyor...');$(document).ready(function(){	turParamChanged();	$("#turParam").change(turParamChanged);	$("#islemParam").attr("checked", "true");});function turParamChanged() {	var v = $("#turParam").val();	$("[tur]").each( function () {		$(this).parent().hide();		if (!$(this).hasClass("date-inp") && $(this).attr("type") != "checkbox") {			$(this).val("");		}	});	$('[tur*="'+v+'"]').each( function () {		$(this).parent().show();	});}	</script>

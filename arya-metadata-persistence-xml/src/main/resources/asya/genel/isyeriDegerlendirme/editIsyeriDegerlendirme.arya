@@ -3,9 +3,9 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="selectIsyeridegerlendirmeWindow">
 		<label visible="false" id="isyeriIdlbl" value="Isyeri Id" />
-		<textbox visible="false" type="text" id="isyeriId"  value="lft81oouyw"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriId"  value="w9m3uzc0up"  placeholder=""  />
 		<label id="tarihlbl" value="Tarih" />
-		<datebox id="tarih"  value="1990-7-13"  width="100"  placeholder=""  />
+		<datebox id="tarih"  value="2004-5-14"  width="100"  placeholder=""  />
 		<button id="degerlendirmeBtn" label="Değerlendir"  onClick="degerlendir()"  width="100"  left="200" />
 	</window>
 	<script>
