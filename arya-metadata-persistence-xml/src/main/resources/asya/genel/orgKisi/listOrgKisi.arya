@@ -1,6 +1,19 @@
 <?page title="DOCSYS" ?>
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
+	<window id="listOrgkisiWindow">
+		<listbox id="list">
+			<listhead>
+				<listheader label="T.C. Kimlik No" id="kisi.tckNo" />
+				<listheader label="Ad" id="kisi.ad" />
+				<listheader label="Soyad" id="kisi.soyad" />
+				<listheader label="Şube" id="subeTanim" />
+				<listheader label="Görev" id="gorevTanim" />
+				<listheader label="Cep Telefonu" id="cepTel" />
+				<listheader label="e-Posta" id="eposta" />
+			</listhead>
+		</listbox>
+	</window>
 	<script>
 AgemTable.rowDblClick = function(id) {	AgemWM.addQueryString(Agem.json2Param( {orgKisiId: id, orgBirimIdParam:id, orgKisiId: id}));	AgemWM.link('#genelOrgKisiSelect', {url: 'genel/orgKisi/select.do', refresh:true});	Agem.message('Bilgiler okunuyor...');}	</script>
 </arya>

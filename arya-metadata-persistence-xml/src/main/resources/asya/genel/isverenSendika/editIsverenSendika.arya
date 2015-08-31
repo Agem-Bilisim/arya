@@ -3,29 +3,29 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addIsverensendikaWindow">
 		<label visible="false" id="isverenSendikaIdlbl" value="Isveren Sendika Id" />
-		<textbox visible="false" type="text" id="isverenSendikaId"  value="6eu7l5ao0y"  placeholder=""  />
+		<textbox visible="false" type="text" id="isverenSendikaId"  value="6mm43kbj6j"  placeholder=""  />
 		<label id="kodlbl" value="Sendika Kodu" />
-		<textbox type="text" id="kod"  value="qz1kyjafzd"  width="100"  maxlength="10"  placeholder=""  />
+		<textbox type="text" id="kod"  value="1hgu3eavmb"  width="100"  maxlength="10"  placeholder=""  />
 		<label id="adilbl" value="Sendika Adı" />
-		<textbox type="text" id="adi"  value="jmszsqqcol9o75vqbsfu19e5kjg8qj6d0spiribo5ulzjy9voy97w76na9bmw2e2e29i6ehhuttprs64jmk8704mg20cw15j3d8onc1h6m49b41o90rcg7mktefvh74mm81cj25ru8b3biajlx3o5dqyiqn6d64icj1xydfrkydsr2ltns8friq9uhdq6w4zz7rjclu8nrccj8iu8l5mea1rigweh6gtjzcspee4osa2jvaq7k7tapndttujb4w"  width="208"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="adi"  value="dqyqpgbbej9r7px8vdbjl9ydjefprmykj89r0bzeqwav5ail0g7y3mlso6nnsitt3yjk6n32g3qf110fnez7jmnxg1w0nhfh456losopo451ifwabuvxdizcaoyj6dtdr4b6rjhtk17z7elvidfp94it4e954hrkjkf6iqytm10ienspd7az4tfl34oih9g614k31mk2eeo6v6sgfzquwifvedhuxggr1dnfowezuhq2g0l4tlpwbxckzqf450r"  width="208"  maxlength="255"  placeholder=""  />
 		<label id="aciklamalbl" value="Açıklama" />
-		<textbox type="text" id="aciklama"  value="knjo51r3mmrznr9w1lyiizatkbmpp2uskfj65ct2qiv4qawz3pyhg4m5qpehvvfshokghm0hg3sls2wlkjk1ljh9duqzlao53pt7oqcewhz24h3ukg1lhq6kvah78396faiyzyp0exru7hfw73076vrueu3poierjgrfhgizye0e046syx1kdouvoe0w0ib0439i0xwbo0z1s39jj5obc6sbzk9dtx79ul3dsanocsm8iej8fbi6zedutj4nq9z"  width="330"  maxlength="255"  placeholder=""  rows="5"  cols="40"  />
+		<textbox type="text" id="aciklama"  value="omyk2fq9w8d88m7omzbxvgsxurmxln4uzl4j6nu4hkm4aak4xkq0krlvn5q9hlotze23py6r2b6oxzcedtcr7saovzd5oqkvpxlyse430hyqod5pr6lenrxskyguim0kflpb3mevq65f5gt5u78ldt8espjk65goc2tdmiewx5cv6g6zyzugl0lqahdjhz8t0y5dkunxs7yu492v3yy7fuyla6nnv14cvfm0vjgmzowgvwzv2ydybmq6t7o4glc"  width="330"  maxlength="255"  placeholder=""  rows="5"  cols="40"  />
 		<label id="gruplbl" value="Grup Sayısı" />
 		<combobox id="grup"  width="50"  >
-			<comboitem label="a5phe25ebn" value="63fr" />
+			<comboitem label="zi1o8h77oi" value="n9xa" />
 		</combobox>
 		<label id="subelbl" value="Şube" />
 		<combobox id="sube"  width="100"  >
-			<comboitem label="hbrmgyqdyo" value="p84g" />
+			<comboitem label="73lalrwkk9" value="yy98" />
 		</combobox>
 		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
-		<textbox visible="false" type="text" id="eklemeTarihi"  value="rwg3k2c0p1"  placeholder=""  />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="2n94lw26um"  placeholder=""  />
 		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
-		<textbox visible="false" type="text" id="ekleyen"  value="bjvjse2v80"  placeholder=""  />
+		<textbox visible="false" type="text" id="ekleyen"  value="gju1pf9b8c"  placeholder=""  />
 		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
-		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="kdf8zz77zj"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="drz77rkqsp"  placeholder=""  />
 		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
-		<textbox visible="false" type="text" id="sonGunleyen"  value="5e1uc2p38r"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="4cgmo8zqwp"  placeholder=""  />
 	</window>
 	<script>
 $(document).ready( function () {	if ($("#isverenSendikaId").val()) {		AgemWM.addQueryString(Agem.json2Param( {isverenSendikaIdParam: $("#isverenSendikaId").val(), isverenSendikaId: $("#isverenSendikaId").val()}));		var json = <bean:write name="genelIsverenSendikaForm" filter='false'/> 		AgemWM.addSideInfo(			{				id:"isverenSendikaInfo",				info: [					{value: json.kod, clazz: "pointer", 							onclick: function () {								AgemWM.link('#genelIsverenSendikaSelect', {url: 'genel/isverenSendika/select.do'});							}					},					{value: json.adi, clazz: "not-bold"}				],				type: 1			}		);		Other.writeKullaniciBilgi();			} else {		AgemWM.removeSideInfo({type: 1, id: "isverenSendikaInfo"});		$("#agem_label_input_div_dosyaEkleBtn").hide();	}});function dosyaEkle() {	if (Agem.byId('isverenSendikaId') && Agem.byId('isverenSendikaId').value) {		AgemWM.window(				{					modal : true,					label: " İşveren Sendika - Ekli Dosyalar", 					url:"genel/nesneDosya/list.do?pageSize=-1&nesneKodParam=isverenSendikaId&nesneIdParam="+Agem.byId('isverenSendikaId').value,					id : "nesneDosyaWindow",					width: 800, 					height: 600								});	}		};	</script>

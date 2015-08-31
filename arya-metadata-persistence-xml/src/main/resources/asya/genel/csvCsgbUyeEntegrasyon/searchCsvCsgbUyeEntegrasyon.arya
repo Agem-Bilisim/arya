@@ -2,13 +2,13 @@
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listCsvcsgbuyeentegrasyonWindow">
-		<textbox visible="false" type="text" id="isyeriIdParam"  value="4e7lv6c92p"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriIdParam"  value="efa61pvqeu"  placeholder=""  />
 		<label id="subeParamlbl" value="Şube" />
 		<combobox id="subeParam"  width="200"  >
-			<comboitem label="7z44426z8k" value="nscv" />
+			<comboitem label="ce3fzg3pyp" value="3pim" />
 		</combobox>
 		<label id="isyeriParam.unvanParamlbl" value="İşyeri Ünvanı" />
-		<textbox type="text" id="isyeriParam.unvanParam"  value="xohg60t5fpk02o03ziz53rmf02839md5e3pfahdl99wz127r90vu7n1334wuxkrkqemo80fibm24jfq1nkjw9jst0h57j0ru49hslusjwcvlev4hmfqenvvmr5np0i0sooet6uult3vl57xa9f1ki8m2vkygil2pbax51kfvdie8wex0hpsqnpagcxihipxu1t9y05fmxv332xwx1dr0gnulkyeuxn27dvzq91teo8vgp3ffyryrzhycwd7h564"  width="361"  maxlength="255"  placeholder=""  top="56" onChange="autocomplete("genel/csgbIsyeri/autocomplete.do", "unvanParam", 5, "setIsyeri")" />
+		<textbox type="text" id="isyeriParam.unvanParam"  value="gjqv8g8kl71zcm4jzr4piixchel3j8ve0jptzjezvxkeh04l7vd7gi76nuwxie1ykkj59pe1idy8svsw5idpaca2k3xgyecdlen2nokg7wbtxakjm4dqmn5susr7aqpqjtow3udi10q01ersq5liqp1ovleq73gbehs3sf50an5x7v6topt6p8pmwre63kg2pbytrx3j4c74z08ratytg4md4022cbhgiyd7ipvhoroa2ia3mkysm73rlyg7l5g"  width="361"  maxlength="255"  placeholder=""  top="56" onChange="autocomplete("genel/csgbIsyeri/autocomplete.do", "unvanParam", 5, "setIsyeri")" />
 	</window>
 	<script>
 var _YARDIM_SOZCUK = 'genel/csgbUye/search';AgemForm.submitMessage('Arama yapılıyor...');var setIsyeri = function(d) {	Agem.setValue({ isyeriIdParam:d.isyeriId, 'isyeriParam.sgkKisaNoParam' : d.sgkKisaNo, 'isyeriParam.unvanParam':d.unvan});};var prepareIsyeriUrl = function() {//	var url = 'genel/isyeri/autocomplete.do?orgutluParam=1';	var url = 'genel/csgbIsyeri/autocomplete.do';	return url;};$(document).ready(	function () {		$('#listeTurParam').val(0);		Agem.addMaskEvents("isyeriParam.sgkKisaNoParam");	});function listele() {	var f = document.forms['genelCsvCsgbUyeEntegrasyonParameterForm'];	f.action = "genel/csvCsgbUyeEntegrasyon/list.do?listeTurParam=4";	f.target = "genelCsvCsgbUyeEntegrasyonList";	AgemWM.submit(null, 'genelCsvCsgbUyeEntegrasyonParameterForm');	f.target = "genelCsvCsgbUyeEntegrasyonUyeList";	f.action = "genel/csvCsgbUyeEntegrasyon/list.do?listeTurParam=0";	AgemWM.submit(null, 'genelCsvCsgbUyeEntegrasyonParameterForm');}function uye_listele() {}	</script>

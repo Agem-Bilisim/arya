@@ -4,11 +4,11 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listUyecsgbanalizWindow">
 		<label id="subeParamlbl" value="Şube" />
 		<combobox id="subeParam"  width="140"  >
-			<comboitem label="ia9828lsns" value="unl3" />
+			<comboitem label="6ouufs3bew" value="3udn" />
 		</combobox>
 		<checkbox type="text" id="orgutluParam"  checked="false"  label="Örgütlenme Var"  onCheck=""  width="50"  />
-		<checkbox type="text" id="isletmeParam"  checked="false"  label="İşyeri / İşletme"  onCheck=""  width="50"  />
-		<checkbox type="text" id="farkOlanlarParam"  checked="true"  label="Fark Olanları Göster"  onCheck=""  width="50"  />
+		<checkbox type="text" id="isletmeParam"  checked="true"  label="İşyeri / İşletme"  onCheck=""  width="50"  />
+		<checkbox type="text" id="farkOlanlarParam"  checked="false"  label="Fark Olanları Göster"  onCheck=""  width="50"  />
 	</window>
 	<script>
 AgemForm.submitMessage('Arama yapılıyor...');function subeDegisti() {	var sube = $('#subeParam').val();	if ( sube ) {		$('#isletmeParam').parent().hide();		$('#isletmeParam').attr('checked',false);		}	else {		$('#isletmeParam').parent().show();		}}function veriOlustur() {	var params = {   		'subeParam' : $("#subeParam").val(),   		'orgutluParam' : $("#orgutluParam").attr("checked") ? 1 : "",   		'isletmeParam' : $("#isletmeParam").attr("checked") ? 1 : "",   		'farkOlanlarParam' : $("#farkOlanlarParam").attr("checked") ? 1 : "",   		'json' : 1	};	Agem.perde(true, null, 'Veriler oluşturuluyor. Lütfen bekleyin...');	setTimeout( function () {		$.ajax({"url":"genel/uyeCsgbAnaliz/edit.do",			data: params,			dataType:"json", 			success:function(){				listele();			},			error:function(xhr,err,e){ alert( "Hata: İşlem sırasında beklenmedik bir hata oluştu."); Agem.perde(false); }		});	}, 1000);}function listele() {	AgemWM.submit(null,'genelUyeCsgbAnalizParameterForm');}	</script>

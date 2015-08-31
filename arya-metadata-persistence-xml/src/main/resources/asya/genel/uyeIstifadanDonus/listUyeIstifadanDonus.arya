@@ -1,6 +1,20 @@
 <?page title="DOCSYS" ?>
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
+	<window id="listUyeistifadandonusWindow">
+		<listbox id="list">
+			<listhead>
+				<listheader label="T.C. Kimlik No" id="tckNo" />
+				<listheader label="Ad Soyad" id="adSoyad" />
+				<listheader label="Başvuru Tar." id="girisBasvuruTarihi" />
+				<listheader label="Üye Baş.Tar." id="girisGecerlilikTarihi" />
+				<listheader label="Onay Tar." id="girisOnayTarihi" />
+				<listheader label="Doğrulama Kodu" id="dogrulamaKodu" />
+				<listheader label="İstifa Tar." id="cikisBasvuruTarihi" />
+				<listheader label="Üye Bit.Tar." id="cikisGecerlilikTarihi" />
+			</listhead>
+		</listbox>
+	</window>
 	<script>
 $(document).ready(function () {	<agem:access URL="genel/uyeIstifadanDonus/edit">		if ($('.exportlinks').length > 0) {			$('<a/>', {     				id: 'kaydet-link',     				href: "javascript:duzenle()",     				title: 'Tutarsızlığı Düzelt'     			}).html("<span title='Tutarsızlığı Düzelt' class='export-icon save-off' onmouseover=\"Other.changeClass(this, 'save-off', 'save-on')\" onmouseout=\"Other.changeClass(this, 'save-on', 'save-off')\"></span>").prependTo('.exportlinks');					$('.save-off').parent().attr("href", "javascript:duzenle()");				}	</agem:access>});AgemTable.rowDblClick = function(id) {	if (id) {		var d = AgemTable.get(id);		if (d.tckNo) {			AgemWM.window(			{				label: 'Üye İşlemleri', 				link:"genel/uye/list.do?kisiParam.tckNoParam=" + d.tckNo + "&girisGecerlilikTarihiParam=" + d.girisGecerlilikTarihi,				paramSelector:"#genelUyeList",				width: 800,				height: 600							});		}	}};function duzenle() {	if ($("#liste tr.empty").length > 0) {		alert("Listede işlenecek kayıt yok...");		return;	}	<agem:access URL="genel/csvCsgbUyeBildirim/edit">		if(!confirm("Listedeki üyelerin Üyelik Bitiş tarihleri düzenlenecektir. Devam etmek istiyor musunuz?")){			return false;		}		Agem.perde(true, null, 'Üye kayıtları düzeltiliyor. Lütfen bekleyin...');		setTimeout(function(){			$.ajax({"url":"genel/uyeIstifadanDonus/edit.do",				data: {"json": 1},				dataType:"json", 				timeout: 1000, 				success:function(data){					if (data['@hata']) {						Agem.error(data['@message'],'x');					} else {						Other.displayTagYenile();					}					Agem.perde(false);				},				error:function(xhr,err,e){ if (e) alert(e); else alert( "Kayıtlar düzenlenirken hata oluştu..."); Agem.perde(false); }			});		}, 100);	</agem:access>}	</script>
 </arya>

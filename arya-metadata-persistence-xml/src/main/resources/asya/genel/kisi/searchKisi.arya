@@ -3,21 +3,21 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listKisiWindow">
 		<label visible="false" id="kisiIdParamlbl" value="Kisi Id" />
-		<textbox visible="false" type="text" id="kisiIdParam"  value="fth3dm1d1o"  placeholder=""  />
+		<textbox visible="false" type="text" id="kisiIdParam"  value="140mmckoif"  placeholder=""  />
 		<label id="adParamlbl" value="Ad" />
-		<textbox type="text" id="adParam"  value="olrgjosilay8fv5gqbstqo263nhfbpsc615wpcmrexdwan0rpw7ju3hkfedb8v8bllhwfke339fi27uilow3kkvfy1tf8itbw6lpyurq5neljjyp2y1ax8g7c21jc7meeurr5224g9see69kua5r7y9ohvheae0e8ba50l2t81v8udm274zzg4y6kipchuuw6z5zkzo5kapcjk6x7c18n6usr91mac48fca67kc3pcdx2e9bouuh92ewkbpz3cs"  width="120"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="adParam"  value="yigbdyhxhtxr3bvrhsasaj33j5xldfzkz483166gjow50673exnwuuokddtmm3wkthwldcqvq38368wlpbfwksee248xrork6q7t2wnrq3jnlxar2rf853dv2m2gb5sqoyia4azejbzi70xn5lgw45fnp1tbegtgdy8xua7uh0kfynd4efrr6re0ckfrhjsh7h5pw4m6lggb6sh6pgoq6ir7t8v48g3t47pzsriuxy9ykkm9i158ts6hhneqehc"  width="120"  maxlength="255"  placeholder=""  />
 		<label id="soyadParamlbl" value="Soyad" />
-		<textbox type="text" id="soyadParam"  value="yt58xcb9dv3yfxwi6iza4cm5kgphbjhvqyu7ko9z9yziebi1sby89risqy1lzmgsj7o7g5tnw5los9rf6dz6sr4ugghiigts3vlkkykhfqvsm5kks9eni5uof8fmlurag0na1r24cj3lamkv2r7vb6c1j3tuzrbcooggmkrsggoxbklwk3uy1x0mgoyv1k8utsywrm2jbzqzmnkxegk83vn7m12jqv89owgltofed21nu4w7wwbpifsqlcin2ek"  width="120"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="soyadParam"  value="puhxn7hx66wqjbwoixoo2uejlcpa04z3n8qjxnd8382jf8mbvywscakd3bl5j12y1lymo4mn3ochamvu6l21atmmrcv362u3drav5dhuskzff6juqfhgji7wd0gmje3fd5u8z3ekhdjdrcp3v2ukw95s103grilqs2lsrxy2uwi76j3lpb0p4n7lwmws1dnkzg7v5sn473umf4kg4m7rco491fwm7wjc06wa83q60k3t36r38kwbcv9arcyvyi3"  width="120"  maxlength="255"  placeholder=""  />
 		<label id="tckNoParamlbl" value="T.C. Kimlik No" />
-		<textbox type="text" id="tckNoParam"  value="ke0vk4nw4lz"  width="200"  maxlength="11"  placeholder=""  onChange="autocomplete("function:prepareKisiUrl()", "function:prepareTCKimlikNoParameterName()", 5, "setKisi")" />
+		<textbox type="text" id="tckNoParam"  value="00sd81jqsdl"  width="200"  maxlength="11"  placeholder=""  onChange="autocomplete("function:prepareKisiUrl()", "function:prepareTCKimlikNoParameterName()", 5, "setKisi")" />
 		<label id="unvanParamlbl" value="Unvan" />
-		<textbox type="text" id="unvanParam"  value="u5oyfl1pxh0t1ul2s0ekj85jtb2hba9onxzt64zrlw1tjltbyohar1aec750hb4x2vrexj00byz4q3z7ztjn129pms9v1894yrpwrb1aw8pol2x1btd7lzhox2dbss9v3x4b5nzm2g4c5ro6uqbeemoy8lhjaw17l5k8mtkkf7alhc92czzlpsx5v5qjmr3cdj2x7510plb5rtyhqbo31rnfbn3vl30ehf6oocqdueyfw5sr2g30rnj9qthcjko"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="unvanParam"  value="8gmhmzuve0rpb58nry9glyoaelckd17otwjb78xciemh4lsqmftp7yz8ypkdumtnjk7lrq14r6d498hocriy2api513mcrn0lc5qz8m9iffti4ssnt3z6se8ck6wtk1xctnf53gld5l9n6mwmhy7bmeaem07rcvsv1nruv3enojfwmiemfcftp6wb0fur0pcue1jd8w2d5k09wgkqcgio8s2gcnx2s84q7yu0mavl313lfgpjmkgsmqc4tiqaoq"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="iletisimIdParamlbl" value="Iletisim Id" />
-		<textbox visible="false" type="text" id="iletisimIdParam"  value="s79mdtpf55"  placeholder=""  />
+		<textbox visible="false" type="text" id="iletisimIdParam"  value="6jdmma417f"  placeholder=""  />
 		<label visible="false" id="resimIdParamlbl" value="Resim Id" />
-		<textbox visible="false" type="text" id="resimIdParam"  value="z33j1znqhi"  placeholder=""  />
+		<textbox visible="false" type="text" id="resimIdParam"  value="i2x686p7c4"  placeholder=""  />
 		<label visible="false" id="kullaniciIdParamlbl" value="Kullanici Id" />
-		<textbox visible="false" type="text" id="kullaniciIdParam"  value="k7vmeaobdf"  placeholder=""  />
+		<textbox visible="false" type="text" id="kullaniciIdParam"  value="itajqc0yio"  placeholder=""  />
 	</window>
 	<script>
 AgemForm.submitMessage('Arama yapılıyor...');Agem.addLoadFunction(	function () {		AgemTab.show(1, <%="1".equals(request.getParameter("showTab"))%>);	});	</script>

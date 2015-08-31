@@ -4,16 +4,16 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="selectCsvcsgbisyerientegrasyonWindow">
 		<label id="dosyaIdlbl" value="Yüklenen Dosyalar" />
 		<combobox id="dosyaId"  width="320"  >
-			<comboitem label="btt0poypb2" value="kibx" />
+			<comboitem label="na07s1hdxc" value="ln7d" />
 		</combobox>
 		<button id="yukleBtn" label="Yükle"  onClick="dosyaYukle()"  width="90"  />
 		<label id="yillbl" value="Dönem" />
 		<combobox id="yil"  width="70"  >
-			<comboitem label="y0b6thba3v" value="cu3g" />
+			<comboitem label="25ou0mgb8c" value="osxb" />
 		</combobox>
 		<label id="aylbl" value="Ay" />
 		<combobox id="ay"  width="100"  >
-			<comboitem label="vb55w8bqsh" value="pyqq" />
+			<comboitem label="iv99lj4ipc" value="hxr9" />
 		</combobox>
 		<checkbox type="text" id="sonDonem"  checked="true"  label="Son Dönem"  onCheck=""  width="40"  />
 	</window>

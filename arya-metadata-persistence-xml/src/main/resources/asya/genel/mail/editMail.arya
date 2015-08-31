@@ -3,13 +3,13 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="editMailWindow">
 		<label id="smtpAuthUserlbl" value="E-posta Adresi" />
-		<textbox type="text" id="smtpAuthUser"  value="fs2hk6th7a"  width="200"  placeholder=""  />
+		<textbox type="text" id="smtpAuthUser"  value="22gw7f4opc"  width="200"  placeholder=""  />
 		<label id="smtpAuthPwdlbl" value="E-posta Şifre" />
-		<textbox type="password" id="smtpAuthPwd"  value="nvfnnpbn5g"  width="200"  placeholder=""  />
+		<textbox type="password" id="smtpAuthPwd"  value="ilyhgu7nxa"  width="200"  placeholder=""  />
 		<label id="smtpHostNamelbl" value="Host Name" />
-		<textbox type="text" id="smtpHostName"  value="e5c7n9w31m"  width="200"  placeholder=""  />
+		<textbox type="text" id="smtpHostName"  value="36s5ef5fb8"  width="200"  placeholder=""  />
 		<label id="smtpPortlbl" value="Port" />
-		<textbox type="text" id="smtpPort"  value="md85eonhyt"  width="200"  placeholder=""  />
+		<textbox type="text" id="smtpPort"  value="s2d6vojlcy"  width="200"  placeholder=""  />
 	</window>
 	<script>
 function kaydet(){	AgemWM.submit(null, 'genelMailForm', false, "edit");}	</script>

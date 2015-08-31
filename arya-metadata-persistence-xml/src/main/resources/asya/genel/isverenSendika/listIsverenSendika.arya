@@ -1,6 +1,15 @@
 <?page title="DOCSYS" ?>
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
+	<window id="listIsverensendikaWindow">
+		<listbox id="list">
+			<listhead>
+				<listheader label="Şube" id="sube" />
+				<listheader label="Kod" id="kod" />
+				<listheader label="Ad" id="adi" />
+			</listhead>
+		</listbox>
+	</window>
 	<script>
 AgemTable.rowDblClick = function(id) {	AgemWM.addQueryString(Agem.json2Param({isverenSendikaIdParam: id, isverenSendikaId: id}));	AgemWM.link('#genelIsverenSendikaSelect', {url: 'genel/isverenSendika/select.do'});	Agem.message('Bilgiler okunuyor...');};	</script>
 </arya>

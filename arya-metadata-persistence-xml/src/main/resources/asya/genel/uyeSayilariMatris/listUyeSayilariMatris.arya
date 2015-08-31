@@ -1,4 +1,12 @@
 <?page title="DOCSYS" ?>
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
+	<window id="listUyesayilarimatrisWindow">
+		<listbox id="list">
+			<listhead>
+				<listheader label="null" id="etiket" />
+				<listheader label="<%=alan%>" id="null" />
+			</listhead>
+		</listbox>
+	</window>
 </arya>

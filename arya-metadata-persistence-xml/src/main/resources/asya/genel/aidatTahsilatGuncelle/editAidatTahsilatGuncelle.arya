@@ -4,11 +4,11 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="editAidattahsilatguncelleWindow">
 		<label id="donemlbl" value="Dönem Ay/Yil" />
 		<combobox id="donem"  width="200"  >
-			<comboitem label="pr22lvtf2b" value="rpur" />
+			<comboitem label="x74egx11ro" value="d97i" />
 		</combobox>
 		<label id="dosyaIdlbl" value="Aidat Dosya" />
 		<combobox id="dosyaId"  width="442"  >
-			<comboitem label="r9zvk5on49" value="fkxo" />
+			<comboitem label="ndzpl83j5r" value="vkxl" />
 		</combobox>
 	</window>
 	<script>

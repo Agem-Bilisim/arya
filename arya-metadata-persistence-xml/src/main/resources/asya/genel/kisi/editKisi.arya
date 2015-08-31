@@ -3,29 +3,29 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addKisiWindow">
 		<label visible="false" id="kisiIdlbl" value="Kisi Id" />
-		<textbox visible="false" type="text" id="kisiId"  value="dinczyrihr"  placeholder=""  />
+		<textbox visible="false" type="text" id="kisiId"  value="uin63f7tp1"  placeholder=""  />
 		<label id="adlbl" value="Ad" />
-		<textbox type="text" id="ad"  value="3a0vyiyetertb801ytr3weblifn12c4lcac0x5hrr1nwhld3z0umozv1g4fkgyc9xt41hlbfmnrvlwcu7fn7um5eq511bzen89kbadmpb4t4nwnoxuyzf3uvneaq2js7a77h1plienvuwqg2l8zckjx9kluixzh82rnvomhiyu1t6lqfo7qsj66z4t1yrmp3mpqplfk8bk1qadacil69dbxmc9ecqpdb21kja4cpi0xnwzvhmc0tvqf6zf31pbw"  width="100"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="ad"  value="ab0pcxglkkc2qd98rxdbwqt1ia3piequ60o4i8uda520ps6pvg9l8hrj44iobcnkqs8jho8rc2im9mslz5fsd3iubscumrzagbd8mmbnuyzt4ajbxr21km1cc7oqom765l19zmmlbvd0sqw12igj70uz33s5vqeypyhmvzmxsdww53idp3wzk99hruzmtv5wgixyuy2m9mn3useg1ktwrjzninx22oz2t69hwifiinogbb0jlvlffkw92mm80uh"  width="100"  maxlength="255"  placeholder=""  />
 		<label id="soyadlbl" value="Soyad" />
-		<textbox type="text" id="soyad"  value="9fnr692hxj87yhid9hugzz83n65iao8ats39wolhv1u0hzf0ii4azjsdolhjm7tzaq9zz1suclvzu8tg5y2iaa6qp394heh45xw5ei37zmr3wuwih8kze77o0w2rzpxcusuzdpqpudffgjdlgl2ql4btbp8lg4wzojd4s8ivutdg0tjma80vybc57qbmp7augriq0tz5mndyymff9authe86nybmgecre0tbjfojkahwg4w2fqzeew7qod7lzx1"  width="100"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="soyad"  value="159es618bmdes8xzw66jb3oz3cb6w51a9wjumfti72rdqdtwk4zrkikp1j6hrksr2q4azk60wvhlrb0y7a5dr9wx7pkvke0c4e4bk71fsynepp29d25hbi0rxgg8kix4ne77s2ay9e9obcnr1a9zgsfhqt54y8avvga4kctykhjzyu6p1nzvb3y8w0tfy40ybhrcrm5ndp2jllze015d38snx8k11ebpd0c9q3bc8wxpd0kbxvhd1uzzejsuqry"  width="100"  maxlength="255"  placeholder=""  />
 		<label id="tckNolbl" value="T.C. Kimlik No" />
-		<textbox type="text" id="tckNo"  value="td1yb321llz"  width="100"  maxlength="11"  placeholder=""  onChange="autocomplete("function:prepareKisiUrl()", "function:prepareTCKimlikNoParameterName()", 5, "setKisi")" />
+		<textbox type="text" id="tckNo"  value="vrfg1gvqyge"  width="100"  maxlength="11"  placeholder=""  onChange="autocomplete("function:prepareKisiUrl()", "function:prepareTCKimlikNoParameterName()", 5, "setKisi")" />
 		<label id="unvanlbl" value="Ünvan" />
-		<textbox type="text" id="unvan"  value="4w4l2vs9d41twci51mdkytm39grxb0da9g9nq0iamkac39sb0my3y9txqsf257nyutvosb36oeqrls71z9az1gt05tjw7js35m3burb15pg59p37ra6ekefz6kzf66zm45n0mkrai302cg3lxr49vzjj988zxu5f58xa83nd7mue9qslre6488knp8wctnm514bnbvjw87itk222ek3gp43kbn5ihn9wg57e3kyg5d0fq88au1fbmc35kae95ss"  width="100"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="unvan"  value="cz84zj9riv81g70ziee2qca0n6hanorp3i14do5jpvhe2hdx36gw6h7o9uahyeovaias1afos1rfvd2kiskc7ekzvveer2ux1n7g8uclgxeaogfy3hredau8vsyc117rpe4xmbgg67nngdsx6hkig2p4js5wpphxkx6e2ibrdnxcohg27p0crd9o2t3wya5e4d1vxrtfp2lvo0lhifqdvwhtcqlblrzf07b83918qyqv8dq6k9ncrabqta2xyhf"  width="100"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="iletisimIdlbl" value="Iletisim Id" />
-		<textbox visible="false" type="text" id="iletisimId"  value="q6jwrhbxvi"  placeholder=""  />
+		<textbox visible="false" type="text" id="iletisimId"  value="gsxia7xh14"  placeholder=""  />
 		<label visible="false" id="resimIdlbl" value="Resim Id" />
-		<textbox visible="false" type="text" id="resimId"  value="ypkisj9vcq"  placeholder=""  />
+		<textbox visible="false" type="text" id="resimId"  value="c4pjx60st5"  placeholder=""  />
 		<label visible="false" id="kullaniciIdlbl" value="Kullanici Id" />
-		<textbox visible="false" type="text" id="kullaniciId"  value="6uyezqd75i"  placeholder=""  />
+		<textbox visible="false" type="text" id="kullaniciId"  value="u0k6qinnfo"  placeholder=""  />
 		<label visible="false" id="eklemeTarihilbl" value="Ekleme Tarihi" />
-		<textbox visible="false" type="text" id="eklemeTarihi"  value="1ws3tfmsb8"  placeholder=""  />
+		<textbox visible="false" type="text" id="eklemeTarihi"  value="w1t49mk2ug"  placeholder=""  />
 		<label visible="false" id="ekleyenlbl" value="Ekleyen" />
-		<textbox visible="false" type="text" id="ekleyen"  value="p7c705vmch6t65kmmub0ecew4jomz88itjswbegjur76dwpbo42eoh8qetgryyykskyz5pnkovr35qe2gwwjjju7xfd8fei5podkind1ugqzk4qfk2axfi4mmzrvyqyephjkyvdjnlflk9d29e8ngpv8hvpnfdprz5a9tubu4no0bl3u20xxugpx4l4t6gs0kh3tk7by8fn9v5147j336wk4myov79d88lpa5aqi73opbclrat4dqccupicey33"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="ekleyen"  value="wsck3mbfox8bdqyxgtkv8dzh6t1yi0clfwn9b8rre1nqbpe6h8li8uizix7qd0c5bqnc5i7r6w9dvwzfdeqpvaqqq6hb8vupz1i4jkgvrwdl2nzd7zzrqfuoaz5kng5n1hixfh1bre98roa0pf4pc5j720d26puobahowizrk3jpmd5cpypa92hl1h3kyrg0qhd87b1366t1fv8do166ysnocna2ydkr68o22jcvr7mz3lmr5eb6pbydf8lp21a"  maxlength="255"  placeholder=""  />
 		<label visible="false" id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
-		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="sy9imxsjrn"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunlemeTarihi"  value="pud4ljr3eu"  placeholder=""  />
 		<label visible="false" id="sonGunleyenlbl" value="Son Gunleyen" />
-		<textbox visible="false" type="text" id="sonGunleyen"  value="s1pame4ksogvt7f9herrf636h48wk6gx2c4i8933tlrxy7qvnc5aonit1w1z7s7gx66q2w87leld7o47wvc0vx9bsubcsjx5cjf1biykaqgtpox84zobf4g7sy0kvupr9zzpb31wda3bzpw2eztcsoq1jvew9693bl6lygbau279lyqa49kkryrezqb6ilqgpu1l14685has4vrwkzzpnh56azm00an4ouq1o7bu58e5ktyf4asolpm0tubklxl"  maxlength="255"  placeholder=""  />
+		<textbox visible="false" type="text" id="sonGunleyen"  value="axkxkoymroltl5giiepb0ptwbjdu38m2n0j9glldbhkzcoltg0g8upd6awn5m7lsvawr86ej6yedslgfizwpyfjliqz2tl1z0n4gxarwko4ivt5dgyhqhi1dnj34syk5ozyrfqqzu9kqjvobaryky355qyhbapvcuhix9l52u2hxcwsthp7aey8adi1kwqul6z9444p7ibkgrvv2zcg4puuwq9ym5eh8sszyoyqvxdgugubkas7jesfvgastftw"  maxlength="255"  placeholder=""  />
 	</window>
 	<script>
 Agem.addLoadFunction(	function () {		AgemTab.show(3, <%="1".equals(request.getParameter("showTab"))%>);	});	</script>

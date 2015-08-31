@@ -1,6 +1,27 @@
 <?page title="DOCSYS" ?>
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
+	<window id="listIstatistikWindow">
+		<listbox id="list">
+			<listhead>
+				<listheader label="Konfederasyon" id="il_adi" />
+				<listheader label="Toplam İşçi" id="toplam_isci" />
+				<listheader label="Örgütlü İşyeri İşçi" id="oi_isci" />
+				<listheader label="Çalışan Üye" id="toplam_uye_csgb" />
+				<listheader label="İşsiz Üye" id="issiz_uye" />
+				<listheader label="Toplam Üye" id="toplam_uye" />
+				<listheader label="İl" id="il_adi" />
+				<listheader label="Toplam İşyeri" id="toplam_isyeri" />
+				<listheader label="Örgütlü İşyeri" id="orgutlu_isyeri" />
+				<listheader label="Toplam İşçi" id="toplam_isci" />
+				<listheader label="Örgütlü İşyeri İşçi" id="oi_isci" />
+				<listheader label="Toplam Üye ÇSGB" id="toplam_uye_csgb" />
+				<listheader label="Toplam Üye Sendika" id="toplam_uye_sendika" />
+				<listheader label="Örgütlü İşyeri Üye ÇSGB" id="oi_uye_csgb" />
+				<listheader label="Örgütlü İşyeri Üye Sendika" id="oi_uye_sndk" />
+			</listhead>
+		</listbox>
+	</window>
 	<script>
 AgemTable.rowDblClick = function(id) {};	</script>
 </arya>

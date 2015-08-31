@@ -1,6 +1,33 @@
 <?page title="DOCSYS" ?>
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
+	<window id="listKimlikWindow">
+		<listbox id="list">
+			<listhead>
+				<listheader label="Kisi Id" id="kisiId" />
+				<listheader label="Seri" id="seri" />
+				<listheader label="No" id="no" />
+				<listheader label="Baba Adi" id="babaAdi" />
+				<listheader label="Ana Adi" id="anaAdi" />
+				<listheader label="Dogum Yeri" id="dogumYeri" />
+				<listheader label="Dogum Tarihi" id="dogumTarihi" />
+				<listheader label="Medeni Hali" id="medeniHali" />
+				<listheader label="Dini" id="dini" />
+				<listheader label="Kan Grubu" id="kanGrubu" />
+				<listheader label="Mah Koy" id="mahKoy" />
+				<listheader label="Cilt No" id="ciltNo" />
+				<listheader label="Aile Sira No" id="aileSiraNo" />
+				<listheader label="Verildigi Yer" id="verildigiYer" />
+				<listheader label="Verilis Nedeni" id="verilisNedeni" />
+				<listheader label="Kayit No" id="kayitNo" />
+				<listheader label="Verilis Tarihi" id="verilisTarihi" />
+				<listheader label="Ekleme Tarihi" id="eklemeTarihi" />
+				<listheader label="Ekleyen" id="ekleyen" />
+				<listheader label="Son Gunleme Tarihi" id="sonGunlemeTarihi" />
+				<listheader label="Son Gunleyen" id="sonGunleyen" />
+			</listhead>
+		</listbox>
+	</window>
 	<script>
 AgemTable.rowDblClick = function(id) {	AgemTab.toggle([3], true);	Agem.open('genel/kimlik/select.do?kisiId='+id, 'editGenelKimlik', true);	Agem.message('Bilgiler okunuyor...');};	</script>
 </arya>

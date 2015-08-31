@@ -3,12 +3,12 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listDuyuruWindow">
 		<label visible="false" id="duyuruIdParamlbl" value="Duyuru Id" />
-		<textbox visible="false" type="text" id="duyuruIdParam"  value="j0u6z15hsl"  placeholder=""  />
+		<textbox visible="false" type="text" id="duyuruIdParam"  value="wjbd0qb309"  placeholder=""  />
 		<label id="baslikParamlbl" value="Başlık" />
-		<textbox type="text" id="baslikParam"  value="k5uwmfkbuzz2schfs5e6t4k6noptyczgr22yli6zpw712pc7srhb2vuqntuxeflbxvcacejos2dka0ddunxb8u3ougtjmk9h82agwpnh4gmt7nysmw2rqyddpeiwydcyiegzw6c29ic0i8ktwz82ex1f665vpbmaht8soxw7rlu3nojq8289k0a0yc3e0eb2838qth4hjg0ws7v87kdwxjanp1nuqizsmszeznc6nrfvk5nw7bjj4mjcs95z7vp"  width="200"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="baslikParam"  value="w9rt8g6x29ufjdfqhdkvxc0wjyy9ishqr3q2uhyzl8xyydtinvlp5uxfd7jc6gcx5u1vghm0vgwe1c8a18vildtwrf6jtxzn99st8gu10x85b0b7sjfea5qa70kqlt9vz9yk0nepsdpxatskih0dgrmhln0lrr5yjerg5smkzyev4xxplib339bx0rbj6jtv6r0heh6fykowqqsv5x7kbtvz0akyc9477xtym4ydwdqikukdwflnjisj9wchv9l"  width="200"  maxlength="255"  placeholder=""  />
 		<label id="tarihBasParamlbl" value="Duyuru Tarihi" />
-		<datebox id="tarihBasParam"  value="1990-3-25"  width="100"  placeholder=""  />
-		<datebox id="tarihBitParam"  value="1999-4-24"  width="100"  placeholder=""  />
+		<datebox id="tarihBasParam"  value="2000-0-21"  width="100"  placeholder=""  />
+		<datebox id="tarihBitParam"  value="1991-8-14"  width="100"  placeholder=""  />
 	</window>
 	<script>
 		AgemForm.submitMessage('Arama yapılıyor...');		</script>

@@ -3,8 +3,18 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addIsverensendikauyeWindow">
 		<label id="isyeri.unvanlbl" value="İşyeri Ünvanı" />
-		<textbox type="text" id="isyeri.unvan"  value="f38kbukmd4io0pgw0xz6mtz5141c8nwcilhbhem44jiz4lzj5f2hic0giyra3m7m1oze1qn14hrbbwc6od7m6i43vhs63diydt4yiyp9qlp57jtwu3alp6tg3l76mmbgi0xh7b4nixcbikoue0meqhd1jtedhsxjnea964yc2orfv7po5qotz5vbirbagol8952py2l7l6rk1fapb7onj5sl86r4z0h3v9z97coml2k3e4tab9emynf0b9iw2o4"  width="245"  maxlength="255"  placeholder=""  top="56" />
+		<textbox type="text" id="isyeri.unvan"  value="8dafzb5nxdn4ytxddsuv8o4208y54eh9zcn3a49ksf1bkle1tkktqj53l62z6301pfrv83dfwyk5bxldmmok1upl8mqsrhv5u0gaqb9kjk0piutgo5ysmof2pw82lni3adw4a5uf239gl739fhmq0ywo3wd0m34hgx1e600f9qn0dmq1qiklj0r1fn9vhi1wtwlwqd6ej5zwpbvtug4l7m9m9vgt33fxtji444cj90np9k97j727drx31af268r"  width="245"  maxlength="255"  placeholder=""  top="56" />
 		<checkbox type="text" id="isyeri.orgutlu"  checked="true"  label="Örgütlü İşyeri"  onCheck=""  width="10"  />
+		<listbox id="list">
+			<listhead>
+				<listheader label="Şube" id="sube" />
+				<listheader label="İşyeri SGK No" id="isyeri.sgkKisaNo" />
+				<listheader label="Ünvan" id="isyeri.unvan" />
+				<listheader label="Üyelik Tarihi" id="uyelikTarihi" />
+				<listheader label="Çıkış Tarihi" id="cikisTarihi" />
+				<listheader label="Grup" id="grup" />
+			</listhead>
+		</listbox>
 	</window>
 	<script>
 Other.KULLANICI_BILGI_TEK_SATIR = true;var isverenSendikaUyeId = ('<bean:write name="p_cleanId"/>' == '1') ? '' : '<bean:write name="p_isverenSendikaUyeId"/>';var setIsyeri = function(d) {	Agem.setValue({ isyeriId : d.isyeriId, 'isyeri.sgkKisaNo' : d.sgkKisaNo, 'isyeri.unvan':d.unvan});};var prepareIsyeriUrl = function() {	return  'genel/isyeri/autocomplete.do?merkezIdIsNullParam=1&' + ($('#isyeri\\.orgutlu').val() ? "orgutluParam=1" : ""); };var yeniForm = function(){	var id = $('#isverenSendikaIdParam').val();	AgemForm.temizle();	$('#isverenSendikaId').val(id);	$('#isverenSendikaIdParam').val(id);	Other.writeKullaniciBilgi();};var _UYE_LISTE = []; $(document).ready(	function () {		Agem.addElement('input','forward', {type:'hidden', name:'forward', value:'list', noClear:"1"}, null, document.forms['genelIsverenSendikaUyeForm']);		Agem.addElement('input','pageSize', {type:'hidden', name:'pageSize', value:'-1', noClear:"1"}, null, document.forms['genelIsverenSendikaUyeForm']);		Agem.addElement('input','isverenSendikaIdParam', {type:'hidden', name:'isverenSendikaIdParam', value:'<bean:write name="p_isverenSendikaIdParam"/>', noClear:"1"}, null, document.forms['genelIsverenSendikaUyeForm']);		Agem.addMaskEvents("isyeri.sgkKisaNo");		$("#isverenSendikaId").val('<bean:write name="p_isverenSendikaIdParam"/>');		<%if (request.getAttribute(AgemConstant.AGEM_MESSAGE) != null) {%>		Agem.message('<%=request.getAttribute(AgemConstant.AGEM_MESSAGE)%>');		<%}%>				$('#yeniUyeDiv').hide();				var isverenSendikaUyeId = $('#isverenSendikaUyeId').val();		if (!isverenSendikaUyeId ) {			var f = AgemTable.first();			if (f) {				AgemTable.rowClick(f.id);			} 		} else {			kayitGetir(isverenSendikaUyeId );		}	});AgemTable.rowClick = function(id) {	if (!id) {		id = AgemTable.SELECTED_ID;		if (id == null) {			Agem.error("Lütfen kayıt seçiniz.");			return;		}	}	kayitGetir(AgemTable.DATA["d-"+id].id);};function kayitGetir(isverenSendikaUyeId) {		Agem.ajax("genel/isverenSendikaUye/select.do", {json:1,isverenSendikaUyeId:isverenSendikaUyeId}, function (x) {		AgemForm.temizle();		Agem.setValue(x);		Other.writeKullaniciBilgi();	});}function kayitSil(id) {	idVal = $("#" + id).val();	if (!idVal) {		Agem.error("Lütfen kayıt seçiniz.");		return;	}	var x = [			'forward=list',			'isverenSendikaUyeId='+idVal,			'isverenSendikaIdParam='+$('#isverenSendikaIdParam').val(),			'cleanId=1'		];	if (confirm('Kaydı silmek istediğinizden emin misiniz?')) 		Agem.open( 'genel/isverenSendikaUye/delete.do?'+x.join('&') );}	</script>

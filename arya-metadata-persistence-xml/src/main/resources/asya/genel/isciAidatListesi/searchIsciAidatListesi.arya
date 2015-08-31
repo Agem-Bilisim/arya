@@ -4,38 +4,38 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listIsciaidatlistesiWindow">
 		<label id="listeTurParamlbl" value="Liste Türü" />
 		<combobox id="listeTurParam"  width="200"  >
-			<comboitem label="q4to9zgmi9" value="mpx1" />
+			<comboitem label="iztmelins1" value="4wjh" />
 		</combobox>
 		<label id="donemParamlbl" value="Dönem Ay/Yil" />
 		<combobox id="donemParam"  width="150"  >
-			<comboitem label="oalt5g6ubt" value="5lzb" />
+			<comboitem label="3aq9ckfzn3" value="it9j" />
 		</combobox>
 		<label id="isyeriParam.subeParamlbl" value="Şube" />
 		<combobox id="isyeriParam.subeParam"  width="300"  >
-			<comboitem label="v0hyx2g3wy" value="0o2z" />
+			<comboitem label="xrngpmmn19" value="nseq" />
 		</combobox>
 		<label id="isyeriParam.unvanParamlbl" value="İşyeri Ünvanı" />
-		<textbox type="text" id="isyeriParam.unvanParam"  value="ht391nz3zb4j3ssa2269u7etz446obtsxh8zrbcxn7zmkp4g77nt1vlrg7z2g37hp0t2lshkzjzg7lxoq6t5jb17kl8nr4f0cz2rs82askqdo0at7lccw67hfir8mmun8pxeb5i1652ce2ser31b32nhikonkht1ky4fz8bgqyiatzb9otb24m9wv9sxux5uvjmhf5vn64nbumn1bpeh4p9409ql7yxqvfrkkw7mge065t0j87i3bt6ff7b5sr4"  width="416"  maxlength="255"  placeholder=""  top="56" onChange="autocomplete("genel/isyeri/autocomplete.do", "unvanParam", 5, "setIsyeri")" />
+		<textbox type="text" id="isyeriParam.unvanParam"  value="79etni3qlxt4us0z9dnrmut7gw6dyisq43hamog25nj8i1nad3rtmy4cokasanhokd7ckelad2thdna117k372sjxoo89y4p68cbke6i4w0sv4v0mqjo00v4jwlc9gjkac5qnubsb38dqalvuo4kebcenvxb7v15ckyjt1wqwv80g88v44qm1n6dcebaf5u5dxawicy0t25p3uc85fdr1djeq572g06v8rmz21z1qaab8h0lv4ykt7q0xradwas"  width="416"  maxlength="255"  placeholder=""  top="56" onChange="autocomplete("genel/isyeri/autocomplete.do", "unvanParam", 5, "setIsyeri")" />
 		<label id="isyeriParam.sgkKisaNoParamlbl" value="İşyeri SGK No" />
-		<textbox type="text" id="isyeriParam.sgkKisaNoParam"  value="6zf4eltz12dh81ft1w58gcw1s5r9mkmd0b"  maxlength="34"  placeholder=""  onChange="autocomplete("genel/isyeri/autocomplete.do", "sgkKisaNoParam", 5, "setIsyeri")" />
+		<textbox type="text" id="isyeriParam.sgkKisaNoParam"  value="w1dde06sl5rokavyu9sxzjjv3atwgxi67x"  maxlength="34"  placeholder=""  onChange="autocomplete("genel/isyeri/autocomplete.do", "sgkKisaNoParam", 5, "setIsyeri")" />
 		<label id="isyeriParam.isyeriKategoriIdParamlbl" value="Kategori" />
 		<combobox id="isyeriParam.isyeriKategoriIdParam"  width="300"  >
-			<comboitem label="639n42xi4a" value="xzjj" />
+			<comboitem label="skq9955ge2" value="z4yt" />
 		</combobox>
 		<label id="isyeriParam.kisaAdParamlbl" value="Kısa Ad" />
-		<textbox type="text" id="isyeriParam.kisaAdParam"  value="pd2baoo6bzqyvodxq703e6xqgyrjkayyeo3zb679s3ralkpkjfm98xchko7daj9izu6hsmymzfibwnfx3rfjc00ow63r65ua7hr4cqtsx6sbz1lqef80akb2s2we25awvzksgbwo4j89nn01snksllbd4qpxcut20iw5wwje60fpgd832r3cmilnogac4538n4s8bjxpmk04625funqydbild7krf5o0qsawqson8qo983e76f0kl1sn6n2u9b7"  width="260"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="isyeriParam.kisaAdParam"  value="47rtt14lo06gz4knc3ovbtsncqn1bthle5wqqcquuzsni8p78nw4psek2v29d2sucg9harlx20x09nr2itdyg2zhkgmkern8v7zed85a319frjgk6ui7oigr90sdk7yje7l4vh2dqgpeih3d1xtfslfcizwugkxreap0j79u695echchjiw3yfa62mp7akhga64tri5djatiberd7en7t7oj6zk1u85fj6dclxuqel03xi0j1w3y875ph88gj88"  width="260"  maxlength="255"  placeholder=""  />
 		<label id="isyeriParam.orgutluParamlbl" value="Örgütlenme Var" />
 		<combobox id="isyeriParam.orgutluParam"  width="80"  >
-			<comboitem label="0bpqxtkf2s" value="4246" />
+			<comboitem label="mk79ozd8dm" value="xv4z" />
 		</combobox>
 		<label id="aidatTurParamlbl" value="Üye / DA" />
 		<combobox id="aidatTurParam"  width="200"  >
-			<comboitem label="f1hdb22j84" value="5vrh" />
+			<comboitem label="b0gi4co8tp" value="q3xu" />
 		</combobox>
 		<label id="tutarBaslbl" value="Aidat Tutar Aralığı" />
-		<doublebox id="tutarBas"  value="0.3776646541825782"  width="90"  placeholder=""  />
+		<doublebox id="tutarBas"  value="0.1980700581940733"  width="90"  placeholder=""  />
 		<label id="tutarTirelbl" value=""  onClick=""  />
-		<doublebox id="tutarBit"  value="0.804163238383238"  width="90"  placeholder=""  />
+		<doublebox id="tutarBit"  value="0.844761538548317"  width="90"  placeholder=""  />
 	</window>
 	<script>
 AgemForm.submitMessage('Arama yapılıyor...');var setIsyeri = function(d) {	Agem.setValue({ isyeriIdParam : d.isyeriId, 'isyeriParam.subeParam' : d.sube, 'isyeriParam.sgkKisaNoParam' : d.sgkKisaNo, 'isyeriParam.unvanParam':d.unvan});};var prepareIsyeriUrl = function() {	var orgutluParam = ($("#isyeriParam\\.orgutluParam").val() ? "orgutluParam=1" : "");	var subeParam = ($("#isyeriParam\\.subeParam").val() ? "subeParam=" + $('#isyeriParam\\.subeParam').val(): "");	var param = orgutluParam + ((orgutluParam == "") ? "" : "&") + subeParam;	return "genel/isyeri/autocomplete.do" + (param == "" ? "" : "?"+param); };$(document).ready(function () {	Agem.addMaskEvents("isyeriParam.sgkKisaNoParam");});function listele() {	AgemWM.submit(null, 'genelIsciAidatListesiParameterForm');}	</script>

@@ -1,4 +1,17 @@
 <?page title="DOCSYS" ?>
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
+	<window id="listIsciaidatlistesiWindow">
+		<listbox id="list">
+			<listhead>
+				<listheader label="Şube" id="sube" />
+				<listheader label="SGK No" id="sgkKisaNo" />
+				<listheader label="İşyeri" id="unvan" />
+				<listheader label="T.C. Kimlik No" id="tckNo" />
+				<listheader label="Ad Soyad" id="adSoyad" />
+				<listheader label="Tutar" id="tutar" />
+				<listheader label="Üye / DA" id="aidatTur" />
+			</listhead>
+		</listbox>
+	</window>
 </arya>

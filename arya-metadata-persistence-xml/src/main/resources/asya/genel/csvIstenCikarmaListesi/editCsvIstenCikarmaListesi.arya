@@ -3,12 +3,12 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="selectCsvistencikarmalistesiWindow">
 		<label visible="false" id="isyeriIdlbl" value="İşyeri" />
-		<textbox visible="false" type="text" id="isyeriId"  value="x1vqbjnhrk"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriId"  value="efprrtfyfz"  placeholder=""  />
 		<label visible="false" id="dosyaIdlbl" value="Dosya" />
-		<textbox visible="false" type="text" id="dosyaId"  value="2t84wznpnf"  placeholder=""  />
+		<textbox visible="false" type="text" id="dosyaId"  value="i5tig6qp60"  placeholder=""  />
 		<label id="istenCikarmaListeDosyaIdlbl" value="Çalışan Listeleri" />
 		<combobox id="istenCikarmaListeDosyaId"  width="300"  >
-			<comboitem label="bl0ws9fk2b" value="49j1" />
+			<comboitem label="vpqn9naynm" value="9kv2" />
 		</combobox>
 		<button id="istenCikarmaDosyaYukleBtn" label="Yükle"  onClick="istenCikarmaDosyaYukle()"  width="70"  />
 	</window>

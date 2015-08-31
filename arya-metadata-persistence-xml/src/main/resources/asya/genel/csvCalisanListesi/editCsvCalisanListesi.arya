@@ -3,20 +3,20 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="selectCsvcalisanlistesiWindow">
 		<label visible="false" id="isyeriIdlbl" value="İşyeri" />
-		<textbox visible="false" type="text" id="isyeriId"  value="f4toeetcxn"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriId"  value="n86b8kw37x"  placeholder=""  />
 		<label visible="false" id="dosyaIdlbl" value="Dosya" />
-		<textbox visible="false" type="text" id="dosyaId"  value="h4jm4smf03"  placeholder=""  />
+		<textbox visible="false" type="text" id="dosyaId"  value="10eszxkqhq"  placeholder=""  />
 		<label id="calisanListeDosyaIdlbl" value="Çalışan Listeleri" />
 		<combobox id="calisanListeDosyaId"  width="180"  >
-			<comboitem label="zyo3yrhiph" value="gc01" />
+			<comboitem label="b7n42m0ho9" value="shzx" />
 		</combobox>
 		<label id="donemAylbl" value="Dönem" />
 		<combobox id="donemAy"  width="80"  >
-			<comboitem label="4oo0v5hy3y" value="t2jx" />
+			<comboitem label="plpooq8r4x" value="63kn" />
 		</combobox>
 		<label id="donemYillbl" value="Dönem Yıl" />
 		<combobox id="donemYil"  width="70"  >
-			<comboitem label="ejmkj1cyzc" value="1i0z" />
+			<comboitem label="q73o2n2pid" value="5r1d" />
 		</combobox>
 		<button id="calisanDosyaYukleBtn" label="Yükle"  onClick="calisanDosyaYukle()"  width="70"  />
 		<checkbox type="text" id="isletmeTekListe"  checked="false"  label="İşletme İçin Tek Liste"  onCheck=""  width="70"  />

@@ -3,42 +3,42 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addKullanicikimlikWindow">
 		<label visible="false" id="kimlik.kisiIdlbl" value="Kisi Id" />
-		<textbox visible="false" type="text" id="kimlik.kisiId"  value="gqomxoqtye"  placeholder=""  />
+		<textbox visible="false" type="text" id="kimlik.kisiId"  value="ixdhjccwyw"  placeholder=""  />
 		<label id="kimlik.serilbl" value="Seri" />
-		<textbox type="text" id="kimlik.seri"  value="4krrg"  width="50"  maxlength="5"  placeholder=""  />
+		<textbox type="text" id="kimlik.seri"  value="99ll0"  width="50"  maxlength="5"  placeholder=""  />
 		<label id="kimlik.nolbl" value="No" />
-		<textbox type="text" id="kimlik.no"  value="eivtwh21hp"  width="100"  maxlength="10"  placeholder=""  />
+		<textbox type="text" id="kimlik.no"  value="63chqqux1m"  width="100"  maxlength="10"  placeholder=""  />
 		<label id="kimlik.babaAdilbl" value="Baba Adı" />
-		<textbox type="text" id="kimlik.babaAdi"  value="q5y0nxrej4qk3p487cah2a9mvr25oeqe4kljcr6iqe3puyjnijfpaht25ys8wcwth55l83sv5fq8xdutbxifrqiczp96qmsd3e546ol0ilivv7x8u7w083c1k7xoa53ktslrrylekt48hskg4r0bysihca1lrwvsroizu6bxrjrme72z33issd6cjpwth893dgf3589wbkjyrsdvhdrr3wzpycjt2ot5ridzm7qsl25n4t79hqytvwcezjdkgpe"  width="150"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="kimlik.babaAdi"  value="woszs9sznsuml2u7pg14swqndw7vbp62r2a4kb5ytnd62u6b7owlv5cdcphcdxqqldjualpq3nbw2ivwfh2h9g0rm4owcf02retlevy2derrwg1w38dz0dqgn6v83wj2ojs0oczksbq42q0im3f820ro9lrf8sk6ojiwoh8no30bec0t19gogw2nfbse1j074yxoa627gs13qoq7qjduezfp2sxwr0ozv4h15bzogdcd0swjl7qyx765wqja68q"  width="150"  maxlength="255"  placeholder=""  />
 		<label id="kimlik.anaAdilbl" value="Ana Adı" />
-		<textbox type="text" id="kimlik.anaAdi"  value="ghojnlo16vik187l9fvctbbzx0miiw7eycs5bk6brv91wkk8vrvwj5laqoo3r1p8cjssw1phis17k00m3tdzkubqrrz3s87j262bhsrlay0q6nag4i38u99729ir8pi14hozfepgqt0rpazynx7rfkyp5uh6jbqg5kgfpfuafuremlijw5fdvv2whj40u7aqb79nj3szx77pnrcpm8mlws2s96b6wh2l8j6whpfnbui2qptffxn7olqhchjotks"  width="150"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="kimlik.anaAdi"  value="jiynq3flmdaq451w5183evhn9cj232zwk0b7wqcjlune89bpsiaj30oy4zel4fhhwes97gso9r5d2wi3qlx3ramsy4sd05tecqboaf3fy1r3qqtva9ubi0djvk4mk4h9lr6lp8v1cv6bf35zo6cqr6atz66vc0bzljkkhjy3jmcbqmi549f5rntpammhb0s1myy8ige6fpjsitoriysv9k1vthtb9uzuicju7zdoghipsyuzujypqa0oayhrv86"  width="150"  maxlength="255"  placeholder=""  />
 		<label id="kimlik.dogumYerilbl" value="Doğum Yeri" />
-		<textbox type="text" id="kimlik.dogumYeri"  value="el39dre89jm2tbvw4t58c7n9a13yk99h5t2pzu1evvr15w4pu9u8g3tshlodgl07adied98unk1mynlh77urtywy8w488kgesav7r9wg3ds093ez4afplrg8lhwv3iehx2va6oov5ct9xt24q0vp0qo5yymbhnmxo5fadounq7mw67agrrhdl89msdgajgblw1831l3lu7xp5ruew06w4omufz1lk4umncl91xux9ghk1gxv8qsummpavsx5gku"  width="150"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="kimlik.dogumYeri"  value="mjiv9s0jfmpugvnewwj9357sqqek79g757b6m2yaixx21o6e243u5rkyzdgyj6cvv08xxlnoe2m26vk3ae1v2gl1lnduszx29ws6y0tuhr7mpvh0mvte7nu72hr0ejrzt5kcgcigkx13vw5zclxzj87ixpx0tja35ef084sagda83n027hjo7k87jogyo2m7kztgxp4ng5t5ibuuffj3334auz6z0xz0u3brkqisweceb6n383cj3oxbccbaoz4"  width="150"  maxlength="255"  placeholder=""  />
 		<label id="kimlik.dogumTarihilbl" value="Doğum Tarihi" />
-		<datebox id="kimlik.dogumTarihi"  value="2009-9-2"  width="150"  placeholder=""  />
+		<datebox id="kimlik.dogumTarihi"  value="2011-6-30"  width="150"  placeholder=""  />
 		<label id="kimlik.medeniHalilbl" value="Medeni Hali" />
 		<combobox id="kimlik.medeniHali"  width="150"  >
-			<comboitem label="o37ak2ic6f" value="6yoz" />
+			<comboitem label="9vo0ll8f5s" value="lzww" />
 		</combobox>
 		<label id="kimlik.dinilbl" value="Dini" />
-		<textbox type="text" id="kimlik.dini"  value="fgytjkz2isa0rwo8e92xa7kjn5hwkhrubi82x7fd93wepebzc8oypct8gtxgbk4zgloflk2iu03xiony5230jlbq63zfb1r1ebu3zbo59g9sq12waxbgtfuok7qso6ckqgcwu8yvfm6xhceuee7pzl2qmzrx6prljt8okz2rz40qybhzxlfddz4hppd4gxsjh260vdtyp389bph3fxsbu9edjmp636rmgbbccc7b5jg02f4z52u2ortonti4r91"  width="150"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="kimlik.dini"  value="h2kqa6pmf9hrxu4513pbd9nzqsa0seu7etfuee7ctqtdkjnzq3bzmpw7x03h5ig4x622gznnyi35nbtp7jgqnwk9pabhubn1t3qctqx11urz0t6oz8of4rf8wqvet8uozm2nzmjb7esc55s4vu60g5apdb33gdtlawkvg0vov6wmowtx3u01t78gynzcligtfxukei0tqmlrfusee24868txf0qhfk8od11brjbqzmwmo5l75f7ivpmvu7tz1v0"  width="150"  maxlength="255"  placeholder=""  />
 		<label id="kimlik.kanGrubulbl" value="Kan Grubu" />
 		<combobox id="kimlik.kanGrubu"  width="150"  >
-			<comboitem label="v9zaoqugzc" value="rkwn" />
+			<comboitem label="ux49idguqz" value="6sjx" />
 		</combobox>
 		<label id="kimlik.mahKoylbl" value="Mahalle/Köy" />
-		<textbox type="text" id="kimlik.mahKoy"  value="bwm62s81lp0i31o4ocy3n4orytc9kjlszs1u7zze0nx28q7p9x"  width="100"  maxlength="50"  placeholder=""  />
+		<textbox type="text" id="kimlik.mahKoy"  value="j5arcgkd0xusxgoha4ueaxfiv3e9q7e9o35wnx9q01kjcr6qlx"  width="100"  maxlength="50"  placeholder=""  />
 		<label id="kimlik.ciltNolbl" value="Cilt No" />
-		<textbox type="text" id="kimlik.ciltNo"  value="d66pcp4klk"  width="100"  maxlength="10"  placeholder=""  />
+		<textbox type="text" id="kimlik.ciltNo"  value="1dfbxkou6y"  width="100"  maxlength="10"  placeholder=""  />
 		<label id="kimlik.aileSiraNolbl" value="Aile Sıra No" />
-		<textbox type="text" id="kimlik.aileSiraNo"  value="1anzlzrlyi"  width="100"  maxlength="10"  placeholder=""  />
+		<textbox type="text" id="kimlik.aileSiraNo"  value="pnrwnj9xj0"  width="100"  maxlength="10"  placeholder=""  />
 		<label id="kimlik.verildigiYerlbl" value="Verildiği Yer" />
-		<textbox type="text" id="kimlik.verildigiYer"  value="ly2dyxjclbj8nfdwwxgmje3469vv0se2gbl0rupv5aqhlxol3vf48aeaiiozlu82x38tpyecxaaxl4qdbnrccoery2xb1743crzyj3dbsavengo8ngunmwicgcwf5cqgl3b9msfnh8mhpq25mbnue7rg6iuywg1egaec9trlaadryhgh1wmbh0ogyycim399x1axsvb85pa6zdtvozb4iza42492wl0bvpp2klx97twvivhbkbywx09vrqtqlvc"  width="100"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="kimlik.verildigiYer"  value="lvu37b12of8ie6edk5ilh2l12lw196zuo80tvzgo2ap7fo94g41q8oogcioqeaxny5u6lwk6wmtwlr68tw6km8ni4ymt02jjnmreldvoqnmmzg6gc7sn5fypylnnih2l0gzxnv829lvcjfmlnwnsz15ey36ax0bu8pf029ezb41eyrgncfsa8d49w07k8zsinaqyjcbl20fd7klyisapm8zuc8bk98i19ko82o5qdh9ffndihzyuedi8vvpb2qh"  width="100"  maxlength="255"  placeholder=""  />
 		<label id="kimlik.verilisNedenilbl" value="Veriliş Nedeni" />
-		<textbox type="text" id="kimlik.verilisNedeni"  value="r4vd90jxbg1zr7a2zrq0"  width="100"  maxlength="20"  placeholder=""  />
+		<textbox type="text" id="kimlik.verilisNedeni"  value="ui1e06f1fsfw6e48i13r"  width="100"  maxlength="20"  placeholder=""  />
 		<label id="kimlik.verilisTarihilbl" value="Veriliş Tarihi" />
-		<datebox id="kimlik.verilisTarihi"  value="2011-11-21"  width="125"  placeholder=""  />
+		<datebox id="kimlik.verilisTarihi"  value="2009-8-19"  width="125"  placeholder=""  />
 		<label id="kimlik.kayitNolbl" value="Kayıt No" />
-		<textbox type="text" id="kimlik.kayitNo"  value="mz40dxycqa"  width="100"  maxlength="10"  placeholder=""  />
+		<textbox type="text" id="kimlik.kayitNo"  value="0v4t13xubv"  width="100"  maxlength="10"  placeholder=""  />
 	</window>
 </arya>

@@ -1,6 +1,20 @@
 <?page title="DOCSYS" ?>
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
+	<window id="listIsletmeaidatfarkanalizWindow">
+		<listbox id="list">
+			<listhead>
+				<listheader label="Dönem Yıl" id="donemYil" />
+				<listheader label="Dönem Ay" id="donemAy" />
+				<listheader label="İşveren İşçi" id="isyeriSayi" />
+				<listheader label="Sendika İşçi" id="sendikaSayi" />
+				<listheader label="İşveren Tutar" id="isyeriTutar" />
+				<listheader label="Sendika Tutar" id="sendikaTutar" />
+				<listheader label="Fark İşçi" id="sayiFark" />
+				<listheader label="Fark Tutar" id="tutarFark" />
+			</listhead>
+		</listbox>
+	</window>
 	<script>
 AgemTable.rowDblClick = function(id) {	var d = AgemTable.get(id);	<agem:access URL="genel/isletmeAidatFarkAnaliz/select">		if (AgemWM.exists('#genelIsletmeAidatFarkAnalizSelect')) {			AgemWM.addQueryString(Agem.json2Param({}));			AgemWM.link('#genelIsletmeAidatFarkAnalizSelect', {url: 'genel/isletmeAidatFarkAnaliz/select.do'});			Agem.message('Bilgiler okunuyor...');		} else {			<agem:access URL="genel/isletmeAidatFarkAnaliz/select">			AgemWM.window({ link:"genel/isletmeAidatFarkAnaliz/select.do?merkezIdParam="+d.isyeriId + "&donemAyParam="+d.donemAy + "&donemYilParam="+d.donemYil, label: "İşletme Aidat Fark Analizi", width: 800, height: 600});			</agem:access>		}	</agem:access>};	</script>
 </arya>

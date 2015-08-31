@@ -3,18 +3,18 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listAjandaWindow">
 		<label visible="false" id="isyeriZiyaretIdParamlbl" value="Isveren Ziyaret Id" />
-		<textbox visible="false" type="text" id="isyeriZiyaretIdParam"  value="laazrqqta2"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriZiyaretIdParam"  value="5mi2usj2yl"  placeholder=""  />
 		<label visible="false" id="isyeriIdParamlbl" value="Isyeri Id" />
-		<textbox visible="false" type="text" id="isyeriIdParam"  value="wl6xjkbq5a"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeriIdParam"  value="750g6vwasa"  placeholder=""  />
 		<label id="subeParamlbl" value="Şube" />
 		<combobox id="subeParam"  width="240"  >
-			<comboitem label="nz10yglpic" value="2dgo" />
+			<comboitem label="lsx4ym0w8g" value="iion" />
 		</combobox>
 		<label id="isyeriAdiParamlbl" value="Kurum/Kişi Adı" />
-		<textbox type="text" id="isyeriAdiParam"  value="mv1v2cete97zrpuhght3sxxszwm9by0yvqcq1idjilr13zmpp12c8xy21rexb6s99kgpzgglzewfnix9w3h1x3wdevm6k9hrkqli83mym7b93am63ys4krj5oexx875ffbaqxpci69o6jfu2cruqbpo29o9u2ww9vwl9p09p9kbw8lcz89eyoxm1pdwo2ooqg1srfmaogrwox11tupqvmj6113411zwktdp3xhqayiv1pp7en640hvnep5rztph"  width="416"  maxlength="255"  placeholder=""  onChange="autocomplete("genel/isyeri/autocomplete.do", "unvanParam", 5, "setIsyeri")" />
+		<textbox type="text" id="isyeriAdiParam"  value="9wst0apzail4nh3mxess6drww48rup6vp096j0hwj2lr3fyn0uzyldaaj8uxfmlmcto9189thstnjbso92i8vi0qg60k64mjk4tcpr2qji7zuzneshaom4h81c0he7grb9kl04juj6hn8eohoo90d18fobp9gz19es1mx3x9b4ujmhmwb0x6lnq4ufe2rsti948x998k06af3qev4q505h2izv22zbatcf6c2pjquytzs38faddgesimjsu31ji"  width="416"  maxlength="255"  placeholder=""  onChange="autocomplete("genel/isyeri/autocomplete.do", "unvanParam", 5, "setIsyeri")" />
 		<label id="ziyaretTarihiBasParamlbl" value="Ziyaret Tarihi" />
-		<datebox id="ziyaretTarihiBasParam"  value="1997-6-16"  width="120"  placeholder=""  />
-		<datebox id="ziyaretTarihiBitParam"  value="1993-3-27"  width="120"  placeholder=""  />
+		<datebox id="ziyaretTarihiBasParam"  value="1997-10-19"  width="120"  placeholder=""  />
+		<datebox id="ziyaretTarihiBitParam"  value="2005-6-29"  width="120"  placeholder=""  />
 		<checkbox type="text" id="faaliyetRaporuParam"  checked="false"  label="Faaliyet Raporu"  onCheck=""  width="50"  />
 		<checkbox type="text" id="benimKayitlarimParam"  checked="true"  label="Benim kayıtlarım"  onCheck=""  width="50"  />
 	</window>

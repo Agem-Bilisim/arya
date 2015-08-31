@@ -1,6 +1,20 @@
 <?page title="DOCSYS" ?>
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
+	<window id="listAidatfarkanalizWindow">
+		<listbox id="list">
+			<listhead>
+				<listheader label="Dönem Yıl" id="donemYil" />
+				<listheader label="Dönem Ay" id="donemAy" />
+				<listheader label="İşveren İşçi" id="isyeriSayi" />
+				<listheader label="Sendika İşçi" id="sendikaSayi" />
+				<listheader label="İşveren Tutar" id="isyeriTutar" />
+				<listheader label="Sendika Tutar" id="sendikaTutar" />
+				<listheader label="Fark İşçi" id="sayiFark" />
+				<listheader label="Fark Tutar" id="tutarFark" />
+			</listhead>
+		</listbox>
+	</window>
 	<script>
 AgemTable.rowDblClick = function(id) {<agem:access URL="genel/aidatFarkAnaliz/select">	if (AgemWM.exists('#genelAidatFarkAnalizSelect')) {		AgemWM.addQueryString(Agem.json2Param({aidatIdParam: id, aidatId: id}));		AgemWM.link('#genelAidatFarkAnalizSelect', {url: 'genel/aidatFarkAnaliz/select.do'});		Agem.message('Bilgiler okunuyor...');	} else {		<agem:access URL="genel/aidatFarkAnaliz/select">		AgemWM.window({ link:"genel/aidatFarkAnaliz/select.do?aidatId="+id + "&aidatIdParam="+id, label: "Aidat Fark Analizi", width: 800, height: 600});		</agem:access>	}</agem:access>};	</script>
 </arya>

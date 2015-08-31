@@ -4,18 +4,25 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listAidatsatireslesenWindow">
 		<checkbox type="text" id="istenCikislarParam"  checked="true"  label="İşten Çıkış Farkı"  onCheck=""  width="10"  />
 		<checkbox type="text" id="ucretsizIzinParam"  checked="true"  label="R/UI/A Farkı"  onCheck=""  width="10"  />
-		<checkbox type="text" id="tutarFarkiParam"  checked="false"  label="Tutar Farkı"  onCheck=""  width="10"  />
-		<checkbox type="text" id="bildirimFarkiParam"  checked="false"  label="Bildirim Farkı"  onCheck=""  width="10"  />
+		<checkbox type="text" id="tutarFarkiParam"  checked="true"  label="Tutar Farkı"  onCheck=""  width="10"  />
+		<checkbox type="text" id="bildirimFarkiParam"  checked="true"  label="Bildirim Farkı"  onCheck=""  width="10"  />
 		<label id="subeParamlbl" value="Şube" />
 		<combobox id="subeParam"  width="140"  >
-			<comboitem label="s5728d4lz7" value="rhff" />
+			<comboitem label="k3154i999r" value="hg93" />
 		</combobox>
-		<textbox visible="false" type="text" id="aidatIdsString"  value="eyzxj77aqs"  placeholder=""  />
-		<textbox visible="false" type="text" id="aidatIdParam"  value="r7xmkjv2xa"  placeholder=""  />
-		<textbox visible="false" type="text" id="isletmeParam"  value="wmhoviqqut"  placeholder=""  />
-		<textbox visible="false" type="text" id="donemAyParam"  value="2lkdqyvocb"  placeholder=""  />
-		<textbox visible="false" type="text" id="donemYilParam"  value="5wxtwdstor"  placeholder=""  />
-		<textbox visible="false" type="text" id="merkezIdParam"  value="rd5547usgx"  placeholder=""  />
+		<textbox visible="false" type="text" id="aidatIdsString"  value="od2hly3el3"  placeholder=""  />
+		<textbox visible="false" type="text" id="aidatIdParam"  value="ss8qhv5f2h"  placeholder=""  />
+		<textbox visible="false" type="text" id="isletmeParam"  value="utozb5alad"  placeholder=""  />
+		<textbox visible="false" type="text" id="donemAyParam"  value="rlk6beakd8"  placeholder=""  />
+		<textbox visible="false" type="text" id="donemYilParam"  value="2ofkfpedge"  placeholder=""  />
+		<textbox visible="false" type="text" id="merkezIdParam"  value="q9lr6n3vdb"  placeholder=""  />
+		<listbox id="list">
+			<listhead>
+				<listheader label="Şube" id="sube" />
+				<listheader label="İşyeri SGK No" id="isyeri.sgkKisaNo" />
+				<listheader label="Ünvan" id="isyeri.unvan" />
+			</listhead>
+		</listbox>
 	</window>
 	<script>
 var _YARDIM_SOZCUK = 'genel/aidatSatirEslesen';var _aidatId = '<bean:write name="p_aidatIdParam"/>';var _isletmeParam = '<bean:write name="p_isletmeParam"/>';var _donemAy = '<bean:write name="p_donemAyParam"/>';var _donemYil = '<bean:write name="p_donemYilParam"/>';$(document).ready( function () {	if ($('.exportlinks').length > 0) {	<agem:access URL="genel/aidatSatirEslesen/edit">		$('<a/>', {     			id: 'kaydet-link',     			href: "javascript:duzenle()",     			title: 'Listelenen Kayıtları Düzenle'     		}).html("<span title='Listelenen Kayıtları Düzenle' class='export-icon save-off' onmouseover=\"Other.changeClass(this, 'save-off', 'save-on')\" onmouseout=\"Other.changeClass(this, 'save-on', 'save-off')\"></span>").prependTo('.exportlinks');				$('.save-off').parent().attr("href", "javascript:duzenle()");	</agem:access>		$('<a/>', {     			id: 'arama-link',     			href: "javascript:filtrele()",     			title: 'Filtrele'     		}).html("<span title='Filtrele' class='export-icon search-off' onmouseover=\"Other.changeClass(this, 'search-off', 'search-on')\" onmouseout=\"Other.changeClass(this, 'search-on', 'search-off')\"></span>").prependTo('.exportlinks');				$('.search-off').parent().attr("href", "javascript:filtrele()");			}		if (!_isletmeParam || (_isletmeParam && _isletmeParam == 0)) {		$("#subeParam").parent().hide();	}});AgemTable.rowDblClick = function(id) {	if (parseInt(id)) {			AgemWM.window(					{						label: 'İşçi İşlemleri', 						link:"genel/isci/select.do?kisiId=" + id + "&kisiIdParam=" +id,						width: 800,						height: 600									});	} else {		var tckNoAdSoyad = id.toString().substring(1).split("&");		AgemWM.window(				{					label: 'İşçi İşlemleri',					link:"genel/isci/list.do?kisiParam.checkTckNoAdSoyadParam=" + tckNoAdSoyad[0] + "&kisiParam.checkTckNoAdSoyadParam=" + tckNoAdSoyad[1]+ "&kisiParam.checkTckNoAdSoyadParam=" + tckNoAdSoyad[2],					tab:"#genelIsciList",					paramSelector:"#genelIsciList",					width: 800,					height: 600								});	}};function duzenle() {	if ($("#liste tr.empty").length > 0) {		alert("Listede işlenecek kayıt yok...");		return;	}		<agem:access URL="genel/aidatSatirEslesen/edit">		if (!confirm('Şu an listelenen kayıtlar arasındaki tutarsızlıklar düzenlenecektir. Devam edilsin mi ?')) {			return;		}		Agem.perde(true, null, 'Lütfen bekleyin...');		$.ajax({"url":"genel/aidatSatirEslesen/edit.do",			data:{ aidatId: _aidatId,					istenCikislarParam: ($('#istenCikislarParam').attr('checked') ? '1' : ''),					ucretsizIzinParam: ($('#ucretsizIzinParam').attr('checked') ? '1' : ''),					tutarFarkiParam: ($('#tutarFarkiParam').attr('checked') ? '1' : ''),					bildirimFarkiParam: ($('#bildirimFarkiParam').attr('checked') ? '1' : ''),					isletmeParam: _isletmeParam,					donemAyParam: _donemAy,					donemYilParam: _donemYil,					aidatIdsString: $('#aidatIdsString').val(),					json:1 },			async : false,			timeout: 30000, 			dataType:"json", 			success:function(data){				if (data['@hata']) {					Agem.error(data['@message'],'x');				} else {					Other.displayTagYenile();				}				Agem.perde(false);			},			error:function(xhr,err,e){ 	Agem.perde(false); alert( "Hata: " + err );}});	</agem:access>	<agem:access not="true" URL="genel/aidatSatirEslesen/edit">		Agem.error("Yetkiniz yok.");	</agem:access>	}var filtrele = function() {	AgemForm.open('genelAidatSatirEslesenParameterForm', null, '---Par', true);};function listele() {	AgemWM.submit(null, 'genelAidatSatirEslesenParameterForm');}	</script>

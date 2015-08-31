@@ -2,33 +2,33 @@
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="editIsciiletisimWindow">
-		<textbox visible="false" type="text" id="kisiId"  value="32pa4e59q6"  placeholder=""  />
+		<textbox visible="false" type="text" id="kisiId"  value="g8jf7ph6h5"  placeholder=""  />
 		<label visible="false" id="isyeri.isyeriIdlbl" value="Isyeri Id" />
-		<textbox visible="false" type="text" id="isyeri.isyeriId"  value="2ntmplxvs4"  width="80"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeri.isyeriId"  value="har5pf06lq"  width="80"  placeholder=""  />
 		<label id="isyeri.unvanlbl" value="İşyeri Ünvanı" />
-		<textbox type="text" id="isyeri.unvan"  value="mgaocq15zorm6fr78uwmba1qxl7xdd4xo8c2jmpqweu51q90ojz6hqof6yzhxaxo4ytlie9nebrf9nr2ts6tl4g8lggcan4hwr48zzneksppdy070t66ya97bkuke1wcm6l8pabty3le2a1hsniqhq3bm5qahqbh0v9xi97j079kkx2j05e55h1csvnpufn9dzarmld0mloraefxu0eq3roenzl7y0hms5v12269sjy90s7n4jv6q8g6540gglp"  width="245"  maxlength="255"  placeholder=""  top="56" />
+		<textbox type="text" id="isyeri.unvan"  value="ll034sku8a3jq0u6mz8eh20tjgkpujqq62xlhophfq9cumuxnzwd0ewsvmxyh41ghugig6tmofluxwtyoosxgnh0zfb62v2b1pvv9ekhch2dn1ob4j54jwz00fmeenpzyong8h6zj3q1gtrgbs2421ychx0vochdt7e8s5fnzel2jk7cuusadeeluu2gem0k8mgtm8bieyokui2f82vjoffrf1mkaexk90k2yha7nq6fjc66p7it24dclzwz2a8"  width="245"  maxlength="255"  placeholder=""  top="56" />
 		<label visible="false" id="isyeri.iletisim.iletisimIdlbl" value="Iletisim Id" />
-		<textbox visible="false" type="text" id="isyeri.iletisim.iletisimId"  value="2b61rawuoe"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeri.iletisim.iletisimId"  value="moyny0o4iy"  placeholder=""  />
 		<label id="isyeri.iletisim.adres1lbl" value="Adres (1)" />
-		<textbox type="text" id="isyeri.iletisim.adres1"  value="1cwvk7t4y4kf09igbh291nw0dlndjt7sy0c7uzsp2pphj3kyvjr9ya013w7wffg2agn36rbu2zxhdtzu8errubep7mg27fh0l8vkc7ipv5o3hkjvbbcffmjgldtsledb574pwm9pcfx9l8kvwc42zzxe2jztr499rwonadsyx15qj5itx377wa2mdjiengnvpql12s7cvwjogme04ca7s6l2319mjsl9ienkznermv4s1hi299leggylfaty8a9"  width="472"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="isyeri.iletisim.adres1"  value="746f4lwqy19om0azg3ge856rbo3c51kwce7po1px3l3ig4l130l4foag94j50i4zvnsbjc28iu2spqwz1z8aj58a52zcadbyd8v7do3vmzgifkf6eq298ww6mzrxhv4ytcaerj7gsconaff9hw85fx5vu3f03k7p1zq4nny5rj9gcrn1bv8yit75apv0rlpmyz787jo5cdspvdk4gbrnbi3c99j29gx9wthv1autzkmhxzssr5hh19cpl476p64"  width="472"  maxlength="255"  placeholder=""  />
 		<label id="isyeri.iletisim.adres2lbl" value="Adres (2)" />
-		<textbox type="text" id="isyeri.iletisim.adres2"  value="j7ik3rdmfw2w1kgsujowv001z1lphqvtebxlz8ou7vin3a8b0ilmzgdzgyejo9bc077t7oyilvq4j30zkry4x75ag999y51y7txecxkukju0dji0x9teyfywfefn4uuchs6xuwd6l7m6wdsnlgp717lwlqbzeg64r5uqk5j3yo3f9j3qrduk6qye61tmj6lsefm46corclgj3gufzox8j2tamq2znavfkrco9hpw72hlzvftpr5l29lgqxxgb6b"  width="472"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="isyeri.iletisim.adres2"  value="eygk6ry8kko1mg6605txgwubyja7ss8led9c6guca6d66br05ael0gyj2ame4ggkgcn0ecu1v2dtq6kqa108hpfsmkseprvuhknm94d00f76u9foz7wx2v6f4et1g8uvn1o0q6tfb6lldpuzw0qqwjsvzbpwxbf1wqo420tyz33e9sbzdntt743ljk3c0ogq4svg15pr5te4gcwnv1uvnm4sxl83577e5f29qplx3p5lng3vhekp7doknh72vd6"  width="472"  maxlength="255"  placeholder=""  />
 		<label id="isyeri.iletisim.postaKodulbl" value="Posta Kodu" />
-		<textbox type="text" id="isyeri.iletisim.postaKodu"  value="1bbbh"  width="100"  maxlength="5"  placeholder=""  />
+		<textbox type="text" id="isyeri.iletisim.postaKodu"  value="09jh3"  width="100"  maxlength="5"  placeholder=""  />
 		<label visible="false" id="isyeri.iletisim.ilKodulbl" value="İl" />
-		<textbox visible="false" type="text" id="isyeri.iletisim.ilKodu"  value="l09tj0imklwcd1iw30bwwn"  maxlength="22"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeri.iletisim.ilKodu"  value="i8l5ovxftwajsps58lxy8d"  maxlength="22"  placeholder=""  />
 		<label visible="false" id="isyeri.iletisim.ilceKodulbl" value="İlçe" />
-		<textbox visible="false" type="text" id="isyeri.iletisim.ilceKodu"  value="ae3zjyd6gopdyy8noer3as"  maxlength="22"  placeholder=""  />
+		<textbox visible="false" type="text" id="isyeri.iletisim.ilceKodu"  value="txz848vffema5loyqo0gz0"  maxlength="22"  placeholder=""  />
 		<label id="isyeri.iletisim.ilce.valuelbl" value="İl/İlçe" />
-		<textbox type="text" id="isyeri.iletisim.ilce.value"  value="4bx0znr31n"  width="288"  placeholder=""  onChange="autocomplete("genel/ilce/autocomplete.do", "dbParam", 5, "setIlIlce")" />
+		<textbox type="text" id="isyeri.iletisim.ilce.value"  value="fjtwq65l9t"  width="288"  placeholder=""  onChange="autocomplete("genel/ilce/autocomplete.do", "dbParam", 5, "setIlIlce")" />
 		<label id="isyeri.iletisim.tellbl" value="Telefon" />
-		<textbox type="text" id="isyeri.iletisim.tel"  value="ltmipy4p4tpnq3y5ukwf9q4jsnhi1cltncdlplbfg030i4u8g5225sekx2upk3wy3sztxw9dgwsiy2ak3pt8x4ajwg2wlcrhdw1eza46q6v6ejr8af6tnd43zq4rs74vuteoof3285h1h56whc195jgl0o02pg0v57v30buelmdxwvh9p0hfj2nkeubccsk9mi3qrqs1hd8ffx1ywqulzeboy3t3wium5ljbokfo5dhfykb48z9irfp2q79xeis"  width="100"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="isyeri.iletisim.tel"  value="d716szbrsass95r3fmap52m78h9l2y0s0uc60cel1bs8hkaq56w9nsligmp9qckj59q8nbnfet005ug67g2e368o6axtc05a5fl191em246vt8ycp03nog4xq96rvgf8wimz5m05yfz1etqox2hsmk40vikv9zjep4181w3lxcfeqhaxoemp8n5el2fbt6ocgele8i9eghxf2dichw3mwrpa9ab4azzpatczi96jufjiakwl9f48d3ap7cfjeya"  width="100"  maxlength="255"  placeholder=""  />
 		<label id="isyeri.iletisim.ceplbl" value="Cep Tel." />
-		<textbox type="text" id="isyeri.iletisim.cep"  value="5jl2o06eiznukhuduxf2tsmuxk4ofi04rzxprbip3e33wb15gl90nmmkm0c1644ozxynmhagcf91mpzlzmi455fk8wcsc3662l4de6tngkk3h72n63mhd0tn867zmtfgrwi3fljeogci3xha6hsos1w381yfcop1ehdwlvthfnj6am5pim1wqi4yzutj1tu4gl5twsxwliryog8ais4az8ebqj3xbvtz4al5goxz3b07fp7on73dfel9jmxxt86"  width="100"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="isyeri.iletisim.cep"  value="qfzcqnjkxoubl7nuvnx0d3cobu1kf0uneylir7kh3pvybvl3fpowzad5sr5i0wbyn36tjiuszy8k8rz3wfu8ximn3xsk2iyp7gwno4sif3psowkvceto3j4txw689quimii6o9r5zmw43w86hles5dzb1yfk27o4tw83uxlbl6ceuoksrh57c05i0c21zf2nsfdumgao25h205rufuy6mkw1a597epbc76zm0202pjq20pdidnp1lp4g6euxal5"  width="100"  maxlength="255"  placeholder=""  />
 		<label id="isyeri.iletisim.fakslbl" value="Faks" />
-		<textbox type="text" id="isyeri.iletisim.faks"  value="dmyy4ligutkog0dzugx3edt42mrfsau5lv8wr24q9hl5p72bmycflfaxc64glcev1f5eylwbs9l7k067n0vdpfvsd37pxx4iskg580z73xn4ab6zpivu274jkybmkuzsyd9d6tc6fgituv2j45y9x5bjguwals48bb8t3uh5qavhpmmk0l602aex3vby81s6boyi444zl04y6iuhooe84y6wgiv9m2kya3d01vif4509fl5lm830btr8jeklbfn"  width="100"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="isyeri.iletisim.faks"  value="atest0zu7ge1ccynaxwm08gwkxyfo7vg17m9hznpus70q7nt2e3knz74fjzux180xw0yjzmz4twkym3xgxl9hmfl0nx45w6af9oreudcfqhhk785294zv9oy0a9hjdqi6e78ofy61s9ji0gxzzoodpzc84axayo2b3w9nm28q6taijd8w3wif5aq5ghotxkx0nk20b63clketyi2cdleo8yw3jeqxt643bjyjn0lhdfzrcv0jwy11ggzsxw3a6v"  width="100"  maxlength="255"  placeholder=""  />
 		<label id="isyeri.iletisim.epostalbl" value="E-Posta" />
-		<textbox type="text" id="isyeri.iletisim.eposta"  value="dotk6wj6fo9z24pkahhcasz1ps8ncqvs9ppk1skuzflus23n71697fkzfnn6q4k60psjdrqwp39w0cw95m3yqbg6z0o7o492twtwh5h9yaflivuwedlcctfenvayq354sagnenctzadmlvqa0c769wkft8dpgwmjtrqhctpcnhvxarjox4dso9poorqmxw2wo3y1qq2li98d47bmv1wzyr4nkw4xiy6g1q1npi95w0src9h71bg1f3qqt7nkyjy"  width="472"  maxlength="255"  placeholder=""  />
+		<textbox type="text" id="isyeri.iletisim.eposta"  value="lzusnzcxa0i95oan550kduxuiitby7hxc9xsgi46p1fvjfucmzf33n9lt44tpx0pf7kqkqahu5xk7m2xe3npmjpy9m63m55g9b2ig8usif7tjvk65w9hgkq7ypa77smc3xc1okktk7aa8u2vkfgts4bu30h161tzzbef51oag6qmbxrkq6l51s0agzv0gfxrhj77pwrqzjetyef9o4gyt3l6h23pp5blvg4ike7klmb46nm2tlk8yvawnmub94x"  width="472"  maxlength="255"  placeholder=""  />
 	</window>
 	<script>
 function setIlIlce(ilce,n) {	if (ilce) {		$('#iletisim\\.ilKodu').val(ilce.ilKodu);		$('#iletisim\\.ilceKodu').val(ilce.ilceKodu);	} else {		$('#iletisim\\.ilKodu').val("");		$('#iletisim\\.ilceKodu').val("");	}}$(document).ready( function () {	$("[name^='isyeri\\.']").attr("disabled", true);});	</script>

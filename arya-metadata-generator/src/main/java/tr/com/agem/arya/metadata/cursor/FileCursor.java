@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 import java.util.logging.Level;
@@ -25,7 +26,10 @@ public class FileCursor {
 			Pattern.CASE_INSENSITIVE | Pattern.DOTALL);
 	private static final Pattern scriptBodyPattern = Pattern.compile("<script[^>]*>([\\w\\W]*?)</script>",
 			Pattern.CASE_INSENSITIVE | Pattern.DOTALL);
-	private static final Pattern scriptSrcPattern = Pattern.compile("<script.*?src=\"(.*?)\"", Pattern.CASE_INSENSITIVE | Pattern.DOTALL);
+	private static final Pattern scriptSrcPattern = Pattern.compile("<script.*?src=\"(.*?)\"",
+			Pattern.CASE_INSENSITIVE | Pattern.DOTALL);
+	private static final Pattern tablePattern = Pattern.compile("<display:column([^>]*)>([\\w\\W]*?)</display:column>",
+			Pattern.CASE_INSENSITIVE);
 
 	MetadataBuilder builder = null;
 
@@ -49,27 +53,50 @@ public class FileCursor {
 				builder.beginFile();
 
 				//
-				// Find <agem:form> tags, append to metadata file.
+				// Find <agem:form> tags, append to view metadata.
 				//
 				Matcher formMatcher = formPattern.matcher(jsp);
 				while (formMatcher.find()) {
 
-					String agemFormTag = formMatcher.group(0);
-					String[] properties = MetadataGeneratorUtil.getInstance().getFormProperties(agemFormTag);
-					String className = MetadataGeneratorUtil.getInstance().getFormClassName(agemFormTag);
-					String actionName = MetadataGeneratorUtil.getInstance().getFormActionName(agemFormTag);
+					String formTag = formMatcher.group(0);
+					String[] properties = MetadataGeneratorUtil.getInstance().getFormProperties(formTag);
+					String className = MetadataGeneratorUtil.getInstance().getFormClassName(formTag);
+					String actionName = MetadataGeneratorUtil.getInstance().getFormActionName(formTag);
 
-					if (properties.length > 0 && AryaUtils.isNotEmpty(className)
-							&& AryaUtils.isNotEmpty(actionName)) {
+					if (properties.length > 0 && AryaUtils.isNotEmpty(className) && AryaUtils.isNotEmpty(actionName)) {
 
 						logger.log(Level.FINE, "Found agem:form element!");
 
 						Class<?> cls = Class.forName(className);
 
 						if (isFirst) {
-							builder.beginViewMetadata(actionName, cls);
+							builder.beginViewMetadata(actionName, cls.getName());
 						}
-						builder.appendViewBody(cls, properties, actionName);
+						builder.appendViewBody(cls, properties);
+
+						isFirst = false;
+					}
+
+				}
+				//
+				// Find <display:column> tag, append to view metadata.
+				//
+				Matcher tableMatcher = tablePattern.matcher(jsp);
+				while (tableMatcher.find()) {
+
+					String tableTag = tableMatcher.group(0);
+					HashMap<String, String> properties = MetadataGeneratorUtil.getInstance()
+							.getColumnProperties(tableTag);
+					String requestURI = MetadataGeneratorUtil.getInstance().getRequestURI(jsp);
+
+					if (properties != null && !properties.isEmpty() && requestURI != null && !requestURI.isEmpty()) {
+
+						logger.log(Level.FINE, "Found display:column element!");
+
+						if (isFirst) {
+							builder.beginViewMetadata("list", requestURI.replaceAll("/", "."));
+						}
+						builder.appendViewBody(properties);
 
 						isFirst = false;
 					}
@@ -82,30 +109,30 @@ public class FileCursor {
 				isFirst = true;
 
 				//
-				// Find <script> tags, append to metadata file.
+				// Find <script> tags, append to script metadata.
 				//
 				Matcher scriptBodyMatcher = scriptBodyPattern.matcher(jsp);
 				while (scriptBodyMatcher.find()) {
 
 					String scriptBody = scriptBodyMatcher.group(1);
-					
+
 					if (AryaUtils.isNotEmpty(scriptBody)) {
-						
+
 						if (isFirst) {
 							builder.beginScriptMetadata();
 						}
 						builder.appendScriptBody(scriptBody);
-						
+
 						isFirst = false;
 					}
 
 				}
-				
+
 				Matcher scriptSrcMatcher = scriptSrcPattern.matcher(jsp);
 				while (scriptSrcMatcher.find()) {
-					
+
 					String scriptSrc = scriptSrcMatcher.group(1);
-					
+
 					if (AryaUtils.isNotEmpty(scriptSrc)) {
 						builder.appendScriptSrc(scriptSrc);
 					}
@@ -116,14 +143,15 @@ public class FileCursor {
 					builder.endScriptMetadata();
 				}
 				builder.endFile();
-				
+
 				// Generate metadata file and its parent directories if not
 				// exists,
 				// then write to it.
 				File result = MetadataGeneratorUtil.getInstance().generateFileDir(jarEntry.getName());
 				logger.log(Level.INFO, "Target File: {0}", result.getName());
 				FileOutputStream fileStream = new FileOutputStream(result);
-				BufferedWriter bufferWriter = new BufferedWriter(new OutputStreamWriter(fileStream, StandardCharsets.UTF_8));
+				BufferedWriter bufferWriter = new BufferedWriter(
+						new OutputStreamWriter(fileStream, StandardCharsets.UTF_8));
 				bufferWriter.write(builder.getMetadata());
 				bufferWriter.flush();
 				bufferWriter.close();

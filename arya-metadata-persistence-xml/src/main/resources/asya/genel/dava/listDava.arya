@@ -1,6 +1,23 @@
 <?page title="DOCSYS" ?>
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
+	<window id="listDavaWindow">
+		<listbox id="list">
+			<listhead>
+				<listheader label="Dava Tarihi" id="davaTarihi" />
+				<listheader label="Dava Adı" id="davaAdi" />
+				<listheader label="Davacı" id="davaci" />
+				<listheader label="Davalı" id="davali" />
+				<listheader label="Mahkemesi" id="mahkemesi" />
+				<listheader label="Şube" id="birim.tanim" />
+				<listheader label="Esas No" id="esasNo" />
+				<listheader label="Durum" id="gelisme" />
+				<listheader label="Karar Tarihi" id="bitTarihi" />
+				<listheader label="Sonuç" id="sonuc" />
+				<listheader label="Açıklama" id="aciklama" />
+			</listhead>
+		</listbox>
+	</window>
 	<script>
 AgemTable.rowDblClick = function(id) {	AgemWM.addQueryString(Agem.json2Param( {davaId: id, davaIdParam:id}));	AgemWM.link('#genelDavaSelect', {url: 'genel/dava/select.do', refresh:true});	Agem.message('Bilgiler okunuyor...');}	</script>
 </arya>
