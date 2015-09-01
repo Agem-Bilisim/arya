@@ -14,26 +14,35 @@ public class ScriptHelper {
 
 		StringBuilder script = new StringBuilder();
 		AryaScript scriptObj = getScriptComponent(aryaWindow);
-		
-		if(AryaUtils.isNotEmpty(scriptObj)){
-			script.append(scriptObj.getScript()).append(functionName).append(";");
+
+		if (AryaUtils.isNotEmpty(scriptObj)) {
+			script.append(scriptObj.getScript()).append(getFunctionName(functionName));
 			return JsRunner.jsRun(scriptObj.getSrcList(), script.toString(), aryaWindow);
 		}
+
 		return null;
 	}
 
 	private static AryaScript getScriptComponent(AryaWindow aryaWindow) {
-		
 		IAryaComponentProperty comp;
-		
-		for(int i=0; i<aryaWindow.getComponents().size();i++){
+
+		for (int i = 0; i < aryaWindow.getComponents().size(); i++) {
 			comp = aryaWindow.getComponents().get(i);
-				if(comp instanceof AryaScript){
-					AryaScript scriptObj=(AryaScript)comp;
-					return scriptObj;
-				}
+			if (comp instanceof AryaScript) {
+				AryaScript scriptObj = (AryaScript) comp;
+				return scriptObj;
+			}
 		}
+
 		return null;
+	}
+
+	private static StringBuilder getFunctionName(String functionName) {
+		StringBuilder fName = new StringBuilder(functionName);
+		if (!functionName.endsWith(")")) {
+			fName.append("()");
+		}
+		return fName.append(";");
 	}
 
 }

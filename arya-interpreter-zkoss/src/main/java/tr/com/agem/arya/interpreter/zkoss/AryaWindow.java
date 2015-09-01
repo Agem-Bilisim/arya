@@ -11,9 +11,10 @@ import tr.com.agem.arya.interpreter.component.IAryaComponentProperty;
 import tr.com.agem.core.gateway.model.AryaRequest;
 import tr.com.agem.core.gateway.model.RequestTypes;
 import tr.com.agem.core.interpreter.IAryaInterpreter;
+import tr.com.agem.core.property.reader.PropertyReader;
 
 public class AryaWindow extends BaseController {
-	
+
 	private static final long serialVersionUID = 8576119465618112119L;
 
 	IAryaInterpreter interpreter;
@@ -34,7 +35,7 @@ public class AryaWindow extends BaseController {
 		AryaRequest request = new AryaRequest();
 		request.setAction("master");
 		request.setRequestType(RequestTypes.VIEW_ONLY);
-		String masterWindow = AryaInterpreterHelper.callUrl("http://192.168.1.106:8080/arya/rest/asya/", request);
+		String masterWindow = AryaInterpreterHelper.callUrl(PropertyReader.property("gateway.base.url"), request);
 		interpreter.interpretAryaResponse(masterWindow, getIcerik(), this);
 	}
 
@@ -47,7 +48,7 @@ public class AryaWindow extends BaseController {
 	}
 
 	public void add(List<IAryaComponentProperty> components) {
-		this.components=components;
+		this.components = components;
 	}
 
 	public List<IAryaComponentProperty> getComponents() {
@@ -57,6 +58,5 @@ public class AryaWindow extends BaseController {
 	public void setComponents(List<IAryaComponentProperty> components) {
 		this.components = components;
 	}
-	
 
 }
