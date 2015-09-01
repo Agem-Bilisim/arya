@@ -1,7 +1,6 @@
 package tr.com.agem.arya.interpreter.component;
 
 import org.xml.sax.Attributes;
-import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.EventListener;
 import org.zkoss.zul.Combobox;
@@ -13,38 +12,35 @@ import tr.com.agem.core.utils.AryaUtils;
 public class AryaCombobox extends Combobox implements IAryaComponentProperty {
 
 	private static final long serialVersionUID = -1829374522609555406L;
+
 	private String componentClassName;
 	private String componentId;
 	private String componentAttribute;
 	private String componentValue;
-	
-	public AryaCombobox(Object parent, final AryaWindow aryaWindow, Attributes attributes) {
-		super();
-		final String functionName;
 
-		this.setParent((Component) parent);
+	public AryaCombobox(final AryaWindow aryaWindow, Attributes attributes) {
+		super();
+		this.setParent(aryaWindow.getComponentContainer());
+
 		this.componentId = attributes.getValue("id");
 		this.componentClassName = attributes.getValue("class");
 		this.componentValue = attributes.getValue("value");
 		this.componentAttribute = attributes.getValue("attribute");
-		
+
 		this.setId(attributes.getValue("id"));
 		this.setClass(attributes.getValue("class"));
-		
 		this.setHeight(attributes.getValue("height"));
-		
-		System.out.println("combobox not filled");
-		
-		for(int i=0;i<attributes.getLength();i++){
-//			System.out.println(attributes.);
+
+		for (int i = 0; i < attributes.getLength(); i++) {
+			// System.out.println(attributes.);
 		}
-		
+
 		this.appendItem("asd");
 		this.appendItem("asd");
 		this.appendItem("asd");
-		
+
 		if (AryaUtils.isNotEmpty(attributes.getValue("onClick"))) {
-			functionName = attributes.getValue("onClick");
+			final String functionName = attributes.getValue("onClick");
 			this.addEventListener("onClick", new EventListener<Event>() {
 				@Override
 				public void onEvent(Event event) throws Exception {
@@ -52,8 +48,12 @@ public class AryaCombobox extends Combobox implements IAryaComponentProperty {
 				}
 			});
 		}
-		
-		
+	}
+
+	@Override
+	public String validate() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	public String getComponentClassName() {
@@ -88,11 +88,4 @@ public class AryaCombobox extends Combobox implements IAryaComponentProperty {
 		this.componentValue = componentValue;
 	}
 
-	@Override
-	public String validate() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	
 }

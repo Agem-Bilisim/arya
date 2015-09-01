@@ -2,10 +2,9 @@ package tr.com.agem.arya.interpreter.rhino;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
+import java.util.Map.Entry;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -19,6 +18,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import tr.com.agem.arya.interpreter.component.IAryaComponentProperty;
 import tr.com.agem.arya.interpreter.zkoss.AryaInterpreterHelper;
 import tr.com.agem.arya.interpreter.zkoss.AryaWindow;
+import tr.com.agem.core.gateway.model.AryaResponse;
 import tr.com.agem.core.property.reader.PropertyReader;
 
 public class ElementFunctions extends AnnotatedScriptableObject {
@@ -37,22 +37,35 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 	}
 
 	@AryaJsFunction
-	public void populate(String jsonStr) {
+	public void populate(String data) {
 		ObjectMapper mapper = new ObjectMapper();
 		try {
-			JsonNode root = mapper.readTree(jsonStr);
-			
+			JsonNode rootNode = mapper.readTree(data);
+			if (rootNode != null) {
+				Iterator<Entry<String, JsonNode>> fields = rootNode.fields();
+				if (fields != null) {
+					while (fields.hasNext()) {
+						Entry<String, JsonNode> entry = fields.next();
+						logger.log(Level.FINE, "JSON property: {0}:{1}", new Object[]{ entry.getKey(), entry.getValue() });
+						
+						IAryaComponentProperty comp = (IAryaComponentProperty) getElementById(entry.getKey());
+						if (comp != null) {
+							comp.setComponentValue(entry.getValue().asText());
+						}
+					}
+				}
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-//		try {
-//			HashMap<String, Object> result = new ObjectMapper().readValue(jsonStr, HashMap.class);
-//			mapToString(result);
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
+	}
+	
+	@AryaJsFunction
+	public void refresh(String view) {
+		
 	}
 
+	// TODO should be run on a seperate thread!
 	@AryaJsFunction
 	public void post(String action, String requestType, Object params) {
 
@@ -68,11 +81,12 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 		
 		String result = AryaInterpreterHelper.callUrl(PropertyReader.property("gateway.base.url"), request.toString());
 		
-		logger.log(Level.INFO, "Post result: {0}", result);
+		logger.log(Level.FINE, "Post result: {0}", result);
+		
+		AryaResponse response = new AryaResponse();
+		response.fromXMLString(result);
 
-		populate(result.replace("<arya-response><view/><data><![CDATA[{\"list\":[", "")
-				.replace("]]></data></arya-response>", ""));
-		// TODO
+		// TODO pass 'onSuccess' and 'onFail' functions to this post() method
 	}
 
 	@AryaJsFunction
@@ -125,7 +139,6 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 
 	@AryaJsFunction
 	public String serializeForm() {
-
 		String strSerialize = "";
 		IAryaComponentProperty comp;
 
@@ -138,16 +151,6 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 		if (strSerialize.length() > 0)
 			return "{" + strSerialize.substring(1, strSerialize.length()) + "}";
 		return "{}";
-	}
-
-	@SuppressWarnings("rawtypes")
-	private void mapToString(HashMap<String, Object> result) {
-		Iterator it = result.entrySet().iterator();
-		while (it.hasNext()) {
-			Map.Entry pair = (Map.Entry) it.next();
-			System.out.println(pair.getKey() + " = " + pair.getValue());
-			it.remove(); // avoids a ConcurrentModificationException
-		}
 	}
 
 }

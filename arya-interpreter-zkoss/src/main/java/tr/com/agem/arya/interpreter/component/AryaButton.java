@@ -1,7 +1,6 @@
 package tr.com.agem.arya.interpreter.component;
 
 import org.xml.sax.Attributes;
-import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.EventListener;
 import org.zkoss.zul.Button;
@@ -12,31 +11,29 @@ import tr.com.agem.core.utils.AryaUtils;
 
 public class AryaButton extends Button implements IAryaComponentProperty {
 
+	private static final long serialVersionUID = 8878576351289066716L;
+	
 	private String componentClassName;
 	private String componentId;
 	private String componentAttribute;
 	private String componentValue;
 
-	private static final long serialVersionUID = 8878576351289066716L;
-
-	public AryaButton(Object parent, final AryaWindow aryaWindow, Attributes attributes) {
+	public AryaButton(final AryaWindow aryaWindow, Attributes attributes) {
 		super();
-		final String functionName;
+		this.setParent(aryaWindow.getComponentContainer());
 
-		this.setParent((Component) parent);
 		this.componentId = attributes.getValue("id");
 		this.componentClassName = attributes.getValue("class");
 		this.componentValue = attributes.getValue("value");
 		this.componentAttribute = attributes.getValue("attribute");
-		
+
 		this.setId(attributes.getValue("id"));
 		this.setClass(attributes.getValue("class"));
-		
 		this.setLabel(attributes.getValue("label"));
 		this.setHeight(attributes.getValue("height"));
 
 		if (AryaUtils.isNotEmpty(attributes.getValue("onClick"))) {
-			functionName = attributes.getValue("onClick");
+			final String functionName = attributes.getValue("onClick");
 			this.addEventListener("onClick", new EventListener<Event>() {
 				@Override
 				public void onEvent(Event event) throws Exception {

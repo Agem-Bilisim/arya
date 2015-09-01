@@ -47,7 +47,10 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 			//print(getElementsByClass('klass')[0].getComponentId());
 		};
 		b = function() {
-			post('aidat.list','ALL', { 'json': '1', 'isyeriId': '42736' });
+			post('aidat.list','ALL', { 'json': '1', 'isyeriId': '42736' }, function(response){
+					refresh(response.view);
+					populate(response.data);
+			});
 		};
 	</script>
 </arya>
