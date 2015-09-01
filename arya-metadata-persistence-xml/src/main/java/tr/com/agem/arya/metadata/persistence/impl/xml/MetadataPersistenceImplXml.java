@@ -10,7 +10,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.codehaus.jackson.map.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import tr.com.agem.core.metadata.model.IMetadata;
 import tr.com.agem.core.metadata.model.MetadataTypes;

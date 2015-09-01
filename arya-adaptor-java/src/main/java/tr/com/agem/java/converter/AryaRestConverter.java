@@ -1,6 +1,6 @@
 package tr.com.agem.java.converter;
 
-import org.codehaus.jackson.map.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import tr.com.agem.core.adaptor.IAryaConverter;
 

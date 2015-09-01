@@ -2,7 +2,7 @@ package tr.com.agem.metadata.persistence.impl;
 
 import java.io.IOException;
 
-import org.codehaus.jackson.map.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import tr.com.agem.core.metadata.model.IMetadata;
 import tr.com.agem.core.metadata.model.MetadataTypes;

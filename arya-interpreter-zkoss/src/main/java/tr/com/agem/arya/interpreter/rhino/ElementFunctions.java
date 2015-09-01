@@ -9,10 +9,12 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.codehaus.jackson.map.ObjectMapper;
 import org.mozilla.javascript.Context;
 import org.mozilla.javascript.NativeJSON;
 import org.mozilla.javascript.Scriptable;
+
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import tr.com.agem.arya.interpreter.component.IAryaComponentProperty;
 import tr.com.agem.arya.interpreter.zkoss.AryaInterpreterHelper;
@@ -36,12 +38,19 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 
 	@AryaJsFunction
 	public void populate(String jsonStr) {
+		ObjectMapper mapper = new ObjectMapper();
 		try {
-			HashMap<String, Object> result = new ObjectMapper().readValue(jsonStr, HashMap.class);
-			mapToString(result);
+			JsonNode root = mapper.readTree(jsonStr);
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+//		try {
+//			HashMap<String, Object> result = new ObjectMapper().readValue(jsonStr, HashMap.class);
+//			mapToString(result);
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
 	}
 
 	@AryaJsFunction
