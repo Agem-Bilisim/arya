@@ -1,41 +1,98 @@
 package tr.com.agem.arya.interpreter.component;
 
-import java.util.List;
-
-import javax.xml.bind.JAXBElement;
-
+import org.xml.sax.Attributes;
 import org.zkoss.zk.ui.Component;
+import org.zkoss.zk.ui.event.Event;
+import org.zkoss.zk.ui.event.EventListener;
 import org.zkoss.zul.Combobox;
-import org.zkoss.zul.Comboitem;
 
-import tr.com.agem.arya.metadata.arya.impl.ComboboxType;
-import tr.com.agem.arya.metadata.arya.impl.ComboitemType;
-import tr.com.agem.core.interpreter.IAryaComponent;
+import tr.com.agem.arya.interpreter.script.ScriptHelper;
+import tr.com.agem.arya.interpreter.zkoss.AryaWindow;
+import tr.com.agem.core.utils.AryaUtils;
 
-public class AryaCombobox extends AryaComponent implements IAryaComponent {
+public class AryaCombobox extends Combobox implements IAryaComponentProperty {
+
+	private static final long serialVersionUID = -1829374522609555406L;
+	private String componentClassName;
+	private String componentId;
+	private String componentAttribute;
+	private String componentValue;
+	
+	public AryaCombobox(Object parent, final AryaWindow aryaWindow, Attributes attributes) {
+		super();
+		final String functionName;
+
+		this.setParent((Component) parent);
+		this.componentId = attributes.getValue("id");
+		this.componentClassName = attributes.getValue("class");
+		this.componentValue = attributes.getValue("value");
+		this.componentAttribute = attributes.getValue("attribute");
+		
+		this.setId(attributes.getValue("id"));
+		this.setClass(attributes.getValue("class"));
+		
+		this.setHeight(attributes.getValue("height"));
+		
+		System.out.println("combobox not filled");
+		
+		for(int i=0;i<attributes.getLength();i++){
+//			System.out.println(attributes.);
+		}
+		
+		this.appendItem("asd");
+		this.appendItem("asd");
+		this.appendItem("asd");
+		
+		if (AryaUtils.isNotEmpty(attributes.getValue("onClick"))) {
+			functionName = attributes.getValue("onClick");
+			this.addEventListener("onClick", new EventListener<Event>() {
+				@Override
+				public void onEvent(Event event) throws Exception {
+					ScriptHelper.executeScript(functionName, null, aryaWindow);
+				}
+			});
+		}
+		
+		
+	}
+
+	public String getComponentClassName() {
+		return componentClassName;
+	}
+
+	public void setComponentClassName(String componentClassName) {
+		this.componentClassName = componentClassName;
+	}
+
+	public String getComponentId() {
+		return componentId;
+	}
+
+	public void setComponentId(String componentId) {
+		this.componentId = componentId;
+	}
+
+	public String getComponentAttribute() {
+		return componentAttribute;
+	}
+
+	public void setComponentAttribute(String componentAttribute) {
+		this.componentAttribute = componentAttribute;
+	}
+
+	public String getComponentValue() {
+		return componentValue;
+	}
+
+	public void setComponentValue(String componentValue) {
+		this.componentValue = componentValue;
+	}
 
 	@Override
-	public IAryaComponent create(Object object, Object parent, Object masterWindow) {
-		setComponent(new Combobox());
-		Combobox component = (Combobox) getComponent();
-		component.setId(((ComboboxType) object).getId());
-		component.setParent((Component) parent);
-		if (((ComboboxType) object).getAttributeOrCustomAttributesOrTemplate() != null) {
-			List<Object> componentsList = ((ComboboxType) object).getAttributeOrCustomAttributesOrTemplate();
-			for (Object oo : componentsList) {
-				if (oo instanceof JAXBElement<?>) {
-					JAXBElement<?> j = (JAXBElement<?>) oo;
-					System.out.println(j.getDeclaredType());
-					String compStr = ((JAXBElement<?>) j).getName().getLocalPart();
-					if (compStr.equalsIgnoreCase("comboitem")) {
-						Comboitem ci = new Comboitem();
-						ci.setLabel(((ComboitemType) j.getValue()).getLabel());
-						ci.setValue(((ComboitemType) j.getValue()).getValue());
-						ci.setParent(component);
-					}
-				}
-			}
-		}
-		return this;
+	public String validate() {
+		// TODO Auto-generated method stub
+		return null;
 	}
+	
+	
 }
