@@ -1,15 +1,17 @@
 package tr.com.agem.arya.interpreter.component;
 
 import org.xml.sax.Attributes;
+import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.EventListener;
 import org.zkoss.zul.Label;
 
 import tr.com.agem.arya.interpreter.script.ScriptHelper;
 import tr.com.agem.arya.interpreter.zkoss.AryaWindow;
+import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
 
-public class AryaLabel extends Label implements IAryaComponentProperty {
+public class AryaLabel extends Label implements IAryaComponent {
 
 	private static final long serialVersionUID = 1507265134096459571L;
 
@@ -20,19 +22,18 @@ public class AryaLabel extends Label implements IAryaComponentProperty {
 
 	public AryaLabel(final AryaWindow aryaWindow, Attributes attributes) {
 		super();
-		this.setParent(aryaWindow.getComponentContainer());
 
 		this.componentId = attributes.getValue("id");
 		this.componentClassName = attributes.getValue("class");
 		this.componentValue = attributes.getValue("value");
 		this.componentAttribute = attributes.getValue("attribute");
-		
+
 		this.setId(attributes.getValue("id"));
 		this.setClass(attributes.getValue("class"));
 		this.setValue(attributes.getValue("value"));
 		this.setWidth(attributes.getValue("width"));
 		this.setHeight(attributes.getValue("height"));
-		
+
 		if (AryaUtils.isNotEmpty(attributes.getValue("onClick"))) {
 			final String functionName = attributes.getValue("onClick");
 			this.addEventListener("onClick", new EventListener<Event>() {
@@ -42,6 +43,11 @@ public class AryaLabel extends Label implements IAryaComponentProperty {
 				}
 			});
 		}
+	}
+
+	@Override
+	public void setComponentParent(Object parent) {
+		this.setParent((Component) parent);
 	}
 
 	@Override

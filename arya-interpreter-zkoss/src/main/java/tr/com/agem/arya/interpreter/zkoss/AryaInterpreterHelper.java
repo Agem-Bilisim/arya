@@ -17,11 +17,13 @@ import org.apache.http.util.EntityUtils;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
-import tr.com.agem.arya.interpreter.parser.AryaHandler;
+import tr.com.agem.arya.interpreter.parser.AryaMetadataParser;
 import tr.com.agem.core.gateway.model.AryaRequest;
 import tr.com.agem.core.gateway.model.AryaResponse;
 
 public class AryaInterpreterHelper {
+	
+	private static final String MIME_TYPE = "application/json";
 
 	public static String callUrl(String url, AryaRequest request) {
 		return callUrl(url, request.toJSON());
@@ -29,8 +31,8 @@ public class AryaInterpreterHelper {
 
 	public static String callUrl(String url, String request) {
 		HttpPost httppost = new HttpPost(url);
-		httppost.setHeader("Content-Type", "application/json");
-		httppost.setHeader("Accept", "application/json");
+		httppost.setHeader("Content-Type", MIME_TYPE);
+		httppost.setHeader("Accept", MIME_TYPE);
 
 		try {
 			StringEntity se = new StringEntity(request);
@@ -48,14 +50,19 @@ public class AryaInterpreterHelper {
 	public static void interpretResponse(AryaResponse response, AryaWindow aryaWindow) {
 
 		// Remove previous components before adding new ones!
-		aryaWindow.getComponentContainer().getChildren().clear();
+		if (aryaWindow.getComponentContainer() != null) {
+			aryaWindow.getComponentContainer().getChildren().clear();
+		}
+		if (aryaWindow.getComponents() != null) {
+			aryaWindow.getComponents().clear();
+		}
 
 		SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
 		SAXParser parser = null;
 
 		try {
 			parser = saxParserFactory.newSAXParser();
-			parser.parse(new InputSource(new StringReader(response.getView())), new AryaHandler(aryaWindow));
+			parser.parse(new InputSource(new StringReader(response.getView())), new AryaMetadataParser(aryaWindow));
 		} catch (ParserConfigurationException e) {
 			e.printStackTrace();
 		} catch (SAXException e) {

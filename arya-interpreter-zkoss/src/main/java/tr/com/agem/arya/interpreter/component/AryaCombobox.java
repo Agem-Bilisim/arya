@@ -1,15 +1,17 @@
 package tr.com.agem.arya.interpreter.component;
 
 import org.xml.sax.Attributes;
+import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.EventListener;
 import org.zkoss.zul.Combobox;
 
 import tr.com.agem.arya.interpreter.script.ScriptHelper;
 import tr.com.agem.arya.interpreter.zkoss.AryaWindow;
+import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
 
-public class AryaCombobox extends Combobox implements IAryaComponentProperty {
+public class AryaCombobox extends Combobox implements IAryaComponent {
 
 	private static final long serialVersionUID = -1829374522609555406L;
 
@@ -20,7 +22,6 @@ public class AryaCombobox extends Combobox implements IAryaComponentProperty {
 
 	public AryaCombobox(final AryaWindow aryaWindow, Attributes attributes) {
 		super();
-		this.setParent(aryaWindow.getComponentContainer());
 
 		this.componentId = attributes.getValue("id");
 		this.componentClassName = attributes.getValue("class");
@@ -31,14 +32,6 @@ public class AryaCombobox extends Combobox implements IAryaComponentProperty {
 		this.setClass(attributes.getValue("class"));
 		this.setHeight(attributes.getValue("height"));
 
-		for (int i = 0; i < attributes.getLength(); i++) {
-			// System.out.println(attributes.);
-		}
-
-		this.appendItem("asd");
-		this.appendItem("asd");
-		this.appendItem("asd");
-
 		if (AryaUtils.isNotEmpty(attributes.getValue("onClick"))) {
 			final String functionName = attributes.getValue("onClick");
 			this.addEventListener("onClick", new EventListener<Event>() {
@@ -48,6 +41,11 @@ public class AryaCombobox extends Combobox implements IAryaComponentProperty {
 				}
 			});
 		}
+	}
+
+	@Override
+	public void setComponentParent(Object parent) {
+		this.setParent((Component) parent);
 	}
 
 	@Override

@@ -1,4 +1,4 @@
-package tr.com.agem.arya.interpreter.rhino;
+package tr.com.agem.arya.interpreter.script;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -15,10 +15,10 @@ import org.mozilla.javascript.Scriptable;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import tr.com.agem.arya.interpreter.component.IAryaComponentProperty;
 import tr.com.agem.arya.interpreter.zkoss.AryaInterpreterHelper;
 import tr.com.agem.arya.interpreter.zkoss.AryaWindow;
 import tr.com.agem.core.gateway.model.AryaResponse;
+import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.property.reader.PropertyReader;
 
 public class ElementFunctions extends AnnotatedScriptableObject {
@@ -48,7 +48,7 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 						Entry<String, JsonNode> entry = fields.next();
 						logger.log(Level.FINE, "JSON property: {0}:{1}", new Object[]{ entry.getKey(), entry.getValue() });
 						
-						IAryaComponentProperty comp = (IAryaComponentProperty) getElementById(entry.getKey());
+						IAryaComponent comp = (IAryaComponent) getElementById(entry.getKey());
 						if (comp != null) {
 							comp.setComponentValue(entry.getValue().asText());
 						}
@@ -92,7 +92,7 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 	@AryaJsFunction
 	public Object getElementById(String id) {
 
-		IAryaComponentProperty comp;
+		IAryaComponent comp;
 
 		for (int i = 0; i < window.getComponents().size(); i++) {
 			comp = window.getComponents().get(i);
@@ -107,8 +107,8 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 	@AryaJsFunction
 	public Object[] getElementsByName(String name) {
 
-		List<IAryaComponentProperty> objList = new ArrayList<IAryaComponentProperty>();
-		IAryaComponentProperty comp;
+		List<IAryaComponent> objList = new ArrayList<IAryaComponent>();
+		IAryaComponent comp;
 
 		for (int i = 0; i < window.getComponents().size(); i++) {
 			comp = window.getComponents().get(i);
@@ -124,8 +124,8 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 	@AryaJsFunction
 	public Object[] getElementsByClass(String className) {
 
-		List<IAryaComponentProperty> objList = new ArrayList<IAryaComponentProperty>();
-		IAryaComponentProperty comp;
+		List<IAryaComponent> objList = new ArrayList<IAryaComponent>();
+		IAryaComponent comp;
 
 		for (int i = 0; i < window.getComponents().size(); i++) {
 			comp = window.getComponents().get(i);
@@ -140,7 +140,7 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 	@AryaJsFunction
 	public String serializeForm() {
 		String strSerialize = "";
-		IAryaComponentProperty comp;
+		IAryaComponent comp;
 
 		for (int i = 0; i < window.getComponents().size(); i++) {
 			comp = window.getComponents().get(i);

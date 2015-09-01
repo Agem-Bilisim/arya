@@ -1,15 +1,17 @@
 package tr.com.agem.arya.interpreter.component;
 
 import org.xml.sax.Attributes;
+import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.EventListener;
 import org.zkoss.zul.Checkbox;
 
 import tr.com.agem.arya.interpreter.script.ScriptHelper;
 import tr.com.agem.arya.interpreter.zkoss.AryaWindow;
+import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
 
-public class AryaCheckbox extends Checkbox implements IAryaComponentProperty {
+public class AryaCheckbox extends Checkbox implements IAryaComponent {
 
 	private static final long serialVersionUID = -768799901950036923L;
 
@@ -20,7 +22,6 @@ public class AryaCheckbox extends Checkbox implements IAryaComponentProperty {
 
 	public AryaCheckbox(final AryaWindow aryaWindow, Attributes attributes) {
 		super();
-		this.setParent(aryaWindow.getComponentContainer());
 
 		this.componentId = attributes.getValue("id");
 		this.componentClassName = attributes.getValue("class");
@@ -43,6 +44,11 @@ public class AryaCheckbox extends Checkbox implements IAryaComponentProperty {
 		}
 	}
 
+	@Override
+	public void setComponentParent(Object parent) {
+		this.setParent((Component) parent);
+	}
+	
 	@Override
 	public String validate() {
 		// TODO Auto-generated method stub

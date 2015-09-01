@@ -1,13 +1,24 @@
 package tr.com.agem.core.interpreter;
 
 public interface IAryaComponent {
-	public IAryaComponent create(Object object, Object parent, Object masterWindow);
 
-	public void setProperty();
+	void setComponentId(String componentId);
 
-	public Object getProperty();
+	String getComponentId();
 
-	public Object getComponent();
+	void setComponentClassName(String componentClassName);
 
-	public void setComponent(Object object);
+	String getComponentClassName();
+
+	void setComponentValue(String componentValue);
+
+	String getComponentValue();
+
+	void setComponentAttribute(String componentAttribute);
+
+	String getComponentAttribute();
+
+	String validate();
+	
+	void setComponentParent(Object parent);
 }

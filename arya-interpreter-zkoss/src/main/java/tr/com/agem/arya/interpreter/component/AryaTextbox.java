@@ -1,15 +1,17 @@
 package tr.com.agem.arya.interpreter.component;
 
 import org.xml.sax.Attributes;
+import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.EventListener;
 import org.zkoss.zul.Textbox;
 
 import tr.com.agem.arya.interpreter.script.ScriptHelper;
 import tr.com.agem.arya.interpreter.zkoss.AryaWindow;
+import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
 
-public class AryaTextbox extends Textbox implements IAryaComponentProperty {
+public class AryaTextbox extends Textbox implements IAryaComponent {
 
 	private static final long serialVersionUID = -9013728719463917434L;
 
@@ -20,7 +22,6 @@ public class AryaTextbox extends Textbox implements IAryaComponentProperty {
 
 	public AryaTextbox(final AryaWindow aryaWindow, Attributes attributes) {
 		super();
-		this.setParent(aryaWindow.getComponentContainer());
 
 		this.componentId = attributes.getValue("id");
 		this.componentClassName = attributes.getValue("class");
@@ -42,6 +43,11 @@ public class AryaTextbox extends Textbox implements IAryaComponentProperty {
 				}
 			});
 		}
+	}
+
+	@Override
+	public void setComponentParent(Object parent) {
+		this.setParent((Component) parent);
 	}
 
 	@Override

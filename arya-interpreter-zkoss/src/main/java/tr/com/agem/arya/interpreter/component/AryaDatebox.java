@@ -1,15 +1,17 @@
 package tr.com.agem.arya.interpreter.component;
 
 import org.xml.sax.Attributes;
+import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.EventListener;
 import org.zkoss.zul.Datebox;
 
 import tr.com.agem.arya.interpreter.script.ScriptHelper;
 import tr.com.agem.arya.interpreter.zkoss.AryaWindow;
+import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
 
-public class AryaDatebox extends Datebox implements IAryaComponentProperty {
+public class AryaDatebox extends Datebox implements IAryaComponent {
 
 	private static final long serialVersionUID = 5090052412080219262L;
 
@@ -20,7 +22,6 @@ public class AryaDatebox extends Datebox implements IAryaComponentProperty {
 
 	public AryaDatebox(final AryaWindow aryaWindow, Attributes attributes) {
 		super();
-		this.setParent(aryaWindow.getComponentContainer());
 
 		this.componentId = attributes.getValue("id");
 		this.componentClassName = attributes.getValue("class");
@@ -41,6 +42,11 @@ public class AryaDatebox extends Datebox implements IAryaComponentProperty {
 				}
 			});
 		}
+	}
+
+	@Override
+	public void setComponentParent(Object parent) {
+		this.setParent((Component) parent);
 	}
 
 	@Override

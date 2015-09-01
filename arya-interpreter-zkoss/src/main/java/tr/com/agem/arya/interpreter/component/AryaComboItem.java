@@ -2,49 +2,34 @@ package tr.com.agem.arya.interpreter.component;
 
 import org.xml.sax.Attributes;
 import org.zkoss.zk.ui.Component;
-import org.zkoss.zk.ui.event.Event;
-import org.zkoss.zk.ui.event.EventListener;
-import org.zkoss.zul.Button;
+import org.zkoss.zul.Comboitem;
 
-import tr.com.agem.arya.interpreter.script.ScriptHelper;
 import tr.com.agem.arya.interpreter.zkoss.AryaWindow;
 import tr.com.agem.core.interpreter.IAryaComponent;
-import tr.com.agem.core.utils.AryaUtils;
 
-public class AryaButton extends Button implements IAryaComponent {
+public class AryaComboItem extends Comboitem implements IAryaComponent {
 
-	private static final long serialVersionUID = 8878576351289066716L;
-	
+	private static final long serialVersionUID = -7348740222197906039L;
+
 	private String componentClassName;
 	private String componentId;
 	private String componentAttribute;
 	private String componentValue;
 
-	public AryaButton(final AryaWindow aryaWindow, Attributes attributes) {
-
+	public AryaComboItem(AryaWindow aryaWindow, Attributes attributes) {
 		super();
 
 		this.componentId = attributes.getValue("id");
 		this.componentClassName = attributes.getValue("class");
 		this.componentValue = attributes.getValue("value");
 		this.componentAttribute = attributes.getValue("attribute");
-
+		
 		this.setId(attributes.getValue("id"));
 		this.setClass(attributes.getValue("class"));
 		this.setLabel(attributes.getValue("label"));
-		this.setHeight(attributes.getValue("height"));
-
-		if (AryaUtils.isNotEmpty(attributes.getValue("onClick"))) {
-			final String functionName = attributes.getValue("onClick");
-			this.addEventListener("onClick", new EventListener<Event>() {
-				@Override
-				public void onEvent(Event event) throws Exception {
-					ScriptHelper.executeScript(functionName, null, aryaWindow);
-				}
-			});
-		}
+		this.setValue(attributes.getValue("value"));
 	}
-
+	
 	@Override
 	public void setComponentParent(Object parent) {
 		this.setParent((Component) parent);
@@ -52,7 +37,6 @@ public class AryaButton extends Button implements IAryaComponent {
 
 	@Override
 	public String validate() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

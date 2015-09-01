@@ -3,9 +3,8 @@ package tr.com.agem.arya.interpreter.script;
 import java.util.HashMap;
 
 import tr.com.agem.arya.interpreter.component.AryaScript;
-import tr.com.agem.arya.interpreter.component.IAryaComponentProperty;
-import tr.com.agem.arya.interpreter.rhino.JsRunner;
 import tr.com.agem.arya.interpreter.zkoss.AryaWindow;
+import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
 
 public class ScriptHelper {
@@ -24,8 +23,7 @@ public class ScriptHelper {
 	}
 
 	private static AryaScript getScriptComponent(AryaWindow aryaWindow) {
-		IAryaComponentProperty comp;
-
+		IAryaComponent comp;
 		for (int i = 0; i < aryaWindow.getComponents().size(); i++) {
 			comp = aryaWindow.getComponents().get(i);
 			if (comp instanceof AryaScript) {
@@ -33,7 +31,6 @@ public class ScriptHelper {
 				return scriptObj;
 			}
 		}
-
 		return null;
 	}
 

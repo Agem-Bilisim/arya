@@ -1,4 +1,4 @@
-package tr.com.agem.arya.interpreter.rhino;
+package tr.com.agem.arya.interpreter.script;
 
 import java.io.BufferedReader;
 import java.io.IOException;

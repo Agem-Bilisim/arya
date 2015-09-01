@@ -1,67 +1,73 @@
 package tr.com.agem.arya.interpreter.component;
 
-import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
 
+import org.xml.sax.Attributes;
+import org.zkoss.zul.Script;
+
 import tr.com.agem.arya.interpreter.zkoss.AryaWindow;
+import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
 
-public class AryaScript implements IAryaComponentProperty, Serializable {
+public class AryaScript extends Script implements IAryaComponent {
 
 	private static final long serialVersionUID = 9120641871916430134L;
-
-	private String componentClassName;
-	private String componentId;
-	private String componentAttribute;
-	private String componentValue;
 
 	private String script;
 	private List<String> srcList;
 
-	public AryaScript(AryaWindow aryaWindow, String script, String scriptSource) {
-		if (AryaUtils.isNotEmpty(scriptSource)) {
-			this.srcList = Arrays.asList(scriptSource.split(";"));
+	public AryaScript(AryaWindow aryaWindow, Attributes attributes) {
+		// External js files can be specified by 'src' attribute
+		String sources = attributes.getValue("src");
+		if (AryaUtils.isNotEmpty(sources)) {
+			this.srcList = Arrays.asList(sources.split(";"));
 		}
-		this.script = script;
+	}
+	
+	@Override
+	public void setComponentParent(Object parent) {
 	}
 
 	@Override
 	public String validate() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public String getComponentClassName() {
-		return componentClassName;
-	}
-
-	public void setComponentClassName(String componentClassName) {
-		this.componentClassName = componentClassName;
-	}
-
-	public String getComponentId() {
-		return componentId;
-	}
-
+	@Override
 	public void setComponentId(String componentId) {
-		this.componentId = componentId;
 	}
 
-	public String getComponentAttribute() {
-		return componentAttribute;
+	@Override
+	public String getComponentId() {
+		return "aryaScript";
 	}
 
-	public void setComponentAttribute(String componentAttribute) {
-		this.componentAttribute = componentAttribute;
+	@Override
+	public void setComponentClassName(String componentClassName) {
 	}
 
-	public String getComponentValue() {
-		return componentValue;
+	@Override
+	public String getComponentClassName() {
+		return null;
 	}
 
+	@Override
 	public void setComponentValue(String componentValue) {
-		this.componentValue = componentValue;
+	}
+
+	@Override
+	public String getComponentValue() {
+		return null;
+	}
+
+	@Override
+	public void setComponentAttribute(String componentAttribute) {
+	}
+
+	@Override
+	public String getComponentAttribute() {
+		return null;
 	}
 
 	public String getScript() {
