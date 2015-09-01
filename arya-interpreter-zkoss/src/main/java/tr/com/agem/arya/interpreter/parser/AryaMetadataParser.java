@@ -8,6 +8,7 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import tr.com.agem.arya.interpreter.component.AryaComboItem;
+import tr.com.agem.arya.interpreter.component.AryaListItem;
 import tr.com.agem.arya.interpreter.component.AryaScript;
 import tr.com.agem.arya.interpreter.component.ComponentFactory;
 import tr.com.agem.arya.interpreter.zkoss.AryaWindow;
@@ -29,7 +30,7 @@ public class AryaMetadataParser extends DefaultHandler {
 		if (comp != null) {
 			// If the component is a ComboItem (or ListItem) instance, 
 			// then set its parent to the current component which is a ComboBox (or ListBox) instance.
-			if (comp instanceof AryaComboItem /* || comp instanceof AryaListItem*/) { // TODO
+			if (comp instanceof AryaComboItem || comp instanceof AryaListItem) {
 				comp.setComponentParent(currentComponent.peek());
 			}
 			// For other components,

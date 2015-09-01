@@ -26,9 +26,9 @@ public class ComponentFactory {
 		} else if ("doublebox".equalsIgnoreCase(tagName)) {
 			comp = new AryaTextbox(aryaWindow, attributes);
 		} else if ("listbox".equalsIgnoreCase(tagName)) {
-			// TODO multiple combobox impl
+			comp = new AryaListbox(aryaWindow, attributes);
 		} else if ("listitem".equalsIgnoreCase(tagName)) {
-			// TODO multiple combobox impl
+			comp = new AryaListItem(aryaWindow, attributes);
 		} else if ("combobox".equalsIgnoreCase(tagName)) {
 			comp = new AryaCombobox(aryaWindow, attributes);
 		} else if ("comboitem".equalsIgnoreCase(tagName)) {
@@ -36,7 +36,7 @@ public class ComponentFactory {
 		} else if ("script".equalsIgnoreCase(tagName)) {
 			comp = new AryaScript(aryaWindow, attributes);
 		}
-		
+
 		return comp;
 	}
 
