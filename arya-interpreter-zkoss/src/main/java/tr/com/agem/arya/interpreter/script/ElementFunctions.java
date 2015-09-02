@@ -62,10 +62,9 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 	
 	@AryaJsFunction
 	public void refresh(String view) {
-		
+		// TODO
 	}
 
-	// TODO should be run on a seperate thread!
 	@AryaJsFunction
 	public void post(String action, String requestType, Object params) {
 
@@ -87,6 +86,7 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 		response.fromXMLString(result);
 
 		// TODO pass 'onSuccess' and 'onFail' functions to this post() method
+		
 	}
 
 	@AryaJsFunction

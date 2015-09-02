@@ -8,6 +8,8 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import org.mozilla.javascript.Context;
 import org.mozilla.javascript.ContextFactory;
@@ -17,30 +19,37 @@ import org.mozilla.javascript.tools.shell.Global;
 import tr.com.agem.arya.interpreter.zkoss.AryaWindow;
 
 public class JsRunner {
+	
+	private static final Logger logger = Logger.getLogger(JsRunner.class.getName());
 
 	public static Object jsRun(List<String> srcList, String script, AryaWindow window) {
 		try {
 			Context context = ContextFactory.getGlobal().enterContext();
 			context.setOptimizationLevel(-1);
-
+			
 			Scriptable scope = new Global();
 			((Global) scope).init(context);
+			
+			logger.log(Level.FINE, "Context and scope created");
 
 			ElementFunctions e = new ElementFunctions(context, scope, window);
 			e.addToScope(scope);
+			
+			logger.log(Level.FINE, "Functions added to scope");
 
 			if (null != srcList)
 				script = getSourceScript(srcList) + " " + script;
+			
+			logger.log(Level.INFO, "Script: {0}", script);
 
 			return context.evaluateString(scope, script, "<rule>", 1, null);
-
+			
 		} finally {
 			Context.exit();
 		}
-
 	}
 
-	// TODO srcList may not always contains http URLs!
+	// TODO srcList may not always contain http URLs!
 	private static String getSourceScript(List<String> srcList) {
 		URL url;
 		StringBuilder extendedScript = new StringBuilder(" ");

@@ -29,6 +29,7 @@ public class AryaInterpreterHelper {
 		return callUrl(url, request.toJSON());
 	}
 
+	// TODO should be run on a seperate thread!
 	public static String callUrl(String url, String request) {
 		HttpPost httppost = new HttpPost(url);
 		httppost.setHeader("Content-Type", MIME_TYPE);

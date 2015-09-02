@@ -58,7 +58,9 @@ public class AryaMetadataParser extends DefaultHandler {
 	@Override
 	public void characters(char ch[], int start, int length) throws SAXException {
 		if (!currentComponent.isEmpty() && currentComponent.peek() instanceof AryaScript) {
-			((AryaScript) currentComponent.peek()).setScript(new String(ch, start, length));
+			String scriptPart = new String(ch, start, length);
+			AryaScript scriptObj = (AryaScript) currentComponent.peek();
+			scriptObj.setScript(scriptObj.getScript() != null ? scriptObj.getScript() + scriptPart : scriptPart);
 		}
 	}
 
