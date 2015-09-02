@@ -47,7 +47,7 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 			//print(getElementsByClass('klass')[0].getComponentId());
 		};
 		b = function() {
-			post('kisi.list', 'ALL', { 'json': '1', 'ad': 'mehmet' });
+			post('kisi.list', 'ALL', { 'json': '1', 'ad': 'mehmet' }, function pit(a){ print('DATA:' + a.data); });
 		};
 	</script>
 </arya>
