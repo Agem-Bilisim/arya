@@ -9,6 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.mozilla.javascript.Context;
+import org.mozilla.javascript.NativeFunction;
 import org.mozilla.javascript.NativeJSON;
 import org.mozilla.javascript.Scriptable;
 
@@ -66,7 +67,7 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 	}
 
 	@AryaJsFunction
-	public void post(String action, String requestType, Object params) {
+	public void post(String action, String requestType, Object params, NativeFunction onSuccess, NativeFunction onFailure) {
 
 		Object jsonParam = NativeJSON.stringify(context, scope, params, null, null);
 
@@ -84,9 +85,17 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 		
 		AryaResponse response = new AryaResponse();
 		response.fromXMLString(result);
-
-		// TODO pass 'onSuccess' and 'onFail' functions to this post() method
 		
+		//TODO response fail condition add
+		
+		if (onSuccess != null) {
+			scope.put(onSuccess.getFunctionName(), scope, onSuccess);
+			Context.call(null, onSuccess, scope, this, new Object[]{ response });
+		}
+		if (onFailure != null) {
+			scope.put(onFailure.getFunctionName(), scope, onFailure);
+			Context.call(null, onFailure, scope, this, new Object[]{ response });			
+		}
 	}
 
 	@AryaJsFunction
@@ -152,5 +161,5 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 			return "{" + strSerialize.substring(1, strSerialize.length()) + "}";
 		return "{}";
 	}
-
+	
 }

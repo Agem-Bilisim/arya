@@ -6,18 +6,16 @@ import org.zkoss.zul.Listitem;
 
 import tr.com.agem.arya.interpreter.zkoss.AryaWindow;
 import tr.com.agem.core.interpreter.IAryaComponent;
-import tr.com.agem.core.utils.AryaUtils;
 
-public class AryaListItem extends Listitem implements IAryaComponent {
+public class AryaMultiComboItem extends Listitem implements IAryaComponent {
 
-	private static final long serialVersionUID = 5124525836092124505L;
-
+	private static final long serialVersionUID = -5868397529900372434L;
 	private String componentClassName;
 	private String componentId;
 	private String componentAttribute;
 	private String componentValue;
 
-	public AryaListItem(AryaWindow aryaWindow, Attributes attributes) {
+	public AryaMultiComboItem(AryaWindow aryaWindow, Attributes attributes) {
 		super();
 
 		this.componentId = attributes.getValue("id");
@@ -27,9 +25,8 @@ public class AryaListItem extends Listitem implements IAryaComponent {
 
 		this.setId(attributes.getValue("id"));
 		this.setClass(attributes.getValue("class"));
+		this.setLabel(attributes.getValue("label"));
 		this.setValue(attributes.getValue("value"));
-		if(AryaUtils.isNotEmpty(attributes.getValue("label")))
-			this.setLabel(attributes.getValue("label"));
 	}
 
 	@Override
@@ -73,5 +70,6 @@ public class AryaListItem extends Listitem implements IAryaComponent {
 	public void setComponentValue(String componentValue) {
 		this.componentValue = componentValue;
 	}
+
 
 }

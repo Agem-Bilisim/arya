@@ -31,10 +31,20 @@ public class ComponentFactory {
 			comp = new AryaListItem(aryaWindow, attributes);
 		} else if ("combobox".equalsIgnoreCase(tagName)) {
 			comp = new AryaCombobox(aryaWindow, attributes);
+		} else if ("multipleCombobox".equalsIgnoreCase(tagName)) {
+			comp = new AryaMultipleCombobox(aryaWindow, attributes);
 		} else if ("comboitem".equalsIgnoreCase(tagName)) {
 			comp = new AryaComboItem(aryaWindow, attributes);
+		} else if ("mcomboitem".equalsIgnoreCase(tagName)) {
+			comp = new AryaMultiComboItem(aryaWindow, attributes);
 		} else if ("script".equalsIgnoreCase(tagName)) {
 			comp = new AryaScript(aryaWindow, attributes);
+		} else if ("listhead".equalsIgnoreCase(tagName)) {
+			comp = new AryaListHead(aryaWindow, attributes);
+		} else if ("listheader".equalsIgnoreCase(tagName)) {
+			comp = new AryaListHeader(aryaWindow, attributes);
+		} else if ("listcell".equalsIgnoreCase(tagName)) {
+			comp = new AryaListCell(aryaWindow, attributes);
 		}
 
 		return comp;

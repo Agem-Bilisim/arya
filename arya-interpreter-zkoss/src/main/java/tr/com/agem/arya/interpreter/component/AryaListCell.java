@@ -2,22 +2,24 @@ package tr.com.agem.arya.interpreter.component;
 
 import org.xml.sax.Attributes;
 import org.zkoss.zk.ui.Component;
-import org.zkoss.zul.Listitem;
+import org.zkoss.zk.ui.event.Event;
+import org.zkoss.zk.ui.event.EventListener;
+import org.zkoss.zul.Listcell;
 
+import tr.com.agem.arya.interpreter.script.ScriptHelper;
 import tr.com.agem.arya.interpreter.zkoss.AryaWindow;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
 
-public class AryaListItem extends Listitem implements IAryaComponent {
+public class AryaListCell extends Listcell implements IAryaComponent {
 
-	private static final long serialVersionUID = 5124525836092124505L;
-
+	private static final long serialVersionUID = 2829782011828954223L;
 	private String componentClassName;
 	private String componentId;
 	private String componentAttribute;
 	private String componentValue;
 
-	public AryaListItem(AryaWindow aryaWindow, Attributes attributes) {
+	public AryaListCell(final AryaWindow aryaWindow, Attributes attributes) {
 		super();
 
 		this.componentId = attributes.getValue("id");
@@ -27,9 +29,18 @@ public class AryaListItem extends Listitem implements IAryaComponent {
 
 		this.setId(attributes.getValue("id"));
 		this.setClass(attributes.getValue("class"));
-		this.setValue(attributes.getValue("value"));
-		if(AryaUtils.isNotEmpty(attributes.getValue("label")))
-			this.setLabel(attributes.getValue("label"));
+		this.setHeight(attributes.getValue("height"));
+		this.setLabel(attributes.getValue("label"));
+
+		if (AryaUtils.isNotEmpty(attributes.getValue("onClick"))) {
+			final String functionName = attributes.getValue("onClick");
+			this.addEventListener("onClick", new EventListener<Event>() {
+				@Override
+				public void onEvent(Event event) throws Exception {
+					ScriptHelper.executeScript(functionName, null, aryaWindow);
+				}
+			});
+		}
 	}
 
 	@Override
@@ -39,6 +50,7 @@ public class AryaListItem extends Listitem implements IAryaComponent {
 
 	@Override
 	public String validate() {
+		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -73,5 +85,4 @@ public class AryaListItem extends Listitem implements IAryaComponent {
 	public void setComponentValue(String componentValue) {
 		this.componentValue = componentValue;
 	}
-
 }
