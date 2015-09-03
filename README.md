@@ -15,7 +15,7 @@
 
 ### Maven 3
 
-- Get [Maven 3](http://stackoverflow.com/questions/15630055/how-to-install-maven-3-on-ubuntu-15-04-14-10-14-04-lts-13-10-13-04-12-10-12-04-b) (Specifically, **version 3** is needed to use static code analyzer plugins!)
+- Get [Maven 3](http://maven.apache.org/install.html) (Specifically, at least **version 3.1.1** is needed to use static code analyzers and maven-android plugin!). Maven version can be checked with `mvn -v`
 - Maven [home](https://maven.apache.org/) (download, docs)
 
 ## Building From Source
@@ -49,7 +49,7 @@ We also use checkstyle and findbugs plugins to do static analyzing on the change
 `mvn clean validate -P checkstyle`
 
 
-## Arya Modules:
+## Arya Modules
 
 - **arya-core-api** contains core functionalities and interfaces for all modules.
 - **arya-adaptor-java** provides adaptor implementation for web projects written in Java (it can use either Rest calls or invoke methods from provided jar files).
@@ -59,6 +59,24 @@ We also use checkstyle and findbugs plugins to do static analyzing on the change
 - **arya-metadata-persistence-xml** provides filesystem implementation of metadata engine.
 - **arya-metadata-engine** handles metadata operations.
 - **arya-metadata-generator** automatically generates metadata `*.arya` files from AgemUtils projects (such as Asya, RCOP etc.) using `*.jsp` files and their corresponding `*Form.java` classes.
-- **arya-interpreter-android** is the Android implementation of interpreter.
+- **[arya-interpreter-android](arya-interpreter-android/README.md)** is the Android implementation of interpreter.
 - **[arya-interpreter-angularjs](arya-interpreter-angularjs/README.md)** is the AngularJS implementation of interpreter.
 - **arya-interpreter-zkoss** is the Zkoss implementation of interpreter.
+
+## Metadata
+
+### View
+
+### Data
+
+### Script Functions
+
+In addition to pure Javascript functions, some predefined functions can also be used to communicate with the Arya gateway, manipulate view components or set component values etc. In order to use these functions inside metadata `<script>` tag, all interpreters must implement these functions.
+
+- getElementByClass(String className):
+- getElementByName(String name):
+- getElementById(String id):
+- serializeForm():
+- populate(String data):
+- refresh(String view):
+- post(String action, String requestType, Object paramsJson):
