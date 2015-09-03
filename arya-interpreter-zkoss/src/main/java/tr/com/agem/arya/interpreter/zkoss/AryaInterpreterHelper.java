@@ -36,11 +36,15 @@ public class AryaInterpreterHelper {
 		httppost.setHeader("Accept", MIME_TYPE);
 
 		try {
+			
+			System.out.println("Request--------->"+request);
+			
 			StringEntity se = new StringEntity(request);
 			httppost.setEntity(se);
 			HttpClient httpClient = HttpClientBuilder.create().build();
 			HttpResponse response = httpClient.execute(httppost);
 			HttpEntity entity = response.getEntity();
+			
 			return EntityUtils.toString(entity, "UTF-8");
 		} catch (Exception e) {
 			e.printStackTrace();
