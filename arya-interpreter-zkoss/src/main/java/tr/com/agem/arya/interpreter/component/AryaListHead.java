@@ -4,23 +4,23 @@ import org.xml.sax.Attributes;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.EventListener;
-import org.zkoss.zul.Listbox;
+import org.zkoss.zul.Listhead;
 
 import tr.com.agem.arya.interpreter.script.ScriptHelper;
 import tr.com.agem.arya.interpreter.zkoss.AryaWindow;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
 
-public class AryaMultipleCombobox extends Listbox implements IAryaComponent {
+public class AryaListHead extends Listhead implements IAryaComponent {
 
-	private static final long serialVersionUID = -1829374522609555406L;
 
+	private static final long serialVersionUID = -6309356054625200856L;
 	private String componentClassName;
 	private String componentId;
 	private String componentAttribute;
 	private String componentValue;
 
-	public AryaMultipleCombobox(final AryaWindow aryaWindow, Attributes attributes) {
+	public AryaListHead(final AryaWindow aryaWindow, Attributes attributes) {
 		super();
 
 		this.componentId = attributes.getValue("id");
@@ -31,11 +31,7 @@ public class AryaMultipleCombobox extends Listbox implements IAryaComponent {
 		this.setId(attributes.getValue("id"));
 		this.setClass(attributes.getValue("class"));
 		this.setHeight(attributes.getValue("height"));
-		this.setWidth(attributes.getValue("width"));
-		this.setCheckmark(true);
-		this.setMultiple(true);
-		
-		
+
 		if (AryaUtils.isNotEmpty(attributes.getValue("onClick"))) {
 			final String functionName = attributes.getValue("onClick");
 			this.addEventListener("onClick", new EventListener<Event>() {

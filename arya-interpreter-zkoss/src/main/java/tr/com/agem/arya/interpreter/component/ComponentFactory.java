@@ -39,6 +39,12 @@ public class ComponentFactory {
 			comp = new AryaMultiComboItem(aryaWindow, attributes);
 		} else if ("script".equalsIgnoreCase(tagName)) {
 			comp = new AryaScript(aryaWindow, attributes);
+		} else if ("listhead".equalsIgnoreCase(tagName)) {
+			comp = new AryaListHead(aryaWindow, attributes);
+		} else if ("listheader".equalsIgnoreCase(tagName)) {
+			comp = new AryaListHeader(aryaWindow, attributes);
+		} else if ("listcell".equalsIgnoreCase(tagName)) {
+			comp = new AryaListCell(aryaWindow, attributes);
 		}
 
 		return comp;

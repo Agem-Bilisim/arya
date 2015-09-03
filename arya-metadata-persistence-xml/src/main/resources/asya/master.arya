@@ -1,10 +1,10 @@
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="aryaportal.org arya.xsd">
+	xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window>
-	
-		<label id="label1"  value="Project Name:" class="definition"/>
-		<textbox id="textbox1" width="1000px" value="Arya" class="definition"/>
-	
+
+		<label id="label1" value="Project Name:" class="definition" />
+		<textbox id="textbox1" width="1000px" value="Arya" class="definition" />
+
 		<label id="lbl1" value="Test label" />
 		<textbox id="tb1" value="Ali ali ali" />
 		<label id="lbl2" value="Test label" />
@@ -14,40 +14,64 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 		<label id="lbl4" value="Test label" />
 		<datebox id="db1" />
 		<label id="lbl5" value="Test label" />
-		
+
 		<listbox id="lb1" onChange="a(getElementById('btn1'))">
 			<listitem id="l1" label="item1" value="1" />
 			<listitem id="l2" label="item2" value="2" />
 			<listitem id="l3" label="item3" value="3" />
 		</listbox>
-		
-		
-		<label id="lbl6" value="Test label" />
-		
-		<button id="btn1" label="Arya" onClick="a(getElementById('btn1'))" />
-		<button id="btn2" label="Yeni Ekran" onClick="b()" />
-		
-		<combobox id="cb1" value="hulo" class="a" onChange="a(getElementById('btn1'))" >
+
+		<multipleCombobox id="cb2" value="hulo" width="10%"
+			class="a" onChange="a(getElementById('btn1'))">
+			<mcomboitem id="21" label="item1" class="a" value="1" />
+			<mcomboitem id="22" label="item2" class="a" value="2" />
+			<mcomboitem id="23" label="item3" class="a" value="3" />
+		</multipleCombobox>
+
+		<listbox id="box" width="100%">
+			<listhead>
+				<listheader label="Company" sort="auto" />
+				<listheader label="Project" sort="auto" />
+			</listhead>
+			<listitem>
+				<listcell label="AGEM" />
+				<listcell label="arya" />
+			</listitem>
+		</listbox>
+
+		<combobox id="cb1" value="hulo" class="a"
+			onChange="a(getElementById('btn1'))">
 			<comboitem id="1" label="item1" class="a" value="1" />
-			<comboitem id="2"  label="item2" class="a" value="2" />
+			<comboitem id="2" label="item2" class="a" value="2" />
 			<comboitem id="3" label="item3" class="a" value="3" />
 		</combobox>
-		
+
+		<label id="lbl6" value="Test label" />
+
+		<button id="btn1" label="Arya" onClick="a()" />
+		<button id="btn2" label="Yeni Ekran" onClick="b()" />
+
+
+
+
 	</window>
 	<script>
-		a = function(o) {
-			print(o.getComponentId());
-			//if(getElementById('btn1').getText()=='Arya')
-			//	getElementById('btn1').setText('AGEM');
-			//else
-			//	getElementById('btn1').setText('Arya');
-				
-			//print(getElementById('deneme6').getComponentId());
-			//print(getElementsByName('button')[0].getComponentId());
-			//print(getElementsByClass('klass')[0].getComponentId());
+		a = function() {
+		print('a');
+		if(getElementById('btn1').getLabel()=='Arya')
+		getElementById('btn1').setLabel('AGEM');
+		else
+		getElementById('btn1').setLabel('Arya');
+
+		//print(getElementById('deneme6').getComponentId());
+		//print(getElementsByName('button')[0].getComponentId());
+		//print(getElementsByClass('klass')[0].getComponentId());
 		};
-		b = function() {
-			post('kisi.list', 'ALL', { 'json': '1', 'ad': 'mehmet' }, function pit(a){ print('DATA:' + a.data); });
+		b =
+		function() {
+		post('kisi.list', 'ALL', { 'json': '1', 'ad': 'mehmet' },
+		function pit(a){
+		print('DATA:' + a.data); });
 		};
 	</script>
 </arya>

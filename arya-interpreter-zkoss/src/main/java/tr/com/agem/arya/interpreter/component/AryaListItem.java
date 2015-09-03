@@ -6,6 +6,7 @@ import org.zkoss.zul.Listitem;
 
 import tr.com.agem.arya.interpreter.zkoss.AryaWindow;
 import tr.com.agem.core.interpreter.IAryaComponent;
+import tr.com.agem.core.utils.AryaUtils;
 
 public class AryaListItem extends Listitem implements IAryaComponent {
 
@@ -26,8 +27,9 @@ public class AryaListItem extends Listitem implements IAryaComponent {
 
 		this.setId(attributes.getValue("id"));
 		this.setClass(attributes.getValue("class"));
-		this.setLabel(attributes.getValue("label"));
 		this.setValue(attributes.getValue("value"));
+		if(AryaUtils.isNotEmpty(attributes.getValue("label")))
+			this.setLabel(attributes.getValue("label"));
 	}
 
 	@Override

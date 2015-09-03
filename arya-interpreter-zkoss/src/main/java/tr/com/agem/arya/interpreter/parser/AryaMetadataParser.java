@@ -8,6 +8,9 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import tr.com.agem.arya.interpreter.component.AryaComboItem;
+import tr.com.agem.arya.interpreter.component.AryaListCell;
+import tr.com.agem.arya.interpreter.component.AryaListHead;
+import tr.com.agem.arya.interpreter.component.AryaListHeader;
 import tr.com.agem.arya.interpreter.component.AryaListItem;
 import tr.com.agem.arya.interpreter.component.AryaMultiComboItem;
 import tr.com.agem.arya.interpreter.component.AryaScript;
@@ -29,9 +32,13 @@ public class AryaMetadataParser extends DefaultHandler {
 	public void startElement(String uri, String localName, String tagName, Attributes attributes) throws SAXException {
 		IAryaComponent comp = ComponentFactory.getComponent(tagName, aryaWindow, attributes);
 		if (comp != null) {
+			
 			// If the component is a ComboItem (or ListItem) instance, 
 			// then set its parent to the current component which is a ComboBox (or ListBox) instance.
-			if (comp instanceof AryaComboItem || comp instanceof AryaMultiComboItem|| comp instanceof AryaListItem) {
+			if (comp instanceof AryaComboItem || comp instanceof AryaMultiComboItem|| 
+				comp instanceof AryaListItem || comp instanceof AryaListCell|| 
+				comp instanceof AryaListHeader|| comp instanceof AryaListHead) 
+			{
 				comp.setComponentParent(currentComponent.peek());
 			}
 			// For other components,
@@ -41,6 +48,7 @@ public class AryaMetadataParser extends DefaultHandler {
 			}
 			// Update current component pointer
 			currentComponent.push(comp);
+			
 			// Add new component to the component list of parent window
 			if (aryaWindow.getComponents() == null) {
 				aryaWindow.setComponents(new ArrayList<IAryaComponent>());
@@ -53,6 +61,11 @@ public class AryaMetadataParser extends DefaultHandler {
 	public void endElement(String uri, String localName, String tagName) throws SAXException {
 		if (!currentComponent.isEmpty()) {
 			currentComponent.pop();
+		}
+		if("window".equals(tagName)){
+			for(int i=0;aryaWindow.getComponents().size()>i;i++){
+				System.out.println(aryaWindow.getComponents().get(i).toString());
+			}
 		}
 	}
 
