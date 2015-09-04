@@ -2,7 +2,6 @@ package tr.com.agem.arya.interpreter.component;
 
 import org.xml.sax.Attributes;
 
-import tr.com.agem.arya.interpreter.zkoss.AryaWindow;
 import tr.com.agem.core.interpreter.IAryaComponent;
 
 public class ComponentFactory {

@@ -4,7 +4,6 @@ import org.xml.sax.Attributes;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zul.Comboitem;
 
-import tr.com.agem.arya.interpreter.zkoss.AryaWindow;
 import tr.com.agem.core.interpreter.IAryaComponent;
 
 public class AryaComboItem extends Comboitem implements IAryaComponent {

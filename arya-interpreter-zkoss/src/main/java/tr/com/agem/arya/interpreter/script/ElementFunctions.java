@@ -16,8 +16,8 @@ import org.mozilla.javascript.Scriptable;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import tr.com.agem.arya.interpreter.zkoss.AryaInterpreterHelper;
-import tr.com.agem.arya.interpreter.zkoss.AryaWindow;
+import tr.com.agem.arya.interpreter.component.AryaWindow;
+import tr.com.agem.arya.interpreter.utils.AryaInterpreterHelper;
 import tr.com.agem.core.gateway.model.AryaResponse;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.property.reader.PropertyReader;
