@@ -2,14 +2,14 @@ package tr.com.agem.arya.interpreter.components;
 
 import android.content.Context;
 import android.widget.DatePicker;
-import android.widget.LinearLayout;
 
 import org.xmlpull.v1.XmlPullParser;
 
 import java.util.Calendar;
 import java.util.HashMap;
 
-import tr.com.agem.arya.script.ScriptHelper;
+import tr.com.agem.arya.interpreter.script.ScriptHelper;
+import tr.com.agem.core.interpreter.IAryaComponent;
 
 public class AryaDatebox  extends DatePicker implements IAryaComponent {
 
@@ -19,7 +19,7 @@ public class AryaDatebox  extends DatePicker implements IAryaComponent {
     private String componentAttribute;
     private String componentValue;
 
-    public AryaDatebox(Context context, XmlPullParser parser, final LinearLayout window) {
+    public AryaDatebox(Context context, XmlPullParser parser, final AryaWindow window) {
         super(context);
         // Component ID
         this.componentId = parser.getAttributeValue(null, "id");
@@ -56,7 +56,7 @@ public class AryaDatebox  extends DatePicker implements IAryaComponent {
                 map.put("year", year);
                 map.put("monthOfYear", monthOfYear);
                 map.put("dayOfMonth", dayOfMonth);
-                ScriptHelper.executeScript((IAryaComponent) view, onChange, map,null);
+                ScriptHelper.executeScript(onChange, map, window);
             }
         } : null);
         window.addView(this);
@@ -64,6 +64,11 @@ public class AryaDatebox  extends DatePicker implements IAryaComponent {
 
     @Override
     public String validate(){ return null;  }
+
+    @Override
+    public void setComponentParent(Object o) {
+
+    }
 
     public boolean isMandatory() {return mandatory; }
     public void setMandatory(boolean mandatory) {this.mandatory = mandatory;}

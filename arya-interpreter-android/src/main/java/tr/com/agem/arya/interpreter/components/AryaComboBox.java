@@ -14,16 +14,14 @@ import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
-import tr.com.agem.arya.rhino.functions.ElementFunctions;
-import tr.com.agem.arya.script.ScriptHelper;
+import tr.com.agem.arya.interpreter.script.ScriptHelper;
+import tr.com.agem.core.interpreter.IAryaComponent;
 
-/**
- * Created by volkan on 28.08.2015.
- */
-public class AryaComboBox extends Spinner implements IAryaComponent{
+public class AryaComboBox extends Spinner implements IAryaComponent {
+
+    private static final String TAG = "AryaComboBox";
 
     private String componentClassName;
     private String componentId;
@@ -31,7 +29,7 @@ public class AryaComboBox extends Spinner implements IAryaComponent{
     private String componentValue;
     private boolean spinnerInit =false;
 
-    public AryaComboBox(Context context,XmlPullParser parser, final LinearLayout window) {
+    public AryaComboBox(Context context,XmlPullParser parser, final AryaWindow window) {
         super(context);
 
         this.componentId= parser.getAttributeValue(null, "id");
@@ -46,12 +44,8 @@ public class AryaComboBox extends Spinner implements IAryaComponent{
         this.setOnItemSelectedListener(new OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-
                 if(isInit()){
-                    HashMap<Object, Object> params = new HashMap<Object, Object>();
-                    params.put("comboitem", new ElementFunctions(window).getElementById(Long.toString(id)));
-
-                    ScriptHelper.executeScript(getMyself(), onChange, params, window);
+                    ScriptHelper.executeScript(onChange, null, window);
                 }
             }
 
@@ -97,7 +91,7 @@ public class AryaComboBox extends Spinner implements IAryaComponent{
                 }
             }
         } catch (XmlPullParserException e) {
-            Log.e("XmlPullParserException: unexpected type", "END_DOCUMENT");
+            Log.e(TAG, "XmlPullParserException: unexpected type", e);
             //e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
@@ -138,6 +132,11 @@ public class AryaComboBox extends Spinner implements IAryaComponent{
     @Override
     public String validate() {
         return null;
+    }
+
+    @Override
+    public void setComponentParent(Object o) {
+
     }
 
     @Override

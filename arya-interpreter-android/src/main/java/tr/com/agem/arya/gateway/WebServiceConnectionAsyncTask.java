@@ -2,11 +2,11 @@ package tr.com.agem.arya.gateway;
 
 import android.content.Context;
 import android.os.AsyncTask;
+
 import tr.com.agem.core.gateway.model.AryaRequest;
 
 
-public class WebServiceConnectionAsyncTask extends AsyncTask<String,Void,String>
-{
+public class WebServiceConnectionAsyncTask extends AsyncTask<String, Void, String> {
     private static final String TAG = "WebServiceConnection";
     AryaRequest request;
     String url;
@@ -19,15 +19,12 @@ public class WebServiceConnectionAsyncTask extends AsyncTask<String,Void,String>
     }
 
     @Override
-    protected String doInBackground(String... params)
-    {
-        String responseStr = AryaInterpreterHelper.callUrl(url, request);
-        return responseStr;
+    protected String doInBackground(String... params) {
+        return AryaInterpreterHelper.callUrl(url, request);
     }
 
     @Override
-    protected void onPostExecute(String responseStr)
-    {
+    protected void onPostExecute(String responseStr) {
         super.onPostExecute(responseStr);
     }
 
