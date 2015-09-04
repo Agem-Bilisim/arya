@@ -83,6 +83,7 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 		
 		logger.log(Level.FINE, "Post result: {0}", result);
 		
+		
 		AryaResponse response = new AryaResponse();
 		response.fromXMLString(result);
 		

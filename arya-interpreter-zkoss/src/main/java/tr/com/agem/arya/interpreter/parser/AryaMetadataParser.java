@@ -62,11 +62,6 @@ public class AryaMetadataParser extends DefaultHandler {
 		if (!currentComponent.isEmpty()) {
 			currentComponent.pop();
 		}
-		if("window".equals(tagName)){
-			for(int i=0;aryaWindow.getComponents().size()>i;i++){
-				System.out.println(aryaWindow.getComponents().get(i).toString());
-			}
-		}
 	}
 
 	@Override
