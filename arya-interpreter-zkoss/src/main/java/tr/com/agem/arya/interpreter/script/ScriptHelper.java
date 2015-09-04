@@ -5,7 +5,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import tr.com.agem.arya.interpreter.component.AryaScript;
-import tr.com.agem.arya.interpreter.zkoss.AryaWindow;
+import tr.com.agem.arya.interpreter.component.AryaWindow;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
 

@@ -1,4 +1,4 @@
-package tr.com.agem.arya.interpreter.zkoss;
+package tr.com.agem.arya.interpreter.utils;
 
 import java.io.IOException;
 import java.io.StringReader;
@@ -17,6 +17,7 @@ import org.apache.http.util.EntityUtils;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
+import tr.com.agem.arya.interpreter.component.AryaWindow;
 import tr.com.agem.arya.interpreter.parser.AryaMetadataParser;
 import tr.com.agem.core.gateway.model.AryaRequest;
 import tr.com.agem.core.gateway.model.AryaResponse;

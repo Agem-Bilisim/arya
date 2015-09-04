@@ -1,4 +1,4 @@
-package tr.com.agem.arya.interpreter.zkoss;
+package tr.com.agem.arya.interpreter.component;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -6,6 +6,8 @@ import java.util.List;
 
 import org.zkoss.zk.ui.Component;
 
+import tr.com.agem.arya.interpreter.utils.AryaInterpreterHelper;
+import tr.com.agem.arya.interpreter.utils.BaseController;
 import tr.com.agem.core.gateway.model.AryaRequest;
 import tr.com.agem.core.gateway.model.AryaResponse;
 import tr.com.agem.core.gateway.model.RequestTypes;
@@ -16,7 +18,7 @@ public class AryaWindow extends BaseController {
 
 	private static final long serialVersionUID = 8576119465618112119L;
 
-	List<IAryaComponent> components;
+	private List<IAryaComponent> components;
 
 	@SuppressWarnings("unchecked")
 	@Override
