@@ -27,6 +27,7 @@ public class AryaInterpreterHelper {
 	private static final String MIME_TYPE = "application/json";
 
 	public static String callUrl(String url, AryaRequest request) {
+		System.out.println("----------***********"+url);
 		return callUrl(url, request.toJSON());
 	}
 
@@ -46,7 +47,10 @@ public class AryaInterpreterHelper {
 			HttpResponse response = httpClient.execute(httppost);
 			HttpEntity entity = response.getEntity();
 			
-			return EntityUtils.toString(entity, "UTF-8");
+			String result=EntityUtils.toString(entity, "UTF-8");
+			System.out.println("Response--------->"+result);
+			
+			return result;
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;

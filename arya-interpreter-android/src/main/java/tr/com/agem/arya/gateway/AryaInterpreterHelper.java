@@ -11,19 +11,18 @@ import java.net.URL;
 
 import android.content.Context;
 import android.util.Log;
-import android.util.Xml;
-import android.widget.LinearLayout;
 
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
 
-import tr.com.agem.arya.interpreter.components.AryaScript;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+
 import tr.com.agem.arya.interpreter.components.AryaWindow;
-import tr.com.agem.arya.interpreter.components.ComponentFactory;
 import tr.com.agem.arya.interpreter.parser.AryaMetadataParser;
 import tr.com.agem.core.gateway.model.AryaRequest;
 import tr.com.agem.core.gateway.model.AryaResponse;
-import tr.com.agem.core.interpreter.IAryaComponent;
 
 public class AryaInterpreterHelper {
 
@@ -79,7 +78,23 @@ public class AryaInterpreterHelper {
 
     public static void interpretResponse(AryaResponse response, Context context, AryaWindow aryaWindow) {
 
-        // Remove previous components before adding new ones!
+
+        SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
+		SAXParser parser = null;
+
+        try {
+            parser = saxParserFactory.newSAXParser();
+            parser.parse(new InputSource(new StringReader(response.getView())), new AryaMetadataParser(context,aryaWindow));
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        } catch (SAXException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        /*// Remove previous components before adding new ones!
         aryaWindow.removeAllViews();
 
         XmlPullParser xpp = Xml.newPullParser();
@@ -104,7 +119,7 @@ public class AryaInterpreterHelper {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
 }

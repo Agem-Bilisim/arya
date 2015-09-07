@@ -6,6 +6,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 
 
+import org.xml.sax.Attributes;
 import org.xmlpull.v1.XmlPullParser;
 
 import tr.com.agem.arya.interpreter.script.ScriptHelper;
@@ -18,25 +19,19 @@ public class AryaButton extends Button implements IAryaComponent {
     private String componentAttribute;
     private String componentValue;
 
-    public AryaButton(final Context context, XmlPullParser parser, final AryaWindow window) {
+    public AryaButton(final Context context, Attributes attributes, final AryaWindow window) {
         super(context);
         this.setBackgroundResource(android.R.drawable.btn_default);
 
-        // Component ID
-        this.componentId = parser.getAttributeValue(null, "id");
-        // Class Name
-        this.componentClassName = parser.getAttributeValue(null,"class");
-        //Value
-        this.componentValue=parser.getAttributeValue(null,"value");
-        //Attribute
-        this.componentAttribute=parser.getAttributeValue(null,"attribute");
-        // Label
-        this.setText(parser.getAttributeValue(null, "label"));
-        // Height
-        String height = parser.getAttributeValue(null, "height");
+        this.componentId = attributes.getValue("id");
+        this.componentClassName = attributes.getValue("class");
+        this.componentValue = attributes.getValue("value");
+        this.componentAttribute = attributes.getValue("attribute");
+
+        this.setText(attributes.getValue("label"));
+        String height =attributes.getValue("height");
         this.setHeight(height != null ? Integer.parseInt(height) : 150);
-        // OnClick
-        final String onClick = parser.getAttributeValue(null, "onClick");
+        final String onClick =  attributes.getValue("onClick");
 
         if (onClick != null) {
             this.setOnClickListener(new OnClickListener() {
