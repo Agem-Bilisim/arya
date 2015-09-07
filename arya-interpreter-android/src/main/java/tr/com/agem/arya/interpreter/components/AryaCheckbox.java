@@ -3,13 +3,10 @@ package tr.com.agem.arya.interpreter.components;
 import android.content.Context;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.LinearLayout;
-
-
 import org.xmlpull.v1.XmlPullParser;
 
-import tr.com.agem.arya.script.ScriptHelper;
-
+import tr.com.agem.arya.interpreter.script.ScriptHelper;
+import tr.com.agem.core.interpreter.IAryaComponent;
 
 public class AryaCheckbox extends CheckBox implements IAryaComponent {
 
@@ -19,7 +16,7 @@ public class AryaCheckbox extends CheckBox implements IAryaComponent {
     private String componentAttribute;
     private String componentValue;
 
-    public AryaCheckbox(final Context context, XmlPullParser parser, LinearLayout window) {
+    public AryaCheckbox(final Context context, XmlPullParser parser, final AryaWindow window) {
         super(context);
         // Component ID
         this.componentId = parser.getAttributeValue(null, "id");
@@ -46,7 +43,7 @@ public class AryaCheckbox extends CheckBox implements IAryaComponent {
             this.setOnCheckedChangeListener(new OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    ScriptHelper.executeScript((IAryaComponent) buttonView, onCheck);
+                    ScriptHelper.executeScript(onCheck, null, window);
                 }
             });
         }
@@ -55,6 +52,11 @@ public class AryaCheckbox extends CheckBox implements IAryaComponent {
 
     @Override
     public String validate(){ return null;}
+
+    @Override
+    public void setComponentParent(Object o) {
+
+    }
 
     public boolean isMandatory() { return mandatory;}
 

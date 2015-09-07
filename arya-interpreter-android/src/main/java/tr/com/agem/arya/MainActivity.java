@@ -1,27 +1,27 @@
 package tr.com.agem.arya;
 
-import java.util.concurrent.ExecutionException;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+
+import java.util.concurrent.ExecutionException;
+
+import tr.com.agem.arya.gateway.AryaInterpreterHelper;
 import tr.com.agem.arya.gateway.WebServiceConnectionAsyncTask;
 import tr.com.agem.arya.interpreter.AlertController;
-import tr.com.agem.arya.interpreter.AryaInterpreter;
+import tr.com.agem.arya.interpreter.components.AryaWindow;
 import tr.com.agem.core.gateway.model.AryaRequest;
 import tr.com.agem.core.gateway.model.AryaResponse;
 import tr.com.agem.core.gateway.model.RequestTypes;
+import tr.com.agem.core.property.reader.PropertyReader;
 
-public class MainActivity extends Activity
-{
+public class MainActivity extends Activity {
     private static final String TAG = "MainActivity";
 
     private static AlertDialog alertDialog;
-//    private static ProgressDialog progDialog;
     private LinearLayout mainLayout;
     private Button refreshButton;
 
@@ -29,40 +29,44 @@ public class MainActivity extends Activity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         mainLayout = (LinearLayout) findViewById(R.id.scrollViewContentLayout);
 
-        refreshButton = (Button)findViewById(R.id.button);
+        refreshButton = (Button) findViewById(R.id.button);
         refreshButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mainLayout.removeAllViews();
                 mainLayout.addView(refreshButton);
-
-                AryaRequest request = new AryaRequest();
-                request.setAction("master");
-                request.setRequestType(RequestTypes.VIEW_ONLY);
-                String url = "http://192.168.1.106:8080/arya/rest/hello/";
-                WebServiceConnectionAsyncTask connectionThread = new WebServiceConnectionAsyncTask(url, request, getApplicationContext());
-                try {
-                    onGetEnd(connectionThread.execute().get());
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                } catch (ExecutionException e) {
-                    e.printStackTrace();
-                }
-
+                refresh();
             }
         });
+
     }
 
-    private void onGetEnd(String result)
-    {
-        if(result != null){
-            Log.e("",result);
+    private void refresh() {
+        // Prepare initial request
+        AryaRequest request = new AryaRequest();
+        request.setAction("master");
+        request.setRequestType(RequestTypes.VIEW_ONLY);
+
+        WebServiceConnectionAsyncTask connThread = new WebServiceConnectionAsyncTask(
+                PropertyReader.property("gateway.base.url"), request, getApplicationContext());
+
+        String responseStr = null;
+        try {
+            responseStr = connThread.execute().get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+
+        if (responseStr != null) {
             AryaResponse response = new AryaResponse();
-            response.fromXMLString(result);
-            AryaInterpreter.handleViewResponse(response, mainLayout, this);
+            response.fromXMLString(responseStr);
+
+            AryaWindow aryaWindow = new AryaWindow(this, mainLayout);
+            AryaInterpreterHelper.interpretResponse(response, this, aryaWindow);
         } else {
             AlertController.setAndShowPrimerAlert(this, "HATA!", "Sunucuyla Bağlantı Kurulamadı", "Tamam");
         }
@@ -75,15 +79,5 @@ public class MainActivity extends Activity
     public static void setAlertDialog(AlertDialog alertDialog) {
         MainActivity.alertDialog = alertDialog;
     }
-
-    /*
-    public static ProgressDialog getProgDialog() {
-        return progDialog;
-    }
-
-    public static void setProgDialog(ProgressDialog progDialog) {
-        MainActivity.progDialog = progDialog;
-    }
-    */
 
 }

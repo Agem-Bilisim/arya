@@ -3,10 +3,12 @@ package tr.com.agem.arya.interpreter.components;
 import android.content.Context;
 import android.view.View;
 
+import tr.com.agem.core.interpreter.IAryaComponent;
+
 /**
  * Created by volkan on 28.08.2015.
  */
-public class AryaItem extends View implements IAryaComponent{
+public class AryaItem extends View implements IAryaComponent {
     private String componentId;
     private String componentValue;
     private String componentClassName;
@@ -71,6 +73,11 @@ public class AryaItem extends View implements IAryaComponent{
     @Override
     public String validate() {
         return null;
+    }
+
+    @Override
+    public void setComponentParent(Object o) {
+
     }
 
     @Override

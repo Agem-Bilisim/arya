@@ -14,10 +14,11 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SpinnerAdapter;
 
-/**
- * Created by volkan on 28.08.2015.
- */
+import tr.com.agem.core.interpreter.IAryaComponent;
+
 public class AryaListBox extends ListView implements IAryaComponent {
+
+	private static final String TAG = "AryaListBox";
 
 	private String componentClassName;
 	private String componentId;
@@ -74,8 +75,7 @@ public class AryaListBox extends ListView implements IAryaComponent {
 				}
 			}
 		} catch (XmlPullParserException e) {
-			Log.e("XmlPullParserException: unexpected type", "END_DOCUMENT");
-			// e.printStackTrace();
+			Log.e(TAG , "XmlPullParserException: unexpected type", e);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -115,6 +115,11 @@ public class AryaListBox extends ListView implements IAryaComponent {
 	@Override
 	public String validate() {
 		return null;
+	}
+
+	@Override
+	public void setComponentParent(Object o) {
+
 	}
 
 	@Override

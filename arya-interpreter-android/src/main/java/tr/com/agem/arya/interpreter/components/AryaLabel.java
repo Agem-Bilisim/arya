@@ -6,9 +6,10 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import android.content.Context;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import tr.com.agem.arya.script.ScriptHelper;
+
+import tr.com.agem.arya.interpreter.script.ScriptHelper;
+import tr.com.agem.core.interpreter.IAryaComponent;
 
 public class AryaLabel extends TextView implements IAryaComponent {
 
@@ -17,7 +18,7 @@ public class AryaLabel extends TextView implements IAryaComponent {
     private String componentAttribute;
     private String componentValue;
 
-    public AryaLabel(Context context, XmlPullParser parser, final LinearLayout window) {
+    public AryaLabel(Context context, XmlPullParser parser, final AryaWindow window) {
         super(context);
         // Component ID
         this.componentId = parser.getAttributeValue(null, "id");
@@ -38,7 +39,7 @@ public class AryaLabel extends TextView implements IAryaComponent {
             this.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    ScriptHelper.executeScript((IAryaComponent) v, onClick);
+                    ScriptHelper.executeScript(onClick, null, window);
                 }
             });
         }
@@ -46,6 +47,11 @@ public class AryaLabel extends TextView implements IAryaComponent {
     }
 
     public String validate(){return null; }
+
+    @Override
+    public void setComponentParent(Object o) {
+
+    }
 
     public void setComponentId(String componentId) {this.componentId = componentId;}
     public String getComponentId(){

@@ -8,7 +8,8 @@ import android.widget.LinearLayout;
 
 import org.xmlpull.v1.XmlPullParser;
 
-import tr.com.agem.arya.script.ScriptHelper;
+import tr.com.agem.arya.interpreter.script.ScriptHelper;
+import tr.com.agem.core.interpreter.IAryaComponent;
 
 public class AryaButton extends Button implements IAryaComponent {
 
@@ -17,7 +18,7 @@ public class AryaButton extends Button implements IAryaComponent {
     private String componentAttribute;
     private String componentValue;
 
-    public AryaButton(final Context context, XmlPullParser parser, final LinearLayout window) {
+    public AryaButton(final Context context, XmlPullParser parser, final AryaWindow window) {
         super(context);
         this.setBackgroundResource(android.R.drawable.btn_default);
 
@@ -41,7 +42,7 @@ public class AryaButton extends Button implements IAryaComponent {
             this.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    ScriptHelper.executeScript((IAryaComponent) v, onClick,null,window );
+                    ScriptHelper.executeScript(onClick, null, window);
                 }
             });
         }
@@ -50,6 +51,11 @@ public class AryaButton extends Button implements IAryaComponent {
 
     @Override
     public String validate(){ return null; }
+
+    @Override
+    public void setComponentParent(Object o) {
+
+    }
 
     public String getComponentId() { return componentId; }
     public void setComponentId(String componentId) { this.componentId = componentId;}

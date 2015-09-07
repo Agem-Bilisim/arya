@@ -15,7 +15,8 @@ import org.xmlpull.v1.XmlPullParser;
 
 import java.util.HashMap;
 
-import tr.com.agem.arya.script.ScriptHelper;
+import tr.com.agem.arya.interpreter.script.ScriptHelper;
+import tr.com.agem.core.interpreter.IAryaComponent;
 
 public class AryaTextbox extends EditText implements IAryaComponent {
 
@@ -25,7 +26,7 @@ public class AryaTextbox extends EditText implements IAryaComponent {
     private String componentAttribute;
     private String componentValue;
 
-    public AryaTextbox(Context context, XmlPullParser parser, final LinearLayout window) {
+    public AryaTextbox(Context context, XmlPullParser parser, final AryaWindow window) {
         super(context);
         // Component ID
         this.componentId = parser.getAttributeValue(null, "id");
@@ -78,7 +79,7 @@ public class AryaTextbox extends EditText implements IAryaComponent {
                 public boolean onKey(View v, int keyCode, KeyEvent event) {
                     HashMap<Object, Object> params = new HashMap<Object, Object>();
                     params.put("keyCode", new Integer(keyCode));
-                    ScriptHelper.executeScript((IAryaComponent) v, onChange, params,null);
+                    ScriptHelper.executeScript(onChange, params, window);
                     return true;
                 }
             });
@@ -110,6 +111,11 @@ public class AryaTextbox extends EditText implements IAryaComponent {
     public String validate() {
         // TODO impl
         return null;
+    }
+
+    @Override
+    public void setComponentParent(Object o) {
+
     }
 
     public boolean isMandatory() {
