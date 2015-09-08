@@ -1,25 +1,28 @@
 package tr.com.agem.arya.interpreter.components;
 
 import android.content.Context;
-import android.widget.ExpandableListView;
-import android.widget.Spinner;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 
 import org.xml.sax.Attributes;
-import org.xmlpull.v1.XmlPullParser;
 
+import java.util.ArrayList;
 import tr.com.agem.core.interpreter.IAryaComponent;
 
-/**
- * Created by volkan on 07.09.2015.
- */
-public class AryaMultipleComboBox extends ExpandableListView implements IAryaComponent {
+
+public class AryaMultipleComboBox extends ListView implements IAryaComponent {
 
     private String componentClassName;
     private String componentId;
     private String componentAttribute;
     private String componentValue;
 
-    public AryaMultipleComboBox(Context context, Attributes attributes, AryaWindow aryaWindow) {
+
+    public AryaMultipleComboBox(Context context, Attributes attributes, AryaWindow window) {
 
         super(context);
 
@@ -28,8 +31,21 @@ public class AryaMultipleComboBox extends ExpandableListView implements IAryaCom
         this.componentValue = attributes.getValue("value");
         this.componentAttribute = attributes.getValue("attribute");
 
-        aryaWindow.addView(this);
+        createAdapter();
+
+        window.addView(this);
     }
+
+    private void createAdapter() {
+        ArrayAdapter<AryaMultipleComboItem> listAdapter = new ArrayAdapter<>(this.getContext(),android.R.layout.simple_list_item_checked , new ArrayList<AryaMultipleComboItem>());
+        listAdapter.setDropDownViewResource(android.R.layout.simple_list_item_multiple_choice);
+        this.setAdapter(listAdapter);
+        this.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
+        this.setChoiceMode(this.CHOICE_MODE_MULTIPLE);
+
+        setListViewHeightBasedOnChildren(this);
+    }
+
 
     @Override
     public String getComponentClassName() {
@@ -79,5 +95,25 @@ public class AryaMultipleComboBox extends ExpandableListView implements IAryaCom
     @Override
     public void setComponentValue(String componentValue) {
         this.componentValue = componentValue;
+    }
+
+    public static void setListViewHeightBasedOnChildren(ListView listView) {
+        ListAdapter listAdapter = listView.getAdapter();
+        if (listAdapter == null) {
+            return;
+        }
+
+        int totalHeight = 0;
+        int desiredWidth = MeasureSpec.makeMeasureSpec(listView.getWidth(), MeasureSpec.AT_MOST);
+        for (int i = 0; i < listAdapter.getCount(); i++) {
+            View listItem = listAdapter.getView(i, null, listView);
+            listItem.measure(desiredWidth, MeasureSpec.UNSPECIFIED);
+            totalHeight += listItem.getMeasuredHeight();
+        }
+
+        ViewGroup.LayoutParams params = listView.getLayoutParams();
+        params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
+        listView.setLayoutParams(params);
+        listView.requestLayout();
     }
 }

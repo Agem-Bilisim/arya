@@ -4,7 +4,6 @@ import android.content.Context;
 import android.widget.DatePicker;
 
 import org.xml.sax.Attributes;
-import org.xmlpull.v1.XmlPullParser;
 
 import java.util.Calendar;
 import java.util.HashMap;

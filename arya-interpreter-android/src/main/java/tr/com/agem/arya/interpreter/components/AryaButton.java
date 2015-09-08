@@ -3,11 +3,8 @@ package tr.com.agem.arya.interpreter.components;
 import android.content.Context;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
-
 
 import org.xml.sax.Attributes;
-import org.xmlpull.v1.XmlPullParser;
 
 import tr.com.agem.arya.interpreter.script.ScriptHelper;
 import tr.com.agem.core.interpreter.IAryaComponent;

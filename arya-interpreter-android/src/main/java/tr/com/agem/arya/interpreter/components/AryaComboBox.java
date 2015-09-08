@@ -38,6 +38,9 @@ public class AryaComboBox extends Spinner implements IAryaComponent {
         this.componentValue = attributes.getValue("value");
         this.componentAttribute = attributes.getValue("attribute");
 
+        createAdapter();
+
+
         final String onChange =attributes.getValue("onChange");
 
         this.setOnItemSelectedListener(new OnItemSelectedListener() {
@@ -54,6 +57,12 @@ public class AryaComboBox extends Spinner implements IAryaComponent {
         });
 
         window.addView(this);
+    }
+
+    private void createAdapter() {
+        ArrayAdapter<AryaComboItem> adapter = new ArrayAdapter<>(this.getContext(), android.R.layout.simple_spinner_item, new ArrayList<AryaComboItem>());
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        this.setAdapter(adapter);
     }
 
     private boolean isInit() {

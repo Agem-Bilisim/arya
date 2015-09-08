@@ -9,10 +9,8 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 
 import org.xml.sax.Attributes;
-import org.xmlpull.v1.XmlPullParser;
 
 import java.util.HashMap;
 
@@ -27,7 +25,7 @@ public class AryaTextbox extends EditText implements IAryaComponent {
     private String componentAttribute;
     private String componentValue;
 
-    public AryaTextbox(Context context,  Attributes attributes, final AryaWindow window) {
+    public AryaTextbox(Context context,  Attributes attributes, final AryaWindow window, String tag) {
         super(context);
         this.componentId = attributes.getValue("id");
         this.componentClassName = attributes.getValue("class");
@@ -95,14 +93,13 @@ public class AryaTextbox extends EditText implements IAryaComponent {
             this.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
             this.setVerticalScrollBarEnabled(true);
         }
-        /*// Doublebox
-        if ("doublebox".equalsIgnoreCase(parser.getName())) {
+
+        if("doublebox".equalsIgnoreCase(tag))
+         {
             this.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
-        }
-        // Intbox
-        if ("intbox".equalsIgnoreCase(parser.getName())) {
+        }else if("intbox".equalsIgnoreCase(tag)){
             this.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_VARIATION_NORMAL);
-        }*/
+        }
         window.addView(this);
     }
 

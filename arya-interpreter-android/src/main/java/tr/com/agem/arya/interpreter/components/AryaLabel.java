@@ -1,7 +1,6 @@
 package tr.com.agem.arya.interpreter.components;
 
 import org.xml.sax.Attributes;
-import org.xmlpull.v1.XmlPullParser;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 

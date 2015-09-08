@@ -3,7 +3,6 @@ package tr.com.agem.arya.interpreter.components;
 import android.content.Context;
 
 import org.xml.sax.Attributes;
-import org.xmlpull.v1.XmlPullParser;
 
 import tr.com.agem.core.interpreter.IAryaComponent;
 
@@ -16,7 +15,7 @@ public class ComponentFactory {
         if ("label".equalsIgnoreCase(tagName)) {
             comp = new AryaLabel(context, attributes, aryaWindow);
         } else if ("textbox".equalsIgnoreCase(tagName)) {
-            comp = new AryaTextbox(context, attributes, aryaWindow);
+            comp = new AryaTextbox(context, attributes, aryaWindow,tagName);
         } else if ("checkbox".equalsIgnoreCase(tagName)) {
             comp = new AryaCheckbox(context, attributes, aryaWindow);
         } else if ("datebox".equalsIgnoreCase(tagName)) {
@@ -24,9 +23,9 @@ public class ComponentFactory {
         } else if ("button".equalsIgnoreCase(tagName)) {
             comp = new AryaButton(context, attributes, aryaWindow);
         } else if ("intbox".equalsIgnoreCase(tagName)) {
-            comp = new AryaTextbox(context, attributes, aryaWindow);
+            comp = new AryaTextbox(context, attributes, aryaWindow,tagName);
         } else if ("doublebox".equalsIgnoreCase(tagName)) {
-            comp = new AryaTextbox(context, attributes, aryaWindow);
+            comp = new AryaTextbox(context, attributes, aryaWindow,tagName);
         } else if ("combobox".equalsIgnoreCase(tagName)) {
             comp = new AryaComboBox(context, attributes, aryaWindow);
         }else if ("comboitem".equalsIgnoreCase(tagName)) {
@@ -35,10 +34,19 @@ public class ComponentFactory {
             comp = new AryaMultipleComboBox(context, attributes, aryaWindow);
         }else if ("mcomboitem".equalsIgnoreCase(tagName)) {
             comp = new AryaMultipleComboItem(context, attributes, aryaWindow);
-        }
-        /*else if ("listbox".equalsIgnoreCase(tagName)) {
+        }else if ("listbox".equalsIgnoreCase(tagName)) {
             comp = new AryaListBox(context, attributes, aryaWindow);
-        }*/
+        }else if ("listhead".equalsIgnoreCase(tagName)) {
+            comp = new AryaListItem(context, attributes, aryaWindow);
+        }else if ("listheader".equalsIgnoreCase(tagName)) {
+            comp = new AryaListCell(context, attributes, aryaWindow);
+        }else if ("listitem".equalsIgnoreCase(tagName)) {
+            comp = new AryaListItem(context, attributes, aryaWindow);
+        }else if ("listcell".equalsIgnoreCase(tagName)) {
+            comp = new AryaListCell(context, attributes, aryaWindow);
+        }else if ("script".equalsIgnoreCase(tagName)) {
+            comp = new AryaScript(context, attributes,aryaWindow);
+        }
         // TODO other components from zkoss
 
         return comp;

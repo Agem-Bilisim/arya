@@ -1,21 +1,13 @@
 package tr.com.agem.arya.interpreter.components;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 
 import org.xml.sax.Attributes;
 
-import java.awt.Component;
-import java.util.ArrayList;
-import java.util.List;
-
 import tr.com.agem.core.interpreter.IAryaComponent;
 
-/**
- * Created by volkan on 28.08.2015.
- */
 public class AryaComboItem extends View implements IAryaComponent {
     private String componentId;
     private String componentValue;
@@ -24,14 +16,14 @@ public class AryaComboItem extends View implements IAryaComponent {
 
     private String label;
 
-    public AryaComboItem(final Context context, Attributes attributes, final AryaWindow window) {
+    public AryaComboItem(final Context context, Attributes attributes,AryaWindow window) {
         super(context);
         this.componentId = attributes.getValue("id");
         this.componentClassName = attributes.getValue("class");
         this.componentValue = attributes.getValue("value");
         this.componentAttribute = attributes.getValue("attribute");
 
-        this.setLabel(attributes.getValue("label"));
+        this.label=attributes.getValue("label");
         window.addView(this);
     }
 
@@ -90,18 +82,9 @@ public class AryaComboItem extends View implements IAryaComponent {
     @Override
     public void setComponentParent(Object o) {
         AryaComboBox ac = (AryaComboBox) o;
-        List<AryaComboItem> list = new ArrayList<AryaComboItem>();
 
         if(ac.getAdapter()!=null)
             ((ArrayAdapter<AryaComboItem>) ac.getAdapter()).add(this);
-        else{
-            list.add(this);
-            ArrayAdapter<AryaComboItem> dataAdapter = new ArrayAdapter<AryaComboItem>(ac.getContext(), android.R.layout.simple_spinner_item, list);
-            dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            ac.setAdapter(dataAdapter);
-        }
-
-
     }
 
     @Override
