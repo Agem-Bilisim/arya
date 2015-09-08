@@ -3,19 +3,11 @@ package tr.com.agem.arya.interpreter.components;
 import android.content.Context;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.BaseExpandableListAdapter;
-import android.widget.ExpandableListView;
 
 import org.xml.sax.Attributes;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import tr.com.agem.core.interpreter.IAryaComponent;
 
-/**
- * Created by volkan on 07.09.2015.
- */
 public class AryaMultipleComboItem extends View implements IAryaComponent {
 
 
@@ -24,18 +16,22 @@ public class AryaMultipleComboItem extends View implements IAryaComponent {
     private String componentAttribute;
     private String componentValue;
 
-    public AryaMultipleComboItem(Context context, Attributes attributes, AryaWindow aryaWindow) {
+    private String label;
+
+    public AryaMultipleComboItem(Context context, Attributes attributes, AryaWindow window) {
         super(context);
         this.componentId = attributes.getValue("id");
         this.componentClassName = attributes.getValue("class");
         this.componentValue = attributes.getValue("value");
         this.componentAttribute = attributes.getValue("attribute");
 
-        aryaWindow.addView(this);
+        this.label=attributes.getValue("label");
+
+        window.addView(this);
     }
 
     public String toString(){
-        return this.componentValue;
+        return this.label;
     }
     public String getComponentId() { return componentId; }
 
@@ -63,19 +59,12 @@ public class AryaMultipleComboItem extends View implements IAryaComponent {
 
     @Override
     public void setComponentParent(Object o) {
+        AryaMultipleComboBox mcb = (AryaMultipleComboBox) o;
 
-        List<AryaMultipleComboItem> list = new ArrayList<AryaMultipleComboItem>();
-        AryaMultipleComboBox amc = (AryaMultipleComboBox) o;
-
-        list.add(this);
-
-        ArrayAdapter<AryaMultipleComboItem> dataAdapter = new ArrayAdapter<AryaMultipleComboItem>(amc.getContext(), android.R.layout.simple_spinner_item, list);
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        amc.setAdapter(dataAdapter);
-
-
-
+        if(mcb.getAdapter()!=null){
+            ((ArrayAdapter<AryaMultipleComboItem>) mcb.getAdapter()).add(this);
+            mcb.setListViewHeightBasedOnChildren(mcb);
+        }
     }
 
     @Override

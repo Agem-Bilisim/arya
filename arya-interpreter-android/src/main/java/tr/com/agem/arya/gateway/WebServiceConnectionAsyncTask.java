@@ -7,12 +7,12 @@ import tr.com.agem.core.gateway.model.AryaRequest;
 
 
 public class WebServiceConnectionAsyncTask extends AsyncTask<String, Void, String> {
-    private static final String TAG = "WebServiceConnection";
     AryaRequest request;
     String url;
     Context context;
 
     public WebServiceConnectionAsyncTask(String url, AryaRequest request, Context context) {
+
         this.request = request;
         this.url = url;
         this.context = context;

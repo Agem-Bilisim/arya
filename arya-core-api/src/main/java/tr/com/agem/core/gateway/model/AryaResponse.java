@@ -43,6 +43,7 @@ public class AryaResponse implements IAryaResponse
 	public void fromXMLString(String xmlString) {
 		
 		try {
+			
 			Document doc = DocumentBuilderFactory.newInstance()
 				.newDocumentBuilder().parse(new ByteArrayInputStream(xmlString.getBytes(StandardCharsets.UTF_8)));
 			

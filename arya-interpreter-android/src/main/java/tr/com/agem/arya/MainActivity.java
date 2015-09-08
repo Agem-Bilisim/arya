@@ -16,7 +16,6 @@ import tr.com.agem.arya.interpreter.components.AryaWindow;
 import tr.com.agem.core.gateway.model.AryaRequest;
 import tr.com.agem.core.gateway.model.AryaResponse;
 import tr.com.agem.core.gateway.model.RequestTypes;
-import tr.com.agem.core.property.reader.PropertyReader;
 
 public class MainActivity extends Activity {
     private static final String TAG = "MainActivity";
@@ -43,14 +42,16 @@ public class MainActivity extends Activity {
 
     }
 
-    private void refresh() {
+    public void refresh() {
         // Prepare initial request
         AryaRequest request = new AryaRequest();
         request.setAction("master");
         request.setRequestType(RequestTypes.VIEW_ONLY);
 
         WebServiceConnectionAsyncTask connThread = new WebServiceConnectionAsyncTask(
-                PropertyReader.property("gateway.base.url"), request, getApplicationContext());
+                //PropertyReader.property("gateway.base.url"),
+                "http://192.168.1.106:8080/arya/rest/asya",
+                request, getApplicationContext());
 
         String responseStr = null;
         try {

@@ -2,33 +2,28 @@ package tr.com.agem.arya.interpreter.components;
 
 import android.content.Context;
 import android.view.View;
-import android.widget.LinearLayout;
 
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
-
-import java.io.IOException;
+import org.xml.sax.Attributes;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * Created by volkan on 19.08.2015.
- */
-public class AryaScript extends View{
+import tr.com.agem.core.interpreter.IAryaComponent;
+import tr.com.agem.core.utils.AryaUtils;
+
+public class AryaScript extends View implements IAryaComponent{
 
     private String script;
     private List<String> srcList;
 
-    public AryaScript(Context context, XmlPullParser parser) throws IOException, XmlPullParserException {
+    public AryaScript(Context context, Attributes attributes, AryaWindow aryaWindow) {
        super(context);
-        this.srcList=parseSrc(parser);
-        this.script=parser.nextText();
+        this.srcList=parseSrc(attributes.getValue("src"));
     }
 
-    private List<String> parseSrc(XmlPullParser parser) {
+    private List<String> parseSrc(String src) {
         srcList=null;
-        if(parser.getAttributeValue(null, "import")!=null)
-            srcList= Arrays.asList(parser.getAttributeValue(null, "import").toString().split(";"));
+        if(AryaUtils.isNotEmpty(src))
+            srcList= Arrays.asList(src.split(";"));
         return srcList;
     }
 
@@ -42,5 +37,55 @@ public class AryaScript extends View{
 
     public void setSrcList(List<String> srcList) {
         this.srcList = srcList;
+    }
+
+    @Override
+    public void setComponentId(String s) {
+
+    }
+
+    @Override
+    public String getComponentId() {
+        return null;
+    }
+
+    @Override
+    public void setComponentClassName(String s) {
+
+    }
+
+    @Override
+    public String getComponentClassName() {
+        return null;
+    }
+
+    @Override
+    public void setComponentValue(String s) {
+
+    }
+
+    @Override
+    public String getComponentValue() {
+        return null;
+    }
+
+    @Override
+    public void setComponentAttribute(String s) {
+
+    }
+
+    @Override
+    public String getComponentAttribute() {
+        return null;
+    }
+
+    @Override
+    public String validate() {
+        return null;
+    }
+
+    @Override
+    public void setComponentParent(Object o) {
+
     }
 }

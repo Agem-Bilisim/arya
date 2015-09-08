@@ -1,42 +1,34 @@
 package tr.com.agem.arya.interpreter.components;
 
 import android.content.Context;
-import android.view.View;
-import android.widget.ArrayAdapter;
+import android.widget.TableRow;
 
 import org.xml.sax.Attributes;
 
 import tr.com.agem.core.interpreter.IAryaComponent;
 
-public class AryaComboItem extends View implements IAryaComponent {
+public class AryaListItem extends TableRow implements IAryaComponent {
     private String componentId;
     private String componentValue;
     private String componentClassName;
     private String componentAttribute;
 
-    private String label;
 
-    public AryaComboItem(final Context context, Attributes attributes,AryaWindow window) {
+    public AryaListItem(Context context, Attributes attributes, AryaWindow window) {
+
         super(context);
         this.componentId = attributes.getValue("id");
         this.componentClassName = attributes.getValue("class");
         this.componentValue = attributes.getValue("value");
         this.componentAttribute = attributes.getValue("attribute");
 
-        this.label=attributes.getValue("label");
-        window.addView(this);
     }
 
-    public String toString(){
-        return this.label;
-    }
 
-    public String getLabel() {
-        return label;
-    }
-
-    public void setLabel(String label) {
-        this.label = label;
+    @Override
+    public void setComponentParent(Object o) {
+        AryaListBox lb = (AryaListBox) o;
+        lb.addView(this);
     }
 
     @Override
@@ -79,13 +71,6 @@ public class AryaComboItem extends View implements IAryaComponent {
         return null;
     }
 
-    @Override
-    public void setComponentParent(Object o) {
-        AryaComboBox ac = (AryaComboBox) o;
-
-        if(ac.getAdapter()!=null)
-            ((ArrayAdapter<AryaComboItem>) ac.getAdapter()).add(this);
-    }
 
     @Override
     public void setComponentAttribute(String componentAttribute) {

@@ -1,42 +1,56 @@
 package tr.com.agem.arya.interpreter.components;
 
 import android.content.Context;
-import android.view.View;
-import android.widget.ArrayAdapter;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.widget.TextView;
 
 import org.xml.sax.Attributes;
 
 import tr.com.agem.core.interpreter.IAryaComponent;
 
-public class AryaComboItem extends View implements IAryaComponent {
+public class AryaListCell extends TextView implements IAryaComponent {
+
     private String componentId;
     private String componentValue;
     private String componentClassName;
     private String componentAttribute;
 
-    private String label;
 
-    public AryaComboItem(final Context context, Attributes attributes,AryaWindow window) {
+    public AryaListCell(Context context, Attributes attributes, AryaWindow window) {
+
+
         super(context);
         this.componentId = attributes.getValue("id");
         this.componentClassName = attributes.getValue("class");
         this.componentValue = attributes.getValue("value");
         this.componentAttribute = attributes.getValue("attribute");
 
-        this.label=attributes.getValue("label");
-        window.addView(this);
+        this.setText(attributes.getValue("label"));
+
     }
 
-    public String toString(){
-        return this.label;
-    }
+    @Override
+    protected void onDraw(Canvas canvas) {//TODO size dynamic yapılmalı renk,font,.. vs attr ile et edilmeli
+        super.onDraw(canvas);
+        Rect rect = new Rect();
+        Paint paint = new Paint();
 
-    public String getLabel() {
-        return label;
-    }
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setColor(Color.WHITE);
+        paint.setStrokeWidth(2);
 
-    public void setLabel(String label) {
-        this.label = label;
+
+        getLocalVisibleRect(rect);
+        canvas.drawRect(rect, paint);
+    }
+    @Override
+    public void setComponentParent(Object o) {
+
+        AryaListItem li = (AryaListItem) o;
+        li.addView(this);
     }
 
     @Override
@@ -79,13 +93,7 @@ public class AryaComboItem extends View implements IAryaComponent {
         return null;
     }
 
-    @Override
-    public void setComponentParent(Object o) {
-        AryaComboBox ac = (AryaComboBox) o;
 
-        if(ac.getAdapter()!=null)
-            ((ArrayAdapter<AryaComboItem>) ac.getAdapter()).add(this);
-    }
 
     @Override
     public void setComponentAttribute(String componentAttribute) {

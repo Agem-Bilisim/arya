@@ -33,6 +33,7 @@ public class AryaCheckbox extends CheckBox implements IAryaComponent {
         this.mandatory = mandatory != null && Boolean.parseBoolean(mandatory);
         String readonly = attributes.getValue("readonly");
         this.setEnabled(readonly != null && Boolean.parseBoolean(readonly));
+
         final String onCheck =attributes.getValue("onCheck");
         if (onCheck != null) {
             this.setOnCheckedChangeListener(new OnCheckedChangeListener() {
