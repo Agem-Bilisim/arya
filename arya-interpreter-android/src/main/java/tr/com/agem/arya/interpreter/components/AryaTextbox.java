@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
+import org.xml.sax.Attributes;
 import org.xmlpull.v1.XmlPullParser;
 
 import java.util.HashMap;
@@ -26,53 +27,51 @@ public class AryaTextbox extends EditText implements IAryaComponent {
     private String componentAttribute;
     private String componentValue;
 
-    public AryaTextbox(Context context, XmlPullParser parser, final AryaWindow window) {
+    public AryaTextbox(Context context,  Attributes attributes, final AryaWindow window) {
         super(context);
-        // Component ID
-        this.componentId = parser.getAttributeValue(null, "id");
-        // Class Name
-        this.componentClassName = parser.getAttributeValue(null,"class");
-        //Value
-        this.componentValue=parser.getAttributeValue(null,"value");
-        //Attribute
-        this.componentAttribute=parser.getAttributeValue(null,"attribute");
+        this.componentId = attributes.getValue("id");
+        this.componentClassName = attributes.getValue("class");
+        this.componentValue = attributes.getValue("value");
+        this.componentAttribute = attributes.getValue("attribute");
+
+
         // Placeholder
-        this.setHint(parser.getAttributeValue(null, "placeholder"));
+        this.setHint(attributes.getValue("placeholder"));
         this.setHintTextColor(Color.parseColor("#FF999999"));
         this.setBackgroundResource(android.R.drawable.edit_text);
         this.setTextColor(Color.parseColor("#FF000000"));
         // Password EditText
-        if ("password".equalsIgnoreCase(parser.getAttributeValue(null, "type"))) {
+        if ("password".equalsIgnoreCase(attributes.getValue("type"))) {
             this.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
         }
         // Mandatory
-        String mandatory = parser.getAttributeValue(null, "mandatory");
+        String mandatory = attributes.getValue("mandatory");
         this.mandatory = mandatory != null && Boolean.parseBoolean(mandatory);
         // Height
-        String height = parser.getAttributeValue(null, "height");
+        String height = attributes.getValue("height") ;
         this.setHeight(height != null ? Integer.parseInt(height) : 150);
         // Value
-        String value = parser.getAttributeValue(null, "value");
+        String value =attributes.getValue("value") ;
         if (value != null) {
             this.setText(value);
         }
         // Readonly
-        String readonly = parser.getAttributeValue(null, "readonly");
+        String readonly =attributes.getValue("readonly") ;
         this.setEnabled(readonly != null && Boolean.parseBoolean(readonly));
         // Max length
-        String maxLength = parser.getAttributeValue(null, "maxlength");
+        String maxLength =attributes.getValue("maxlength");
         if (maxLength != null) {
             InputFilter[] filterArr = new InputFilter[1];
             filterArr[0] = new InputFilter.LengthFilter(Integer.parseInt(maxLength));
             this.setFilters(filterArr);
         }
         // Visible
-        String visible = parser.getAttributeValue(null, "visible");
+        String visible = attributes.getValue("visible");
         if (visible != null && !Boolean.parseBoolean(visible)) {
             this.setVisibility(View.INVISIBLE);
         }
         // onChange
-        final String onChange = parser.getAttributeValue(null, "onChange");
+        final String onChange = attributes.getValue("onChange");
         if (onChange != null) {
             this.setOnKeyListener(new OnKeyListener() {
                 @Override
@@ -85,7 +84,7 @@ public class AryaTextbox extends EditText implements IAryaComponent {
             });
         }
         // Multiline
-        String rowsStr = parser.getAttributeValue(null, "rows");
+        String rowsStr =attributes.getValue("placeholder");
         int rows;
         if (rowsStr != null && (rows = Integer.parseInt(rowsStr)) > 0) {
             this.setInputType(InputType.TYPE_TEXT_FLAG_MULTI_LINE);
@@ -96,14 +95,14 @@ public class AryaTextbox extends EditText implements IAryaComponent {
             this.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
             this.setVerticalScrollBarEnabled(true);
         }
-        // Doublebox
+        /*// Doublebox
         if ("doublebox".equalsIgnoreCase(parser.getName())) {
             this.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
         }
         // Intbox
         if ("intbox".equalsIgnoreCase(parser.getName())) {
             this.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_VARIATION_NORMAL);
-        }
+        }*/
         window.addView(this);
     }
 

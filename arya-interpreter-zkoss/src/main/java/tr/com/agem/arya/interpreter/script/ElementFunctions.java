@@ -8,6 +8,7 @@ import java.util.Map.Entry;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import org.apache.http.util.EntityUtils;
 import org.mozilla.javascript.Context;
 import org.mozilla.javascript.NativeFunction;
 import org.mozilla.javascript.NativeJSON;
@@ -81,11 +82,14 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 		
 		String result = AryaInterpreterHelper.callUrl(PropertyReader.property("gateway.base.url"), request.toString());
 		
+		
 		logger.log(Level.FINE, "Post result: {0}", result);
+		
 		
 		AryaResponse response = new AryaResponse();
 		response.fromXMLString(result);
 		
+		AryaInterpreterHelper.interpretResponse(response, window);
 		//TODO response fail condition add
 		
 		if (onSuccess != null) {

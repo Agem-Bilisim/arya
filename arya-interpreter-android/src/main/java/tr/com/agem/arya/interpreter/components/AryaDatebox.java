@@ -3,6 +3,7 @@ package tr.com.agem.arya.interpreter.components;
 import android.content.Context;
 import android.widget.DatePicker;
 
+import org.xml.sax.Attributes;
 import org.xmlpull.v1.XmlPullParser;
 
 import java.util.Calendar;
@@ -19,24 +20,18 @@ public class AryaDatebox  extends DatePicker implements IAryaComponent {
     private String componentAttribute;
     private String componentValue;
 
-    public AryaDatebox(Context context, XmlPullParser parser, final AryaWindow window) {
+    public AryaDatebox(Context context, Attributes attributes, final AryaWindow window) {
         super(context);
-        // Component ID
-        this.componentId = parser.getAttributeValue(null, "id");
-        // Class Name
-        this.componentClassName = parser.getAttributeValue(null,"class");
-        //Value
-        this.componentValue=parser.getAttributeValue(null,"value");
-        //Attribute
-        this.componentAttribute=parser.getAttributeValue(null,"attribute");
-        // Mandatory
-        String mandatory = parser.getAttributeValue(null, "mandatory");
+        this.componentId = attributes.getValue("id");
+        this.componentClassName = attributes.getValue("class");
+        this.componentValue = attributes.getValue("value");
+        this.componentAttribute = attributes.getValue("attribute");
+
+        String mandatory = attributes.getValue("mandatory");
         this.mandatory = mandatory != null && Boolean.parseBoolean(mandatory);
-        // Readonly
-        String readonly = parser.getAttributeValue(null, "readonly");
+        String readonly =attributes.getValue("readonly");
         this.setEnabled(readonly != null && Boolean.parseBoolean(readonly));
-        // Date and onChange
-        String date = parser.getAttributeValue(null, "value");
+        String date =attributes.getValue("value");
         int[] dateParts;
         if (date != null) {
             String tmp[] = date.split("-");
@@ -48,7 +43,7 @@ public class AryaDatebox  extends DatePicker implements IAryaComponent {
             Calendar c = Calendar.getInstance();
             dateParts = new int[]{c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH)};
         }
-        final String onChange = parser.getAttributeValue(null, "onChange");
+        final String onChange =attributes.getValue("onChange");
         this.init(dateParts[0], dateParts[1], dateParts[2], onChange != null ? new OnDateChangedListener() {
             @Override
             public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {

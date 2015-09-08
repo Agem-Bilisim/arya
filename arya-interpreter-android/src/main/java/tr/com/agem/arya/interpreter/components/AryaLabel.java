@@ -1,5 +1,6 @@
 package tr.com.agem.arya.interpreter.components;
 
+import org.xml.sax.Attributes;
 import org.xmlpull.v1.XmlPullParser;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -18,23 +19,18 @@ public class AryaLabel extends TextView implements IAryaComponent {
     private String componentAttribute;
     private String componentValue;
 
-    public AryaLabel(Context context, XmlPullParser parser, final AryaWindow window) {
+    public AryaLabel(Context context, Attributes attributes, final AryaWindow window) {
         super(context);
-        // Component ID
-        this.componentId = parser.getAttributeValue(null, "id");
-        // Class Name
-        this.componentClassName = parser.getAttributeValue(null,"class");
-        //Value
-        this.componentValue=parser.getAttributeValue(null,"value");
-        //Attribute
-        this.componentAttribute=parser.getAttributeValue(null,"attribute");
-        // Label
-        this.setText(parser.getAttributeValue(null, "value"));
-        // Height
-        String height = parser.getAttributeValue(null, "height");
+        this.componentId = attributes.getValue("id");
+        this.componentClassName = attributes.getValue("class");
+        this.componentValue = attributes.getValue("value");
+        this.componentAttribute = attributes.getValue("attribute");
+
+        this.setText(attributes.getValue("value"));
+        String height = attributes.getValue("height");
         this.setHeight(height != null ? Integer.parseInt(height) : 100);
-        // OnClick
-        final String onClick = parser.getAttributeValue(null, "onClick");
+
+        final String onClick = attributes.getValue("onClick");
         if (onClick != null) {
             this.setOnClickListener(new OnClickListener() {
                 @Override

@@ -3,6 +3,8 @@ package tr.com.agem.arya.interpreter.components;
 import android.content.Context;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+
+import org.xml.sax.Attributes;
 import org.xmlpull.v1.XmlPullParser;
 
 import tr.com.agem.arya.interpreter.script.ScriptHelper;
@@ -16,29 +18,22 @@ public class AryaCheckbox extends CheckBox implements IAryaComponent {
     private String componentAttribute;
     private String componentValue;
 
-    public AryaCheckbox(final Context context, XmlPullParser parser, final AryaWindow window) {
+    public AryaCheckbox(final Context context, Attributes attributes, final AryaWindow window) {
         super(context);
-        // Component ID
-        this.componentId = parser.getAttributeValue(null, "id");
-        // Class Name
-        this.componentClassName = parser.getAttributeValue(null,"class");
-        //Value
-        this.componentValue=parser.getAttributeValue(null,"value");
-        //Attribute
-        this.componentAttribute=parser.getAttributeValue(null,"attribute");
-        // Label
-        this.setText(parser.getAttributeValue(null, "label"));
-        // Height
-        String height = parser.getAttributeValue(null, "height");
+        this.componentId = attributes.getValue("id");
+        this.componentClassName = attributes.getValue("class");
+        this.componentValue = attributes.getValue("value");
+        this.componentAttribute = attributes.getValue("attribute");
+
+
+        this.setText(attributes.getValue("label"));
+        String height =attributes.getValue("height");
         this.setHeight(height != null ? Integer.parseInt(height) : 100);
-        // Mandatory
-        String mandatory = parser.getAttributeValue(null, "mandatory");
+        String mandatory = attributes.getValue("mandatory");
         this.mandatory = mandatory != null && Boolean.parseBoolean(mandatory);
-        // Readonly
-        String readonly = parser.getAttributeValue(null, "readonly");
+        String readonly = attributes.getValue("readonly");
         this.setEnabled(readonly != null && Boolean.parseBoolean(readonly));
-        // OnCheck
-        final String onCheck = parser.getAttributeValue(null, "onCheck");
+        final String onCheck =attributes.getValue("onCheck");
         if (onCheck != null) {
             this.setOnCheckedChangeListener(new OnCheckedChangeListener() {
                 @Override

@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 
+import org.xml.sax.Attributes;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -29,17 +30,15 @@ public class AryaComboBox extends Spinner implements IAryaComponent {
     private String componentValue;
     private boolean spinnerInit =false;
 
-    public AryaComboBox(Context context,XmlPullParser parser, final AryaWindow window) {
+    public AryaComboBox(Context context,Attributes attributes , final AryaWindow window) {
         super(context);
 
-        this.componentId= parser.getAttributeValue(null, "id");
-        this.componentClassName= parser.getAttributeValue(null, "class");
-        this.componentAttribute= parser.getAttributeValue(null, "attribute");
-        this.componentValue= parser.getAttributeValue(null, "value");
+        this.componentId = attributes.getValue("id");
+        this.componentClassName = attributes.getValue("class");
+        this.componentValue = attributes.getValue("value");
+        this.componentAttribute = attributes.getValue("attribute");
 
-        final String onChange = parser.getAttributeValue(null, "onChange");
-
-        this.setAdapter(getAdapter(context, parser, window));
+        final String onChange =attributes.getValue("onChange");
 
         this.setOnItemSelectedListener(new OnItemSelectedListener() {
             @Override
@@ -71,9 +70,9 @@ public class AryaComboBox extends Spinner implements IAryaComponent {
         return  this;
     }
 
-    private SpinnerAdapter getAdapter(Context context,XmlPullParser parser, LinearLayout window){
+   /* private SpinnerAdapter getAdapter(Context context,XmlPullParser parser, LinearLayout window){
 
-        List<AryaItem> list = new ArrayList<AryaItem>();
+        List<AryaComboItem> list = new ArrayList<AryaComboItem>();
 
         try {
             while(parser.nextTag() != XmlPullParser.END_DOCUMENT)
@@ -82,11 +81,13 @@ public class AryaComboBox extends Spinner implements IAryaComponent {
                     String tagName = parser.getName();
 
                     if(tagName.equals("comboitem")) {
-                        Log.d("",parser.getAttributeValue(null, "id")+"");
-                        AryaItem item =new AryaItem(context,parser.getAttributeValue(null, "id"), parser.getAttributeValue(null, "value"), parser.getAttributeValue(null, "label"));
+                        Log.d("", parser.getAttributeValue(null, "id") + "");
+                        AryaComboItem item =new AryaComboItem(context,parser.getAttributeValue(null, "id"), parser.getAttributeValue(null, "value"), parser.getAttributeValue(null, "label"));
+                        Log.d("", parser.getAttributeValue(null, "id") + "--");
+                        list.add(item);
                         window.addView(item);
 
-                        list.add(item);
+
                     }
                 }
             }
@@ -97,11 +98,11 @@ public class AryaComboBox extends Spinner implements IAryaComponent {
             e.printStackTrace();
         }
 
-        ArrayAdapter<AryaItem> dataAdapter = new ArrayAdapter<AryaItem>(context, android.R.layout.simple_spinner_item, list);
+        ArrayAdapter<AryaComboItem> dataAdapter = new ArrayAdapter<AryaComboItem>(context, android.R.layout.simple_spinner_item, list);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         return dataAdapter;
-    }
+    }*/
 
 
     @Override

@@ -55,9 +55,9 @@ public class AryaListBox extends ListView implements IAryaComponent {
 
 	}
 
-	private SpinnerAdapter getAdapter(Context context, XmlPullParser parser, LinearLayout window) {
+	/*private SpinnerAdapter getAdapter(Context context, XmlPullParser parser, LinearLayout window) {
 
-		List<AryaItem> list = new ArrayList<AryaItem>();
+		List<AryaComboItem> list = new ArrayList<AryaComboItem>();
 
 		try {
 			while (parser.nextTag() != XmlPullParser.END_DOCUMENT) {
@@ -66,8 +66,7 @@ public class AryaListBox extends ListView implements IAryaComponent {
 
 					if (tagName.equals("listitem")) {
 						Log.d("", parser.getAttributeValue(null, "id") + "");
-						AryaItem item = new AryaItem(context, parser.getAttributeValue(null, "id"),
-								parser.getAttributeValue(null, "value"), parser.getAttributeValue(null, "label"));
+						AryaComboItem item = new AryaComboItem(context, attribute);
 						window.addView(item);
 
 						list.add(item);
@@ -80,12 +79,12 @@ public class AryaListBox extends ListView implements IAryaComponent {
 			e.printStackTrace();
 		}
 
-		ArrayAdapter<AryaItem> dataAdapter = new ArrayAdapter<AryaItem>(context, android.R.layout.simple_spinner_item,
+		ArrayAdapter<AryaComboItem> dataAdapter = new ArrayAdapter<AryaComboItem>(context, android.R.layout.simple_spinner_item,
 				list);
 		dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
 		return dataAdapter;
-	}
+	}*/
 
 	@Override
 	public String getComponentClassName() {
