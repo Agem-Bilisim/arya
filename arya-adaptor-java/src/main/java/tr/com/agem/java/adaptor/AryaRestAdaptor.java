@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 import tr.com.agem.core.adaptor.AryaApplicationAdaptor;
 import tr.com.agem.core.adaptor.IAryaAdaptorResponse;
 import tr.com.agem.core.gateway.model.IAryaRequest;
-import tr.com.agem.core.metadata.exception.AryaRestFailedException;
+import tr.com.agem.core.metadata.exception.AryaAdaptorReqFailedException;
 import tr.com.agem.java.mapper.AryaRestMappedRequest;
 
 public class AryaRestAdaptor extends AryaApplicationAdaptor {
@@ -47,7 +47,7 @@ public class AryaRestAdaptor extends AryaApplicationAdaptor {
 			
 			if (conn.getResponseCode() != HttpURLConnection.HTTP_OK) {
 				logger.log(Level.SEVERE, "HTTP error on: {0}", mappedRequest.getActionURL());
-				throw new AryaRestFailedException("Failed: HTTP error code: " + conn.getResponseCode());
+				throw new AryaAdaptorReqFailedException("Failed: HTTP error code: " + conn.getResponseCode());
 			}
 			
 			br = new BufferedReader(new InputStreamReader(conn.getInputStream(), StandardCharsets.UTF_8));
