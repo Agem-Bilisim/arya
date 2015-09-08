@@ -8,6 +8,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import tr.com.agem.core.interpreter.IAryaComponent;
+import tr.com.agem.core.utils.AryaUtils;
 
 public class AryaScript extends View implements IAryaComponent{
 
@@ -21,7 +22,8 @@ public class AryaScript extends View implements IAryaComponent{
 
     private List<String> parseSrc(String src) {
         srcList=null;
-        srcList= Arrays.asList(src.split(";"));
+        if(AryaUtils.isNotEmpty(src))
+            srcList= Arrays.asList(src.split(";"));
         return srcList;
     }
 

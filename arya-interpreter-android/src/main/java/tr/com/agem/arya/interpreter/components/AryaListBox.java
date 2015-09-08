@@ -24,8 +24,6 @@ public class AryaListBox extends TableLayout implements IAryaComponent {
 		this.componentValue = attributes.getValue("value");
 		this.componentAttribute = attributes.getValue("attribute");
 
-		final String onChange = attributes.getValue("onChange");
-
 		window.addView(this);
 
 	}

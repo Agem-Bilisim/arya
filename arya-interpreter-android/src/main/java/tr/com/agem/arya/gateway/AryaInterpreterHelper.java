@@ -1,5 +1,6 @@
 package tr.com.agem.arya.gateway;
 
+import java.awt.Button;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -10,6 +11,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import android.content.Context;
+import android.view.View;
 import android.widget.ImageView;
 
 import org.xml.sax.InputSource;
