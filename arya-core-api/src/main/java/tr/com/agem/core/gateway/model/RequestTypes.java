@@ -4,7 +4,9 @@ public enum RequestTypes {
 
 	VIEW_ONLY("V"),
 	DATA_ONLY("D"),
-	ALL("A");
+	ALL("A"),
+	LOGIN("L"),
+	NAVBAR("N");
 	
 	private final String type;
 	RequestTypes(String type) {

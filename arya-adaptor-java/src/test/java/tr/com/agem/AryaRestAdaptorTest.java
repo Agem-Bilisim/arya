@@ -27,7 +27,7 @@ public class AryaRestAdaptorTest extends TestCase {
 		
 		// Prepare request
 		AryaRequest request = new AryaRequest();
-		request.setAction("kisi.list");
+		request.setAction("genel.kisi.list");
 		request.setRequestType(RequestTypes.DATA_ONLY);
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("json", 1);

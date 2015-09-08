@@ -6,6 +6,7 @@ import org.junit.runners.JUnit4;
 
 import junit.framework.TestCase;
 import tr.com.agem.core.property.reader.PropertyReader;
+import tr.com.agem.java.mapper.AryaJarMappedRequest;
 import tr.com.agem.java.mapper.AryaJarMapper;
 
 @RunWith(JUnit4.class)
@@ -20,8 +21,11 @@ public class AryaJarMapperTest extends TestCase {
 	@Test
 	public void mapShouldReturnURI() {
 		AryaJarMapper mapper = new AryaJarMapper();
-		String URI = mapper.map("kimlik.list");
-		assertEquals("tr.com.agem.sndk.genel.kimlik.Kimlik", URI);
+		AryaJarMappedRequest mr = (AryaJarMappedRequest) mapper.map("genel.kimlik.list");
+		assertEquals("tr.com.agem.sndk.genel.kimlik.KimlikService", mr.getServiceName());
+		assertEquals("tr.com.agem.sndk.genel.kimlik.KimlikParameterForm", mr.getFormName());
+		assertEquals("list", mr.getActionMethodName());
+		assertEquals("/genel/kimlik/list", mr.getPath());
 	}
 	
 	@Test(expected=Exception.class)

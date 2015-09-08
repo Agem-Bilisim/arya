@@ -15,6 +15,7 @@ import tr.com.agem.core.adaptor.AryaApplicationAdaptor;
 import tr.com.agem.core.adaptor.IAryaAdaptorResponse;
 import tr.com.agem.core.gateway.model.IAryaRequest;
 import tr.com.agem.core.metadata.exception.AryaRestFailedException;
+import tr.com.agem.java.mapper.AryaRestMappedRequest;
 
 public class AryaRestAdaptor extends AryaApplicationAdaptor {
 	
@@ -23,17 +24,17 @@ public class AryaRestAdaptor extends AryaApplicationAdaptor {
 	@Override
 	public IAryaAdaptorResponse processRequest(IAryaRequest request) {
 		
-		String actionURL = getMapper().map(request.getAction());
+		AryaRestMappedRequest mappedRequest = (AryaRestMappedRequest) getMapper().map(request.getAction());
 		String jsonStr = (String) getConverter().convert(request.getParams());
 		
-		logger.log(Level.INFO, "Calling rest URL: {0} with parameters: {1}", new Object[]{ actionURL, jsonStr });
+		logger.log(Level.INFO, "Calling rest URL: {0} with parameters: {1}", new Object[]{ mappedRequest.getActionURL(), jsonStr });
 		
 		URL url = null;
 		HttpURLConnection conn = null;
 		BufferedReader br = null;
 		
 		try {
-			url = new URL(actionURL);
+			url = new URL(mappedRequest.getActionURL());
 			
 			conn = (HttpURLConnection) url.openConnection();
 			conn.setDoOutput(true);
@@ -45,7 +46,7 @@ public class AryaRestAdaptor extends AryaApplicationAdaptor {
 			os.flush();
 			
 			if (conn.getResponseCode() != HttpURLConnection.HTTP_OK) {
-				logger.log(Level.SEVERE, "HTTP error on: {0}", actionURL);
+				logger.log(Level.SEVERE, "HTTP error on: {0}", mappedRequest.getActionURL());
 				throw new AryaRestFailedException("Failed: HTTP error code: " + conn.getResponseCode());
 			}
 			

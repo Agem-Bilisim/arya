@@ -32,7 +32,9 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
 			<version>${springframework.version}</version>
-			<scope>test</scope>
+<!-- 			Do not use spring-test in test scope -->
+<!-- 			since it is used to mock HttpServletRequest and HttpServletResponse in AryaJarAdaptor.java -->
+<!-- 			<scope>test</scope> -->
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>

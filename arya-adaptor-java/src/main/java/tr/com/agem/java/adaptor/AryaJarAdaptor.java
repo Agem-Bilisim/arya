@@ -5,19 +5,23 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.Arrays;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.Map.Entry;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import tr.com.agem.common.AgemCrudService;
-import tr.com.agem.common.AgemService;
-import tr.com.agem.common.AgemServiceExclude;
+import org.apache.commons.lang.StringEscapeUtils;
+import org.springframework.mock.web.MockHttpServletRequest;
+import org.springframework.mock.web.MockHttpServletResponse;
+
+import tr.com.agem.common.AgemActionMapping;
 import tr.com.agem.common.AgemUtils;
-import tr.com.agem.common.exception.AgemServiceException;
+import tr.com.agem.common.action.AgemCrudAction;
 import tr.com.agem.common.form.AgemForm;
+import tr.com.agem.common.form.JsonMessageFormInterface;
 import tr.com.agem.common.form.PagedList;
 import tr.com.agem.core.adaptor.AryaApplicationAdaptor;
 import tr.com.agem.core.adaptor.IAryaAdaptorResponse;
@@ -26,37 +30,34 @@ import tr.com.agem.core.property.reader.PropertyReader;
 import tr.com.agem.db.connection.DBConnectionFactory;
 import tr.com.agem.db.connection.DBConnectionInterface;
 import tr.com.agem.db.operations.BDBase;
+import tr.com.agem.java.mapper.AryaJarMappedRequest;
 import tr.com.agem.startup.db.PostgreSqlDBMS;
+import tr.com.agem.struts.AgemModuleConfigImp;
 
 public class AryaJarAdaptor extends AryaApplicationAdaptor {
 
 	private static final Logger logger = Logger.getLogger(AryaJarAdaptor.class.getName());
 
 	@Override
-	public IAryaAdaptorResponse processRequest(IAryaRequest request) {
+	public IAryaAdaptorResponse processRequest(IAryaRequest aryaRequest) {
 
-		String actionURI = getMapper().map(request.getAction());
-		String serviceMethodName = findServiceMethodName(request.getAction());
-		String serviceName = actionURI + "Service";
-		boolean isListAction = "list".equalsIgnoreCase(serviceMethodName);
-		boolean isSelectAction = "select".equalsIgnoreCase(serviceMethodName);
-		String formName = actionURI + (isListAction ? "ParameterForm" : "Form");
-
+		AryaJarMappedRequest mappedRequest = (AryaJarMappedRequest) getMapper().map(aryaRequest.getAction());
+		
 		logger.log(Level.INFO, "Calling jar method: {0} of service {1} with parameters: {2}",
-				new Object[] { serviceMethodName, serviceName, request.getParams() });
+				new Object[] { mappedRequest.getActionMethodName(), mappedRequest.getServiceName(), aryaRequest.getParams() });
 
 		initDBConnection();
 
 		try {
 
 			// Create form object...
-			Class<?> cls = Class.forName(formName);
+			Class<?> cls = Class.forName(mappedRequest.getFormName());
 			AgemForm form = (AgemForm) cls.newInstance();
 
 			// ...and set its fields using request parameters
-			if (request.getParams() != null && request.getParams().size() > 0) {
+			if (aryaRequest.getParams() != null && aryaRequest.getParams().size() > 0) {
 
-				for (Entry<String, Object> entry : request.getParams().entrySet()) {
+				for (Entry<String, Object> entry : aryaRequest.getParams().entrySet()) {
 
 					Field field = null;
 					try {
@@ -86,40 +87,43 @@ public class AryaJarAdaptor extends AryaApplicationAdaptor {
 
 			}
 
-			// Create service object
-			AgemService service = getServiceInstance(serviceName, serviceMethodName);
+			// Create action mapping
+			AgemActionMapping mapping = new AgemActionMapping();
+			mapping.setType(PropertyReader.property("agem.crud.action"));
+			mapping.setScope("request"); // TODO ???
+			mapping.setParameter(mappedRequest.getServiceName());
+			mapping.setName("genelKisiParameterForm");
+			mapping.setAttribute("genelKisiParameterForm");
+			mapping.setPath(mappedRequest.getPath());
+			mapping.setMethod(mappedRequest.getActionMethodName());
+			mapping.setModuleConfig(new AgemModuleConfigImp(""));
 
-			// Invoke service method using newly created form object
-			Method serviceMethod = AgemService.class.getMethod(serviceMethodName,
-					isListAction ? PagedList.class : AgemForm.class);
-			Object arg = form;
-			if (isListAction) {
-				PagedList pl = new PagedList();
-				pl.setParameters(form);
-				// Set page size
-				Object tmpParam = request.getParams().get("pageSize");
-				String pageSize = tmpParam != null ? tmpParam.toString()
-						: PropertyReader.property("paged.list.page.size");
-				pl.setPageSize(pageSize != null ? Integer.parseInt(pageSize) : -1);
-				// Set page number
-				tmpParam = request.getParams().get("pageNumber");
-				String pageNumber = tmpParam != null ? tmpParam.toString() : null;
-				pl.setPageNumber(pageNumber != null ? Integer.parseInt(pageNumber) : 1);
-				arg = pl;
-			}
+			// Create action dispatcher
+			cls = Class.forName(PropertyReader.property("agem.crud.action"));
+			AgemCrudAction da = (AgemCrudAction) cls.newInstance();
 
-			Object returnVal = serviceMethod.invoke(service, arg);
+			// Create request and response mock objects
+			MockHttpServletRequest httpRequest = new MockHttpServletRequest();
+			addRequestParameters(aryaRequest, httpRequest);
+			MockHttpServletResponse httpResponse = new MockHttpServletResponse();
 
-			logger.log(Level.INFO, "Response successful: {0}", returnVal != null
-					? ((isListAction || isSelectAction) ? AgemUtils.jsObject(returnVal) : returnVal.toString()) : "");
+			// Execute action!
+			da.execute(mapping, form, httpRequest, httpResponse);
+
+			String dataStr = convertToJson(httpRequest);
+
+			logger.log(Level.INFO, "Action executed successfully: {0} ", dataStr);
 
 			AryaAdaptorResponse response = new AryaAdaptorResponse();
-			response.setData((isListAction || isSelectAction) ? AgemUtils.jsObject(returnVal) : "{ }");
+			response.setData(dataStr);
+
 			return response;
 
 		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException | NoSuchMethodException
 				| SecurityException | IllegalArgumentException | InvocationTargetException e1) {
 			e1.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 
 		return null;
@@ -143,9 +147,63 @@ public class AryaJarAdaptor extends AryaApplicationAdaptor {
 		}
 	}
 
-	private String findServiceMethodName(String action) {
-		String[] split = action.split("\\.");
-		return split[split.length - 1];
+	private void addRequestParameters(IAryaRequest aryaRequest, MockHttpServletRequest httpRequest) {
+		httpRequest.setParameter("json", "1");
+		// TODO add other arya request parameters and attributes to HTTP request here!
+	}
+
+	private String convertToJson(MockHttpServletRequest httpRequest) {
+
+		Object obj = httpRequest.getAttribute("collection");
+		Object json = httpRequest.getAttribute("json");
+		StringBuilder result = new StringBuilder("");
+
+		if (obj != null) {
+			result.append("{ \"results\":[");
+			Collection<?> col = null;
+			if (obj instanceof Collection) {
+				col = (Collection<?>) obj;
+			} else if (obj instanceof PagedList) {
+				col = ((PagedList) obj).getList();
+			}
+			if (col != null) {
+				Iterator<?> it = col.iterator();
+				while (it.hasNext()) {
+					result.append(AgemUtils.jsObject(it.next()));
+					if (it.hasNext()) {
+						result.append(",");
+					}
+				}
+			}
+			result.append("]");
+			if (obj instanceof PagedList) {
+				result.append(", \"fullListSize\": ");
+				result.append(((PagedList) obj).getFullListSize());
+				result.append(", \"pageNumber\": ");
+				result.append(((PagedList) obj).getPageNumber());
+			}
+			if (json != null && json instanceof JsonMessageFormInterface) {
+				Object v = ((JsonMessageFormInterface) json).getMessage();
+				if (v != null) {
+					v = StringEscapeUtils.escapeJavaScript(v.toString());
+					result.append(",\"@message\":\"");
+					result.append(v);
+					result.append("\"");
+				}
+				v = ((JsonMessageFormInterface) json).getError();
+				if (v != null) {
+					v = StringEscapeUtils.escapeJavaScript(v.toString());
+					result.append(",\"@hata\": true");
+				}
+			}
+			result.append(" }");
+		} else if (json instanceof AgemForm) {
+			result.append(AgemUtils.jsObject(json));
+		} else {
+			result.append("{ \"results\":[] }");
+		}
+
+		return result.toString();
 	}
 
 	private String findSetterName(String name) {
@@ -154,24 +212,6 @@ public class AryaJarAdaptor extends AryaApplicationAdaptor {
 			name = name.replaceFirst(matcher.group(0), matcher.group(1).toUpperCase());
 		}
 		return "set" + name.substring(0, 1).toUpperCase() + name.substring(1);
-	}
-
-	private AgemService getServiceInstance(String serviceName, String serviceMethodName)
-			throws InstantiationException, IllegalAccessException {
-		try {
-			Class<?> clazz = Class.forName(serviceName);
-
-			if (serviceMethodName != null && clazz.isAnnotationPresent(AgemServiceExclude.class)) {
-				AgemServiceExclude s = clazz.getAnnotation(AgemServiceExclude.class);
-				if (Arrays.asList(s.excludeServices()).contains(serviceMethodName)) {
-					throw new AgemServiceException("No service is defined for this request...");
-				}
-			}
-			return (AgemService) clazz.newInstance();
-
-		} catch (ClassNotFoundException e) {
-			return new AgemCrudService();
-		}
 	}
 
 }
