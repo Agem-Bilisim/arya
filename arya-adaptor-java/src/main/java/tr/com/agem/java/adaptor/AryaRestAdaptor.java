@@ -82,4 +82,16 @@ public class AryaRestAdaptor extends AryaApplicationAdaptor {
 		return null;
 	}
 
+	@Override
+	public IAryaAdaptorResponse login(IAryaRequest request) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public IAryaAdaptorResponse logout(IAryaRequest request) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

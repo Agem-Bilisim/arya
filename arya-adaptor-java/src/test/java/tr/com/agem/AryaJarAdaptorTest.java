@@ -52,5 +52,24 @@ public class AryaJarAdaptorTest extends TestCase {
 		assertNotNull("Response object cannot be null!", response);
 		assertNotNull("Response data cannot be null!", response.getData());
 	}
+	
+	@Test
+	public void loginRequestShouldSucceed() {
+
+		AryaJarAdaptor adaptor = new AryaJarAdaptor();
+		adaptor.setMapper(new AryaJarMapper());
+		adaptor.setDataSource(dataSource);
+
+		// Prepare request
+		AryaRequest request = new AryaRequest();
+		request.setAction("login");
+		request.setRequestType(RequestTypes.LOGIN);
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("username", "admin");
+		params.put("password", "a93m5466");
+		request.setParams(params);
+		
+		IAryaAdaptorResponse response = adaptor.login(request);
+	}
 
 }

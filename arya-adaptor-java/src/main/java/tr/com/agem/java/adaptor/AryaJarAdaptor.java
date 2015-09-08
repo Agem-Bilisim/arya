@@ -14,6 +14,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.commons.lang.StringEscapeUtils;
+import org.apache.struts.action.ActionForward;
 import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockHttpServletResponse;
 
@@ -32,6 +33,8 @@ import tr.com.agem.db.connection.DBConnectionInterface;
 import tr.com.agem.db.operations.BDBase;
 import tr.com.agem.java.mapper.AryaJarMappedRequest;
 import tr.com.agem.startup.db.PostgreSqlDBMS;
+import tr.com.agem.startup.login.LoginAction;
+import tr.com.agem.startup.login.LoginForm;
 import tr.com.agem.struts.AgemModuleConfigImp;
 
 public class AryaJarAdaptor extends AryaApplicationAdaptor {
@@ -92,8 +95,8 @@ public class AryaJarAdaptor extends AryaApplicationAdaptor {
 			mapping.setType(PropertyReader.property("agem.crud.action"));
 			mapping.setScope("request"); // TODO ???
 			mapping.setParameter(mappedRequest.getServiceName());
-			mapping.setName("genelKisiParameterForm");
-			mapping.setAttribute("genelKisiParameterForm");
+			mapping.setName(mappedRequest.getFormName());
+			mapping.setAttribute(mappedRequest.getFormName());
 			mapping.setPath(mappedRequest.getPath());
 			mapping.setMethod(mappedRequest.getActionMethodName());
 			mapping.setModuleConfig(new AgemModuleConfigImp(""));
@@ -212,6 +215,49 @@ public class AryaJarAdaptor extends AryaApplicationAdaptor {
 			name = name.replaceFirst(matcher.group(0), matcher.group(1).toUpperCase());
 		}
 		return "set" + name.substring(0, 1).toUpperCase() + name.substring(1);
+	}
+
+	@Override
+	public IAryaAdaptorResponse login(IAryaRequest request) {
+		
+		String username = (String) request.getParams().get("username");
+		String password = (String) request.getParams().get("password");
+		
+		// Create login form
+		LoginForm loginForm = new LoginForm();
+		loginForm.setKullaniciKodu(username);
+		loginForm.setParola(password);
+		
+		// Create action mapping
+		AgemActionMapping mapping = new AgemActionMapping();
+		mapping.setType("tr.com.agem.startup.login.LoginAction");
+		mapping.setScope("request");
+		mapping.setParameter(null);
+		mapping.setName("loginForm");
+		mapping.setAttribute("loginForm");
+		mapping.setPath("/login");
+		mapping.setMethod("login");
+		mapping.setModuleConfig(new AgemModuleConfigImp(""));
+		
+		// Create request and response mock objects
+		MockHttpServletRequest httpRequest = new MockHttpServletRequest();
+		MockHttpServletResponse httpResponse = new MockHttpServletResponse();
+		
+		LoginAction loginAction = new LoginAction();
+		try {
+			ActionForward actionForward = loginAction.login(mapping, loginForm, httpRequest, httpResponse);
+			System.out.println("AF: " + actionForward);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+
+	@Override
+	public IAryaAdaptorResponse logout(IAryaRequest request) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

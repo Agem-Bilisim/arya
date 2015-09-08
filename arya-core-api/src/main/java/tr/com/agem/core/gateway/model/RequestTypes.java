@@ -6,6 +6,7 @@ public enum RequestTypes {
 	DATA_ONLY("D"),
 	ALL("A"),
 	LOGIN("L"),
+	LOGOUT("O"),
 	NAVBAR("N");
 	
 	private final String type;

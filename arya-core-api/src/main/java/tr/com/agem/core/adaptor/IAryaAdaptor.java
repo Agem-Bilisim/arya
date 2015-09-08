@@ -6,4 +6,6 @@ public interface IAryaAdaptor {
 	public IAryaMapper getMapper();
 	public IAryaConverter getConverter();
 	public IAryaAdaptorResponse processRequest(IAryaRequest request);
+	public IAryaAdaptorResponse login(IAryaRequest request);
+	public IAryaAdaptorResponse logout(IAryaRequest request);
 }

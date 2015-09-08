@@ -70,7 +70,7 @@ public class AryaGateway
 			}
 		} else {
 
-			IAryaAdaptorResponse adaptorResponse = applicationAdaptor.processRequest(aryaRequest);
+			IAryaAdaptorResponse adaptorResponse = applicationAdaptor.handleRequest(aryaRequest);
 
 			// response includes view and interpreter asks for the view, prepare the view for response 
 			if (adaptorResponse.getViewName() != null 
