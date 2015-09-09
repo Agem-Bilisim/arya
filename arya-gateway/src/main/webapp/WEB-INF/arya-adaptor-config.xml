@@ -16,8 +16,8 @@
            http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
 
-	<bean id="adaptorMapper" class="tr.com.agem.java.mapper.AryaRestMapper" />
-	<bean id="adaptorConverter" class="tr.com.agem.java.converter.AryaRestConverter" />
+	<bean id="adaptorMapper" class="tr.com.agem.java.mapper.AryaJarMapper" />
+	<bean id="adaptorConverter" class="tr.com.agem.java.converter.AryaJarConverter" />
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName">
@@ -41,7 +41,7 @@
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 
-	<bean id="applicationAdaptor" class="tr.com.agem.java.adaptor.AryaRestAdaptor">
+	<bean id="applicationAdaptor" class="tr.com.agem.java.adaptor.AryaJarAdaptor">
 		<property name="mapper" ref="adaptorMapper" />
 		<property name="converter" ref="adaptorConverter" />
 		<property name="dataSource" ref="dataSource" />
