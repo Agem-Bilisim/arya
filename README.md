@@ -15,8 +15,24 @@
 
 ### Maven 3
 
+#### Manual Installation
 - Get [Maven 3](http://maven.apache.org/install.html) (Specifically, at least **version 3.1.1** is needed to use static code analyzers and maven-android plugin!). Maven version can be checked with `mvn -v`
 - Maven [home](https://maven.apache.org/) (download, docs)
+
+#### Via External Repository 
+
+ - [Maven3 **version 3.3.3-001**](https://launchpad.net/~andrei-pozolotin/+archive/ubuntu/maven3)
+ 
+`sudo apt-get purge maven maven2 maven3 `
+
+`sudo apt-add-repository ppa:andrei-pozolotin/maven3`
+
+`sudo apt-get update`
+
+`sudo apt-get install maven3`
+
+
+
 
 ## Building From Source
 
