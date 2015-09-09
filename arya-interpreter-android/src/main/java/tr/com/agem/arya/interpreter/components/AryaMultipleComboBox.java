@@ -1,6 +1,7 @@
 package tr.com.agem.arya.interpreter.components;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -105,15 +106,17 @@ public class AryaMultipleComboBox extends ListView implements IAryaComponent {
 
         int totalHeight = 0;
         int desiredWidth = MeasureSpec.makeMeasureSpec(listView.getWidth(), MeasureSpec.AT_MOST);
-        for (int i = 0; i < listAdapter.getCount(); i++) {
+        for (int i = 0; i < listAdapter.getCount()-1; i++) {
             View listItem = listAdapter.getView(i, null, listView);
             listItem.measure(desiredWidth, MeasureSpec.UNSPECIFIED);
             totalHeight += listItem.getMeasuredHeight();
         }
 
         ViewGroup.LayoutParams params = listView.getLayoutParams();
-        params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
+        params.height = totalHeight;// + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
         listView.setLayoutParams(params);
         listView.requestLayout();
+
+        Log.d("----------",params.height+"**"+(listView.getDividerHeight() * (listAdapter.getCount() - 1))+"**"+(listView.getDividerHeight() * (listAdapter.getCount() - 2)));
     }
 }
