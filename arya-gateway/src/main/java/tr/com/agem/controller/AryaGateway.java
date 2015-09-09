@@ -61,8 +61,7 @@ public class AryaGateway {
 		logger.log(Level.INFO, "Application: {0}", applicationName);
 		logger.log(Level.INFO, "AryaRequest: {0}", aryaRequest.toJSON());
 
-		// if request asks only for the view, return <view> and <script>
-		// metadata
+		// if request asks only for the view, return <view> and <script> metadata
 		if (RequestTypes.VIEW_ONLY.equals(aryaRequest.getRequestType())) {
 			try {
 				metadata = metadataEngine.findWithNameAsXML(applicationName, aryaRequest.getAction());

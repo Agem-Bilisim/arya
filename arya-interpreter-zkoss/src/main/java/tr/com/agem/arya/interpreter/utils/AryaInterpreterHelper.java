@@ -23,40 +23,36 @@ import tr.com.agem.core.gateway.model.AryaRequest;
 import tr.com.agem.core.gateway.model.AryaResponse;
 
 public class AryaInterpreterHelper {
-	
+
 	private static final String MIME_TYPE = "application/json";
 
 	public static String callUrl(String url, AryaRequest request) {
-		System.out.println("----------***********"+url);
 		return callUrl(url, request.toJSON());
 	}
 
 	// TODO should be run on a seperate thread!
 	public static String callUrl(String url, String request) {
-		HttpPost httppost = new HttpPost(url);
-		httppost.setHeader("Content-Type", MIME_TYPE);
-		httppost.setHeader("Accept", MIME_TYPE);
+		HttpPost httpPost = new HttpPost(url);
+		httpPost.setHeader("Content-Type", MIME_TYPE);
+		httpPost.setHeader("Accept", MIME_TYPE);
 
 		try {
-			
-			System.out.println("Request--------->"+request);
-			
+
 			StringEntity se = new StringEntity(request);
-			httppost.setEntity(se);
+			httpPost.setEntity(se);
 			HttpClient httpClient = HttpClientBuilder.create().build();
-			HttpResponse response = httpClient.execute(httppost);
+			HttpResponse response = httpClient.execute(httpPost);
 			HttpEntity entity = response.getEntity();
-			
-			String result=EntityUtils.toString(entity, "UTF-8");
-			System.out.println("Response--------->"+result);
-			
+
+			String result = EntityUtils.toString(entity, "UTF-8");
+
 			return result;
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
 		}
 	}
-	
+
 	public static void interpretResponse(AryaResponse response, AryaWindow aryaWindow) {
 
 		// Remove previous components before adding new ones!

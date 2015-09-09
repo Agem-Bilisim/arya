@@ -11,6 +11,9 @@ import java.nio.charset.StandardCharsets;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+
 import tr.com.agem.core.adaptor.AryaApplicationAdaptor;
 import tr.com.agem.core.adaptor.IAryaAdaptorResponse;
 import tr.com.agem.core.gateway.model.IAryaRequest;
@@ -22,10 +25,10 @@ public class AryaRestAdaptor extends AryaApplicationAdaptor {
 	private static final Logger logger = Logger.getLogger(AryaRestAdaptor.class.getName());
 
 	@Override
-	public IAryaAdaptorResponse processRequest(IAryaRequest request) {
+	public IAryaAdaptorResponse processRequest(IAryaRequest aryaRequest) {
 		
-		AryaRestMappedRequest mappedRequest = (AryaRestMappedRequest) getMapper().map(request.getAction());
-		String jsonStr = (String) getConverter().convert(request.getParams());
+		AryaRestMappedRequest mappedRequest = (AryaRestMappedRequest) getMapper().map(aryaRequest.getAction());
+		String jsonStr = (String) getConverter().convert(aryaRequest.getParams());
 		
 		logger.log(Level.INFO, "Calling rest URL: {0} with parameters: {1}", new Object[]{ mappedRequest.getActionURL(), jsonStr });
 		
@@ -47,7 +50,7 @@ public class AryaRestAdaptor extends AryaApplicationAdaptor {
 			
 			if (conn.getResponseCode() != HttpURLConnection.HTTP_OK) {
 				logger.log(Level.SEVERE, "HTTP error on: {0}", mappedRequest.getActionURL());
-				throw new AryaAdaptorReqFailedException("Failed: HTTP error code: " + conn.getResponseCode());
+				throw new AryaAdaptorReqFailedException();
 			}
 			
 			br = new BufferedReader(new InputStreamReader(conn.getInputStream(), StandardCharsets.UTF_8));
@@ -83,15 +86,21 @@ public class AryaRestAdaptor extends AryaApplicationAdaptor {
 	}
 
 	@Override
-	public IAryaAdaptorResponse login(IAryaRequest request) {
+	public IAryaAdaptorResponse processLogin(IAryaRequest request) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public IAryaAdaptorResponse logout(IAryaRequest request) {
+	public IAryaAdaptorResponse processLogout(IAryaRequest request) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public boolean checkLogin(ServletRequest request, ServletResponse response, IAryaRequest aryaRequest) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }
