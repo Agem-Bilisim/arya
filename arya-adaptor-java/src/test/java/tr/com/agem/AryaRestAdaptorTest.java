@@ -34,7 +34,7 @@ public class AryaRestAdaptorTest extends TestCase {
 		params.put("adParam", "mehmet");
 		request.setParams(params);
 		
-		IAryaAdaptorResponse response = adaptor.processRequest(request);
+		IAryaAdaptorResponse response = adaptor.handleRequest(request);
 		assertNotNull("Response object cannot be null!", response);
 		assertNotNull("Response data cannot be null!", response.getData());
 	}
