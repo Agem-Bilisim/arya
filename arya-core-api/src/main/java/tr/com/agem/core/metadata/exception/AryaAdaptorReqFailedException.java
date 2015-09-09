@@ -8,8 +8,4 @@ public class AryaAdaptorReqFailedException extends RuntimeException {
 
 	private static final long serialVersionUID = 4832314194301257858L;
 
-	public AryaAdaptorReqFailedException(String message) {
-		super(message);
-	}
-
 }
