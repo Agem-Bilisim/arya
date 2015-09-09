@@ -24,6 +24,13 @@ public class AryaRestMapperTest extends TestCase {
 		AryaRestMappedRequest mr = (AryaRestMappedRequest) mapper.map("genel.kimlik.list");
 		assertEquals("http://91.191.171.127/asya/rest/genel/kimlik/list", mr.getActionURL());
 	}
+	
+	@Test
+	public void mapShouldReturnViewName() {
+		AryaRestMapper mapper = new AryaRestMapper();
+		AryaRestMappedRequest mr = (AryaRestMappedRequest) mapper.map("genel.kimlik.list");
+		assertEquals("listKimlik", mr.getViewName());
+	}
 
 	@Test(expected=Exception.class)
 	public void mapShouldThrowException() {
