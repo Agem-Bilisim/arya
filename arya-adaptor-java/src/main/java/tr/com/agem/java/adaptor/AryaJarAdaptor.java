@@ -129,6 +129,7 @@ public class AryaJarAdaptor extends AryaApplicationAdaptor {
 
 			AryaAdaptorResponse response = new AryaAdaptorResponse();
 			response.setData(dataStr);
+			response.setViewName(mappedRequest.getViewName());
 
 			return response;
 

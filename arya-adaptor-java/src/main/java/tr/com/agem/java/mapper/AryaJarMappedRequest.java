@@ -13,6 +13,8 @@ public class AryaJarMappedRequest implements IAryaMappedRequest {
 	private String formName;
 	
 	private String path;
+	
+	private String viewName;
 
 	public String getAction() {
 		return action;
@@ -54,4 +56,12 @@ public class AryaJarMappedRequest implements IAryaMappedRequest {
 		this.path = path;
 	}
 
+	public String getViewName() {
+		return viewName;
+	}
+
+	public void setViewName(String viewName) {
+		this.viewName = viewName;
+	}
+	
 }

@@ -5,6 +5,8 @@ import tr.com.agem.core.adaptor.IAryaMappedRequest;
 public class AryaRestMappedRequest implements IAryaMappedRequest {
 	
 	private String actionURL;
+	
+	private String viewName;
 
 	public String getActionURL() {
 		return actionURL;
@@ -14,4 +16,12 @@ public class AryaRestMappedRequest implements IAryaMappedRequest {
 		this.actionURL = actionURL;
 	}
 
+	public String getViewName() {
+		return viewName;
+	}
+
+	public void setViewName(String viewName) {
+		this.viewName = viewName;
+	}
+	
 }

@@ -18,8 +18,15 @@ public class AryaJarMapper implements IAryaMapper {
 		String clsNamePrefix = findClassNamePrefix(action);
 		mr.setFormName(clsNamePrefix + ("list".equalsIgnoreCase(mr.getActionMethodName()) ? "ParameterForm" : "Form"));
 		mr.setServiceName(clsNamePrefix + "Service");
+		mr.setViewName(findViewName(action));
 
 		return mr;
+	}
+
+	// genel.kimlik.list ==> listKimlik
+	private String findViewName(String action) {
+		String[] split = action.split("\\.");
+		return split[split.length - 1] + AryaUtils.capitalize(split[split.length - 2]);
 	}
 
 	private String findActionMethodName(String action) {
