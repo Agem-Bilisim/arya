@@ -2,31 +2,19 @@
 	xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window>
 
-		<label id="label1" value="Project Name:" class="definition" />
-		<textbox id="textbox1" width="1000px" value="Arya" class="definition" />
+		<label id="lbl1" value="Company Name" />
+		<textbox id="tbox1" value="AGEM Technology Partner" />
 
-		<label id="lbl1" value="Test label" />
-		<textbox id="tb1" value="Ali ali ali" />
-		<label id="lbl2" value="Test label" />
-		<textbox id="tb2" value="2" />
-		<label id="lbl3" value="Hede Hödö" />
-		<checkbox id="ch1" label="Deneme" onCheck="AryaOnCheck" />
-		<label id="lbl4" value="Test label" />
+		<label id="lbl2" value="Project Name:" />
+		<textbox id="tb2" value="Arya" />
+
+		<label id="lbl3" value="Application Type" />
+
+		<checkbox id="chb1" label="Android" onCheck="AryaOnCheck" />
+		<checkbox id="chb2" label="IOS" onCheck="AryaOnCheck" />
+		<checkbox id="chb3" label="Zkoss" onCheck="AryaOnCheck" />
+
 		<datebox id="db1" />
-		<label id="lbl5" value="Test label" />
-
-		<listbox id="lb1" onChange="a(getElementById('btn1'))">
-			<listitem id="l1" label="item1" value="1" />
-			<listitem id="l2" label="item2" value="2" />
-			<listitem id="l3" label="item3" value="3" />
-		</listbox>
-
-		<multipleCombobox id="cb2" value="hulo" width="10%"
-			class="a" onChange="a(getElementById('btn1'))">
-			<mcomboitem id="21" label="item1" class="a" value="1" />
-			<mcomboitem id="22" label="item2" class="a" value="2" />
-			<mcomboitem id="23" label="item3" class="a" value="3" />
-		</multipleCombobox>
 
 		<listbox id="box" width="100%">
 			<listhead>
@@ -39,39 +27,39 @@
 			</listitem>
 		</listbox>
 
-		<combobox id="cb1" value="hulo" class="a"
-			onChange="a(getElementById('btn1'))">
-			<comboitem id="1" label="item1" class="a" value="1" />
-			<comboitem id="2" label="item2" class="a" value="2" />
-			<comboitem id="3" label="item3" class="a" value="3" />
+		<multiplecombobox id="mcb1" onChange="a(getElementById('btn1'))">
+			<mcomboitem id="mci1" label="Android" value="1" />
+			<mcomboitem id="mci2" label="IOS" value="2" />
+			<mcomboitem id="mci3" label="Zkoss" value="3" />
+		</multiplecombobox>
+
+		<combobox id="cb1" onChange="a(getElementById('btn1'))">
+			<comboitem id="ci1" label="Android" value="1" />
+			<comboitem id="ci2" label="IOS" value="2" />
+			<comboitem id="ci3" label="Zkoss" value="3" />
 		</combobox>
 
-		<label id="lbl6" value="Test label" />
 
 		<button id="btn1" label="Arya" onClick="a()" />
 		<button id="btn2" label="Yeni Ekran" onClick="b()" />
 
-
-
-
 	</window>
 	<script>
 		a = function() {
+		
 		print('a');
 		if(getElementById('btn1').getLabel()=='Arya')
-		getElementById('btn1').setLabel('AGEM');
+			getElementById('btn1').setLabel('AGEM');
 		else
-		getElementById('btn1').setLabel('Arya');
+			getElementById('btn1').setLabel('Arya');
 
 		//print(getElementById('deneme6').getComponentId());
 		//print(getElementsByName('button')[0].getComponentId());
 		//print(getElementsByClass('klass')[0].getComponentId());
 		};
-		b =
-		function() {
-		post('kisi.list', 'ALL', { 'json': '1', 'ad': 'mehmet' },
-		function pit(a){
-		print('DATA:' + a.data); });
+
+		b =function() {
+			post('', 'ALL', { 'json': '1' },function pit(a){print('DATA:' + a.data); });
 		};
 	</script>
 </arya>

@@ -14,18 +14,14 @@ public class ComponentFactory {
 
         if ("label".equalsIgnoreCase(tagName)) {
             comp = new AryaLabel(context, attributes, aryaWindow);
-        } else if ("textbox".equalsIgnoreCase(tagName)) {
+        } else if (("textbox").equalsIgnoreCase(tagName)|| "intbox".equalsIgnoreCase(tagName)||"doublebox".equalsIgnoreCase(tagName)||"longbox".equalsIgnoreCase(tagName)) {
             comp = new AryaTextbox(context, attributes, aryaWindow,tagName);
-        } else if ("checkbox".equalsIgnoreCase(tagName)) {
+        }else if ("checkbox".equalsIgnoreCase(tagName)) {
             comp = new AryaCheckbox(context, attributes, aryaWindow);
         } else if ("datebox".equalsIgnoreCase(tagName)) {
             comp = new AryaDatebox(context, attributes, aryaWindow);
         } else if ("button".equalsIgnoreCase(tagName)) {
             comp = new AryaButton(context, attributes, aryaWindow);
-        } else if ("intbox".equalsIgnoreCase(tagName)) {
-            comp = new AryaTextbox(context, attributes, aryaWindow,tagName);
-        } else if ("doublebox".equalsIgnoreCase(tagName)) {
-            comp = new AryaTextbox(context, attributes, aryaWindow,tagName);
         } else if ("combobox".equalsIgnoreCase(tagName)) {
             comp = new AryaComboBox(context, attributes, aryaWindow);
         }else if ("comboitem".equalsIgnoreCase(tagName)) {
@@ -36,14 +32,12 @@ public class ComponentFactory {
             comp = new AryaMultipleComboItem(context, attributes, aryaWindow);
         }else if ("listbox".equalsIgnoreCase(tagName)) {
             comp = new AryaListBox(context, attributes, aryaWindow);
-        }else if ("listhead".equalsIgnoreCase(tagName)) {
+        }else if ("listhead".equalsIgnoreCase(tagName)) { // maybe create head class for self properties
             comp = new AryaListItem(context, attributes, aryaWindow);
-        }else if ("listheader".equalsIgnoreCase(tagName)) {
-            comp = new AryaListCell(context, attributes, aryaWindow);
+        }else if ("listheader".equalsIgnoreCase(tagName)||"listcell".equalsIgnoreCase(tagName)) {
+            comp = new AryaListCell(context, attributes, aryaWindow,tagName);
         }else if ("listitem".equalsIgnoreCase(tagName)) {
             comp = new AryaListItem(context, attributes, aryaWindow);
-        }else if ("listcell".equalsIgnoreCase(tagName)) {
-            comp = new AryaListCell(context, attributes, aryaWindow);
         }else if ("script".equalsIgnoreCase(tagName)) {
             comp = new AryaScript(context, attributes,aryaWindow);
         }

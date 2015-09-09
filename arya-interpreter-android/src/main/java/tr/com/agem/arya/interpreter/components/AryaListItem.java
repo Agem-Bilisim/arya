@@ -28,7 +28,12 @@ public class AryaListItem extends TableRow implements IAryaComponent {
     @Override
     public void setComponentParent(Object o) {
         AryaListBox lb = (AryaListBox) o;
+
+        this.setLayoutParams(new TableRow.LayoutParams(LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT, 10.0f));
+        this.setPadding(1, 1, 1, 1);
+
         lb.addView(this);
+
     }
 
     @Override
