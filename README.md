@@ -78,6 +78,8 @@ We also use checkstyle and findbugs plugins to do static analyzing on the change
 - **[arya-interpreter-android](arya-interpreter-android/README.md)** is the Android implementation of interpreter.
 - **[arya-interpreter-angularjs](arya-interpreter-angularjs/README.md)** is the AngularJS implementation of interpreter.
 - **arya-interpreter-zkoss** is the Zkoss implementation of interpreter.
+- **repo** is the in-project local repository for reference projects (such as asya.jar, agemutils.jar). Adaptor modules get its dependencies from this folder when it needs to operato on a reference project.
+- **scripts** contains helper scripts such as installing a jar file into `repo` folder or updating local repository.
 
 ## Metadata
 
