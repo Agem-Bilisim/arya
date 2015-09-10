@@ -2,7 +2,6 @@ package tr.com.agem.filter;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.io.Writer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -23,6 +22,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import tr.com.agem.core.adaptor.IAryaAdaptor;
 import tr.com.agem.core.gateway.model.AryaRequest;
+import tr.com.agem.filter.utils.CopyPrintWriter;
 
 public class LoginFilter implements Filter {
 	private static final Logger logger = Logger.getLogger(LoginFilter.class.getName());
@@ -69,38 +69,6 @@ public class LoginFilter implements Filter {
 	public void destroy() {
 		appContext = null;
 		adapter = null;
-	}
-
-	public class CopyPrintWriter extends PrintWriter {
-
-		private StringBuilder copy = new StringBuilder();
-
-		public CopyPrintWriter(Writer writer) {
-			super(writer);
-		}
-
-		@Override
-		public void write(int c) {
-			copy.append((char) c); // It is actually a char, not an int.
-			super.write(c);
-		}
-
-		@Override
-		public void write(char[] chars, int offset, int length) {
-			copy.append(chars, offset, length);
-			super.write(chars, offset, length);
-		}
-
-		@Override
-		public void write(String string, int offset, int length) {
-			copy.append(string, offset, length);
-			super.write(string, offset, length);
-		}
-
-		public String getCopy() {
-			return copy.toString();
-		}
-
 	}
 
 }

@@ -78,6 +78,7 @@
 					<deleteConflictingFiles>true</deleteConflictingFiles>
 					<undeployBeforeDeploy>true</undeployBeforeDeploy>
 					<disableConflictingDependenciesWarning>true</disableConflictingDependenciesWarning>
+					<androidManifestFile>${project.basedir}/src/main/AndroidManifest.xml</androidManifestFile>
 				</configuration>
 			</plugin>
 		</plugins>
