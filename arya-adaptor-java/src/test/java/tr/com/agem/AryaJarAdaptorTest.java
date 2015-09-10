@@ -25,7 +25,7 @@ import tr.com.agem.java.mapper.AryaJarMapper;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @TestExecutionListeners({ TransactionalTestExecutionListener.class, DependencyInjectionTestExecutionListener.class })
-@ContextConfiguration(locations = { "classpath:**/applicationContext.xml", "classpath:**/datasource-config.xml" })
+@ContextConfiguration(locations = { "classpath:**/datasource-config.xml" })
 @TransactionConfiguration(defaultRollback = true, transactionManager = "txManager")
 @Transactional
 public class AryaJarAdaptorTest extends TestCase {

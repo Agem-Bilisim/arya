@@ -8,7 +8,7 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>ARYA</name>
-	<description>Arya Cross Platform Application Development And Migration Platform</description>
+	<description>Arya Cross Platform Application Development And Migration Framework</description>
 	<url>http://www.agem.com.tr</url>
 
 	<modules>
@@ -23,14 +23,6 @@
 		<module>arya-adaptor-java</module>
 		<module>arya-metadata-generator</module>
 	</modules>
-
-	<repositories>
-		<repository>
-			<id>agem-maven</id>
-			<name>Agem Maven Repository</name>
-			<url>http://192.168.1.51:8081/nexus/content/repositories/thirdparty</url>
-		</repository>
-	</repositories>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -56,6 +48,14 @@
 		<commons.lang.version>3.4</commons.lang.version>
 		<javax.servlet.version>2.5</javax.servlet.version>
 	</properties>
+
+	<repositories>
+		<repository>
+			<id>arya-local-repo</id>
+			<name>Arya in-project repository (a drop point for reference projects such as asya.jar, agemutils.jar)</name>
+			<url>file://${main.basedir}/repo</url>
+		</repository>
+	</repositories>
 
 	<developers>
 		<developer>
@@ -168,8 +168,8 @@
 						</executions>
 						<configuration>
 							<configLocation>${main.basedir}/checkstyle/checkstyle.xml</configLocation>
-<!-- 							<suppressionsLocation>${main.basedir}/checkstyle/suppressions.xml</suppressionsLocation> -->
-<!-- 							<headerLocation>${main.basedir}/checkstyle/ClassHeader.txt</headerLocation> -->
+							<!-- <suppressionsLocation>${main.basedir}/checkstyle/suppressions.xml</suppressionsLocation> -->
+							<!-- <headerLocation>${main.basedir}/checkstyle/ClassHeader.txt</headerLocation> -->
 							<enableRSS>false</enableRSS>
 							<linkXRef>true</linkXRef>
 							<consoleOutput>true</consoleOutput>
