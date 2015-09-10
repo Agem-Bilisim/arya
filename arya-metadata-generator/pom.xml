@@ -15,7 +15,8 @@
 
 	<properties>
 		<reference.project.name>asya.jar</reference.project.name>
-		<main.basedir>${project.parent.basedir}</main.basedir>
+		<!-- needed for checkstyle/findbugs -->
+		<main.basedir>${project.basedir}/..</main.basedir>
 	</properties>
 
 	<build>
