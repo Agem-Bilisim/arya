@@ -10,56 +10,68 @@
 
 		<label id="lbl3" value="Application Type" />
 
-		<checkbox id="chb1" label="Android" onCheck="AryaOnCheck" />
-		<checkbox id="chb2" label="IOS" onCheck="AryaOnCheck" />
-		<checkbox id="chb3" label="Zkoss" onCheck="AryaOnCheck" />
+		<checkbox id="chb1" label="Android"  />
+		<checkbox id="chb2" label="IOS"  />
+		<checkbox id="chb3" label="Zkoss"  />
 
 		<datebox id="db1" />
 
 		<listbox id="box" width="100%">
 			<listhead>
-				<listheader label="Company" sort="auto" />
-				<listheader label="Project" sort="auto" />
+				<listheader label="Company"  />
+				<listheader label="Project"  />
 			</listhead>
+			<listitem>
+				<listcell label="AGEM" />
+				<listcell label="arya" />
+			</listitem>
 			<listitem>
 				<listcell label="AGEM" />
 				<listcell label="arya" />
 			</listitem>
 		</listbox>
 
-		<multiplecombobox id="mcb1" onChange="a(getElementById('btn1'))">
+		<multiplecombobox id="mcb1" >
 			<mcomboitem id="mci1" label="Android" value="1" />
 			<mcomboitem id="mci2" label="IOS" value="2" />
 			<mcomboitem id="mci3" label="Zkoss" value="3" />
 		</multiplecombobox>
 
-		<combobox id="cb1" onChange="a(getElementById('btn1'))">
+		<combobox id="cb1" >
 			<comboitem id="ci1" label="Android" value="1" />
 			<comboitem id="ci2" label="IOS" value="2" />
 			<comboitem id="ci3" label="Zkoss" value="3" />
 		</combobox>
 
 
-		<button id="btn1" label="Arya" onClick="a()" />
-		<button id="btn2" label="Yeni Ekran" onClick="b()" />
+		<button id="btn1" label="Arya" onClick="b()" />
+		<button id="btn2" label="Yeni Ekran"  />
 
 	</window>
-	<script>
+
+	<menubar>
+		<menu label="Hardware">
+		</menu>
+	</menubar>
+
+	<script >
 		a = function() {
-		
+
 		print('a');
 		if(getElementById('btn1').getLabel()=='Arya')
-			getElementById('btn1').setLabel('AGEM');
+		getElementById('btn1').setLabel('AGEM');
 		else
-			getElementById('btn1').setLabel('Arya');
+		getElementById('btn1').setLabel('Arya');
 
 		//print(getElementById('deneme6').getComponentId());
 		//print(getElementsByName('button')[0].getComponentId());
 		//print(getElementsByClass('klass')[0].getComponentId());
 		};
 
-		b =function() {
-			post('', 'ALL', { 'json': '1' },function pit(a){print('DATA:' + a.data); });
+		b
+		=function() {
+		post('genel.kimlik.list', 'ALL', { 'json': '1' },function
+		pit(a){print('DATA:' + a.data); });
 		};
 	</script>
 </arya>
