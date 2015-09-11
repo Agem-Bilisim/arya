@@ -106,7 +106,12 @@
 			<artifactId>postgresql</artifactId>
 			<version>9.0-801.jdbc4</version>
 		</dependency>
-	<!-- Reference Project Dependencies End -->
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.10</version>
+		</dependency>
+		<!-- Reference Project Dependencies End -->
 	</dependencies>
 
 	<build>
