@@ -81,6 +81,7 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 		
 		String result = AryaInterpreterHelper.callUrl(PropertyReader.property("gateway.base.url"), request.toString());
 		
+		System.out.println("--------------"+result);
 		
 		logger.log(Level.FINE, "Post result: {0}", result);
 		

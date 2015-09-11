@@ -32,7 +32,7 @@ public class ComponentFactory {
             comp = new AryaMultipleComboItem(context, attributes, aryaWindow);
         }else if ("listbox".equalsIgnoreCase(tagName)) {
             comp = new AryaListBox(context, attributes, aryaWindow);
-        }else if ("listhead".equalsIgnoreCase(tagName)) { // maybe create head class for self properties
+        }else if ("listhead".equalsIgnoreCase(tagName)) { // maybe create head class for self properties TODO sıraya göre değil direk head olmalı çizerken(volkan)
             comp = new AryaListItem(context, attributes, aryaWindow);
         }else if ("listheader".equalsIgnoreCase(tagName)||"listcell".equalsIgnoreCase(tagName)) {
             comp = new AryaListCell(context, attributes, aryaWindow,tagName);

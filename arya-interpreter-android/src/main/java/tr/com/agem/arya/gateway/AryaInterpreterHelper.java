@@ -1,6 +1,5 @@
 package tr.com.agem.arya.gateway;
 
-import java.awt.Button;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -11,7 +10,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import android.content.Context;
-import android.view.View;
+import android.support.v4.app.ActivityCompat;
 import android.widget.ImageView;
 
 import org.xml.sax.InputSource;
@@ -22,6 +21,8 @@ import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
 import tr.com.agem.arya.R;
+import tr.com.agem.arya.interpreter.components.AryaMain;
+import tr.com.agem.arya.interpreter.components.AryaNavBar;
 import tr.com.agem.arya.interpreter.components.AryaWindow;
 import tr.com.agem.arya.interpreter.parser.AryaMetadataParser;
 import tr.com.agem.core.gateway.model.AryaRequest;
@@ -78,11 +79,18 @@ public class AryaInterpreterHelper {
         return null;
     }
 
-    public static void interpretResponse(AryaResponse response, Context context, AryaWindow aryaWindow) {
+    public static void interpretResponse(AryaResponse response, Context context, AryaMain main) {
+
+        AryaNavBar navBar = main.getAryaNavBar();
+
+        AryaWindow aryaWindow =main.getAryaWindow();
 
         if (aryaWindow.getComponents() != null) {
             aryaWindow.getComponents().clear();
         }
+
+        //context,aryaWindow
+
 
         SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
 		SAXParser parser = null;
@@ -90,6 +98,7 @@ public class AryaInterpreterHelper {
         try {
             parser = saxParserFactory.newSAXParser();
             parser.parse(new InputSource(new StringReader(response.getView())), new AryaMetadataParser(context,aryaWindow));
+
         } catch (ParserConfigurationException e) {
             e.printStackTrace();
         } catch (SAXException e) {
