@@ -36,6 +36,8 @@ public class AryaJarAdaptorTest extends TestCase {
 	@Test
 	public void processRequestShouldReturnResponse() {
 
+		AryaAdaptorTestHelper.mockAryaThreadLocal();
+
 		AryaJarAdaptor adaptor = new AryaJarAdaptor();
 		adaptor.setMapper(new AryaJarMapper());
 		adaptor.setDataSource(dataSource);
@@ -52,10 +54,14 @@ public class AryaJarAdaptorTest extends TestCase {
 		IAryaAdaptorResponse response = adaptor.handleRequest(request);
 		assertNotNull("Response object cannot be null!", response);
 		assertNotNull("Response data cannot be null!", response.getData());
+
+		AryaAdaptorTestHelper.clearAryaThreadLocal();
 	}
 
 	@Test
 	public void loginRequestShouldSucceed() {
+
+		AryaAdaptorTestHelper.mockAryaThreadLocal();
 
 		AryaJarAdaptor adaptor = new AryaJarAdaptor();
 		adaptor.setMapper(new AryaJarMapper());
@@ -72,10 +78,15 @@ public class AryaJarAdaptorTest extends TestCase {
 		IAryaAdaptorResponse response = adaptor.handleRequest(request);
 		assertNotNull("Response object cannot be null!", response);
 		assertNotNull("Response data cannot be null", response.getData());
+
+		AryaAdaptorTestHelper.clearAryaThreadLocal();
 	}
 
 	@Test(expected = AryaLoginFailedException.class)
 	public void loginRequestShouldThrowException() {
+
+		AryaAdaptorTestHelper.mockAryaThreadLocal();
+
 		AryaJarAdaptor adaptor = new AryaJarAdaptor();
 		adaptor.setMapper(new AryaJarMapper());
 		adaptor.setDataSource(dataSource);
@@ -88,10 +99,14 @@ public class AryaJarAdaptorTest extends TestCase {
 		request.setParams(params);
 
 		adaptor.handleRequest(request);
+
+		AryaAdaptorTestHelper.clearAryaThreadLocal();
 	}
 
 	@Test
 	public void userShouldLoginAndLogout() {
+
+		AryaAdaptorTestHelper.mockAryaThreadLocal();
 
 		//
 		// Login Request
@@ -117,6 +132,8 @@ public class AryaJarAdaptorTest extends TestCase {
 		request.setRequestType(RequestTypes.LOGOUT);
 
 		adaptor.handleRequest(request);
+
+		AryaAdaptorTestHelper.clearAryaThreadLocal();
 	}
 
 }
