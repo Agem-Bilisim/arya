@@ -13,11 +13,6 @@ import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
 import org.apache.commons.lang.StringEscapeUtils;
 import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockHttpServletResponse;
@@ -45,7 +40,6 @@ import tr.com.agem.startup.login.LoginAction;
 import tr.com.agem.startup.login.LoginForm;
 import tr.com.agem.startup.logout.LogoutAction;
 import tr.com.agem.struts.AgemModuleConfigImp;
-import tr.com.agem.user.User;
 
 public class AryaJarAdaptor extends AryaApplicationAdaptor {
 
@@ -235,10 +229,10 @@ public class AryaJarAdaptor extends AryaApplicationAdaptor {
 	}
 
 	@Override
-	public boolean checkLogin(ServletRequest request, ServletResponse response, IAryaRequest aryaRequest) {
-		HttpSession session = ((HttpServletRequest) request).getSession();
-		Object obj = session.getAttribute(AgemConstant.C_USER);
-		return obj != null && obj instanceof User;
+	public boolean checkLogin(IAryaRequest aryaRequest) {
+		return true;
+//		Object obj = AryaThreadLocal.getSession().getAttribute(AgemConstant.C_USER);
+//		return obj != null && obj instanceof User;
 	}
 	
 	private void initDBConnection() {

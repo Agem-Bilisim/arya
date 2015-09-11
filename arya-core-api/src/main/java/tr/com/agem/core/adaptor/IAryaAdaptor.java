@@ -12,5 +12,5 @@ public interface IAryaAdaptor {
 	public IAryaAdaptorResponse processRequest(IAryaRequest request);
 	public IAryaAdaptorResponse processLogin(IAryaRequest request);
 	public IAryaAdaptorResponse processLogout(IAryaRequest request);
-	public boolean checkLogin(ServletRequest request, ServletResponse response, IAryaRequest aryaRequest);
+	public boolean checkLogin(IAryaRequest aryaRequest);
 }
