@@ -6,7 +6,8 @@ import tr.com.agem.core.interpreter.IAryaComponent;
 
 public class ComponentFactory {
 
-	public static IAryaComponent getComponent(String tagName, AryaWindow aryaWindow, Attributes attributes) {
+	public static IAryaComponent getComponent(String tagName,
+			AryaWindow aryaWindow, Attributes attributes) {
 
 		IAryaComponent comp = null;
 
@@ -44,6 +45,16 @@ public class ComponentFactory {
 			comp = new AryaListHeader(aryaWindow, attributes);
 		} else if ("listcell".equalsIgnoreCase(tagName)) {
 			comp = new AryaListCell(aryaWindow, attributes);
+		} else if ("grid".equalsIgnoreCase(tagName)) {
+			comp = new AryaGrid(aryaWindow, attributes);
+		} else if ("columns".equalsIgnoreCase(tagName)) {
+			comp = new AryaColumns(aryaWindow, attributes);
+		} else if ("column".equalsIgnoreCase(tagName)) {
+			comp = new AryaColumn(aryaWindow, attributes);
+		} else if ("rows".equalsIgnoreCase(tagName)) {
+			comp = new AryaRows(aryaWindow, attributes);
+		} else if ("row".equalsIgnoreCase(tagName)) {
+			comp = new AryaRow(aryaWindow, attributes);
 		}
 
 		return comp;

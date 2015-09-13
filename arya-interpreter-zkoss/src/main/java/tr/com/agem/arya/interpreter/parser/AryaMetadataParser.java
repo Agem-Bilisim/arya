@@ -7,12 +7,16 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
+import tr.com.agem.arya.interpreter.component.AryaColumn;
+import tr.com.agem.arya.interpreter.component.AryaColumns;
 import tr.com.agem.arya.interpreter.component.AryaComboItem;
 import tr.com.agem.arya.interpreter.component.AryaListCell;
 import tr.com.agem.arya.interpreter.component.AryaListHead;
 import tr.com.agem.arya.interpreter.component.AryaListHeader;
 import tr.com.agem.arya.interpreter.component.AryaListItem;
 import tr.com.agem.arya.interpreter.component.AryaMultiComboItem;
+import tr.com.agem.arya.interpreter.component.AryaRow;
+import tr.com.agem.arya.interpreter.component.AryaRows;
 import tr.com.agem.arya.interpreter.component.AryaScript;
 import tr.com.agem.arya.interpreter.component.AryaWindow;
 import tr.com.agem.arya.interpreter.component.ComponentFactory;
@@ -37,12 +41,16 @@ public class AryaMetadataParser extends DefaultHandler {
 			// then set its parent to the current component which is a ComboBox
 			// (or ListBox) instance.
 			if (comp instanceof AryaComboItem || comp instanceof AryaMultiComboItem || comp instanceof AryaListItem
-					|| comp instanceof AryaListCell || comp instanceof AryaListHeader || comp instanceof AryaListHead) {
+					|| comp instanceof AryaListCell || comp instanceof AryaListHeader || comp instanceof AryaListHead
+					|| comp instanceof AryaColumns || comp instanceof AryaColumn || comp instanceof AryaRows || comp instanceof AryaRow) {
 				comp.setComponentParent(currentComponent.peek());
 			}
 			// For other components,
 			// Set their parent to the component container which is a Div
 			// instance.
+			else if (currentComponent.size() > 0 && currentComponent.peek() instanceof AryaRow) {
+				comp.setComponentParent(currentComponent.peek());
+			}
 			else {
 				comp.setComponentParent(aryaWindow.getComponentContainer());
 			}
