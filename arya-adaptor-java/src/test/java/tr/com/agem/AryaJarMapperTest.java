@@ -44,7 +44,7 @@ public class AryaJarMapperTest extends TestCase {
 	public void mapShouldReturnViewName() {
 		AryaJarMapper mapper = new AryaJarMapper();
 		AryaJarMappedRequest mr = (AryaJarMappedRequest) mapper.map("genel.kimlik.list");
-		assertEquals("listKimlik", mr.getViewName());
+		assertEquals("genel.kimlik.listKimlik", mr.getViewName());
 	}
 	
 	@Test(expected=Exception.class)

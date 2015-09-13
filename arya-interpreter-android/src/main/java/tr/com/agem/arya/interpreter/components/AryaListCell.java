@@ -42,7 +42,7 @@ public class AryaListCell extends TextView implements IAryaComponent {
     }
 
     @Override
-    protected void onDraw(Canvas canvas) {//TODO size dynamic yapılmalı renk,font,.. vs attr ile et edilmeli
+    protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         Rect rect = new Rect();
         Paint paint = new Paint();

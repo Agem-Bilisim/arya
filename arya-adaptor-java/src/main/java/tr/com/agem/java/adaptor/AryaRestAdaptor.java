@@ -11,9 +11,6 @@ import java.nio.charset.StandardCharsets;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-
 import tr.com.agem.core.adaptor.AryaApplicationAdaptor;
 import tr.com.agem.core.adaptor.IAryaAdaptorResponse;
 import tr.com.agem.core.gateway.model.IAryaRequest;
@@ -102,7 +99,7 @@ public class AryaRestAdaptor extends AryaApplicationAdaptor {
 	}
 
 	@Override
-	public boolean checkLogin(ServletRequest request, ServletResponse response, IAryaRequest aryaRequest) {
+	public boolean checkLogin(IAryaRequest aryaRequest) {
 		// TODO Auto-generated method stub
 		return false;
 	}

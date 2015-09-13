@@ -9,6 +9,7 @@ import org.xmlpull.v1.XmlPullParser;
 
 import tr.com.agem.arya.interpreter.script.ScriptHelper;
 import tr.com.agem.core.interpreter.IAryaComponent;
+import tr.com.agem.core.utils.AryaUtils;
 
 public class AryaCheckbox extends CheckBox implements IAryaComponent {
 
@@ -27,12 +28,15 @@ public class AryaCheckbox extends CheckBox implements IAryaComponent {
 
 
         this.setText(attributes.getValue("label"));
+
         String height =attributes.getValue("height");
         this.setHeight(height != null ? Integer.parseInt(height) : 100);
+
         String mandatory = attributes.getValue("mandatory");
         this.mandatory = mandatory != null && Boolean.parseBoolean(mandatory);
+
         String readonly = attributes.getValue("readonly");
-        this.setEnabled(readonly != null && Boolean.parseBoolean(readonly));
+        this.setEnabled(AryaUtils.isNotEmpty(readonly)?Boolean.parseBoolean(readonly):true);
 
         final String onCheck =attributes.getValue("onCheck");
         if (onCheck != null) {

@@ -1,7 +1,5 @@
 package tr.com.agem.core.adaptor;
 
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
 import javax.sql.DataSource;
 
 import tr.com.agem.core.gateway.model.IAryaRequest;
@@ -33,7 +31,7 @@ public abstract class AryaApplicationAdaptor implements IAryaAdaptor {
 
 	public abstract IAryaAdaptorResponse processLogout(IAryaRequest request);
 
-	public abstract boolean checkLogin(ServletRequest request, ServletResponse response, IAryaRequest aryaRequest);
+	public abstract boolean checkLogin(IAryaRequest aryaRequest);
 
 	public IAryaMapper getMapper() {
 		return mapper;

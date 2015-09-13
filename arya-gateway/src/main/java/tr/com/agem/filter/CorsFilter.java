@@ -2,32 +2,27 @@ package tr.com.agem.filter;
 
 import java.io.IOException;
 
-import javax.servlet.Filter;
 import javax.servlet.FilterChain;
-import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class CorsFilter implements Filter {
+import org.springframework.web.filter.OncePerRequestFilter;
+
+/**
+ * Adds Access-Control headers to each response that allows CORS capabilities.
+ * This class is only used for AngularJS interpreter and might be removed in the future. 
+ */
+public class CorsFilter extends OncePerRequestFilter {
 
 	@Override
-	public void destroy() {
-	}
-
-	@Override
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain)
-			throws IOException, ServletException {
+	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
+			throws ServletException, IOException {
 		((HttpServletResponse) response).addHeader("Access-Control-Allow-Origin", "*");
 		((HttpServletResponse) response).addHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
 		((HttpServletResponse) response).addHeader("Access-Control-Allow-Headers", "Content-Type");
 		((HttpServletResponse) response).addHeader("Access-Control-Max-Age", "1800");
 		filterChain.doFilter(request, response);
-	}
-
-	@Override
-	public void init(FilterConfig arg0) throws ServletException {
 	}
 
 }

@@ -30,5 +30,9 @@
   <bean id="metadataEngine" class="tr.com.agem.metadata.impl.MetadataEngineImpl">
   	<property name="persistence" ref="aryaPersistence"/>
   </bean>
+  
+  <bean id="aryaContextFilter" class="tr.com.agem.filter.AryaContextFilter" />
+  <bean id="corsFilter" class="tr.com.agem.filter.CorsFilter" />
+  <bean id="loginFilter" class="tr.com.agem.filter.LoginFilter" />
                  
 </beans>

@@ -23,10 +23,14 @@ public class AryaJarMapper implements IAryaMapper {
 		return mr;
 	}
 
-	// genel.kimlik.list ==> listKimlik
+	// genel.kimlik.list ==> genel.listKimlik
 	private String findViewName(String action) {
 		String[] split = action.split("\\.");
-		return split[split.length - 1] + AryaUtils.capitalize(split[split.length - 2]);
+		String[] prefix = new String[split.length-2];
+		for (int i = 0; i < prefix.length; i++) {
+			prefix[i] = split[i];
+		}
+		return AryaUtils.join(".", prefix) + "." + split[split.length - 2] + "." + split[split.length - 1] + AryaUtils.capitalize(split[split.length - 2]);
 	}
 
 	private String findActionMethodName(String action) {
@@ -44,6 +48,7 @@ public class AryaJarMapper implements IAryaMapper {
 		if (!clsNamePrefix.endsWith("\\."))
 			clsNamePrefix += ".";
 		String[] split = action.split("\\.");
+		
 		split[split.length - 1] = AryaUtils.capitalize(split[split.length - 2]);
 		clsNamePrefix += AryaUtils.join(".", split);
 		return clsNamePrefix;

@@ -14,13 +14,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang.StringEscapeUtils;
-import org.springframework.mock.web.MockHttpServletRequest;
-import org.springframework.mock.web.MockHttpServletResponse;
 
 import tr.com.agem.common.AgemActionMapping;
 import tr.com.agem.common.AgemConstant;
@@ -32,6 +29,7 @@ import tr.com.agem.common.form.JsonMessageFormInterface;
 import tr.com.agem.common.form.PagedList;
 import tr.com.agem.core.adaptor.AryaApplicationAdaptor;
 import tr.com.agem.core.adaptor.IAryaAdaptorResponse;
+import tr.com.agem.core.context.AryaThreadLocal;
 import tr.com.agem.core.gateway.model.IAryaRequest;
 import tr.com.agem.core.metadata.exception.AryaLoginFailedException;
 import tr.com.agem.core.property.reader.PropertyReader;
@@ -53,7 +51,7 @@ public class AryaJarAdaptor extends AryaApplicationAdaptor {
 
 	@Override
 	public IAryaAdaptorResponse processRequest(IAryaRequest aryaRequest) {
-		
+
 		AryaJarMappedRequest mappedRequest = (AryaJarMappedRequest) getMapper().map(aryaRequest.getAction());
 
 		logger.log(Level.INFO, "Calling jar method: {0} of service {1} with parameters: {2}", new Object[] {
@@ -116,14 +114,13 @@ public class AryaJarAdaptor extends AryaApplicationAdaptor {
 			AgemCrudAction da = (AgemCrudAction) cls.newInstance();
 
 			// Create request and response mock objects
-			MockHttpServletRequest httpRequest = new MockHttpServletRequest();
-			addRequestParameters(aryaRequest, httpRequest);
-			MockHttpServletResponse httpResponse = new MockHttpServletResponse();
+			addRequestParameters(aryaRequest, (HttpServletRequest) AryaThreadLocal.getRequest());
 
 			// Execute action!
-			da.execute(mapping, form, httpRequest, httpResponse);
+			da.execute(mapping, form, (HttpServletRequest) AryaThreadLocal.getRequest(),
+					(HttpServletResponse) AryaThreadLocal.getResponse());
 
-			String dataStr = convertToJson(httpRequest);
+			String dataStr = convertToJson(AryaThreadLocal.getRequest());
 
 			logger.log(Level.INFO, "Action executed successfully: {0} ", dataStr);
 
@@ -142,29 +139,30 @@ public class AryaJarAdaptor extends AryaApplicationAdaptor {
 
 		return null;
 	}
-	
+
 	@Override
 	public IAryaAdaptorResponse processLogin(IAryaRequest request) {
-		
+
 		initDBConnection();
 
 		String username = (String) request.getParams().get("username");
 		String password = (String) request.getParams().get("password");
-		
-		logger.log(Level.INFO, "Calling login action with parameters username: {0} and password: {1}", new Object[]{ username, password });
-		
-		// Create request and response mock objects
-		MockHttpServletRequest httpRequest = new MockHttpServletRequest();
-		MockHttpServletResponse httpResponse = new MockHttpServletResponse();
+
+		logger.log(Level.INFO, "Calling login action with parameters username: {0} and password: {1}",
+				new Object[] { username, password });
 
 		// Create login form
 		LoginForm loginForm = new LoginForm();
 		loginForm.setKullaniciKodu(username);
 		loginForm.setParola(password);
-		
-		// To overcome wrong captcha value! 
+
+		// To overcome wrong captcha value!
 		loginForm.setGuvenlikKodu("dummytext");
-		httpRequest.setAttribute(AgemConstant.C_CONNECTION_IP, "localhost");
+		AryaThreadLocal.getRequest().setAttribute(AgemConstant.C_CONNECTION_IP, "localhost");
+
+		// Mock UserContext
+		UserContext.setContext(AryaThreadLocal.getRequest(), AryaThreadLocal.getResponse(),
+				AryaThreadLocal.getServletContext());
 
 		// Create action mapping
 		AgemActionMapping mapping = new AgemActionMapping();
@@ -179,23 +177,24 @@ public class AryaJarAdaptor extends AryaApplicationAdaptor {
 
 		LoginAction loginAction = new LoginAction();
 		try {
-			loginAction.login(mapping, loginForm, httpRequest, httpResponse);
+			loginAction.login(mapping, loginForm, (HttpServletRequest) AryaThreadLocal.getRequest(),
+					(HttpServletResponse) AryaThreadLocal.getResponse());
 		} catch (Exception e) {
 			logger.log(Level.SEVERE, e.toString(), e);
 		}
 
-		String err = (String) httpRequest.getAttribute(AgemConstant.AGEM_HATA);
+		String err = (String) AryaThreadLocal.getRequest().getAttribute(AgemConstant.AGEM_HATA);
 		if (err != null) { // Login failed!
-			String msg = (String) httpRequest.getAttribute(AgemConstant.AGEM_MESSAGE);
+			String msg = (String) AryaThreadLocal.getRequest().getAttribute(AgemConstant.AGEM_MESSAGE);
 			if (msg != null) {
 				logger.log(Level.SEVERE, "AgemUtils error message: {0}", msg);
 			}
 			throw new AryaLoginFailedException();
 		}
-		
+
 		KullaniciForm user = (KullaniciForm) UserContext.getContext().get(AgemConstant.C_USER);
 		String dataStr = AgemUtils.jsObject(user);
-		
+
 		logger.log(Level.INFO, "Login action executed successfully: {0} ", dataStr);
 
 		AryaAdaptorResponse response = new AryaAdaptorResponse();
@@ -206,13 +205,9 @@ public class AryaJarAdaptor extends AryaApplicationAdaptor {
 
 	@Override
 	public IAryaAdaptorResponse processLogout(IAryaRequest request) {
-		
+
 		logger.log(Level.INFO, "Calling logout action.");
-		
-		// Create request and response mock objects
-		MockHttpServletRequest httpRequest = new MockHttpServletRequest();
-		MockHttpServletResponse httpResponse = new MockHttpServletResponse();
-		
+
 		// Create action mapping
 		AgemActionMapping mapping = new AgemActionMapping();
 		mapping.setType("tr.com.agem.startup.logout.LogoutAction");
@@ -221,26 +216,26 @@ public class AryaJarAdaptor extends AryaApplicationAdaptor {
 		mapping.setPath("/logout");
 		mapping.setMethod("logout");
 		mapping.setModuleConfig(new AgemModuleConfigImp(""));
-		
+
 		LogoutAction logoutAction = new LogoutAction();
 		try {
-			logoutAction.logout(mapping, null, httpRequest, httpResponse);
+			logoutAction.logout(mapping, null, (HttpServletRequest) AryaThreadLocal.getRequest(),
+					(HttpServletResponse) AryaThreadLocal.getResponse());
 		} catch (Exception e) {
 			logger.log(Level.SEVERE, e.toString(), e);
 		}
-		
+
 		logger.log(Level.INFO, "Logout action executed successfully.");
-		
+
 		return null;
 	}
 
 	@Override
-	public boolean checkLogin(ServletRequest request, ServletResponse response, IAryaRequest aryaRequest) {
-		HttpSession session = ((HttpServletRequest) request).getSession();
-		Object obj = session.getAttribute(AgemConstant.C_USER);
+	public boolean checkLogin(IAryaRequest aryaRequest) {
+		Object obj = AryaThreadLocal.getSession().getAttribute(AgemConstant.C_USER);
 		return obj != null && obj instanceof User;
 	}
-	
+
 	private void initDBConnection() {
 		try {
 			final Connection conn = getDataSource().getConnection();
@@ -259,13 +254,13 @@ public class AryaJarAdaptor extends AryaApplicationAdaptor {
 		}
 	}
 
-	private void addRequestParameters(IAryaRequest aryaRequest, MockHttpServletRequest httpRequest) {
-		httpRequest.setParameter("json", "1");
+	private void addRequestParameters(IAryaRequest aryaRequest, ServletRequest httpRequest) {
+		httpRequest.setAttribute("json", "1");
 		// TODO add other arya request parameters and attributes to HTTP request
 		// here!
 	}
 
-	private String convertToJson(MockHttpServletRequest httpRequest) {
+	private String convertToJson(ServletRequest httpRequest) {
 
 		Object obj = httpRequest.getAttribute("collection");
 		Object json = httpRequest.getAttribute("json");
