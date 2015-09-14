@@ -22,6 +22,7 @@ public class AryaListItem extends TableRow implements IAryaComponent {
         this.componentValue = attributes.getValue("value");
         this.componentAttribute = attributes.getValue("attribute");
 
+        window.addView(this);
     }
 
 

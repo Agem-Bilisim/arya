@@ -10,7 +10,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import android.content.Context;
-import android.support.v4.app.ActivityCompat;
 import android.widget.ImageView;
 
 import org.xml.sax.InputSource;
@@ -82,22 +81,18 @@ public class AryaInterpreterHelper {
     public static void interpretResponse(AryaResponse response, Context context, AryaMain main) {
 
         AryaNavBar navBar = main.getAryaNavBar();
-
         AryaWindow aryaWindow =main.getAryaWindow();
 
-        if (aryaWindow.getComponents() != null) {
-            aryaWindow.getComponents().clear();
+        if (main.getAryaWindow().getComponents() != null) {
+            main.getAryaWindow().getComponents().clear();
         }
 
-        //context,aryaWindow
-
-
         SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
-		SAXParser parser = null;
+        SAXParser parser = null;
 
         try {
             parser = saxParserFactory.newSAXParser();
-            parser.parse(new InputSource(new StringReader(response.getView())), new AryaMetadataParser(context,aryaWindow));
+            parser.parse(new InputSource(new StringReader(response.getView())), new AryaMetadataParser(context,main));
 
         } catch (ParserConfigurationException e) {
             e.printStackTrace();
@@ -114,5 +109,4 @@ public class AryaInterpreterHelper {
         aryaWindow.addView(image);
 
     }
-
 }

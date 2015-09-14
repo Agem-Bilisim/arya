@@ -39,6 +39,7 @@ public class AryaListCell extends TextView implements IAryaComponent {
 
         this.setText(attributes.getValue("label"));
 
+        window.addView(this);
     }
 
     @Override

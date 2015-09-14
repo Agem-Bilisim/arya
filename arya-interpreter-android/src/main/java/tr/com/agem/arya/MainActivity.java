@@ -4,7 +4,6 @@ import android.app.AlertDialog;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.widget.LinearLayout;
 
@@ -14,20 +13,20 @@ import tr.com.agem.arya.gateway.AryaInterpreterHelper;
 import tr.com.agem.arya.gateway.WebServiceConnectionAsyncTask;
 import tr.com.agem.arya.interpreter.AlertController;
 import tr.com.agem.arya.interpreter.components.AryaMain;
-import tr.com.agem.arya.interpreter.components.AryaMenuItem;
 import tr.com.agem.arya.interpreter.components.AryaNavBar;
 import tr.com.agem.arya.interpreter.components.AryaWindow;
 import tr.com.agem.core.gateway.model.AryaRequest;
 import tr.com.agem.core.gateway.model.AryaResponse;
 import tr.com.agem.core.gateway.model.RequestTypes;
+import tr.com.agem.core.utils.AryaUtils;
 
 public class MainActivity extends ActionBarActivity {
     private static final String TAG = "MainActivity";
 
     private static AlertDialog alertDialog;
     private LinearLayout mainLayout;
-
-
+    private Menu menu;
+    private AryaMain main;
 
 
     @Override
@@ -46,17 +45,21 @@ public class MainActivity extends ActionBarActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) { //TODO  On Construction
-        // Inflate the menu items for use in the action bar
-        //MenuInflater inflater = getMenuInflater();
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         menu.clear();
-
-        AryaMenuItem mi = new AryaMenuItem(1,"V",true);
-        menu.add("Test Menu");
-
-        //inflater.inflate(R.menu.menu_main, menu);
-        return super.onCreateOptionsMenu(menu);
+        return true;
     }
 
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+
+        if(AryaUtils.isNotEmpty(main.getAryaNavBar())){
+            menu.clear();
+            menu = main.getAryaNavBar().fillMenuOptions(menu);
+        }
+
+        return true;
+    }
 
     public void refresh() {
         // Prepare initial request
@@ -79,7 +82,7 @@ public class MainActivity extends ActionBarActivity {
             AryaResponse response = new AryaResponse();
             response.fromXMLString(responseStr);
 
-            AryaMain main= new AryaMain(new AryaWindow(this, mainLayout),new AryaNavBar(this, mainLayout));
+            main= new AryaMain(new AryaWindow(this, mainLayout),new AryaNavBar(this, mainLayout));
             AryaInterpreterHelper.interpretResponse(response, this, main);
 
         } else {
@@ -95,4 +98,11 @@ public class MainActivity extends ActionBarActivity {
         MainActivity.alertDialog = alertDialog;
     }
 
+    public Menu getMenu() {
+        return menu;
+    }
+
+    public void setMenu(Menu menu) {
+        this.menu = menu;
+    }
 }
