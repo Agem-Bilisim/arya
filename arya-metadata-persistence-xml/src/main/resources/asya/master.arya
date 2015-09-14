@@ -1,5 +1,5 @@
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="aryaportal.org arya.xsd">
+	xsi:schemaLocation="aryaportal.org arya.xsd http://www.zkoss.org/2005/zul/zul.xsd">
 	<window>
 
 		<label id="lbl1" value="Company Name" />
@@ -46,6 +46,31 @@
 
 		<button id="btn1" label="Arya" onClick="b()" />
 		<button id="btn2" label="Yeni Ekran"  />
+		<grid height="150px">
+			<columns>
+				<column label="Icon" width="50px" />
+				<column label="Subject" />
+				<column label="Received" width="150px" />
+				<column label="Size" width="80px" />
+				<column label="Ctrl" width="100px" />
+			</columns>
+			<rows>
+				<row>
+					<label value="A" />
+					<label value="B" />
+					<label value="C" />
+					<label value="D" />
+					<button id="gridbtnr1" label="Delete" onClick="a(getElementById('gridbtnr1'))" />
+				</row>
+				<row>
+					<label value="E" />
+					<label value="F" />
+					<label value="G" />
+					<label value="H" />
+					<button id="gridbtnr2" label="Delete" onClick="a(getElementById('gridbtnr2'))" />
+				</row>
+			</rows>
+		</grid>
 
 	</window>
 
