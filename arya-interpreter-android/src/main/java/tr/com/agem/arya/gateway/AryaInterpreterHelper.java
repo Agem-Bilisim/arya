@@ -21,7 +21,6 @@ import javax.xml.parsers.SAXParserFactory;
 
 import tr.com.agem.arya.R;
 import tr.com.agem.arya.interpreter.components.AryaMain;
-import tr.com.agem.arya.interpreter.components.AryaNavBar;
 import tr.com.agem.arya.interpreter.components.AryaWindow;
 import tr.com.agem.arya.interpreter.parser.AryaMetadataParser;
 import tr.com.agem.core.gateway.model.AryaRequest;
@@ -80,7 +79,6 @@ public class AryaInterpreterHelper {
 
     public static void interpretResponse(AryaResponse response, Context context, AryaMain main) {
 
-        AryaNavBar navBar = main.getAryaNavBar();
         AryaWindow aryaWindow =main.getAryaWindow();
 
         if (main.getAryaWindow().getComponents() != null) {

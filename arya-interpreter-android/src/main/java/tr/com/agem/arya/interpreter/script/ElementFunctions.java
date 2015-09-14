@@ -19,6 +19,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import tr.com.agem.arya.gateway.AryaInterpreterHelper;
+import tr.com.agem.arya.interpreter.components.AryaMain;
 import tr.com.agem.arya.interpreter.components.AryaWindow;
 import tr.com.agem.core.gateway.model.AryaResponse;
 import tr.com.agem.core.interpreter.IAryaComponent;
@@ -71,33 +72,37 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 	@AryaJsFunction
 	public void post(String action, String requestType, Object params, NativeFunction onSuccess, NativeFunction onFailure) {
 
-		Object jsonParam = NativeJSON.stringify(context, scope, params, null, null);
+        Object jsonParam = NativeJSON.stringify(context, scope, params, null, null);
 
-		StringBuilder request = new StringBuilder("{ \"params\": ")
-				.append(jsonParam)
-				.append(", \"requestType\": \"")
-				.append(requestType)
-				.append("\", \"action\": \"")
-				.append(action)
-				.append("\" }");
-		
-		String result = AryaInterpreterHelper.callUrl(PropertyReader.property("gateway.base.url"), request.toString());
-		
-		logger.log(Level.FINE, "Post result: {0}", result);
-		
-		AryaResponse response = new AryaResponse();
-		response.fromXMLString(result);
-		
-		//TODO response fail condition add
-		
-		if (onSuccess != null) {
-			scope.put(onSuccess.getFunctionName(), scope, onSuccess);
-			Context.call(null, onSuccess, scope, this, new Object[]{ response });
-		}
-		if (onFailure != null) {
-			scope.put(onFailure.getFunctionName(), scope, onFailure);
-			Context.call(null, onFailure, scope, this, new Object[]{ response });			
-		}
+        StringBuilder request = new StringBuilder("{ \"params\": ")
+                .append(jsonParam)
+                .append(", \"requestType\": \"")
+                .append(requestType)
+                .append("\", \"action\": \"")
+                .append(action)
+                .append("\" }");
+
+        String result = AryaInterpreterHelper.callUrl(PropertyReader.property("gateway.base.url"), request.toString());
+
+        System.out.println("--------------" + result);
+
+        logger.log(Level.FINE, "Post result: {0}", result);
+
+
+        AryaResponse response = new AryaResponse();
+        response.fromXMLString(result);
+
+        //AryaInterpreterHelper.interpretResponse(response, window);
+        //TODO response fail condition add
+
+        if (onSuccess != null) {
+            scope.put(onSuccess.getFunctionName(), scope, onSuccess);
+            Context.call(null, onSuccess, scope, this, new Object[]{ response });
+        }
+        if (onFailure != null) {
+            scope.put(onFailure.getFunctionName(), scope, onFailure);
+            Context.call(null, onFailure, scope, this, new Object[]{ response });
+        }
 	}
 
 	@AryaJsFunction
