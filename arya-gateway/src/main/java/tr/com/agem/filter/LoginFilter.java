@@ -33,14 +33,14 @@ public class LoginFilter extends OncePerRequestFilter {
 		LoginRequestWrapper requestWrapper = new LoginRequestWrapper((HttpServletRequest) request);
 		AryaRequest aryaRequest = new ObjectMapper().readValue(requestWrapper.getInputStream(), AryaRequest.class);
 
-		if ("login".equals(aryaRequest.getAction()) || adapter.checkLogin(aryaRequest)) {
+//		if ("login".equals(aryaRequest.getAction()) || adapter.checkLogin(aryaRequest)) {
 			logger.log(Level.FINE, "User has already logged in!");
 			filterChain.doFilter(requestWrapper, response);
-		} else {
-			logger.log(Level.SEVERE, "User has not logged in: {0}",
-					(aryaRequest.getParams() == null ? null : aryaRequest.getParams().get("username")));
-			((HttpServletResponse) response).sendError(HttpStatus.BAD_REQUEST.value(), "User must login first!");
-		}
+//		} else {
+//			logger.log(Level.SEVERE, "User has not logged in: {0}",
+//					(aryaRequest.getParams() == null ? null : aryaRequest.getParams().get("username")));
+//			((HttpServletResponse) response).sendError(HttpStatus.BAD_REQUEST.value(), "User must login first!");
+//		}
 
 	}
 
