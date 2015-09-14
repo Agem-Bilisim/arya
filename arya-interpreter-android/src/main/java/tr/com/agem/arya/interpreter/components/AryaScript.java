@@ -18,6 +18,8 @@ public class AryaScript extends View implements IAryaComponent{
     public AryaScript(Context context, Attributes attributes, AryaWindow aryaWindow) {
        super(context);
         this.srcList=parseSrc(attributes.getValue("src"));
+
+        aryaWindow.addView(this);
     }
 
     private List<String> parseSrc(String src) {
@@ -46,7 +48,7 @@ public class AryaScript extends View implements IAryaComponent{
 
     @Override
     public String getComponentId() {
-        return null;
+        return "aryaScript";
     }
 
     @Override

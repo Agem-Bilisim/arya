@@ -1,5 +1,7 @@
 package tr.com.agem.arya.interpreter.components;
 
+import android.view.Menu;
+
 /**
  * Created by volkan on 09.09.2015.
  */
@@ -7,6 +9,9 @@ public class AryaMain {
 
     AryaWindow aryaWindow;
     AryaNavBar aryaNavBar;
+
+    public AryaMain() {
+    }
 
     public AryaMain(AryaWindow aryaWindow, AryaNavBar aryaNavBar) {
         this.aryaWindow = aryaWindow;
@@ -28,4 +33,6 @@ public class AryaMain {
     public void setAryaNavBar(AryaNavBar aryaNavBar) {
         this.aryaNavBar = aryaNavBar;
     }
+
+
 }

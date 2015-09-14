@@ -1,86 +1,95 @@
 package tr.com.agem.arya.interpreter.components;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.ActionProvider;
 import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.SubMenu;
 import android.view.View;
 
-/**
- * Created by volkan on 11.09.2015.
- */
-public class AryaMenuItem implements MenuItem {
+import org.xml.sax.Attributes;
 
-    int itemId;
-    int groupId;
-    int order;
-    CharSequence title;
-    CharSequence titleCondensed;
-    boolean checkable;
-    boolean checked;
-    boolean enable;
-    boolean disable;
-    boolean visible;
-    Drawable icon;
-    Intent intent;
+import tr.com.agem.arya.interpreter.parser.IAryaMenu;
+import tr.com.agem.arya.interpreter.script.ScriptHelper;
+import tr.com.agem.core.interpreter.IAryaComponent;
+import tr.com.agem.core.utils.AryaUtils;
 
-    public AryaMenuItem(int itemId, CharSequence title, boolean enable) {
-        this.itemId = itemId;
-        this.title = title;
-        this.enable = enable;
+public class AryaMenuItem implements IAryaComponent,IAryaMenu, MenuItem {
+
+
+    private String label;
+    private OnMenuItemClickListener onMenuItemClickListener;
+
+
+    public AryaMenuItem(Context context, Attributes attributes, final AryaWindow window) {
+
+        this.label=attributes.getValue("label");
+
+        final String onClick =  attributes.getValue("onClick");
+
+        if(AryaUtils.isNotEmpty(onClick)){
+            this.setOnMenuItemClickListener(new OnMenuItemClickListener() {
+                @Override
+                public boolean onMenuItemClick(MenuItem menuItem) {
+                    ScriptHelper.executeScript(onClick, null,window );
+
+                    return false;
+                }
+            });
+        }
+
+
+
     }
 
-    public AryaMenuItem() {
+    @Override
+    public OnMenuItemClickListener getOnMenuItemClickListener() {
+        return onMenuItemClickListener;
+    }
+
+
+    @Override
+    public void setComponentParent(Object o) {
+        if(o instanceof AryaMenuBar){
+            AryaMenuBar menu = (AryaMenuBar) o;
+            menu.addItem(this);
+        }
+    }
+
+    @Override
+    public String getLabel() {
+        return label;
+    }
+
+    @Override
+    public void setLabel(String label) {
+        this.label = label;
     }
 
 
 
     @Override
     public int getItemId() {
-        return itemId;
-    }
-
-    public void setItemId(int itemId) {
-        this.itemId = itemId;
+        return 0;
     }
 
     @Override
     public int getGroupId() {
-        return groupId;
-    }
-
-    public void setGroupId(int groupId) {
-        this.groupId = groupId;
+        return 0;
     }
 
     @Override
     public int getOrder() {
-        return order;
+        return 0;
     }
 
     @Override
     public MenuItem setTitle(CharSequence charSequence) {
-        this.title=charSequence;
-        return this;
+        return null;
     }
-
-    public void setOrder(int order) {
-        this.order = order;
-    }
-
-    @Override
-    public CharSequence getTitle() {
-        return title;
-    }
-
-    @Override
-    public MenuItem setTitleCondensed(CharSequence charSequence) {
-        this.titleCondensed=charSequence;
-        return this;
-    }
-
 
     @Override
     public MenuItem setTitle(int i) {
@@ -88,14 +97,23 @@ public class AryaMenuItem implements MenuItem {
     }
 
     @Override
+    public CharSequence getTitle() {
+        return null;
+    }
+
+    @Override
+    public MenuItem setTitleCondensed(CharSequence charSequence) {
+        return null;
+    }
+
+    @Override
     public CharSequence getTitleCondensed() {
-        return titleCondensed;
+        return null;
     }
 
     @Override
     public MenuItem setIcon(Drawable drawable) {
-        this.icon=drawable;
-        return this;
+        return null;
     }
 
     @Override
@@ -105,18 +123,17 @@ public class AryaMenuItem implements MenuItem {
 
     @Override
     public Drawable getIcon() {
-        return this.icon;
+        return null;
     }
 
     @Override
     public MenuItem setIntent(Intent intent) {
-        this.intent=intent;
-        return this;
+        return null;
     }
 
     @Override
     public Intent getIntent() {
-        return this.intent;
+        return null;
     }
 
     @Override
@@ -146,48 +163,42 @@ public class AryaMenuItem implements MenuItem {
 
     @Override
     public MenuItem setCheckable(boolean b) {
-        this.checkable=b;
-        return this;
+        return null;
     }
-
 
     @Override
     public boolean isCheckable() {
-        return checkable;
+        return false;
     }
 
     @Override
     public MenuItem setChecked(boolean b) {
-        this.checked=b;
-        return this;
+        return null;
     }
-
 
     @Override
     public boolean isChecked() {
-        return checked;
+        return false;
     }
 
     @Override
     public MenuItem setVisible(boolean b) {
-        this.visible=b;
-        return this;
+        return null;
     }
 
     @Override
     public boolean isVisible() {
-        return this.visible;
+        return false;
     }
 
     @Override
     public MenuItem setEnabled(boolean b) {
-        this.enable=b;
-        return this;
+        return null;
     }
 
     @Override
     public boolean isEnabled() {
-        return this.enable;
+        return false;
     }
 
     @Override
@@ -202,6 +213,7 @@ public class AryaMenuItem implements MenuItem {
 
     @Override
     public MenuItem setOnMenuItemClickListener(OnMenuItemClickListener onMenuItemClickListener) {
+        this.onMenuItemClickListener=onMenuItemClickListener;
         return null;
     }
 
@@ -264,4 +276,51 @@ public class AryaMenuItem implements MenuItem {
     public MenuItem setOnActionExpandListener(OnActionExpandListener onActionExpandListener) {
         return null;
     }
+
+    @Override
+    public void setComponentId(String s) {
+
+    }
+
+    @Override
+    public String getComponentId() {
+        return null;
+    }
+
+    @Override
+    public void setComponentClassName(String s) {
+
+    }
+
+    @Override
+    public String getComponentClassName() {
+        return null;
+    }
+
+    @Override
+    public void setComponentValue(String s) {
+
+    }
+
+    @Override
+    public String getComponentValue() {
+        return null;
+    }
+
+    @Override
+    public void setComponentAttribute(String s) {
+
+    }
+
+    @Override
+    public String getComponentAttribute() {
+        return null;
+    }
+
+    @Override
+    public String validate() {
+        return null;
+    }
+
+
 }

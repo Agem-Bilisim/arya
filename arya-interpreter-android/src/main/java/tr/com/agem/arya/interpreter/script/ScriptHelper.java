@@ -1,5 +1,6 @@
 package tr.com.agem.arya.interpreter.script;
 
+import android.util.Log;
 import android.view.View;
 
 import java.util.HashMap;
@@ -19,6 +20,7 @@ public class ScriptHelper {
 		StringBuilder script = new StringBuilder();
 		AryaScript scriptObj = getScriptComponent(aryaWindow);
 
+
 		if (AryaUtils.isNotEmpty(scriptObj)) {
 			script.append(scriptObj.getScript()).append(getFunctionName(functionName));
 			logger.log(Level.FINE, "Script: {0}", script);
@@ -30,10 +32,13 @@ public class ScriptHelper {
 
 	private static AryaScript getScriptComponent(AryaWindow aryaWindow) {
 		View child = null;
+
+		Log.d("empty ise windows true",""+AryaUtils.isEmpty(aryaWindow));
+
 		for (int i = 0 ; i < aryaWindow.getChildCount(); i++) {
 			child = aryaWindow.getChildAt(i);
 			if(child instanceof AryaScript) {
-				return  (AryaScript) child;
+				return (AryaScript) child;
 			}
 		}
 		return null;

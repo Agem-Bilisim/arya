@@ -1,47 +1,50 @@
 package tr.com.agem.arya.interpreter.components;
 
-import android.app.Activity;
-import android.content.Context;
-import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.internal.widget.AdapterViewCompat;
-import android.util.Log;
 import android.view.Menu;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
+import android.view.MenuItem;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 
 import java.util.ArrayList;
-import java.util.List;
 
-import tr.com.agem.arya.R;
-import tr.com.agem.core.interpreter.IAryaComponent;
+import tr.com.agem.arya.MainActivity;
+import tr.com.agem.arya.interpreter.parser.IAryaMenu;
+import tr.com.agem.core.utils.AryaUtils;
 
-/**
- * Created by volkan on 09.09.2015.
- */
-public class AryaNavBar extends ActionBarActivity { //TODO IAryaMenu Interface implement edilecek
-    //TODO menu itemleri view den mi extend ediyor?
-    //TODO 2 component olur: menu ve menuitem(iç içe yapı)
+public class AryaNavBar extends ActionBarActivity {
 
 
-    public AryaNavBar(Context context, LinearLayout parent){
+    private AryaMenuBar menuBar = null;
 
-        ActionBar actionBar = ((ActionBarActivity)context).getSupportActionBar();
 
+    public AryaNavBar(MainActivity mainActivity, LinearLayout mainLayout) {
+        ActionBar actionBar = ((ActionBarActivity) mainLayout.getContext()).getSupportActionBar();
         actionBar.show();
-
-
-
     }
 
+    public Menu fillMenuOptions(Menu menu) {
 
+        ArrayList<IAryaMenu> menuItemList = menuBar.getMenuItems();
 
+        if(AryaUtils.isNotEmpty(menuItemList))
+        for (int i=0; i<menuItemList.size();i++){
+            IAryaMenu aryaMenuItem = menuItemList.get(i);
 
+            MenuItem
+                    item = menu.add(aryaMenuItem.getLabel());
+                    item.setOnMenuItemClickListener(aryaMenuItem.getOnMenuItemClickListener());
+
+        }
+
+        return menu;
+    }
+
+    public AryaMenuBar getMenuBar() {
+        return menuBar;
+    }
+
+    public void setMenuBar(AryaMenuBar menuBar) {
+        this.menuBar = menuBar;
+    }
 }
