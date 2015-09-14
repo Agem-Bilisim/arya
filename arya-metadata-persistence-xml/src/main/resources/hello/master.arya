@@ -33,7 +33,7 @@
 			<comboitem id="2" label="item2" class="a" value="2" />
 			<comboitem id="3" label="item3" class="a" value="3" />
 		</combobox>
-		<grid height="350px">
+		<grid height="150px">
 			<columns>
 				<column label="Icon" width="50px" />
 				<column label="Subject" />
