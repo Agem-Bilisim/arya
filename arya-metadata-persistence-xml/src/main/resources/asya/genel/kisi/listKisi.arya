@@ -1,6 +1,6 @@
 <?page title="DOCSYS" ?>
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="aryaportal.org arya.xsd">
+	xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listKisiWindow">
 		<listbox id="list">
 			<listhead>
@@ -17,8 +17,25 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 				<listheader label="Son Gunleme Tarihi" id="sonGunlemeTarihi" />
 				<listheader label="Son Gunleyen" id="sonGunleyen" />
 			</listhead>
+			<listitem>
+				<listcell label="a" />
+				<listcell label="s" />
+				<listcell label="d" />
+				<listcell label="f" />
+				<listcell label="f" />
+				<listcell label="g" />
+				<listcell label="f" />
+				<listcell label="h" />
+				<listcell label="j" />
+				<listcell label="sd" />
+				<listcell label="f" />
+				<listcell label="f" />
+			</listitem>
 		</listbox>
 	</window>
 	<script>
-AgemTable.rowDblClick = function(id) {	AgemTab.toggle([3], true);	Agem.open('genel/kisi/select.do?kisiId='+id, 'editGenelKisi', true);	Agem.message('Bilgiler okunuyor...');};	</script>
+		AgemTable.rowDblClick = function(id) { AgemTab.toggle([3], true);
+		Agem.open('genel/kisi/select.do?kisiId='+id, 'editGenelKisi', true);
+		Agem.message('Bilgiler okunuyor...');};
+	</script>
 </arya>
