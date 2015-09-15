@@ -1,6 +1,5 @@
 package tr.com.agem.arya.interpreter.components;
 
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.view.ActionProvider;
@@ -24,25 +23,24 @@ public class AryaMenuItem implements IAryaComponent,IAryaMenu, MenuItem {
     private OnMenuItemClickListener onMenuItemClickListener;
 
 
-    public AryaMenuItem(Context context, Attributes attributes, final AryaWindow window) {
+    public AryaMenuItem(Attributes attributes, final AryaWindow window) {
 
-        this.label=attributes.getValue("label");
+        if(AryaUtils.isNotEmpty(attributes)){
+            this.label=attributes.getValue("label");
 
-        final String onClick =  attributes.getValue("onClick");
+            final String onClick =  attributes.getValue("onClick");
 
-        if(AryaUtils.isNotEmpty(onClick)){
-            this.setOnMenuItemClickListener(new OnMenuItemClickListener() {
-                @Override
-                public boolean onMenuItemClick(MenuItem menuItem) {
-                    ScriptHelper.executeScript(onClick, null,window );
+            if(AryaUtils.isNotEmpty(onClick)){
+                this.setOnMenuItemClickListener(new OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem menuItem) {
+                        ScriptHelper.executeScript(onClick, null,window );
 
-                    return false;
-                }
-            });
+                        return false;
+                    }
+                });
+            }
         }
-
-
-
     }
 
     @Override

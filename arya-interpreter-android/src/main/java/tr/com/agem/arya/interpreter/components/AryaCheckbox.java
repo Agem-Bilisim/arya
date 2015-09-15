@@ -1,6 +1,5 @@
 package tr.com.agem.arya.interpreter.components;
 
-import android.content.Context;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 
@@ -19,34 +18,42 @@ public class AryaCheckbox extends CheckBox implements IAryaComponent {
     private String componentAttribute;
     private String componentValue;
 
-    public AryaCheckbox(final Context context, Attributes attributes, final AryaWindow window) {
-        super(context);
-        this.componentId = attributes.getValue("id");
-        this.componentClassName = attributes.getValue("class");
-        this.componentValue = attributes.getValue("value");
-        this.componentAttribute = attributes.getValue("attribute");
+    public AryaCheckbox(Attributes attributes, final AryaWindow window) {
+        super(window.getContext());
+
+        String height=null;
+        String mandatory=null;
+        String readonly=null;
+
+        if(AryaUtils.isNotEmpty(attributes)){
+
+            this.componentId = attributes.getValue("id");
+            this.componentClassName = attributes.getValue("class");
+            this.componentValue = attributes.getValue("value");
+            this.componentAttribute = attributes.getValue("attribute");
 
 
-        this.setText(attributes.getValue("label"));
+            this.setText(attributes.getValue("label"));
+            height =attributes.getValue("height");
+            mandatory = attributes.getValue("mandatory");
+            readonly = attributes.getValue("readonly");
 
-        String height =attributes.getValue("height");
+
+            final String onCheck =attributes.getValue("onCheck");
+            if (onCheck != null) {
+                this.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                        ScriptHelper.executeScript(onCheck, null, window);
+                    }
+                });
+            }
+        }
+
         this.setHeight(height != null ? Integer.parseInt(height) : 100);
-
-        String mandatory = attributes.getValue("mandatory");
         this.mandatory = mandatory != null && Boolean.parseBoolean(mandatory);
-
-        String readonly = attributes.getValue("readonly");
         this.setEnabled(AryaUtils.isNotEmpty(readonly)?Boolean.parseBoolean(readonly):true);
 
-        final String onCheck =attributes.getValue("onCheck");
-        if (onCheck != null) {
-            this.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-                @Override
-                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    ScriptHelper.executeScript(onCheck, null, window);
-                }
-            });
-        }
         window.addView(this);
     }
 

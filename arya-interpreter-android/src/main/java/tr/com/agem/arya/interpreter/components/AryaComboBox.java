@@ -1,6 +1,5 @@
 package tr.com.agem.arya.interpreter.components;
 
-import android.content.Context;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -13,6 +12,7 @@ import java.util.ArrayList;
 import tr.com.agem.arya.interpreter.main.components.AryaWindow;
 import tr.com.agem.arya.interpreter.script.ScriptHelper;
 import tr.com.agem.core.interpreter.IAryaComponent;
+import tr.com.agem.core.utils.AryaUtils;
 
 public class AryaComboBox extends Spinner implements IAryaComponent {
 
@@ -24,31 +24,33 @@ public class AryaComboBox extends Spinner implements IAryaComponent {
     private String componentValue;
     private boolean spinnerInit =false;
 
-    public AryaComboBox(Context context,Attributes attributes , final AryaWindow window) {
-        super(context);
+    public AryaComboBox(Attributes attributes , final AryaWindow window) {
+        super(window.getContext());
 
-        this.componentId = attributes.getValue("id");
-        this.componentClassName = attributes.getValue("class");
-        this.componentValue = attributes.getValue("value");
-        this.componentAttribute = attributes.getValue("attribute");
+        if(AryaUtils.isNotEmpty(attributes)){
+            this.componentId = attributes.getValue("id");
+            this.componentClassName = attributes.getValue("class");
+            this.componentValue = attributes.getValue("value");
+            this.componentAttribute = attributes.getValue("attribute");
+
+            final String onChange =attributes.getValue("onChange");
+
+            this.setOnItemSelectedListener(new OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                    if(isInit()){
+                        ScriptHelper.executeScript(onChange, null, window);
+                    }
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> parent) {
+                }
+            });
+
+        }
 
         createAdapter();
-
-
-        final String onChange =attributes.getValue("onChange");
-
-        this.setOnItemSelectedListener(new OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                if(isInit()){
-                    ScriptHelper.executeScript(onChange, null, window);
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-            }
-        });
 
         window.addView(this);
     }

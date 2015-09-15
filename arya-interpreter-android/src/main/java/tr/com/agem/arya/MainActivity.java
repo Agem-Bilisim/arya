@@ -27,8 +27,6 @@ public class MainActivity extends ActionBarActivity {
     private AryaMain main;
     private Menu menu;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +43,6 @@ public class MainActivity extends ActionBarActivity {
 
         refresh();
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

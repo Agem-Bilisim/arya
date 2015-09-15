@@ -11,10 +11,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.logging.Level;
-
-import android.content.Context;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -39,6 +35,7 @@ import tr.com.agem.arya.interpreter.components.AryaListItem;
 import tr.com.agem.arya.interpreter.main.components.AryaMain;
 import tr.com.agem.arya.interpreter.main.components.AryaWindow;
 import tr.com.agem.arya.interpreter.parser.AryaMetadataParser;
+import tr.com.agem.arya.interpreter.parser.AryaParserAttributes;
 import tr.com.agem.core.gateway.model.AryaRequest;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
@@ -100,8 +97,6 @@ public class AryaInterpreterHelper {
             main.getAryaWindow().getComponents().clear();
         }
 
-        Log.d("------------------","INTERPRET RESPONSE");
-
         SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
         SAXParser parser = null;
 
@@ -129,113 +124,63 @@ public class AryaInterpreterHelper {
 
     public static void populateResponse(String responseData, AryaMain main) {
 
-        Log.d("------------------", "POPULATE DATA");
-
         ObjectMapper mapper = new ObjectMapper();
 
         try {
             JsonNode rootNode = mapper.readTree(responseData);
-
             Map.Entry<String, JsonNode> resultEntry = null;
 
-            Log.d("------------- ANALIZ", "root node -" + rootNode.getNodeType()+"-");
             if (rootNode != null) {
                 Iterator<Map.Entry<String, JsonNode>> fields = rootNode.fields();
 
                 if (fields != null) {
-
                     IAryaComponent comp=null;
 
                     while (fields.hasNext()) {
                         Map.Entry<String, JsonNode> entry = fields.next();
 
-                        Log.d("------------- ANALIZ", "key-"+entry.getKey()+"-value-"+entry.getValue());
-
-                        if("fullListSize".equals(entry.getKey().toString()))//numeric mi
-                        {
+                        if("fullListSize".equals(entry.getKey().toString())&&isNumeric(entry.getValue().toString())){
                             if(Integer.parseInt(entry.getValue().toString())>1){
-                                 comp = (IAryaComponent) getElementById("list",main.getAryaWindow()); //listbox u buluruz
-
-                                Log.d("**********",""+comp.getComponentId());
-                                //listedir
+                                 comp = (IAryaComponent) getElementById("list",main.getAryaWindow());
                             }
                         }
 
                         if("results".equals(entry.getKey().toString())){
                             resultEntry=entry;
                         }
-
                     }
 
-                    if(AryaUtils.isNotEmpty(comp)){//yukarda liste var o zaman dolduralım
-
-                        ArrayList<String> idList = new ArrayList<>();
+                    if(AryaUtils.isNotEmpty(comp)){//tablonun datası ise tablonun ilgili kolonlarının idList ini getir (hangi cell'leri doldurmalıyız)
 
                         AryaListBox listBox = (AryaListBox) comp;
-                        for (int i=0;i<listBox.getChildCount();i++){
-                            IAryaComponent c= (IAryaComponent) listBox.getChildAt(i);
-                            if(c instanceof AryaListItem)
-                            {
-                                AryaListItem item =((AryaListItem) c);
-                                for(int j=0;j<item.getChildCount();j++){
-                                    IAryaComponent cc= (IAryaComponent) item.getChildAt(j);
-                                    if(cc instanceof AryaListCell){
-                                        AryaListCell cell = (AryaListCell) cc;
-                                        idList.add(cell.getComponentId());
-                                    }
-                                }
-                            }
-                        }
-
-
+                        ArrayList<String> idList =getRelatedTableIdList(listBox);
 
                         JSONArray jsonArray = new JSONArray(resultEntry.getValue().toString());
-
-                        //TODO listbox componentinin id column id lerini çekelim bu id ler ile map ten veri çekip yeni row lar ekleyip set edelim window a
 
                        for (int i=0;i<jsonArray.length();i++){//her bir json nesnesi row yani listitem
 
                            JSONObject j = (JSONObject) jsonArray.get(i);
 
-                           AryaListItem listItem = new AryaListItem(main.getAryaWindow());
+                           AryaListItem listItem = new AryaListItem(null,main.getAryaWindow());
                            listItem.setComponentParent(listBox);
-                           //list item oluştur
 
-                           for (int k=0;k<idList.size();k++){//id list sayısınca cell oluştur
 
-                               AryaListCell newCell = new AryaListCell(main.getAryaWindow(),idList.get(k)+""+k,j.get(idList.get(k)).toString());//list itemin child ı olarak set et
+                           for (int k=0;k<idList.size();k++){//idList'teki id lere göre cell'leri oluşturup Item e set et
+
+                               AryaParserAttributes attr = new AryaParserAttributes();
+                               attr.setValue("id",idList.get(k)+""+k);
+                               attr.setValue("label",j.get(idList.get(k)).toString());
+
+                               AryaListCell newCell = new AryaListCell(attr,main.getAryaWindow(),null);//list itemin child ı olarak set et
                                newCell.setComponentParent(listItem);
-
                            }
-
-
-                           /* Log.d("----" + i, "-" + j.toString());
-
-                           Iterator<?> keys = j.keys();
-
-                           while( keys.hasNext() ) {
-                               String key = (String)keys.next();
-                               String value=j.get(key).toString();
-                               //Log.d("KEY:"+key,"-VALUE:"+j.get(key));
-                           }*/
-
                         }
-                        /*while(a.elements().hasNext()){
-                            JsonNode x = a.elements().next();
-
-                            Log.d("777777777777", "size a-"+a.size()+"-size x-"+x.size()+"-x value-"+x.textValue()+"-result nedir=" + resultEntry.getValue().toString());
-                        }*/
-
-
 
                     }
-                    else{//yukardaki liste değilmiş doldur kanka
+                    else{//TODO yukardaki liste değilmiş fill et
 
                     }
-
                 }
-
-
             }
 
         } catch (JsonProcessingException e) {
@@ -248,28 +193,29 @@ public class AryaInterpreterHelper {
 
     }
 
-    public static void populateReponse(String data, AryaMain main) {
-        ObjectMapper mapper = new ObjectMapper();
-        try {
-            JsonNode rootNode = mapper.readTree(data);
-            if (rootNode != null) {
-                Iterator<Map.Entry<String, JsonNode>> fields = rootNode.fields();
-                if (fields != null) {
-                    while (fields.hasNext()) {
-                        Map.Entry<String, JsonNode> entry = fields.next();
-                        //logger.log(Level.FINE, "JSON property: {0}:{1}", new Object[]{ entry.getKey(), entry.getValue() });
 
-                        IAryaComponent comp = (IAryaComponent) getElementById(entry.getKey(),main.getAryaWindow());
-                        if (comp != null) {
-                            comp.setComponentValue(entry.getValue().asText());
-                        }
+    private static ArrayList<String> getRelatedTableIdList(AryaListBox listBox) {
+
+        ArrayList<String> idList= new ArrayList<>();
+
+        for (int i=0;i<listBox.getChildCount();i++){
+            IAryaComponent c= (IAryaComponent) listBox.getChildAt(i);
+            if(c instanceof AryaListItem)
+            {
+                AryaListItem item =((AryaListItem) c);
+                for(int j=0;j<item.getChildCount();j++){
+                    IAryaComponent cc= (IAryaComponent) item.getChildAt(j);
+                    if(cc instanceof AryaListCell){
+                        AryaListCell cell = (AryaListCell) cc;
+                        idList.add(cell.getComponentId());
                     }
                 }
             }
-        } catch (IOException e) {
-            e.printStackTrace();
         }
+
+        return idList;
     }
+
 
     public static Object getElementById(String id, AryaWindow window) {
 

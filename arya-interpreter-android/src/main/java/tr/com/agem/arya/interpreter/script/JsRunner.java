@@ -1,6 +1,5 @@
 package tr.com.agem.arya.interpreter.script;
 
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

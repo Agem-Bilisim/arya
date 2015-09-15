@@ -1,6 +1,5 @@
 package tr.com.agem.arya.interpreter.components;
 
-import android.content.Context;
 import android.view.View;
 import android.widget.Button;
 
@@ -9,6 +8,7 @@ import org.xml.sax.Attributes;
 import tr.com.agem.arya.interpreter.main.components.AryaWindow;
 import tr.com.agem.arya.interpreter.script.ScriptHelper;
 import tr.com.agem.core.interpreter.IAryaComponent;
+import tr.com.agem.core.utils.AryaUtils;
 
 public class AryaButton extends Button implements IAryaComponent {
 
@@ -17,28 +17,34 @@ public class AryaButton extends Button implements IAryaComponent {
     private String componentAttribute;
     private String componentValue;
 
-    public AryaButton(final Context context, Attributes attributes, final AryaWindow window) {
-        super(context);
+    public AryaButton(Attributes attributes, final AryaWindow window) {
+        super(window.getContext());
         this.setBackgroundResource(android.R.drawable.btn_default);
 
-        this.componentId = attributes.getValue("id");
-        this.componentClassName = attributes.getValue("class");
-        this.componentValue = attributes.getValue("value");
-        this.componentAttribute = attributes.getValue("attribute");
+        String height=null;
+        if(AryaUtils.isNotEmpty(attributes)){
 
-        this.setText(attributes.getValue("label"));
-        String height =attributes.getValue("height");
-        this.setHeight(height != null ? Integer.parseInt(height) : 150);
-        final String onClick =  attributes.getValue("onClick");
+            this.componentId = attributes.getValue("id");
+            this.componentClassName = attributes.getValue("class");
+            this.componentValue = attributes.getValue("value");
+            this.componentAttribute = attributes.getValue("attribute");
+            this.setText(attributes.getValue("label"));
+            height =attributes.getValue("height");
 
-        if (onClick != null) {
-            this.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    ScriptHelper.executeScript(onClick, null, window);
-                }
-            });
+            final String onClick =  attributes.getValue("onClick");
+
+            if (onClick != null) {
+                this.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        ScriptHelper.executeScript(onClick, null, window);
+                    }
+                });
+            }
         }
+
+        this.setHeight(height != null ? Integer.parseInt(height) : 150);
+
         window.addView(this);
     }
 

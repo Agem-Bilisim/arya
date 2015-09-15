@@ -1,6 +1,5 @@
 package tr.com.agem.arya.interpreter.components;
 
-import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -11,7 +10,9 @@ import android.widget.TextView;
 import org.xml.sax.Attributes;
 
 import tr.com.agem.arya.interpreter.main.components.AryaWindow;
+import tr.com.agem.arya.interpreter.parser.AryaParserAttributes;
 import tr.com.agem.core.interpreter.IAryaComponent;
+import tr.com.agem.core.utils.AryaUtils;
 
 public class AryaListCell extends TextView implements IAryaComponent {
 
@@ -21,33 +22,36 @@ public class AryaListCell extends TextView implements IAryaComponent {
     private String componentAttribute;
 
 
-    public AryaListCell(Context context, Attributes attributes, AryaWindow window, String tag) {
+    public AryaListCell(Attributes attributes,AryaWindow window, String tag) {
+        super(window.getContext());
 
+        if(AryaUtils.isNotEmpty(attributes)){
 
-        super(context);
-        this.componentId = attributes.getValue("id");
-        this.componentClassName = attributes.getValue("class");
-        this.componentValue = attributes.getValue("value");
-        this.componentAttribute = attributes.getValue("attribute");
+            this.componentId = attributes.getValue("id");
+            this.componentClassName = attributes.getValue("class");
+            this.componentValue = attributes.getValue("value");
+            this.componentAttribute = attributes.getValue("attribute");
+
+            this.setText(attributes.getValue("label"));
+        }
 
         if("listheader".equalsIgnoreCase(tag)){ //some header property
             this.setTextColor(Color.BLACK);
             this.setBackgroundColor(Color.GRAY);
         }
-
-        this.setText(attributes.getValue("label"));
-
     }
 
 
-    public AryaListCell(AryaWindow window,String id,String label) {
+
+
+    /*public AryaListCell(AryaWindow window,String id,String label) {
 
 
         super(window.getContext());
         this.componentId = id;
         this.setText(label);
 
-    }
+    }*/
 
     @Override
     protected void onDraw(Canvas canvas) {

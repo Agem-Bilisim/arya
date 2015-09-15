@@ -1,6 +1,5 @@
 package tr.com.agem.arya.interpreter.components;
 
-import android.content.Context;
 import android.view.View;
 
 import org.xml.sax.Attributes;
@@ -16,11 +15,14 @@ public class AryaScript extends View implements IAryaComponent{
     private String script;
     private List<String> srcList;
 
-    public AryaScript(Context context, Attributes attributes, AryaWindow aryaWindow) {
-       super(context);
-        this.srcList=parseSrc(attributes.getValue("src"));
+    public AryaScript(Attributes attributes, AryaWindow window) {
+       super(window.getContext());
 
-        aryaWindow.addView(this);
+        if(AryaUtils.isNotEmpty(attributes)){
+            this.srcList=parseSrc(attributes.getValue("src"));
+        }
+
+        window.addView(this);
     }
 
     private List<String> parseSrc(String src) {

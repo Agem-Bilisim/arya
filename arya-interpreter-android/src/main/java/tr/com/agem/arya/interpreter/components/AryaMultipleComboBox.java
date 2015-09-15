@@ -1,6 +1,5 @@
 package tr.com.agem.arya.interpreter.components;
 
-import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -14,6 +13,7 @@ import java.util.ArrayList;
 
 import tr.com.agem.arya.interpreter.main.components.AryaWindow;
 import tr.com.agem.core.interpreter.IAryaComponent;
+import tr.com.agem.core.utils.AryaUtils;
 
 
 public class AryaMultipleComboBox extends ListView implements IAryaComponent {
@@ -24,17 +24,18 @@ public class AryaMultipleComboBox extends ListView implements IAryaComponent {
     private String componentValue;
 
 
-    public AryaMultipleComboBox(Context context, Attributes attributes, AryaWindow window) {
+    public AryaMultipleComboBox(Attributes attributes, AryaWindow window) {
 
-        super(context);
+        super(window.getContext());
 
-        this.componentId = attributes.getValue("id");
-        this.componentClassName = attributes.getValue("class");
-        this.componentValue = attributes.getValue("value");
-        this.componentAttribute = attributes.getValue("attribute");
+        if(AryaUtils.isNotEmpty(attributes)){
+            this.componentId = attributes.getValue("id");
+            this.componentClassName = attributes.getValue("class");
+            this.componentValue = attributes.getValue("value");
+            this.componentAttribute = attributes.getValue("attribute");
+        }
 
         createAdapter();
-
         window.addView(this);
     }
 

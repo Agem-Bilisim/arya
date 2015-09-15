@@ -1,7 +1,5 @@
 package tr.com.agem.arya.interpreter.parser;
 
-import android.content.Context;
-
 import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;
 
@@ -20,12 +18,10 @@ import tr.com.agem.core.interpreter.IAryaComponent;
 
 public class AryaMetadataParser extends DefaultHandler {
 
-    private Context context = null;
     private AryaMain main=null;
     private Stack<IAryaComponent> currentComponent = null;
 
     public AryaMetadataParser(AryaMain main) {
-        this.context = main.getAryaWindow().getContext();
         this.main = main;
         this.currentComponent = new Stack<>();
     }
@@ -33,7 +29,7 @@ public class AryaMetadataParser extends DefaultHandler {
     @Override
     public void startElement (String uri, String localName,String tagName, Attributes attributes){
 
-        IAryaComponent comp = ComponentFactory.getComponent(tagName, context, main.getAryaWindow(), attributes);
+        IAryaComponent comp = ComponentFactory.getComponent(tagName,main.getAryaWindow(), attributes);
         
         if (comp != null) {
 

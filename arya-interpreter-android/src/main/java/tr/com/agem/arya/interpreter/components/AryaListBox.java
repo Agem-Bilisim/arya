@@ -2,11 +2,11 @@ package tr.com.agem.arya.interpreter.components;
 
 import org.xml.sax.Attributes;
 
-import android.content.Context;
 import android.widget.LinearLayout;
 import android.widget.TableLayout;
 
 import tr.com.agem.core.interpreter.IAryaComponent;
+import tr.com.agem.core.utils.AryaUtils;
 
 public class AryaListBox extends TableLayout implements IAryaComponent {
 
@@ -15,17 +15,17 @@ public class AryaListBox extends TableLayout implements IAryaComponent {
 	private String componentAttribute;
 	private String componentValue;
 
-	public AryaListBox(Context context, Attributes attributes, LinearLayout window) {
+	public AryaListBox(Attributes attributes, LinearLayout window) {
 
-		super(context);
+		super(window.getContext());
 
-		this.componentId = attributes.getValue("id");
-		this.componentClassName = attributes.getValue("class");
-		this.componentValue = attributes.getValue("value");
-		this.componentAttribute = attributes.getValue("attribute");
-
+		if(AryaUtils.isNotEmpty(attributes)){
+			this.componentId = attributes.getValue("id");
+			this.componentClassName = attributes.getValue("class");
+			this.componentValue = attributes.getValue("value");
+			this.componentAttribute = attributes.getValue("attribute");
+		}
 		window.addView(this);
-
 	}
 
 	@Override

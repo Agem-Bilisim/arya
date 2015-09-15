@@ -1,6 +1,5 @@
 package tr.com.agem.arya.interpreter.components;
 
-import android.content.Context;
 import android.widget.DatePicker;
 
 import org.xml.sax.Attributes;
@@ -11,6 +10,7 @@ import java.util.HashMap;
 import tr.com.agem.arya.interpreter.main.components.AryaWindow;
 import tr.com.agem.arya.interpreter.script.ScriptHelper;
 import tr.com.agem.core.interpreter.IAryaComponent;
+import tr.com.agem.core.utils.AryaUtils;
 
 public class AryaDatebox  extends DatePicker implements IAryaComponent {
 
@@ -20,40 +20,50 @@ public class AryaDatebox  extends DatePicker implements IAryaComponent {
     private String componentAttribute;
     private String componentValue;
 
-    public AryaDatebox(Context context, Attributes attributes, final AryaWindow window) {
-        super(context);
-        this.componentId = attributes.getValue("id");
-        this.componentClassName = attributes.getValue("class");
-        this.componentValue = attributes.getValue("value");
-        this.componentAttribute = attributes.getValue("attribute");
+    public AryaDatebox(Attributes attributes, final AryaWindow window) {
+        super(window.getContext());
 
-        String mandatory = attributes.getValue("mandatory");
-        this.mandatory = mandatory != null && Boolean.parseBoolean(mandatory);
-        String readonly =attributes.getValue("readonly");
-        this.setEnabled(readonly != null && Boolean.parseBoolean(readonly));
-        String date =attributes.getValue("value");
-        int[] dateParts;
-        if (date != null) {
-            String tmp[] = date.split("-");
-            dateParts = new int[tmp.length];
-            for (int i = 0; i < tmp.length; i++) {
-                dateParts[i] = new Integer(tmp[i]).intValue();
+        String mandatory=null;
+        String readonly=null;
+        String date=null;
+
+        if(AryaUtils.isNotEmpty(attributes)){
+            this.componentId = attributes.getValue("id");
+            this.componentClassName = attributes.getValue("class");
+            this.componentValue = attributes.getValue("value");
+            this.componentAttribute = attributes.getValue("attribute");
+
+            mandatory = attributes.getValue("mandatory");
+            readonly =attributes.getValue("readonly");
+
+            date =attributes.getValue("value");
+            int[] dateParts;
+            if (date != null) {
+                String tmp[] = date.split("-");
+                dateParts = new int[tmp.length];
+                for (int i = 0; i < tmp.length; i++) {
+                    dateParts[i] = new Integer(tmp[i]).intValue();
+                }
+            } else {
+                Calendar c = Calendar.getInstance();
+                dateParts = new int[]{c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH)};
             }
-        } else {
-            Calendar c = Calendar.getInstance();
-            dateParts = new int[]{c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH)};
+            final String onChange =attributes.getValue("onChange");
+            this.init(dateParts[0], dateParts[1], dateParts[2], onChange != null ? new OnDateChangedListener() {
+                @Override
+                public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                    HashMap<Object, Object> map = new HashMap<Object, Object>();
+                    map.put("year", year);
+                    map.put("monthOfYear", monthOfYear);
+                    map.put("dayOfMonth", dayOfMonth);
+                    ScriptHelper.executeScript(onChange, map, window);
+                }
+            } : null);
         }
-        final String onChange =attributes.getValue("onChange");
-        this.init(dateParts[0], dateParts[1], dateParts[2], onChange != null ? new OnDateChangedListener() {
-            @Override
-            public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                HashMap<Object, Object> map = new HashMap<Object, Object>();
-                map.put("year", year);
-                map.put("monthOfYear", monthOfYear);
-                map.put("dayOfMonth", dayOfMonth);
-                ScriptHelper.executeScript(onChange, map, window);
-            }
-        } : null);
+
+        this.mandatory = mandatory != null && Boolean.parseBoolean(mandatory);
+        this.setEnabled(readonly != null && Boolean.parseBoolean(readonly));
+
         window.addView(this);
     }
 

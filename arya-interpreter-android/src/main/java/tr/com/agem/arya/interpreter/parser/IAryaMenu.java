@@ -2,9 +2,6 @@ package tr.com.agem.arya.interpreter.parser;
 
 import android.view.MenuItem;
 
-/**
- * Created by volkan on 14.09.2015.
- */
 public interface IAryaMenu {
 
     String getLabel();

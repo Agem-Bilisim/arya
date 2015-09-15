@@ -1,6 +1,5 @@
 package tr.com.agem.arya.interpreter.components;
 
-import android.content.Context;
 import android.view.View;
 import android.widget.ArrayAdapter;
 
@@ -8,6 +7,7 @@ import org.xml.sax.Attributes;
 
 import tr.com.agem.arya.interpreter.main.components.AryaWindow;
 import tr.com.agem.core.interpreter.IAryaComponent;
+import tr.com.agem.core.utils.AryaUtils;
 
 public class AryaComboItem extends View implements IAryaComponent {
     private String componentId;
@@ -17,14 +17,17 @@ public class AryaComboItem extends View implements IAryaComponent {
 
     private String label;
 
-    public AryaComboItem(final Context context, Attributes attributes,AryaWindow window) {
-        super(context);
-        this.componentId = attributes.getValue("id");
-        this.componentClassName = attributes.getValue("class");
-        this.componentValue = attributes.getValue("value");
-        this.componentAttribute = attributes.getValue("attribute");
+    public AryaComboItem(Attributes attributes,AryaWindow window) {
+        super(window.getContext());
 
-        this.label=attributes.getValue("label");
+        if(AryaUtils.isNotEmpty(attributes)){
+            this.componentId = attributes.getValue("id");
+            this.componentClassName = attributes.getValue("class");
+            this.componentValue = attributes.getValue("value");
+            this.componentAttribute = attributes.getValue("attribute");
+            this.label=attributes.getValue("label");
+        }
+
         window.addView(this);
     }
 

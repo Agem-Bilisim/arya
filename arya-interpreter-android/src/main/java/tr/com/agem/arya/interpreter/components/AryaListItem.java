@@ -1,12 +1,12 @@
 package tr.com.agem.arya.interpreter.components;
 
-import android.content.Context;
 import android.widget.TableRow;
 
 import org.xml.sax.Attributes;
 
 import tr.com.agem.arya.interpreter.main.components.AryaWindow;
 import tr.com.agem.core.interpreter.IAryaComponent;
+import tr.com.agem.core.utils.AryaUtils;
 
 public class AryaListItem extends TableRow implements IAryaComponent {
     private String componentId;
@@ -14,22 +14,16 @@ public class AryaListItem extends TableRow implements IAryaComponent {
     private String componentClassName;
     private String componentAttribute;
 
-
-    public AryaListItem(Context context, Attributes attributes, AryaWindow window) {
-
-        super(context);
-        this.componentId = attributes.getValue("id");
-        this.componentClassName = attributes.getValue("class");
-        this.componentValue = attributes.getValue("value");
-        this.componentAttribute = attributes.getValue("attribute");
-
-    }
-
-
-    public AryaListItem(AryaWindow window) {
+    public AryaListItem(Attributes attributes, AryaWindow window) {
 
         super(window.getContext());
 
+        if(AryaUtils.isNotEmpty(attributes)){
+            this.componentId = attributes.getValue("id");
+            this.componentClassName = attributes.getValue("class");
+            this.componentValue = attributes.getValue("value");
+            this.componentAttribute = attributes.getValue("attribute");
+        }
     }
 
 

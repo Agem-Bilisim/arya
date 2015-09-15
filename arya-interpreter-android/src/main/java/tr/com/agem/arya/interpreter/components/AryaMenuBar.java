@@ -1,6 +1,5 @@
 package tr.com.agem.arya.interpreter.components;
 
-import android.content.Context;
 import android.view.MenuItem;
 
 import org.xml.sax.Attributes;
@@ -18,10 +17,9 @@ public class AryaMenuBar implements IAryaMenu,IAryaComponent {
 
     private ArrayList<IAryaMenu> menuItems;
 
-    public AryaMenuBar(Context context, Attributes attributes, AryaWindow window) {
+    public AryaMenuBar(Attributes attributes, AryaWindow window) {
 
         menuItems =new ArrayList<>();
-
     }
 
 
