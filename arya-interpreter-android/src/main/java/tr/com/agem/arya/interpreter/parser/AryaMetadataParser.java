@@ -1,7 +1,6 @@
 package tr.com.agem.arya.interpreter.parser;
 
 import android.content.Context;
-import android.util.Log;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;
@@ -12,12 +11,10 @@ import java.util.Stack;
 import tr.com.agem.arya.interpreter.components.AryaComboItem;
 import tr.com.agem.arya.interpreter.components.AryaListCell;
 import tr.com.agem.arya.interpreter.components.AryaListItem;
-import tr.com.agem.arya.interpreter.components.AryaMain;
+import tr.com.agem.arya.interpreter.main.components.AryaMain;
 import tr.com.agem.arya.interpreter.components.AryaMenuItem;
 import tr.com.agem.arya.interpreter.components.AryaMultipleComboItem;
-import tr.com.agem.arya.interpreter.components.AryaNavBar;
 import tr.com.agem.arya.interpreter.components.AryaScript;
-import tr.com.agem.arya.interpreter.components.AryaWindow;
 import tr.com.agem.arya.interpreter.components.ComponentFactory;
 import tr.com.agem.core.interpreter.IAryaComponent;
 
@@ -27,8 +24,8 @@ public class AryaMetadataParser extends DefaultHandler {
     private AryaMain main=null;
     private Stack<IAryaComponent> currentComponent = null;
 
-    public AryaMetadataParser(Context context, AryaMain main) {
-        this.context = context;
+    public AryaMetadataParser(AryaMain main) {
+        this.context = main.getAryaWindow().getContext();
         this.main = main;
         this.currentComponent = new Stack<>();
     }

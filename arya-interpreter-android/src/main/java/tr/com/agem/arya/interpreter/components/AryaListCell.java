@@ -5,14 +5,12 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
-import android.util.Log;
-import android.widget.AbsListView;
-import android.widget.LinearLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
 import org.xml.sax.Attributes;
 
+import tr.com.agem.arya.interpreter.main.components.AryaWindow;
 import tr.com.agem.core.interpreter.IAryaComponent;
 
 public class AryaListCell extends TextView implements IAryaComponent {
@@ -38,6 +36,16 @@ public class AryaListCell extends TextView implements IAryaComponent {
         }
 
         this.setText(attributes.getValue("label"));
+
+    }
+
+
+    public AryaListCell(AryaWindow window,String id,String label) {
+
+
+        super(window.getContext());
+        this.componentId = id;
+        this.setText(label);
 
     }
 

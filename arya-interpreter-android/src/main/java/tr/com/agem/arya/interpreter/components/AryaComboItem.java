@@ -6,6 +6,7 @@ import android.widget.ArrayAdapter;
 
 import org.xml.sax.Attributes;
 
+import tr.com.agem.arya.interpreter.main.components.AryaWindow;
 import tr.com.agem.core.interpreter.IAryaComponent;
 
 public class AryaComboItem extends View implements IAryaComponent {

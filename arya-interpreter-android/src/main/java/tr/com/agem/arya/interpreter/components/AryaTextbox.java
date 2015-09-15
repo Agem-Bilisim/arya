@@ -14,6 +14,7 @@ import org.xml.sax.Attributes;
 
 import java.util.HashMap;
 
+import tr.com.agem.arya.interpreter.main.components.AryaWindow;
 import tr.com.agem.arya.interpreter.script.ScriptHelper;
 import tr.com.agem.core.interpreter.IAryaComponent;
 

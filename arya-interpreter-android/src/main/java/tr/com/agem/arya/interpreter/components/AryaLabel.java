@@ -8,6 +8,7 @@ import android.content.Context;
 import android.view.View;
 import android.widget.TextView;
 
+import tr.com.agem.arya.interpreter.main.components.AryaWindow;
 import tr.com.agem.arya.interpreter.script.ScriptHelper;
 import tr.com.agem.core.interpreter.IAryaComponent;
 

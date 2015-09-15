@@ -5,8 +5,8 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 
 import org.xml.sax.Attributes;
-import org.xmlpull.v1.XmlPullParser;
 
+import tr.com.agem.arya.interpreter.main.components.AryaWindow;
 import tr.com.agem.arya.interpreter.script.ScriptHelper;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;

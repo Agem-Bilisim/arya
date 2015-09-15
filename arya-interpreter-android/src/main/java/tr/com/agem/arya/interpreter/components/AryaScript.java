@@ -7,6 +7,7 @@ import org.xml.sax.Attributes;
 import java.util.Arrays;
 import java.util.List;
 
+import tr.com.agem.arya.interpreter.main.components.AryaWindow;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
 

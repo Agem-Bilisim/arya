@@ -5,6 +5,7 @@ import android.widget.TableRow;
 
 import org.xml.sax.Attributes;
 
+import tr.com.agem.arya.interpreter.main.components.AryaWindow;
 import tr.com.agem.core.interpreter.IAryaComponent;
 
 public class AryaListItem extends TableRow implements IAryaComponent {
@@ -21,6 +22,13 @@ public class AryaListItem extends TableRow implements IAryaComponent {
         this.componentClassName = attributes.getValue("class");
         this.componentValue = attributes.getValue("value");
         this.componentAttribute = attributes.getValue("attribute");
+
+    }
+
+
+    public AryaListItem(AryaWindow window) {
+
+        super(window.getContext());
 
     }
 

@@ -1,5 +1,6 @@
 package tr.com.agem.arya.interpreter.script;
 
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -16,7 +17,7 @@ import org.mozilla.javascript.ContextFactory;
 import org.mozilla.javascript.Scriptable;
 import org.mozilla.javascript.tools.shell.Global;
 
-import tr.com.agem.arya.interpreter.components.AryaWindow;
+import tr.com.agem.arya.interpreter.main.components.AryaWindow;
 
 public class JsRunner {
 	

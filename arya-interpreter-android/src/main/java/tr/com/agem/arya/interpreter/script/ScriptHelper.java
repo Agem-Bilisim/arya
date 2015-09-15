@@ -1,6 +1,5 @@
 package tr.com.agem.arya.interpreter.script;
 
-import android.util.Log;
 import android.view.View;
 
 import java.util.HashMap;
@@ -8,7 +7,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import tr.com.agem.arya.interpreter.components.AryaScript;
-import tr.com.agem.arya.interpreter.components.AryaWindow;
+import tr.com.agem.arya.interpreter.main.components.AryaWindow;
 import tr.com.agem.core.utils.AryaUtils;
 
 public class ScriptHelper {
@@ -32,8 +31,6 @@ public class ScriptHelper {
 
 	private static AryaScript getScriptComponent(AryaWindow aryaWindow) {
 		View child = null;
-
-		Log.d("empty ise windows true",""+AryaUtils.isEmpty(aryaWindow));
 
 		for (int i = 0 ; i < aryaWindow.getChildCount(); i++) {
 			child = aryaWindow.getChildAt(i);

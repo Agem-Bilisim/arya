@@ -19,11 +19,10 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import tr.com.agem.arya.gateway.AryaInterpreterHelper;
-import tr.com.agem.arya.interpreter.components.AryaMain;
-import tr.com.agem.arya.interpreter.components.AryaWindow;
+import tr.com.agem.arya.interpreter.main.components.AryaMain;
+import tr.com.agem.arya.interpreter.main.components.AryaWindow;
 import tr.com.agem.core.gateway.model.AryaResponse;
 import tr.com.agem.core.interpreter.IAryaComponent;
-import tr.com.agem.core.property.reader.PropertyReader;
 
 public class ElementFunctions extends AnnotatedScriptableObject {
 
@@ -82,9 +81,7 @@ public class ElementFunctions extends AnnotatedScriptableObject {
                 .append(action)
                 .append("\" }");
 
-        String result = AryaInterpreterHelper.callUrl(PropertyReader.property("gateway.base.url"), request.toString());
-
-        System.out.println("--------------" + result);
+        String result = AryaInterpreterHelper.callUrl("http://192.168.1.106:8080/arya/rest/asya", request.toString());
 
         logger.log(Level.FINE, "Post result: {0}", result);
 
@@ -92,7 +89,8 @@ public class ElementFunctions extends AnnotatedScriptableObject {
         AryaResponse response = new AryaResponse();
         response.fromXMLString(result);
 
-        //AryaInterpreterHelper.interpretResponse(response, window);
+
+        AryaInterpreterHelper.interpretResponse(response.getView(), new AryaMain(window,null));
         //TODO response fail condition add
 
         if (onSuccess != null) {

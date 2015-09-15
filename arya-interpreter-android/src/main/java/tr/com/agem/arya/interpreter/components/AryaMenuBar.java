@@ -7,9 +7,11 @@ import org.xml.sax.Attributes;
 
 import java.util.ArrayList;
 
+import tr.com.agem.arya.interpreter.main.components.AryaNavBar;
+import tr.com.agem.arya.interpreter.main.components.AryaWindow;
 import tr.com.agem.arya.interpreter.parser.IAryaMenu;
 import tr.com.agem.core.interpreter.IAryaComponent;
-
+import tr.com.agem.core.utils.AryaUtils;
 
 
 public class AryaMenuBar implements IAryaMenu,IAryaComponent {
@@ -34,11 +36,12 @@ public class AryaMenuBar implements IAryaMenu,IAryaComponent {
     @Override
     public void setComponentParent(Object o) {
 
-        if(o instanceof AryaNavBar){
-            AryaNavBar navBar = (AryaNavBar) o;
-            navBar.setMenuBar(this);
+        if(AryaUtils.isNotEmpty(o)){
+            if(o instanceof AryaNavBar){
+                AryaNavBar navBar = (AryaNavBar) o;
+                navBar.setMenuBar(this);
+            }
         }
-
     }
 
     @Override

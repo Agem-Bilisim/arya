@@ -1,11 +1,10 @@
 package tr.com.agem.arya.interpreter.components;
 
 import android.content.Context;
-import android.util.Log;
 
 import org.xml.sax.Attributes;
 
-import tr.com.agem.arya.interpreter.parser.IAryaMenu;
+import tr.com.agem.arya.interpreter.main.components.AryaWindow;
 import tr.com.agem.core.interpreter.IAryaComponent;
 
 public class ComponentFactory {

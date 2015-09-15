@@ -11,6 +11,8 @@ import android.widget.ListView;
 import org.xml.sax.Attributes;
 
 import java.util.ArrayList;
+
+import tr.com.agem.arya.interpreter.main.components.AryaWindow;
 import tr.com.agem.core.interpreter.IAryaComponent;
 
 
