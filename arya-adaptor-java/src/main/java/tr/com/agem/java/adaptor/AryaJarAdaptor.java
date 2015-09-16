@@ -72,24 +72,28 @@ public class AryaJarAdaptor extends AryaApplicationAdaptor {
 
 					Field field = null;
 					try {
-						field = cls.getField(entry.getKey());
+						field = cls.getDeclaredField(entry.getKey());	//access private fields
+								//getField(entry.getKey());				//finds just public fields
+					
 					} catch (NoSuchFieldException e) {
+						logger.log(Level.WARNING, "No such a field: {0}",
+								new Object[] { entry.getKey()});
 					}
 
 					if (field != null) {
 
 						Method setter = null;
 						try {
-							setter = cls.getMethod(findSetterName(field.getName()), entry.getValue().getClass());
+							setter = cls.getMethod(findSetterName(field.getName()), field.getType());//we can get parameter type via field.type not entry
 						} catch (NoSuchMethodException e) {
 						}
 
 						if (setter != null) {
 
-							setter.invoke(form, entry.getValue());
+							setter.invoke(form, returnValidType(field.getType(),entry.getValue().toString()));
 
 							logger.log(Level.FINE, "Setting value of {0} to: {1}",
-									new Object[] { field.getName(), entry.getValue() });
+									new Object[] { field.getName(), entry.getValue().toString() });
 						}
 
 					}
@@ -117,7 +121,7 @@ public class AryaJarAdaptor extends AryaApplicationAdaptor {
 			addRequestParameters(aryaRequest, (HttpServletRequest) AryaThreadLocal.getRequest());
 
 			// Execute action!
-			da.execute(mapping, form, (HttpServletRequest) AryaThreadLocal.getRequest(),
+			da.execute(mapping, form, (HttpServletRequest) AryaThreadLocal.getRequest(),		//TODO in string parameters looing for 'like' not equality?
 					(HttpServletResponse) AryaThreadLocal.getResponse());
 
 			String dataStr = convertToJson(AryaThreadLocal.getRequest());
@@ -137,6 +141,39 @@ public class AryaJarAdaptor extends AryaApplicationAdaptor {
 			e.printStackTrace();
 		}
 
+		return null;
+	}
+
+	private Object returnValidType(Class<?> clazz, String value) {//TODO complex types?
+																//is returning null valid?
+		 if (clazz == null){
+			 logger.log(Level.WARNING, "Class is null ");
+			 return null;
+		 }
+		 
+		   try {
+
+		        if(Integer.class.equals(clazz)) {
+		            return Integer.valueOf(value);
+		        }
+		        else if(Double.class.equals(clazz)) {
+		            return Double.valueOf(value);
+		        }
+		        else if(Long.class.equals(clazz)) {
+		            return Long.valueOf(value);
+		        }
+		        else if(Float.class.equals(clazz)) {
+		            return Float.valueOf(value);
+		        }
+		        else if(String.class.equals(clazz)) {
+		            return String.valueOf(value);
+		        }
+		        //so on
+		   }
+		    catch(NumberFormatException|NullPointerException ex) {
+		         logger.log(Level.WARNING, "Invalid or Undefined Type  : {0}",new Object[] { clazz.getName()});
+		    }
+		    
 		return null;
 	}
 

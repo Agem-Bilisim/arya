@@ -44,8 +44,8 @@
 		</combobox>
 
 
-		<button id="btn1" label="Arya" onClick="b()" />
-		<button id="btn2" label="Yeni Ekran"  />
+		<button id="btn1" label="post kisi id = 83" onClick="b()" />
+		<button id="btn2" label="post seri=A" onClick="c()"  />
 		<grid height="150px">
 			<columns>
 				<column label="Icon" width="50px" />
@@ -93,9 +93,13 @@
 		//print(getElementsByClass('klass')[0].getComponentId());
 		};
 
-		b
-		=function() {
-		post('genel.kimlik.list', 'ALL', { 'json': '1' },function
+		b=function() {
+		post('genel.kimlik.list', 'ALL', {'kisiIdParam':'83', 'json': '1' },function
+		pit(a){print('DATA:' + a.data); });
+		};
+		
+		c=function() {
+		post('genel.kimlik.list', 'ALL', {'seriParam':'A', 'json': '1'},function
 		pit(a){print('DATA:' + a.data); });
 		};
 	</script>
