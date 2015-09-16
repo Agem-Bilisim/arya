@@ -1,5 +1,7 @@
 package tr.com.agem.arya.interpreter.script;
 
+import android.util.Log;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -41,6 +43,8 @@ public class JsRunner {
 				script = getSourceScript(srcList) + " " + script;
 			
 			logger.log(Level.INFO, "Script: {0}", script);
+
+            Log.d("-----",script);
 
 			return context.evaluateString(scope, script, "<rule>", 1, null);
 			

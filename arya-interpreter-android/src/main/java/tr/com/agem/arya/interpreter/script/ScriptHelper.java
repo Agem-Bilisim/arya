@@ -21,7 +21,7 @@ public class ScriptHelper {
 
 
 		if (AryaUtils.isNotEmpty(scriptObj)) {
-			script.append(scriptObj.getScript()).append(getFunctionName(functionName));
+			script.append(scriptObj.getScript()).append("\n").append(getFunctionName(functionName));
 			logger.log(Level.FINE, "Script: {0}", script);
 			return JsRunner.jsRun(scriptObj.getSrcList(), script.toString(), aryaWindow);
 		}

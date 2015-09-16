@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map.Entry;
+import java.util.concurrent.ExecutionException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -19,10 +20,15 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import tr.com.agem.arya.gateway.AryaInterpreterHelper;
+import tr.com.agem.arya.gateway.WebServiceConnectionAsyncTask;
+import tr.com.agem.arya.interpreter.AlertController;
 import tr.com.agem.arya.interpreter.main.components.AryaMain;
 import tr.com.agem.arya.interpreter.main.components.AryaWindow;
+import tr.com.agem.core.gateway.model.AryaRequest;
 import tr.com.agem.core.gateway.model.AryaResponse;
+import tr.com.agem.core.gateway.model.RequestTypes;
 import tr.com.agem.core.interpreter.IAryaComponent;
+import tr.com.agem.core.utils.AryaUtils;
 
 public class ElementFunctions extends AnnotatedScriptableObject {
 
@@ -64,8 +70,43 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 	}
 	
 	@AryaJsFunction
-	public void refresh(String view) {
-		// TODO
+	public void refresh() {
+
+        window.removeAllViews();
+
+        AryaRequest request = new AryaRequest();
+        request.setAction("master");
+        request.setRequestType(RequestTypes.VIEW_ONLY);
+
+        //request.setAction("genel.duyuru.list");
+        //request.setRequestType(RequestTypes.ALL);
+
+
+        WebServiceConnectionAsyncTask connThread = new WebServiceConnectionAsyncTask("http://192.168.1.106:8080/arya/rest/asya",request, window.getContext());
+
+        String responseStr = null;
+        try {
+            responseStr = connThread.execute().get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+
+        if (responseStr != null) {
+            AryaResponse response = new AryaResponse();
+            response.fromXMLString(responseStr);
+
+
+            AryaMain main = new AryaMain(window,null);
+            if(AryaUtils.isNotEmpty(response.getView()))
+                AryaInterpreterHelper.interpretResponse(response.getView(), main);
+            if(AryaUtils.isNotEmpty(response.getData()))
+                AryaInterpreterHelper.populateResponse(response.getData(),main);
+
+        } else {
+            AlertController.setAndShowPrimerAlert(window.getContext(), "HATA!", "Sunucuyla Bağlantı Kurulamadı", "Tamam");
+        }
 	}
 
 	@AryaJsFunction
@@ -90,7 +131,15 @@ public class ElementFunctions extends AnnotatedScriptableObject {
         response.fromXMLString(result);
 
 
-        AryaInterpreterHelper.interpretResponse(response.getView(), new AryaMain(window,null));
+        if(AryaUtils.isNotEmpty(response.getView())){
+            window.removeAllViews();
+            AryaInterpreterHelper.interpretResponse(response.getView(), new AryaMain(window,null));
+        }
+        if(AryaUtils.isNotEmpty(response.getData())){
+            AryaInterpreterHelper.populateResponse(response.getData(),new AryaMain(window,null));
+        }
+
+
         //TODO response fail condition add
 
         if (onSuccess != null) {

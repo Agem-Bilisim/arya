@@ -65,10 +65,12 @@ public class MainActivity extends ActionBarActivity {
     public void refresh() {
         // Prepare initial request
         AryaRequest request = new AryaRequest();
-        //request.setAction("master");
-        //request.setRequestType(RequestTypes.VIEW_ONLY);
-        request.setAction("genel.duyuru.list");
-        request.setRequestType(RequestTypes.ALL);
+        request.setAction("master");
+        request.setRequestType(RequestTypes.VIEW_ONLY);
+
+        //request.setAction("genel.duyuru.list");
+        //request.setRequestType(RequestTypes.ALL);
+
 
         WebServiceConnectionAsyncTask connThread = new WebServiceConnectionAsyncTask("http://192.168.1.106:8080/arya/rest/asya",request, getApplicationContext());
 
