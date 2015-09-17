@@ -16,13 +16,13 @@ import org.mozilla.javascript.ContextFactory;
 import org.mozilla.javascript.Scriptable;
 import org.mozilla.javascript.tools.shell.Global;
 
-import tr.com.agem.arya.interpreter.base.components.AryaWindow;
+import tr.com.agem.arya.interpreter.base.components.AryaMain;
 
 public class JsRunner {
 	
 	private static final Logger logger = Logger.getLogger(JsRunner.class.getName());
 
-	public static Object jsRun(List<String> srcList, String script, AryaWindow window) {
+	public static Object jsRun(List<String> srcList, String script, AryaMain main) {
 		try {
 			Context context = ContextFactory.getGlobal().enterContext();
 			context.setOptimizationLevel(-1);
@@ -32,7 +32,7 @@ public class JsRunner {
 			
 			logger.log(Level.FINE, "Context and scope created");
 
-			ElementFunctions e = new ElementFunctions(context, scope, window);
+			ElementFunctions e = new ElementFunctions(context, scope, main);
 			e.addToScope(scope);
 			
 			logger.log(Level.FINE, "Functions added to scope");

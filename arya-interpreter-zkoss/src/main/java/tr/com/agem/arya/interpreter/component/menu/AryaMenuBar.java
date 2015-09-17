@@ -4,7 +4,7 @@ import org.xml.sax.Attributes;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zul.Menubar;
 
-import tr.com.agem.arya.interpreter.base.components.AryaNavBar;
+import tr.com.agem.arya.interpreter.base.components.AryaMain;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
 
@@ -16,7 +16,7 @@ public class AryaMenuBar extends Menubar implements IAryaComponent,IAryaMenu {
 	private String componentAttribute;
 	private String componentValue;
 	
-	public AryaMenuBar(AryaNavBar navBar, Attributes attributes) {
+	public AryaMenuBar(AryaMain main, Attributes attributes) {
 		super();
 		
 		if(AryaUtils.isNotEmpty(attributes)){

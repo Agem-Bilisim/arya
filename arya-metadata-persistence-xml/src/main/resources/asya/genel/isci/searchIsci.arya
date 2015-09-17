@@ -3,11 +3,11 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listIsciWindow">
 		<label id="kisiParam.tckNoParamlbl" value="T.C. Kimlik No" />
-		<textbox type="text" id="kisiParam.tckNoParam"  value="xifu69itnij"  width="200"  maxlength="11"  placeholder=""  onChange="autocomplete("function:prepareKisiUrl()", "function:prepareTCKimlikNoParameterName()", 5, "setKisi")" />
+		<textbox type="text" id="kisiParam.tckNoParam"  value="xifu69itnij"  width="200"  maxlength="11"  placeholder=""   />
 		<label id="kisiParam.adSoyadParamlbl" value="Ad Soyad" />
-		<textbox type="text" id="kisiParam.adSoyadParam"  value="bv6ckz782f8e3m8qvl9j4vu680nj1ghidb9doo15mrqmqkmmd6iiooongv2boxfze2jvx2ra3vzgqtg97ryze4y5mo2cammib38x0xnukm8oi7xp29jg172zfyc8qbfbqzqggdalc4kyb3fdvgwzl56rpibg4rm7otz4yeozdmjtoh8hgmq8j2e9hjjzh8qkaie9dn10e7dey9ppyuotbd83j11yl89kqsb62agor4ik4b6x29uvcsqi8lrxnxp"  width="200"  maxlength="255"  placeholder=""  onChange="autocomplete("function:prepareKisiUrl()", "function:prepareAdSoyadParameterName()", 5, "setKisi")" />
+		<textbox type="text" id="kisiParam.adSoyadParam"  value="bv6ckz782frxnxp"  width="200"  maxlength="255"  placeholder=""  />
 		<label id="sgkNoParamlbl" value="SGK Sicil No" />
-		<textbox type="text" id="sgkNoParam"  value="6miv00hzkv8fk"  width="200"  maxlength="13"  placeholder=""  onChange="autocomplete("genel/isci/autocomplete.do", "sgkNoParam", 5, "setKisi")" />
+		<textbox type="text" id="sgkNoParam"  value="6miv00hzkv8fk"  width="200"  maxlength="13"  placeholder=""   />
 		<label id="cinsiyetParamlbl" value="Cinsiyet" />
 		<combobox id="cinsiyetParam"  width="200"  >
 			<comboitem label="f76xyl05vp" value="932u" />
@@ -23,9 +23,9 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 		</combobox>
 		<textbox visible="false" type="text" id="isyeriParam.isyeriIdParam"  value="xt7ppebprg"  placeholder=""  />
 		<label id="isyeriParam.unvanParamlbl" value="İşyeri Ünvanı" />
-		<textbox type="text" id="isyeriParam.unvanParam"  value="m4l5lbzgxyv928fb265kt1igxtv7pdk0ycshllu96gyajebsaj92kf4whyvdpt3zmflhpk7p3ikpw5el75gu5gqpsdcqc50o1g0ew07tgrdpxn660nchjglr0piilhbmeopcixe7pj1bre1n7usvrbd3ffuz1dcjzetvofglirdjivo9r4kzkd9c4efj3kqa7rj2mex63y4k12jfjwdivlf56b16osr0hy3lf1gl95zzl3aodjtfz5xorgte4r4"  width="416"  maxlength="255"  placeholder=""  top="56" onChange="autocomplete("genel/isyeri/autocomplete.do", "unvanParam", 5, "setIsyeri")" />
+		<textbox type="text" id="isyeriParam.unvanParam"  value="m4l5lbzgxyv928fbuz1dl3aodjtfz5xorgte4r4"  width="416"  maxlength="255"  placeholder=""  top="56" />
 		<label id="isyeriParam.sgkKisaNoParamlbl" value="İşyeri SGK No" />
-		<textbox type="text" id="isyeriParam.sgkKisaNoParam"  value="nrntycemlyj48p2kmovfbl30xuwittn4l8"  maxlength="34"  placeholder=""  onChange="autocomplete("genel/isyeri/autocomplete.do", "sgkKisaNoParam", 5, "setIsyeri")" />
+		<textbox type="text" id="isyeriParam.sgkKisaNoParam"  value="nrntycemlyj48p2kmovfbl30xuwittn4l8"  maxlength="34"  placeholder=""   />
 		<checkbox type="text" id="isletmeParam"  checked="true"  label="İşletme Bazında"  onCheck=""  width="50"  />
 		<label id="digerBilgilerLabellbl" value="Diğer Bilgiler"  onClick=""  />
 		<checkbox type="text" id="issizParam"  checked="true"  label="İşsiz"  onCheck=""  width="25"  />

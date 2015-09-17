@@ -6,7 +6,7 @@ import java.util.List;
 import org.xml.sax.Attributes;
 import org.zkoss.zul.Script;
 
-import tr.com.agem.arya.interpreter.base.components.AryaWindow;
+import tr.com.agem.arya.interpreter.base.components.AryaMain;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
 
@@ -17,7 +17,7 @@ public class AryaScript extends Script implements IAryaComponent {
 	private String script;
 	private List<String> srcList;
 
-	public AryaScript(AryaWindow aryaWindow, Attributes attributes) {
+	public AryaScript(AryaMain main, Attributes attributes) {
 		// External js files can be specified by 'src' attribute
 		String sources = attributes.getValue("src");
 		if (AryaUtils.isNotEmpty(sources)) {

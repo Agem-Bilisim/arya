@@ -44,8 +44,6 @@ public class MetadataPersistenceImplXml implements IMetadataPersistence {
 	}
 
 	private IMetadata findWithName(String appName, String viewName) {
-
-		System.out.println("~-----"+appName+"--"+viewName);
 		
 		String xmlFilePath = findXMLFilePath(appName, viewName);
 

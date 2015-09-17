@@ -10,5 +10,7 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 		</listbox>
 	</window>
 	<script>
-AgemTable.rowDblClick = function(id) {	if (AgemWM.exists('#genelDuyuruSelect')) {		AgemWM.addQueryString(Agem.json2Param({duyuruIdParam: id, duyuruId: id}));		AgemWM.link('#genelDuyuruSelect', {url: 'genel/duyuru/select.do?duyuruId='+id, refresh:true});		Agem.message('Bilgiler okunuyor...');	}};	</script>
+
+	a = function() {print('a');};
+	//AgemWM.link('#genelDuyuruSelect', {url: 'genel/duyuru/select.do?duyuruId='+id, refresh:true});		Agem.message('Bilgiler okunuyor...');	}};	</script>
 </arya>

@@ -57,14 +57,14 @@ public class AryaInterpreterHelper {
 	public static void interpretResponse(AryaResponse response, AryaMain main) {
 
 		if(AryaUtils.isNotEmpty(response.getView())){
-			
 			// Remove previous components before adding new ones!
-			if (main.getAryaWindow().getComponentContainer() != null) {
+			if (main.getAryaWindow().getComponentContainer() != null) { //TODO bu alan yönetilmeli
 				main.getAryaWindow().getComponentContainer().getChildren().clear();
 			}
 			if (main.getAryaWindow().getComponents() != null) {
 				main.getAryaWindow().getComponents().clear();
 			}
+			
 			drawView(response.getView(),main);
 		}
 		
@@ -74,9 +74,56 @@ public class AryaInterpreterHelper {
 	}
 
 	private static void populateView(String data, AryaMain main) {
-
 		
+		/* ObjectMapper mapper = new ObjectMapper();
+
+	        try {
+	            JsonNode rootNode = mapper.readTree(data);
+	            Map.Entry<String, JsonNode> resultEntry = null;
+
+	            if (rootNode != null) {
+	                Iterator<Map.Entry<String, JsonNode>> fields = rootNode.fields();
+
+	                if (fields != null) {
+	                    IAryaComponent comp=null;
+
+	                    while (fields.hasNext()) {
+	                    	 Map.Entry<String, JsonNode> entry = fields.next();
+	                    	 
+	                    	 if("results".equals(entry.getKey().toString())){
+	                             resultEntry=entry;
+	                         }
+	                    }
+	                    
+	                    JSONArray jsonArray = new JSONArray(resultEntry.getValue().toString());
+
+	                       for (int i=0;i<jsonArray.length();i++){
+
+	                           JSONObject j = (JSONObject) jsonArray.get(i);
+
+	                           /*for (int k=0;k<idList.size();k++){//idList'teki id lere göre cell'leri oluşturup Item e set et
+
+	                               AryaParserAttributes attr = new AryaParserAttributes();
+	                               attr.setValue("id",idList.get(k)+""+k);
+	                               attr.setValue("label",j.get(idList.get(k)).toString());
+
+	                               AryaListCell newCell = new AryaListCell(attr,main.getAryaWindow(),null);//list itemin child ı olarak set et
+	                               newCell.setComponentParent(listItem);
+	                           }*//*
+	                        }
+
+	                   
+	                }
+	            }
+
+	        } catch (JsonProcessingException e) {
+	            e.printStackTrace();
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	        } */
 	}
+	
+
 
 	private static void drawView(String view, AryaMain main) {
 

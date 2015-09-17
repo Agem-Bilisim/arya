@@ -17,7 +17,6 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import tr.com.agem.arya.interpreter.base.components.AryaMain;
-import tr.com.agem.arya.interpreter.base.components.AryaWindow;
 import tr.com.agem.arya.interpreter.utils.AryaInterpreterHelper;
 import tr.com.agem.core.gateway.model.AryaResponse;
 import tr.com.agem.core.interpreter.IAryaComponent;
@@ -30,12 +29,12 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 	
 	private Context context;
 	private Scriptable scope;
-	private AryaWindow window;
+	private AryaMain main;
 
-	public ElementFunctions(Context context, Scriptable scope, AryaWindow window) {
+	public ElementFunctions(Context context, Scriptable scope, AryaMain main) {
 		this.context = context;
 		this.scope = scope;
-		this.window = window;
+		this.main = main;
 	}
 
 	@AryaJsFunction
@@ -88,7 +87,7 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 		AryaResponse response = new AryaResponse();
 		response.fromXMLString(result);
 		
-		AryaInterpreterHelper.interpretResponse(response, new AryaMain(window.getComponentContainer()));
+		AryaInterpreterHelper.interpretResponse(response, main);
 		//TODO response fail condition add
 		
 		if (onSuccess != null) {
@@ -102,12 +101,12 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 	}
 
 	@AryaJsFunction
-	public Object getElementById(String id) {
+	public Object getElementById(String id) { //only on window not menu
 
 		IAryaComponent comp;
 
-		for (int i = 0; i < window.getComponents().size(); i++) {
-			comp = window.getComponents().get(i);
+		for (int i = 0; i < main.getAryaWindow().getComponents().size(); i++) {
+			comp = main.getAryaWindow().getComponents().get(i);
 
 			if (id.equalsIgnoreCase(comp.getComponentId())) {
 				return comp;
@@ -117,13 +116,13 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 	}
 
 	@AryaJsFunction
-	public Object[] getElementsByName(String name) {
+	public Object[] getElementsByName(String name) {//only on window not menu
 
 		List<IAryaComponent> objList = new ArrayList<IAryaComponent>();
 		IAryaComponent comp;
 
-		for (int i = 0; i < window.getComponents().size(); i++) {
-			comp = window.getComponents().get(i);
+		for (int i = 0; i < main.getAryaWindow().getComponents().size(); i++) {
+			comp = main.getAryaWindow().getComponents().get(i);
 
 			if (name.equalsIgnoreCase(
 					comp.getClass().toString().replace("class tr.com.agem.arya.interpreter.component.Arya", ""))) {
@@ -134,13 +133,13 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 	}
 
 	@AryaJsFunction
-	public Object[] getElementsByClass(String className) {
+	public Object[] getElementsByClass(String className) {//only on window not menu
 
 		List<IAryaComponent> objList = new ArrayList<IAryaComponent>();
 		IAryaComponent comp;
 
-		for (int i = 0; i < window.getComponents().size(); i++) {
-			comp = window.getComponents().get(i);
+		for (int i = 0; i < main.getAryaWindow().getComponents().size(); i++) {
+			comp = main.getAryaWindow().getComponents().get(i);
 
 			if (className.equalsIgnoreCase(comp.getComponentClassName())) {
 				objList.add(comp);
@@ -150,12 +149,12 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 	}
 
 	@AryaJsFunction
-	public String serializeForm() {
+	public String serializeForm() {//only on window not menu
 		String strSerialize = "";
 		IAryaComponent comp;
 
-		for (int i = 0; i < window.getComponents().size(); i++) {
-			comp = window.getComponents().get(i);
+		for (int i = 0; i < main.getAryaWindow().getComponents().size(); i++) {
+			comp = main.getAryaWindow().getComponents().get(i);
 			strSerialize += ",\"" + comp.getComponentId() + "\":"
 					+ (comp.getComponentValue() == null ? null : "\"" + comp.getComponentValue() + "\"");
 		}

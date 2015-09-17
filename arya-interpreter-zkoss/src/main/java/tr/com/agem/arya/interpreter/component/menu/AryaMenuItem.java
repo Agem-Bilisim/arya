@@ -3,9 +3,12 @@ package tr.com.agem.arya.interpreter.component.menu;
 
 import org.xml.sax.Attributes;
 import org.zkoss.zk.ui.Component;
+import org.zkoss.zk.ui.event.Event;
+import org.zkoss.zk.ui.event.EventListener;
 import org.zkoss.zul.Menuitem;
 
-import tr.com.agem.arya.interpreter.base.components.AryaWindow;
+import tr.com.agem.arya.interpreter.base.components.AryaMain;
+import tr.com.agem.arya.interpreter.script.ScriptHelper;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
 
@@ -17,7 +20,7 @@ public class AryaMenuItem extends Menuitem implements IAryaComponent,IAryaMenu {
 	private String componentAttribute;
 	private String componentValue;
 	
-	public AryaMenuItem(AryaWindow aryaWindow, Attributes attributes) {
+	public AryaMenuItem(final AryaMain main, Attributes attributes) {
 		super();
 
 		if (AryaUtils.isNotEmpty(attributes)) {
@@ -27,6 +30,18 @@ public class AryaMenuItem extends Menuitem implements IAryaComponent,IAryaMenu {
 			this.componentAttribute = attributes.getValue("attribute");
 
 			this.setLabel(attributes.getValue("label"));
+			
+
+			final String functionName = attributes.getValue("onClick");
+			
+			if (AryaUtils.isNotEmpty(functionName)) {
+				this.addEventListener("onClick", new EventListener<Event>() {
+					@Override
+					public void onEvent(Event event) throws Exception {
+						ScriptHelper.executeScript(functionName, null, main);
+					}
+				});
+			}
 		}
 	
 	}

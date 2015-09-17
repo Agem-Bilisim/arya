@@ -15,5 +15,5 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 		</listbox>
 	</window>
 	<script>
-AgemTable.rowDblClick = function(id) {	AgemWM.addQueryString(Agem.json2Param( {kisiId: id}));	AgemWM.link('#genelIsciSelect', {url: 'genel/isci/select.do', refresh:true});	Agem.message('Bilgiler okunuyor...');}	</script>
+</script>
 </arya>

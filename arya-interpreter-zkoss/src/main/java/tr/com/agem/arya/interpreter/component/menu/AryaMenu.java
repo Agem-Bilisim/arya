@@ -4,7 +4,7 @@ import org.xml.sax.Attributes;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zul.Menu;
 
-import tr.com.agem.arya.interpreter.base.components.AryaWindow;
+import tr.com.agem.arya.interpreter.base.components.AryaMain;
 import tr.com.agem.core.interpreter.IAryaComponent;
 
 public class AryaMenu extends Menu implements IAryaComponent,IAryaMenu {
@@ -15,7 +15,7 @@ public class AryaMenu extends Menu implements IAryaComponent,IAryaMenu {
 	private String componentAttribute;
 	private String componentValue;
 	
-	public AryaMenu(AryaWindow aryaWindow, Attributes attributes) {
+	public AryaMenu(AryaMain main, Attributes attributes) {
 
 		super();
 

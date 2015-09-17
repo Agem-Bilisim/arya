@@ -6,7 +6,7 @@ import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.EventListener;
 import org.zkoss.zul.Listbox;
 
-import tr.com.agem.arya.interpreter.base.components.AryaWindow;
+import tr.com.agem.arya.interpreter.base.components.AryaMain;
 import tr.com.agem.arya.interpreter.script.ScriptHelper;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
@@ -20,7 +20,7 @@ public class AryaListbox extends Listbox implements IAryaComponent {
 	private String componentAttribute;
 	private String componentValue;
 	
-	public AryaListbox(final AryaWindow aryaWindow, Attributes attributes) {
+	public AryaListbox(final AryaMain main, Attributes attributes) {
 		super();
 
 		if (AryaUtils.isNotEmpty(attributes)){
@@ -39,7 +39,7 @@ public class AryaListbox extends Listbox implements IAryaComponent {
 				this.addEventListener("onClick", new EventListener<Event>() {
 					@Override
 					public void onEvent(Event event) throws Exception {
-						ScriptHelper.executeScript(functionName, null, aryaWindow);
+						ScriptHelper.executeScript(functionName, null, main);
 					}
 				});
 			}
