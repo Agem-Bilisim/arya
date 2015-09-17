@@ -110,6 +110,8 @@ public class AryaJarAdaptor extends AryaApplicationAdaptor {
 			mapping.setName(mappedRequest.getFormName());
 			mapping.setAttribute(mappedRequest.getFormName());
 			mapping.setPath(mappedRequest.getPath());
+			
+			//   /select ise edit yap
 			mapping.setMethod(mappedRequest.getActionMethodName());
 			mapping.setModuleConfig(new AgemModuleConfigImp(""));
 

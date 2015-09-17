@@ -4,7 +4,9 @@ import org.xml.sax.Attributes;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zul.Rows;
 
+import tr.com.agem.arya.interpreter.base.components.AryaWindow;
 import tr.com.agem.core.interpreter.IAryaComponent;
+import tr.com.agem.core.utils.AryaUtils;
 
 public class AryaRows extends Rows implements IAryaComponent {
 
@@ -18,14 +20,17 @@ public class AryaRows extends Rows implements IAryaComponent {
 	public AryaRows(final AryaWindow aryaWindow, Attributes attributes) {
 		super();
 
-		this.componentId = attributes.getValue("id");
-		this.componentClassName = attributes.getValue("class");
-		this.componentValue = attributes.getValue("value");
-		this.componentAttribute = attributes.getValue("attribute");
+		if (AryaUtils.isNotEmpty(attributes)){
+			this.componentId = attributes.getValue("id");
+			this.componentClassName = attributes.getValue("class");
+			this.componentValue = attributes.getValue("value");
+			this.componentAttribute = attributes.getValue("attribute");
 
-		this.setId(attributes.getValue("id"));
-		this.setClass(attributes.getValue("class"));
-		this.setHeight(attributes.getValue("height"));
+			this.setId(attributes.getValue("id"));
+			this.setClass(attributes.getValue("class"));
+			this.setHeight(attributes.getValue("height"));
+		}
+		
 	}
 
 	@Override

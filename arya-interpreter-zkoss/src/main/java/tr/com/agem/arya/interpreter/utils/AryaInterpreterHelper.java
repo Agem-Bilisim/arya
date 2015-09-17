@@ -17,10 +17,11 @@ import org.apache.http.util.EntityUtils;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
-import tr.com.agem.arya.interpreter.component.AryaWindow;
+import tr.com.agem.arya.interpreter.base.components.AryaMain;
 import tr.com.agem.arya.interpreter.parser.AryaMetadataParser;
 import tr.com.agem.core.gateway.model.AryaRequest;
 import tr.com.agem.core.gateway.model.AryaResponse;
+import tr.com.agem.core.utils.AryaUtils;
 
 public class AryaInterpreterHelper {
 
@@ -53,22 +54,38 @@ public class AryaInterpreterHelper {
 		}
 	}
 
-	public static void interpretResponse(AryaResponse response, AryaWindow aryaWindow) {
+	public static void interpretResponse(AryaResponse response, AryaMain main) {
 
-		// Remove previous components before adding new ones!
-		if (aryaWindow.getComponentContainer() != null) {
-			aryaWindow.getComponentContainer().getChildren().clear();
+		if(AryaUtils.isNotEmpty(response.getView())){
+			
+			// Remove previous components before adding new ones!
+			if (main.getAryaWindow().getComponentContainer() != null) {
+				main.getAryaWindow().getComponentContainer().getChildren().clear();
+			}
+			if (main.getAryaWindow().getComponents() != null) {
+				main.getAryaWindow().getComponents().clear();
+			}
+			drawView(response.getView(),main);
 		}
-		if (aryaWindow.getComponents() != null) {
-			aryaWindow.getComponents().clear();
+		
+		if(AryaUtils.isNotEmpty(response.getData())){
+			populateView(response.getData(),main);
 		}
+	}
+
+	private static void populateView(String data, AryaMain main) {
+
+		
+	}
+
+	private static void drawView(String view, AryaMain main) {
 
 		SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
 		SAXParser parser = null;
 
 		try {
 			parser = saxParserFactory.newSAXParser();
-			parser.parse(new InputSource(new StringReader(response.getView())), new AryaMetadataParser(aryaWindow));
+			parser.parse(new InputSource(new StringReader(view)), new AryaMetadataParser(main));
 		} catch (ParserConfigurationException e) {
 			e.printStackTrace();
 		} catch (SAXException e) {

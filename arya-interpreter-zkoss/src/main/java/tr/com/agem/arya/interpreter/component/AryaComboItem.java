@@ -4,7 +4,9 @@ import org.xml.sax.Attributes;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zul.Comboitem;
 
+import tr.com.agem.arya.interpreter.base.components.AryaWindow;
 import tr.com.agem.core.interpreter.IAryaComponent;
+import tr.com.agem.core.utils.AryaUtils;
 
 public class AryaComboItem extends Comboitem implements IAryaComponent {
 
@@ -18,15 +20,17 @@ public class AryaComboItem extends Comboitem implements IAryaComponent {
 	public AryaComboItem(AryaWindow aryaWindow, Attributes attributes) {
 		super();
 
-		this.componentId = attributes.getValue("id");
-		this.componentClassName = attributes.getValue("class");
-		this.componentValue = attributes.getValue("value");
-		this.componentAttribute = attributes.getValue("attribute");
-		
-		this.setId(attributes.getValue("id"));
-		this.setClass(attributes.getValue("class"));
-		this.setLabel(attributes.getValue("label"));
-		this.setValue(attributes.getValue("value"));
+		if (AryaUtils.isNotEmpty(attributes)){
+			this.componentId = attributes.getValue("id");
+			this.componentClassName = attributes.getValue("class");
+			this.componentValue = attributes.getValue("value");
+			this.componentAttribute = attributes.getValue("attribute");
+			
+			this.setId(attributes.getValue("id"));
+			this.setClass(attributes.getValue("class"));
+			this.setLabel(attributes.getValue("label"));
+			this.setValue(attributes.getValue("value"));
+		}
 	}
 	
 	@Override

@@ -1,28 +1,25 @@
-package tr.com.agem.arya.interpreter.component;
+package tr.com.agem.arya.interpreter.component.menu;
 
 import org.xml.sax.Attributes;
 import org.zkoss.zk.ui.Component;
-import org.zkoss.zk.ui.event.Event;
-import org.zkoss.zk.ui.event.EventListener;
-import org.zkoss.zul.Listcell;
+import org.zkoss.zul.Menubar;
 
-import tr.com.agem.arya.interpreter.base.components.AryaWindow;
-import tr.com.agem.arya.interpreter.script.ScriptHelper;
+import tr.com.agem.arya.interpreter.base.components.AryaNavBar;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
 
-public class AryaListCell extends Listcell implements IAryaComponent {
+public class AryaMenuBar extends Menubar implements IAryaComponent,IAryaMenu {
 
-	private static final long serialVersionUID = 2829782011828954223L;
+	private static final long serialVersionUID = 8605492923881165335L;
 	private String componentClassName;
 	private String componentId;
 	private String componentAttribute;
 	private String componentValue;
-
-	public AryaListCell(final AryaWindow aryaWindow, Attributes attributes) {
+	
+	public AryaMenuBar(AryaNavBar navBar, Attributes attributes) {
 		super();
-
-		if (AryaUtils.isNotEmpty(attributes)){
+		
+		if(AryaUtils.isNotEmpty(attributes)){
 			this.componentId = attributes.getValue("id");
 			this.componentClassName = attributes.getValue("class");
 			this.componentValue = attributes.getValue("value");
@@ -31,32 +28,14 @@ public class AryaListCell extends Listcell implements IAryaComponent {
 			this.setId(attributes.getValue("id"));
 			this.setClass(attributes.getValue("class"));
 			this.setHeight(attributes.getValue("height"));
-			this.setLabel(attributes.getValue("label"));
-
-			final String functionName = attributes.getValue("onClick");
-			if (AryaUtils.isNotEmpty(functionName)) {
-				this.addEventListener("onClick", new EventListener<Event>() {
-					@Override
-					public void onEvent(Event event) throws Exception {
-						ScriptHelper.executeScript(functionName, null, aryaWindow);
-					}
-				});
-			}
 		}
-		
 	}
 
 	@Override
 	public void setComponentParent(Object parent) {
 		this.setParent((Component) parent);
 	}
-
-	@Override
-	public String validate() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	
 	public String getComponentClassName() {
 		return componentClassName;
 	}
@@ -88,4 +67,14 @@ public class AryaListCell extends Listcell implements IAryaComponent {
 	public void setComponentValue(String componentValue) {
 		this.componentValue = componentValue;
 	}
+
+	@Override
+	public String validate() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+
 }

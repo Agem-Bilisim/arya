@@ -2,59 +2,73 @@ package tr.com.agem.arya.interpreter.component;
 
 import org.xml.sax.Attributes;
 
+import tr.com.agem.arya.interpreter.base.components.AryaMain;
+import tr.com.agem.arya.interpreter.component.menu.AryaMenu;
+import tr.com.agem.arya.interpreter.component.menu.AryaMenuBar;
+import tr.com.agem.arya.interpreter.component.menu.AryaMenuItem;
+import tr.com.agem.arya.interpreter.component.menu.AryaMenuPopUp;
 import tr.com.agem.core.interpreter.IAryaComponent;
 
 public class ComponentFactory {
 
-	public static IAryaComponent getComponent(String tagName,
-			AryaWindow aryaWindow, Attributes attributes) {
+	public static IAryaComponent getComponent(String tagName, AryaMain main, Attributes attributes) {
 
 		IAryaComponent comp = null;
 
 		if ("label".equalsIgnoreCase(tagName)) {
-			comp = new AryaLabel(aryaWindow, attributes);
+			comp = new AryaLabel(main.getAryaWindow(), attributes);
 		} else if ("textbox".equalsIgnoreCase(tagName)) {
-			comp = new AryaTextbox(aryaWindow, attributes);
+			comp = new AryaTextbox(main.getAryaWindow(), attributes);
 		} else if ("checkbox".equalsIgnoreCase(tagName)) {
-			comp = new AryaCheckbox(aryaWindow, attributes);
+			comp = new AryaCheckbox(main.getAryaWindow(), attributes);
 		} else if ("datebox".equalsIgnoreCase(tagName)) {
-			comp = new AryaDatebox(aryaWindow, attributes);
+			comp = new AryaDatebox(main.getAryaWindow(), attributes);
 		} else if ("button".equalsIgnoreCase(tagName)) {
-			comp = new AryaButton(aryaWindow, attributes);
+			comp = new AryaButton(main.getAryaWindow(), attributes);
 		} else if ("intbox".equalsIgnoreCase(tagName)) {
-			comp = new AryaTextbox(aryaWindow, attributes);
+			comp = new AryaTextbox(main.getAryaWindow(), attributes);
 		} else if ("doublebox".equalsIgnoreCase(tagName)) {
-			comp = new AryaTextbox(aryaWindow, attributes);
+			comp = new AryaTextbox(main.getAryaWindow(), attributes);
 		} else if ("listbox".equalsIgnoreCase(tagName)) {
-			comp = new AryaListbox(aryaWindow, attributes);
+			comp = new AryaListbox(main.getAryaWindow(), attributes);
 		} else if ("listitem".equalsIgnoreCase(tagName)) {
-			comp = new AryaListItem(aryaWindow, attributes);
+			comp = new AryaListItem(main.getAryaWindow(), attributes);
 		} else if ("combobox".equalsIgnoreCase(tagName)) {
-			comp = new AryaCombobox(aryaWindow, attributes);
+			comp = new AryaCombobox(main.getAryaWindow(), attributes);
 		} else if ("multipleCombobox".equalsIgnoreCase(tagName)) {
-			comp = new AryaMultipleCombobox(aryaWindow, attributes);
+			comp = new AryaMultipleCombobox(main.getAryaWindow(), attributes);
 		} else if ("comboitem".equalsIgnoreCase(tagName)) {
-			comp = new AryaComboItem(aryaWindow, attributes);
+			comp = new AryaComboItem(main.getAryaWindow(), attributes);
 		} else if ("mcomboitem".equalsIgnoreCase(tagName)) {
-			comp = new AryaMultiComboItem(aryaWindow, attributes);
+			comp = new AryaMultiComboItem(main.getAryaWindow(), attributes);
 		} else if ("script".equalsIgnoreCase(tagName)) {
-			comp = new AryaScript(aryaWindow, attributes);
+			comp = new AryaScript(main.getAryaWindow(), attributes);
 		} else if ("listhead".equalsIgnoreCase(tagName)) {
-			comp = new AryaListHead(aryaWindow, attributes);
+			comp = new AryaListHead(main.getAryaWindow(), attributes);
 		} else if ("listheader".equalsIgnoreCase(tagName)) {
-			comp = new AryaListHeader(aryaWindow, attributes);
+			comp = new AryaListHeader(main.getAryaWindow(), attributes);
 		} else if ("listcell".equalsIgnoreCase(tagName)) {
-			comp = new AryaListCell(aryaWindow, attributes);
+			comp = new AryaListCell(main.getAryaWindow(), attributes);
 		} else if ("grid".equalsIgnoreCase(tagName)) {
-			comp = new AryaGrid(aryaWindow, attributes);
+			comp = new AryaGrid(main.getAryaWindow(), attributes);
 		} else if ("columns".equalsIgnoreCase(tagName)) {
-			comp = new AryaColumns(aryaWindow, attributes);
+			comp = new AryaColumns(main.getAryaWindow(), attributes);
 		} else if ("column".equalsIgnoreCase(tagName)) {
-			comp = new AryaColumn(aryaWindow, attributes);
+			comp = new AryaColumn(main.getAryaWindow(), attributes);
 		} else if ("rows".equalsIgnoreCase(tagName)) {
-			comp = new AryaRows(aryaWindow, attributes);
+			comp = new AryaRows(main.getAryaWindow(), attributes);
 		} else if ("row".equalsIgnoreCase(tagName)) {
-			comp = new AryaRow(aryaWindow, attributes);
+			comp = new AryaRow(main.getAryaWindow(), attributes);
+		}
+		
+		else if ("menubar".equalsIgnoreCase(tagName)) {
+			comp = new AryaMenuBar(main.getAryaNavBar(), attributes);
+		} else if ("menu".equalsIgnoreCase(tagName)) {
+			comp = new AryaMenu(main.getAryaWindow(), attributes);
+		}else if ("menupopup".equalsIgnoreCase(tagName)) {
+			comp = new AryaMenuPopUp(main.getAryaWindow(), attributes);
+		}else if ("menuitem".equalsIgnoreCase(tagName)) {
+			comp = new AryaMenuItem(main.getAryaWindow(), attributes);
 		}
 
 		return comp;

@@ -6,6 +6,7 @@ import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.EventListener;
 import org.zkoss.zul.Label;
 
+import tr.com.agem.arya.interpreter.base.components.AryaWindow;
 import tr.com.agem.arya.interpreter.script.ScriptHelper;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
@@ -22,26 +23,29 @@ public class AryaLabel extends Label implements IAryaComponent {
 	public AryaLabel(final AryaWindow aryaWindow, Attributes attributes) {
 		super();
 
-		this.componentId = attributes.getValue("id");
-		this.componentClassName = attributes.getValue("class");
-		this.componentValue = attributes.getValue("value");
-		this.componentAttribute = attributes.getValue("attribute");
+		if (AryaUtils.isNotEmpty(attributes)){
+			this.componentId = attributes.getValue("id");
+			this.componentClassName = attributes.getValue("class");
+			this.componentValue = attributes.getValue("value");
+			this.componentAttribute = attributes.getValue("attribute");
 
-		this.setId(attributes.getValue("id"));
-		this.setClass(attributes.getValue("class"));
-		this.setValue(attributes.getValue("value"));
-		this.setWidth(attributes.getValue("width"));
-		this.setHeight(attributes.getValue("height"));
+			this.setId(attributes.getValue("id"));
+			this.setClass(attributes.getValue("class"));
+			this.setValue(attributes.getValue("value"));
+			this.setWidth(attributes.getValue("width"));
+			this.setHeight(attributes.getValue("height"));
 
-		if (AryaUtils.isNotEmpty(attributes.getValue("onClick"))) {
 			final String functionName = attributes.getValue("onClick");
-			this.addEventListener("onClick", new EventListener<Event>() {
-				@Override
-				public void onEvent(Event event) throws Exception {
-					ScriptHelper.executeScript(functionName, null, aryaWindow);
-				}
-			});
+			if (AryaUtils.isNotEmpty(functionName)) {
+				this.addEventListener("onClick", new EventListener<Event>() {
+					@Override
+					public void onEvent(Event event) throws Exception {
+						ScriptHelper.executeScript(functionName, null, aryaWindow);
+					}
+				});
+			}
 		}
+		
 	}
 
 	@Override

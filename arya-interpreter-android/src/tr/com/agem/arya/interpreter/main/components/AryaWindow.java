@@ -13,8 +13,6 @@ import tr.com.agem.core.interpreter.IAryaComponent;
 
 public class AryaWindow extends LinearLayout {
 
-    private static final String TAG = "LinearLayout";
-
     private List<IAryaComponent> components;
 
     public AryaWindow(Context context, LinearLayout parent) {
@@ -22,7 +20,7 @@ public class AryaWindow extends LinearLayout {
 
         parent.removeAllViews();
         parent.addView(this);
-        components = new ArrayList<IAryaComponent>();
+        components = new ArrayList<>();
 
         this.setOrientation(VERTICAL);
         this.setMinimumWidth(LayoutParams.MATCH_PARENT);

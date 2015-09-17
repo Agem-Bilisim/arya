@@ -16,7 +16,7 @@ import org.mozilla.javascript.ContextFactory;
 import org.mozilla.javascript.Scriptable;
 import org.mozilla.javascript.tools.shell.Global;
 
-import tr.com.agem.arya.interpreter.component.AryaWindow;
+import tr.com.agem.arya.interpreter.base.components.AryaWindow;
 
 public class JsRunner {
 	
