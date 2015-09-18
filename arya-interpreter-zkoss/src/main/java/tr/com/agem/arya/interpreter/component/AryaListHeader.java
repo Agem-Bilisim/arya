@@ -88,6 +88,7 @@ public class AryaListHeader extends Listheader implements IAryaComponent {
 
 	public void setComponentValue(String componentValue) {
 		this.componentValue = componentValue;
+		this.setLabel(componentValue);
 	}
 
 }

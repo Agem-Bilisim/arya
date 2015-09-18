@@ -60,11 +60,6 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 			e.printStackTrace();
 		}
 	}
-	
-	@AryaJsFunction
-	public void refresh(String view) {
-		// TODO
-	}
 
 	@AryaJsFunction
 	public void post(String action, String requestType, Object params, NativeFunction onSuccess, NativeFunction onFailure) {

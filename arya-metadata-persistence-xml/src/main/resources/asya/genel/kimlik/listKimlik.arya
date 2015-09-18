@@ -29,5 +29,5 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 		</listbox>
 	</window>
 	<script>
-AgemTable.rowDblClick = function(id) {	AgemTab.toggle([3], true);	Agem.open('genel/kimlik/select.do?kisiId='+id, 'editGenelKimlik', true);	Agem.message('Bilgiler okunuyor...');};	</script>
+</script>
 </arya>
