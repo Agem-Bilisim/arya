@@ -1,5 +1,4 @@
 package tr.com.agem.arya.gateway;
-
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -8,9 +7,10 @@ import java.io.StringReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map;
+
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -29,16 +29,16 @@ import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
 import tr.com.agem.arya.R;
-import tr.com.agem.arya.interpreter.components.AryaListBox;
 import tr.com.agem.arya.interpreter.components.AryaListCell;
 import tr.com.agem.arya.interpreter.components.AryaListItem;
-import tr.com.agem.arya.interpreter.main.components.AryaMain;
-import tr.com.agem.arya.interpreter.main.components.AryaWindow;
+import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.parser.AryaMetadataParser;
 import tr.com.agem.arya.interpreter.parser.AryaParserAttributes;
 import tr.com.agem.core.gateway.model.AryaRequest;
+import tr.com.agem.core.gateway.model.AryaResponse;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
+
 
 public class AryaInterpreterHelper {
 
@@ -91,18 +91,27 @@ public class AryaInterpreterHelper {
         return null;
     }
 
-    public static void interpretResponse(String responseView, AryaMain main) {
+    public static void interpretResponse(AryaResponse response, AryaMain main) {
 
-        if (main.getAryaWindow().getComponents() != null) {
+        if (main.getAryaWindow().getComponents() != null) {// TODO bu alan yönetilmeli neler kaldırılacak ekrandan
             main.getAryaWindow().getComponents().clear();
         }
+
+        if(AryaUtils.isNotEmpty(response.getView()))
+            AryaInterpreterHelper.drawView(response.getView(), main);
+        if(AryaUtils.isNotEmpty(response.getData()))
+            AryaInterpreterHelper.populateView(response.getData(), main);
+
+    }
+
+    private static void drawView(String view, AryaMain main) {
 
         SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
         SAXParser parser = null;
 
         try {
             parser = saxParserFactory.newSAXParser();
-            parser.parse(new InputSource(new StringReader(responseView)), new AryaMetadataParser(main));
+            parser.parse(new InputSource(new StringReader(view)), new AryaMetadataParser(main));
 
         } catch (ParserConfigurationException e) {
             e.printStackTrace();
@@ -117,68 +126,68 @@ public class AryaInterpreterHelper {
         image.setPadding(700, 0, 1, 0);
 
         main.getAryaWindow().addView(image);
-
     }
 
 
-
-    public static void populateResponse(String responseData, AryaMain main) {
+    public static void populateView(String responseData, AryaMain main) {
 
         ObjectMapper mapper = new ObjectMapper();
 
         try {
             JsonNode rootNode = mapper.readTree(responseData);
-            Map.Entry<String, JsonNode> resultEntry = null;
 
             if (rootNode != null) {
                 Iterator<Map.Entry<String, JsonNode>> fields = rootNode.fields();
 
                 if (fields != null) {
-                    IAryaComponent comp=null;
 
                     while (fields.hasNext()) {
                         Map.Entry<String, JsonNode> entry = fields.next();
 
-                        if("fullListSize".equals(entry.getKey().toString())&&isNumeric(entry.getValue().toString())){
-                            if(Integer.parseInt(entry.getValue().toString())>1){
-                                 comp = (IAryaComponent) getElementById("list",main.getAryaWindow());
-                            }
-                        }
 
                         if("results".equals(entry.getKey().toString())){
-                            resultEntry=entry;
+                            if ("results".equals(entry.getKey().toString())) {
+
+                                JSONArray jsonArray = new JSONArray(entry.getValue().toString());
+
+                                for (int i = 0; i < jsonArray.length(); i++) {
+                                    JSONObject jsonObj = jsonArray.getJSONObject(i);
+
+                                    String whatYouWantToFill = "list";// TODO liste datası olup olmadığı anlaşılmalı
+
+                                    if ("list".equals(whatYouWantToFill)) {
+
+                                        AryaListItem item = new AryaListItem(null,main);
+                                        item.setComponentParent(getElementById("list", main));
+
+                                        for (Iterator<?> iterator = jsonObj.keySet().iterator(); iterator.hasNext();) {
+                                            String key = (String) iterator.next();
+
+                                            if (AryaUtils.isNotEmpty(jsonObj.get(key).toString())&&AryaUtils.isNotEmpty(getElementById(key, main))){
+                                                AryaParserAttributes attr = new AryaParserAttributes();
+                                                attr.setValue("id", key+""+(i));
+                                                attr.setValue("label", jsonObj.get(key).toString());
+                                                AryaListCell cell = new AryaListCell(attr,main,null);
+                                                cell.setComponentParent(item);
+
+                                            }
+                                        }
+
+                                    } else {
+                                        for (Iterator<?> iterator = jsonObj.keySet().iterator(); iterator.hasNext();) {
+                                            String key = (String) iterator.next();
+                                            IAryaComponent c = (IAryaComponent) getElementById(key, main);
+
+                                            if (AryaUtils.isNotEmpty(jsonObj.get(key).toString())&& AryaUtils.isNotEmpty(c))
+                                                c.setComponentValue(jsonObj.get(key).toString());
+                                        }
+
+                                    }
+
+                                }
+                            }
+
                         }
-                    }
-
-                    if(AryaUtils.isNotEmpty(comp)){//tablonun datası ise tablonun ilgili kolonlarının idList ini getir (hangi cell'leri doldurmalıyız)
-
-                        AryaListBox listBox = (AryaListBox) comp;
-                        ArrayList<String> idList =getRelatedTableIdList(listBox);
-
-                        JSONArray jsonArray = new JSONArray(resultEntry.getValue().toString());
-
-                       for (int i=0;i<jsonArray.length();i++){//her bir json nesnesi row yani listitem
-
-                           JSONObject j = (JSONObject) jsonArray.get(i);
-
-                           AryaListItem listItem = new AryaListItem(null,main.getAryaWindow());
-                           listItem.setComponentParent(listBox);
-
-
-                           for (int k=0;k<idList.size();k++){//idList'teki id lere göre cell'leri oluşturup Item e set et
-
-                               AryaParserAttributes attr = new AryaParserAttributes();
-                               attr.setValue("id",idList.get(k)+""+k);
-                               attr.setValue("label",j.get(idList.get(k)).toString());
-
-                               AryaListCell newCell = new AryaListCell(attr,main.getAryaWindow(),null);//list itemin child ı olarak set et
-                               newCell.setComponentParent(listItem);
-                           }
-                        }
-
-                    }
-                    else{//TODO yukardaki liste değilmiş fill et
-
                     }
                 }
             }
@@ -194,35 +203,12 @@ public class AryaInterpreterHelper {
     }
 
 
-    private static ArrayList<String> getRelatedTableIdList(AryaListBox listBox) {
-
-        ArrayList<String> idList= new ArrayList<>();
-
-        for (int i=0;i<listBox.getChildCount();i++){
-            IAryaComponent c= (IAryaComponent) listBox.getChildAt(i);
-            if(c instanceof AryaListItem)
-            {
-                AryaListItem item =((AryaListItem) c);
-                for(int j=0;j<item.getChildCount();j++){
-                    IAryaComponent cc= (IAryaComponent) item.getChildAt(j);
-                    if(cc instanceof AryaListCell){
-                        AryaListCell cell = (AryaListCell) cc;
-                        idList.add(cell.getComponentId());
-                    }
-                }
-            }
-        }
-
-        return idList;
-    }
-
-
-    public static Object getElementById(String id, AryaWindow window) {
+    public static Object getElementById(String id, AryaMain main) {
 
         View child = null;
-        for (int i = 0; i < window.getChildCount(); i++) {
+        for (int i = 0; i < main.getAryaWindow().getChildCount(); i++) {
 
-            child = window.getChildAt(i);
+            child = main.getAryaWindow().getChildAt(i);
             if (child instanceof IAryaComponent) {
                 IAryaComponent o = (IAryaComponent) child;
 
@@ -234,16 +220,4 @@ public class AryaInterpreterHelper {
         return null;
     }
 
-    public static boolean isNumeric(String str) //TODO bunu arya util e at
-    {
-        try
-        {
-            double d = Double.parseDouble(str);
-        }
-        catch(NumberFormatException nfe)
-        {
-            return false;
-        }
-        return true;
-    }
 }

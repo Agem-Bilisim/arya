@@ -22,13 +22,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import tr.com.agem.arya.gateway.AryaInterpreterHelper;
 import tr.com.agem.arya.gateway.WebServiceConnectionAsyncTask;
 import tr.com.agem.arya.interpreter.AlertController;
-import tr.com.agem.arya.interpreter.main.components.AryaMain;
-import tr.com.agem.arya.interpreter.main.components.AryaWindow;
+import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.core.gateway.model.AryaRequest;
 import tr.com.agem.core.gateway.model.AryaResponse;
 import tr.com.agem.core.gateway.model.RequestTypes;
 import tr.com.agem.core.interpreter.IAryaComponent;
-import tr.com.agem.core.utils.AryaUtils;
 
 public class ElementFunctions extends AnnotatedScriptableObject {
 
@@ -37,12 +35,12 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 	
 	private Context context;
 	private Scriptable scope;
-	private AryaWindow window;
+	private AryaMain main;
 
-	public ElementFunctions(Context context, Scriptable scope, AryaWindow window) {
+	public ElementFunctions(Context context, Scriptable scope,AryaMain main) {
 		this.context = context;
 		this.scope = scope;
-		this.window = window;
+		this.main = main;
 	}
 
 	@AryaJsFunction
@@ -72,7 +70,7 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 	@AryaJsFunction
 	public void refresh() {
 
-        window.removeAllViews();
+        main.getAryaWindow().removeAllViews();
 
         AryaRequest request = new AryaRequest();
         request.setAction("master");
@@ -82,7 +80,7 @@ public class ElementFunctions extends AnnotatedScriptableObject {
         //request.setRequestType(RequestTypes.ALL);
 
 
-        WebServiceConnectionAsyncTask connThread = new WebServiceConnectionAsyncTask("http://192.168.1.106:8080/arya/rest/asya",request, window.getContext());
+        WebServiceConnectionAsyncTask connThread = new WebServiceConnectionAsyncTask("http://192.168.1.106:8080/arya/rest/asya",request, main.getAryaWindow().getContext());
 
         String responseStr = null;
         try {
@@ -98,14 +96,10 @@ public class ElementFunctions extends AnnotatedScriptableObject {
             response.fromXMLString(responseStr);
 
 
-            AryaMain main = new AryaMain(window,null);
-            if(AryaUtils.isNotEmpty(response.getView()))
-                AryaInterpreterHelper.interpretResponse(response.getView(), main);
-            if(AryaUtils.isNotEmpty(response.getData()))
-                AryaInterpreterHelper.populateResponse(response.getData(),main);
+			AryaInterpreterHelper.interpretResponse(response, main);
 
         } else {
-            AlertController.setAndShowPrimerAlert(window.getContext(), "HATA!", "Sunucuyla Bağlantı Kurulamadı", "Tamam");
+            AlertController.setAndShowPrimerAlert(main.getAryaWindow().getContext(), "HATA!", "Sunucuyla Bağlantı Kurulamadı", "Tamam");
         }
 	}
 
@@ -130,15 +124,7 @@ public class ElementFunctions extends AnnotatedScriptableObject {
         AryaResponse response = new AryaResponse();
         response.fromXMLString(result);
 
-
-        if(AryaUtils.isNotEmpty(response.getView())){
-            window.removeAllViews();
-            AryaInterpreterHelper.interpretResponse(response.getView(), new AryaMain(window,null));
-        }
-        if(AryaUtils.isNotEmpty(response.getData())){
-            AryaInterpreterHelper.populateResponse(response.getData(),new AryaMain(window,null));
-        }
-
+		AryaInterpreterHelper.interpretResponse(response, main);
 
         //TODO response fail condition add
 
@@ -156,9 +142,9 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 	public Object getElementById(String id) {
 
 		View child = null;
-		for (int i = 0; i < window.getChildCount(); i++) {
+		for (int i = 0; i < main.getAryaWindow().getChildCount(); i++) {
 
-			child = window.getChildAt(i);
+			child = main.getAryaWindow().getChildAt(i);
 			if (child instanceof IAryaComponent) {
 				IAryaComponent o = (IAryaComponent) child;
 
@@ -174,9 +160,9 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 	public Object[] getElementsByName(String name) {
 		List objList = new ArrayList();
 		View child = null;
-		for (int i = 0; i < window.getChildCount(); i++) {
+		for (int i = 0; i < main.getAryaWindow().getChildCount(); i++) {
 
-			child = window.getChildAt(i);
+			child = main.getAryaWindow().getChildAt(i);
 			if (child instanceof IAryaComponent) {
 				IAryaComponent o = (IAryaComponent) child;
 				if (name.equalsIgnoreCase(
@@ -192,9 +178,9 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 	public Object[] getElementsByClass(String className) {
 		List objList = new ArrayList();
 		View child = null;
-		for (int i = 0; i < window.getChildCount(); i++) {
+		for (int i = 0; i < main.getAryaWindow().getChildCount(); i++) {
 
-			child = window.getChildAt(i);
+			child = main.getAryaWindow().getChildAt(i);
 			if (child instanceof IAryaComponent) {
 				IAryaComponent o = (IAryaComponent) child;
 				if (className.equalsIgnoreCase(o.getComponentClassName())) {
@@ -209,8 +195,8 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 	public String serializeForm() {
 		String strSerialize = "";
 		View child = null;
-		for (int i = 0; i < window.getChildCount(); i++) {
-			child = window.getChildAt(i);
+		for (int i = 0; i < main.getAryaWindow().getChildCount(); i++) {
+			child = main.getAryaWindow().getChildAt(i);
 			if (child instanceof IAryaComponent) {
 				IAryaComponent o = (IAryaComponent) child;
 				strSerialize += ",\"" + o.getComponentId() + "\":"

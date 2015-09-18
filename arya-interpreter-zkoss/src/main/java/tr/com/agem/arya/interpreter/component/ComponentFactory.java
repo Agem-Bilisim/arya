@@ -2,11 +2,11 @@ package tr.com.agem.arya.interpreter.component;
 
 import org.xml.sax.Attributes;
 
-import tr.com.agem.arya.interpreter.base.components.AryaMain;
 import tr.com.agem.arya.interpreter.component.menu.AryaMenu;
 import tr.com.agem.arya.interpreter.component.menu.AryaMenuBar;
 import tr.com.agem.arya.interpreter.component.menu.AryaMenuItem;
 import tr.com.agem.arya.interpreter.component.menu.AryaMenuPopUp;
+import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.core.interpreter.IAryaComponent;
 
 public class ComponentFactory {

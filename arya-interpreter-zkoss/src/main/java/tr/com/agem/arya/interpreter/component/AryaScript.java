@@ -6,7 +6,7 @@ import java.util.List;
 import org.xml.sax.Attributes;
 import org.zkoss.zul.Script;
 
-import tr.com.agem.arya.interpreter.base.components.AryaMain;
+import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
 

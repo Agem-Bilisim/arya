@@ -111,6 +111,11 @@
 			<version>22.0.0</version>
 			<type>aar</type>
 		</dependency>
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20140107</version>
+		</dependency>
 	</dependencies>
 
 </project>

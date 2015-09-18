@@ -9,8 +9,7 @@ import android.widget.TextView;
 
 import org.xml.sax.Attributes;
 
-import tr.com.agem.arya.interpreter.main.components.AryaWindow;
-import tr.com.agem.arya.interpreter.parser.AryaParserAttributes;
+import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
 
@@ -22,8 +21,8 @@ public class AryaListCell extends TextView implements IAryaComponent {
     private String componentAttribute;
 
 
-    public AryaListCell(Attributes attributes,AryaWindow window, String tag) {
-        super(window.getContext());
+    public AryaListCell(Attributes attributes,AryaMain main, String tag) {
+        super(main.getAryaWindow().getContext());
 
         if(AryaUtils.isNotEmpty(attributes)){
 
@@ -35,23 +34,12 @@ public class AryaListCell extends TextView implements IAryaComponent {
             this.setText(attributes.getValue("label"));
         }
 
-        if("listheader".equalsIgnoreCase(tag)){ //some header property
+        if("listheader".equalsIgnoreCase(tag)){
             this.setTextColor(Color.BLACK);
             this.setBackgroundColor(Color.GRAY);
         }
     }
 
-
-
-
-    /*public AryaListCell(AryaWindow window,String id,String label) {
-
-
-        super(window.getContext());
-        this.componentId = id;
-        this.setText(label);
-
-    }*/
 
     @Override
     protected void onDraw(Canvas canvas) {

@@ -25,9 +25,9 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import tr.com.agem.arya.interpreter.base.components.AryaMain;
 import tr.com.agem.arya.interpreter.component.AryaListCell;
 import tr.com.agem.arya.interpreter.component.AryaListItem;
+import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.parser.AryaMetadataParser;
 import tr.com.agem.arya.interpreter.parser.AryaParserAttributes;
 import tr.com.agem.core.gateway.model.AryaRequest;
@@ -70,13 +70,7 @@ public class AryaInterpreterHelper {
 
 		if (AryaUtils.isNotEmpty(response.getView())) {
 			// Remove previous components before adding new ones!
-			if (main.getAryaWindow().getComponentContainer() != null) { // TODO
-																		// bu
-																		// alan
-																		// yönetilmeli
-																		// neler
-																		// kaldırılacak
-																		// ekrandan
+			if (main.getAryaWindow().getComponentContainer() != null) { // TODO bu alan yönetilmeli neler kaldırılacak ekrandan
 				main.getAryaWindow().getComponentContainer().getChildren().clear();
 			}
 			if (main.getAryaWindow().getComponents() != null) {
@@ -102,7 +96,6 @@ public class AryaInterpreterHelper {
 				Iterator<Map.Entry<String, JsonNode>> fields = rootNode.fields();
 
 				if (fields != null) {
-					IAryaComponent comp = null;
 
 					while (fields.hasNext()) {
 						Map.Entry<String, JsonNode> entry = fields.next();
@@ -174,11 +167,7 @@ public class AryaInterpreterHelper {
 		}
 	}
 
-	public static IAryaComponent getElementById(String id, AryaMain main) { // only
-																			// on
-																			// window
-																			// not
-																			// menu
+	public static IAryaComponent getElementById(String id, AryaMain main) { // only on window not menu
 
 		IAryaComponent comp;
 

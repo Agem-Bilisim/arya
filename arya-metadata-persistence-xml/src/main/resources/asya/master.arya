@@ -1,25 +1,24 @@
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="aryaportal.org arya.xsd http://www.zkoss.org/2005/zul/zul.xsd">
+
+	<menubar id="menubar">
+		<menu label="İşçi Bilgileri">
+			<menupopup>
+				<menuitem label="Arama"
+					onClick="post('genel.isci.search', 'ALL',{'json': '1'})" />
+				<menuitem label="Liste"
+					onClick="post('genel.isci.list', 'ALL',{'json': '1'})" />
+				<menuitem label="Yeni Kayıt" />
+			</menupopup>
+		</menu>
+	</menubar>
+
 	<window>
-
-		<label id="lbl1" value="Company Name" />
-		<textbox id="tbox1" value="AGEM Technology Partner" />
-
-		<label id="lbl2" value="Project Name:" />
-		<textbox id="tb2" value="Arya" />
-
-		<label id="lbl3" value="Application Type" />
-
-		<checkbox id="chb1" label="Android"  />
-		<checkbox id="chb2" label="IOS"  />
-		<checkbox id="chb3" label="Zkoss"  />
-
-		<datebox id="db1" />
 
 		<listbox id="box" width="100%">
 			<listhead>
-				<listheader label="Company"  />
-				<listheader label="Project"  />
+				<listheader label="Company" />
+				<listheader label="Project" />
 			</listhead>
 			<listitem>
 				<listcell label="AGEM" />
@@ -31,76 +30,39 @@
 			</listitem>
 		</listbox>
 
-		<multiplecombobox id="mcb1" >
-			<mcomboitem id="mci1" label="Android" value="1" />
-			<mcomboitem id="mci2" label="IOS" value="2" />
-			<mcomboitem id="mci3" label="Zkoss" value="3" />
-		</multiplecombobox>
+		<label id="lbl1" value="Company Name" />
 
-		<combobox id="cb1" >
-			<comboitem id="ci1" label="Android" value="1" />
-			<comboitem id="ci2" label="IOS" value="2" />
-			<comboitem id="ci3" label="Zkoss" value="3" />
-		</combobox>
-
-
-		<button id="btn1" label="post kisi id = 83" onClick="b()" />
-		<button id="btn2" label="post seri=A" onClick="c()"  />
-		<grid height="150px">
-			<columns>
-				<column label="Icon" width="50px" />
-				<column label="Subject" />
-				<column label="Received" width="150px" />
-				<column label="Size" width="80px" />
-				<column label="Ctrl" width="100px" />
-			</columns>
-			<rows>
-				<row>
-					<label value="A" />
-					<label value="B" />
-					<label value="C" />
-					<label value="D" />
-					<button id="gridbtnr1" label="Delete" onClick="a(getElementById('gridbtnr1'))" />
-				</row>
-				<row>
-					<label value="E" />
-					<label value="F" />
-					<label value="G" />
-					<label value="H" />
-					<button id="gridbtnr2" label="Delete" onClick="a(getElementById('gridbtnr2'))" />
-				</row>
-			</rows>
-		</grid>
+		<button id="1" label="1" position="1/3" newLine="true"
+			onClick="post('genel.kimlik.list', 'ALL',{'json': '1'})" />
 
 	</window>
 
-	<menubar>
-		<menu label="Hardware">
-		</menu>
-	</menubar>
 
-	<script >
-		a = function() {
 
-		print('a');
-		if(getElementById('btn1').getLabel()=='Arya')
-		getElementById('btn1').setLabel('AGEM');
-		else
-		getElementById('btn1').setLabel('Arya');
+	<script>
 
-		//print(getElementById('deneme6').getComponentId());
-		//print(getElementsByName('button')[0].getComponentId());
-		//print(getElementsByClass('klass')[0].getComponentId());
-		};
 
-		b=function() {
-		post('genel.kimlik.list', 'ALL', {'kisiIdParam':'83', 'json': '1' },function
+
+
+		f = function(){ print('fff');
+		}
+
+		p = function(){post('genel.kimlik.list',
+		'ALL',
+		{'seriParam':'A',
+		'json': '1'},
+		function pit(a){print('DATA:' +
+		a.data);
+		});}
+
+
+		d=function() {
+		post('login', 'ALL', {'username':'admin',
+		'password':
+		'a93m5466' },function
 		pit(a){print('DATA:' + a.data); });
 		};
-		
-		c=function() {
-		post('genel.kimlik.list', 'ALL', {'seriParam':'A', 'json': '1'},function
-		pit(a){print('DATA:' + a.data); });
-		};
+
+
 	</script>
 </arya>

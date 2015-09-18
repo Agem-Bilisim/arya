@@ -1,4 +1,4 @@
-package tr.com.agem.arya.interpreter.components;
+package tr.com.agem.arya.interpreter.components.menu;
 
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -10,7 +10,7 @@ import android.view.View;
 
 import org.xml.sax.Attributes;
 
-import tr.com.agem.arya.interpreter.main.components.AryaWindow;
+import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.parser.IAryaMenu;
 import tr.com.agem.arya.interpreter.script.ScriptHelper;
 import tr.com.agem.core.interpreter.IAryaComponent;
@@ -23,7 +23,7 @@ public class AryaMenuItem implements IAryaComponent,IAryaMenu, MenuItem {
     private OnMenuItemClickListener onMenuItemClickListener;
 
 
-    public AryaMenuItem(Attributes attributes, final AryaWindow window) {
+    public AryaMenuItem(Attributes attributes, final AryaMain main) {
 
         if(AryaUtils.isNotEmpty(attributes)){
             this.label=attributes.getValue("label");
@@ -34,7 +34,7 @@ public class AryaMenuItem implements IAryaComponent,IAryaMenu, MenuItem {
                 this.setOnMenuItemClickListener(new OnMenuItemClickListener() {
                     @Override
                     public boolean onMenuItemClick(MenuItem menuItem) {
-                        ScriptHelper.executeScript(onClick, null,window );
+                        ScriptHelper.executeScript(onClick, null,main );
 
                         return false;
                     }

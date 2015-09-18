@@ -2,9 +2,9 @@ package tr.com.agem.arya.interpreter.components;
 
 import org.xml.sax.Attributes;
 
-import android.widget.LinearLayout;
 import android.widget.TableLayout;
 
+import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
 
@@ -15,9 +15,9 @@ public class AryaListBox extends TableLayout implements IAryaComponent {
 	private String componentAttribute;
 	private String componentValue;
 
-	public AryaListBox(Attributes attributes, LinearLayout window) {
+	public AryaListBox(Attributes attributes, AryaMain main) {
 
-		super(window.getContext());
+		super(main.getAryaWindow().getContext());
 
 		if(AryaUtils.isNotEmpty(attributes)){
 			this.componentId = attributes.getValue("id");
@@ -25,7 +25,7 @@ public class AryaListBox extends TableLayout implements IAryaComponent {
 			this.componentValue = attributes.getValue("value");
 			this.componentAttribute = attributes.getValue("attribute");
 		}
-		window.addView(this);
+		main.getAryaWindow().addView(this);
 	}
 
 	@Override

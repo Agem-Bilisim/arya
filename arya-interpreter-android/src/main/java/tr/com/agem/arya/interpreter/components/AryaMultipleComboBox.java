@@ -11,7 +11,7 @@ import org.xml.sax.Attributes;
 
 import java.util.ArrayList;
 
-import tr.com.agem.arya.interpreter.main.components.AryaWindow;
+import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
 
@@ -24,9 +24,9 @@ public class AryaMultipleComboBox extends ListView implements IAryaComponent {
     private String componentValue;
 
 
-    public AryaMultipleComboBox(Attributes attributes, AryaWindow window) {
+    public AryaMultipleComboBox(Attributes attributes, AryaMain main) {
 
-        super(window.getContext());
+        super(main.getAryaWindow().getContext());
 
         if(AryaUtils.isNotEmpty(attributes)){
             this.componentId = attributes.getValue("id");
@@ -36,7 +36,7 @@ public class AryaMultipleComboBox extends ListView implements IAryaComponent {
         }
 
         createAdapter();
-        window.addView(this);
+        main.getAryaWindow().addView(this);
     }
 
     private void createAdapter() {

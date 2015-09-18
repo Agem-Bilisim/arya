@@ -5,7 +5,7 @@ import android.widget.CompoundButton;
 
 import org.xml.sax.Attributes;
 
-import tr.com.agem.arya.interpreter.main.components.AryaWindow;
+import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.script.ScriptHelper;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
@@ -18,8 +18,8 @@ public class AryaCheckbox extends CheckBox implements IAryaComponent {
     private String componentAttribute;
     private String componentValue;
 
-    public AryaCheckbox(Attributes attributes, final AryaWindow window) {
-        super(window.getContext());
+    public AryaCheckbox(Attributes attributes, final AryaMain main) {
+        super(main.getAryaWindow().getContext());
 
         String height=null;
         String mandatory=null;
@@ -44,7 +44,7 @@ public class AryaCheckbox extends CheckBox implements IAryaComponent {
                 this.setOnCheckedChangeListener(new OnCheckedChangeListener() {
                     @Override
                     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                        ScriptHelper.executeScript(onCheck, null, window);
+                        ScriptHelper.executeScript(onCheck, null, main);
                     }
                 });
             }
@@ -54,7 +54,7 @@ public class AryaCheckbox extends CheckBox implements IAryaComponent {
         this.mandatory = mandatory != null && Boolean.parseBoolean(mandatory);
         this.setEnabled(AryaUtils.isNotEmpty(readonly)?Boolean.parseBoolean(readonly):true);
 
-        window.addView(this);
+        main.getAryaWindow().addView(this);
     }
 
     @Override

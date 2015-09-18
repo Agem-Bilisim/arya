@@ -1,4 +1,4 @@
-package tr.com.agem.arya.interpreter.main.components;
+package tr.com.agem.arya.interpreter.components.base;
 
 import android.widget.LinearLayout;
 

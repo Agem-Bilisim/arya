@@ -7,7 +7,7 @@ import org.xml.sax.Attributes;
 import java.util.Calendar;
 import java.util.HashMap;
 
-import tr.com.agem.arya.interpreter.main.components.AryaWindow;
+import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.script.ScriptHelper;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
@@ -20,8 +20,8 @@ public class AryaDatebox  extends DatePicker implements IAryaComponent {
     private String componentAttribute;
     private String componentValue;
 
-    public AryaDatebox(Attributes attributes, final AryaWindow window) {
-        super(window.getContext());
+    public AryaDatebox(Attributes attributes, final AryaMain main) {
+        super(main.getAryaWindow().getContext());
 
         String mandatory=null;
         String readonly=null;
@@ -56,7 +56,7 @@ public class AryaDatebox  extends DatePicker implements IAryaComponent {
                     map.put("year", year);
                     map.put("monthOfYear", monthOfYear);
                     map.put("dayOfMonth", dayOfMonth);
-                    ScriptHelper.executeScript(onChange, map, window);
+                    ScriptHelper.executeScript(onChange, map, main);
                 }
             } : null);
         }
@@ -64,7 +64,7 @@ public class AryaDatebox  extends DatePicker implements IAryaComponent {
         this.mandatory = mandatory != null && Boolean.parseBoolean(mandatory);
         this.setEnabled(readonly != null && Boolean.parseBoolean(readonly));
 
-        window.addView(this);
+        main.getAryaWindow().addView(this);
     }
 
     @Override

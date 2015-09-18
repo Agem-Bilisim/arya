@@ -9,8 +9,8 @@ import java.util.Stack;
 import tr.com.agem.arya.interpreter.components.AryaComboItem;
 import tr.com.agem.arya.interpreter.components.AryaListCell;
 import tr.com.agem.arya.interpreter.components.AryaListItem;
-import tr.com.agem.arya.interpreter.main.components.AryaMain;
-import tr.com.agem.arya.interpreter.components.AryaMenuItem;
+import tr.com.agem.arya.interpreter.components.base.AryaMain;
+import tr.com.agem.arya.interpreter.components.menu.AryaMenuItem;
 import tr.com.agem.arya.interpreter.components.AryaMultipleComboItem;
 import tr.com.agem.arya.interpreter.components.AryaScript;
 import tr.com.agem.arya.interpreter.components.ComponentFactory;
@@ -29,7 +29,7 @@ public class AryaMetadataParser extends DefaultHandler {
     @Override
     public void startElement (String uri, String localName,String tagName, Attributes attributes){
 
-        IAryaComponent comp = ComponentFactory.getComponent(tagName,main.getAryaWindow(), attributes);
+        IAryaComponent comp = ComponentFactory.getComponent(tagName,main, attributes);
         
         if (comp != null) {
 

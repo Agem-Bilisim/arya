@@ -3,47 +3,49 @@ package tr.com.agem.arya.interpreter.components;
 
 import org.xml.sax.Attributes;
 
-import tr.com.agem.arya.interpreter.main.components.AryaWindow;
+import tr.com.agem.arya.interpreter.components.base.AryaMain;
+import tr.com.agem.arya.interpreter.components.menu.AryaMenuBar;
+import tr.com.agem.arya.interpreter.components.menu.AryaMenuItem;
 import tr.com.agem.core.interpreter.IAryaComponent;
 
 public class ComponentFactory {
 
-    public static IAryaComponent getComponent(String tagName,AryaWindow window,Attributes attributes) {
+    public static IAryaComponent getComponent(String tagName,AryaMain main,Attributes attributes) {
 
         IAryaComponent comp = null;
 
         if ("label".equalsIgnoreCase(tagName)) {
-            comp = new AryaLabel(attributes, window);
+            comp = new AryaLabel(attributes, main);
         } else if (("textbox").equalsIgnoreCase(tagName)|| "intbox".equalsIgnoreCase(tagName)||"doublebox".equalsIgnoreCase(tagName)||"longbox".equalsIgnoreCase(tagName)) {
-            comp = new AryaTextbox(attributes, window,tagName);
+            comp = new AryaTextbox(attributes, main,tagName);
         }else if ("checkbox".equalsIgnoreCase(tagName)) {
-            comp = new AryaCheckbox(attributes, window);
+            comp = new AryaCheckbox(attributes, main);
         } else if ("datebox".equalsIgnoreCase(tagName)) {
-            comp = new AryaDatebox(attributes, window);
+            comp = new AryaDatebox(attributes, main);
         } else if ("button".equalsIgnoreCase(tagName)) {
-            comp = new AryaButton(attributes, window);
+            comp = new AryaButton(attributes, main);
         } else if ("combobox".equalsIgnoreCase(tagName)) {
-            comp = new AryaComboBox(attributes, window);
+            comp = new AryaComboBox(attributes, main);
         }else if ("comboitem".equalsIgnoreCase(tagName)) {
-            comp = new AryaComboItem(attributes, window);
+            comp = new AryaComboItem(attributes, main);
         }else if ("multiplecombobox".equalsIgnoreCase(tagName)) {
-            comp = new AryaMultipleComboBox(attributes, window);
+            comp = new AryaMultipleComboBox(attributes, main);
         }else if ("mcomboitem".equalsIgnoreCase(tagName)) {
-            comp = new AryaMultipleComboItem(attributes, window);
+            comp = new AryaMultipleComboItem(attributes, main);
         }else if ("listbox".equalsIgnoreCase(tagName)) {
-            comp = new AryaListBox(attributes, window);
+            comp = new AryaListBox(attributes, main);
         }else if ("listhead".equalsIgnoreCase(tagName)) { // maybe create head class for self properties TODO sıraya göre değil direk head olmalı çizerken(volkan)
-            comp = new AryaListItem(attributes, window);
+            comp = new AryaListItem(attributes, main);
         }else if ("listheader".equalsIgnoreCase(tagName)||"listcell".equalsIgnoreCase(tagName)) {
-            comp = new AryaListCell(attributes, window,tagName);
+            comp = new AryaListCell(attributes, main,tagName);
         }else if ("listitem".equalsIgnoreCase(tagName)) {
-            comp = new AryaListItem(attributes, window);
+            comp = new AryaListItem(attributes, main);
         }else if ("script".equalsIgnoreCase(tagName)) {
-            comp = new AryaScript(attributes,window);
+            comp = new AryaScript(attributes,main);
         } else if ("menubar".equalsIgnoreCase(tagName)) {
-            comp = new AryaMenuBar(attributes, window);
+            comp = new AryaMenuBar(attributes, main);
         }else if ("menu".equalsIgnoreCase(tagName)) {
-            comp = new AryaMenuItem(attributes,window);
+            comp = new AryaMenuItem(attributes,main);
         }
 
         return comp;

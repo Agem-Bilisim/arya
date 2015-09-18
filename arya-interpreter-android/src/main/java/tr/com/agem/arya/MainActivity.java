@@ -13,7 +13,7 @@ import java.util.concurrent.ExecutionException;
 import tr.com.agem.arya.gateway.AryaInterpreterHelper;
 import tr.com.agem.arya.gateway.WebServiceConnectionAsyncTask;
 import tr.com.agem.arya.interpreter.AlertController;
-import tr.com.agem.arya.interpreter.main.components.AryaMain;
+import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.core.gateway.model.AryaRequest;
 import tr.com.agem.core.gateway.model.AryaResponse;
 import tr.com.agem.core.gateway.model.RequestTypes;
@@ -89,10 +89,8 @@ public class MainActivity extends ActionBarActivity {
 
 
             main = new AryaMain(this,mainLayout);
-            if(AryaUtils.isNotEmpty(response.getView()))
-                AryaInterpreterHelper.interpretResponse(response.getView(), main);
-            if(AryaUtils.isNotEmpty(response.getData()))
-                AryaInterpreterHelper.populateResponse(response.getData(),main);
+
+            AryaInterpreterHelper.interpretResponse(response, main);
 
         } else {
             AlertController.setAndShowPrimerAlert(this, "HATA!", "Sunucuyla Bağlantı Kurulamadı", "Tamam");

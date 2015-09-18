@@ -6,7 +6,7 @@ import org.xml.sax.Attributes;
 import java.util.Arrays;
 import java.util.List;
 
-import tr.com.agem.arya.interpreter.main.components.AryaWindow;
+import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
 
@@ -15,14 +15,14 @@ public class AryaScript extends View implements IAryaComponent{
     private String script;
     private List<String> srcList;
 
-    public AryaScript(Attributes attributes, AryaWindow window) {
-       super(window.getContext());
+    public AryaScript(Attributes attributes, AryaMain main) {
+       super(main.getAryaWindow().getContext());
 
         if(AryaUtils.isNotEmpty(attributes)){
             this.srcList=parseSrc(attributes.getValue("src"));
         }
 
-        window.addView(this);
+        main.getAryaWindow().addView(this);
     }
 
     private List<String> parseSrc(String src) {

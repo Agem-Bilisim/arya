@@ -1,4 +1,4 @@
-package tr.com.agem.arya.interpreter.main.components;
+package tr.com.agem.arya.interpreter.components.base;
 
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -9,7 +9,7 @@ import android.widget.LinearLayout;
 import java.util.ArrayList;
 
 import tr.com.agem.arya.MainActivity;
-import tr.com.agem.arya.interpreter.components.AryaMenuBar;
+import tr.com.agem.arya.interpreter.components.menu.AryaMenuBar;
 import tr.com.agem.arya.interpreter.parser.IAryaMenu;
 import tr.com.agem.core.utils.AryaUtils;
 

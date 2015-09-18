@@ -1,4 +1,4 @@
-package tr.com.agem.arya.interpreter.components;
+package tr.com.agem.arya.interpreter.components.menu;
 
 import android.view.MenuItem;
 
@@ -6,8 +6,8 @@ import org.xml.sax.Attributes;
 
 import java.util.ArrayList;
 
-import tr.com.agem.arya.interpreter.main.components.AryaNavBar;
-import tr.com.agem.arya.interpreter.main.components.AryaWindow;
+import tr.com.agem.arya.interpreter.components.base.AryaMain;
+import tr.com.agem.arya.interpreter.components.base.AryaNavBar;
 import tr.com.agem.arya.interpreter.parser.IAryaMenu;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
@@ -17,7 +17,7 @@ public class AryaMenuBar implements IAryaMenu,IAryaComponent {
 
     private ArrayList<IAryaMenu> menuItems;
 
-    public AryaMenuBar(Attributes attributes, AryaWindow window) {
+    public AryaMenuBar(Attributes attributes, AryaMain main) {
 
         menuItems =new ArrayList<>();
     }

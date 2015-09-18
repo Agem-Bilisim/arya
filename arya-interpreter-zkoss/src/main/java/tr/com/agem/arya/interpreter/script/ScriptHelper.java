@@ -4,8 +4,8 @@ import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import tr.com.agem.arya.interpreter.base.components.AryaMain;
 import tr.com.agem.arya.interpreter.component.AryaScript;
+import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
 

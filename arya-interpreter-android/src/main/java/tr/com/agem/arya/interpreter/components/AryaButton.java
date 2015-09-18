@@ -5,7 +5,7 @@ import android.widget.Button;
 
 import org.xml.sax.Attributes;
 
-import tr.com.agem.arya.interpreter.main.components.AryaWindow;
+import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.script.ScriptHelper;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
@@ -17,8 +17,8 @@ public class AryaButton extends Button implements IAryaComponent {
     private String componentAttribute;
     private String componentValue;
 
-    public AryaButton(Attributes attributes, final AryaWindow window) {
-        super(window.getContext());
+    public AryaButton(Attributes attributes, final AryaMain main) {
+        super(main.getAryaWindow().getContext());
         this.setBackgroundResource(android.R.drawable.btn_default);
 
         String height=null;
@@ -37,7 +37,7 @@ public class AryaButton extends Button implements IAryaComponent {
                 this.setOnClickListener(new OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        ScriptHelper.executeScript(onClick, null, window);
+                        ScriptHelper.executeScript(onClick, null, main);
                     }
                 });
             }
@@ -45,7 +45,7 @@ public class AryaButton extends Button implements IAryaComponent {
 
         this.setHeight(height != null ? Integer.parseInt(height) : 150);
 
-        window.addView(this);
+        main.getAryaWindow().addView(this);
     }
 
     @Override

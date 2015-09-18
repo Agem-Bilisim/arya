@@ -13,7 +13,7 @@ import org.xml.sax.Attributes;
 
 import java.util.HashMap;
 
-import tr.com.agem.arya.interpreter.main.components.AryaWindow;
+import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.script.ScriptHelper;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
@@ -26,8 +26,8 @@ public class AryaTextbox extends EditText implements IAryaComponent {
     private String componentAttribute;
     private String componentValue;
 
-    public AryaTextbox(Attributes attributes, final AryaWindow window, String tag) {
-        super(window.getContext());
+    public AryaTextbox(Attributes attributes, final AryaMain main, String tag) {
+        super(main.getAryaWindow().getContext());
 
         if(AryaUtils.isNotEmpty(attributes)){
             this.componentId = attributes.getValue("id");
@@ -79,7 +79,7 @@ public class AryaTextbox extends EditText implements IAryaComponent {
                     public boolean onKey(View v, int keyCode, KeyEvent event) {
                         HashMap<Object, Object> params = new HashMap<Object, Object>();
                         params.put("keyCode", new Integer(keyCode));
-                        ScriptHelper.executeScript(onChange, params, window);
+                        ScriptHelper.executeScript(onChange, params, main);
                         return true;
                     }
                 });
@@ -105,7 +105,7 @@ public class AryaTextbox extends EditText implements IAryaComponent {
 
         }
 
-        window.addView(this);
+        main.getAryaWindow().addView(this);
     }
 
     @Override

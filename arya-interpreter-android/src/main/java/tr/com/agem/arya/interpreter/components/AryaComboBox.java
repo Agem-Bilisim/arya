@@ -9,7 +9,7 @@ import org.xml.sax.Attributes;
 
 import java.util.ArrayList;
 
-import tr.com.agem.arya.interpreter.main.components.AryaWindow;
+import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.script.ScriptHelper;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
@@ -24,8 +24,8 @@ public class AryaComboBox extends Spinner implements IAryaComponent {
     private String componentValue;
     private boolean spinnerInit =false;
 
-    public AryaComboBox(Attributes attributes , final AryaWindow window) {
-        super(window.getContext());
+    public AryaComboBox(Attributes attributes , final AryaMain main) {
+        super(main.getAryaWindow().getContext());
 
         if(AryaUtils.isNotEmpty(attributes)){
             this.componentId = attributes.getValue("id");
@@ -39,7 +39,7 @@ public class AryaComboBox extends Spinner implements IAryaComponent {
                 @Override
                 public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
                     if(isInit()){
-                        ScriptHelper.executeScript(onChange, null, window);
+                        ScriptHelper.executeScript(onChange, null, main);
                     }
                 }
 
@@ -52,7 +52,7 @@ public class AryaComboBox extends Spinner implements IAryaComponent {
 
         createAdapter();
 
-        window.addView(this);
+        main.getAryaWindow().addView(this);
     }
 
     private void createAdapter() {

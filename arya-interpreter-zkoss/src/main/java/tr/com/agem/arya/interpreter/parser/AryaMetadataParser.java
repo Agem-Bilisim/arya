@@ -7,7 +7,6 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-import tr.com.agem.arya.interpreter.base.components.AryaMain;
 import tr.com.agem.arya.interpreter.component.AryaColumn;
 import tr.com.agem.arya.interpreter.component.AryaColumns;
 import tr.com.agem.arya.interpreter.component.AryaComboItem;
@@ -24,6 +23,7 @@ import tr.com.agem.arya.interpreter.component.menu.AryaMenu;
 import tr.com.agem.arya.interpreter.component.menu.AryaMenuItem;
 import tr.com.agem.arya.interpreter.component.menu.AryaMenuPopUp;
 import tr.com.agem.arya.interpreter.component.menu.IAryaMenu;
+import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.core.interpreter.IAryaComponent;
 
 public class AryaMetadataParser extends DefaultHandler {

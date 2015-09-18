@@ -1,4 +1,4 @@
-package tr.com.agem.arya.interpreter.base.components;
+package tr.com.agem.arya.interpreter.components.base;
 
 import org.zkoss.zul.Div;
 

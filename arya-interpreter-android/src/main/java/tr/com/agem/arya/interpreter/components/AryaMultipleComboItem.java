@@ -5,7 +5,7 @@ import android.widget.ArrayAdapter;
 
 import org.xml.sax.Attributes;
 
-import tr.com.agem.arya.interpreter.main.components.AryaWindow;
+import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
 
@@ -19,8 +19,8 @@ public class AryaMultipleComboItem extends View implements IAryaComponent {
 
     private String label;
 
-    public AryaMultipleComboItem(Attributes attributes, AryaWindow window) {
-        super(window.getContext());
+    public AryaMultipleComboItem(Attributes attributes, AryaMain main) {
+        super(main.getAryaWindow().getContext());
 
         if(AryaUtils.isNotEmpty(attributes)){
             this.componentId = attributes.getValue("id");
@@ -31,7 +31,7 @@ public class AryaMultipleComboItem extends View implements IAryaComponent {
             this.label=attributes.getValue("label");
         }
 
-        window.addView(this);
+        main.getAryaWindow().addView(this);
     }
 
     public String toString(){
