@@ -16,7 +16,7 @@ import tr.com.agem.arya.interpreter.script.ScriptHelper;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
 
-public class AryaMenuItem implements IAryaComponent,IAryaMenu, MenuItem {
+public class AryaMenuItem implements IAryaComponent,IAryaMenu, MenuItem {//TODO
 
 
     private String label;

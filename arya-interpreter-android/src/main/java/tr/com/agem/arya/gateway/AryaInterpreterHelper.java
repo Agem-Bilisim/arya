@@ -160,7 +160,7 @@ public class AryaInterpreterHelper {
                                         AryaListItem item = new AryaListItem(null,main);
                                         item.setComponentParent(getElementById("list", main));
 
-                                        for (Iterator<?> iterator = jsonObj.keySet().iterator(); iterator.hasNext();) {
+                                        for (Iterator<?> iterator = jsonObj.keySet().iterator(); iterator.hasNext();) {///TODO (volkan)
                                             String key = (String) iterator.next();
 
                                             if (AryaUtils.isNotEmpty(jsonObj.get(key).toString())&&AryaUtils.isNotEmpty(getElementById(key, main))){

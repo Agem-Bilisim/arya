@@ -66,42 +66,7 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 			e.printStackTrace();
 		}
 	}
-	
-	@AryaJsFunction
-	public void refresh() {
 
-        main.getAryaWindow().removeAllViews();
-
-        AryaRequest request = new AryaRequest();
-        request.setAction("master");
-        request.setRequestType(RequestTypes.VIEW_ONLY);
-
-        //request.setAction("genel.duyuru.list");
-        //request.setRequestType(RequestTypes.ALL);
-
-
-        WebServiceConnectionAsyncTask connThread = new WebServiceConnectionAsyncTask("http://192.168.1.106:8080/arya/rest/asya",request, main.getAryaWindow().getContext());
-
-        String responseStr = null;
-        try {
-            responseStr = connThread.execute().get();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }
-
-        if (responseStr != null) {
-            AryaResponse response = new AryaResponse();
-            response.fromXMLString(responseStr);
-
-
-			AryaInterpreterHelper.interpretResponse(response, main);
-
-        } else {
-            AlertController.setAndShowPrimerAlert(main.getAryaWindow().getContext(), "HATA!", "Sunucuyla Bağlantı Kurulamadı", "Tamam");
-        }
-	}
 
 	@AryaJsFunction
 	public void post(String action, String requestType, Object params, NativeFunction onSuccess, NativeFunction onFailure) {

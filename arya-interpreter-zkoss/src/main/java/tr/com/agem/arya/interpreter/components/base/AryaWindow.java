@@ -11,7 +11,6 @@ import tr.com.agem.core.interpreter.IAryaComponent;
 public class AryaWindow extends BaseController {
 
 	private static final long serialVersionUID = 8576119465618112119L;
-
 	private List<IAryaComponent> components;
 	private Div componentContainer;
 	
