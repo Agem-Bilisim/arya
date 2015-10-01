@@ -32,7 +32,18 @@ public class AryaCheckbox extends Checkbox implements IAryaComponent {
 			this.setId(attributes.getValue("id"));
 			this.setClass(attributes.getValue("class"));
 			this.setLabel(attributes.getValue("label"));
-			this.setHeight(attributes.getValue("height"));
+			/*if the dimension input format of .arya files does NOT contains the unit like -height="200px" */
+			
+			if(attributes.getValue("height") != null && attributes.getValue("height").contains("px"))
+				this.setHeight(attributes.getValue("height"));
+			else
+				this.setHeight(attributes.getValue("height")+"px");
+			
+			if(attributes.getValue("width")!=null && attributes.getValue("width").contains("px"))
+				this.setWidth(attributes.getValue("width"));
+			else
+				this.setWidth(attributes.getValue("width")+"px");
+
 
 			final String functionName = attributes.getValue("onClick");
 

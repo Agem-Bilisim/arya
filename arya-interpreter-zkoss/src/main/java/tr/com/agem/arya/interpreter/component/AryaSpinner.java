@@ -2,43 +2,35 @@ package tr.com.agem.arya.interpreter.component;
 
 import org.xml.sax.Attributes;
 import org.zkoss.zk.ui.Component;
-import org.zkoss.zul.Column;
+import org.zkoss.zul.Spinner;
 
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.core.interpreter.IAryaComponent;
-import tr.com.agem.core.utils.AryaUtils;
 
-public class AryaColumn extends Column implements IAryaComponent {
+public class AryaSpinner extends Spinner implements IAryaComponent{
 
-	private static final long serialVersionUID = -1829374522609555406L;
-
+	private static final long serialVersionUID = -4019284059182059962L;
+	/*
+	private static final long serialVersionUID = UUID.randomUUID(); 
+	Wouldn't it be more useful ?
+	*/
 	private String componentClassName;
 	private String componentId;
 	private String componentAttribute;
 	private String componentValue;
 
-	public AryaColumn(final AryaMain main, Attributes attributes) {
+	public AryaSpinner(final AryaMain main, Attributes attributes) {
 		super();
 
-		if (AryaUtils.isNotEmpty(attributes)){
-			this.componentId = attributes.getValue("id");
-			this.componentClassName = attributes.getValue("class");
-			this.componentValue = attributes.getValue("value");
-			this.componentAttribute = attributes.getValue("attribute");
-
-			this.setId(attributes.getValue("id"));
-			this.setClass(attributes.getValue("class"));
-			this.setLabel(attributes.getValue("label"));
-			/*if the dimension input format of .arya files does NOT contains the unit like -height="200px" */
-			
-			if(attributes.getValue("width")!=null && attributes.getValue("width").contains("px"))
-				this.setWidth(attributes.getValue("width"));
-			else
-				this.setWidth(attributes.getValue("width")+"px");
-
-			
-		}
+		this.componentId = attributes.getValue("id");
+		this.componentClassName = attributes.getValue("class");
+		this.componentValue = attributes.getValue("value");
+		this.componentAttribute = attributes.getValue("attribute");
 		
+		this.setId(attributes.getValue("id"));
+		this.setClass(attributes.getValue("class"));
+		this.setHeight(attributes.getValue("height"));
+
 	}
 
 	@Override

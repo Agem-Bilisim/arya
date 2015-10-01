@@ -4,61 +4,44 @@ import org.xml.sax.Attributes;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.EventListener;
-import org.zkoss.zul.Button;
+import org.zkoss.zul.Div;
+import org.zkoss.zul.Vlayout;
 
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.script.ScriptHelper;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
 
-public class AryaButton extends Button implements IAryaComponent {
+public class AryaVlayout extends Vlayout implements IAryaComponent {
 
-	private static final long serialVersionUID = -8101533101584382438L;
-
-
+	private static final long serialVersionUID = -1829374522609555406L;
+	private Div componentContainer; // works as a parent component
 	private String componentClassName;
 	private String componentId;
 	private String componentAttribute;
 	private String componentValue;
 
-	public AryaButton(final AryaMain main, Attributes attributes) {
-
+	public AryaVlayout(final AryaMain main, Attributes attributes) {
 		super();
 
-		if(AryaUtils.isNotEmpty(attributes)){
-			this.componentId = attributes.getValue("id");
-			this.componentClassName = attributes.getValue("class");
-			this.componentValue = attributes.getValue("value");
-			this.componentAttribute = attributes.getValue("attribute");
+		this.componentId = attributes.getValue("id");
+		this.componentClassName = attributes.getValue("class");
+		this.componentValue = attributes.getValue("value");
+		this.componentAttribute = attributes.getValue("attribute");
 
-			this.setId(attributes.getValue("id"));
-			this.setClass(attributes.getValue("class"));
-			this.setLabel(attributes.getValue("label"));
-			/*if the dimension input format of .arya files does NOT contains the unit like -height="200px" */
-			
-			if(attributes.getValue("height") != null && attributes.getValue("height").contains("px"))
-				this.setHeight(attributes.getValue("height"));
-			else
-				this.setHeight(attributes.getValue("height")+"px");
-			
-			if(attributes.getValue("width")!=null && attributes.getValue("width").contains("px"))
-				this.setWidth(attributes.getValue("width"));
-			else
-				this.setWidth(attributes.getValue("width")+"px");
-
-			
+		this.setId(attributes.getValue("id"));
+		this.setClass(attributes.getValue("class"));
+		this.setHeight(attributes.getValue("height"));
+		this.setWidth(attributes.getValue("width"));
+		if (AryaUtils.isNotEmpty(attributes.getValue("onClick"))) {
 			final String functionName = attributes.getValue("onClick");
-			
-			if (AryaUtils.isNotEmpty(functionName)) {
-				this.addEventListener("onClick", new EventListener<Event>() {
-					@Override
-					public void onEvent(Event event) throws Exception {
-						ScriptHelper.executeScript(functionName, null, main);
-					}
-				});
-			}
+			this.addEventListener("onClick", new EventListener<Event>() {
+				@Override
+				public void onEvent(Event event) throws Exception {
+					ScriptHelper.executeScript(functionName, null, main);
+				}
+			});
 		}
-		
 	}
 
 	@Override
@@ -75,7 +58,9 @@ public class AryaButton extends Button implements IAryaComponent {
 	public String getComponentClassName() {
 		return componentClassName;
 	}
-
+	public Div getComponentContainer() {
+		return componentContainer;
+	}
 	public void setComponentClassName(String componentClassName) {
 		this.componentClassName = componentClassName;
 	}
