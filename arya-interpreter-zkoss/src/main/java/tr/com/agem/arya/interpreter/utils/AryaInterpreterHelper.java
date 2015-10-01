@@ -20,6 +20,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
+import org.zkoss.zk.ui.Component;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -68,12 +69,18 @@ public class AryaInterpreterHelper {
 
 	public static void interpretResponse(AryaResponse response, AryaMain main) {
 
-		if (AryaUtils.isNotEmpty(response.getView())) {
-			// Remove previous components before adding new ones!
-			if (main.getAryaWindow().getComponentContainer() != null) { // TODO bu alan yönetilmeli neler kaldırılacak ekrandan
-				main.getAryaWindow().getComponentContainer().getChildren().clear();
+		if (AryaUtils.isNotEmpty(response.getView())) {// Remove previous components before adding new ones!
+			
+			if (AryaUtils.isNotEmpty(main.getComponentContainer())) { 
+
+				if(AryaUtils.isNotEmpty(main.getAryaWindow().getComponents())){
+					for (IAryaComponent c : main.getAryaWindow().getComponents()) {
+						main.getComponentContainer().removeChild((Component) c);
+					}
+				}
 			}
-			if (main.getAryaWindow().getComponents() != null) {
+			
+			if (AryaUtils.isNotEmpty(main.getAryaWindow().getComponents())) {
 				main.getAryaWindow().getComponents().clear();
 			}
 

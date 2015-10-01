@@ -2,25 +2,20 @@ package tr.com.agem.arya.interpreter.components.base;
 
 import org.zkoss.zul.Div;
 
-public class AryaMain {
+import tr.com.agem.arya.interpreter.utils.BaseController;
 
-	AryaWindow aryaWindow;
-	AryaNavBar aryaNavBar;
-	Div componentContainer;
+public class AryaMain extends BaseController {
 
-	public AryaMain() {
-	}
-
-	public AryaMain(AryaWindow aryaWindow, AryaNavBar aryaNavBar) {
-		this.aryaWindow = aryaWindow;
-		this.aryaNavBar = aryaNavBar;
-	}
+	private static final long serialVersionUID = 3024244510254500447L;
+	private AryaWindow aryaWindow;
+	private AryaNavBar aryaNavBar;
+	private Div componentContainer;
 
 	public AryaMain(Div componentContainer) {
-
+		super();
 		this.componentContainer = componentContainer;
-		this.aryaWindow = new AryaWindow(componentContainer);
-		this.aryaNavBar = new AryaNavBar(componentContainer);
+		this.aryaWindow = new AryaWindow();
+		this.aryaNavBar = new AryaNavBar();
 	}
 
 	public AryaWindow getAryaWindow() {

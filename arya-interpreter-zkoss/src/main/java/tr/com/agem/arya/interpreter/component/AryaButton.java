@@ -13,8 +13,9 @@ import tr.com.agem.core.utils.AryaUtils;
 
 public class AryaButton extends Button implements IAryaComponent {
 
-	private static final long serialVersionUID = 8878576351289066716L;
-	
+	private static final long serialVersionUID = -8101533101584382438L;
+
+
 	private String componentClassName;
 	private String componentId;
 	private String componentAttribute;

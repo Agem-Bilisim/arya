@@ -3,21 +3,14 @@ package tr.com.agem.arya.interpreter.components.base;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.zkoss.zul.Div;
-
-import tr.com.agem.arya.interpreter.utils.BaseController;
 import tr.com.agem.core.interpreter.IAryaComponent;
 
-public class AryaWindow extends BaseController {
+public class AryaWindow{
 
-	private static final long serialVersionUID = 8576119465618112119L;
 	private List<IAryaComponent> components;
-	private Div componentContainer;
 	
-	public AryaWindow(Div componentContainer) {
-		super();
+	public AryaWindow() {
 		components = new ArrayList<>();
-		this.componentContainer=componentContainer;
 	}
 	
 	public List<IAryaComponent> getComponents() {
@@ -27,14 +20,4 @@ public class AryaWindow extends BaseController {
 	public void setComponents(List<IAryaComponent> components) {
 		this.components = components;
 	}
-
-	public Div getComponentContainer() {
-		return componentContainer;
-	}
-
-
-	public void setComponentContainer(Div componentContainer) {
-		this.componentContainer = componentContainer;
-	}
-
 }
