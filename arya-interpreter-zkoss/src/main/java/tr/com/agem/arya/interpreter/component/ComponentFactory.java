@@ -69,7 +69,26 @@ public class ComponentFactory {
 			comp = new AryaMenuPopUp(main, attributes);
 		}else if ("menuitem".equalsIgnoreCase(tagName)) {
 			comp = new AryaMenuItem(main, attributes);
+		} else if ("spinner".equalsIgnoreCase(tagName)) {
+			comp = new AryaSpinner(main, attributes);
+		} else if ("radio".equalsIgnoreCase(tagName)) {
+			comp = new AryaRadio(main, attributes);
+		} else if ("timebox".equalsIgnoreCase(tagName)) {
+			comp = new AryaTimebox(main, attributes);
+		} else if ("decimalbox".equalsIgnoreCase(tagName)) {
+			comp = new AryaDecimalbox(main, attributes);
+		} else if ("doublebox".equalsIgnoreCase(tagName)) {
+			comp = new AryaDoublebox(main, attributes);
+		} else if ("doublespinner".equalsIgnoreCase(tagName)) {
+			comp = new AryaDoublespinner(main, attributes);
+		}else if ("slider".equalsIgnoreCase(tagName)) {
+			comp = new AryaSlider(main, attributes);
+		}else if ("hlayout".equalsIgnoreCase(tagName)) {
+			comp = new AryaHlayout(main, attributes);
+		}else if ("vlayout".equalsIgnoreCase(tagName)) {
+			comp = new AryaVlayout(main, attributes);
 		}
+		
 
 		return comp;
 	}
