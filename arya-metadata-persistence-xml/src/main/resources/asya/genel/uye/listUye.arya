@@ -26,5 +26,4 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 		</listbox>
 	</window>
 	<script>
-AgemTable.rowDblClick = function(id) {	AgemWM.addQueryString(Agem.json2Param({uyeIdParam: id, uyeId: id}));	AgemWM.link('#genelUyeSelect', {url: 'genel/uye/select.do', refresh:true});	Agem.message('Bilgiler okunuyor...');};	</script>
 </arya>

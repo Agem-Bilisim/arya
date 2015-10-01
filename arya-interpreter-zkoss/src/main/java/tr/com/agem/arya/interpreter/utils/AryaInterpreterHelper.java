@@ -56,8 +56,11 @@ public class AryaInterpreterHelper {
 			httpPost.setEntity(se);
 			HttpClient httpClient = HttpClientBuilder.create().build();
 			HttpResponse response = httpClient.execute(httpPost);
+			
+			//TODO AryaLoginFailedException reason ı göster
+			System.out.println(response.getStatusLine().getStatusCode());
+			
 			HttpEntity entity = response.getEntity();
-
 			String result = EntityUtils.toString(entity, "UTF-8");
 
 			return result;

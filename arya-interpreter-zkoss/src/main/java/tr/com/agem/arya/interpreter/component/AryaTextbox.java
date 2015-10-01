@@ -34,6 +34,10 @@ public class AryaTextbox extends Textbox implements IAryaComponent {
 			this.setText(attributes.getValue("value"));
 			this.setHeight(attributes.getValue("height"));
 			this.setWidth(attributes.getValue("width"));
+			
+			if(AryaUtils.isNotEmpty(attributes.getValue("type")))
+			this.setType(attributes.getValue("type"));
+			
 			final String functionName = attributes.getValue("onClick");
 			if (AryaUtils.isNotEmpty(functionName)) {
 				this.addEventListener("onClick", new EventListener<Event>() {

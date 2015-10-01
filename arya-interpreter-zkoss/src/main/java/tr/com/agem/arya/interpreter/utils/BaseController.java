@@ -34,10 +34,12 @@ public class BaseController extends GenericForwardComposer {
 		// Prepare initial request
 		AryaRequest request = new AryaRequest();
 		
-		request.setAction("master");
+		request.setAction("login");
 		request.setRequestType(RequestTypes.VIEW_ONLY);
 
 		String responseStr = AryaInterpreterHelper.callUrl(PropertyReader.property("gateway.base.url"), request);
+
+		
 		AryaResponse response = new AryaResponse();
 		response.fromXMLString(responseStr);
 		

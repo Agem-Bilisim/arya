@@ -15,7 +15,7 @@ public class ScriptHelper {
 
 	public static Object executeScript(String functionName, HashMap<Object, Object> params, AryaMain main) {
 
-		StringBuilder script = new StringBuilder();
+		StringBuilder script = new StringBuilder(); //TODO performansı arttırmak için; jsrun bir kere çağırılıp context.evaluateString tekrarlı çağırılmalı(volkan)
 		AryaScript scriptObj = getScriptComponent(main);
 
 		if (AryaUtils.isNotEmpty(scriptObj)) {

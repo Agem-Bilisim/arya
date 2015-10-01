@@ -1,0 +1,27 @@
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="aryaportal.org arya.xsd http://www.zkoss.org/2005/zul/zul.xsd">
+
+
+
+	<window>
+		<label id="lbl1" value="Username" />
+		<textbox id="u" />
+		<label id="lbl2" value="Password" />
+		<textbox id="p" type="password" />
+		<button id="btn2" label="Login" onClick="login()" />
+	</window>
+
+	<script>
+	
+		login = function(){
+		
+		var u ='admin';//getElementById('u').getText()+'';
+		var p ='a93m5466';//getElementById('p').getText()+'';
+	
+		post('login','LOGIN', {'username':u,'password':p});
+		}
+	
+	</script>
+
+
+</arya>

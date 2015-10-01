@@ -18,6 +18,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang.StringEscapeUtils;
+import org.springframework.mock.web.MockHttpServletRequest;
+import org.springframework.mock.web.MockHttpServletResponse;
+import org.springframework.mock.web.MockServletContext;
 
 import tr.com.agem.common.AgemActionMapping;
 import tr.com.agem.common.AgemConstant;
@@ -183,7 +186,10 @@ public class AryaJarAdaptor extends AryaApplicationAdaptor {
 	public IAryaAdaptorResponse processLogin(IAryaRequest request) {
 
 		initDBConnection();
-
+		
+		// TODO silineck
+		AryaThreadLocal.set(new MockHttpServletRequest(), new MockHttpServletResponse(), new MockServletContext());
+		
 		String username = (String) request.getParams().get("username");
 		String password = (String) request.getParams().get("password");
 
@@ -238,7 +244,9 @@ public class AryaJarAdaptor extends AryaApplicationAdaptor {
 
 		AryaAdaptorResponse response = new AryaAdaptorResponse();
 		response.setData(dataStr);
-
+		
+		UserContext.clear();
+		
 		return response;
 	}
 
@@ -277,19 +285,21 @@ public class AryaJarAdaptor extends AryaApplicationAdaptor {
 
 	private void initDBConnection() {
 		try {
-			final Connection conn = getDataSource().getConnection();
 			DBConnectionFactory.getInstance().setConnectionInterface(new DBConnectionInterface() {
 				@Override
 				public Connection getConnection() {
-					return conn;
+					try {
+						return getDataSource().getConnection();
+					} catch (SQLException e) {
+						e.printStackTrace();
+					}
+					return null;
 				}
 			});
 
 			BDBase.DBMS_INTERFACE = new PostgreSqlDBMS();
-			BDBase.DBMS_INTERFACE.init();
-
-		} catch (SQLException e) {
-			e.printStackTrace();
+			BDBase.DBMS_INTERFACE.init();			
+		} catch(Exception e) {
 		}
 	}
 

@@ -25,6 +25,7 @@ public class AryaJarMapper implements IAryaMapper {
 
 	// genel.kimlik.list ==> genel.listKimlik
 	private String findViewName(String action) {
+		
 		String[] split = action.split("\\.");
 		String[] prefix = new String[split.length-2];
 		for (int i = 0; i < prefix.length; i++) {
@@ -44,6 +45,7 @@ public class AryaJarMapper implements IAryaMapper {
 
 	// action: genel.kimlik.list ==> returns 'genel.kimlik.Kimlik'
 	private String findClassNamePrefix(String action) {
+
 		String clsNamePrefix = PropertyReader.property("package.name.prefix");
 		if (!clsNamePrefix.endsWith("\\."))
 			clsNamePrefix += ".";
