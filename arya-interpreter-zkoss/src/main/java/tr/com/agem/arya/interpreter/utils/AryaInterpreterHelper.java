@@ -11,6 +11,7 @@ import javax.xml.parsers.SAXParserFactory;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
+import org.apache.http.ParseException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
@@ -40,49 +41,59 @@ public class AryaInterpreterHelper {
 
 	private static final String MIME_TYPE = "application/json";
 
-	public static String callUrl(String url, AryaRequest request) {
+	private static HttpClient httpClient = HttpClientBuilder.create().build();
+
+	public static String callUrl(String url, AryaRequest request) throws AryaException {
 		return callUrl(url, request.toJSON());
 	}
 
 	// TODO should be run on a seperate thread!
-	public static String callUrl(String url, String request) {
+	public static String callUrl(String url, String request) throws AryaException {
+		
 		HttpPost httpPost = new HttpPost(url);
 		httpPost.setHeader("Content-Type", MIME_TYPE);
 		httpPost.setHeader("Accept", MIME_TYPE);
 
+		StringEntity se;
+		String result = null;
 		try {
+			se = new StringEntity(request);
 
-			StringEntity se = new StringEntity(request);
 			httpPost.setEntity(se);
-			HttpClient httpClient = HttpClientBuilder.create().build();
 			HttpResponse response = httpClient.execute(httpPost);
-			
-			//TODO AryaLoginFailedException reason ı göster
-			System.out.println(response.getStatusLine().getStatusCode());
-			
-			HttpEntity entity = response.getEntity();
-			String result = EntityUtils.toString(entity, "UTF-8");
+			// TODO AryaLoginFailedException reason ı göster
+			System.out.println(response.getStatusLine().getStatusCode() + "-"
+					+ response.getStatusLine().getReasonPhrase() + "-" + response.getStatusLine().getStatusCode());
 
-			return result;
-		} catch (Exception e) {
+			if (response.getStatusLine().getStatusCode() != 200) {
+				throw new AryaException("hooo");
+			}
+
+			HttpEntity entity = response.getEntity();
+			result = EntityUtils.toString(entity, "UTF-8");
+
+		} catch (ParseException | IOException e) {
 			e.printStackTrace();
-			return null;
 		}
+		return result;
+
 	}
 
 	public static void interpretResponse(AryaResponse response, AryaMain main) {
 
-		if (AryaUtils.isNotEmpty(response.getView())) {// Remove previous components before adding new ones!
-			
-			if (AryaUtils.isNotEmpty(main.getComponentContainer())) { 
+		if (AryaUtils.isNotEmpty(response.getView())) {// Remove previous
+														// components before
+														// adding new ones!
 
-				if(AryaUtils.isNotEmpty(main.getAryaWindow().getComponents())){
+			if (AryaUtils.isNotEmpty(main.getComponentContainer())) {
+
+				if (AryaUtils.isNotEmpty(main.getAryaWindow().getComponents())) {
 					for (IAryaComponent c : main.getAryaWindow().getComponents()) {
 						main.getComponentContainer().removeChild((Component) c);
 					}
 				}
 			}
-			
+
 			if (AryaUtils.isNotEmpty(main.getAryaWindow().getComponents())) {
 				main.getAryaWindow().getComponents().clear();
 			}
@@ -117,31 +128,37 @@ public class AryaInterpreterHelper {
 							for (int i = 0; i < jsonArray.length(); i++) {
 								JSONObject jsonObj = jsonArray.getJSONObject(i);
 
-								String whatYouWantToFill = "list";// TODO liste datası olup olmadığı anlaşılmalı
+								String whatYouWantToFill = "list";// TODO liste
+																	// datası
+																	// olup
+																	// olmadığı
+																	// anlaşılmalı
 
 								if ("list".equals(whatYouWantToFill)) {
 
 									AryaListItem item = new AryaListItem(main, null);
 									item.setComponentParent(getElementById("list", main));
-									
+
 									for (Iterator<?> iterator = jsonObj.keySet().iterator(); iterator.hasNext();) {
 										String key = (String) iterator.next();
-										
-										if (AryaUtils.isNotEmpty(jsonObj.get(key).toString())&&AryaUtils.isNotEmpty(getElementById(key, main))){
-											AryaParserAttributes attr = new AryaParserAttributes();	
-											attr.setValue("id", key+""+(i));
+
+										if (AryaUtils.isNotEmpty(jsonObj.get(key).toString())
+												&& AryaUtils.isNotEmpty(getElementById(key, main))) {
+											AryaParserAttributes attr = new AryaParserAttributes();
+											attr.setValue("id", key + "" + (i));
 											attr.setValue("label", jsonObj.get(key).toString());
 											AryaListCell cell = new AryaListCell(main, attr);
 											cell.setComponentParent(item);
 										}
 									}
-									
+
 								} else {
 									for (Iterator<?> iterator = jsonObj.keySet().iterator(); iterator.hasNext();) {
 										String key = (String) iterator.next();
 										IAryaComponent c = (IAryaComponent) getElementById(key, main);
-										
-										if (AryaUtils.isNotEmpty(jsonObj.get(key).toString())&& AryaUtils.isNotEmpty(c))
+
+										if (AryaUtils.isNotEmpty(jsonObj.get(key).toString())
+												&& AryaUtils.isNotEmpty(c))
 											c.setComponentValue(jsonObj.get(key).toString());
 									}
 
@@ -177,7 +194,11 @@ public class AryaInterpreterHelper {
 		}
 	}
 
-	public static IAryaComponent getElementById(String id, AryaMain main) { // only on window not menu
+	public static IAryaComponent getElementById(String id, AryaMain main) { // only
+																			// on
+																			// window
+																			// not
+																			// menu
 
 		IAryaComponent comp;
 

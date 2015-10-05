@@ -18,9 +18,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang.StringEscapeUtils;
-import org.springframework.mock.web.MockHttpServletRequest;
-import org.springframework.mock.web.MockHttpServletResponse;
-import org.springframework.mock.web.MockServletContext;
 
 import tr.com.agem.common.AgemActionMapping;
 import tr.com.agem.common.AgemConstant;
@@ -186,9 +183,6 @@ public class AryaJarAdaptor extends AryaApplicationAdaptor {
 	public IAryaAdaptorResponse processLogin(IAryaRequest request) {
 
 		initDBConnection();
-		
-		// TODO silineck
-		AryaThreadLocal.set(new MockHttpServletRequest(), new MockHttpServletResponse(), new MockServletContext());
 		
 		String username = (String) request.getParams().get("username");
 		String password = (String) request.getParams().get("password");

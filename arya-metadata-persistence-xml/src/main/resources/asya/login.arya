@@ -14,12 +14,13 @@
 	<script>
 	
 		login = function(){
-		
-		var u ='admin';//getElementById('u').getText()+'';
-		var p ='a93m5466';//getElementById('p').getText()+'';
-	
-		post('login','LOGIN', {'username':u,'password':p});
+			post('login','LOGIN', {'username':String(getElementById('u').getValue()),'password':String(getElementById('p').getValue())},s,f);
+			
 		}
+		
+		s = function(){ post('master','VIEW_ONLY',{});}
+		
+		f = function (){ print('fail olduk');}
 	
 	</script>
 
