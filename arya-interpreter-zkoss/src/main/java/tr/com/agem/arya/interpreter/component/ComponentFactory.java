@@ -105,6 +105,8 @@ public class ComponentFactory {
 			comp = new AryaVlayout(main, attributes);
 		}else if ("selectbox".equalsIgnoreCase(tagName)) {
 			comp = new AryaSelectbox(main, attributes);
+		}else if ("div".equalsIgnoreCase(tagName)) {
+			comp = new AryaDiv(main, attributes);
 		}
 
 		return comp;

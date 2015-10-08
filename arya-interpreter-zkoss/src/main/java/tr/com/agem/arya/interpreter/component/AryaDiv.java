@@ -4,43 +4,35 @@ import org.xml.sax.Attributes;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.EventListener;
-import org.zkoss.zul.Calendar;
+import org.zkoss.zul.Div;
 
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.script.ScriptHelper;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
 
-public class AryaCalendar extends Calendar implements IAryaComponent {
+public class AryaDiv extends Div implements IAryaComponent {
+
 	
-	private static final long serialVersionUID = -1487988311035638716L;
-	
+	private static final long serialVersionUID = 517882903274682453L;
+	private Div componentContainer; // works as a parent component
 	private String componentClassName;
 	private String componentId;
 	private String componentAttribute;
 	private String componentValue;
 
-	public AryaCalendar(final AryaMain main, Attributes attributes) {
-
+	public AryaDiv(final AryaMain main, Attributes attributes) {
 		super();
 
 		this.componentId = attributes.getValue("id");
 		this.componentClassName = attributes.getValue("class");
 		this.componentValue = attributes.getValue("value");
 		this.componentAttribute = attributes.getValue("attribute");
-		
+
 		this.setId(attributes.getValue("id"));
 		this.setClass(attributes.getValue("class"));
-		this.setHeight(attributes.getValue("height"));
-		this.setWidth(attributes.getValue("width"));
-		this.setWeekOfYear(false); // TODO will be fixed
-		this.componentId = attributes.getValue("id");
-		this.componentClassName = attributes.getValue("class");
-		this.componentValue = attributes.getValue("value");
-		this.componentAttribute = attributes.getValue("attribute");
 		if(attributes.getValue("visible") != null)
 		this.setVisible(Boolean.parseBoolean(attributes.getValue("visible")));
-		this.setTooltip(attributes.getValue("tooltip"));
 		this.setTooltiptext(attributes.getValue("tooltiptext"));
 		this.setDraggable(attributes.getValue("draggable"));
 		this.setDroppable(attributes.getValue("droppable"));
@@ -58,8 +50,8 @@ public class AryaCalendar extends Calendar implements IAryaComponent {
 		this.setAction(attributes.getValue("action"));
 		this.setHflex(attributes.getValue("hflex"));
 		this.setVflex(attributes.getValue("vflex"));
-		
-		
+
+
 		/*if the dimension input format of .arya files does NOT contains the unit like -height="200px" */
 		
 		if(attributes.getValue("height") != null && attributes.getValue("height").contains("px"))
@@ -72,8 +64,6 @@ public class AryaCalendar extends Calendar implements IAryaComponent {
 		else
 			this.setWidth(attributes.getValue("width")+"px");
 
-		
-		
 		
 		if (AryaUtils.isNotEmpty(attributes.getValue("onDrop"))) {
 			final String functionName = attributes.getValue("onDrop");
@@ -95,8 +85,6 @@ public class AryaCalendar extends Calendar implements IAryaComponent {
 			});
 		}
 		
-				
-		
 	}
 
 	@Override
@@ -113,7 +101,9 @@ public class AryaCalendar extends Calendar implements IAryaComponent {
 	public String getComponentClassName() {
 		return componentClassName;
 	}
-
+	public Div getComponentContainer() {
+		return componentContainer;
+	}
 	public void setComponentClassName(String componentClassName) {
 		this.componentClassName = componentClassName;
 	}

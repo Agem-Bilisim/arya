@@ -57,19 +57,9 @@ public class AryaListbox extends Listbox implements IAryaComponent {
 			this.setAction(attributes.getValue("action"));
 			this.setHflex(attributes.getValue("hflex"));
 			this.setVflex(attributes.getValue("vflex"));
-	
-			/*if the dimension input format of .arya files does NOT contains the unit like -height="200px" */
-			
-			if(attributes.getValue("height") != null && attributes.getValue("height").contains("px"))
+			//TODO unit checking will be fixed
 				this.setHeight(attributes.getValue("height"));
-			else
-				this.setHeight(attributes.getValue("height")+"px");
-			
-			if(attributes.getValue("width")!=null && attributes.getValue("width").contains("px"))
-				this.setWidth(attributes.getValue("width"));
-			else
-				this.setWidth(attributes.getValue("width")+"px");
-
+				this.setWidth(attributes.getValue("width"));	
 			
 		
 			if (AryaUtils.isNotEmpty(attributes.getValue("onDrop"))) {
