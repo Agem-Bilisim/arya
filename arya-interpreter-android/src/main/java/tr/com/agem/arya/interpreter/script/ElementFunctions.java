@@ -3,6 +3,9 @@ package tr.com.agem.arya.interpreter.script;
 import android.view.View;
 
 import java.io.IOException;
+import java.net.CookieHandler;
+import java.net.CookieManager;
+import java.net.CookiePolicy;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -81,13 +84,13 @@ public class ElementFunctions extends AnnotatedScriptableObject {
                 .append(action)
                 .append("\" }");
 
-        String result = AryaInterpreterHelper.callUrl("http://192.168.1.106:8080/arya/rest/asya", request.toString());
+        String result = AryaInterpreterHelper.callUrl("http://192.168.1.211:8080/arya/rest/asya", request.toString());
 
         logger.log(Level.FINE, "Post result: {0}", result);
 
 
         AryaResponse response = new AryaResponse();
-        response.fromXMLString(result);
+        response.fromXMLString(result);//TODO result check
 
 		AryaInterpreterHelper.interpretResponse(response, main);
 

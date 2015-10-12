@@ -4,14 +4,20 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.StringReader;
+import java.net.CookieHandler;
+import java.net.CookiePolicy;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import android.util.Log;
 import android.view.View;
+import android.webkit.CookieManager;
 import android.widget.ImageView;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -21,6 +27,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.springframework.util.StringUtils;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
@@ -32,6 +39,7 @@ import tr.com.agem.arya.R;
 import tr.com.agem.arya.interpreter.components.AryaListCell;
 import tr.com.agem.arya.interpreter.components.AryaListItem;
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
+import tr.com.agem.arya.interpreter.components.base.AryaWindow;
 import tr.com.agem.arya.interpreter.parser.AryaMetadataParser;
 import tr.com.agem.arya.interpreter.parser.AryaParserAttributes;
 import tr.com.agem.core.gateway.model.AryaRequest;
@@ -45,24 +53,43 @@ public class AryaInterpreterHelper {
     private static final String MIME_TYPE = "application/json";
     private static final String TAG = "AryaInterpreterHelper";
 
+    private static String jSessionId = null;
+
     public static String callUrl(String url, AryaRequest request) {
         return callUrl(url, request.toJSON());
     }
 
     public static String callUrl(String url, String request) {
         try {
+
             URL urlObj = new URL(url);
             HttpURLConnection urlConnection = (HttpURLConnection) urlObj.openConnection();
             urlConnection.setRequestMethod("POST");
             urlConnection.setRequestProperty("Content-Type", MIME_TYPE);
             urlConnection.setRequestProperty("Accept", MIME_TYPE);
-            urlConnection.setConnectTimeout(4000);
 
+            if (jSessionId != null)
+               urlConnection.setRequestProperty("Cookie", jSessionId);
+
+            urlConnection.setConnectTimeout(4000);
             urlConnection.setDoOutput(true);
+
+
             DataOutputStream writer = new DataOutputStream(urlConnection.getOutputStream());
             writer.writeBytes(request);
             writer.flush();
             writer.close();
+
+
+            Map<String, List<String>> hdrs = urlConnection.getHeaderFields();
+            Set<String> hdrKeys = hdrs.keySet();
+
+            if (hdrs != null) {
+                if (hdrs.get("Set-Cookie") != null) {
+                    String header = hdrs.get("Set-Cookie").get(0);
+                    jSessionId = header.substring(0, header.indexOf(";"));
+                }
+            }
 
             int responseCode = urlConnection.getResponseCode();
 
@@ -93,12 +120,16 @@ public class AryaInterpreterHelper {
 
     public static void interpretResponse(AryaResponse response, AryaMain main) {
 
-        if (main.getAryaWindow().getComponents() != null) {// TODO bu alan yönetilmeli neler kaldırılacak ekrandan
-            main.getAryaWindow().getComponents().clear();
+        if(AryaUtils.isNotEmpty(response.getView())) {
+
+            if (main.getAryaWindow().getComponents() != null) {// TODO bu alan yönetilmeli neler kaldırılacak ekrandan
+               main.getAryaWindow().getComponents().clear();
+
+            }
+
+            AryaInterpreterHelper.drawView(response.getView(), main);
         }
 
-        if(AryaUtils.isNotEmpty(response.getView()))
-            AryaInterpreterHelper.drawView(response.getView(), main);
         if(AryaUtils.isNotEmpty(response.getData()))
             AryaInterpreterHelper.populateView(response.getData(), main);
 

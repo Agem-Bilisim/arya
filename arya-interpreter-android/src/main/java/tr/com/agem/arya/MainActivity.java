@@ -5,9 +5,13 @@ import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.widget.LinearLayout;
 
+import java.net.CookieHandler;
+import java.net.CookieManager;
+import java.net.CookiePolicy;
 import java.util.concurrent.ExecutionException;
 
 import tr.com.agem.arya.gateway.AryaInterpreterHelper;
@@ -41,6 +45,8 @@ public class MainActivity extends ActionBarActivity {
         actionBar.setTitle("arya");
         actionBar.hide();
 
+
+
         refresh();
     }
 
@@ -65,14 +71,14 @@ public class MainActivity extends ActionBarActivity {
     public void refresh() {
         // Prepare initial request
         AryaRequest request = new AryaRequest();
-        request.setAction("master");
+        request.setAction("login");
         request.setRequestType(RequestTypes.VIEW_ONLY);
 
         //request.setAction("genel.duyuru.list");
         //request.setRequestType(RequestTypes.ALL);
 
 
-        WebServiceConnectionAsyncTask connThread = new WebServiceConnectionAsyncTask("http://192.168.1.106:8080/arya/rest/asya",request, getApplicationContext());
+        WebServiceConnectionAsyncTask connThread = new WebServiceConnectionAsyncTask("http://192.168.1.211:8080/arya/rest/asya",request, getApplicationContext());
 
         String responseStr = null;
         try {

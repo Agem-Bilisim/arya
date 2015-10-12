@@ -4,10 +4,11 @@ import android.widget.LinearLayout;
 
 import tr.com.agem.arya.MainActivity;
 
-public class AryaMain {
+public class AryaMain
+{
 
-    AryaWindow aryaWindow;
-    AryaNavBar aryaNavBar;
+    private AryaWindow aryaWindow;
+    private AryaNavBar aryaNavBar;
 
     public AryaMain() {
     }
@@ -32,12 +33,13 @@ public class AryaMain {
     }
 
     public AryaNavBar getAryaNavBar() {
+
         return aryaNavBar;
     }
 
     public void setAryaNavBar(AryaNavBar aryaNavBar) {
+
         this.aryaNavBar = aryaNavBar;
     }
-
 
 }

@@ -30,10 +30,13 @@ public class AryaMetadataParser extends DefaultHandler {
     public void startElement (String uri, String localName,String tagName, Attributes attributes){
 
         IAryaComponent comp = ComponentFactory.getComponent(tagName,main, attributes);
+
+        //comp.setComponentParent(currentComponent.empty());
         
         if (comp != null) {
 
             if(comp instanceof AryaComboItem || comp instanceof AryaMultipleComboItem || comp instanceof AryaListItem || comp instanceof AryaListCell|| comp instanceof AryaMenuItem ){
+
                 comp.setComponentParent(currentComponent.peek());
             }
             else {

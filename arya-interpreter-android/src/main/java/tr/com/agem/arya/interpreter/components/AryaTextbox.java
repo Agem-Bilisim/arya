@@ -57,8 +57,8 @@ public class AryaTextbox extends EditText implements IAryaComponent {
                 this.setText(value);
             }
             // Readonly
-            String readonly =attributes.getValue("readonly") ;
-            this.setEnabled(readonly != null && Boolean.parseBoolean(readonly));
+            //String readonly =attributes.getValue("readonly") ;
+            //this.setEnabled(readonly != null && Boolean.parseBoolean(readonly));
             // Max length
             String maxLength =attributes.getValue("maxlength");
             if (maxLength != null) {
@@ -153,7 +153,7 @@ public class AryaTextbox extends EditText implements IAryaComponent {
 
     @Override
     public String getComponentValue() {
-        return componentValue;
+        return this.getText().toString();
     }
 
     @Override
