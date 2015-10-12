@@ -1,5 +1,8 @@
 package tr.com.agem.arya.interpreter.parser;
 
+import android.view.View;
+import android.view.ViewGroup;
+
 import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;
 
@@ -9,6 +12,7 @@ import java.util.Stack;
 import tr.com.agem.arya.interpreter.components.AryaComboItem;
 import tr.com.agem.arya.interpreter.components.AryaListCell;
 import tr.com.agem.arya.interpreter.components.AryaListItem;
+import tr.com.agem.arya.interpreter.components.AryaRadio;
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.components.menu.AryaMenuItem;
 import tr.com.agem.arya.interpreter.components.AryaMultipleComboItem;
@@ -30,13 +34,11 @@ public class AryaMetadataParser extends DefaultHandler {
     public void startElement (String uri, String localName,String tagName, Attributes attributes){
 
         IAryaComponent comp = ComponentFactory.getComponent(tagName,main, attributes);
-
-        //comp.setComponentParent(currentComponent.empty());
         
         if (comp != null) {
 
-            if(comp instanceof AryaComboItem || comp instanceof AryaMultipleComboItem || comp instanceof AryaListItem || comp instanceof AryaListCell|| comp instanceof AryaMenuItem ){
-
+            if(currentComponent.size() > 0){
+                ((ViewGroup)((View)comp).getParent()).removeView((View)comp);
                 comp.setComponentParent(currentComponent.peek());
             }
             else {

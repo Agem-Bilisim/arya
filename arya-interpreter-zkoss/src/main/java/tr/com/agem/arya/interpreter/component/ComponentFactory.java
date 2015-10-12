@@ -103,6 +103,12 @@ public class ComponentFactory {
 			comp = new AryaHlayout(main, attributes);
 		}else if ("vlayout".equalsIgnoreCase(tagName)) {
 			comp = new AryaVlayout(main, attributes);
+		}else if ("progressmeter".equalsIgnoreCase(tagName)) {
+			comp = new AryaProgressmeter(main, attributes);
+		}else if ("selectbox".equalsIgnoreCase(tagName)) {
+			comp = new AryaSelectbox(main, attributes);
+		}else if ("div".equalsIgnoreCase(tagName)) {
+			comp = new AryaDiv(main, attributes);
 		}
 
 		return comp;

@@ -46,6 +46,14 @@ public class ComponentFactory {
             comp = new AryaMenuBar(attributes, main);
         }else if ("menu".equalsIgnoreCase(tagName)) {
             comp = new AryaMenuItem(attributes,main);
+        }else if ("progressmeter".equalsIgnoreCase(tagName)) {
+            comp = new AryaProgressmeter(attributes,main);
+        }else if ("calendar".equalsIgnoreCase(tagName)) {
+            comp = new AryaCalendar(attributes,main);
+        }else if ("radio".equalsIgnoreCase(tagName)) {
+            comp = new AryaRadio(attributes,main);
+        }else if ("radiogroup".equalsIgnoreCase(tagName)) {
+            comp = new AryaRadiogroup(attributes,main);
         }
 
         return comp;
