@@ -15,10 +15,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import android.content.Context;
+import android.graphics.Typeface;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.webkit.CookieManager;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -27,7 +32,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
+import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
@@ -36,8 +43,10 @@ import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
 import tr.com.agem.arya.R;
+import tr.com.agem.arya.interpreter.components.AryaLabel;
 import tr.com.agem.arya.interpreter.components.AryaListCell;
 import tr.com.agem.arya.interpreter.components.AryaListItem;
+import tr.com.agem.arya.interpreter.components.ComponentFactory;
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.components.base.AryaWindow;
 import tr.com.agem.arya.interpreter.parser.AryaMetadataParser;
@@ -123,7 +132,9 @@ public class AryaInterpreterHelper {
         if(AryaUtils.isNotEmpty(response.getView())) {
 
             if (main.getAryaWindow().getComponents() != null) {// TODO bu alan yönetilmeli neler kaldırılacak ekrandan
-               main.getAryaWindow().getComponents().clear();
+
+                while ((main.getAryaWindow().getChildCount()) != 1)
+                    main.getAryaWindow().removeView(main.getAryaWindow().getChildAt(1));
 
             }
 

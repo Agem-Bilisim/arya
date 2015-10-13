@@ -38,7 +38,8 @@ public class AryaMetadataParser extends DefaultHandler {
         if (comp != null) {
 
             if(currentComponent.size() > 0){
-                ((ViewGroup)((View)comp).getParent()).removeView((View)comp);
+
+                //((ViewGroup)((View)comp).getParent()).removeView((View)comp);  //hata
                 comp.setComponentParent(currentComponent.peek());
             }
             else {
