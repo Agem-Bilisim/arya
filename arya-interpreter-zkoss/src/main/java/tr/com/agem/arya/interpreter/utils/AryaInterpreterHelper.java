@@ -3,6 +3,7 @@ package tr.com.agem.arya.interpreter.utils;
 import java.io.IOException;
 import java.io.StringReader;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -28,7 +29,10 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import tr.com.agem.arya.interpreter.component.AryaListCell;
+import tr.com.agem.arya.interpreter.component.AryaListHead;
+import tr.com.agem.arya.interpreter.component.AryaListHeader;
 import tr.com.agem.arya.interpreter.component.AryaListItem;
+import tr.com.agem.arya.interpreter.component.AryaListbox;
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.parser.AryaMetadataParser;
 import tr.com.agem.arya.interpreter.parser.AryaParserAttributes;
@@ -138,20 +142,20 @@ public class AryaInterpreterHelper {
 
 									AryaListItem item = new AryaListItem(main, null);
 									item.setComponentParent(getElementById("list", main));
-
-									for (Iterator<?> iterator = jsonObj.keySet().iterator(); iterator.hasNext();) {
-										String key = (String) iterator.next();
-
-										if (AryaUtils.isNotEmpty(jsonObj.get(key).toString())
-												&& AryaUtils.isNotEmpty(getElementById(key, main))) {
-											AryaParserAttributes attr = new AryaParserAttributes();
-											attr.setValue("id", key + "" + (i));
-											attr.setValue("label", jsonObj.get(key).toString());
-											AryaListCell cell = new AryaListCell(main, attr);
-											cell.setComponentParent(item);
-										}
+									
+									AryaListbox lb = (AryaListbox) getElementById("list", main);
+									AryaListHead lh = (AryaListHead) lb.getChildren().get(0);
+									List<AryaListHeader> lhd = lh.getChildren();
+									
+									for (AryaListHeader aryaListHeader : lhd) {
+										
+										AryaParserAttributes attr = new AryaParserAttributes();
+										attr.setValue("id", aryaListHeader.getId() + "" + (i));
+										attr.setValue("label", jsonObj.get(aryaListHeader.getId()).toString());
+										AryaListCell cell = new AryaListCell(main, attr);
+										cell.setComponentParent(item);
 									}
-
+									
 								} else {
 									for (Iterator<?> iterator = jsonObj.keySet().iterator(); iterator.hasNext();) {
 										String key = (String) iterator.next();
