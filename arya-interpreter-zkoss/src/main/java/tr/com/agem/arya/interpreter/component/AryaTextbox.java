@@ -18,20 +18,16 @@ public class AryaTextbox extends Textbox implements IAryaComponent {
 	private static final long serialVersionUID = -9013728719463917434L;
 
 	private String componentClassName;
-	private String componentId;
 	private String componentAttribute;
-	private String componentValue;
 
 	public AryaTextbox(final AryaMain main, Attributes attributes) {
 		super();
 
 		if (AryaUtils.isNotEmpty(attributes)){
-			this.componentId = attributes.getValue("id");
+			this.setId(attributes.getValue("id"));
 			this.componentClassName = attributes.getValue("class");
-			this.componentValue = attributes.getValue("value");
 			this.componentAttribute = attributes.getValue("attribute");
 
-			this.setId(attributes.getValue("id"));
 			this.setClass(attributes.getValue("class"));
 			this.setValue(attributes.getValue("value"));
 			if(attributes.getValue("type") != null)
@@ -161,11 +157,11 @@ public class AryaTextbox extends Textbox implements IAryaComponent {
 	}
 
 	public String getComponentId() {
-		return componentId;
+		return this.getId();
 	}
 
 	public void setComponentId(String componentId) {
-		this.componentId = componentId;
+		this.setId(componentId);
 	}
 
 	public String getComponentAttribute() {
@@ -177,11 +173,11 @@ public class AryaTextbox extends Textbox implements IAryaComponent {
 	}
 
 	public String getComponentValue() {
-		return componentValue;
+		return this.getValue();
 	}
 
 	public void setComponentValue(String componentValue) {
-		this.componentValue = componentValue;
+		this.setValue(componentValue);
 	}
 
 }

@@ -16,20 +16,15 @@ public class AryaRadio extends Radio implements IAryaComponent {
 	private static final long serialVersionUID = -5132761258965447346L;
 
 	private String componentClassName;
-	private String componentId;
 	private String componentAttribute;
-	private String componentValue;
 
 	public AryaRadio(final AryaMain main, Attributes attributes) {
 		super();
-
-		this.componentId = attributes.getValue("id");
-		this.componentClassName = attributes.getValue("class");
-		this.componentValue = attributes.getValue("value");
-		this.componentAttribute = attributes.getValue("attribute");
-
 		
 		this.setId(attributes.getValue("id"));
+		this.componentClassName = attributes.getValue("class");
+		this.componentAttribute = attributes.getValue("attribute");
+
 		this.setClass(attributes.getValue("class"));
 		this.setLabel(attributes.getValue("label"));
 		if(attributes.getValue("visible") != null)
@@ -148,11 +143,11 @@ public class AryaRadio extends Radio implements IAryaComponent {
 	}
 
 	public String getComponentId() {
-		return componentId;
+		return this.getId();
 	}
 
 	public void setComponentId(String componentId) {
-		this.componentId = componentId;
+		this.setId(componentId);
 	}
 
 	public String getComponentAttribute() {
@@ -164,11 +159,18 @@ public class AryaRadio extends Radio implements IAryaComponent {
 	}
 
 	public String getComponentValue() {
-		return componentValue;
+		/*
+		 * There is no componentValue variable for this component.
+		 * This function was created for IAryaComponent interface.
+		 */
+		return null;
 	}
 
 	public void setComponentValue(String componentValue) {
-		this.componentValue = componentValue;
+		/*
+		 * There is no componentValue variable for this component.
+		 * This function was created for IAryaComponent interface.
+		 */
 	}
 
 }

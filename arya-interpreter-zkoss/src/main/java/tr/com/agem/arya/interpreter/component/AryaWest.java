@@ -16,17 +16,16 @@ public class AryaWest extends West implements IAryaComponent {
 	private static final long serialVersionUID = -207082899880288071L;
 	
 	private String componentClassName;
-	private String componentId;
 	private String componentAttribute;
-	private String componentValue;
 
 	public AryaWest(final AryaMain main, Attributes attributes) {
 
 		super();
-		this.componentId = attributes.getValue("id");
+		
+		this.setId(attributes.getValue("id"));
 		this.componentClassName = attributes.getValue("class");
-		this.componentValue = attributes.getValue("value");
 		this.componentAttribute = attributes.getValue("attribute");
+		
 		if(attributes.getValue("visible") != null)
 		this.setVisible(Boolean.parseBoolean(attributes.getValue("visible")));
 		this.setTooltiptext(attributes.getValue("tooltiptext"));
@@ -46,7 +45,6 @@ public class AryaWest extends West implements IAryaComponent {
 		this.setAction(attributes.getValue("action"));
 		this.setHflex(attributes.getValue("hflex"));
 		this.setVflex(attributes.getValue("vflex"));
-		this.setId(attributes.getValue("id"));
 		this.setTitle(attributes.getValue("title"));
 		this.setClass(attributes.getValue("class"));
 		this.setBorder(attributes.getValue("border"));
@@ -104,11 +102,11 @@ public class AryaWest extends West implements IAryaComponent {
 	}
 
 	public String getComponentId() {
-		return componentId;
+		return this.getId();
 	}
 
 	public void setComponentId(String componentId) {
-		this.componentId = componentId;
+		this.setId(componentId);
 	}
 
 	public String getComponentAttribute() {
@@ -120,11 +118,18 @@ public class AryaWest extends West implements IAryaComponent {
 	}
 
 	public String getComponentValue() {
-		return componentValue;
+		/*
+		 * There is no componentValue variable for this component.
+		 * This function was created for IAryaComponent interface.
+		 */
+		return null;
 	}
 
 	public void setComponentValue(String componentValue) {
-		this.componentValue = componentValue;
+		/*
+		 * There is no componentValue variable for this component.
+		 * This function was created for IAryaComponent interface.
+		 */
 	}
 
 }

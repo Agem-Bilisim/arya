@@ -14,19 +14,17 @@ import tr.com.agem.core.utils.AryaUtils;
 public class AryaSpinner extends Spinner implements IAryaComponent{
 
 	private static final long serialVersionUID = -4019284059182059962L;
-	/*
-	private static final long serialVersionUID = UUID.randomUUID(); 
-	Wouldn't it be more useful ?
-	*/
+
 	private String componentClassName;
-	private String componentId;
 	private String componentAttribute;
-	private String componentValue;
 
 	public AryaSpinner(final AryaMain main, Attributes attributes) {
 		super();
 		
 		this.setId(attributes.getValue("id"));
+		this.componentClassName = attributes.getValue("class");
+		this.componentAttribute = attributes.getValue("attribute");
+		
 		this.setClass(attributes.getValue("class"));
 		if(attributes.getValue("visible") != null)
 		this.setVisible(Boolean.parseBoolean(attributes.getValue("visible")));
@@ -151,11 +149,11 @@ public class AryaSpinner extends Spinner implements IAryaComponent{
 	}
 
 	public String getComponentId() {
-		return componentId;
+		return this.getId();
 	}
 
 	public void setComponentId(String componentId) {
-		this.componentId = componentId;
+		this.setId(componentId);
 	}
 
 	public String getComponentAttribute() {
@@ -167,11 +165,18 @@ public class AryaSpinner extends Spinner implements IAryaComponent{
 	}
 
 	public String getComponentValue() {
-		return componentValue;
+		/*
+		 * There is no componentValue variable for this component.
+		 * This function was created for IAryaComponent interface.
+		 */
+		return null;
 	}
 
 	public void setComponentValue(String componentValue) {
-		this.componentValue = componentValue;
+		/*
+		 * There is no componentValue variable for this component.
+		 * This function was created for IAryaComponent interface.
+		 */
 	}
 
 }

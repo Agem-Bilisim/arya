@@ -16,26 +16,21 @@ public class AryaProgressmeter extends Progressmeter implements IAryaComponent {
 	private static final long serialVersionUID = 532549011859946618L;
 	
 	private String componentClassName;
-	private String componentId;
 	private String componentAttribute;
-	private String componentValue;
 
 	public AryaProgressmeter(final AryaMain main, Attributes attributes) {
 
 		super();
 
 		if(AryaUtils.isNotEmpty(attributes)){
-			this.componentId = attributes.getValue("id");
-			this.componentClassName = attributes.getValue("class");
-			this.componentValue = attributes.getValue("value");
-
 			this.setId(attributes.getValue("id"));
-			this.setClass(attributes.getValue("class"));
-			
-			if(this.componentValue == null)
+			this.componentClassName = attributes.getValue("class");
+			if(attributes.getValue("value") == null)
 				this.setValue(0);
 			else
-				this.setValue(Integer.parseInt(this.componentValue));
+				this.setValue(Integer.parseInt(attributes.getValue("value")));
+			
+			this.setClass(attributes.getValue("class"));
 			
 			/*if the dimension input format of .arya files does NOT contains the unit like -height="200px" */
 			if(attributes.getValue("height") != null && attributes.getValue("height").contains("px"))
@@ -83,11 +78,11 @@ public class AryaProgressmeter extends Progressmeter implements IAryaComponent {
 	}
 
 	public String getComponentId() {
-		return componentId;
+		return this.getId();
 	}
 
 	public void setComponentId(String componentId) {
-		this.componentId = componentId;
+		this.setId(componentId);
 	}
 
 	public String getComponentAttribute() {
@@ -99,11 +94,11 @@ public class AryaProgressmeter extends Progressmeter implements IAryaComponent {
 	}
 
 	public String getComponentValue() {
-		return componentValue;
+		return String.valueOf(this.getValue());
 	}
 
 	public void setComponentValue(String componentValue) {
-		this.componentValue = componentValue;
+		this.setValue(Integer.parseInt(componentValue));
 	}
 
 }

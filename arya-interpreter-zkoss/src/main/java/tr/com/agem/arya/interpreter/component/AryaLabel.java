@@ -16,21 +16,17 @@ public class AryaLabel extends Label implements IAryaComponent {
 	private static final long serialVersionUID = 1507265134096459571L;
 
 	private String componentClassName;
-	private String componentId;
 	private String componentAttribute;
-	private String componentValue;
 
 	public AryaLabel(final AryaMain main, Attributes attributes) {
 		super();
 
 		if (AryaUtils.isNotEmpty(attributes)){
-			this.componentId = attributes.getValue("id");
+			this.setId(attributes.getValue("id"));
 			this.componentClassName = attributes.getValue("class");
-			this.componentValue = attributes.getValue("value");
 			this.componentAttribute = attributes.getValue("attribute");
 			
 			this.setValue(attributes.getValue("value"));
-			this.setId(attributes.getValue("id"));
 			this.setClass(attributes.getValue("class"));
 			if(attributes.getValue("visible") != null)
 			this.setVisible(Boolean.parseBoolean(attributes.getValue("visible")));
@@ -138,11 +134,11 @@ public class AryaLabel extends Label implements IAryaComponent {
 	}
 
 	public String getComponentId() {
-		return componentId;
+		return this.getId();
 	}
 
 	public void setComponentId(String componentId) {
-		this.componentId = componentId;
+		this.setId(componentId);
 	}
 
 	public String getComponentAttribute() {
@@ -154,11 +150,11 @@ public class AryaLabel extends Label implements IAryaComponent {
 	}
 
 	public String getComponentValue() {
-		return componentValue;
+		return this.getValue();
 	}
 
 	public void setComponentValue(String componentValue) {
-		this.componentValue = componentValue;
+		this.setValue(componentValue);
 	}
 
 }
