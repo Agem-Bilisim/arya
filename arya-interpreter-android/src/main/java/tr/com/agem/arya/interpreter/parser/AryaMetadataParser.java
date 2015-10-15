@@ -14,6 +14,7 @@ import tr.com.agem.arya.interpreter.components.AryaListCell;
 import tr.com.agem.arya.interpreter.components.AryaListItem;
 import tr.com.agem.arya.interpreter.components.AryaRadio;
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
+import tr.com.agem.arya.interpreter.components.base.AryaWindow;
 import tr.com.agem.arya.interpreter.components.menu.AryaMenuItem;
 import tr.com.agem.arya.interpreter.components.AryaMultipleComboItem;
 import tr.com.agem.arya.interpreter.components.AryaScript;
@@ -37,10 +38,12 @@ public class AryaMetadataParser extends DefaultHandler {
         
         if (comp != null) {
 
-            if(currentComponent.size() > 0){
+            if(currentComponent.size() > 0 ){ //TODO this part should be improved for a fixed parent-child hierarchy, please comment if you've come across a bug.
+                if( !(comp instanceof IAryaMenu) && (((View) comp).getParent())!=null ) {
+                    ((ViewGroup) ((View) comp).getParent()).removeView((View) comp);
+                }
+                    comp.setComponentParent(currentComponent.peek());
 
-                ((ViewGroup)((View)comp).getParent()).removeView((View)comp);  //hata
-                comp.setComponentParent(currentComponent.peek());
             }
             else {
                 if(comp instanceof IAryaMenu)
