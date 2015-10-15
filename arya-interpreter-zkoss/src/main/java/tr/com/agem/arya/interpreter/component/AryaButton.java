@@ -17,22 +17,18 @@ public class AryaButton extends Button implements IAryaComponent {
 
 
 	private String componentClassName;
-	private String componentId;
 	private String componentAttribute;
-	private String componentValue;
 
 	public AryaButton(final AryaMain main, Attributes attributes) {
 
 		super();
 
 		if(AryaUtils.isNotEmpty(attributes)){
-			this.componentId = attributes.getValue("id");
+			this.setId(attributes.getValue("id"));
 			this.componentClassName = attributes.getValue("class");
-			this.componentValue = attributes.getValue("value");
 			this.componentAttribute = attributes.getValue("attribute");
 			
 			
-			this.setId(attributes.getValue("id"));
 			this.setClass(attributes.getValue("class"));
 			this.setLabel(attributes.getValue("label"));
 			if(attributes.getValue("visible") != null)
@@ -153,11 +149,11 @@ public class AryaButton extends Button implements IAryaComponent {
 	}
 
 	public String getComponentId() {
-		return componentId;
+		return this.getId();
 	}
 
 	public void setComponentId(String componentId) {
-		this.componentId = componentId;
+		this.setId(componentId);
 	}
 
 	public String getComponentAttribute() {
@@ -169,11 +165,12 @@ public class AryaButton extends Button implements IAryaComponent {
 	}
 
 	public String getComponentValue() {
-		return componentValue;
+		return this.getLabel();
 	}
 
 	public void setComponentValue(String componentValue) {
-		this.componentValue = componentValue;
+		this.setLabel(componentValue);
 	}
+
 
 }
