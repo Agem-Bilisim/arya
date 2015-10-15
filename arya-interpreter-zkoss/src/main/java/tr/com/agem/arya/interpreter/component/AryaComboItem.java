@@ -18,17 +18,17 @@ public class AryaComboItem extends Comboitem implements IAryaComponent {
 	public AryaComboItem(AryaMain main, Attributes attributes) {
 		super();
 
-		if (AryaUtils.isNotEmpty(attributes)){
+		if (AryaUtils.isNotEmpty(attributes)) {
 			this.setId(attributes.getValue("id"));
 			this.componentClassName = attributes.getValue("class");
 			this.setValue(attributes.getValue("value"));
 			this.componentAttribute = attributes.getValue("attribute");
-			
+
 			this.setClass(attributes.getValue("class"));
 			this.setLabel(attributes.getValue("label"));
 		}
 	}
-	
+
 	@Override
 	public void setComponentParent(Object parent) {
 		this.setParent((Component) parent);
@@ -39,34 +39,42 @@ public class AryaComboItem extends Comboitem implements IAryaComponent {
 		return null;
 	}
 
+	@Override
 	public String getComponentClassName() {
 		return componentClassName;
 	}
 
+	@Override
 	public void setComponentClassName(String componentClassName) {
 		this.componentClassName = componentClassName;
 	}
 
+	@Override
 	public String getComponentId() {
 		return this.getId();
 	}
 
+	@Override
 	public void setComponentId(String componentId) {
 		this.setId(componentId);
 	}
 
+	@Override
 	public String getComponentAttribute() {
 		return componentAttribute;
 	}
 
+	@Override
 	public void setComponentAttribute(String componentAttribute) {
 		this.componentAttribute = componentAttribute;
 	}
 
+	@Override
 	public String getComponentValue() {
 		return this.getValue();
 	}
 
+	@Override
 	public void setComponentValue(String componentValue) {
 		this.setValue(componentValue);
 	}

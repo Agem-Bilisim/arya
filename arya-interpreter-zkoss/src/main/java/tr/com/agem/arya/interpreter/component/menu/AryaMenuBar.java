@@ -11,62 +11,68 @@ import tr.com.agem.arya.interpreter.script.ScriptHelper;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
 
-public class AryaMenuBar extends Menubar implements IAryaComponent,IAryaMenu {
+public class AryaMenuBar extends Menubar implements IAryaComponent, IAryaMenu {
 
 	private static final long serialVersionUID = 8605492923881165335L;
 	private String componentClassName;
 	private String componentId;
 	private String componentAttribute;
 	private String componentValue;
-	
+
 	public AryaMenuBar(final AryaMain main, Attributes attributes) {
 
 		super();
 
-		if(AryaUtils.isNotEmpty(attributes)){
+		if (AryaUtils.isNotEmpty(attributes)) {
 			this.componentId = attributes.getValue("id");
 			this.componentClassName = attributes.getValue("class");
 			this.componentValue = attributes.getValue("value");
 			this.componentAttribute = attributes.getValue("attribute");
-			
-			
+
 			this.setId(attributes.getValue("id"));
 			this.setClass(attributes.getValue("class"));
-			if(attributes.getValue("visible") != null)
-			this.setVisible(Boolean.parseBoolean(attributes.getValue("visible")));
+			if (attributes.getValue("visible") != null) {
+				this.setVisible(Boolean.parseBoolean(attributes.getValue("visible")));
+			}
 			this.setTooltip(attributes.getValue("tooltip"));
 			this.setTooltiptext(attributes.getValue("tooltiptext"));
 			this.setDraggable(attributes.getValue("draggable"));
 			this.setDroppable(attributes.getValue("droppable"));
-			if(attributes.getValue("focus") != null)
-			this.setFocus(Boolean.parseBoolean(attributes.getValue("focus")));
+			if (attributes.getValue("focus") != null) {
+				this.setFocus(Boolean.parseBoolean(attributes.getValue("focus")));
+			}
 			this.setStyle(attributes.getValue("style"));
 			this.setZclass(attributes.getValue("zlass"));
 			this.setSclass(attributes.getValue("sclass"));
 			this.setLeft(attributes.getValue("left"));
 			this.setTop(attributes.getValue("top"));
-			if(attributes.getValue("zindex") != null)
-			this.setZIndex(Integer.parseInt(attributes.getValue("zindex")));
-			if(attributes.getValue("renderdefer") != null)
-			this.setRenderdefer(Integer.parseInt(attributes.getValue("renderdefer")));
+			if (attributes.getValue("zindex") != null) {
+				this.setZIndex(Integer.parseInt(attributes.getValue("zindex")));
+			}
+			if (attributes.getValue("renderdefer") != null) {
+				this.setRenderdefer(Integer.parseInt(attributes.getValue("renderdefer")));
+			}
 			this.setAction(attributes.getValue("action"));
 			this.setHflex(attributes.getValue("hflex"));
 			this.setVflex(attributes.getValue("vflex"));
-			
-			
-			/*if the dimension input format of .arya files does NOT contains the unit like -height="200px" */
-			
-			if(attributes.getValue("height") != null && attributes.getValue("height").contains("px"))
-				this.setHeight(attributes.getValue("height"));
-			else
-				this.setHeight(attributes.getValue("height")+"px");
-			
-			if(attributes.getValue("width")!=null && attributes.getValue("width").contains("px"))
-				this.setWidth(attributes.getValue("width"));
-			else
-				this.setWidth(attributes.getValue("width")+"px");
 
-			
+			/*
+			 * if the dimension input format of .arya files does NOT contains
+			 * the unit like -height="200px"
+			 */
+
+			if ((attributes.getValue("height") != null) && attributes.getValue("height").contains("px")) {
+				this.setHeight(attributes.getValue("height"));
+			} else {
+				this.setHeight(attributes.getValue("height") + "px");
+			}
+
+			if ((attributes.getValue("width") != null) && attributes.getValue("width").contains("px")) {
+				this.setWidth(attributes.getValue("width"));
+			} else {
+				this.setWidth(attributes.getValue("width") + "px");
+			}
+
 			if (AryaUtils.isNotEmpty(attributes.getValue("onDrop"))) {
 				final String functionName = attributes.getValue("onDrop");
 				this.addEventListener("onDrop", new EventListener<Event>() {
@@ -76,7 +82,7 @@ public class AryaMenuBar extends Menubar implements IAryaComponent,IAryaMenu {
 					}
 				});
 			}
-			
+
 			if (AryaUtils.isNotEmpty(attributes.getValue("onCreate"))) {
 				final String functionName = attributes.getValue("onCreate");
 				this.addEventListener("onCreate", new EventListener<Event>() {
@@ -86,45 +92,51 @@ public class AryaMenuBar extends Menubar implements IAryaComponent,IAryaMenu {
 					}
 				});
 			}
-		
-		
-		
-	}
+
+		}
 	}
 
 	@Override
 	public void setComponentParent(Object parent) {
 		this.setParent((Component) parent);
 	}
-	
+
+	@Override
 	public String getComponentClassName() {
 		return componentClassName;
 	}
 
+	@Override
 	public void setComponentClassName(String componentClassName) {
 		this.componentClassName = componentClassName;
 	}
 
+	@Override
 	public String getComponentId() {
 		return componentId;
 	}
 
+	@Override
 	public void setComponentId(String componentId) {
 		this.componentId = componentId;
 	}
 
+	@Override
 	public String getComponentAttribute() {
 		return componentAttribute;
 	}
 
+	@Override
 	public void setComponentAttribute(String componentAttribute) {
 		this.componentAttribute = componentAttribute;
 	}
 
+	@Override
 	public String getComponentValue() {
 		return componentValue;
 	}
 
+	@Override
 	public void setComponentValue(String componentValue) {
 		this.componentValue = componentValue;
 	}
@@ -134,8 +146,5 @@ public class AryaMenuBar extends Menubar implements IAryaComponent,IAryaMenu {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-
-
 
 }

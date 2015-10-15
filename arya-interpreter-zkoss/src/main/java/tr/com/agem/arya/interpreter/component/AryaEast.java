@@ -14,7 +14,7 @@ import tr.com.agem.core.utils.AryaUtils;
 public class AryaEast extends East implements IAryaComponent {
 
 	private static final long serialVersionUID = 7309647849391249288L;
-	
+
 	private String componentClassName;
 	private String componentAttribute;
 
@@ -24,40 +24,47 @@ public class AryaEast extends East implements IAryaComponent {
 		this.setId(attributes.getValue("id"));
 		this.componentClassName = attributes.getValue("class");
 		this.componentAttribute = attributes.getValue("attribute");
-		
-		if(attributes.getValue("visible") != null)
-		this.setVisible(Boolean.parseBoolean(attributes.getValue("visible")));
+
+		if (attributes.getValue("visible") != null) {
+			this.setVisible(Boolean.parseBoolean(attributes.getValue("visible")));
+		}
 		this.setTooltiptext(attributes.getValue("tooltiptext"));
 		this.setDraggable(attributes.getValue("draggable"));
 		this.setDroppable(attributes.getValue("droppable"));
-		if(attributes.getValue("focus") != null)
-		this.setFocus(Boolean.parseBoolean(attributes.getValue("focus")));
+		if (attributes.getValue("focus") != null) {
+			this.setFocus(Boolean.parseBoolean(attributes.getValue("focus")));
+		}
 		this.setStyle(attributes.getValue("style"));
 		this.setZclass(attributes.getValue("zlass"));
 		this.setSclass(attributes.getValue("sclass"));
 		this.setLeft(attributes.getValue("left"));
 		this.setTop(attributes.getValue("top"));
-		if(attributes.getValue("zindex") != null)
-		this.setZIndex(Integer.parseInt(attributes.getValue("zindex")));
-		if(attributes.getValue("renderdefer") != null)
-		this.setRenderdefer(Integer.parseInt(attributes.getValue("renderdefer")));
+		if (attributes.getValue("zindex") != null) {
+			this.setZIndex(Integer.parseInt(attributes.getValue("zindex")));
+		}
+		if (attributes.getValue("renderdefer") != null) {
+			this.setRenderdefer(Integer.parseInt(attributes.getValue("renderdefer")));
+		}
 		this.setAction(attributes.getValue("action"));
 		this.setHflex(attributes.getValue("hflex"));
 		this.setVflex(attributes.getValue("vflex"));
 		this.setTitle(attributes.getValue("title"));
 		this.setClass(attributes.getValue("class"));
 		this.setBorder(attributes.getValue("border"));
-		if(attributes.getValue("size").contains("%"))
+		if (attributes.getValue("size").contains("%")) {
 			this.setSize(attributes.getValue("size"));
-		else
+		} else {
 			this.setSize(attributes.getValue("size") + "%");
-		if(attributes.getValue("maxsize") != null)
+		}
+		if (attributes.getValue("maxsize") != null) {
 			this.setMaxsize(Integer.parseInt(attributes.getValue("maxsize")));
-		if(attributes.getValue("collapsible") != null)
+		}
+		if (attributes.getValue("collapsible") != null) {
 			this.setCollapsible(Boolean.parseBoolean(attributes.getValue("collapsible")));
-		if(attributes.getValue("splittable") != null)
+		}
+		if (attributes.getValue("splittable") != null) {
 			this.setSplittable(Boolean.parseBoolean(attributes.getValue("splittable")));
-
+		}
 
 		if (AryaUtils.isNotEmpty(attributes.getValue("onDrop"))) {
 			final String functionName = attributes.getValue("onDrop");
@@ -68,7 +75,7 @@ public class AryaEast extends East implements IAryaComponent {
 				}
 			});
 		}
-		
+
 		if (AryaUtils.isNotEmpty(attributes.getValue("onCreate"))) {
 			final String functionName = attributes.getValue("onCreate");
 			this.addEventListener("onCreate", new EventListener<Event>() {
@@ -91,42 +98,50 @@ public class AryaEast extends East implements IAryaComponent {
 		return null;
 	}
 
+	@Override
 	public String getComponentClassName() {
 		return componentClassName;
 	}
 
+	@Override
 	public void setComponentClassName(String componentClassName) {
 		this.componentClassName = componentClassName;
 	}
 
+	@Override
 	public String getComponentId() {
 		return this.getId();
 	}
 
+	@Override
 	public void setComponentId(String componentId) {
 		this.setId(componentId);
 	}
 
+	@Override
 	public String getComponentAttribute() {
 		return componentAttribute;
 	}
 
+	@Override
 	public void setComponentAttribute(String componentAttribute) {
 		this.componentAttribute = componentAttribute;
 	}
 
+	@Override
 	public String getComponentValue() {
 		/*
-		 * There is no componentValue variable for this component.
-		 * This function was created for IAryaComponent interface.
+		 * There is no componentValue variable for this component. This function
+		 * was created for IAryaComponent interface.
 		 */
 		return null;
 	}
 
+	@Override
 	public void setComponentValue(String componentValue) {
 		/*
-		 * There is no componentValue variable for this component.
-		 * This function was created for IAryaComponent interface.
+		 * There is no componentValue variable for this component. This function
+		 * was created for IAryaComponent interface.
 		 */
 	}
 

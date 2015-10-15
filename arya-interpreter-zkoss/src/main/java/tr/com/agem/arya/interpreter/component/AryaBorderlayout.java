@@ -24,7 +24,7 @@ public class AryaBorderlayout extends Borderlayout implements IAryaComponent {
 		this.setId(attributes.getValue("id"));
 		this.componentClassName = attributes.getValue("class");
 		this.componentAttribute = attributes.getValue("attribute");
-		
+
 		if (attributes.getValue("visible") != null) {
 			this.setVisible(Boolean.parseBoolean(attributes.getValue("visible")));
 		}
@@ -61,15 +61,15 @@ public class AryaBorderlayout extends Borderlayout implements IAryaComponent {
 		 * unit like -height="200px"
 		 */
 
-		if (attributes.getValue("height") != null && attributes.getValue("height").contains("px")) {
+		if ((attributes.getValue("height") != null) && attributes.getValue("height").contains("px")) {
 			this.setHeight(attributes.getValue("height"));
-		}else {
+		} else {
 			this.setHeight(attributes.getValue("height") + "px");
 		}
 
-		if (attributes.getValue("width") != null && attributes.getValue("width").contains("px")){
+		if ((attributes.getValue("width") != null) && attributes.getValue("width").contains("px")) {
 			this.setWidth(attributes.getValue("width"));
-		}else {
+		} else {
 			this.setWidth(attributes.getValue("width") + "px");
 		}
 
@@ -105,42 +105,50 @@ public class AryaBorderlayout extends Borderlayout implements IAryaComponent {
 		return null;
 	}
 
+	@Override
 	public String getComponentClassName() {
 		return componentClassName;
 	}
 
+	@Override
 	public void setComponentClassName(String componentClassName) {
 		this.componentClassName = componentClassName;
 	}
 
+	@Override
 	public String getComponentId() {
 		return this.getId();
 	}
 
+	@Override
 	public void setComponentId(String componentId) {
 		this.setId(componentId);
 	}
 
+	@Override
 	public String getComponentAttribute() {
 		return componentAttribute;
 	}
 
+	@Override
 	public void setComponentAttribute(String componentAttribute) {
 		this.componentAttribute = componentAttribute;
 	}
 
+	@Override
 	public String getComponentValue() {
 		/*
-		 * There is no componentValue variable for this component.
-		 * This function was created for IAryaComponent interface.
+		 * There is no componentValue variable for this component. This function
+		 * was created for IAryaComponent interface.
 		 */
 		return null;
 	}
 
+	@Override
 	public void setComponentValue(String componentValue) {
 		/*
-		 * There is no componentValue variable for this component.
-		 * This function was created for IAryaComponent interface.
+		 * There is no componentValue variable for this component. This function
+		 * was created for IAryaComponent interface.
 		 */
 	}
 

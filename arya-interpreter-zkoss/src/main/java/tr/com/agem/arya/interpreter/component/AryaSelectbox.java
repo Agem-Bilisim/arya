@@ -4,7 +4,6 @@ import org.xml.sax.Attributes;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.EventListener;
-import org.zkoss.zul.Button;
 import org.zkoss.zul.Selectbox;
 
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
@@ -14,7 +13,6 @@ import tr.com.agem.core.utils.AryaUtils;
 
 public class AryaSelectbox extends Selectbox implements IAryaComponent {
 
-
 	private static final long serialVersionUID = 2051047315627309416L;
 	private String componentClassName;
 	private String componentAttribute;
@@ -23,11 +21,11 @@ public class AryaSelectbox extends Selectbox implements IAryaComponent {
 
 		super();
 
-		if(AryaUtils.isNotEmpty(attributes)){
+		if (AryaUtils.isNotEmpty(attributes)) {
 			this.setId(attributes.getValue("id"));
 			this.componentClassName = attributes.getValue("class");
 			this.componentAttribute = attributes.getValue("attribute");
-	
+
 			this.setClass(attributes.getValue("class"));
 			this.setVisible(Boolean.parseBoolean(attributes.getValue("visible")));
 			this.setDisabled(Boolean.parseBoolean(attributes.getValue("disabled")));
@@ -35,22 +33,24 @@ public class AryaSelectbox extends Selectbox implements IAryaComponent {
 			this.setDraggable(attributes.getValue("draggable"));
 			this.setDroppable(attributes.getValue("droppable"));
 			this.setFocus(Boolean.parseBoolean(attributes.getValue("focus")));
-			
-			/*if the dimension input format of .arya files does NOT contains the unit like -height="200px" */
-			
-			if(attributes.getValue("height") != null && attributes.getValue("height").contains("px"))
-				this.setHeight(attributes.getValue("height"));
-			else
-				this.setHeight(attributes.getValue("height")+"px");
-			
-			if(attributes.getValue("width")!=null && attributes.getValue("width").contains("px"))
-				this.setWidth(attributes.getValue("width"));
-			else
-				this.setWidth(attributes.getValue("width")+"px");
 
-			
-		
-			
+			/*
+			 * if the dimension input format of .arya files does NOT contains
+			 * the unit like -height="200px"
+			 */
+
+			if ((attributes.getValue("height") != null) && attributes.getValue("height").contains("px")) {
+				this.setHeight(attributes.getValue("height"));
+			} else {
+				this.setHeight(attributes.getValue("height") + "px");
+			}
+
+			if ((attributes.getValue("width") != null) && attributes.getValue("width").contains("px")) {
+				this.setWidth(attributes.getValue("width"));
+			} else {
+				this.setWidth(attributes.getValue("width") + "px");
+			}
+
 			if (AryaUtils.isNotEmpty(attributes.getValue("onDrop"))) {
 				final String functionName = attributes.getValue("onDrop");
 				this.addEventListener("onDrop", new EventListener<Event>() {
@@ -60,7 +60,7 @@ public class AryaSelectbox extends Selectbox implements IAryaComponent {
 					}
 				});
 			}
-			
+
 			if (AryaUtils.isNotEmpty(attributes.getValue("onCreate"))) {
 				final String functionName = attributes.getValue("onCreate");
 				this.addEventListener("onCreate", new EventListener<Event>() {
@@ -70,14 +70,9 @@ public class AryaSelectbox extends Selectbox implements IAryaComponent {
 					}
 				});
 			}
-			
-			
-			
-			
-			
-			
+
 		}
-		
+
 	}
 
 	@Override
@@ -91,42 +86,50 @@ public class AryaSelectbox extends Selectbox implements IAryaComponent {
 		return null;
 	}
 
+	@Override
 	public String getComponentClassName() {
 		return componentClassName;
 	}
 
+	@Override
 	public void setComponentClassName(String componentClassName) {
 		this.componentClassName = componentClassName;
 	}
 
+	@Override
 	public String getComponentId() {
 		return this.getId();
 	}
 
+	@Override
 	public void setComponentId(String componentId) {
 		this.setId(componentId);
 	}
 
+	@Override
 	public String getComponentAttribute() {
 		return componentAttribute;
 	}
 
+	@Override
 	public void setComponentAttribute(String componentAttribute) {
 		this.componentAttribute = componentAttribute;
 	}
 
+	@Override
 	public String getComponentValue() {
 		/*
-		 * There is no componentValue variable for this component.
-		 * This function was created for IAryaComponent interface.
+		 * There is no componentValue variable for this component. This function
+		 * was created for IAryaComponent interface.
 		 */
 		return null;
 	}
 
+	@Override
 	public void setComponentValue(String componentValue) {
 		/*
-		 * There is no componentValue variable for this component.
-		 * This function was created for IAryaComponent interface.
+		 * There is no componentValue variable for this component. This function
+		 * was created for IAryaComponent interface.
 		 */
 	}
 

@@ -24,7 +24,7 @@ public class AryaScript extends Script implements IAryaComponent {
 			this.srcList = Arrays.asList(sources.split(";"));
 		}
 	}
-	
+
 	@Override
 	public void setComponentParent(Object parent) {
 	}

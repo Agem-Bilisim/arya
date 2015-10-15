@@ -59,32 +59,30 @@ public class ComponentFactory {
 			comp = new AryaRows(main, attributes);
 		} else if ("row".equalsIgnoreCase(tagName)) {
 			comp = new AryaRow(main, attributes);
-		}
-		
-		else if ("menubar".equalsIgnoreCase(tagName)) {
+		} else if ("menubar".equalsIgnoreCase(tagName)) {
 			comp = new AryaMenuBar(main, attributes);
 		} else if ("menu".equalsIgnoreCase(tagName)) {
 			comp = new AryaMenu(main, attributes);
-		}else if ("menupopup".equalsIgnoreCase(tagName)) {
+		} else if ("menupopup".equalsIgnoreCase(tagName)) {
 			comp = new AryaMenuPopUp(main, attributes);
-		}else if ("menuitem".equalsIgnoreCase(tagName)) {
+		} else if ("menuitem".equalsIgnoreCase(tagName)) {
 			comp = new AryaMenuItem(main, attributes);
-		}else if ("calendar".equalsIgnoreCase(tagName)) {
-		        comp = new AryaCalendar(main, attributes);
+		} else if ("calendar".equalsIgnoreCase(tagName)) {
+			comp = new AryaCalendar(main, attributes);
 		} else if ("radiogroup".equalsIgnoreCase(tagName)) {
-		        comp = new AryaRadiogroup(main, attributes);
+			comp = new AryaRadiogroup(main, attributes);
 		} else if ("borderlayout".equalsIgnoreCase(tagName)) {
-		        comp = new AryaBorderlayout(main, attributes);
+			comp = new AryaBorderlayout(main, attributes);
 		} else if ("west".equalsIgnoreCase(tagName)) {
-		        comp = new AryaWest(main, attributes);
+			comp = new AryaWest(main, attributes);
 		} else if ("north".equalsIgnoreCase(tagName)) {
-		        comp = new AryaNorth(main, attributes);
+			comp = new AryaNorth(main, attributes);
 		} else if ("east".equalsIgnoreCase(tagName)) {
-		        comp = new AryaEast(main, attributes);
+			comp = new AryaEast(main, attributes);
 		} else if ("south".equalsIgnoreCase(tagName)) {
-		        comp = new AryaSouth(main, attributes);
+			comp = new AryaSouth(main, attributes);
 		} else if ("center".equalsIgnoreCase(tagName)) {
-		        comp = new AryaCenter(main, attributes);
+			comp = new AryaCenter(main, attributes);
 		} else if ("spinner".equalsIgnoreCase(tagName)) {
 			comp = new AryaSpinner(main, attributes);
 		} else if ("radio".equalsIgnoreCase(tagName)) {
@@ -97,19 +95,19 @@ public class ComponentFactory {
 			comp = new AryaDoublebox(main, attributes);
 		} else if ("doublespinner".equalsIgnoreCase(tagName)) {
 			comp = new AryaDoublespinner(main, attributes);
-		}else if ("slider".equalsIgnoreCase(tagName)) {
+		} else if ("slider".equalsIgnoreCase(tagName)) {
 			comp = new AryaSlider(main, attributes);
-		}else if ("hlayout".equalsIgnoreCase(tagName)) {
+		} else if ("hlayout".equalsIgnoreCase(tagName)) {
 			comp = new AryaHlayout(main, attributes);
-		}else if ("vlayout".equalsIgnoreCase(tagName)) {
+		} else if ("vlayout".equalsIgnoreCase(tagName)) {
 			comp = new AryaVlayout(main, attributes);
-		}else if ("progressmeter".equalsIgnoreCase(tagName)) {
+		} else if ("progressmeter".equalsIgnoreCase(tagName)) {
 			comp = new AryaProgressmeter(main, attributes);
-		}else if ("selectbox".equalsIgnoreCase(tagName)) {
+		} else if ("selectbox".equalsIgnoreCase(tagName)) {
 			comp = new AryaSelectbox(main, attributes);
-		}else if ("div".equalsIgnoreCase(tagName)) {
+		} else if ("div".equalsIgnoreCase(tagName)) {
 			comp = new AryaDiv(main, attributes);
-		}
+		} 
 
 		return comp;
 	}

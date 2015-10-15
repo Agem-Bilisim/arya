@@ -14,7 +14,7 @@ import tr.com.agem.core.utils.AryaUtils;
 public class AryaProgressmeter extends Progressmeter implements IAryaComponent {
 
 	private static final long serialVersionUID = 532549011859946618L;
-	
+
 	private String componentClassName;
 	private String componentAttribute;
 
@@ -22,30 +22,35 @@ public class AryaProgressmeter extends Progressmeter implements IAryaComponent {
 
 		super();
 
-		if(AryaUtils.isNotEmpty(attributes)){
+		if (AryaUtils.isNotEmpty(attributes)) {
 			this.setId(attributes.getValue("id"));
 			this.componentClassName = attributes.getValue("class");
-			if(attributes.getValue("value") == null)
+			if (attributes.getValue("value") == null) {
 				this.setValue(0);
-			else
+			} else {
 				this.setValue(Integer.parseInt(attributes.getValue("value")));
-			
-			this.setClass(attributes.getValue("class"));
-			
-			/*if the dimension input format of .arya files does NOT contains the unit like -height="200px" */
-			if(attributes.getValue("height") != null && attributes.getValue("height").contains("px"))
-				this.setHeight(attributes.getValue("height"));
-			else
-				this.setHeight(attributes.getValue("height")+"px");
-			
-			if(attributes.getValue("width")!=null && attributes.getValue("width").contains("px"))
-				this.setWidth(attributes.getValue("width"));
-			else
-				this.setWidth(attributes.getValue("width")+"px");
+			}
 
-			
+			this.setClass(attributes.getValue("class"));
+
+			/*
+			 * if the dimension input format of .arya files does NOT contains
+			 * the unit like -height="200px"
+			 */
+			if ((attributes.getValue("height") != null) && attributes.getValue("height").contains("px")) {
+				this.setHeight(attributes.getValue("height"));
+			} else {
+				this.setHeight(attributes.getValue("height") + "px");
+			}
+
+			if ((attributes.getValue("width") != null) && attributes.getValue("width").contains("px")) {
+				this.setWidth(attributes.getValue("width"));
+			} else {
+				this.setWidth(attributes.getValue("width") + "px");
+			}
+
 			final String functionName = attributes.getValue("onClick");
-			
+
 			if (AryaUtils.isNotEmpty(functionName)) {
 				this.addEventListener("onClick", new EventListener<Event>() {
 					@Override
@@ -55,7 +60,7 @@ public class AryaProgressmeter extends Progressmeter implements IAryaComponent {
 				});
 			}
 		}
-		
+
 	}
 
 	@Override
@@ -69,34 +74,42 @@ public class AryaProgressmeter extends Progressmeter implements IAryaComponent {
 		return null;
 	}
 
+	@Override
 	public String getComponentClassName() {
 		return componentClassName;
 	}
 
+	@Override
 	public void setComponentClassName(String componentClassName) {
 		this.componentClassName = componentClassName;
 	}
 
+	@Override
 	public String getComponentId() {
 		return this.getId();
 	}
 
+	@Override
 	public void setComponentId(String componentId) {
 		this.setId(componentId);
 	}
 
+	@Override
 	public String getComponentAttribute() {
 		return componentAttribute;
 	}
 
+	@Override
 	public void setComponentAttribute(String componentAttribute) {
 		this.componentAttribute = componentAttribute;
 	}
 
+	@Override
 	public String getComponentValue() {
 		return String.valueOf(this.getValue());
 	}
 
+	@Override
 	public void setComponentValue(String componentValue) {
 		this.setValue(Integer.parseInt(componentValue));
 	}

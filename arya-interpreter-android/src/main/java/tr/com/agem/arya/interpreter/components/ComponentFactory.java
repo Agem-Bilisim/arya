@@ -54,6 +54,10 @@ public class ComponentFactory {
             comp = new AryaRadio(attributes,main);
         }else if ("radiogroup".equalsIgnoreCase(tagName)) {
             comp = new AryaRadiogroup(attributes,main);
+        }else if ("vlayout".equalsIgnoreCase(tagName)) {
+            comp = new AryaVlayout(attributes,main);
+        }else if ("hlayout".equalsIgnoreCase(tagName)) {
+            comp = new AryaHlayout(attributes,main);
         }
 
         return comp;
