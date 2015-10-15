@@ -39,14 +39,12 @@ public class AryaMetadataParser extends DefaultHandler {
 
             if(currentComponent.size() > 0){
 
-                //((ViewGroup)((View)comp).getParent()).removeView((View)comp);  //hata
+                ((ViewGroup)((View)comp).getParent()).removeView((View)comp);  //hata
                 comp.setComponentParent(currentComponent.peek());
             }
             else {
                 if(comp instanceof IAryaMenu)
                     comp.setComponentParent(main.getAryaNavBar());
-                else
-                    comp.setComponentParent(main.getAryaWindow());
             }
 
             currentComponent.push(comp);

@@ -53,8 +53,7 @@ public class AryaRadio extends RadioButton implements IAryaComponent {
 
     @Override
     public void setComponentParent(Object o) {
-        AryaRadiogroup rg = (AryaRadiogroup) o;
-        rg.addView(this);
+        ((ViewGroup)o).addView(this);
     }
 
     public String getComponentId() { return componentId; }

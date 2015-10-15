@@ -2,11 +2,14 @@ package tr.com.agem.arya;
 
 import android.app.AlertDialog;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.StrictMode;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import java.util.concurrent.ExecutionException;
 
@@ -36,6 +39,21 @@ public class MainActivity extends ActionBarActivity {
 
         setContentView(R.layout.activity_main);
         mainLayout = (LinearLayout) findViewById(R.id.scrollViewContentLayout);
+
+        final SwipeRefreshLayout mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_view);
+        mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        mSwipeRefreshLayout.setRefreshing(false);
+                        refresh();	//TODO I just called refresh() function for simplicity, It should be implemented with more appropriate post function.
+                    }
+                }, 1000);
+            }
+        });
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("arya");
@@ -68,7 +86,7 @@ public class MainActivity extends ActionBarActivity {
         request.setAction("login");
         request.setRequestType(RequestTypes.VIEW_ONLY);
 
-        WebServiceConnectionAsyncTask connThread = new WebServiceConnectionAsyncTask("http://192.168.1.106:8080/arya/rest/asya",request, getApplicationContext());
+        WebServiceConnectionAsyncTask connThread = new WebServiceConnectionAsyncTask("http://192.168.1.38:8080/arya/rest/asya",request, getApplicationContext());
 
         String responseStr = null;
         try {
