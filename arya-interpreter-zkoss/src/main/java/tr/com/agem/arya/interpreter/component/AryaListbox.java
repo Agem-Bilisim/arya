@@ -1,10 +1,14 @@
 package tr.com.agem.arya.interpreter.component;
 
+
+import java.util.Set;
+
 import org.xml.sax.Attributes;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.EventListener;
 import org.zkoss.zul.Listbox;
+import org.zkoss.zul.Listitem;
 
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.script.ScriptHelper;
@@ -28,6 +32,7 @@ public class AryaListbox extends Listbox implements IAryaComponent {
 			this.componentClassName = attributes.getValue("class");
 			this.componentValue = attributes.getValue("value");
 			this.componentAttribute = attributes.getValue("attribute");
+			
 
 			this.setId(attributes.getValue("id"));
 			this.setClass(attributes.getValue("class"));
@@ -35,6 +40,13 @@ public class AryaListbox extends Listbox implements IAryaComponent {
 			this.setVisible(Boolean.parseBoolean(attributes.getValue("visible")));
 			if(attributes.getValue("disabled") != null)
 			this.setDisabled(Boolean.parseBoolean(attributes.getValue("disabled")));
+			
+			if(attributes.getValue("selectedItem") != null) {
+				Listitem listItem = new Listitem(attributes.getValue("selectedItem"));
+				this.setSelectedItem(listItem); 		
+			}
+			
+			
 			if(attributes.getValue("maxlength") != null)
 			this.setMaxlength(Integer.parseInt(attributes.getValue("maxlength")));
 			if(attributes.getValue("tabindex") != null)
@@ -82,7 +94,15 @@ public class AryaListbox extends Listbox implements IAryaComponent {
 				});
 			}
 			
-		
+			if (AryaUtils.isNotEmpty(attributes.getValue("onSelect"))) {
+				final String functionName = attributes.getValue("onSelect");
+				this.addEventListener("onSelect", new EventListener<Event>() {
+					@Override
+					public void onEvent(Event event) throws Exception {
+						ScriptHelper.executeScript(functionName, null, main);
+					}
+				});
+			}
 			
 			}
 		
@@ -130,5 +150,6 @@ public class AryaListbox extends Listbox implements IAryaComponent {
 	public void setComponentValue(String componentValue) {
 		this.componentValue = componentValue;
 	}
+	
 	
 }
