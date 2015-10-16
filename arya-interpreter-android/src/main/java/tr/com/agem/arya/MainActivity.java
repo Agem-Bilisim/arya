@@ -18,6 +18,7 @@ import tr.com.agem.arya.gateway.AryaInterpreterHelper;
 import tr.com.agem.arya.gateway.WebServiceConnectionAsyncTask;
 import tr.com.agem.arya.interpreter.AlertController;
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
+import tr.com.agem.arya.interpreter.script.ElementFunctions;
 import tr.com.agem.core.gateway.model.AryaRequest;
 import tr.com.agem.core.gateway.model.AryaResponse;
 import tr.com.agem.core.gateway.model.RequestTypes;
@@ -84,8 +85,17 @@ public class MainActivity extends ActionBarActivity {
     public void refresh(View v) {
         // Prepare initial request
         AryaRequest request = new AryaRequest();
-        request.setAction("login");
-        request.setRequestType(RequestTypes.VIEW_ONLY);
+
+        if(AryaInterpreterHelper.getjSessionId() == null || ElementFunctions.getLastPage() == null) {
+
+            request.setAction("login");
+            request.setRequestType(RequestTypes.VIEW_ONLY);
+        }
+        else {
+            request.setAction(ElementFunctions.getLastPage());
+            request.setRequestType(RequestTypes.valueOf(ElementFunctions.getReqType()));
+        }
+
 
         WebServiceConnectionAsyncTask connThread = new WebServiceConnectionAsyncTask("http://192.168.1.206:8080/arya/rest/asya",request, getApplicationContext());
 

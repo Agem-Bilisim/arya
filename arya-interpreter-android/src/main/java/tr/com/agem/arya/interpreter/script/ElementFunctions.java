@@ -40,6 +40,9 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 	private Scriptable scope;
 	private AryaMain main;
 
+	private static String lastPage;
+	private static String reqType;
+
 	public ElementFunctions(Context context, Scriptable scope,AryaMain main) {
 		this.context = context;
 		this.scope = scope;
@@ -84,7 +87,10 @@ public class ElementFunctions extends AnnotatedScriptableObject {
                 .append(action)
                 .append("\" }");
 
-        String result = AryaInterpreterHelper.callUrl("http://192.168.1.211:8080/arya/rest/asya", request.toString());
+		lastPage = action;
+		reqType = requestType;
+
+        String result = AryaInterpreterHelper.callUrl("http://192.168.1.206:8080/arya/rest/asya", request.toString());
 
         logger.log(Level.FINE, "Post result: {0}", result);
 
@@ -175,6 +181,22 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 		if (strSerialize.length() > 0)
 			return "{" + strSerialize.substring(1, strSerialize.length()) + "}";
 		return "{}";
+	}
+
+	public static String getLastPage() {
+		return lastPage;
+	}
+
+	public static void setLastPage(String lastPage) {
+		ElementFunctions.lastPage = lastPage;
+	}
+
+	public static String getReqType() {
+		return reqType;
+	}
+
+	public static void setReqType(String reqType) {
+		ElementFunctions.reqType = reqType;
 	}
 	
 }

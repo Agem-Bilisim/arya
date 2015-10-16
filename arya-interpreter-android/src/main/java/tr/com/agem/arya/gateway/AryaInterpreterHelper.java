@@ -262,4 +262,12 @@ public class AryaInterpreterHelper {
         return null;
     }
 
+    public static String getjSessionId() {
+        return jSessionId;
+    }
+
+    public static void setjSessionId(String jSessionId) {
+        AryaInterpreterHelper.jSessionId = jSessionId;
+    }
+
 }
