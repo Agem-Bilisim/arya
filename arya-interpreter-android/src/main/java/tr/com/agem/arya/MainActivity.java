@@ -8,6 +8,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -49,7 +50,7 @@ public class MainActivity extends ActionBarActivity {
                     @Override
                     public void run() {
                         mSwipeRefreshLayout.setRefreshing(false);
-                        refresh();	//TODO I just called refresh() function for simplicity, It should be implemented with more appropriate post function.
+                        refresh(mainLayout);	//TODO I just called refresh() function for simplicity, It should be implemented with more appropriate post function.
                     }
                 }, 1000);
             }
@@ -59,7 +60,7 @@ public class MainActivity extends ActionBarActivity {
         actionBar.setTitle("arya");
         actionBar.hide();
 
-        refresh();
+        refresh(mainLayout);
     }
 
     @Override
@@ -80,13 +81,13 @@ public class MainActivity extends ActionBarActivity {
         return true;
     }
 
-    public void refresh() {
+    public void refresh(View v) {
         // Prepare initial request
         AryaRequest request = new AryaRequest();
         request.setAction("login");
         request.setRequestType(RequestTypes.VIEW_ONLY);
 
-        WebServiceConnectionAsyncTask connThread = new WebServiceConnectionAsyncTask("http://192.168.1.38:8080/arya/rest/asya",request, getApplicationContext());
+        WebServiceConnectionAsyncTask connThread = new WebServiceConnectionAsyncTask("http://192.168.1.206:8080/arya/rest/asya",request, getApplicationContext());
 
         String responseStr = null;
         try {
