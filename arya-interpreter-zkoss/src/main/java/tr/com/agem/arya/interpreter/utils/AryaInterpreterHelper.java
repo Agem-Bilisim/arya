@@ -2,6 +2,8 @@ package tr.com.agem.arya.interpreter.utils;
 
 import java.io.IOException;
 import java.io.StringReader;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -141,6 +143,7 @@ public class AryaInterpreterHelper {
 								if ("list".equals(whatYouWantToFill)) {
 
 									AryaListItem item = new AryaListItem(main, null);
+									item.setValue(jsonObj);
 									item.setComponentParent(getElementById("list", main));
 									
 									AryaListbox lb = (AryaListbox) getElementById("list", main);
@@ -153,7 +156,7 @@ public class AryaInterpreterHelper {
 										attr.setValue("id", aryaListHeader.getId() + "" + (i));
 										attr.setValue("label", jsonObj.get(aryaListHeader.getId()).toString());
 										AryaListCell cell = new AryaListCell(main, attr);
-										cell.setComponentParent(item);
+										cell.setComponentParent(item);									
 									}
 									
 								} else {
