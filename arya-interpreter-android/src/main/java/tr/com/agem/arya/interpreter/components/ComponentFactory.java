@@ -16,7 +16,7 @@ public class ComponentFactory {
 
         if ("label".equalsIgnoreCase(tagName)) {
             comp = new AryaLabel(attributes, main);
-        } else if (("textbox").equalsIgnoreCase(tagName)|| "intbox".equalsIgnoreCase(tagName)||"doublebox".equalsIgnoreCase(tagName)||"longbox".equalsIgnoreCase(tagName)) {
+        } else if (("textbox").equalsIgnoreCase(tagName)|| "intbox".equalsIgnoreCase(tagName)||"doublebox".equalsIgnoreCase(tagName)||"longbox".equalsIgnoreCase(tagName)||"decimalbox".equalsIgnoreCase(tagName)||"timebox".equalsIgnoreCase(tagName)) {
             comp = new AryaTextbox(attributes, main,tagName);
         }else if ("checkbox".equalsIgnoreCase(tagName)) {
             comp = new AryaCheckbox(attributes, main);
@@ -54,6 +54,8 @@ public class ComponentFactory {
             comp = new AryaRadio(attributes,main);
         }else if ("radiogroup".equalsIgnoreCase(tagName)) {
             comp = new AryaRadiogroup(attributes,main);
+        }else if ("slider".equalsIgnoreCase(tagName)) {
+            comp = new AryaSlider(attributes, main);
         }else if ("vlayout".equalsIgnoreCase(tagName)) {
             comp = new AryaVlayout(attributes,main);
         }else if ("hlayout".equalsIgnoreCase(tagName)) {

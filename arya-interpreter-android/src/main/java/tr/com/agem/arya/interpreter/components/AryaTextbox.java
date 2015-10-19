@@ -97,10 +97,12 @@ public class AryaTextbox extends EditText implements IAryaComponent {
                 this.setVerticalScrollBarEnabled(true);
             }
 
-            if("doublebox".equalsIgnoreCase(tag)){
+            if("doublebox".equalsIgnoreCase(tag) | "decimalbox".equalsIgnoreCase(tag)){
                 this.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
             }else if("intbox".equalsIgnoreCase(tag)||"longbox".equalsIgnoreCase(tag)){
                 this.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_VARIATION_NORMAL);
+            }else if("timebox".equalsIgnoreCase(tag)) {
+                this.setInputType(InputType.TYPE_DATETIME_VARIATION_TIME | InputType.TYPE_CLASS_DATETIME);
             }
 
         }
