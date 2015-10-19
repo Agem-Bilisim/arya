@@ -24,6 +24,9 @@ public class AryaSlider extends Slider implements IAryaComponent {
 		this.setId(attributes.getValue("id"));
 		this.componentClassName = attributes.getValue("class");
 		this.componentAttribute = attributes.getValue("attribute");
+		if(attributes.getValue("value") != null){
+			this.setCurpos(Integer.parseInt(attributes.getValue("value")));
+		}
 
 		this.setClass(attributes.getValue("class"));
 		if (attributes.getValue("visible") != null) {
@@ -188,19 +191,12 @@ public class AryaSlider extends Slider implements IAryaComponent {
 
 	@Override
 	public String getComponentValue() {
-		/*
-		 * There is no componentValue variable for this component. This function
-		 * was created for IAryaComponent interface.
-		 */
-		return null;
+		return String.valueOf(this.getCurpos());
 	}
 
 	@Override
 	public void setComponentValue(String componentValue) {
-		/*
-		 * There is no componentValue variable for this component. This function
-		 * was created for IAryaComponent interface.
-		 */
+		this.setCurpos(Integer.parseInt(componentValue));
 	}
 
 }
