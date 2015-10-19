@@ -2,7 +2,7 @@
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listKimlikWindow">
-		<listbox id="list" mold="paging" pagesize="10">
+		<listbox id="list" pagesize="5" mold="paging" onSelect="select()">
 			<listhead>
 				<listheader label="Kisi Id" id="kisiId" />			
 				<listheader label="Baba Adi" id="babaAdi" />
@@ -11,7 +11,24 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 				<listheader label="Dogum Tarihi" id="dogumTarihi" />
 			</listhead>
 		</listbox>
+		<grid>
+			<rows>
+				<row>
+					<textbox id="textId"/>
+					<textbox id="textBabaAdi"/>
+					<textbox id="textAnaAdi"/>
+					<textbox id="textDogumYeri"/>
+					<datebox id="textDogumTarihi"/>
+				</row>
+			</rows>
+		</grid>
 	</window>
 	<script>
-</script>
+	  
+		select = function(){
+		
+			renderSelectedItem('list', ['textId', 'textBabaAdi', 'textAnaAdi', 'textDogumYeri', 'textDogumTarihi'], ['kisiId', 'no', 'anaAdi', 'dogumYeri', 'dogumTarihi']);
+		
+		};
+	</script>
 </arya>

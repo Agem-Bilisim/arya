@@ -1,14 +1,18 @@
 package tr.com.agem.arya.interpreter.component;
 
+import java.util.Map;
+
 import org.xml.sax.Attributes;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.EventListener;
+import org.zkoss.zul.Label;
 import org.zkoss.zul.Listbox;
 import org.zkoss.zul.Listitem;
 
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.script.ScriptHelper;
+import tr.com.agem.arya.interpreter.utils.AryaInterpreterHelper;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
 
@@ -18,7 +22,7 @@ public class AryaListbox extends Listbox implements IAryaComponent {
 
 	private String componentClassName;
 	private String componentAttribute;
-
+	
 	public AryaListbox(final AryaMain main, Attributes attributes) {
 		super();
 
@@ -35,10 +39,10 @@ public class AryaListbox extends Listbox implements IAryaComponent {
 				this.setDisabled(Boolean.parseBoolean(attributes.getValue("disabled")));
 			}
 
-			if (attributes.getValue("selectedItem") != null) {
+			/*if (attributes.getValue("selectedItem") != null) {
 				Listitem listItem = new Listitem(attributes.getValue("selectedItem"));
 				this.setSelectedItem(listItem);
-			}
+			}*/
 
 			if (attributes.getValue("maxlength") != null) {
 				this.setMaxlength(Integer.parseInt(attributes.getValue("maxlength")));
@@ -70,6 +74,13 @@ public class AryaListbox extends Listbox implements IAryaComponent {
 			// TODO unit checking will be fixed
 			this.setHeight(attributes.getValue("height"));
 			this.setWidth(attributes.getValue("width"));
+			
+			this.setMold(attributes.getValue("mold"));
+			
+			if(attributes.getValue("pagesize") != null) //TODO number value exception
+				this.setPageSize(new Integer (attributes.getValue("pagesize")));
+			
+			
 
 			if (AryaUtils.isNotEmpty(attributes.getValue("onDrop"))) {
 				final String functionName = attributes.getValue("onDrop");
@@ -96,6 +107,7 @@ public class AryaListbox extends Listbox implements IAryaComponent {
 				this.addEventListener("onSelect", new EventListener<Event>() {
 					@Override
 					public void onEvent(Event event) throws Exception {
+						
 						ScriptHelper.executeScript(functionName, null, main);
 					}
 				});
@@ -162,4 +174,5 @@ public class AryaListbox extends Listbox implements IAryaComponent {
 		 * was created for IAryaComponent interface.
 		 */
 	}
+
 }

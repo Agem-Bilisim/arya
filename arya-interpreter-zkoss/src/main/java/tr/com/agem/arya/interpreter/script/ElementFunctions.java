@@ -8,7 +8,9 @@ import java.util.Map.Entry;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import org.json.JSONObject;
 import org.mozilla.javascript.Context;
+import org.mozilla.javascript.NativeArray;
 import org.mozilla.javascript.NativeFunction;
 import org.mozilla.javascript.NativeJSON;
 import org.mozilla.javascript.Scriptable;
@@ -16,6 +18,7 @@ import org.mozilla.javascript.Scriptable;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import tr.com.agem.arya.interpreter.component.AryaListbox;
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.utils.AryaException;
 import tr.com.agem.arya.interpreter.utils.AryaInterpreterHelper;
@@ -102,6 +105,19 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 		
 	}
 	
+	@AryaJsFunction
+	public void renderSelectedItem (String id, NativeArray comps, NativeArray values) {
+		
+		//TODO id listbox olmayabilir???!??!?
+		JSONObject jsonObj = ((AryaListbox)getElementById(id)).getSelectedItem().getValue();
+				
+		for (int i = 0; i < comps.size(); i++) {
+			
+			String comp = (String) comps.get(i);
+			((IAryaComponent)getElementById(comp)).setComponentValue(jsonObj.get((String)values.get(i)).toString());
+		}
+	}
+		
 	
 	@AryaJsFunction
 	public Object getElementById(String id) { //only on window not menu

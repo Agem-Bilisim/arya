@@ -1,5 +1,9 @@
 package tr.com.agem.arya.interpreter.component;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.xml.sax.Attributes;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.event.Event;
@@ -185,15 +189,29 @@ public class AryaDatebox extends Datebox implements IAryaComponent {
 
 	@Override
 	public String getComponentValue() {
+
 		/*
 		 * There is no componentValue variable for this component. This function
 		 * was created for IAryaComponent interface.
 		 */
-		return null;
+		return this.getValue().toString();
 	}
 
 	@Override
 	public void setComponentValue(String componentValue) {
+		// TODO dateformat mevzuu
+		if (componentValue != null && !componentValue.equals("null")) {
+			SimpleDateFormat f = new SimpleDateFormat("dd/mm/yyyy");
+			Date d = null;
+			try {
+				d = f.parse(componentValue); 
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			long milliseconds = d.getTime();
+			this.setValue(new Date(milliseconds));
+		}
 		/*
 		 * There is no componentValue variable for this component. This function
 		 * was created for IAryaComponent interface.
