@@ -14,11 +14,14 @@ import org.mozilla.javascript.NativeArray;
 import org.mozilla.javascript.NativeFunction;
 import org.mozilla.javascript.NativeJSON;
 import org.mozilla.javascript.Scriptable;
+import org.zkoss.zul.Combobox;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import tr.com.agem.arya.interpreter.component.AryaCombobox;
 import tr.com.agem.arya.interpreter.component.AryaListbox;
+import tr.com.agem.arya.interpreter.component.AryaSelectbox;
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.utils.AryaException;
 import tr.com.agem.arya.interpreter.utils.AryaInterpreterHelper;
@@ -34,6 +37,9 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 	private Context context;
 	private Scriptable scope;
 	private AryaMain main;
+	
+	private static String lastPage;
+	private static String reqType;
 
 	public ElementFunctions(Context context, Scriptable scope, AryaMain main) {
 		this.context = context;
@@ -78,6 +84,9 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 				.append(action)
 				.append("\" }");
 		
+		lastPage = action;
+		reqType = requestType;
+		
 		String result=null;
 		AryaResponse response=null;
 		try {
@@ -109,13 +118,22 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 	public void renderSelectedItem (String id, NativeArray comps, NativeArray values) {
 		
 		//TODO id listbox olmayabilir???!??!?
-		JSONObject jsonObj = ((AryaListbox)getElementById(id)).getSelectedItem().getValue();
-				
+		JSONObject jsonObj = null;
+		
+		if(getElementById(id).getClass() == AryaListbox.class) {
+			
+			jsonObj = ((AryaListbox)getElementById(id)).getSelectedItem().getValue();
+		}		
+		else if(getElementById(id).getClass() == AryaCombobox.class) {
+			
+			jsonObj = ((AryaCombobox)getElementById(id)).getSelectedItem().getValue();
+		}
+		
 		for (int i = 0; i < comps.size(); i++) {
 			
 			String comp = (String) comps.get(i);
 			((IAryaComponent)getElementById(comp)).setComponentValue(jsonObj.get((String)values.get(i)).toString());
-		}
+		}	
 	}
 		
 	
@@ -181,6 +199,26 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 		if (strSerialize.length() > 0)
 			return "{" + strSerialize.substring(1, strSerialize.length()) + "}";
 		return "{}";
+	}
+	
+	public static String getLastPage() {
+
+		return lastPage;
+	}
+
+	public static void setLastPage(String lastPage) {
+
+		ElementFunctions.lastPage = lastPage;
+	}
+
+	public static String getReqType() {
+
+		return reqType;
+	}
+
+	public static void setReqType(String reqType) {
+
+		ElementFunctions.reqType = reqType;
 	}
 	
 }

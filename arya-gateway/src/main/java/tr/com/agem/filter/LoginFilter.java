@@ -40,7 +40,7 @@ public class LoginFilter extends OncePerRequestFilter {
 		} else {
 			logger.log(Level.SEVERE, "User has not logged in: {0}",
 					(aryaRequest.getParams() == null ? null : aryaRequest.getParams().get("username")));
-			((HttpServletResponse) response).sendError(HttpStatus.BAD_REQUEST.value(), "User must login first!");
+			((HttpServletResponse) response).sendError(HttpStatus.UNAUTHORIZED.value(), "User must login first!");
 		}
 
 	}

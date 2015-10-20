@@ -7,6 +7,7 @@ import org.zkoss.zk.ui.util.GenericForwardComposer;
 import org.zkoss.zul.Div;
 
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
+import tr.com.agem.arya.interpreter.script.ElementFunctions;
 import tr.com.agem.core.gateway.model.AryaRequest;
 import tr.com.agem.core.gateway.model.AryaResponse;
 import tr.com.agem.core.gateway.model.RequestTypes;
@@ -30,19 +31,27 @@ public class BaseController extends GenericForwardComposer {
 	}
 
 	private void init() throws IOException {
-
+		
 		// Prepare initial request
 		AryaRequest request = new AryaRequest();
 		
-		request.setAction("login");
-		request.setRequestType(RequestTypes.VIEW_ONLY);
+		if(ElementFunctions.getLastPage() != null) {
+			
+			request.setAction(ElementFunctions.getLastPage());
+			request.setRequestType(RequestTypes.valueOf(ElementFunctions.getReqType()));
+		} 
+		else {
+			
+			request.setAction("login");
+			request.setRequestType(RequestTypes.VIEW_ONLY);
+		} 
 
 		String responseStr=null;
 		try {
 			responseStr = AryaInterpreterHelper.callUrl(PropertyReader.property("gateway.base.url"), request);
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
+		} 
 
 		
 		AryaResponse response = new AryaResponse();
