@@ -1,7 +1,9 @@
 package tr.com.agem.arya.interpreter.components;
 
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.CalendarView;
+import android.widget.Toast;
 
 import org.xml.sax.Attributes;
 
@@ -20,25 +22,62 @@ public class AryaCalendar extends CalendarView implements IAryaComponent {
     public AryaCalendar(Attributes attributes, final AryaMain main) {
         super(main.getAryaWindow().getContext());
 
-        if(AryaUtils.isNotEmpty(attributes)){
+        if(AryaUtils.isNotEmpty(attributes)) {
 
             this.componentId = attributes.getValue("id");
             this.componentClassName = attributes.getValue("class");
             this.componentValue = attributes.getValue("value");
             this.componentAttribute = attributes.getValue("attribute");
 
-            final String onClick =  attributes.getValue("onClick");
+            final String tooltiptext = attributes.getValue("tooltiptext")!=null ? attributes.getValue("tooltiptext") : null;
+            this.setOnLongClickListener(new OnLongClickListener() {
+                public boolean onLongClick(View v) {
+                    Toast.makeText(v.getContext(), tooltiptext, Toast.LENGTH_SHORT).show();
+                    return true;
+                }
+            });
 
-            if (onClick != null) {
+
+            if (attributes.getValue("visible") != null) {
+                if (attributes.getValue("visible").equals("true")) {
+                    this.setVisibility(VISIBLE);
+                } else {
+                    this.setVisibility(INVISIBLE);
+                }
+            }
+            if (attributes.getValue("disabled") != null) {
+                this.setEnabled(!Boolean.parseBoolean(attributes.getValue("disabled")));
+            }
+
+            this.setOnLongClickListener(new OnLongClickListener() {
+
+                public boolean onLongClick(View v) {
+                    if(tooltiptext !=null) {
+                        Toast.makeText(v.getContext(), tooltiptext, Toast.LENGTH_SHORT).show();
+                    }
+                    return true;
+                }
+            });
+
+            if (attributes.getValue("onClick") != null) {
+                final String functionName = attributes.getValue("onClick");
                 this.setOnClickListener(new OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        ScriptHelper.executeScript(onClick, null, main);
+                        ScriptHelper.executeScript(functionName, null, main);
+                    }
+                });
+            }
+            if (attributes.getValue("onFocus") != null) {
+                final String functionName = attributes.getValue("onFocus");
+                this.setOnFocusChangeListener(new OnFocusChangeListener() {
+                    @Override
+                    public void onFocusChange(View view, boolean b) {
+                        ScriptHelper.executeScript(functionName, null, main);
                     }
                 });
             }
         }
-
         main.getAryaWindow().addView(this);
     }
 
@@ -47,6 +86,7 @@ public class AryaCalendar extends CalendarView implements IAryaComponent {
 
     @Override
     public void setComponentParent(Object o) {
+        ((ViewGroup)o).addView(this);
 
     }
 

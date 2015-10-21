@@ -1,5 +1,6 @@
 package tr.com.agem.arya.interpreter.components;
 
+import android.view.ViewGroup;
 import android.widget.DatePicker;
 
 import org.xml.sax.Attributes;
@@ -72,7 +73,7 @@ public class AryaDatebox  extends DatePicker implements IAryaComponent {
 
     @Override
     public void setComponentParent(Object o) {
-
+        ((ViewGroup)o).addView(this);
     }
 
     public boolean isMandatory() {return mandatory; }

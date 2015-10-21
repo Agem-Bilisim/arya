@@ -1,6 +1,9 @@
 package tr.com.agem.arya.interpreter.components;
 
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import org.xml.sax.Attributes;
 
@@ -24,7 +27,15 @@ public class AryaProgressmeter extends ProgressBar implements IAryaComponent {
             this.componentClassName = attributes.getValue("class");
             this.componentValue = attributes.getValue("value");
             this.componentAttribute = attributes.getValue("attribute");
-
+            final String tooltiptext = attributes.getValue("tooltiptext");
+            this.setOnLongClickListener(new OnLongClickListener() {
+                public boolean onLongClick(View v) {
+                    if(tooltiptext!=null) {
+                        Toast.makeText(v.getContext(), tooltiptext, Toast.LENGTH_SHORT).show();
+                    }
+                    return true;
+                }
+            });
             if(this.componentValue == null)
                 this.setProgress(0);
             else
@@ -39,7 +50,7 @@ public class AryaProgressmeter extends ProgressBar implements IAryaComponent {
 
     @Override
     public void setComponentParent(Object o) {
-
+        ((ViewGroup)o).addView(this);
     }
 
     public String getComponentId() { return componentId; }

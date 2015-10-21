@@ -3,6 +3,7 @@ package tr.com.agem.arya.interpreter.components;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import org.xml.sax.Attributes;
 
@@ -18,7 +19,7 @@ public class AryaButton extends Button implements IAryaComponent {
     private String componentAttribute;
     private String componentValue;
 
-    public AryaButton(Attributes attributes, final AryaMain main) {
+    public AryaButton(final Attributes attributes, final AryaMain main) {
         super(main.getAryaWindow().getContext());
         this.setBackgroundResource(android.R.drawable.btn_default);
 
@@ -30,21 +31,56 @@ public class AryaButton extends Button implements IAryaComponent {
             this.componentValue = attributes.getValue("value");
             this.componentAttribute = attributes.getValue("attribute");
             this.setText(attributes.getValue("label"));
-            height =attributes.getValue("height");
+            final String tooltiptext = attributes.getValue("tooltiptext");
+            this.setOnLongClickListener(new OnLongClickListener() {
+                public boolean onLongClick(View v) {
+                    if(tooltiptext!=null) {
+                        Toast.makeText(v.getContext(), tooltiptext, Toast.LENGTH_SHORT).show();
+                    }
+                    return true;
+                }
+            });
 
-            final String onClick =  attributes.getValue("onClick");
+            if (attributes.getValue("height") != null) {        /* TODO dimensions are bugged, I think mainLayout (LinearLayout) causes it */
+                this.setHeight(Integer.parseInt(attributes.getValue("height")));
+            }
+            if (attributes.getValue("width") != null) {
+                this.setWidth(Integer.parseInt(attributes.getValue("width")));
+            }
+            if (attributes.getValue("visible") != null) {
+                if(attributes.getValue("visible").equals("true")){
+                    this.setVisibility(VISIBLE);
+                }
+                else{
+                    this.setVisibility(INVISIBLE);
+                }
+            }
+            if (attributes.getValue("disabled") != null) {
+                this.setEnabled(!Boolean.parseBoolean(attributes.getValue("disabled")));
+            }
 
-            if (onClick != null) {
+
+
+            if (attributes.getValue("onClick") != null) {
+                final String functionName = attributes.getValue("onClick");
                 this.setOnClickListener(new OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        ScriptHelper.executeScript(onClick, null, main);
+                        ScriptHelper.executeScript(functionName, null, main);
                     }
                 });
             }
-        }
+            if (attributes.getValue("onFocus") != null) {
+                final String functionName = attributes.getValue("onFocus");
+               this.setOnFocusChangeListener(new OnFocusChangeListener() {
+                   @Override
+                   public void onFocusChange(View view, boolean b) {
+                       ScriptHelper.executeScript(functionName, null, main);
+                   }
+               });
+            }
 
-        this.setHeight(height != null ? Integer.parseInt(height) : 150);
+        }
 
         main.getAryaWindow().addView(this);
     }

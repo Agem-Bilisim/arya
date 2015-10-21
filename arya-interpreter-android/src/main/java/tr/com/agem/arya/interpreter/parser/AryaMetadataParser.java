@@ -38,16 +38,16 @@ public class AryaMetadataParser extends DefaultHandler {
         
         if (comp != null) {
 
-            if(currentComponent.size() > 0 ){ //TODO this part should be improved for a fixed parent-child hierarchy, please comment if you've come across a bug.
-                if( !(comp instanceof IAryaMenu) && (((View) comp).getParent())!=null ) {
+            if(currentComponent.size() > 0 ){
+                if( (!(comp instanceof IAryaMenu))&& ((View)comp).getParent()!=null) { //have to check whether it is instanceof AryaMenuItem or not because MenuItems cannot be casted to View
                     ((ViewGroup) ((View) comp).getParent()).removeView((View) comp);
                 }
-                    comp.setComponentParent(currentComponent.peek());
-
+                comp.setComponentParent(currentComponent.peek());
             }
             else {
-                if(comp instanceof IAryaMenu)
+                if(comp instanceof IAryaMenu) {
                     comp.setComponentParent(main.getAryaNavBar());
+                }
             }
 
             currentComponent.push(comp);

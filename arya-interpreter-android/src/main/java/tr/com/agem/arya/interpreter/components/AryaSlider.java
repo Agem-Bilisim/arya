@@ -1,7 +1,9 @@
 package tr.com.agem.arya.interpreter.components;
 
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.SeekBar;
+import android.widget.Toast;
 
 import org.xml.sax.Attributes;
 
@@ -27,6 +29,27 @@ public class AryaSlider extends SeekBar implements IAryaComponent {
             this.componentValue = attributes.getValue("value");
             this.componentAttribute = attributes.getValue("attribute");
 
+            final String tooltiptext = attributes.getValue("tooltiptext");
+            this.setOnLongClickListener(new OnLongClickListener() {
+                public boolean onLongClick(View v) {
+                    if(tooltiptext!=null) {
+                        Toast.makeText(v.getContext(), tooltiptext, Toast.LENGTH_SHORT).show();
+                    }
+                    return true;
+                }
+            });
+            if (attributes.getValue("visible") != null) {
+                if(attributes.getValue("visible").equals("true")){
+                    this.setVisibility(VISIBLE);
+                }
+                else{
+                    this.setVisibility(INVISIBLE);
+                }
+            }
+            if (attributes.getValue("disabled") != null) {
+                this.setEnabled(!Boolean.parseBoolean(attributes.getValue("disabled")));
+            }
+
             if(attributes.getValue("value") != null){
                 this.setProgress(Integer.parseInt(attributes.getValue("value")));
             }
@@ -50,7 +73,7 @@ public class AryaSlider extends SeekBar implements IAryaComponent {
 
     @Override
     public void setComponentParent(Object o) {
-
+        ((ViewGroup)o).addView(this);
     }
 
     public String getComponentId() { return componentId; }

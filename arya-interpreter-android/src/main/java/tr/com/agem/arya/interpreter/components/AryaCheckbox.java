@@ -1,7 +1,10 @@
 package tr.com.agem.arya.interpreter.components;
 
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.Toast;
 
 import org.xml.sax.Attributes;
 
@@ -32,7 +35,33 @@ public class AryaCheckbox extends CheckBox implements IAryaComponent {
             this.componentValue = attributes.getValue("value");
             this.componentAttribute = attributes.getValue("attribute");
 
-
+            this.setText(attributes.getValue("label"));
+            final String tooltiptext = attributes.getValue("tooltiptext");
+            this.setOnLongClickListener(new OnLongClickListener() {
+                public boolean onLongClick(View v) {
+                    if(tooltiptext!=null) {
+                        Toast.makeText(v.getContext(), tooltiptext, Toast.LENGTH_SHORT).show();
+                    }
+                    return true;
+                }
+            });
+            this.setOnLongClickListener(new OnLongClickListener() {
+                public boolean onLongClick(View v) {
+                    Toast.makeText(v.getContext(), tooltiptext, Toast.LENGTH_SHORT).show();
+                    return true;
+                }
+            });
+            if (attributes.getValue("visible") != null) {
+                if(attributes.getValue("visible").equals("true")){
+                    this.setVisibility(VISIBLE);
+                }
+                else{
+                    this.setVisibility(INVISIBLE);
+                }
+            }
+            if (attributes.getValue("disabled") != null) {
+                this.setEnabled(!Boolean.parseBoolean(attributes.getValue("disabled")));
+            }
             this.setText(attributes.getValue("label"));
             height =attributes.getValue("height");
             mandatory = attributes.getValue("mandatory");
@@ -62,7 +91,7 @@ public class AryaCheckbox extends CheckBox implements IAryaComponent {
 
     @Override
     public void setComponentParent(Object o) {
-
+        ((ViewGroup)o).addView(this);
     }
 
     public boolean isMandatory() { return mandatory;}

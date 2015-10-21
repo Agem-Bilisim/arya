@@ -8,6 +8,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import org.xml.sax.Attributes;
 
@@ -34,7 +35,15 @@ public class AryaTextbox extends EditText implements IAryaComponent {
             this.componentClassName = attributes.getValue("class");
             this.componentValue = attributes.getValue("value");
             this.componentAttribute = attributes.getValue("attribute");
-
+            final String tooltiptext = attributes.getValue("tooltiptext");
+            this.setOnLongClickListener(new OnLongClickListener() {
+                public boolean onLongClick(View v) {
+                    if(tooltiptext!=null) {
+                        Toast.makeText(v.getContext(), tooltiptext, Toast.LENGTH_SHORT).show();
+                    }
+                    return true;
+                }
+            });
 
             // Placeholder
             this.setHint(attributes.getValue("placeholder"));
@@ -118,7 +127,7 @@ public class AryaTextbox extends EditText implements IAryaComponent {
 
     @Override
     public void setComponentParent(Object o) {
-
+        ((ViewGroup)o).addView(this);
     }
 
     public boolean isMandatory() {

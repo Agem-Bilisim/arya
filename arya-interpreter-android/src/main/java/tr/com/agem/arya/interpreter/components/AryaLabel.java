@@ -5,7 +5,9 @@ import org.xml.sax.Attributes;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.script.ScriptHelper;
@@ -29,7 +31,22 @@ public class AryaLabel extends TextView implements IAryaComponent {
             this.componentClassName = attributes.getValue("class");
             this.componentValue = attributes.getValue("value");
             this.componentAttribute = attributes.getValue("attribute");
-
+            this.setText(attributes.getValue("label"));
+            final String tooltiptext = attributes.getValue("tooltiptext");
+            this.setOnLongClickListener(new OnLongClickListener() {
+                public boolean onLongClick(View v) {
+                    if(tooltiptext!=null) {
+                        Toast.makeText(v.getContext(), tooltiptext, Toast.LENGTH_SHORT).show();
+                    }
+                    return true;
+                }
+            });
+            this.setOnLongClickListener(new OnLongClickListener() {
+                public boolean onLongClick(View v) {
+                    Toast.makeText(v.getContext(), tooltiptext, Toast.LENGTH_SHORT).show();
+                    return true;
+                }
+            });
             this.setText(attributes.getValue("value"));
             height = attributes.getValue("height");
 
@@ -52,7 +69,7 @@ public class AryaLabel extends TextView implements IAryaComponent {
 
     @Override
     public void setComponentParent(Object o) {
-
+        ((ViewGroup)o).addView(this);
     }
 
     public void setComponentId(String componentId) {this.componentId = componentId;}
