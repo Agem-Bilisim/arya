@@ -138,6 +138,16 @@ public class AryaMultipleCombobox extends Listbox implements IAryaComponent {
 					}
 				});
 			}
+			
+			if (AryaUtils.isNotEmpty(attributes.getValue("onSelect"))) {
+				final String functionName = attributes.getValue("onSelect");
+				this.addEventListener("onSelect", new EventListener<Event>() {
+					@Override
+					public void onEvent(Event event) throws Exception {
+						ScriptHelper.executeScript(functionName, null, main);
+					}
+				});
+			}
 
 		}
 

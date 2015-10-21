@@ -61,6 +61,12 @@ public class AryaCheckbox extends Checkbox implements IAryaComponent {
 			this.setAction(attributes.getValue("action"));
 			this.setHflex(attributes.getValue("hflex"));
 			this.setVflex(attributes.getValue("vflex"));
+			
+			if (attributes.getValue("checked") != null)
+				this.setChecked(Boolean.parseBoolean(attributes.getValue("checked")));
+			
+			if (attributes.getValue("name") != null)
+				this.setName(attributes.getValue("name"));
 
 			/*
 			 * if the dimension input format of .arya files does NOT contains
@@ -102,6 +108,16 @@ public class AryaCheckbox extends Checkbox implements IAryaComponent {
 			if (AryaUtils.isNotEmpty(attributes.getValue("onCreate"))) {
 				final String functionName = attributes.getValue("onCreate");
 				this.addEventListener("onCreate", new EventListener<Event>() {
+					@Override
+					public void onEvent(Event event) throws Exception {
+						ScriptHelper.executeScript(functionName, null, main);
+					}
+				});
+			}
+			
+			if (AryaUtils.isNotEmpty(attributes.getValue("onCheck"))) {
+				final String functionName = attributes.getValue("onCheck");
+				this.addEventListener("onCheck", new EventListener<Event>() {
 					@Override
 					public void onEvent(Event event) throws Exception {
 						ScriptHelper.executeScript(functionName, null, main);

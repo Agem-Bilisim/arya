@@ -50,6 +50,9 @@ public class AryaGrid extends Grid implements IAryaComponent {
 			this.setAction(attributes.getValue("action"));
 			this.setHflex(attributes.getValue("hflex"));
 			this.setVflex(attributes.getValue("vflex"));
+			
+			if(attributes.getValue("pageSize") != null) //TODO number value exception
+				this.setPageSize(new Integer (attributes.getValue("pageSize")));
 
 			/*
 			 * if the dimension input format of .arya files does NOT contains

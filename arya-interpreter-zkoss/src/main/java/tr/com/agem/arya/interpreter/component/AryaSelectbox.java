@@ -33,6 +33,9 @@ public class AryaSelectbox extends Selectbox implements IAryaComponent {
 			this.setDraggable(attributes.getValue("draggable"));
 			this.setDroppable(attributes.getValue("droppable"));
 			this.setFocus(Boolean.parseBoolean(attributes.getValue("focus")));
+			
+			if(attributes.getValue("name") != null)
+				this.setName(attributes.getValue("name"));
 
 			/*
 			 * if the dimension input format of .arya files does NOT contains
@@ -64,6 +67,16 @@ public class AryaSelectbox extends Selectbox implements IAryaComponent {
 			if (AryaUtils.isNotEmpty(attributes.getValue("onCreate"))) {
 				final String functionName = attributes.getValue("onCreate");
 				this.addEventListener("onCreate", new EventListener<Event>() {
+					@Override
+					public void onEvent(Event event) throws Exception {
+						ScriptHelper.executeScript(functionName, null, main);
+					}
+				});
+			}
+			
+			if (AryaUtils.isNotEmpty(attributes.getValue("onSelect"))) {
+				final String functionName = attributes.getValue("onSelect");
+				this.addEventListener("onSelect", new EventListener<Event>() {
 					@Override
 					public void onEvent(Event event) throws Exception {
 						ScriptHelper.executeScript(functionName, null, main);

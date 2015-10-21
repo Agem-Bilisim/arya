@@ -67,6 +67,12 @@ public class AryaDatebox extends Datebox implements IAryaComponent {
 			this.setAction(attributes.getValue("action"));
 			this.setHflex(attributes.getValue("hflex"));
 			this.setVflex(attributes.getValue("vflex"));
+			
+			if (attributes.getValue("buttonVisible") != null)
+				this.setButtonVisible(Boolean.parseBoolean(attributes.getValue("buttonVisible")));
+			
+			if (attributes.getValue("open") != null)
+				this.setOpen(Boolean.parseBoolean(attributes.getValue("open")));
 
 			/*
 			 * if the dimension input format of .arya files does NOT contains

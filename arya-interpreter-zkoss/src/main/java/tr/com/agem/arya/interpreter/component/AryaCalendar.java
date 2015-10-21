@@ -54,7 +54,10 @@ public class AryaCalendar extends Calendar implements IAryaComponent {
 		this.setAction(attributes.getValue("action"));
 		this.setHflex(attributes.getValue("hflex"));
 		this.setVflex(attributes.getValue("vflex"));
-
+		
+		if (attributes.getValue("name") != null)
+			this.setName(attributes.getValue("name"));
+		
 		/*
 		 * if the dimension input format of .arya files does NOT contains the
 		 * unit like -height="200px"
@@ -85,6 +88,16 @@ public class AryaCalendar extends Calendar implements IAryaComponent {
 		if (AryaUtils.isNotEmpty(attributes.getValue("onCreate"))) {
 			final String functionName = attributes.getValue("onCreate");
 			this.addEventListener("onCreate", new EventListener<Event>() {
+				@Override
+				public void onEvent(Event event) throws Exception {
+					ScriptHelper.executeScript(functionName, null, main);
+				}
+			});
+		}
+		
+		if (AryaUtils.isNotEmpty(attributes.getValue("onChange"))) {
+			final String functionName = attributes.getValue("onChange");
+			this.addEventListener("onChange", new EventListener<Event>() {
 				@Override
 				public void onEvent(Event event) throws Exception {
 					ScriptHelper.executeScript(functionName, null, main);

@@ -67,6 +67,15 @@ public class AryaTextbox extends Textbox implements IAryaComponent {
 			this.setAction(attributes.getValue("action"));
 			this.setHflex(attributes.getValue("hflex"));
 			this.setVflex(attributes.getValue("vflex"));
+			
+			if (attributes.getValue("rows") != null)
+				this.setRows(Integer.parseInt(attributes.getValue("rows")));
+			
+			if (attributes.getValue("multiline") != null)
+				this.setMultiline(Boolean.parseBoolean(attributes.getValue("selected")));
+			
+			if (attributes.getValue("tabbable") != null)
+				this.setTabbable(Boolean.parseBoolean(attributes.getValue("tabbable")));
 
 			/*
 			 * if the dimension input format of .arya files does NOT contains

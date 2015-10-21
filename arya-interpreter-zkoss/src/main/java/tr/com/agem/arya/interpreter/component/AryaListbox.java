@@ -77,8 +77,17 @@ public class AryaListbox extends Listbox implements IAryaComponent {
 			
 			this.setMold(attributes.getValue("mold"));
 			
+			if(attributes.getValue("rows") != null) //TODO number value exception
+				this.setRows(new Integer (attributes.getValue("rows")));
+			
+			if(attributes.getValue("name") != null)
+				this.setName(attributes.getValue("name"));
+			
 			if(attributes.getValue("pagesize") != null) //TODO number value exception
 				this.setPageSize(new Integer (attributes.getValue("pagesize")));
+			
+			if (attributes.getValue("checkmark") != null)
+				this.setCheckmark(Boolean.parseBoolean(attributes.getValue("checkmark")));
 			
 			
 

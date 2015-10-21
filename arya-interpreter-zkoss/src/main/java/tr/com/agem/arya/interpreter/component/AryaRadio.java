@@ -60,6 +60,15 @@ public class AryaRadio extends Radio implements IAryaComponent {
 		this.setAction(attributes.getValue("action"));
 		this.setHflex(attributes.getValue("hflex"));
 		this.setVflex(attributes.getValue("vflex"));
+		
+		if(attributes.getValue("radiogroup") != null)
+			this.setRadiogroup(attributes.getValue("radiogroup"));
+		
+		if (attributes.getValue("selected") != null)
+			this.setSelected(Boolean.parseBoolean(attributes.getValue("selected")));
+		
+		if (attributes.getValue("checked") != null)
+			this.setChecked(Boolean.parseBoolean(attributes.getValue("checked")));
 
 		/*
 		 * if the dimension input format of .arya files does NOT contains the
@@ -120,6 +129,16 @@ public class AryaRadio extends Radio implements IAryaComponent {
 		if (AryaUtils.isNotEmpty(attributes.getValue("onRightClick"))) {
 			final String functionName = attributes.getValue("onRightClick");
 			this.addEventListener("onRightClick", new EventListener<Event>() {
+				@Override
+				public void onEvent(Event event) throws Exception {
+					ScriptHelper.executeScript(functionName, null, main);
+				}
+			});
+		}
+		
+		if (AryaUtils.isNotEmpty(attributes.getValue("onCheck"))) {
+			final String functionName = attributes.getValue("onCheck");
+			this.addEventListener("onCheck", new EventListener<Event>() {
 				@Override
 				public void onEvent(Event event) throws Exception {
 					ScriptHelper.executeScript(functionName, null, main);

@@ -63,6 +63,13 @@ public class AryaCombobox extends Combobox implements IAryaComponent {
 			this.setAction(attributes.getValue("action"));
 			this.setHflex(attributes.getValue("hflex"));
 			this.setVflex(attributes.getValue("vflex"));
+			
+			if (attributes.getValue("buttonVisible") != null)
+				this.setButtonVisible(Boolean.parseBoolean(attributes.getValue("buttonVisible")));
+			
+			if (attributes.getValue("open") != null)
+				this.setOpen(Boolean.parseBoolean(attributes.getValue("open")));
+			
 
 			/*
 			 * if the dimension input format of .arya files does NOT contains
@@ -131,6 +138,26 @@ public class AryaCombobox extends Combobox implements IAryaComponent {
 			if (AryaUtils.isNotEmpty(attributes.getValue("onBlur"))) {
 				final String functionName = attributes.getValue("onBlur");
 				this.addEventListener("onBlur", new EventListener<Event>() {
+					@Override
+					public void onEvent(Event event) throws Exception {
+						ScriptHelper.executeScript(functionName, null, main);
+					}
+				});
+			}
+			
+			if (AryaUtils.isNotEmpty(attributes.getValue("onSelect"))) {
+				final String functionName = attributes.getValue("onSelect");
+				this.addEventListener("onSelect", new EventListener<Event>() {
+					@Override
+					public void onEvent(Event event) throws Exception {
+						ScriptHelper.executeScript(functionName, null, main);
+					}
+				});
+			}
+			
+			if (AryaUtils.isNotEmpty(attributes.getValue("onOpen"))) {
+				final String functionName = attributes.getValue("onOpen");
+				this.addEventListener("onOpen", new EventListener<Event>() {
 					@Override
 					public void onEvent(Event event) throws Exception {
 						ScriptHelper.executeScript(functionName, null, main);

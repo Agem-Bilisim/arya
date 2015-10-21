@@ -62,7 +62,13 @@ public class AryaButton extends Button implements IAryaComponent {
 			this.setAction(attributes.getValue("action"));
 			this.setHflex(attributes.getValue("hflex"));
 			this.setVflex(attributes.getValue("vflex"));
-
+			
+			if (attributes.getValue("upload") != null)
+				this.setUpload(attributes.getValue("upload"));
+			
+			if (attributes.getValue("type") != null) 
+				this.setType(attributes.getValue("type"));
+			
 			/*
 			 * if the dimension input format of .arya files does NOT contains
 			 * the unit like -height="200px"
