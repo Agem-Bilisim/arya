@@ -9,7 +9,9 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 import java.util.concurrent.ExecutionException;
@@ -41,8 +43,20 @@ public class MainActivity extends ActionBarActivity {
 
         setContentView(R.layout.activity_main);
         mainLayout = (LinearLayout) findViewById(R.id.scrollViewContentLayout);
-
+        final ScrollView mScrollView = (ScrollView) findViewById(R.id.scrollView);
         final SwipeRefreshLayout mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_view);
+        mScrollView.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
+            @Override
+            public void onScrollChanged() {
+                if(mScrollView.getScrollY()==0){
+                    mSwipeRefreshLayout.setEnabled(true);
+                }
+                else{
+                    mSwipeRefreshLayout.setEnabled(false);
+                }
+            }
+        });
+
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -97,7 +111,7 @@ public class MainActivity extends ActionBarActivity {
         }
 
 
-        WebServiceConnectionAsyncTask connThread = new WebServiceConnectionAsyncTask("http://192.168.1.206:8080/arya/rest/asya",request, getApplicationContext());
+        WebServiceConnectionAsyncTask connThread = new WebServiceConnectionAsyncTask("http://192.168.1.39:8080/arya/rest/asya",request, getApplicationContext());
 
         String responseStr = null;
         try {
