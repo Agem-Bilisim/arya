@@ -95,4 +95,10 @@ public class AryaComboItem extends View implements IAryaComponent {
     public void setComponentAttribute(String componentAttribute) {
         this.componentAttribute = componentAttribute;
     }
+
+    @Override
+    public String getComponentTagName() {
+        return "comboitem";
+    }
+
 }

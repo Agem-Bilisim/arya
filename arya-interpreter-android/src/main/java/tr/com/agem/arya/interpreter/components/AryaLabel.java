@@ -112,4 +112,10 @@ public class AryaLabel extends TextView implements IAryaComponent {
     public int getImportantForAccessibility() {
         return super.getImportantForAccessibility();
     }
+
+    @Override
+    public String getComponentTagName() {
+        return "label";
+    }
+
 }

@@ -85,4 +85,10 @@ public class AryaMultipleComboItem extends View implements IAryaComponent {
     public void setComponentValue(String componentValue) {
         this.componentValue = componentValue;
     }
+
+    @Override
+    public String getComponentTagName() {
+        return "multiplecomboitem";
+    }
+
 }
