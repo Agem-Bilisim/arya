@@ -173,4 +173,10 @@ public class AryaMultiComboItem extends Listitem implements IAryaComponent {
 		 * was created for IAryaComponent interface.
 		 */
 	}
+
+	@Override
+	public String getComponentTagName() {
+		return "multiplecomboitem";
+	}
+
 }

@@ -139,4 +139,9 @@ public class AryaCenter extends Center implements IAryaComponent {
 		 */
 	}
 
+	@Override
+	public String getComponentTagName() {
+		return "center";
+	}
+
 }

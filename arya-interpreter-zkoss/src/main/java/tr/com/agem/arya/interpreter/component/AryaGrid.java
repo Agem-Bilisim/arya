@@ -9,14 +9,17 @@ import org.zkoss.zul.Grid;
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.script.ScriptHelper;
 import tr.com.agem.core.interpreter.IAryaComponent;
+import tr.com.agem.core.interpreter.IAryaTemplate;
 import tr.com.agem.core.utils.AryaUtils;
 
-public class AryaGrid extends Grid implements IAryaComponent {
+public class AryaGrid extends Grid implements IAryaComponent, IAryaTemplate {
 
 	private static final long serialVersionUID = -1829374522609555406L;
 
 	private String componentClassName;
 	private String componentAttribute;
+	
+	private AryaTemplate template;
 
 	public AryaGrid(final AryaMain main, Attributes attributes) {
 		super();
@@ -51,8 +54,10 @@ public class AryaGrid extends Grid implements IAryaComponent {
 			this.setHflex(attributes.getValue("hflex"));
 			this.setVflex(attributes.getValue("vflex"));
 			
-			if(attributes.getValue("pageSize") != null) //TODO number value exception
-				this.setPageSize(new Integer (attributes.getValue("pageSize")));
+			this.setMold(attributes.getValue("mold"));
+
+			if(attributes.getValue("pagesize") != null) //TODO number value exception
+				this.setPageSize(new Integer (attributes.getValue("pagesize")));
 
 			/*
 			 * if the dimension input format of .arya files does NOT contains
@@ -136,7 +141,7 @@ public class AryaGrid extends Grid implements IAryaComponent {
 	}
 
 	@Override
-	public String getComponentValue() {
+	public String getComponentValue() { 
 		/*
 		 * There is no componentValue variable for this component. This function
 		 * was created for IAryaComponent interface.
@@ -151,4 +156,20 @@ public class AryaGrid extends Grid implements IAryaComponent {
 		 * was created for IAryaComponent interface.
 		 */
 	}
+	
+	@Override
+	public Object getAryaTemplate() {
+		return template;
+	}
+
+	@Override
+	public void setAryaTemplate(Object template) {
+		this.template = (AryaTemplate) template;
+	}
+
+	@Override
+	public String getComponentTagName() {
+		return "grid";
+	}
+
 }

@@ -173,4 +173,9 @@ public class AryaLabel extends Label implements IAryaComponent {
 		this.setValue(componentValue);
 	}
 
+	@Override
+	public String getComponentTagName() {
+		return "label";
+	}
+
 }

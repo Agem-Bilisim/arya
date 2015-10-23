@@ -169,4 +169,9 @@ public class AryaListHeader extends Listheader implements IAryaComponent {
 		 */
 	}
 
+	@Override
+	public String getComponentTagName() {
+		return "listheader";
+	}
+
 }

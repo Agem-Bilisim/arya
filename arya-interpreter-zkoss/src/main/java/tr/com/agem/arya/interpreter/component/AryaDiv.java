@@ -151,4 +151,9 @@ public class AryaDiv extends Div implements IAryaComponent {
 		 */
 	}
 
+	@Override
+	public String getComponentTagName() {
+		return "div";
+	}
+
 }

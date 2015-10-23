@@ -146,4 +146,9 @@ public class AryaSelectbox extends Selectbox implements IAryaComponent {
 		 */
 	}
 
+	@Override
+	public String getComponentTagName() {
+		return "selectbox";
+	}
+
 }

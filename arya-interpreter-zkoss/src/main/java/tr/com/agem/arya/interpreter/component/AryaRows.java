@@ -143,4 +143,9 @@ public class AryaRows extends Rows implements IAryaComponent {
 		 */
 	}
 
+	@Override
+	public String getComponentTagName() {
+		return "rows";
+	}
+
 }

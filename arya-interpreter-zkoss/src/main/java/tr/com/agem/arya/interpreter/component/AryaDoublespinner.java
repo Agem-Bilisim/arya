@@ -197,4 +197,9 @@ public class AryaDoublespinner extends Doublespinner implements IAryaComponent {
 		 */
 	}
 
+	@Override
+	public String getComponentTagName() {
+		return "doublespinner";
+	}
+
 }

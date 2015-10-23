@@ -4,12 +4,21 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listKimlikWindow">
 		<listbox id="list" pagesize="5" mold="paging" onSelect="select()">
 			<listhead>
-				<listheader label="Kisi Id" id="kisiId" />			
-				<listheader label="Baba Adi" id="babaAdi" />
-				<listheader label="Ana Adi" id="anaAdi" />
-				<listheader label="Dogum Yeri" id="dogumYeri" />
-				<listheader label="Dogum Tarihi" id="dogumTarihi" />
+				<listheader label="Kisi Id" />			
+				<listheader label="Baba Adi" />
+				<listheader label="Ana Adi" />
+				<listheader label="Dogum Yeri" />
+				<listheader label="Dogum Tarihi" />
 			</listhead>
+			<template>
+				<listitem>
+					<listcell id="kisiId" />
+					<listcell id="babaAdi" />
+					<listcell id="anaAdi" />
+					<listcell id="dogumYeri" />
+					<listcell id="dogumTarihi" />
+				</listitem>
+			</template>
 		</listbox>
 		<grid>
 			<rows>

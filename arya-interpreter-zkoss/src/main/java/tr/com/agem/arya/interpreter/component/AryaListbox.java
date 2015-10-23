@@ -1,27 +1,25 @@
 package tr.com.agem.arya.interpreter.component;
 
-import java.util.Map;
-
 import org.xml.sax.Attributes;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.EventListener;
-import org.zkoss.zul.Label;
 import org.zkoss.zul.Listbox;
-import org.zkoss.zul.Listitem;
 
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.script.ScriptHelper;
-import tr.com.agem.arya.interpreter.utils.AryaInterpreterHelper;
 import tr.com.agem.core.interpreter.IAryaComponent;
+import tr.com.agem.core.interpreter.IAryaTemplate;
 import tr.com.agem.core.utils.AryaUtils;
 
-public class AryaListbox extends Listbox implements IAryaComponent {
+public class AryaListbox extends Listbox implements IAryaComponent, IAryaTemplate {
 
 	private static final long serialVersionUID = 5336801586396485340L;
 
 	private String componentClassName;
 	private String componentAttribute;
+	
+	private AryaTemplate template;
 	
 	public AryaListbox(final AryaMain main, Attributes attributes) {
 		super();
@@ -182,6 +180,21 @@ public class AryaListbox extends Listbox implements IAryaComponent {
 		 * There is no componentValue variable for this component. This function
 		 * was created for IAryaComponent interface.
 		 */
+	}
+
+	@Override
+	public Object getAryaTemplate() {
+		return template;
+	}
+
+	@Override
+	public void setAryaTemplate(Object template) {
+		this.template = (AryaTemplate) template;
+	}
+
+	@Override
+	public String getComponentTagName() {
+		return "listbox";
 	}
 
 }

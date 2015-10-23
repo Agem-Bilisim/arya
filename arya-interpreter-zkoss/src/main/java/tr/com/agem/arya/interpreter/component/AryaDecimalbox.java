@@ -196,4 +196,9 @@ public class AryaDecimalbox extends Decimalbox implements IAryaComponent {
 		 */
 	}
 
+	@Override
+	public String getComponentTagName() {
+		return "decimalbox";
+	}
+
 }

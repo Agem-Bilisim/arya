@@ -190,4 +190,9 @@ public class AryaButton extends Button implements IAryaComponent {
 		this.setLabel(componentValue);
 	}
 
+	@Override
+	public String getComponentTagName() {
+		return "button";
+	}
+
 }

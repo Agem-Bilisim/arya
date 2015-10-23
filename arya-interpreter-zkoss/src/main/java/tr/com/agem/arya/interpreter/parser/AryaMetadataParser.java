@@ -7,7 +7,10 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
+import tr.com.agem.arya.interpreter.component.AryaGrid;
+import tr.com.agem.arya.interpreter.component.AryaListbox;
 import tr.com.agem.arya.interpreter.component.AryaScript;
+import tr.com.agem.arya.interpreter.component.AryaTemplate;
 import tr.com.agem.arya.interpreter.component.ComponentFactory;
 import tr.com.agem.arya.interpreter.component.menu.IAryaMenu;
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
@@ -27,11 +30,24 @@ public class AryaMetadataParser extends DefaultHandler {
 	public void startElement(String uri, String localName, String tagName, Attributes attributes) throws SAXException {
 		IAryaComponent comp = ComponentFactory.getComponent(tagName, main, attributes);
 		if (comp != null) {
-
-			comp.setComponentParent(currentComponent.size() > 0 ? currentComponent.peek()
-					: main.getComponentContainer());
-
-			currentComponent.push(comp);
+			if (comp instanceof AryaTemplate) {
+				if (currentComponent.peek() instanceof AryaListbox) {
+					((AryaListbox)currentComponent.peek()).setAryaTemplate(comp);
+				}
+				else if(currentComponent.peek() instanceof AryaGrid) {
+					((AryaGrid)currentComponent.peek()).setAryaTemplate(comp);
+				}
+				currentComponent.push(comp);
+			} else if ((currentComponent.size() > 0) && (currentComponent.peek() instanceof AryaTemplate)) {
+				AryaTemplate template = (AryaTemplate) currentComponent.peek();
+				template.getChildren().add(comp);				
+				currentComponent.push(template);
+			}
+			else {
+				comp.setComponentParent(currentComponent.size() > 0? currentComponent.peek():main.getComponentContainer());
+				currentComponent.push(comp);
+				main.getAryaWindow().getComponents().add(comp);
+			}
 
 			// Add new component to the component list of parent window
 			if (main.getAryaWindow().getComponents() == null) {
@@ -43,10 +59,7 @@ public class AryaMetadataParser extends DefaultHandler {
 
 			if (comp instanceof IAryaMenu) {
 				main.getAryaNavBar().getComponents().add(comp);
-			} else {
-				main.getAryaWindow().getComponents().add(comp);
 			}
-
 		}
 	}
 

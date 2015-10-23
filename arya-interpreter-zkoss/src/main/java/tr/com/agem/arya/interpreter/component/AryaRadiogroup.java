@@ -149,4 +149,9 @@ public class AryaRadiogroup extends Radiogroup implements IAryaComponent {
 		 */
 	}
 
+	@Override
+	public String getComponentTagName() {
+		return "radiogroup";
+	}
+
 }

@@ -111,7 +111,7 @@ public class MainActivity extends ActionBarActivity {
         }
 
 
-        WebServiceConnectionAsyncTask connThread = new WebServiceConnectionAsyncTask("http://192.168.1.39:8080/arya/rest/asya",request, getApplicationContext());
+        WebServiceConnectionAsyncTask connThread = new WebServiceConnectionAsyncTask("http://192.168.1.206:8080/arya/rest/asya",request, getApplicationContext());
 
         String responseStr = null;
         try {

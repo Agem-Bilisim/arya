@@ -206,4 +206,9 @@ public class AryaRadio extends Radio implements IAryaComponent {
 		 */
 	}
 
+	@Override
+	public String getComponentTagName() {
+		return "radio";
+	}
+
 }

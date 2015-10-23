@@ -224,4 +224,9 @@ public class AryaDatebox extends Datebox implements IAryaComponent {
 		 */
 	}
 
+	@Override
+	public String getComponentTagName() {
+		return "datebox";
+	}
+
 }

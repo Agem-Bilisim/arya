@@ -2,7 +2,10 @@ package tr.com.agem.arya.interpreter.components;
 
 import org.xml.sax.Attributes;
 
+import android.widget.ListView;
 import android.widget.TableLayout;
+
+import com.sun.javafx.scene.control.skin.TableColumnHeader;
 
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.core.interpreter.IAryaComponent;

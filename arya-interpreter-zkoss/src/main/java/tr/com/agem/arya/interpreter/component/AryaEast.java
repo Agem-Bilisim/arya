@@ -145,4 +145,10 @@ public class AryaEast extends East implements IAryaComponent {
 		 */
 	}
 
+
+	@Override
+	public String getComponentTagName() {
+		return "east";
+	}
+
 }

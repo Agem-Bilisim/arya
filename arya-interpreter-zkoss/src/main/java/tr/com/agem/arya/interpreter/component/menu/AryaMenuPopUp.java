@@ -147,4 +147,9 @@ public class AryaMenuPopUp extends Menupopup implements IAryaComponent, IAryaMen
 		return null;
 	}
 
+	@Override
+	public String getComponentTagName() {
+		return "menupopup";
+	}
+
 }

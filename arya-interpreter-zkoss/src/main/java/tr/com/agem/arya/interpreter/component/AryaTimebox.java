@@ -198,4 +198,9 @@ public class AryaTimebox extends Timebox implements IAryaComponent {
 		 */
 	}
 
+	@Override
+	public String getComponentTagName() {
+		return "timebox";
+	}
+
 }

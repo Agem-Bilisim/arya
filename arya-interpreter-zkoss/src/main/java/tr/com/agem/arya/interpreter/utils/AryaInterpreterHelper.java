@@ -2,10 +2,7 @@ package tr.com.agem.arya.interpreter.utils;
 
 import java.io.IOException;
 import java.io.StringReader;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -30,17 +27,22 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import tr.com.agem.arya.interpreter.component.AryaGrid;
+import tr.com.agem.arya.interpreter.component.AryaLabel;
 import tr.com.agem.arya.interpreter.component.AryaListCell;
-import tr.com.agem.arya.interpreter.component.AryaListHead;
-import tr.com.agem.arya.interpreter.component.AryaListHeader;
 import tr.com.agem.arya.interpreter.component.AryaListItem;
 import tr.com.agem.arya.interpreter.component.AryaListbox;
+import tr.com.agem.arya.interpreter.component.AryaRow;
+import tr.com.agem.arya.interpreter.component.AryaRows;
+import tr.com.agem.arya.interpreter.component.AryaTemplate;
+import tr.com.agem.arya.interpreter.component.ComponentFactory;
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.parser.AryaMetadataParser;
 import tr.com.agem.arya.interpreter.parser.AryaParserAttributes;
 import tr.com.agem.core.gateway.model.AryaRequest;
 import tr.com.agem.core.gateway.model.AryaResponse;
 import tr.com.agem.core.interpreter.IAryaComponent;
+import tr.com.agem.core.interpreter.IAryaTemplate;
 import tr.com.agem.core.utils.AryaUtils;
 
 public class AryaInterpreterHelper {
@@ -55,7 +57,7 @@ public class AryaInterpreterHelper {
 
 	// TODO should be run on a seperate thread!
 	public static String callUrl(String url, String request) throws AryaException {
-		
+
 		HttpPost httpPost = new HttpPost(url);
 		httpPost.setHeader("Content-Type", MIME_TYPE);
 		httpPost.setHeader("Accept", MIME_TYPE);
@@ -112,65 +114,70 @@ public class AryaInterpreterHelper {
 		}
 	}
 
+	private static void populateAryaTemplate(AryaMain main, IAryaTemplate masterComponent, JSONArray jsonArrayData) {
+		AryaRows rows = null;
+		if (masterComponent instanceof AryaGrid) {
+			rows = new AryaRows(main, null);
+			rows.setComponentParent(masterComponent);
+		}
+
+		for (int i = 0; i < jsonArrayData.length(); i++) {
+			JSONObject jsonObj = jsonArrayData.getJSONObject(i);
+
+			AryaListItem item = new AryaListItem(main, null);
+			AryaRow row = new AryaRow(main, null);
+
+			if (masterComponent.getClass().equals(AryaListbox.class)) {
+				item.setValue(jsonObj);
+				item.setComponentParent(masterComponent);
+			} else {
+				row.setValue(jsonObj);
+				row.setComponentParent(rows);
+			}
+
+			for (IAryaComponent comp : ((AryaTemplate) masterComponent.getAryaTemplate()).getChildren()) {
+				if (!(comp instanceof AryaListItem) && !(comp instanceof AryaRow)) {
+					AryaParserAttributes attr = new AryaParserAttributes();
+					attr.setValue("id", comp.getComponentId() + "" + (i));
+					if (masterComponent instanceof AryaListbox) {
+						attr.setValue("label", splitId(comp.getComponentId(), jsonObj));
+						AryaListCell cell = new AryaListCell(main, attr);
+						cell.setComponentParent(item);
+					} else if (masterComponent instanceof AryaGrid) {
+						attr.setValue("value", splitId(comp.getComponentId(), jsonObj));
+						IAryaComponent compNew = ComponentFactory.getComponent(comp.getComponentTagName(), main, attr);
+						compNew.setComponentParent(row);
+					} else {
+
+					}
+				}
+			}
+		}
+	}
+
 	private static void populateView(String data, AryaMain main) {
 
 		ObjectMapper mapper = new ObjectMapper();
-
 		try {
 			JsonNode rootNode = mapper.readTree(data);
-
 			if (rootNode != null) {
 				Iterator<Map.Entry<String, JsonNode>> fields = rootNode.fields();
-
 				if (fields != null) {
-
 					while (fields.hasNext()) {
 						Map.Entry<String, JsonNode> entry = fields.next();
-
 						if ("results".equals(entry.getKey().toString())) {
-
 							JSONArray jsonArray = new JSONArray(entry.getValue().toString());
+							if (jsonArray.length() > 1) {
+								populateAryaTemplate(main, (IAryaTemplate) getElementById("list", main), jsonArray);
+							} else {
+								JSONObject jsonObj = jsonArray.getJSONObject(0);
+								for (Iterator<?> iterator = jsonObj.keySet().iterator(); iterator.hasNext();) {
+									String key = (String) iterator.next();
+									IAryaComponent c = (IAryaComponent) getElementById(key, main);
 
-							for (int i = 0; i < jsonArray.length(); i++) {
-								JSONObject jsonObj = jsonArray.getJSONObject(i);
-
-								String whatYouWantToFill = "list";// TODO liste
-																	// datası
-																	// olup
-																	// olmadığı
-																	// anlaşılmalı
-
-								if ("list".equals(whatYouWantToFill)) {
-
-									AryaListItem item = new AryaListItem(main, null);
-									item.setValue(jsonObj);
-									item.setComponentParent(getElementById("list", main));
-									
-									AryaListbox lb = (AryaListbox) getElementById("list", main);
-									AryaListHead lh = (AryaListHead) lb.getChildren().get(0);
-									List<AryaListHeader> lhd = lh.getChildren();
-									
-									for (AryaListHeader aryaListHeader : lhd) {
-										
-										AryaParserAttributes attr = new AryaParserAttributes();
-										attr.setValue("id", aryaListHeader.getId() + "" + (i));
-										attr.setValue("label", jsonObj.get(aryaListHeader.getId()).toString());
-										AryaListCell cell = new AryaListCell(main, attr);
-										cell.setComponentParent(item);									
-									}
-									
-								} else {
-									for (Iterator<?> iterator = jsonObj.keySet().iterator(); iterator.hasNext();) {
-										String key = (String) iterator.next();
-										IAryaComponent c = (IAryaComponent) getElementById(key, main);
-
-										if (AryaUtils.isNotEmpty(jsonObj.get(key).toString())
-												&& AryaUtils.isNotEmpty(c))
-											c.setComponentValue(jsonObj.get(key).toString());
-									}
-
+									if (AryaUtils.isNotEmpty(jsonObj.get(key).toString()) && AryaUtils.isNotEmpty(c))
+										c.setComponentValue(jsonObj.get(key).toString());
 								}
-
 							}
 						}
 					}
@@ -217,6 +224,27 @@ public class AryaInterpreterHelper {
 			}
 		}
 		return null;
+	}
+
+	public static String splitId(String id, JSONObject jsonObj) {
+
+		String retVal = null;
+		JSONObject obj = null;
+		if (jsonObj != null) {
+			String[] spl = id.split("\\.");
+
+			for (int i = 0; i < spl.length - 1; i++)
+				obj = (JSONObject) jsonObj.get(spl[i]);
+			Object ret;
+			if (obj != null)
+				ret = obj.get(spl[spl.length - 1]);
+			else
+				ret = jsonObj.get(spl[0]);
+			if (!ret.equals(JSONObject.NULL)) {
+				retVal = ret.toString();
+			}
+		}
+		return retVal;
 	}
 
 }

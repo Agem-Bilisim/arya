@@ -198,4 +198,9 @@ public class AryaDoublebox extends Doublebox implements IAryaComponent {
 		 */
 	}
 
+	@Override
+	public String getComponentTagName() {
+		return "doublebox";
+	}
+
 }

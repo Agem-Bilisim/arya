@@ -152,4 +152,9 @@ public class AryaBorderlayout extends Borderlayout implements IAryaComponent {
 		 */
 	}
 
+	@Override
+	public String getComponentTagName() {
+		return "borderlayout";
+	}
+
 }

@@ -146,4 +146,9 @@ public class AryaWest extends West implements IAryaComponent {
 		 */
 	}
 
+	@Override
+	public String getComponentTagName() {
+		return "west";
+	}
+
 }

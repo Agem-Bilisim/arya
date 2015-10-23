@@ -165,4 +165,9 @@ public class AryaCalendar extends Calendar implements IAryaComponent {
 		 */
 	}
 
+	@Override
+	public String getComponentTagName() {
+		return "calendar";
+	}
+
 }

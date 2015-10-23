@@ -205,4 +205,9 @@ public class AryaTextbox extends Textbox implements IAryaComponent {
 		this.setValue(componentValue);
 	}
 
+	@Override
+	public String getComponentTagName() {
+		return "textbox";
+	}
+
 }

@@ -23,11 +23,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.CookieManager;
 import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sun.javafx.scene.control.skin.TableHeaderRow;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -45,6 +48,7 @@ import javax.xml.parsers.SAXParserFactory;
 import tr.com.agem.arya.R;
 import tr.com.agem.arya.interpreter.components.AryaLabel;
 import tr.com.agem.arya.interpreter.components.AryaListCell;
+import tr.com.agem.arya.interpreter.components.AryaListBox;
 import tr.com.agem.arya.interpreter.components.AryaListItem;
 import tr.com.agem.arya.interpreter.components.ComponentFactory;
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
@@ -195,6 +199,8 @@ public class AryaInterpreterHelper {
                                 for (int i = 0; i < jsonArray.length(); i++) {
                                     JSONObject jsonObj = jsonArray.getJSONObject(i);
 
+
+
                                     String whatYouWantToFill = "list";// TODO liste datası olup olmadığı anlaşılmalı
 
                                     if ("list".equals(whatYouWantToFill)) {
@@ -202,18 +208,33 @@ public class AryaInterpreterHelper {
                                         AryaListItem item = new AryaListItem(null,main);
                                         item.setComponentParent(getElementById("list", main));
 
+                                        AryaListBox lb = (AryaListBox) getElementById("list", main);
+
+
+
+                                        /*for(int k=0; k<lb.getChildCount(); k++) {
+                                            Log.d("aaa", lb.getChildAt(k).toString());
+                                        }*/
+
+
+
+
+
+
                                         for (Iterator<?> iterator = jsonObj.keySet().iterator(); iterator.hasNext();) {///TODO (volkan)
                                             String key = (String) iterator.next();
 
-                                            if (AryaUtils.isNotEmpty(jsonObj.get(key).toString())&&AryaUtils.isNotEmpty(getElementById(key, main))){
+                                            if (AryaUtils.isNotEmpty(jsonObj.get(key).toString())&&AryaUtils.isNotEmpty(getElementById(key, main))) {
                                                 AryaParserAttributes attr = new AryaParserAttributes();
-                                                attr.setValue("id", key+""+(i));
+                                                attr.setValue("id", key + "" + (i));
                                                 attr.setValue("label", jsonObj.get(key).toString());
-                                                AryaListCell cell = new AryaListCell(attr,main,null);
+                                                AryaListCell cell = new AryaListCell(attr, main, null);
                                                 cell.setComponentParent(item);
+
 
                                             }
                                         }
+
 
                                     } else {
                                         for (Iterator<?> iterator = jsonObj.keySet().iterator(); iterator.hasNext();) {

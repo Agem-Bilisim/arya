@@ -139,4 +139,9 @@ public class AryaListItem extends Listitem implements IAryaComponent {
 		 */
 	}
 
+	@Override
+	public String getComponentTagName() {
+		return "listitem";
+	}
+
 }

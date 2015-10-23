@@ -211,4 +211,9 @@ public class AryaMultipleCombobox extends Listbox implements IAryaComponent {
 		 */
 	}
 
+	@Override
+	public String getComponentTagName() {
+		return "multiplecombobox";
+	}
+
 }

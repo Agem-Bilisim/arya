@@ -204,4 +204,10 @@ public class AryaCheckbox extends Checkbox implements IAryaComponent {
 		 * was created for IAryaComponent interface.
 		 */
 	}
+
+	@Override
+	public String getComponentTagName() {
+		return "checkbox";
+	}
+
 }

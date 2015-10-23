@@ -15,20 +15,7 @@
 
 	<window>
 
-		<listbox id="box" width="100%">
-			<listhead>
-				<listheader label="Company" />
-				<listheader label="Project" />
-			</listhead>
-			<listitem>
-				<listcell label="AGEM" />
-				<listcell label="arya" />
-			</listitem>
-			<listitem>
-				<listcell label="AGEM" />
-				<listcell label="arya" />
-			</listitem>
-		</listbox>
+		
 
 		<label id="lbl1" value="Company Name" />
 

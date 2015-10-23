@@ -172,4 +172,9 @@ public class AryaColumns extends Columns implements IAryaComponent {
 		 */
 	}
 
+	@Override
+	public String getComponentTagName() {
+		return "columns";
+	}
+
 }

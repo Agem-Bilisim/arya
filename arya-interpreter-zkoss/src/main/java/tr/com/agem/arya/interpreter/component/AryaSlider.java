@@ -199,4 +199,9 @@ public class AryaSlider extends Slider implements IAryaComponent {
 		this.setCurpos(Integer.parseInt(componentValue));
 	}
 
+	@Override
+	public String getComponentTagName() {
+		return "slider";
+	}
+
 }

@@ -197,4 +197,9 @@ public class AryaSpinner extends Spinner implements IAryaComponent {
 		 */
 	}
 
+	@Override
+	public String getComponentTagName() {
+		return "spinner";
+	}
+
 }

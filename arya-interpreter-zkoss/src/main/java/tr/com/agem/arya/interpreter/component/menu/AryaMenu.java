@@ -181,4 +181,9 @@ public class AryaMenu extends Menu implements IAryaComponent, IAryaMenu {
 		return null;
 	}
 
+	@Override
+	public String getComponentTagName() {
+		return "menu";
+	}
+
 }

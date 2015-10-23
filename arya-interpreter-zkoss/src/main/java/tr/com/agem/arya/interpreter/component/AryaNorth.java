@@ -144,4 +144,9 @@ public class AryaNorth extends North implements IAryaComponent {
 		 */
 	}
 
+	@Override
+	public String getComponentTagName() {
+		return "north";
+	}
+
 }

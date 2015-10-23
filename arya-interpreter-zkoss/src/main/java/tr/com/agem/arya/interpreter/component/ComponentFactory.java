@@ -107,7 +107,9 @@ public class ComponentFactory {
 			comp = new AryaSelectbox(main, attributes);
 		} else if ("div".equalsIgnoreCase(tagName)) {
 			comp = new AryaDiv(main, attributes);
-		} 
+		} else if ("template".equalsIgnoreCase(tagName)) {
+			comp = new AryaTemplate(main, attributes);
+		}
 
 		return comp;
 	}

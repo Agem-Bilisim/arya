@@ -162,4 +162,10 @@ public class AryaListCell extends Listcell implements IAryaComponent {
 		 * was created for IAryaComponent interface.
 		 */
 	}
+
+	@Override
+	public String getComponentTagName() {
+		return "listcell";
+	}
+
 }

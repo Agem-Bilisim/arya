@@ -152,4 +152,9 @@ public class AryaVlayout extends Vlayout implements IAryaComponent {
 		 */
 	}
 
+	@Override
+	public String getComponentTagName() {
+		return "vlayout";
+	}
+
 }

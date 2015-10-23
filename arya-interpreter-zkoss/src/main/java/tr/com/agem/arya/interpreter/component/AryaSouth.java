@@ -145,4 +145,9 @@ public class AryaSouth extends South implements IAryaComponent {
 		 */
 	}
 
+	@Override
+	public String getComponentTagName() {
+		return "south";
+	}
+
 }

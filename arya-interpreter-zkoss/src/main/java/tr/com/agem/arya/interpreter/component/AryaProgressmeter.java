@@ -114,4 +114,9 @@ public class AryaProgressmeter extends Progressmeter implements IAryaComponent {
 		this.setValue(Integer.parseInt(componentValue));
 	}
 
+	@Override
+	public String getComponentTagName() {
+		return "progressmeter";
+	}
+
 }

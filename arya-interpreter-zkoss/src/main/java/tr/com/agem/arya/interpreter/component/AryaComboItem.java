@@ -79,4 +79,9 @@ public class AryaComboItem extends Comboitem implements IAryaComponent {
 		this.setValue(componentValue);
 	}
 
+	@Override
+	public String getComponentTagName() {
+		return "comboitem";
+	}
+
 }

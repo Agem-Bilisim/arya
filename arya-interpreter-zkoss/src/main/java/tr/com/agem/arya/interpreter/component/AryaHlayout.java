@@ -152,4 +152,10 @@ public class AryaHlayout extends Hlayout implements IAryaComponent {
 		 * was created for IAryaComponent interface.
 		 */
 	}
+
+	@Override
+	public String getComponentTagName() {
+		return "hlayout";
+	}
+
 }

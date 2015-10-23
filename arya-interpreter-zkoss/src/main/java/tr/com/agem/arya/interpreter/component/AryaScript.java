@@ -86,4 +86,9 @@ public class AryaScript extends Script implements IAryaComponent {
 		this.srcList = srcList;
 	}
 
+	@Override
+	public String getComponentTagName() {
+		return "script";
+	}
+
 }

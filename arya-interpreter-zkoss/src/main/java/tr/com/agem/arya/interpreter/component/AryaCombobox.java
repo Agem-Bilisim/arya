@@ -227,4 +227,9 @@ public class AryaCombobox extends Combobox implements IAryaComponent {
 		 */
 	}
 
+	@Override
+	public String getComponentTagName() {
+		return "combobox";
+	}
+
 }
