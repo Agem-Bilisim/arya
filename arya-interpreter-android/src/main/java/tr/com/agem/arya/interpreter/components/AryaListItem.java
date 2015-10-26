@@ -83,4 +83,10 @@ public class AryaListItem extends TableRow implements IAryaComponent {
     public void setComponentAttribute(String componentAttribute) {
         this.componentAttribute = componentAttribute;
     }
+
+    @Override
+    public String getComponentTagName() {
+        return "listitem";
+    }
+
 }

@@ -105,5 +105,10 @@ public class AryaMenuBar implements IAryaMenu,IAryaComponent {
         return null;
     }
 
+    @Override
+    public String getComponentTagName() {
+        return "menubar";
+    }
+
 
 }

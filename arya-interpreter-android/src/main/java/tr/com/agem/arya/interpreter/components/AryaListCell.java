@@ -109,4 +109,10 @@ public class AryaListCell extends TextView implements IAryaComponent {
     public void setComponentAttribute(String componentAttribute) {
         this.componentAttribute = componentAttribute;
     }
+
+    @Override
+    public String getComponentTagName() {
+        return "listcell";
+    }
+
 }

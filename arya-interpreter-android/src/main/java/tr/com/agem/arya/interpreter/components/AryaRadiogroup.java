@@ -96,4 +96,10 @@ public class AryaRadiogroup extends RadioGroup implements IAryaComponent {
     public void setComponentValue(String componentValue) {
         this.componentValue = componentValue;
     }
+
+    @Override
+    public String getComponentTagName() {
+        return "radiogroup";
+    }
+
 }

@@ -120,4 +120,10 @@ public class AryaMultipleComboBox extends ListView implements IAryaComponent {
         listView.requestLayout();
 
     }
+
+    @Override
+    public String getComponentTagName() {
+        return "multiplecombobox";
+    }
+
 }
