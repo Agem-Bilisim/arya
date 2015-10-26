@@ -58,6 +58,13 @@ public class AryaGrid extends Grid implements IAryaComponent, IAryaTemplate {
 
 			if(attributes.getValue("pagesize") != null) //TODO number value exception
 				this.setPageSize(new Integer (attributes.getValue("pagesize")));
+			
+			if (attributes.getValue("style") != null)
+				this.setStyle(attributes.getValue("style"));
+			
+			if (attributes.getValue("sizedByContent") != null)
+				this.setSizedByContent(Boolean.parseBoolean(attributes.getValue("sizedByContent"))); 
+			
 
 			/*
 			 * if the dimension input format of .arya files does NOT contains

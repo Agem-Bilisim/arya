@@ -55,6 +55,12 @@ public class AryaMenuBar extends Menubar implements IAryaComponent, IAryaMenu {
 			this.setAction(attributes.getValue("action"));
 			this.setHflex(attributes.getValue("hflex"));
 			this.setVflex(attributes.getValue("vflex"));
+			
+			if (attributes.getValue("orient") != null)
+				this.setOrient(attributes.getValue("orient"));
+			
+			if (attributes.getValue("style") != null)
+				this.setStyle(attributes.getValue("style"));
 
 			/*
 			 * if the dimension input format of .arya files does NOT contains

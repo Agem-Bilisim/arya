@@ -51,6 +51,9 @@ public class AryaHlayout extends Hlayout implements IAryaComponent {
 		this.setAction(attributes.getValue("action"));
 		this.setHflex(attributes.getValue("hflex"));
 		this.setVflex(attributes.getValue("vflex"));
+		
+		if (attributes.getValue("valign") != null)
+			this.setValign(attributes.getValue("valign"));
 
 		/*
 		 * if the dimension input format of .arya files does NOT contains the

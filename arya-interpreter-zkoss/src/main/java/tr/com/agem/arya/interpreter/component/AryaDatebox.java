@@ -73,6 +73,9 @@ public class AryaDatebox extends Datebox implements IAryaComponent {
 			
 			if (attributes.getValue("open") != null)
 				this.setOpen(Boolean.parseBoolean(attributes.getValue("open")));
+			
+			if (attributes.getValue("style") != null)
+				this.setStyle(attributes.getValue("style"));
 
 			/*
 			 * if the dimension input format of .arya files does NOT contains

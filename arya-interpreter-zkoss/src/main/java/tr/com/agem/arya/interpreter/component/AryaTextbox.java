@@ -76,6 +76,9 @@ public class AryaTextbox extends Textbox implements IAryaComponent {
 			
 			if (attributes.getValue("tabbable") != null)
 				this.setTabbable(Boolean.parseBoolean(attributes.getValue("tabbable")));
+			
+			if (attributes.getValue("style") != null)
+				this.setStyle(attributes.getValue("style"));
 
 			/*
 			 * if the dimension input format of .arya files does NOT contains

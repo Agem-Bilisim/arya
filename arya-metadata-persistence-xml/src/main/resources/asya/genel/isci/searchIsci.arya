@@ -1,79 +1,91 @@
 <?page title="DOCSYS" ?>
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
+	<menubar id="menubar" orient="vertical" style="float: left">
+		<menu label="İşçi Bilgileri">
+			<menupopup>
+				<menuitem label="Arama"
+					onClick="post('genel.isci.search', 'ALL',{'json': '1'})" />
+				<menuitem label="Liste"
+					onClick="post('genel.isci.list', 'ALL',{'json': '1'})" />
+				<menuitem label="Yeni Kayıt" />
+			</menupopup>
+		</menu>
+		<menu label="test">
+		</menu>
+	</menubar>
 	<window id="listIsciWindow">
-		<label id="kisiParam.tckNoParamlbl" value="T.C. Kimlik No" />
-		<textbox type="text" id="kisiParam.tckNoParam"  value="xifu69itnij"  width="200"  maxlength="11"  placeholder=""   />
-		<label id="kisiParam.adSoyadParamlbl" value="Ad Soyad" />
-		<textbox type="text" id="kisiParam.adSoyadParam"  value="bv6ckz782frxnxp"  width="200"  maxlength="255"  placeholder=""  />
-		<label id="sgkNoParamlbl" value="SGK Sicil No" />
-		<textbox type="text" id="sgkNoParam"  value="6miv00hzkv8fk"  width="200"  maxlength="13"  placeholder=""   />
-		<label id="cinsiyetParamlbl" value="Cinsiyet" />
-		<combobox id="cinsiyetParam"  width="200"  >
-			<comboitem label="f76xyl05vp" value="932u" />
-		</combobox>
-		<label id="kanGrubuParamlbl" value="Kan Grubu" />
-		<combobox id="kanGrubuParam"  width="200"  >
-			<comboitem label="f3w9ze0pxu" value="1642" />
-		</combobox>
-		<label id="isyeriBilgileriLabellbl" value="İşyeri Bilgileri"  onClick=""  />
-		<label id="isyeriParam.subeParamlbl" value="Şube" />
-		<combobox id="isyeriParam.subeParam"  width="300"  >
-			<comboitem label="onnqm57aw5" value="n9j1" />
-		</combobox>
-		<textbox visible="false" type="text" id="isyeriParam.isyeriIdParam"  value="xt7ppebprg"  placeholder=""  />
-		<label id="isyeriParam.unvanParamlbl" value="İşyeri Ünvanı" />
-		<textbox type="text" id="isyeriParam.unvanParam"  value="m4l5lbzgxyv928fbuz1dl3aodjtfz5xorgte4r4"  width="416"  maxlength="255"  placeholder=""  top="56" />
-		<label id="isyeriParam.sgkKisaNoParamlbl" value="İşyeri SGK No" />
-		<textbox type="text" id="isyeriParam.sgkKisaNoParam"  value="nrntycemlyj48p2kmovfbl30xuwittn4l8"  maxlength="34"  placeholder=""   />
-		<checkbox type="text" id="isletmeParam"  checked="true"  label="İşletme Bazında"  onCheck=""  width="50"  />
-		<label id="digerBilgilerLabellbl" value="Diğer Bilgiler"  onClick=""  />
-		<checkbox type="text" id="issizParam"  checked="true"  label="İşsiz"  onCheck=""  width="25"  />
-		<checkbox type="text" id="uyeDurumParam"  checked="true"  label="Üyeler"  onCheck=""  width="25"  />
-		<checkbox type="text" id="tckNoHataliParam"  checked="false"  label="T.C. Kimlik No Hatalı"  onCheck=""  width="25"  />
-		<checkbox type="text" id="cepTelParam"  checked="false"  label="Cep Tel. Kayıtlı"  onCheck=""  width="25"  />
-		<checkbox type="text" id="epostaParam"  checked="true"  label="E-posta Kayıtlı"  onCheck=""  width="25"  />
-		<label id="kisiDigerParam.metin01Paramlbl" value="metin01" />
-		<textbox type="text" id="kisiDigerParam.metin01Param"  value="nmnkwn7zl9uaj6t0oku153uik07amicc9t0oya0wdeebiwfh5ycax08pijmtt12fxuj7dxpdq1gdq6hfy0wgkl4qmkfbc2690ua2l2sv5cfz13oxo6voq7dhbqtfrhhq2sx02inkpiw6lgz1ewgigifdpdytueluy0lictdhnrflkxeecfgpz2aw11fa5w7d8qmwbyrnh0rp86dk3mriy6qpmn0mw483ovoofanweopaenkv2qs88jnkhi4sq67"  width="200"  maxlength="255"  placeholder=""  />
-		<label id="kisiDigerParam.metin02Paramlbl" value="metin02" />
-		<textbox type="text" id="kisiDigerParam.metin02Param"  value="w3iqhgpi6znwbujngqp881put4fc15ucgxf991flnz6xo0rvl6df9kkmk2or8bgvb13lts8nt77we4j33vxxc30j15bretz8tn5h4jvgaa4dlizjm8694s4hktfpikwk2bdmaseg441r0ifb2h3zy8p4p2tw9ej1aqj3klyr92knbnezvzwdpcjcktcejg4dm8o62fyyz3nksfpzyxll6qluta04baazown8b65r1s1zwcgw1j7vxrpo9jpxhsb"  width="200"  maxlength="255"  placeholder=""  />
-		<label id="kisiDigerParam.metin03Paramlbl" value="metin03" />
-		<textbox type="text" id="kisiDigerParam.metin03Param"  value="71ukc0ae4ywv86j7wleph1jxg6n46i11de7ocgzi8gvcfbh15byb1ilq5t73n6bomdm2p4thre2cre0r659tjt307qltkw16srna2zbnxf8b049tv8a81aciri4300a51lv8l6fbalhtgkgjw9ertsjy3rxb3z8rwlhl3szaffqnh84piyjqr8i69y0orlx19xusnq18r5zsg03u4d9q8173v8j6ap2u8711fw7xxj3l0pkr1semk4vsbz0m50b"  width="200"  maxlength="255"  placeholder=""  />
-		<label id="kisiDigerParam.metin04Paramlbl" value="metin04" />
-		<textbox type="text" id="kisiDigerParam.metin04Param"  value="tltbpk9a5vdypefyg7h1ibkfj8pbmf94ld1r6ldef9f5s6lntx3r6c25qn46dx1hnnhp2jtwk5tvqjzldvpins52yqaksbru3e4qxaxh00nkb6qul2pyk7qpnjhux843holt9pcgr755w7m0hcitt08ol8fyvx77oka2gpzggpvxgducpbja3kwibbmw26lwlzy29m5tla9d0lvy1ea6t2dzezknmaukszxspvmyoq7oa7ca8lerbnc22cobwad"  width="200"  maxlength="255"  placeholder=""  />
-		<label id="kisiDigerParam.metin05Paramlbl" value="metin05" />
-		<textbox type="text" id="kisiDigerParam.metin05Param"  value="htei9nxg1upuys6dcjczd5v543zpx7qmpb23874gw2vc8qjs7undfke3awyl0g5210tzu1jlw61eyyu7xxfvxnv2yz3bwhk5diui2i34louwueu2wf2vcur31m872k2elueosp8go12z61oqi62wj6lm7tblhtde1771tmtrfg1tmfvyhwuuixmq86gg2ybslr2d4hftinvv9td7qte5eqiss71ik58wsgcsmfm7jwsmbmjkirbxiu4rribus1x"  width="200"  maxlength="255"  placeholder=""  />
-		<label id="kisiDigerParam.metin06Paramlbl" value="metin06" />
-		<textbox type="text" id="kisiDigerParam.metin06Param"  value="gkfo62z9xd0tcpa0yjorqf76ssxroxayd8gej8d9mgvofuu6dyy3pwv5e58r0z5j27aubd6p6vlvt7gu8u3g8a58eotty3lngifgekhz28hxgumc45vp0wyhzfq0q86bqyxhxi2om186eikj068u5qogyc0xcjgu2dtrmitjdz2ytl8cc9w3fhy3r4ji4i8t4weoikzio23q43c6lx8dbwogsjbgrod8l32fhxjyievoykzmjfga337nc93svb7"  width="200"  maxlength="255"  placeholder=""  />
-		<label id="kisiDigerParam.metin07Paramlbl" value="metin07" />
-		<textbox type="text" id="kisiDigerParam.metin07Param"  value="zcyrc4l5rbnt21lu85scgcrum5eod9jfda867pei4h9qn8y4v0a7y7g9bfemj1s43vvzdx6suhwijy9h9b6ysyck2jh9ac7yg2a60x1mkykduld9rns1qyicdlqhm0gud04menmtzuoexkbo0w88wofcywfhwy622ki8axtrfdaaur5n24aj2i5ltp26a7xgy29s4lj3jwcxbybdya2ltacd0jdkid1464vqk1358a7f39gzzg7rkuqqo7a7zhj"  width="200"  maxlength="255"  placeholder=""  />
-		<label id="kisiDigerParam.metin08Paramlbl" value="metin08" />
-		<textbox type="text" id="kisiDigerParam.metin08Param"  value="suvxdqf5hqo8gmokgu6zprwm7042e9gvu1mzj7h2c1etn83n0nhg7yn5hy7lnwogtkytqytp1cz711iuj1x4c16t63j7kdvatbyjrqxj4nbq2q1td59phcr2knhstan23t3x1lw76os1ahknnrigu8h67t0sod67qjceqmee6x3ec0v8kqfpz0zsxapnr9bh6hr046yv8y6gum6ppjss0jj5ch3g4y110a8hwniahlxym71pgunts7873wfts4i"  width="200"  maxlength="255"  placeholder=""  />
-		<label id="kisiDigerParam.metin09Paramlbl" value="metin09" />
-		<textbox type="text" id="kisiDigerParam.metin09Param"  value="uf347ufdkfkfyo780jy9g4ca2m89ka7tdzwv8x8bspktmi37b6g5tog5dq0wehsl9o0k1200q4wqjaxzl37c74wk0u2cgcpcbngjqlmjz1lzeq72vo59crtt8yrb8g0xljwxvy3ajpuvp0op8kg2q3e70b6q7lwgyk7yk9xkt75z9sk5pj4j3izmgg0vl25pj72x9l5hdo8fm8bghmy11t4yx51yepvg7msv9sohjfjaf29wkgq71fpn2y5ipkb"  width="200"  maxlength="255"  placeholder=""  />
-		<label id="kisiDigerParam.metin10Paramlbl" value="metin10" />
-		<textbox type="text" id="kisiDigerParam.metin10Param"  value="0vfzfu4lgs4r0mvfbjl4qj6a5ocbc0wnj5el2btkrwv4uafj65eb6f0g96abbe9twwturvhhoipaguaj2ydcahmaph4j4e2ontq7jbag4mgw1svutnsqqlfoy46x6l5c8r4gt4hu7ob75yj4ls3n769qk7d2iwopw3g9q0yxt6b3tleq57o8deywvj85oxscpkphxwp7n5e3td4uwf5svnrao38r698z4yj9b0arz3vgc61e81h1mvsdhvng3ca"  width="200"  maxlength="255"  placeholder=""  />
-		<label id="kisiDigerParam.tarih01Paramlbl" value="tarih01" />
-		<datebox id="kisiDigerParam.tarih01Param"  value="1992-10-2"  placeholder=""  />
-		<label id="kisiDigerParam.tarih02Paramlbl" value="tarih02" />
-		<datebox id="kisiDigerParam.tarih02Param"  value="2000-9-2"  placeholder=""  />
-		<label id="kisiDigerParam.tarih03Paramlbl" value="tarih03" />
-		<datebox id="kisiDigerParam.tarih03Param"  value="2003-6-28"  placeholder=""  />
-		<label id="kisiDigerParam.tarih04Paramlbl" value="tarih04" />
-		<datebox id="kisiDigerParam.tarih04Param"  value="1993-7-2"  placeholder=""  />
-		<label id="kisiDigerParam.tarih05Paramlbl" value="tarih05" />
-		<datebox id="kisiDigerParam.tarih05Param"  value="1996-11-8"  placeholder=""  />
-		<label id="kisiDigerParam.sayi01Paramlbl" value="sayi01" />
-		<textbox type="text" id="kisiDigerParam.sayi01Param"  value="k5aig8voh6j2tfwwgo7hg9kh7rsrv9ak6wbb777gtk67rdramvg4kl35eqm7dw7nx1ywi0vqoav7mfzzzbxaql8a9ff8ii3b9li48c3t06epasofgjxjay450gusds9niqzgi7avzmgaylx5jb5j03sdfj41fon1hlquoo5q8ss0rqsa9z8vn1jt3a3rzej3o3e92olfvabdg5rurqymvocw6j707xeypa0xv24p0eo1mxzhwikhyjbrmki2pqd"  width="200"  maxlength="255"  placeholder=""  />
-		<label id="kisiDigerParam.sayi02Paramlbl" value="sayi02" />
-		<textbox type="text" id="kisiDigerParam.sayi02Param"  value="5jgnbbzbyzewmtw1bcmmzeezia3jodoayqfrlommgtwe2cqznb2yc0yuty6rfssu765lqw81c9mec0g6e9iu87nq3m702m91dzgw73sgue394xya4366fgo0yv5qtf830a6hirrim6my7inbhjmk6n5983n346087idbeucpv0d9wsccsruzwncjpgj2js6f4fv6rgsgapjr3zsnu6bsadib3l40rgeuhl2rh32azbso86ojk07x2st50qqfvc2"  width="200"  maxlength="255"  placeholder=""  />
-		<label id="kisiDigerParam.sayi03Paramlbl" value="sayi03" />
-		<textbox type="text" id="kisiDigerParam.sayi03Param"  value="7v0c2xhzcesz2kuzrn5veu6todv5z85hwyk0xuq37z6arafm4y27eu95am407cu13l266poxhdfcr3wkfv9r1w52mnqhfptn5lgh5k0erdettta2yr40cu4n3crjsv7q2a4nl5xhxv05dy17mu6g27nlz0t2pcjq3wh7qg16r3bos14ov0vk7zpkkwfmm2iod3fxlz5y5k0u9zw4xdnts7czf0lf48s8rye1xclxen0jxe5gksnltm1ucfz5q2p"  width="200"  maxlength="255"  placeholder=""  />
-		<label id="kisiDigerParam.sayi04Paramlbl" value="sayi04" />
-		<textbox type="text" id="kisiDigerParam.sayi04Param"  value="5wqjbm6kqgse3js6wnmtiws42zv2o1t44obozhtbe9jmmztg70vnuwu0vwis4og54ut312q5cr0ocabvt1bjvqaqcvlrakzuis8jpf8gls6w53we30hnb4ax50wi0orddw7krfvxk9m75fb6pz630h2mn7yd7km7mnbi37j7mnkrpd1e2bqt0ao1a388fdu39ekhtthwfcgqv1wbbd9m5u2uta200u3e1nu2tgw56l17ocmhjb6jm6bkxuk33r3"  width="200"  maxlength="255"  placeholder=""  />
-		<label id="kisiDigerParam.sayi05Paramlbl" value="sayi05" />
-		<textbox type="text" id="kisiDigerParam.sayi05Param"  value="o23ogjpgljpkix2rkjuzfidgw5xevyd4sd23ez7adn6x741lzile5nbc9qpznys6refz6q7hhangj6f27tugo0lnk7zljw2rtc8w3mwtxjv9wkcdfvc45xqp11raji6x5bwiqwm3wy0z0cbuodug5dfjjzhq3exvsoi4tpyp7c8rysk22e2m56zff69nv6xdtbwnyj7p15tdiqosdvi3bzq4hai3gwygef0jsjmvbwppwk24wr8n1gdjdxev52y"  width="200"  maxlength="255"  placeholder=""  />
+		<vlayout>
+			<grid>
+				<rows>
+					<row>
+						<label id="kisiParam.tckNoParamlbl" value="T.C. Kimlik No" />
+						<textbox type="text" id="kisiParam.tckNoParam" width="200"  maxlength="11"  placeholder=""   />
+					</row>
+					<row>
+						<label id="kisiParam.adSoyadParamlbl" value="Ad Soyad" />
+						<textbox type="text" id="kisiParam.adSoyadParam" width="200"  maxlength="255"  placeholder=""  />
+					</row>
+					<row>
+						<label id="sgkNoParamlbl" value="SGK Sicil No" />
+						<textbox type="text" id="sgkNoParam" width="200"  maxlength="13"  placeholder=""   />
+					</row>
+					<row>
+						<label id="cinsiyetParamlbl" value="Cinsiyet" />
+						<combobox id="cinsiyetParam"  width="200"  >
+							<comboitem label="f76xyl05vp" value="932u" />
+						</combobox>
+					</row>
+					<row>
+						<label id="kanGrubuParamlbl" value="Kan Grubu" />
+						<combobox id="kanGrubuParam"  width="200"  >
+							<comboitem label="f3w9ze0pxu" value="1642" />
+						</combobox>
+					</row>
+					<row>
+						<label id="isyeriBilgileriLabellbl" value="İşyeri Bilgileri"    />
+					</row>
+					<row>
+						<label id="isyeriParam.subeParamlbl" value="Şube" />
+						<combobox id="isyeriParam.subeParam"  width="300"  >
+							<comboitem label="onnqm57aw5" value="n9j1" />
+						</combobox>
+					</row>
+					<row>
+						<textbox visible="false" type="text" id="isyeriParam.isyeriIdParam" placeholder=""  />
+					</row>
+					<row>
+						<label id="isyeriParam.unvanParamlbl" value="İşyeri Ünvanı" />
+						<textbox type="text" id="isyeriParam.unvanParam" width="416"  maxlength="255"  placeholder=""  top="56" />
+					</row>
+					<row>
+						<label id="isyeriParam.sgkKisaNoParamlbl" value="İşyeri SGK No" />
+						<textbox type="text" id="isyeriParam.sgkKisaNoParam" maxlength="34"  placeholder=""   />
+					</row>
+					<row>
+						<checkbox type="text" id="isletmeParam"  checked="false"  label="İşletme Bazında"  onCheck=""  width="50"  />
+					</row>
+					<row>
+						<label id="digerBilgilerLabellbl" value="Diğer Bilgiler"  />
+					</row>
+					<row>
+						<checkbox type="text" id="issizParam"  checked="false"  label="İşsiz"  onCheck=""  width="25"  />
+						<checkbox type="text" id="uyeDurumParam"  checked="false"  label="Üyeler"  onCheck=""  width="25"  />
+					</row>
+					<row>
+						<checkbox type="text" id="tckNoHataliParam"  checked="false"  label="T.C. Kimlik No Hatalı"  onCheck=""  width="25"  />
+						<checkbox type="text" id="cepTelParam"  checked="false"  label="Cep Tel. Kayıtlı"  onCheck=""  width="25"  />
+					</row>
+					<row>
+						<checkbox type="text" id="epostaParam"  checked="false"  label="E-posta Kayıtlı"  onCheck=""  width="25"  />
+					</row>
+				</rows>
+			</grid>
+			<button id="listele" label="Listele" position="1/3" newLine="true"
+					onClick="" />
+		</vlayout>
 	</window>
 	<script>
-AgemForm.submitMessage('Arama yapılıyor...');$(document).ready(	function() {		AgemDouble.attachEvents("kisiParam.tckNoParam", 0);		AgemDouble.attachEvents("sgkNoParam", 0);		Agem.addMaskEvents("isyeriParam.sgkKisaNoParam");	});var setKisi = function (d) {	if (d.id) {		Agem.setValue(d.kisi, "kisiParam", "Param");		Agem.setValue(d, null, "Param");		AgemWM.addQueryString(Agem.json2Param( {kisiId: d.id}));		AgemWM.link('#genelIsciSelect', {url: 'genel/isci/select.do', refresh:true});	}};var prepareKisiUrl = function () {	return "genel/isci/autocomplete.do";};var prepareIsyeriUrl = function () {	if (Agem.byId("isyeriParam.subeParam").value) {		return "genel/isyeri/autocomplete.do?subeParam="+Agem.byId("isyeriParam.subeParam").value;	}	return "genel/isyeri/autocomplete.do";};var prepareAdSoyadParameterName = function () {	return "kisiParam.adSoyadParam";};var prepareTCKimlikNoParameterName = function () {	return "kisiParam.tckNoParam";};var setIsyeri = function (d) {	if (d.id) {		Agem.setValue(d, "isyeriParam", "Param");		if (!Agem.byId("isyeriParam.unvanParam").value) 			Agem.byId("isyeriParam.isyeriIdParam").value = "";	}	else {		Agem.byId("isyeriParam.isyeriIdParam").value = "";	}}	</script>
+		
+	</script>
 </arya>

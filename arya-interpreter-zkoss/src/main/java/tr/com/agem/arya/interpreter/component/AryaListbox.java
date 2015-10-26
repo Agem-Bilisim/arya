@@ -87,6 +87,10 @@ public class AryaListbox extends Listbox implements IAryaComponent, IAryaTemplat
 			if (attributes.getValue("checkmark") != null)
 				this.setCheckmark(Boolean.parseBoolean(attributes.getValue("checkmark")));
 			
+			if(attributes.getValue("span") != null)
+				this.setSpan(attributes.getValue("span"));
+		
+			
 			
 
 			if (AryaUtils.isNotEmpty(attributes.getValue("onDrop"))) {

@@ -169,7 +169,7 @@ public class AryaInterpreterHelper {
 							JSONArray jsonArray = new JSONArray(entry.getValue().toString());
 							if (jsonArray.length() > 1) {
 								populateAryaTemplate(main, (IAryaTemplate) getElementById("list", main), jsonArray);
-							} else {
+							} else  if (jsonArray.length() == 1){  
 								JSONObject jsonObj = jsonArray.getJSONObject(0);
 								for (Iterator<?> iterator = jsonObj.keySet().iterator(); iterator.hasNext();) {
 									String key = (String) iterator.next();
@@ -206,7 +206,7 @@ public class AryaInterpreterHelper {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	}
+	} 
 
 	public static IAryaComponent getElementById(String id, AryaMain main) { // only
 																			// on
@@ -238,12 +238,12 @@ public class AryaInterpreterHelper {
 			Object ret;
 			if (obj != null)
 				ret = obj.get(spl[spl.length - 1]);
-			else
+			else    
 				ret = jsonObj.get(spl[0]);
 			if (!ret.equals(JSONObject.NULL)) {
 				retVal = ret.toString();
 			}
-		}
+		}  
 		return retVal;
 	}
 
