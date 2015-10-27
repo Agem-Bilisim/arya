@@ -1,29 +1,71 @@
 <?page title="DOCSYS" ?>
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
+	<menubar id="menubar" orient="vertical" style="float: left">
+		<menu label="İşçi Bilgileri">
+			<menupopup>
+				<menuitem label="Arama"
+					onClick="post('genel.isci.search', 'ALL',{'json': '1'})" />
+				<menuitem label="Liste"
+					onClick="post('genel.isci.list', 'ALL',{'json': '1'})" />
+			</menupopup>
+		</menu>
+		<menu label="İşyeri Bilgileri">
+			<menupopup>
+				<menuitem label="Liste"
+					onClick="post('genel.isyeri.list', 'ALL',{'json': '1'})" />
+			</menupopup>
+		</menu>
+		<menu label="Üyelik İşlemleri">
+			<menupopup>
+				<menuitem label="Arama"
+					onClick="post('genel.uye.search', 'ALL',{'json': '1'})" />
+				<menuitem label="Liste"
+					onClick="post('genel.uye.list', 'ALL',{'json': '1'})" />
+			</menupopup>
+		</menu>
+		<menu label="Yetki Başvuruları">
+		</menu>
+		<menu label="Toplu İş Sözleşmeleri">
+		</menu>
+		<menu label="Aidat İşlemleri">
+		</menu>
+		<menu label="İşveren Sendikaları">
+		</menu>
+		<menu label="Rakip Sendikalar">
+		</menu>
+		<menuitem label="Çıkış" onClick="post('login', 'VIEW_ONLY',{'json': '1'})"/>
+	</menubar>
 	<window id="listUyeWindow">
-		<listbox id="list">
-			<listhead>
-				<listheader label="T.C. Kimlik No" id="isci.kisi.tckNo" />
-				<listheader label="Ad Soyad" id="isci.kisi.adSoyad" />
-				<listheader label="Üye Baş.Tar." id="girisGecerlilikTarihi" />
-				<listheader label="Doğrulama" id="dogrulamaKodu" />
-				<listheader label="Cep No" id="isci.cepTel" />
-				<listheader label="Giriş YK Karar No" id="girisYkKararNo" />
-				<listheader label="İstifa Tar." id="cikisBasvuruTarihi" />
-				<listheader label="Üye Bit.Tar." id="cikisGecerlilikTarihi" />
-				<listheader label="Çıkış Noter Yev.Ref.No" id="cikisNoterYevmiyeNo" />
-				<listheader label="Çıkış Nedeni" id="cikisNedeni" />
-				<listheader label="Arşiv No" id="girisArsivReferansNo" />
-				<listheader label="Şube" id="sube" />
-				<listheader label="İşyeri SGK No" id="isyeri.sgkKisaNo" />
-				<listheader label="Ünvan" id="isyeri.unvan" />
-				<listheader label="İl" id="isyeri.ilAdi" />
-				<listheader label="İlçe" id="isyeri.ilceAdi" />
-				<listheader label="Açıklama" id="aciklama" />
-				<listheader label="Çıkış Açıklama" id="cikisAciklama" />
-			</listhead>
-		</listbox>
+		<vlayout>
+			<listbox id="list" pagesize="10" mold="paging">
+				<listhead>
+					<listheader label="Üye Id" />
+					<listheader label="Üye Baş.Tar." />
+					<listheader label="Doğrulama" />
+					<listheader label="Cep No" />
+					<listheader label="Giriş YK Karar No" />
+					<listheader label="İstifa Tar." />
+					<listheader label="Üye Bit.Tar." />
+					<listheader label="Çıkış Noter Yev.Ref.No" />
+					<listheader label="Çıkış Nedeni" />
+				</listhead>
+				<template>
+					<listitem>
+						<listcell id="uyeId"/>
+						<listcell id="girisGecerlilikTarihi"/>
+						<listcell id="dogrulamaKodu"/>
+						<listcell id="isci.cepTel"/>
+						<listcell id="girisYkKararNo"/>
+						<listcell id="cikisBasvuruTarihi"/>
+						<listcell id="cikisGecerlilikTarihi"/>
+						<listcell id="cikisNoterYevmiyeNo"/>
+						<listcell id="cikisNedeni"/>
+					</listitem>
+				</template>
+			</listbox>
+		</vlayout>
 	</window>
 	<script>
+	</script>
 </arya>

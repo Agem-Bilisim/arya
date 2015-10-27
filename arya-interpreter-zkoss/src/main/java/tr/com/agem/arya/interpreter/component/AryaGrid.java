@@ -65,6 +65,9 @@ public class AryaGrid extends Grid implements IAryaComponent, IAryaTemplate {
 			if (attributes.getValue("sizedByContent") != null)
 				this.setSizedByContent(Boolean.parseBoolean(attributes.getValue("sizedByContent"))); 
 			
+			if (attributes.getValue("zclass") != null)
+				this.setZclass(attributes.getValue("zclass")); 
+			
 
 			/*
 			 * if the dimension input format of .arya files does NOT contains

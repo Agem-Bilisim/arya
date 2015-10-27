@@ -8,23 +8,45 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 					onClick="post('genel.isci.search', 'ALL',{'json': '1'})" />
 				<menuitem label="Liste"
 					onClick="post('genel.isci.list', 'ALL',{'json': '1'})" />
-				<menuitem label="Yeni Kayıt" />
 			</menupopup>
 		</menu>
-		<menu label="test">
+		<menu label="İşyeri Bilgileri">
+			<menupopup>
+				<menuitem label="Liste"
+					onClick="post('genel.isyeri.list', 'ALL',{'json': '1'})" />
+			</menupopup>
 		</menu>
+		<menu label="Üyelik İşlemleri">
+			<menupopup>
+				<menuitem label="Arama"
+					onClick="post('genel.uye.search', 'ALL',{'json': '1'})" />
+				<menuitem label="Liste"
+					onClick="post('genel.uye.list', 'ALL',{'json': '1'})" />
+			</menupopup>
+		</menu>
+		<menu label="Yetki Başvuruları">
+		</menu>
+		<menu label="Toplu İş Sözleşmeleri">
+		</menu>
+		<menu label="Aidat İşlemleri">
+		</menu>
+		<menu label="İşveren Sendikaları">
+		</menu>
+		<menu label="Rakip Sendikalar">
+		</menu>
+		<menuitem label="Çıkış" onClick="post('login', 'VIEW_ONLY',{'json': '1'})"/>
 	</menubar>
 	<window id="listIsciWindow">
 		<vlayout>
-			<grid>
+			<grid sizedByContent="true" zclass="none">
 				<rows>
 					<row>
 						<label id="kisiParam.tckNoParamlbl" value="T.C. Kimlik No" />
-						<textbox type="text" id="kisiParam.tckNoParam" width="200"  maxlength="11"  placeholder=""   />
+						<textbox type="text" id="tckNoParam" width="200"  maxlength="11"  placeholder=""   />
 					</row>
 					<row>
 						<label id="kisiParam.adSoyadParamlbl" value="Ad Soyad" />
-						<textbox type="text" id="kisiParam.adSoyadParam" width="200"  maxlength="255"  placeholder=""  />
+						<textbox type="text" id="adSoyadParam" width="200"  maxlength="255"  placeholder=""  />
 					</row>
 					<row>
 						<label id="sgkNoParamlbl" value="SGK Sicil No" />
@@ -33,7 +55,8 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 					<row>
 						<label id="cinsiyetParamlbl" value="Cinsiyet" />
 						<combobox id="cinsiyetParam"  width="200"  >
-							<comboitem label="f76xyl05vp" value="932u" />
+							<comboitem label="Erkek" value="E" />
+							<comboitem label="Kadın" value="K" />
 						</combobox>
 					</row>
 					<row>
@@ -47,20 +70,20 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 					</row>
 					<row>
 						<label id="isyeriParam.subeParamlbl" value="Şube" />
-						<combobox id="isyeriParam.subeParam"  width="300"  >
+						<combobox id="subeParam"  width="300"  >
 							<comboitem label="onnqm57aw5" value="n9j1" />
 						</combobox>
 					</row>
 					<row>
-						<textbox visible="false" type="text" id="isyeriParam.isyeriIdParam" placeholder=""  />
+						<textbox visible="false" type="text" id="isyeriIdParam" placeholder=""  />
 					</row>
 					<row>
 						<label id="isyeriParam.unvanParamlbl" value="İşyeri Ünvanı" />
-						<textbox type="text" id="isyeriParam.unvanParam" width="416"  maxlength="255"  placeholder=""  top="56" />
+						<textbox type="text" id="unvanParam" width="416"  maxlength="255"  placeholder=""  top="56" />
 					</row>
 					<row>
 						<label id="isyeriParam.sgkKisaNoParamlbl" value="İşyeri SGK No" />
-						<textbox type="text" id="isyeriParam.sgkKisaNoParam" maxlength="34"  placeholder=""   />
+						<textbox type="text" id="sgkKisaNoParam" maxlength="34"  placeholder=""   />
 					</row>
 					<row>
 						<checkbox type="text" id="isletmeParam"  checked="false"  label="İşletme Bazında"  onCheck=""  width="50"  />

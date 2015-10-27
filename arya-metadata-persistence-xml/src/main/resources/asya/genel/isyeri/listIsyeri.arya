@@ -1,26 +1,75 @@
 <?page title="DOCSYS" ?>
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
+	<menubar id="menubar" orient="vertical" style="float: left">
+		<menu label="İşçi Bilgileri">
+			<menupopup>
+				<menuitem label="Arama"
+					onClick="post('genel.isci.search', 'ALL',{'json': '1'})" />
+				<menuitem label="Liste"
+					onClick="post('genel.isci.list', 'ALL',{'json': '1'})" />
+			</menupopup>
+		</menu>
+		<menu label="İşyeri Bilgileri">
+			<menupopup>
+				<menuitem label="Liste"
+					onClick="post('genel.isyeri.list', 'ALL',{'json': '1'})" />
+			</menupopup>
+		</menu>
+		<menu label="Üyelik İşlemleri">
+			<menupopup>
+				<menuitem label="Arama"
+					onClick="post('genel.uye.search', 'ALL',{'json': '1'})" />
+				<menuitem label="Liste"
+					onClick="post('genel.uye.list', 'ALL',{'json': '1'})" />
+			</menupopup>
+		</menu>
+		<menu label="Yetki Başvuruları">
+		</menu>
+		<menu label="Toplu İş Sözleşmeleri">
+		</menu>
+		<menu label="Aidat İşlemleri">
+		</menu>
+		<menu label="İşveren Sendikaları">
+		</menu>
+		<menu label="Rakip Sendikalar">
+		</menu>
+		<menuitem label="Çıkış" onClick="post('login', 'VIEW_ONLY',{'json': '1'})"/>
+	</menubar>
 	<window id="listIsyeriWindow">
-		<label id="kisaAdParamlbl" value="Kısa Ad" />
-		<textbox type="text" id="kisaAdParam"  value="52xuz6meh5is3y6ljycxlxkb7q4v86bnptq40v7a9qoqs1s56id9jurxsd5qo5ip7n5d0pmmkb909pmu3n8eboa5h28p0uebdscj0davl5rsjpyg7182g894qw9u1qfo4rex3hgszdpstd4dbw53axbprdtf53g84ivviwc60mzmot5exf3mu3lt0zie3r2g130lgm95ab5tvqpqqv78jenr53ax0up8jj73yb4grjgsynkvxkfwevssiggnj68"  width="260"  maxlength="255"  placeholder=""  />
-		<button id="kisaAdAtaBtn" label="Kısa Adları Düzenle"  onClick="kisaAdAta()"  width="140"  />
-		<listbox id="list">
-			<listhead>
-				<listheader label="Şube" id="birim.tanim" />
-				<listheader label="İşyeri SGK No" id="sgkKisaNo" />
-				<listheader label="İşyeri Ünvanı" id="unvan" />
-				<listheader label="İlçe / İl" id="iletisim.ilce.value" />
-				<listheader label="Kategori" id="isyeriKategori" />
-				<listheader label="İşçi" id="calisanSayisi" />
-				<listheader label="Örg" id="orgutluAciklama" />
-				<listheader label="Tarih" id="orgutlenmeTarihi" />
-				<listheader label="İşyeri SGK No(26 Hane)" id="sgkNo" />
-				<listheader label="Vergi Dairesi" id="vergiDairesi" />
-				<listheader label="Kısa Ad" id="kisaAd" />
-			</listhead>
-		</listbox>
+		<vlayout>
+			<listbox id="list">
+				<listhead>
+					<listheader label="Şube" />
+					<listheader label="İşyeri SGK No" />
+					<listheader label="İşyeri Ünvanı" />
+					<listheader label="İlçe / İl" />
+					<listheader label="Kategori" />
+					<listheader label="İşçi" />
+					<listheader label="Örg" />
+					<listheader label="Tarih" />
+					<listheader label="İşyeri SGK No(26 Hane)" />
+					<listheader label="Vergi Dairesi" />
+					<listheader label="Kısa Ad" />
+				</listhead>
+				<template>
+					<listitem>
+						<listcell id="birim.tanim"/>
+						<listcell id="sgkKisaNo"/>
+						<listcell id="unvan"/>
+						<listcell id="iletisim.ilce.value"/>
+						<listcell id="isyeriKategori"/>
+						<listcell id="calisanSayisi"/>
+						<listcell id="orgutluAciklama"/>
+						<listcell id="orgutlenmeTarihi"/>
+						<listcell id="sgkNo"/>
+						<listcell id="vergiDairesi"/>
+						<listcell id="kisaAd"/>
+					</listitem>
+				</template>
+			</listbox>
+		</vlayout>
 	</window>
 	<script>
-var size = '<bean:write name="collection" filter="false" property="fullListSize"/>';$(document).ready( function () {	AgemWM.exportXLS();	formuDuzenle();	if ($('.exportlinks').length > 0) {		$('<a/>', {     			id: 'kaydet-link',     			href: "javascript:AgemForm.open('genelIsyeriParameterForm', null, 'kisaAd', true)",     			title: 'Kısa Ad Ata'     		}).html("<span title='Kısa Ad Ata' class='export-icon save-off' onmouseover=\"Other.changeClass(this, 'save-off', 'save-on')\" onmouseout=\"Other.changeClass(this, 'save-on', 'save-off')\"></span>").prependTo('.exportlinks');				$('.save-off').parent().attr("href", "javascript:AgemForm.open('genelIsyeriParameterForm', null, 'kisaAd', true)");	}});function formuDuzenle() {	$("#list").hide();	$("#temizle").hide();	$("#kisaAdParamLabel").css('width', '70px');	$("#kisaAdAtaBtn").parent().css('top', '43px');	$("#kisaAdAtaBtn").parent().css('left', '195px');}function kisaAdAta() {	var kisaAd = $("#kisaAdParam").val();	if (confirm(kisaAd.length == 0 ? size + " adet işyerinin kısa adı silinecektir! Devam etmek istiyor musunuz?" : size +" adet işyerine kısa ad olarak \'"+kisaAd+"\' atanacaktır. Devam etmek istiyor musunuz?"))	{		Agem.ajax(			$("#refresh-link").attr("href"), 			{json : 1, kisaAdAta : 1, atananKisaAd : kisaAd}, 			function(d) {				if (!d["@hata"]) {					Other.displayTagYenile();				} else {					Agem.message(p["@message"]);				}				AgemForm.close("genelIsyeriParameterForm");		});	}}AgemTable.rowDblClick = function(id) {	AgemWM.addQueryString(Agem.json2Param({isyeriIdParam: id, isyeriId: id}));	AgemWM.link('#genelIsyeriSelect', {url: 'genel/isyeri/select.do'});	Agem.message('Bilgiler okunuyor...');};	</script>
+	</script>
 </arya>
