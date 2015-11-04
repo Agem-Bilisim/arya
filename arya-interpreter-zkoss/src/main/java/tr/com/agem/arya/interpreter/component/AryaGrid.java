@@ -105,6 +105,15 @@ public class AryaGrid extends Grid implements IAryaComponent, IAryaTemplate {
 					}
 				});
 			}
+			if (AryaUtils.isNotEmpty(attributes.getValue("onDoubleClick"))) {
+				final String functionName = attributes.getValue("onDoubleClick");
+				this.addEventListener("onDoubleClick", new EventListener<Event>() {
+					@Override
+					public void onEvent(Event event) throws Exception {
+						ScriptHelper.executeScript(functionName, null, main);
+					}
+				});
+			}
 		}
 
 	}

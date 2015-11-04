@@ -2,6 +2,7 @@ package tr.com.agem.arya.interpreter.utils;
 
 import java.io.IOException;
 import java.io.StringReader;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map;
 
@@ -22,13 +23,15 @@ import org.json.JSONObject;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.zkoss.zk.ui.Component;
+import org.zkoss.zul.Div;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import tr.com.agem.arya.interpreter.component.AryaComboItem;
+import tr.com.agem.arya.interpreter.component.AryaCombobox;
 import tr.com.agem.arya.interpreter.component.AryaGrid;
-import tr.com.agem.arya.interpreter.component.AryaLabel;
 import tr.com.agem.arya.interpreter.component.AryaListCell;
 import tr.com.agem.arya.interpreter.component.AryaListItem;
 import tr.com.agem.arya.interpreter.component.AryaListbox;
@@ -39,10 +42,13 @@ import tr.com.agem.arya.interpreter.component.ComponentFactory;
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.parser.AryaMetadataParser;
 import tr.com.agem.arya.interpreter.parser.AryaParserAttributes;
+import tr.com.agem.arya.interpreter.script.ElementFunctions;
 import tr.com.agem.core.gateway.model.AryaRequest;
 import tr.com.agem.core.gateway.model.AryaResponse;
+import tr.com.agem.core.gateway.model.RequestTypes;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.interpreter.IAryaTemplate;
+import tr.com.agem.core.property.reader.PropertyReader;
 import tr.com.agem.core.utils.AryaUtils;
 
 public class AryaInterpreterHelper {
@@ -106,37 +112,91 @@ public class AryaInterpreterHelper {
 				main.getAryaWindow().getComponents().clear();
 			}
 
-			drawView(response.getView(), main);
+			drawView(response.getView(), main, false);
 		}
 
 		if (AryaUtils.isNotEmpty(response.getData())) {
 			populateView(response.getData(), main);
 		}
+		
+		populateListComponents(main);
+	}
+
+	public static void interpretResponseMenu(AryaResponse response, AryaMain main) {
+		if (AryaUtils.isNotEmpty(response.getView())) {// Remove previous
+														// components before
+														// adding new ones!
+			if (AryaUtils.isNotEmpty(main.getMenuContainer())) {
+				Div menuDiv = main.getMenuContainer();
+				menuDiv.getChildren().clear();
+			}
+
+			drawView(response.getView(), main, true);
+		}
 	}
 
 	private static void populateAryaTemplate(AryaMain main, IAryaTemplate masterComponent, JSONArray jsonArrayData) {
+		
 		AryaRows rows = null;
+		
 		if (masterComponent instanceof AryaGrid) {
 			rows = new AryaRows(main, null);
 			rows.setComponentParent(masterComponent);
 		}
 
 		for (int i = 0; i < jsonArrayData.length(); i++) {
+			
 			JSONObject jsonObj = jsonArrayData.getJSONObject(i);
-
+			
 			AryaListItem item = new AryaListItem(main, null);
 			AryaRow row = new AryaRow(main, null);
+			
+			// to search a json object
+			if(ElementFunctions.getComps() != null) {
+			
+				for (int j = 0; j < ElementFunctions.getComps().size(); j++) {
+					
+					String compValue = splitId((String) ElementFunctions.getComps().get(j), jsonObj);
+					String value = (String)ElementFunctions.getValues().get(j);
 
-			if (masterComponent.getClass().equals(AryaListbox.class)) {
-				item.setValue(jsonObj);
-				item.setComponentParent(masterComponent);
-			} else {
-				row.setValue(jsonObj);
-				row.setComponentParent(rows);
+					if(compValue != null && !value.equals("")) {
+						if(compValue.startsWith(value)) { 
+							
+							setValue(jsonObj, masterComponent, rows, row, item);							
+						}
+						else {	
+							
+							if (masterComponent.getClass().equals(AryaListbox.class)) {
+								item = new AryaListItem(main, null);
+								
+							} else { 
+								row = new AryaRow(main, null);							
+							}
+							break;
+						}  
+					}
+					else if(!value.equals("")) {
+						
+						if (masterComponent.getClass().equals(AryaListbox.class)) {
+							item = new AryaListItem(main, null);
+							
+						} else { 
+							row = new AryaRow(main, null);							
+						}	
+						break;
+					}						
+				}				
+			}			
+			else {
+				
+				setValue(jsonObj, masterComponent, rows, row, item);
 			}
+			
 
 			for (IAryaComponent comp : ((AryaTemplate) masterComponent.getAryaTemplate()).getChildren()) {
+				
 				if (!(comp instanceof AryaListItem) && !(comp instanceof AryaRow)) {
+					
 					AryaParserAttributes attr = new AryaParserAttributes();
 					attr.setValue("id", comp.getComponentId() + "" + (i));
 					if (masterComponent instanceof AryaListbox) {
@@ -153,11 +213,14 @@ public class AryaInterpreterHelper {
 				}
 			}
 		}
+		
+		ElementFunctions.setComps(null);
+		ElementFunctions.setValues(new ArrayList<String>());
 	}
 
 	private static void populateView(String data, AryaMain main) {
 
-		ObjectMapper mapper = new ObjectMapper();
+		ObjectMapper mapper = new ObjectMapper(); 
 		try {
 			JsonNode rootNode = mapper.readTree(data);
 			if (rootNode != null) {
@@ -177,12 +240,13 @@ public class AryaInterpreterHelper {
 
 									if (AryaUtils.isNotEmpty(jsonObj.get(key).toString()) && AryaUtils.isNotEmpty(c))
 										c.setComponentValue(jsonObj.get(key).toString());
+									}
 								}
 							}
 						}
 					}
 				}
-			}
+			
 
 		} catch (JsonProcessingException e) {
 			e.printStackTrace();
@@ -190,15 +254,90 @@ public class AryaInterpreterHelper {
 			e.printStackTrace();
 		}
 	}
+	
+	private static void populateListComponents(AryaMain main) {
+		
+		for (Iterator<IAryaComponent> iterator = main.getAryaWindow().getComponents().iterator(); iterator.hasNext();) {
+			IAryaComponent comp = (IAryaComponent) iterator.next();
+			
+			if (comp instanceof AryaCombobox) {
+				AryaCombobox combobox = (AryaCombobox) comp;
+				
+				if (combobox.getTooltip() != null) {
+					AryaRequest request = new AryaRequest();
+					
+					request.setAction(combobox.getTooltip());
+					request.setRequestType(RequestTypes.DATA_ONLY);
+	
+					String responseStr=null;
+					try {
+						responseStr = AryaInterpreterHelper.callUrl(PropertyReader.property("gateway.base.url"), request);
+						
+						AryaResponse response = new AryaResponse();
+						response.fromXMLString(responseStr);
+						
+						
+						ObjectMapper mapper = new ObjectMapper();
+						try {
+							JsonNode rootNode = mapper.readTree(response.getData());
+							if (rootNode != null) {
+								Iterator<Map.Entry<String, JsonNode>> fields = rootNode.fields();
+								if (fields != null) {
+									while (fields.hasNext()) {
+										Map.Entry<String, JsonNode> entry = fields.next();
+										if ("results".equals(entry.getKey().toString())) {
+											
+											JSONArray jsonArray = new JSONArray(entry.getValue().toString());
+											
+											populateCombobox(main, jsonArray, combobox);
+											
+										}
+									}
+								}
+							}
+							
 
-	private static void drawView(String view, AryaMain main) {
+						} catch (JsonProcessingException e) {
+							e.printStackTrace();
+						} catch (IOException e) {
+							e.printStackTrace();
+						}
+						
+						
+						System.out.println(responseStr);
+					} catch (Exception e) {
+						e.printStackTrace();
+					} 
+				}
+			}
+		}
+	}
+	
+	private static void populateCombobox(AryaMain main, JSONArray jsonArray, AryaCombobox combobox) {
+		
+		for (int i = 0; i < jsonArray.length(); i++) {
+			
+			JSONObject jsonObj = jsonArray.getJSONObject(i);
+			
+			AryaParserAttributes attr = new AryaParserAttributes();
+			attr.setValue("id", combobox.getComponentId() + "" + (i));
+			
+			attr.setValue("label", splitId(combobox.getComponentId(), jsonObj));
+			AryaComboItem comboItem = new AryaComboItem(main, attr);
+			comboItem.setComponentParent(combobox);
+			
+		} 
+		
+	}
+
+	private static void drawView(String view, AryaMain main, Boolean isMenu) {
 
 		SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
 		SAXParser parser = null;
 
 		try {
 			parser = saxParserFactory.newSAXParser();
-			parser.parse(new InputSource(new StringReader(view)), new AryaMetadataParser(main));
+			parser.parse(new InputSource(new StringReader(view)), new AryaMetadataParser(main, isMenu));
 		} catch (ParserConfigurationException e) {
 			e.printStackTrace();
 		} catch (SAXException e) {
@@ -246,5 +385,15 @@ public class AryaInterpreterHelper {
 		}  
 		return retVal;
 	}
-
+	
+	public static void setValue(JSONObject jsonObj, IAryaTemplate masterComponent, AryaRows rows, AryaRow row, AryaListItem item) {
+		
+		if (masterComponent.getClass().equals(AryaListbox.class)) {
+			item.setValue(jsonObj);
+			item.setComponentParent(masterComponent);
+		} else {
+			row.setValue(jsonObj);
+			row.setComponentParent(rows);
+		}		
+	}
 }

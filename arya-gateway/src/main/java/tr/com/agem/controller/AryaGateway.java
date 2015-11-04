@@ -68,18 +68,24 @@ public class AryaGateway {
 			} catch (Exception e) {
 				logger.log(Level.SEVERE, e.toString(), e);
 				throw new AryaMetadataNotFoundException();
-			}
+			} 
 		} else {
 
 			IAryaAdaptorResponse adaptorResponse = applicationAdaptor.handleRequest(aryaRequest);
 
 			// response includes view and interpreter asks for the view, prepare
 			// the view for response
-			if (adaptorResponse.getViewName() != null && RequestTypes.ALL.equals(aryaRequest.getRequestType())) {
-				metadata = metadataEngine.findWithNameAsXML(applicationName, adaptorResponse.getViewName());
-			}
+			if (adaptorResponse != null) {
+				if (adaptorResponse.getViewName() != null && RequestTypes.ALL.equals(aryaRequest.getRequestType())) {
+					metadata = metadataEngine.findWithNameAsXML(applicationName, adaptorResponse.getViewName());
+				}
 
-			resp.setData(adaptorResponse.getData());
+				resp.setData(adaptorResponse.getData());
+			} else {
+				if (RequestTypes.NAVBAR.equals(aryaRequest.getRequestType())) {
+					metadata = metadataEngine.findWithNameAsXML(applicationName, aryaRequest.getAction());
+				}
+			}
 		}
 
 		if (metadata != null) {

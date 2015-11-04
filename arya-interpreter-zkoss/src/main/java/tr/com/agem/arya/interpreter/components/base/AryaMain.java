@@ -10,9 +10,11 @@ public class AryaMain extends BaseController {
 	private AryaWindow aryaWindow;
 	private AryaNavBar aryaNavBar;
 	private Div componentContainer;
+	private Div menuContainer;
 
-	public AryaMain(Div componentContainer) {
+	public AryaMain(Div componentContainer, Div menuContainer) {
 		super();
+		this.menuContainer = menuContainer;
 		this.componentContainer = componentContainer;
 		this.aryaWindow = new AryaWindow();
 		this.aryaNavBar = new AryaNavBar();
@@ -43,4 +45,13 @@ public class AryaMain extends BaseController {
 		this.aryaNavBar = aryaNavBar;
 	}
 
+	public Div getMenuContainer() {
+		return menuContainer;
+	}
+
+	public void setMenuContainer(Div menuContainer) {
+		this.menuContainer = menuContainer;
+	}
+	
+	
 }

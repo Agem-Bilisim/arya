@@ -1,0 +1,37 @@
+<?page title="DOCSYS" ?>
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="aryaportal.org arya.xsd">
+	<window id="addIsciWindow">
+		<vlayout>
+			<grid sizedByContent="true" zclass="none">
+				<rows>
+					<row>
+						<label id="kisiParam.tckNoParamlbl" value="T.C. Kimlik No" />
+						<textbox type="text" id="tckNoParam" width="200"  maxlength="11"  placeholder=""   />
+					</row>
+					<row>
+						<label id="kisiParam.adSoyadParamlbl" value="Ad Soyad" />
+						<textbox type="text" id="adSoyadParam" width="200"  maxlength="255"  placeholder=""  />
+					</row>
+					<row>
+						<label id="sgkNoParamlbl" value="SGK Sicil No" />
+						<textbox type="text" id="sgkNoParam" width="200"  maxlength="13"  placeholder=""   />
+					</row>
+					<row>
+						<label id="cinsiyetParamlbl" value="Cinsiyet" />
+						<combobox id="cinsiyetParam"  width="200"  >
+							<comboitem label="Erkek" value="E" />
+							<comboitem label="Kadın" value="K" />
+						</combobox>
+					</row>
+					<row>
+						<label id="aciklamaParamlbl" value="Açıklama" />
+						<textbox type="text" id="aciklamaParam" width="200"  maxlength="13"  placeholder=""   />
+					</row>
+				</rows>
+			</grid>
+			<button id="kaydet" label="Kaydet" position="1/3" newLine="true" style="float: left"
+					onClick="" />
+		</vlayout>
+	</window>
+</arya>

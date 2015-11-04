@@ -18,6 +18,7 @@ public class BaseController extends GenericForwardComposer {
 
 	private static final long serialVersionUID = 8866650311533378984L;
 	private Div componentContainer; // works as a parent component
+	private Div menuContainer;
 
 	public BaseController() {
 		super();
@@ -31,7 +32,7 @@ public class BaseController extends GenericForwardComposer {
 	}
 
 	private void init() throws IOException {
-		
+
 		// Prepare initial request
 		AryaRequest request = new AryaRequest();
 		
@@ -52,7 +53,6 @@ public class BaseController extends GenericForwardComposer {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} 
-
 		
 		AryaResponse response = new AryaResponse();
 		response.fromXMLString(responseStr);
@@ -60,9 +60,32 @@ public class BaseController extends GenericForwardComposer {
 		if(componentContainer==null)
 			componentContainer=new Div();
 		
-		AryaMain main = new AryaMain(componentContainer);
+		AryaMain main = new AryaMain(componentContainer, menuContainer);
 		
 		AryaInterpreterHelper.interpretResponse(response, main);
+		
+		// Menu
+		AryaRequest requestMenu = new AryaRequest();
+		
+		requestMenu.setAction("menu"); 
+		requestMenu.setRequestType(RequestTypes.VIEW_ONLY);
+
+		String responseMenuStr=null;
+		try {
+			responseMenuStr = AryaInterpreterHelper.callUrl(PropertyReader.property("gateway.base.url"), requestMenu);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} 
+
+		AryaResponse responseMenu = new AryaResponse();
+		responseMenu.fromXMLString(responseMenuStr);
+		
+		if(menuContainer==null)
+			menuContainer=new Div();
+		
+		main.setMenuContainer(menuContainer);
+		
+		AryaInterpreterHelper.interpretResponseMenu(responseMenu, main);
 	}
 
 	public Div getComponentContainer() {
@@ -71,6 +94,14 @@ public class BaseController extends GenericForwardComposer {
 
 	public void setComponentContainer(Div componentContainer) {
 		this.componentContainer = componentContainer;
+	}
+
+	public Div getMenuContainer() {
+		return menuContainer;
+	}
+
+	public void setMenuContainer(Div menuContainer) {
+		this.menuContainer = menuContainer;
 	}
 
 }

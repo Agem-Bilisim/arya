@@ -16,6 +16,7 @@ public class AryaVlayout extends Vlayout implements IAryaComponent {
 
 	private static final long serialVersionUID = -1829374522609555406L;
 	private Div componentContainer; // works as a parent component
+	private Div menuContainer;
 	private String componentClassName;
 	private String componentAttribute;
 
@@ -108,6 +109,10 @@ public class AryaVlayout extends Vlayout implements IAryaComponent {
 
 	public Div getComponentContainer() {
 		return componentContainer;
+	}
+	
+	public Div getMenuContainer() {
+		return menuContainer;
 	}
 
 	@Override

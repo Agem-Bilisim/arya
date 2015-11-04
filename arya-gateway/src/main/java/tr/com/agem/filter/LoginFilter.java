@@ -34,7 +34,7 @@ public class LoginFilter extends OncePerRequestFilter {
 		LoginRequestWrapper requestWrapper = new LoginRequestWrapper((HttpServletRequest) request);
 		AryaRequest aryaRequest = new ObjectMapper().readValue(requestWrapper.getInputStream(), AryaRequest.class);
 
-		if ("login".equals(aryaRequest.getAction())|| RequestTypes.LOGIN.equals(aryaRequest.getRequestType()) || adapter.checkLogin(aryaRequest)) {
+		if ("menu".equals(aryaRequest.getAction())|| "login".equals(aryaRequest.getAction())|| RequestTypes.LOGIN.equals(aryaRequest.getRequestType()) || adapter.checkLogin(aryaRequest)) {
 			logger.log(Level.FINE, "User has already logged in!");
 			filterChain.doFilter(requestWrapper, response);
 		} else {

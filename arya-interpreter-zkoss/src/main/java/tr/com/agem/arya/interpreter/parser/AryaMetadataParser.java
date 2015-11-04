@@ -20,15 +20,19 @@ public class AryaMetadataParser extends DefaultHandler {
 
 	private AryaMain main = null;
 	private Stack<IAryaComponent> currentComponent = null;
+	private Boolean isMenu = false;
 
-	public AryaMetadataParser(AryaMain main) {
+	public AryaMetadataParser(AryaMain main, Boolean isMenu) {
 		this.main = main;
 		this.currentComponent = new Stack<IAryaComponent>();
+		this.isMenu = isMenu;
 	}
 
 	@Override
 	public void startElement(String uri, String localName, String tagName, Attributes attributes) throws SAXException {
+		
 		IAryaComponent comp = ComponentFactory.getComponent(tagName, main, attributes);
+		
 		if (comp != null) {
 			if (comp instanceof AryaTemplate) {
 				if (currentComponent.peek() instanceof AryaListbox) {
@@ -44,7 +48,7 @@ public class AryaMetadataParser extends DefaultHandler {
 				currentComponent.push(template);
 			}
 			else {
-				comp.setComponentParent(currentComponent.size() > 0? currentComponent.peek():main.getComponentContainer());
+				comp.setComponentParent(currentComponent.size() > 0? currentComponent.peek():(isMenu ? main.getMenuContainer() : main.getComponentContainer()));
 				currentComponent.push(comp);
 				main.getAryaWindow().getComponents().add(comp);
 			}

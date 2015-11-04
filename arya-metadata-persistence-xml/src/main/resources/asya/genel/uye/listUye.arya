@@ -1,41 +1,6 @@
 <?page title="DOCSYS" ?>
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
-	<menubar id="menubar" orient="vertical" style="float: left">
-		<menu label="İşçi Bilgileri">
-			<menupopup>
-				<menuitem label="Arama"
-					onClick="post('genel.isci.search', 'ALL',{'json': '1'})" />
-				<menuitem label="Liste"
-					onClick="post('genel.isci.list', 'ALL',{'json': '1'})" />
-			</menupopup>
-		</menu>
-		<menu label="İşyeri Bilgileri">
-			<menupopup>
-				<menuitem label="Liste"
-					onClick="post('genel.isyeri.list', 'ALL',{'json': '1'})" />
-			</menupopup>
-		</menu>
-		<menu label="Üyelik İşlemleri">
-			<menupopup>
-				<menuitem label="Arama"
-					onClick="post('genel.uye.search', 'ALL',{'json': '1'})" />
-				<menuitem label="Liste"
-					onClick="post('genel.uye.list', 'ALL',{'json': '1'})" />
-			</menupopup>
-		</menu>
-		<menu label="Yetki Başvuruları">
-		</menu>
-		<menu label="Toplu İş Sözleşmeleri">
-		</menu>
-		<menu label="Aidat İşlemleri">
-		</menu>
-		<menu label="İşveren Sendikaları">
-		</menu>
-		<menu label="Rakip Sendikalar">
-		</menu>
-		<menuitem label="Çıkış" onClick="post('login', 'VIEW_ONLY',{'json': '1'})"/>
-	</menubar>
 	<window id="listUyeWindow">
 		<vlayout>
 			<listbox id="list" pagesize="10" mold="paging">

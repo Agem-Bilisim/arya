@@ -15,6 +15,7 @@ public class AryaDiv extends Div implements IAryaComponent {
 
 	private static final long serialVersionUID = 517882903274682453L;
 	private Div componentContainer; // works as a parent component
+	private Div menuContainer;
 	private String componentClassName;
 	private String componentAttribute;
 
@@ -107,6 +108,10 @@ public class AryaDiv extends Div implements IAryaComponent {
 
 	public Div getComponentContainer() {
 		return componentContainer;
+	}
+	
+	public Div getMenuContainer() {
+		return menuContainer;
 	}
 
 	@Override

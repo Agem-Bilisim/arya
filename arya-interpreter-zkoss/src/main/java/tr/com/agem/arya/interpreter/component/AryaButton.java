@@ -69,6 +69,9 @@ public class AryaButton extends Button implements IAryaComponent {
 			if (attributes.getValue("type") != null) 
 				this.setType(attributes.getValue("type"));
 			
+			if (attributes.getValue("style") != null) 
+				this.setStyle(attributes.getValue("style"));
+			
 			/*
 			 * if the dimension input format of .arya files does NOT contains
 			 * the unit like -height="200px"

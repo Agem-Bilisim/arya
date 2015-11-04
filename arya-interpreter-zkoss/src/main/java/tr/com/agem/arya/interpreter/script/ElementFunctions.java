@@ -10,6 +10,7 @@ import java.util.logging.Logger;
 
 import org.json.JSONObject;
 import org.mozilla.javascript.Context;
+import org.mozilla.javascript.GeneratedClassLoader;
 import org.mozilla.javascript.NativeArray;
 import org.mozilla.javascript.NativeFunction;
 import org.mozilla.javascript.NativeJSON;
@@ -22,6 +23,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import tr.com.agem.arya.interpreter.component.AryaCombobox;
 import tr.com.agem.arya.interpreter.component.AryaListbox;
 import tr.com.agem.arya.interpreter.component.AryaSelectbox;
+import tr.com.agem.arya.interpreter.component.AryaTextbox;
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.utils.AryaException;
 import tr.com.agem.arya.interpreter.utils.AryaInterpreterHelper;
@@ -40,6 +42,9 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 	
 	private static String lastPage;
 	private static String reqType;
+	
+	private static NativeArray comps;
+	private static ArrayList<String> values;
 
 	public ElementFunctions(Context context, Scriptable scope, AryaMain main) {
 		this.context = context;
@@ -120,11 +125,11 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 		//TODO id listbox olmayabilir???!??!?
 		JSONObject jsonObj = null;
 		
-		if(getElementById(id).getClass() == AryaListbox.class) {
+		if(getElementById(id) instanceof AryaListbox) {
 			
 			jsonObj = ((AryaListbox)getElementById(id)).getSelectedItem().getValue();
 		}		
-		else if(getElementById(id).getClass() == AryaCombobox.class) {
+		else if(getElementById(id) instanceof AryaCombobox) {
 			
 			jsonObj = ((AryaCombobox)getElementById(id)).getSelectedItem().getValue();
 		}
@@ -134,6 +139,18 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 			String comp = (String) comps.get(i);
 			((IAryaComponent)getElementById(comp)).setComponentValue(jsonObj.get((String)values.get(i)).toString());
 		}	
+	}
+	
+	@AryaJsFunction
+	public void setParams (NativeArray values) {
+		
+		ArrayList<String> temp = new ArrayList<String>();
+		
+		for (int i = 0; i < values.size(); i++) {
+			
+			temp.add(((AryaTextbox)getElementById((String) values.get(i))).getText());
+		}		
+		setValues(temp);
 	}
 		
 	
@@ -220,5 +237,25 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 
 		ElementFunctions.reqType = reqType;
 	}
+
+	@AryaJsFunction
+	public static NativeArray getComps() {
+		return comps;
+	}
+
+	@AryaJsFunction
+	public static void setComps(NativeArray comps) {
+		ElementFunctions.comps = comps;
+	}
+
+	public static ArrayList<String> getValues() {
+		return values;
+	}
+
+	public static void setValues(ArrayList<String> values) {
+		ElementFunctions.values = values;
+	}
+
 	
+		
 }
