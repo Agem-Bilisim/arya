@@ -34,4 +34,6 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 					onClick="" />
 		</vlayout>
 	</window>
+	<script>	
+	</script>
 </arya>

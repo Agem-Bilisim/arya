@@ -8,7 +8,7 @@
 				<menuitem label="Liste"
 					onClick="post('genel.isci.list', 'ALL',{'json': '1'})" />
 				<menuitem label="Yeni Kayıt"
-					onClick="post('genel.isci.empty', 'ALL',{'json': '1'})" />
+					onClick="post('genel.isci.emptyIsci', 'VIEW_ONLY',{'json': '1'})" />
 			</menupopup>
 		</menu>
 		<menu label="İşyeri Bilgileri">
