@@ -109,6 +109,16 @@ public class ComponentFactory {
 			comp = new AryaDiv(main, attributes);
 		} else if ("template".equalsIgnoreCase(tagName)) {
 			comp = new AryaTemplate(main, attributes);
+		} else if ("tabbox".equalsIgnoreCase(tagName)) {
+			comp = new AryaTabbox(main, attributes);
+		} else if ("tabs".equalsIgnoreCase(tagName)) {
+			comp = new AryaTabs(main, attributes);
+		} else if ("tab".equalsIgnoreCase(tagName)) {
+			comp = new AryaTab(main, attributes);
+		} else if ("tabpanels".equalsIgnoreCase(tagName)) {
+			comp = new AryaTabpanels(main, attributes);
+		} else if ("tabpanel".equalsIgnoreCase(tagName)) {
+			comp = new AryaTabpanel(main, attributes);
 		}
 
 		return comp;
