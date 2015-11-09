@@ -27,6 +27,7 @@ import tr.com.agem.arya.interpreter.component.AryaTextbox;
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.utils.AryaException;
 import tr.com.agem.arya.interpreter.utils.AryaInterpreterHelper;
+import tr.com.agem.arya.interpreter.utils.BaseController;
 import tr.com.agem.core.gateway.model.AryaResponse;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.property.reader.PropertyReader;
@@ -77,7 +78,7 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 	}
 
 	@AryaJsFunction
-	public void post(String action, String requestType, Object params, NativeFunction onSuccess, NativeFunction onFailure) {//debug dan geçirmek gerek(volkan)
+	public void post(String action, String requestType, Object params, String tabValue, NativeFunction onSuccess, NativeFunction onFailure) {//debug dan geçirmek gerek(volkan)
 
 		Object jsonParam = NativeJSON.stringify(context, scope, params, null, null);
 
@@ -103,7 +104,7 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 			response = new AryaResponse();
 			response.fromXMLString(result);
 			
-			AryaInterpreterHelper.interpretResponse(response, main);
+			AryaInterpreterHelper.interpretResponse(response, main, BaseController.getTabs(), BaseController.getTabpanels(), tabValue);
 			
 			if (onSuccess != null) {
 				scope.put(onSuccess.getFunctionName(), scope, onSuccess);

@@ -6,6 +6,9 @@ import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.util.GenericForwardComposer;
 import org.zkoss.zul.Div;
 
+import tr.com.agem.arya.interpreter.component.AryaTabbox;
+import tr.com.agem.arya.interpreter.component.AryaTabpanels;
+import tr.com.agem.arya.interpreter.component.AryaTabs;
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.script.ElementFunctions;
 import tr.com.agem.core.gateway.model.AryaRequest;
@@ -19,6 +22,9 @@ public class BaseController extends GenericForwardComposer {
 	private static final long serialVersionUID = 8866650311533378984L;
 	private Div componentContainer; // works as a parent component
 	private Div menuContainer;
+	private static AryaTabbox tabbox;
+	private static AryaTabs tabs;
+	private static AryaTabpanels tabpanels;
 
 	public BaseController() {
 		super();
@@ -62,7 +68,16 @@ public class BaseController extends GenericForwardComposer {
 		
 		AryaMain main = new AryaMain(componentContainer, menuContainer);
 		
-		AryaInterpreterHelper.interpretResponse(response, main);
+		tabbox = new AryaTabbox(main, null);
+		tabbox.setParent(main.getComponentContainer());
+		
+		tabs = new AryaTabs(main, null);
+		tabs.setParent(tabbox);
+		
+		tabpanels = new AryaTabpanels(main, null);
+		tabpanels.setParent(tabbox);
+		
+		AryaInterpreterHelper.interpretResponse(response, main, tabs, tabpanels, null);
 		
 		// Menu
 		AryaRequest requestMenu = new AryaRequest();
@@ -85,7 +100,7 @@ public class BaseController extends GenericForwardComposer {
 		
 		main.setMenuContainer(menuContainer);
 		
-		AryaInterpreterHelper.interpretResponseMenu(responseMenu, main);
+		AryaInterpreterHelper.interpretResponseMenu(responseMenu, main, tabs, tabpanels);
 	}
 
 	public Div getComponentContainer() {
@@ -103,5 +118,31 @@ public class BaseController extends GenericForwardComposer {
 	public void setMenuContainer(Div menuContainer) {
 		this.menuContainer = menuContainer;
 	}
+
+	public static AryaTabbox getTabbox() {
+		return tabbox;
+	}
+
+	public static void setTabbox(AryaTabbox tabbox) {
+		BaseController.tabbox = tabbox;
+	}
+
+	public static AryaTabs getTabs() {
+		return tabs;
+	}
+
+	public static void setTabs(AryaTabs tabs) {
+		BaseController.tabs = tabs;
+	}
+
+	public static AryaTabpanels getTabpanels() {
+		return tabpanels;
+	}
+
+	public static void setTabpanels(AryaTabpanels tabpanels) {
+		BaseController.tabpanels = tabpanels;
+	}
+
+	
 
 }

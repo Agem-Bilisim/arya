@@ -10,6 +10,11 @@ import org.xml.sax.helpers.DefaultHandler;
 import tr.com.agem.arya.interpreter.component.AryaGrid;
 import tr.com.agem.arya.interpreter.component.AryaListbox;
 import tr.com.agem.arya.interpreter.component.AryaScript;
+import tr.com.agem.arya.interpreter.component.AryaTab;
+import tr.com.agem.arya.interpreter.component.AryaTabbox;
+import tr.com.agem.arya.interpreter.component.AryaTabpanel;
+import tr.com.agem.arya.interpreter.component.AryaTabpanels;
+import tr.com.agem.arya.interpreter.component.AryaTabs;
 import tr.com.agem.arya.interpreter.component.AryaTemplate;
 import tr.com.agem.arya.interpreter.component.ComponentFactory;
 import tr.com.agem.arya.interpreter.component.menu.IAryaMenu;
@@ -19,13 +24,15 @@ import tr.com.agem.core.interpreter.IAryaComponent;
 public class AryaMetadataParser extends DefaultHandler {
 
 	private AryaMain main = null;
+	private AryaTabpanel tabpanel = null;
 	private Stack<IAryaComponent> currentComponent = null;
 	private Boolean isMenu = false;
 
-	public AryaMetadataParser(AryaMain main, Boolean isMenu) {
+	public AryaMetadataParser(AryaMain main, Boolean isMenu, AryaTabpanel tabpanel) {
 		this.main = main;
 		this.currentComponent = new Stack<IAryaComponent>();
 		this.isMenu = isMenu;
+		this.tabpanel = tabpanel;
 	}
 
 	@Override
@@ -48,7 +55,7 @@ public class AryaMetadataParser extends DefaultHandler {
 				currentComponent.push(template);
 			}
 			else {
-				comp.setComponentParent(currentComponent.size() > 0? currentComponent.peek():(isMenu ? main.getMenuContainer() : main.getComponentContainer()));
+				comp.setComponentParent(currentComponent.size() > 0 ? currentComponent.peek():(isMenu ? main.getMenuContainer() : tabpanel));
 				currentComponent.push(comp);
 				main.getAryaWindow().getComponents().add(comp);
 			}

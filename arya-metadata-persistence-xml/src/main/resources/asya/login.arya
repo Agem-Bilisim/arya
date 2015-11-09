@@ -14,11 +14,11 @@
 	<script>
 	
 		login = function(){
-			post('login','LOGIN', {'username':'admin','password':'a395em8?'},s,f); /* {'username':String(getElementById('u').getComponentValue()),'password':String(getElementById('p').getComponentValue())},s,f); */
+			post('login','LOGIN', {'username':'admin','password':'a395em8?'}, 'Master',s,f); /* {'username':String(getElementById('u').getComponentValue()),'password':String(getElementById('p').getComponentValue())},s,f); */
 			
 		}
 		
-		s = function(){ post('master','VIEW_ONLY',{});}
+		s = function(){ post('master','VIEW_ONLY',{},'Master');}
 		
 		f = function (){ print('fail olduk');}
 	

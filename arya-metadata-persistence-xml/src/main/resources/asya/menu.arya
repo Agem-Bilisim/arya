@@ -4,25 +4,25 @@
 		<menu label="İşçi Bilgileri">
 			<menupopup>
 				<menuitem label="Arama"
-					onClick="post('genel.isci.search', 'ALL',{'json': '1'})" />
+					onClick="post('genel.isci.search', 'ALL',{'json': '1'}, 'İşçi Arama')" />
 				<menuitem label="Liste"
-					onClick="post('genel.isci.list', 'ALL',{'json': '1'})" />
+					onClick="post('genel.isci.list', 'ALL',{'json': '1'}, 'İşçi Listesi')" />
 				<menuitem label="Yeni Kayıt"
-					onClick="post('genel.isci.emptyIsci', 'VIEW_ONLY',{'json': '1'})" />
+					onClick="post('genel.isci.emptyIsci', 'VIEW_ONLY',{'json': '1'}, 'Yeni İşçi Kaydı')" />
 			</menupopup>
 		</menu>
 		<menu label="İşyeri Bilgileri">
 			<menupopup>
 				<menuitem label="Liste"
-					onClick="post('genel.isyeri.list', 'ALL',{'json': '1'})" />
+					onClick="post('genel.isyeri.list', 'ALL',{'json': '1'}, 'İşyeri Listesi')" />
 			</menupopup>
 		</menu>
 		<menu label="Üyelik İşlemleri">
 			<menupopup>
 				<menuitem label="Arama"
-					onClick="post('genel.uye.search', 'ALL',{'json': '1'})" />
+					onClick="post('genel.uye.search', 'ALL',{'json': '1'}, 'Üye Arama')" />
 				<menuitem label="Liste"
-					onClick="post('genel.uye.list', 'ALL',{'json': '1'})" />
+					onClick="post('genel.uye.list', 'ALL',{'json': '1'}, 'Üye Listesi')" />
 			</menupopup>
 		</menu>
 		<menu label="Yetki Başvuruları">
@@ -35,6 +35,6 @@
 		</menu>
 		<menu label="Rakip Sendikalar">
 		</menu>
-		<menuitem label="Çıkış" onClick="post('login', 'LOGOUT',{'json': '1'})"/>
+		<menuitem label="Çıkış" onClick="post('login', 'LOGOUT',{'json': '1'}, 'Çıkış')"/>
 	</menubar>
 </arya>

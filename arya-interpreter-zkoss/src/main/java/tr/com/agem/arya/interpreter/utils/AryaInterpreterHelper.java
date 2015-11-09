@@ -37,6 +37,11 @@ import tr.com.agem.arya.interpreter.component.AryaListItem;
 import tr.com.agem.arya.interpreter.component.AryaListbox;
 import tr.com.agem.arya.interpreter.component.AryaRow;
 import tr.com.agem.arya.interpreter.component.AryaRows;
+import tr.com.agem.arya.interpreter.component.AryaTab;
+import tr.com.agem.arya.interpreter.component.AryaTabbox;
+import tr.com.agem.arya.interpreter.component.AryaTabpanel;
+import tr.com.agem.arya.interpreter.component.AryaTabpanels;
+import tr.com.agem.arya.interpreter.component.AryaTabs;
 import tr.com.agem.arya.interpreter.component.AryaTemplate;
 import tr.com.agem.arya.interpreter.component.ComponentFactory;
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
@@ -93,7 +98,7 @@ public class AryaInterpreterHelper {
 
 	}
 
-	public static void interpretResponse(AryaResponse response, AryaMain main) {
+	public static void interpretResponse(AryaResponse response, AryaMain main, AryaTabs tabs, AryaTabpanels tabpanels, String tabValue) {
 
 		if (AryaUtils.isNotEmpty(response.getView())) {// Remove previous
 														// components before
@@ -112,7 +117,7 @@ public class AryaInterpreterHelper {
 				main.getAryaWindow().getComponents().clear();
 			}
 
-			drawView(response.getView(), main, false);
+			drawView(response.getView(), main, tabs, tabpanels, false, tabValue);
 		}
 
 		if (AryaUtils.isNotEmpty(response.getData())) {
@@ -122,7 +127,7 @@ public class AryaInterpreterHelper {
 		populateListComponents(main);
 	}
 
-	public static void interpretResponseMenu(AryaResponse response, AryaMain main) {
+	public static void interpretResponseMenu(AryaResponse response, AryaMain main, AryaTabs tabs, AryaTabpanels tabpanels) {
 		if (AryaUtils.isNotEmpty(response.getView())) {// Remove previous
 														// components before
 														// adding new ones!
@@ -131,7 +136,7 @@ public class AryaInterpreterHelper {
 				menuDiv.getChildren().clear();
 			}
 
-			drawView(response.getView(), main, true);
+			drawView(response.getView(), main, tabs, tabpanels, true, null);
 		}
 	}
 
@@ -330,14 +335,27 @@ public class AryaInterpreterHelper {
 		
 	}
 
-	private static void drawView(String view, AryaMain main, Boolean isMenu) {
+	private static void drawView(String view, AryaMain main, AryaTabs tabs, AryaTabpanels tabpanels, Boolean isMenu, String tabValue) {
+						
+		AryaTabpanel tabpanel = null;
+		
+		if(!isMenu) {
+			AryaTab tab = new AryaTab(main, null);
+			tab.setParent(tabs);
+			tab.setClosable(true);
+			tab.setSelected(true);
+			tab.setLabel(tabValue); 
+				
+			tabpanel = new AryaTabpanel(main, null);
+			tabpanel.setParent(tabpanels); 
+		}
 
 		SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
 		SAXParser parser = null;
 
 		try {
 			parser = saxParserFactory.newSAXParser();
-			parser.parse(new InputSource(new StringReader(view)), new AryaMetadataParser(main, isMenu));
+			parser.parse(new InputSource(new StringReader(view)), new AryaMetadataParser(main, isMenu, tabpanel));
 		} catch (ParserConfigurationException e) {
 			e.printStackTrace();
 		} catch (SAXException e) {
@@ -345,6 +363,25 @@ public class AryaInterpreterHelper {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
+//		AryaTabbox tabbox = new AryaTabbox(main, null);
+//		tabbox.setComponentParent(getElementById("list", main));
+//		
+//		System.out.println(getElementById("listIsciWindow", main));
+//		
+//		AryaTabs tabs = new AryaTabs(main, null);
+//		tabs.setComponentParent(tabbox);
+		
+	
+//			AryaTab tab = (AryaTab) getElementById("tab", main);
+//
+//			if(tab != null) {
+//				tab.setValue("aaa");
+//				tab.setComponentParent(getElementById("tabs", main));
+//			}
+		
+		
+		
 	} 
 
 	public static IAryaComponent getElementById(String id, AryaMain main) { // only
