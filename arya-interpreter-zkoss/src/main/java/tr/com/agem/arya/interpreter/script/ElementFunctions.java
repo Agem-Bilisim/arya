@@ -41,9 +41,6 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 	private Scriptable scope;
 	private AryaMain main;
 	
-	private static String lastPage;
-	private static String reqType;
-	
 	private static NativeArray comps;
 	private static ArrayList<String> values;
 
@@ -89,9 +86,6 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 				.append("\", \"action\": \"")
 				.append(action)
 				.append("\" }");
-		
-		lastPage = action;
-		reqType = requestType;
 		
 		String result=null;
 		AryaResponse response=null;
@@ -217,26 +211,6 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 		if (strSerialize.length() > 0)
 			return "{" + strSerialize.substring(1, strSerialize.length()) + "}";
 		return "{}";
-	}
-	
-	public static String getLastPage() {
-
-		return lastPage;
-	}
-
-	public static void setLastPage(String lastPage) {
-
-		ElementFunctions.lastPage = lastPage;
-	}
-
-	public static String getReqType() {
-
-		return reqType;
-	}
-
-	public static void setReqType(String reqType) {
-
-		ElementFunctions.reqType = reqType;
 	}
 
 	@AryaJsFunction

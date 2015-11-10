@@ -41,17 +41,9 @@ public class BaseController extends GenericForwardComposer {
 
 		// Prepare initial request
 		AryaRequest request = new AryaRequest();
-		
-		if(ElementFunctions.getLastPage() != null) {
-			
-			request.setAction(ElementFunctions.getLastPage());
-			request.setRequestType(RequestTypes.valueOf(ElementFunctions.getReqType()));
-		} 
-		else {
 			
 			request.setAction("login");
 			request.setRequestType(RequestTypes.VIEW_ONLY);
-		} 
 
 		String responseStr=null;
 		try {

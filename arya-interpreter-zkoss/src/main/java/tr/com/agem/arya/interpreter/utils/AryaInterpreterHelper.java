@@ -155,49 +155,15 @@ public class AryaInterpreterHelper {
 			
 			AryaListItem item = new AryaListItem(main, null);
 			AryaRow row = new AryaRow(main, null);
-			
-			// to search a json object
-			if(ElementFunctions.getComps() != null) {
-			
-				for (int j = 0; j < ElementFunctions.getComps().size(); j++) {
-					
-					String compValue = splitId((String) ElementFunctions.getComps().get(j), jsonObj);
-					String value = (String)ElementFunctions.getValues().get(j);
-
-					if(compValue != null && !value.equals("")) {
-						if(compValue.startsWith(value)) { 
-							
-							setValue(jsonObj, masterComponent, rows, row, item);							
-						}
-						else {	
-							
-							if (masterComponent.getClass().equals(AryaListbox.class)) {
-								item = new AryaListItem(main, null);
-								
-							} else { 
-								row = new AryaRow(main, null);							
-							}
-							break;
-						}  
-					}
-					else if(!value.equals("")) {
-						
-						if (masterComponent.getClass().equals(AryaListbox.class)) {
-							item = new AryaListItem(main, null);
-							
-						} else { 
-							row = new AryaRow(main, null);							
-						}	
-						break;
-					}						
-				}				
-			}			
-			else {
 				
-				setValue(jsonObj, masterComponent, rows, row, item);
+			if (masterComponent.getClass().equals(AryaListbox.class)) {
+				item.setValue(jsonObj);
+				item.setComponentParent(masterComponent);
+			} else {
+				row.setValue(jsonObj);
+				row.setComponentParent(rows);
 			}
 			
-
 			for (IAryaComponent comp : ((AryaTemplate) masterComponent.getAryaTemplate()).getChildren()) {
 				
 				if (!(comp instanceof AryaListItem) && !(comp instanceof AryaRow)) {
@@ -339,7 +305,7 @@ public class AryaInterpreterHelper {
 						
 		AryaTabpanel tabpanel = null;
 		
-		if(!isMenu) {
+		if(!isMenu) { 
 			AryaTab tab = new AryaTab(main, null);
 			tab.setParent(tabs);
 			tab.setClosable(true);
@@ -363,24 +329,6 @@ public class AryaInterpreterHelper {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-//		AryaTabbox tabbox = new AryaTabbox(main, null);
-//		tabbox.setComponentParent(getElementById("list", main));
-//		
-//		System.out.println(getElementById("listIsciWindow", main));
-//		
-//		AryaTabs tabs = new AryaTabs(main, null);
-//		tabs.setComponentParent(tabbox);
-		
-	
-//			AryaTab tab = (AryaTab) getElementById("tab", main);
-//
-//			if(tab != null) {
-//				tab.setValue("aaa");
-//				tab.setComponentParent(getElementById("tabs", main));
-//			}
-		
-		
 		
 	} 
 
@@ -406,6 +354,7 @@ public class AryaInterpreterHelper {
 
 		String retVal = null;
 		JSONObject obj = null;
+		
 		if (jsonObj != null) {
 			String[] spl = id.split("\\.");
 
@@ -421,16 +370,5 @@ public class AryaInterpreterHelper {
 			}
 		}  
 		return retVal;
-	}
-	
-	public static void setValue(JSONObject jsonObj, IAryaTemplate masterComponent, AryaRows rows, AryaRow row, AryaListItem item) {
-		
-		if (masterComponent.getClass().equals(AryaListbox.class)) {
-			item.setValue(jsonObj);
-			item.setComponentParent(masterComponent);
-		} else {
-			row.setValue(jsonObj);
-			row.setComponentParent(rows);
-		}		
 	}
 }
