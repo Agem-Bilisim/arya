@@ -1,5 +1,6 @@
 package tr.com.agem.arya.interpreter.components.base;
 
+import android.content.Context;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -18,9 +19,10 @@ public class AryaNavBar extends ActionBarActivity {
 
     private AryaMenuBar menuBar = null;
     ActionBar actionBar;
-
+    public static Context context;
 
     public AryaNavBar(MainActivity mainActivity, LinearLayout mainLayout) {
+        context=mainLayout.getContext();
         actionBar = ((ActionBarActivity) mainLayout.getContext()).getSupportActionBar();
 
     }

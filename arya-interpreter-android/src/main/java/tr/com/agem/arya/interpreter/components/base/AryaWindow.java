@@ -23,6 +23,8 @@ public class AryaWindow extends LinearLayout {
         components = new ArrayList<>();
 
         this.setOrientation(VERTICAL);
+
+        //TODO setSize part might need to be updated in future because it ignores the component size if component is a direct child of window (if it is not a direct child I fixed this issue on custom arya layouts)-bener
         this.setMinimumWidth(LayoutParams.MATCH_PARENT);
         this.setMinimumHeight(LayoutParams.MATCH_PARENT);
 

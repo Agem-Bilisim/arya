@@ -1,5 +1,7 @@
 package tr.com.agem.arya.interpreter.components.menu;
-
+/**
+ * Created by bcelenk on 11/5/15.
+ */
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.view.ActionProvider;
@@ -16,14 +18,14 @@ import tr.com.agem.arya.interpreter.script.ScriptHelper;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
 
-public class AryaMenuItem implements IAryaComponent,IAryaMenu, MenuItem {//TODO
+public class AryaMenu implements IAryaComponent,IAryaMenu, MenuItem {//TODO
 
 
     private String label;
     private OnMenuItemClickListener onMenuItemClickListener;
 
 
-    public AryaMenuItem(Attributes attributes, final AryaMain main) {
+    public AryaMenu(Attributes attributes, final AryaMain main) {
 
         if(AryaUtils.isNotEmpty(attributes)){
             this.label=attributes.getValue("label");
@@ -54,6 +56,7 @@ public class AryaMenuItem implements IAryaComponent,IAryaMenu, MenuItem {//TODO
         if(o instanceof AryaMenuBar){
             AryaMenuBar menu = (AryaMenuBar) o;
             menu.addItem(this);
+
         }
     }
 
@@ -284,6 +287,7 @@ public class AryaMenuItem implements IAryaComponent,IAryaMenu, MenuItem {//TODO
     public String getComponentId() {
         return null;
     }
+
 
     @Override
     public void setComponentClassName(String s) {

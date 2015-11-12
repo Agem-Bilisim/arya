@@ -4,8 +4,10 @@ package tr.com.agem.arya.interpreter.components;
 import org.xml.sax.Attributes;
 
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
+import tr.com.agem.arya.interpreter.components.menu.AryaMenu;
 import tr.com.agem.arya.interpreter.components.menu.AryaMenuBar;
 import tr.com.agem.arya.interpreter.components.menu.AryaMenuItem;
+import tr.com.agem.arya.interpreter.components.menu.AryaPopupMenu;
 import tr.com.agem.core.interpreter.IAryaComponent;
 
 public class ComponentFactory {
@@ -45,6 +47,10 @@ public class ComponentFactory {
         } else if ("menubar".equalsIgnoreCase(tagName)) {
             comp = new AryaMenuBar(attributes, main);
         }else if ("menu".equalsIgnoreCase(tagName)) {
+            comp = new AryaMenu(attributes,main);
+        }else if ("menupopup".equalsIgnoreCase(tagName)) {
+            comp = new AryaPopupMenu(attributes,main);
+        }else if ("menuitem".equalsIgnoreCase(tagName)) {
             comp = new AryaMenuItem(attributes,main);
         }else if ("progressmeter".equalsIgnoreCase(tagName)) {
             comp = new AryaProgressmeter(attributes,main);

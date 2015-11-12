@@ -36,6 +36,7 @@ import tr.com.agem.arya.interpreter.components.AryaListItem;
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.parser.AryaMetadataParser;
 import tr.com.agem.arya.interpreter.parser.AryaParserAttributes;
+import tr.com.agem.arya.interpreter.parser.IAryaMenu;
 import tr.com.agem.core.gateway.model.AryaRequest;
 import tr.com.agem.core.gateway.model.AryaResponse;
 import tr.com.agem.core.interpreter.IAryaComponent;
@@ -116,14 +117,15 @@ public class AryaInterpreterHelper {
 
         if(AryaUtils.isNotEmpty(response.getView())) {
 
-            if (main.getAryaWindow().getComponents() != null) {// TODO bu alan yönetilmeli neler kaldırılacak ekrandan
+                 if (main.getAryaWindow().getComponents() != null) {// TODO bu alan yönetilmeli neler kaldırılacak ekrandan
 
                 while ((main.getAryaWindow().getChildCount()) != 1)
-                    main.getAryaWindow().removeView(main.getAryaWindow().getChildAt(1));
-
+                    if(!(main.getAryaWindow().getChildAt(1) instanceof IAryaMenu)) {
+                        main.getAryaWindow().removeView(main.getAryaWindow().getChildAt(1));
+                    }
             }
 
-            AryaInterpreterHelper.drawView(response.getView(), main);
+            AryaInterpreterHelper.drawView(response.getView(), main,false);
         }
 
         if(AryaUtils.isNotEmpty(response.getData()))
@@ -131,7 +133,19 @@ public class AryaInterpreterHelper {
 
     }
 
-    private static void drawView(String view, AryaMain main) {
+    public static void interpretResponseMenu(AryaResponse response, AryaMain main) {
+        if (AryaUtils.isNotEmpty(response.getView())) {// Remove previous
+            // components before
+            // adding new ones!
+            if (AryaUtils.isNotEmpty(main.getAryaNavBar().getMenuBar())) {
+                main.getAryaNavBar().getMenuBar().getMenuItems().clear();
+            }
+
+            drawView(response.getView(), main,true);
+        }
+    }
+
+    private static void drawView(String view, AryaMain main, Boolean isMenu) {
 
         SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
         SAXParser parser = null;
@@ -148,12 +162,13 @@ public class AryaInterpreterHelper {
             e.printStackTrace();
         }
 
-        ImageView image = new ImageView(main.getAryaWindow().getContext());
-        image.setImageResource(R.drawable.agem_logo);
-        image.setPadding(700, 0, 1, 0);
+        if(!isMenu) {
+            ImageView image = new ImageView(main.getAryaWindow().getContext());
+            image.setImageResource(R.drawable.agem_logo);
+            image.setPadding(700, 0, 1, 0);
 
         main.getAryaWindow().addView(image);
-    }
+    }}
 
 
     public static void populateView(String responseData, AryaMain main) {

@@ -9,16 +9,14 @@ import org.xml.sax.helpers.DefaultHandler;
 import java.util.ArrayList;
 import java.util.Stack;
 
-import tr.com.agem.arya.interpreter.components.AryaComboItem;
-import tr.com.agem.arya.interpreter.components.AryaListCell;
-import tr.com.agem.arya.interpreter.components.AryaListItem;
-import tr.com.agem.arya.interpreter.components.AryaRadio;
+
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
-import tr.com.agem.arya.interpreter.components.base.AryaWindow;
+
+import tr.com.agem.arya.interpreter.components.menu.AryaMenu;
 import tr.com.agem.arya.interpreter.components.menu.AryaMenuItem;
-import tr.com.agem.arya.interpreter.components.AryaMultipleComboItem;
 import tr.com.agem.arya.interpreter.components.AryaScript;
 import tr.com.agem.arya.interpreter.components.ComponentFactory;
+import tr.com.agem.arya.interpreter.components.menu.AryaPopupMenu;
 import tr.com.agem.core.interpreter.IAryaComponent;
 
 public class AryaMetadataParser extends DefaultHandler {
@@ -35,20 +33,41 @@ public class AryaMetadataParser extends DefaultHandler {
     public void startElement (String uri, String localName,String tagName, Attributes attributes){
 
         IAryaComponent comp = ComponentFactory.getComponent(tagName,main, attributes);
-        
+
         if (comp != null) {
 
             if(currentComponent.size() > 0 ){
-                if( (!(comp instanceof IAryaMenu))&& ((View)comp).getParent()!=null) { //have to check whether it is instanceof AryaMenuItem or not because MenuItems cannot be casted to View
-                    ((ViewGroup) ((View) comp).getParent()).removeView((View) comp);
+                if((!(comp instanceof IAryaMenu))){
+                    if( ((View)comp).getParent()!=null) { //have to check whether it is instanceof AryaMenuItem or not because MenuItems cannot be casted to View
+                        ((ViewGroup) ((View) comp).getParent()).removeView((View) comp);
+                    }
+                    comp.setComponentParent(currentComponent.peek());}
+                else{
+                    if(comp instanceof AryaPopupMenu){
+                        ((AryaPopupMenu) comp).setLabel(((AryaMenu)currentComponent.peek()).getLabel());
+                        comp.setComponentParent(main.getAryaNavBar().getMenuBar());
+                    }
+                    else if(comp instanceof AryaMenuItem){
+                        if(currentComponent.peek() instanceof AryaPopupMenu){
+                            ((AryaPopupMenu)currentComponent.peek()).choice.add(((AryaMenuItem) comp).getLabel());
+                        }
+                        else {
+                            comp.setComponentParent(main.getAryaNavBar().getMenuBar());
+                        }
+                    }
+                    else if(comp instanceof AryaMenu){
+                        if(((AryaMenu) comp).getLabel()!=null){
+                            comp.setComponentParent(main.getAryaNavBar().getMenuBar());
+                        }
+                    }
                 }
-                comp.setComponentParent(currentComponent.peek());
             }
-            else {
-                if(comp instanceof IAryaMenu) {
+            else {      //this part assigns MenuBar's parent.
+                if (comp instanceof IAryaMenu) {
                     comp.setComponentParent(main.getAryaNavBar());
                 }
             }
+
 
             currentComponent.push(comp);
 

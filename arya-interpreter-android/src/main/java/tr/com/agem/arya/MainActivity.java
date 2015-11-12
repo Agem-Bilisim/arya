@@ -12,7 +12,6 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
-import android.widget.Toast;
 
 import java.util.concurrent.ExecutionException;
 
@@ -24,10 +23,12 @@ import tr.com.agem.arya.interpreter.script.ElementFunctions;
 import tr.com.agem.core.gateway.model.AryaRequest;
 import tr.com.agem.core.gateway.model.AryaResponse;
 import tr.com.agem.core.gateway.model.RequestTypes;
+import tr.com.agem.core.property.reader.PropertyReader;
 import tr.com.agem.core.utils.AryaUtils;
 
 public class MainActivity extends ActionBarActivity {
     private static final String TAG = "MainActivity";
+    public static String inetAddr = "192.168.1.115"; // if you use AVD(except genymotion) you can use 10.0.2.2 statically.
 
     private static AlertDialog alertDialog;
     private LinearLayout mainLayout;
@@ -89,21 +90,38 @@ public class MainActivity extends ActionBarActivity {
     public boolean onPrepareOptionsMenu(Menu menu) {
 
         if(AryaUtils.isNotEmpty(main))
-        if(AryaUtils.isNotEmpty(main.getAryaNavBar())){
-            menu = main.getAryaNavBar().fillMenuOptions(menu);
-        }
+            if(AryaUtils.isNotEmpty(main.getAryaNavBar())){
+                menu = main.getAryaNavBar().fillMenuOptions(menu);
+            }
 
         return true;
     }
 
     public void refresh(View v) {
+
+
+
+
+
         // Prepare initial request
         AryaRequest request = new AryaRequest();
-
+        // Menu
+        AryaRequest requestMenu = new AryaRequest();
+        requestMenu.setAction("menu");
+        requestMenu.setRequestType(RequestTypes.VIEW_ONLY);
+        WebServiceConnectionAsyncTask connThreadMenu = new WebServiceConnectionAsyncTask("http://"+inetAddr+":8080/arya/rest/asya",requestMenu, getApplicationContext());
+        String responseMenuStr=null;
+        try {
+            responseMenuStr = connThreadMenu.execute().get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
         if(AryaInterpreterHelper.getjSessionId() == null || ElementFunctions.getLastPage() == null) {
-
             request.setAction("login");
             request.setRequestType(RequestTypes.VIEW_ONLY);
+
         }
         else {
             request.setAction(ElementFunctions.getLastPage());
@@ -111,7 +129,7 @@ public class MainActivity extends ActionBarActivity {
         }
 
 
-        WebServiceConnectionAsyncTask connThread = new WebServiceConnectionAsyncTask("http://192.168.1.206:8080/arya/rest/asya",request, getApplicationContext());
+        WebServiceConnectionAsyncTask connThread = new WebServiceConnectionAsyncTask("http://"+inetAddr+":8080/arya/rest/asya",request, getApplicationContext());
 
         String responseStr = null;
         try {
@@ -122,14 +140,16 @@ public class MainActivity extends ActionBarActivity {
             e.printStackTrace();
         }
 
-        if (responseStr != null) {
+        if (responseStr != null && responseMenuStr !=null) {
             AryaResponse response = new AryaResponse();
             response.fromXMLString(responseStr);
-
+            AryaResponse responseMenu = new AryaResponse();
+            responseMenu.fromXMLString(responseMenuStr);
 
             main = new AryaMain(this,mainLayout);
 
             AryaInterpreterHelper.interpretResponse(response, main);
+            AryaInterpreterHelper.interpretResponseMenu(responseMenu,main);
 
         } else {
             AlertController.setAndShowPrimerAlert(this, "HATA!", "Sunucuyla Bağlantı Kurulamadı", "Tamam");
@@ -141,6 +161,7 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public static void setAlertDialog(AlertDialog alertDialog) {
+
         MainActivity.alertDialog = alertDialog;
     }
 
@@ -151,4 +172,5 @@ public class MainActivity extends ActionBarActivity {
     public void setMenu(Menu menu) {
         this.menu = menu;
     }
+
 }

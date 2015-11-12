@@ -1,5 +1,7 @@
 package tr.com.agem.arya.interpreter.components.menu;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.view.ActionProvider;
@@ -7,41 +9,58 @@ import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.SubMenu;
 import android.view.View;
+import android.widget.Toast;
 
 import org.xml.sax.Attributes;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import tr.com.agem.arya.MainActivity;
+
+
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
+import tr.com.agem.arya.interpreter.components.base.AryaNavBar;
 import tr.com.agem.arya.interpreter.parser.IAryaMenu;
-import tr.com.agem.arya.interpreter.script.ScriptHelper;
+
 import tr.com.agem.core.interpreter.IAryaComponent;
-import tr.com.agem.core.utils.AryaUtils;
 
-public class AryaMenuItem implements IAryaComponent,IAryaMenu, MenuItem {//TODO
 
+public class AryaPopupMenu implements IAryaComponent,IAryaMenu, MenuItem {//TODO
 
     private String label;
+
     private OnMenuItemClickListener onMenuItemClickListener;
+    public List<String> choice = new ArrayList<String>();
+    int selectedItem=0;
+    public AryaPopupMenu(Attributes attributes, final AryaMain main) {
 
+        this.setOnMenuItemClickListener(new OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                AlertDialog.Builder builder =
+                        new AlertDialog.Builder(AryaNavBar.context);
+                builder.setTitle("Alt Menu Seciniz");
 
-    public AryaMenuItem(Attributes attributes, final AryaMain main) {
+                builder.setSingleChoiceItems(
+                        choice.toArray(new String[choice.size()]),
+                        0,
+                        new DialogInterface.OnClickListener() {
 
-        if(AryaUtils.isNotEmpty(attributes)){
-            this.label=attributes.getValue("label");
-
-            final String onClick =  attributes.getValue("onClick");
-
-            if(AryaUtils.isNotEmpty(onClick)){
-                this.setOnMenuItemClickListener(new OnMenuItemClickListener() {
-                    @Override
-                    public boolean onMenuItemClick(MenuItem menuItem) {
-                        ScriptHelper.executeScript(onClick, null,main );
-
-                        return false;
-                    }
-                });
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                selectedItem = which;
+                                Toast.makeText(AryaNavBar.context, choice.get(selectedItem) + " isimli alt menuyu sectiniz", Toast.LENGTH_SHORT).show(); //TODO will be updated to execute onClick methods
+                                dialog.dismiss();
+                            }
+                        });
+                MainActivity.setAlertDialog(builder.create());
+                MainActivity.getAlertDialog().show();
+                return false;
             }
-        }
+        });
     }
+
 
     @Override
     public OnMenuItemClickListener getOnMenuItemClickListener() {
@@ -54,6 +73,7 @@ public class AryaMenuItem implements IAryaComponent,IAryaMenu, MenuItem {//TODO
         if(o instanceof AryaMenuBar){
             AryaMenuBar menu = (AryaMenuBar) o;
             menu.addItem(this);
+
         }
     }
 
