@@ -23,12 +23,12 @@ import tr.com.agem.arya.interpreter.script.ElementFunctions;
 import tr.com.agem.core.gateway.model.AryaRequest;
 import tr.com.agem.core.gateway.model.AryaResponse;
 import tr.com.agem.core.gateway.model.RequestTypes;
-import tr.com.agem.core.property.reader.PropertyReader;
+
 import tr.com.agem.core.utils.AryaUtils;
 
 public class MainActivity extends ActionBarActivity {
     private static final String TAG = "MainActivity";
-    public static String inetAddr = "192.168.1.115"; // if you use AVD(except genymotion) you can use 10.0.2.2 statically.
+    public static String inetAddr = "10.224.76.206"; // if you use AVD(emulator) just change it to 10.0.2.2 statically or if you use GENYMOTION set it to 10.0.3.2 .
 
     private static AlertDialog alertDialog;
     private LinearLayout mainLayout;

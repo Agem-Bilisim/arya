@@ -50,6 +50,7 @@ public class AryaMetadataParser extends DefaultHandler {
                     else if(comp instanceof AryaMenuItem){
                         if(currentComponent.peek() instanceof AryaPopupMenu){
                             ((AryaPopupMenu)currentComponent.peek()).choice.add(((AryaMenuItem) comp).getLabel());
+                            ((AryaPopupMenu)currentComponent.peek()).menuItems.add(((AryaMenuItem) comp));
                         }
                         else {
                             comp.setComponentParent(main.getAryaNavBar().getMenuBar());

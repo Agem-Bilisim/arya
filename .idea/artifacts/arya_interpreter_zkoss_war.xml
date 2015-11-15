@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="arya-interpreter-zkoss:war">
+    <output-path>$PROJECT_DIR$/arya-interpreter-zkoss/target</output-path>
+    <root id="archive" name="aryazk.war">
+      <element id="artifact" artifact-name="arya-interpreter-zkoss:war exploded" />
+    </root>
+  </artifact>
+</component>

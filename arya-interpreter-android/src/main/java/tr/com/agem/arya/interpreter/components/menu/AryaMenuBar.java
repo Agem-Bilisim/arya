@@ -27,6 +27,8 @@ public class AryaMenuBar implements IAryaMenu,IAryaComponent {
         return menuItems;
     }
 
+
+
     public void setMenuItems(ArrayList<IAryaMenu> menuItems) {
         this.menuItems = menuItems;
     }

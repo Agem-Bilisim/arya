@@ -32,6 +32,7 @@ public class AryaPopupMenu implements IAryaComponent,IAryaMenu, MenuItem {//TODO
 
     private OnMenuItemClickListener onMenuItemClickListener;
     public List<String> choice = new ArrayList<String>();
+    public ArrayList<AryaMenuItem> menuItems = new ArrayList<>();
     int selectedItem=0;
     public AryaPopupMenu(Attributes attributes, final AryaMain main) {
 
@@ -50,7 +51,7 @@ public class AryaPopupMenu implements IAryaComponent,IAryaMenu, MenuItem {//TODO
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 selectedItem = which;
-                                Toast.makeText(AryaNavBar.context, choice.get(selectedItem) + " isimli alt menuyu sectiniz", Toast.LENGTH_SHORT).show(); //TODO will be updated to execute onClick methods
+                                menuItems.get(selectedItem).getOnMenuItemClickListener();
                                 dialog.dismiss();
                             }
                         });
