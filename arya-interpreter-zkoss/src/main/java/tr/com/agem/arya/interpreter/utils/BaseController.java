@@ -5,12 +5,12 @@ import java.io.IOException;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.util.GenericForwardComposer;
 import org.zkoss.zul.Div;
+import org.zkoss.zul.Include;
 
 import tr.com.agem.arya.interpreter.component.AryaTabbox;
 import tr.com.agem.arya.interpreter.component.AryaTabpanels;
 import tr.com.agem.arya.interpreter.component.AryaTabs;
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
-import tr.com.agem.arya.interpreter.script.ElementFunctions;
 import tr.com.agem.core.gateway.model.AryaRequest;
 import tr.com.agem.core.gateway.model.AryaResponse;
 import tr.com.agem.core.gateway.model.RequestTypes;
@@ -22,6 +22,8 @@ public class BaseController extends GenericForwardComposer {
 	private static final long serialVersionUID = 8866650311533378984L;
 	private Div componentContainer; // works as a parent component
 	private Div menuContainer;
+	private Include login;
+	private static AryaMain main;
 	private static AryaTabbox tabbox;
 	private static AryaTabs tabs;
 	private static AryaTabpanels tabpanels;
@@ -38,27 +40,14 @@ public class BaseController extends GenericForwardComposer {
 	}
 
 	private void init() throws IOException {
-
-		// Prepare initial request
-		AryaRequest request = new AryaRequest();
-			
-			request.setAction("login");
-			request.setRequestType(RequestTypes.VIEW_ONLY);
-
-		String responseStr=null;
-		try {
-			responseStr = AryaInterpreterHelper.callUrl(PropertyReader.property("gateway.base.url"), request);
-		} catch (Exception e) {
-			e.printStackTrace();
-		} 
-		
-		AryaResponse response = new AryaResponse();
-		response.fromXMLString(responseStr);
 		
 		if(componentContainer==null)
 			componentContainer=new Div();
 		
-		AryaMain main = new AryaMain(componentContainer, menuContainer);
+		if(login == null)
+			login = new Include();
+		
+		AryaMain main = new AryaMain(componentContainer, menuContainer, login);
 		
 		tabbox = new AryaTabbox(main, null);
 		tabbox.setParent(main.getComponentContainer());
@@ -69,7 +58,6 @@ public class BaseController extends GenericForwardComposer {
 		tabpanels = new AryaTabpanels(main, null);
 		tabpanels.setParent(tabbox);
 		
-		AryaInterpreterHelper.interpretResponse(response, main, tabs, tabpanels, null);
 		
 		// Menu
 		AryaRequest requestMenu = new AryaRequest();
@@ -93,6 +81,10 @@ public class BaseController extends GenericForwardComposer {
 		main.setMenuContainer(menuContainer);
 		
 		AryaInterpreterHelper.interpretResponseMenu(responseMenu, main, tabs, tabpanels);
+		
+		main.getMenuContainer().setVisible(false);
+		
+		BaseController.main = main;
 	}
 
 	public Div getComponentContainer() {
@@ -135,6 +127,22 @@ public class BaseController extends GenericForwardComposer {
 		BaseController.tabpanels = tabpanels;
 	}
 
-	
+	public static AryaMain getMain() {
+		return main;
+	}
+
+	public static void setMain(AryaMain main) {
+		BaseController.main = main;
+	}
+
+	public Include getLogin() {
+		return login;
+	}
+
+	public void setLogin(Include login) {
+		this.login = login;
+	}
+
+
 
 }

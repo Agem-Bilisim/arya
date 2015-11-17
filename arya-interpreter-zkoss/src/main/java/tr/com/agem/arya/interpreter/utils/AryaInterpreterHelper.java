@@ -38,7 +38,6 @@ import tr.com.agem.arya.interpreter.component.AryaListbox;
 import tr.com.agem.arya.interpreter.component.AryaRow;
 import tr.com.agem.arya.interpreter.component.AryaRows;
 import tr.com.agem.arya.interpreter.component.AryaTab;
-import tr.com.agem.arya.interpreter.component.AryaTabbox;
 import tr.com.agem.arya.interpreter.component.AryaTabpanel;
 import tr.com.agem.arya.interpreter.component.AryaTabpanels;
 import tr.com.agem.arya.interpreter.component.AryaTabs;
@@ -303,18 +302,30 @@ public class AryaInterpreterHelper {
 
 	private static void drawView(String view, AryaMain main, AryaTabs tabs, AryaTabpanels tabpanels, Boolean isMenu, String tabValue) {
 						
-		AryaTabpanel tabpanel = null;
+		Boolean isSelected = false;
 		
-		if(!isMenu) { 
+		if(tabs.getChildren() != null)		
+			for (int i = 0; i < tabs.getChildren().size(); i++) {
+				if(((AryaTab)tabs.getChildren().get(i)).getLabel().equals(tabValue)) {
+					((AryaTab)tabs.getChildren().get(i)).setSelected(true);
+					isSelected = true;
+					break;
+				}
+			}
+		
+		AryaTabpanel tabpanel = new AryaTabpanel(main, null);
+	
+		if(!isMenu && !isSelected) { 
 			AryaTab tab = new AryaTab(main, null);
 			tab.setParent(tabs);
 			tab.setClosable(true);
 			tab.setSelected(true);
-			tab.setLabel(tabValue); 
-				
+			tab.setLabel(tabValue);
+					
 			tabpanel = new AryaTabpanel(main, null);
-			tabpanel.setParent(tabpanels); 
+			tabpanel.setParent(tabpanels);
 		}
+			
 
 		SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
 		SAXParser parser = null;
@@ -327,7 +338,7 @@ public class AryaInterpreterHelper {
 		} catch (SAXException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
-			e.printStackTrace();
+			e.printStackTrace(); 
 		}
 		
 	} 

@@ -101,6 +101,10 @@ public class AryaJarAdaptor extends AryaApplicationAdaptor {
 				}
 
 			}
+			
+			// Mock UserContext
+			UserContext.setContext(AryaThreadLocal.getRequest(), AryaThreadLocal.getResponse(),
+					AryaThreadLocal.getServletContext());
 
 			// Create action mapping
 			AgemActionMapping mapping = new AgemActionMapping();

@@ -1,6 +1,7 @@
 package tr.com.agem.arya.interpreter.components.base;
 
 import org.zkoss.zul.Div;
+import org.zkoss.zul.Include;
 
 import tr.com.agem.arya.interpreter.utils.BaseController;
 
@@ -11,11 +12,13 @@ public class AryaMain extends BaseController {
 	private AryaNavBar aryaNavBar;
 	private Div componentContainer;
 	private Div menuContainer;
+	private Include login;
 
-	public AryaMain(Div componentContainer, Div menuContainer) {
+	public AryaMain(Div componentContainer, Div menuContainer, Include login) {
 		super();
 		this.menuContainer = menuContainer;
 		this.componentContainer = componentContainer;
+		this.login = login;
 		this.aryaWindow = new AryaWindow();
 		this.aryaNavBar = new AryaNavBar();
 	}
@@ -52,6 +55,14 @@ public class AryaMain extends BaseController {
 	public void setMenuContainer(Div menuContainer) {
 		this.menuContainer = menuContainer;
 	}
-	
+
+	public Include getLogin() {
+		return login;
+	}
+
+	public void setLogin(Include login) {
+		this.login = login;
+	}
+
 	
 }

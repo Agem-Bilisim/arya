@@ -10,19 +10,16 @@ import java.util.logging.Logger;
 
 import org.json.JSONObject;
 import org.mozilla.javascript.Context;
-import org.mozilla.javascript.GeneratedClassLoader;
 import org.mozilla.javascript.NativeArray;
 import org.mozilla.javascript.NativeFunction;
 import org.mozilla.javascript.NativeJSON;
 import org.mozilla.javascript.Scriptable;
-import org.zkoss.zul.Combobox;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import tr.com.agem.arya.interpreter.component.AryaCombobox;
 import tr.com.agem.arya.interpreter.component.AryaListbox;
-import tr.com.agem.arya.interpreter.component.AryaSelectbox;
 import tr.com.agem.arya.interpreter.component.AryaTextbox;
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.utils.AryaException;
@@ -77,10 +74,14 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 	@AryaJsFunction
 	public void post(String action, String requestType, Object params, String tabValue, NativeFunction onSuccess, NativeFunction onFailure) {//debug dan geçirmek gerek(volkan)
 
-		Object jsonParam = NativeJSON.stringify(context, scope, params, null, null);
+		// login ve master sayfaları için javascript kullanılmadığından
+		if(!requestType.equals("LOGIN") && !action.equals("master")) {
+			Object jsonParam = NativeJSON.stringify(context, scope, params, null, null);
+			params = jsonParam;
+		}
 
 		StringBuilder request = new StringBuilder("{ \"params\": ")
-				.append(jsonParam)
+				.append(params)
 				.append(", \"requestType\": \"")
 				.append(requestType)
 				.append("\", \"action\": \"")
@@ -100,6 +101,17 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 			
 			AryaInterpreterHelper.interpretResponse(response, main, BaseController.getTabs(), BaseController.getTabpanels(), tabValue);
 			
+			// Kullanıcı login olmuşsa
+			if(requestType.equals("LOGIN") && response.getData() != null) {
+				
+				BaseController.getMain().getMenuContainer().setVisible(true);
+				BaseController.getMain().getLogin().setVisible(false);
+				
+				post("master","VIEW_ONLY", "{}", "Master", null, null);
+				
+			}
+			
+						
 			if (onSuccess != null) {
 				scope.put(onSuccess.getFunctionName(), scope, onSuccess);
 				Context.call(null, onSuccess, scope, this, new Object[]{ response });
