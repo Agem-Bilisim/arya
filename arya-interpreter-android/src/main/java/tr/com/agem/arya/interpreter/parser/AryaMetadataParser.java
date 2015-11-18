@@ -45,6 +45,7 @@ public class AryaMetadataParser extends DefaultHandler {
                 else{
                     if(comp instanceof AryaPopupMenu){
                         ((AryaPopupMenu) comp).setLabel(((AryaMenu)currentComponent.peek()).getLabel());
+                        main.getAryaNavBar().getMenuBar().getMenuItems().remove(main.getAryaNavBar().getMenuBar().getMenuItems().size()-1); //Remove Menu if it has a popupchild, just delegate it's name to popup menu
                         comp.setComponentParent(main.getAryaNavBar().getMenuBar());
                     }
                     else if(comp instanceof AryaMenuItem){

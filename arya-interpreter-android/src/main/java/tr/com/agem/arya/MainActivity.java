@@ -28,7 +28,7 @@ import tr.com.agem.core.utils.AryaUtils;
 
 public class MainActivity extends ActionBarActivity {
     private static final String TAG = "MainActivity";
-    public static String inetAddr = "10.224.76.206"; // if you use AVD(emulator) just change it to 10.0.2.2 statically or if you use GENYMOTION set it to 10.0.3.2 .
+    public static String inetAddr = "192.168.1.216"; // if you use AVD(emulator) just change it to 10.0.2.2 statically or if you use GENYMOTION set it to 10.0.3.2 .
 
     private static AlertDialog alertDialog;
     private LinearLayout mainLayout;
@@ -99,10 +99,6 @@ public class MainActivity extends ActionBarActivity {
 
     public void refresh(View v) {
 
-
-
-
-
         // Prepare initial request
         AryaRequest request = new AryaRequest();
         // Menu
@@ -147,9 +143,13 @@ public class MainActivity extends ActionBarActivity {
             responseMenu.fromXMLString(responseMenuStr);
 
             main = new AryaMain(this,mainLayout);
-
-            AryaInterpreterHelper.interpretResponse(response, main);
-            AryaInterpreterHelper.interpretResponseMenu(responseMenu,main);
+            AryaInterpreterHelper.interpretResponseMenu(responseMenu, main);
+            if(request.getAction().equals("login")) {
+                AryaInterpreterHelper.interpretResponse(response,true, main);
+            }
+            else{
+                AryaInterpreterHelper.interpretResponse(response,false, main);
+            }
 
         } else {
             AlertController.setAndShowPrimerAlert(this, "HATA!", "Sunucuyla Bağlantı Kurulamadı", "Tamam");

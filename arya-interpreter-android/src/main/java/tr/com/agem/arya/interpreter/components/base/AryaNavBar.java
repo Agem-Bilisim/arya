@@ -18,6 +18,7 @@ public class AryaNavBar extends ActionBarActivity {
 
 
     private AryaMenuBar menuBar = null;
+
     ActionBar actionBar;
     public static Context context;
 
@@ -38,7 +39,9 @@ public class AryaNavBar extends ActionBarActivity {
 
 
         if(AryaUtils.isNotEmpty(menuItemList)){
-            menu.clear();
+            if(menu!=null) {
+                menu.clear();
+            }
             for (int i=0; i<menuItemList.size();i++){
                 IAryaMenu aryaMenuItem = menuItemList.get(i);
 
@@ -53,6 +56,7 @@ public class AryaNavBar extends ActionBarActivity {
     public AryaMenuBar getMenuBar() {
         return menuBar;
     }
+
 
     public void setMenuBar(AryaMenuBar menuBar) {
         this.menuBar = menuBar;

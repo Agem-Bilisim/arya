@@ -16,15 +16,19 @@ import tr.com.agem.core.utils.AryaUtils;
 public class AryaMenuBar implements IAryaMenu,IAryaComponent {
 
     private ArrayList<IAryaMenu> menuItems;
-
+    private ArrayList<IAryaMenu> menuItems_copy;
     public AryaMenuBar(Attributes attributes, AryaMain main) {
 
         menuItems =new ArrayList<>();
+        menuItems_copy = new ArrayList<>();
     }
 
 
     public ArrayList<IAryaMenu> getMenuItems() {
         return menuItems;
+    }
+    public ArrayList<IAryaMenu> getMenuItemsCopy() {
+        return menuItems_copy;
     }
 
 
