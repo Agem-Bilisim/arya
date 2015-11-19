@@ -99,7 +99,7 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 			response = new AryaResponse();
 			response.fromXMLString(result);
 			
-			AryaInterpreterHelper.interpretResponse(response, main, BaseController.getTabs(), BaseController.getTabpanels(), tabValue);
+			AryaInterpreterHelper.interpretResponse(response, action, main, BaseController.getTabs(), BaseController.getTabpanels(), tabValue);
 			
 			// Kullanıcı login olmuşsa
 			if(requestType.equals("LOGIN") && AryaUtils.isNotEmpty(response.getData())) {
@@ -142,7 +142,7 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 			jsonObj = ((AryaCombobox)getElementById(elementId)).getSelectedItem().getValue();
 		}
 		
-		String params = "{\"kisiId\":\""+ splitId(id, jsonObj)+"\"}"; 
+		String params = "{\"id\":\""+ splitId(id, jsonObj)+"\"}"; 
 		
 		for (int i = 0; i < comps.size(); i++) {
 			
@@ -180,7 +180,7 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 		for (int i = 0; i < main.getAryaWindow().getComponents().size(); i++) {
 			comp = main.getAryaWindow().getComponents().get(i);
 
-			if (comp.getComponentId().endsWith(id)) {
+			if (comp.getComponentId() != null && comp.getComponentId().endsWith(id)) {
 					return comp;
 			}
 		

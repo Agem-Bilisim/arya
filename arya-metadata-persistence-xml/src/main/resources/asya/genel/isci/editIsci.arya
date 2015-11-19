@@ -2,11 +2,11 @@
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addIsciWindow">
-		<grid id="list" sizedByContent="true" hflex="min" zclass="none">
+		<grid id="list">
 			<rows>
 				<row>
 					<label id="kisi.tckNolbl" value="T.C. Kimlik No" />
-					<textbox type="text" id="kisi.tckNo"  value="p2m23fpl3bd"  width="100"  maxlength="11"  placeholder="" />
+					<textbox type="text" id="kisi.tckNo"  value="p2m23fpl3bd"  width="100"  maxlength="11"  placeholder=""/>
 				</row>
 				<row>
 					<label id="kisi.adlbl" value="Ad" />
@@ -28,7 +28,7 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 				</row>
 				<row>
 					<label id="aciklamalbl" value="Açıklama" />
-					<textbox type="text" id="aciklama"  value="m7wku1a17c"  width="480"  placeholder=""  />
+					<textbox type="text" id="aciklama"  value="m7wku1a17c"  width="470"  placeholder=""  />
 				</row>
 			</rows>
 		</grid>

@@ -1,5 +1,8 @@
 package tr.com.agem.arya.interpreter.component;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import org.xml.sax.Attributes;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.event.Event;
@@ -17,6 +20,7 @@ public class AryaTabpanel extends Tabpanel implements IAryaComponent {
 
 	private String componentClassName;
 	private String componentAttribute;
+	private Collection<IAryaComponent> components = new ArrayList<IAryaComponent>();
 
 	public AryaTabpanel(final AryaMain main, Attributes attributes) {
 		super();
@@ -146,6 +150,18 @@ public class AryaTabpanel extends Tabpanel implements IAryaComponent {
 	@Override
 	public String getComponentTagName() {
 		return "tabpanel";
+	}
+
+	public Collection<IAryaComponent> getComponents() {
+		return components;
+	}
+
+	public void setComponents(Collection<IAryaComponent> components) {
+		this.components = components;
+	}
+
+	public boolean add(IAryaComponent e) {
+		return components.add(e);
 	}
 
 }

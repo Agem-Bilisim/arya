@@ -28,7 +28,7 @@ import tr.com.agem.core.utils.AryaUtils;
 
 public class MainActivity extends ActionBarActivity {
     private static final String TAG = "MainActivity";
-    public static String inetAddr = "192.168.1.216"; // if you use AVD(emulator) just change it to 10.0.2.2 statically or if you use GENYMOTION set it to 10.0.3.2 .
+    public static String inetAddr = "192.168.1.202"; // if you use AVD(emulator) just change it to 10.0.2.2 statically or if you use GENYMOTION set it to 10.0.3.2 .
 
     private static AlertDialog alertDialog;
     private LinearLayout mainLayout;

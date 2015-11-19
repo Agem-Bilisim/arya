@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -85,10 +87,22 @@ public class MetadataPersistenceImplXml implements IMetadataPersistence {
 
 		return null;
 	}
+	
+	static final Map<String, String> ACTION_META = new HashMap<String, String>();
+	static {
+		ACTION_META.put("empty", "edit");
+		ACTION_META.put("select", "edit");
+		ACTION_META.put("delete", "edit");
+		ACTION_META.put("add", "edit");
+	}
 
 	private String findXMLFilePath(String appName, String viewName) {
 		String tmp = (viewName == null || viewName.isEmpty()) ? PropertyReader.property("master.metadata.file") : viewName;
-		String path = AryaUtils.join(File.separator, tmp.split("\\."));
+		for (String key: ACTION_META.keySet()) {
+			tmp = tmp.replaceAll(key, ACTION_META.get(key));
+		}
+		String d[] = tmp.split("\\.");
+		String path = AryaUtils.join(File.separator, d);
 		return appName + File.separator + path + "." + PropertyReader.property("metadata.file.extension");
 	}
 

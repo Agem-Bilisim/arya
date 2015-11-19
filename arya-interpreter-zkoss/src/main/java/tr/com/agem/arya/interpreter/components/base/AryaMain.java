@@ -5,9 +5,8 @@ import org.zkoss.zul.Include;
 
 import tr.com.agem.arya.interpreter.utils.BaseController;
 
-public class AryaMain extends BaseController {
+public class AryaMain {
 
-	private static final long serialVersionUID = 3024244510254500447L;
 	private AryaWindow aryaWindow;
 	private AryaNavBar aryaNavBar;
 	private Div componentContainer;

@@ -3,7 +3,7 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listIsciWindow">
 		<vlayout>
-			<listbox id="list" pagesize="10" mold="paging" onSelect="select()">
+			<listbox id="genel.isci.list" pagesize="10" mold="paging" onSelect="select_isci()">
 				<listhead>
 					<listheader label="T.C. Kimlik No" />			
 					<listheader label="Ad Soyad" />
@@ -32,9 +32,9 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 	</window>
 	<script>
 		
-		select = function(){
+		select_isci = function(){
 		
-			renderSelectedItem('list', 'kisi.kisiId', 'genel.isci.select', ['textTckNo', 'textadSoyad', 'textIsyeriUnvan'], ['kisi.tckNo', 'kisi.adSoyad', 'isyeri.unvan'], 'İşçi Bilgileri');
+			renderSelectedItem('list', 'kisi.id', 'genel.isci.select', ['textTckNo', 'textadSoyad', 'textIsyeriUnvan'], ['kisi.tckNo', 'kisi.adSoyad', 'isyeri.unvan'], 'İşçi Bilgileri');
 		
 		}
 	</script>

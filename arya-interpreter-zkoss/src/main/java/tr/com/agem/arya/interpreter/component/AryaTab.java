@@ -17,6 +17,7 @@ public class AryaTab extends Tab implements IAryaComponent {
 
 	private String componentClassName;
 	private String componentAttribute;
+	private AryaTabpanel tabPanel;
 
 	public AryaTab(final AryaMain main, Attributes attributes) {
 		super();
@@ -150,6 +151,14 @@ public class AryaTab extends Tab implements IAryaComponent {
 	@Override
 	public String getComponentTagName() {
 		return "tab";
+	}
+
+	public AryaTabpanel getTabPanel() {
+		return tabPanel;
+	}
+
+	public void setTabPanel(AryaTabpanel tabPanel) {
+		this.tabPanel = tabPanel;
 	}
 
 }

@@ -58,7 +58,7 @@ public class LoginController extends GenericForwardComposer {
 		
 		String jsonString = "{\"username\":\"admin\",\"password\":\"a395em8?\"}";
 				
-		element.post("login","LOGIN", jsonString, "Master", null, null);
+		element.post("login","LOGIN", jsonString, "ASYA", null, null);
 				
 	}
 

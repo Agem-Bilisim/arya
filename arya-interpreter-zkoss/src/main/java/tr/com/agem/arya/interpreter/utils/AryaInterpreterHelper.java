@@ -10,6 +10,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.ParseException;
@@ -24,6 +25,7 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zul.Div;
+import org.zkoss.zul.impl.InputElement;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -99,30 +101,26 @@ public class AryaInterpreterHelper {
 
 	}
 
-	public static void interpretResponse(AryaResponse response, AryaMain main, AryaTabs tabs, AryaTabpanels tabpanels, String tabValue) {
+	public static void interpretResponse(AryaResponse response, String action, AryaMain main, AryaTabs tabs, AryaTabpanels tabpanels, String tabValue) {
 
 		if (AryaUtils.isNotEmpty(response.getView())) {// Remove previous
 														// components before
 														// adding new ones!
 
-			if (AryaUtils.isNotEmpty(main.getComponentContainer())) {
-
-				if (AryaUtils.isNotEmpty(main.getAryaWindow().getComponents())) {
-					for (IAryaComponent c : main.getAryaWindow().getComponents()) {
-						main.getComponentContainer().removeChild((Component) c);
-					}
-				}
+			AryaTab tab = getCurrentTab(tabs, tabValue);
+			if (tab != null) {
+				tab.getTabPanel().getParent().removeChild(tab.getTabPanel());
+				tab.getParent().removeChild(tab);
 			}
+			tab = null;
 
-			if (AryaUtils.isNotEmpty(main.getAryaWindow().getComponents())) {
-				main.getAryaWindow().getComponents().clear();
-			}
-
-			drawView(response.getView(), main, tabs, tabpanels, false, tabValue);
+			drawView(response.getView(), main, tab, tabs, tabpanels, false, tabValue);
 		}
 
 		if (AryaUtils.isNotEmpty(response.getData())) {
-			populateView(response.getData(), main);
+			AryaTab tab = getCurrentTab(tabs, tabValue);
+			System.out.println("view:"+response.getView());
+			populateView(response.getData(), action, main, tab, tabValue);
 		}
 		
 		populateListComponents(main);
@@ -136,8 +134,9 @@ public class AryaInterpreterHelper {
 				Div menuDiv = main.getMenuContainer();
 				menuDiv.getChildren().clear();
 			}
+			
 
-			drawView(response.getView(), main, tabs, tabpanels, true, null);
+			drawView(response.getView(), main, null, tabs, tabpanels, true, null);
 		}
 	}
 
@@ -190,7 +189,7 @@ public class AryaInterpreterHelper {
 		ElementFunctions.setValues(new ArrayList<String>());
 	}
 
-	private static void populateView(String data, AryaMain main) {
+	private static void populateView(String data, String action, AryaMain main, AryaTab tab, String tabValue) {
 
 		System.out.println(data);
 		ObjectMapper mapper = new ObjectMapper(); 
@@ -203,28 +202,25 @@ public class AryaInterpreterHelper {
 						Map.Entry<String, JsonNode> entry = fields.next();
 						if ("results".equals(entry.getKey().toString())) {
 							JSONArray jsonArray = new JSONArray(entry.getValue().toString());
-							if (jsonArray.length() > 1) {
-								populateAryaTemplate(main, (IAryaTemplate) getElementById("list", main), jsonArray);
-							} else  if (jsonArray.length() == 1){  
+							if (action.endsWith("list")) {
+								populateAryaTemplate(main, (IAryaTemplate) getElementById(action, main), jsonArray);
+							} 
+							else  if (jsonArray.length() == 1){  
 								JSONObject jsonObj = jsonArray.getJSONObject(0);
-								for (Iterator<?> iterator = jsonObj.keySet().iterator(); iterator.hasNext();) {
-									String key = (String) iterator.next();
-									
-									IAryaComponent c = (IAryaComponent) getElementById(key, main);
-									
-									System.out.println(key+" "+getElementById(key, main));
-									
-									if(c != null)
-										if (AryaUtils.isNotEmpty(jsonObj.get(key).toString()) && AryaUtils.isNotEmpty(c))
-											c.setComponentValue(jsonObj.get(key).toString());
+								
+								
+								for (IAryaComponent comp : tab.getTabPanel().getComponents()) {
+									if (comp instanceof InputElement) {
+										String key = StringUtils.substringAfterLast(comp.getComponentId(), "-");
+										comp.setComponentValue(getJSONValue(jsonObj,key).toString());
 									}
+									
 								}
 							}
 						}
 					}
 				}
-			
-
+			}
 		} catch (JsonProcessingException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -232,6 +228,25 @@ public class AryaInterpreterHelper {
 		}
 	}
 	
+	private static Object getJSONValue(JSONObject jsonObj, String key) {
+		
+		String k = StringUtils.substringBefore(key, ".");
+		String x = StringUtils.substringAfter(key, ".");
+		if (AryaUtils.isEmpty(x)) {
+			Object v= "";
+			try {
+				v = jsonObj.get(k);
+			}
+			catch (Exception e) {
+			}
+			if (AryaUtils.isEmpty(v) || "null".equals(v)) {
+				return ""; 
+			}
+			return v;
+		}
+		return getJSONValue((JSONObject)jsonObj.get(k), x);
+	}
+
 	private static void populateListComponents(AryaMain main) {
 		
 		for (Iterator<IAryaComponent> iterator = main.getAryaWindow().getComponents().iterator(); iterator.hasNext();) {
@@ -307,23 +322,16 @@ public class AryaInterpreterHelper {
 		
 	}
 
-	private static void drawView(String view, AryaMain main, AryaTabs tabs, AryaTabpanels tabpanels, Boolean isMenu, String tabValue) {
+	private static void drawView(String view, AryaMain main, AryaTab tab, AryaTabs tabs, AryaTabpanels tabpanels, Boolean isMenu, String tabValue) {
 						
-		Boolean isSelected = false;
-		
-		if(tabs.getChildren() != null)		
-			for (int i = 0; i < tabs.getChildren().size(); i++) {
-				if(((AryaTab)tabs.getChildren().get(i)).getLabel().equals(tabValue)) {
-					((AryaTab)tabs.getChildren().get(i)).setSelected(true);
-					isSelected = true;
-					break;
-				}
-			}
+		if (tab != null) {
+			tab.setSelected(true);
+		}
 		
 		AryaTabpanel tabpanel = new AryaTabpanel(main, null);
 	
-		if(!isMenu && !isSelected) { 
-			AryaTab tab = new AryaTab(main, null);
+		if(!isMenu && tab == null) { 
+			tab = new AryaTab(main, null);
 			tab.setParent(tabs);
 			tab.setClosable(true);
 			tab.setSelected(true);
@@ -332,6 +340,7 @@ public class AryaInterpreterHelper {
 			tabpanel = new AryaTabpanel(main, null);
 			tabpanel.setParent(tabpanels);
 			tabpanel.setComponentId("tabpanel"+String.valueOf(tabpanels.getChildren().size()));
+			tab.setTabPanel(tabpanel);
 		}
 			
 
@@ -349,6 +358,18 @@ public class AryaInterpreterHelper {
 			e.printStackTrace(); 
 		}
 		
+	}
+
+	private static AryaTab getCurrentTab(AryaTabs tabs, String tabValue) {
+		if(tabs.getChildren() != null)	{
+			for (int i = 0; i < tabs.getChildren().size(); i++) {
+				AryaTab tab = (AryaTab)tabs.getChildren().get(i);
+				if(tab.getLabel().equals(tabValue)) {
+					return tab; 
+				}
+			}
+		}
+		return null;
 	} 
 
 	public static IAryaComponent getElementById(String id, AryaMain main) { // only
@@ -361,9 +382,8 @@ public class AryaInterpreterHelper {
 
 		for (int i = 0; i < main.getAryaWindow().getComponents().size(); i++) {
 			comp = main.getAryaWindow().getComponents().get(i);
-
 			// ids are suffix of component ids (tabpanel2-list etc....)
-			if (comp.getComponentId().endsWith(id)) {
+			if (comp.getComponentId() != null && comp.getComponentId().endsWith(id)) {
 				return comp;
 			}
 		}
@@ -373,7 +393,7 @@ public class AryaInterpreterHelper {
 	public static String splitId(String id, JSONObject jsonObj) {
 
 		String retVal = null;
-		JSONObject obj = null;
+		JSONObject obj = jsonObj;
 						
 		if (jsonObj != null) {
 			
@@ -389,7 +409,7 @@ public class AryaInterpreterHelper {
 			}
 			
 			for (int i = 0; i < spl.length - 1; i++)
-				obj = (JSONObject) jsonObj.get(spl[i]);
+				obj = (JSONObject) obj.get(spl[i]);
 			
 			Object ret;
 			

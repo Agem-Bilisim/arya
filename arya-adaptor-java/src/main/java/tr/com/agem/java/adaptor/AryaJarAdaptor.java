@@ -1,8 +1,6 @@
 package tr.com.agem.java.adaptor;
 
-import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Collection;
@@ -10,13 +8,12 @@ import java.util.Iterator;
 import java.util.Map.Entry;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.beanutils.BeanUtilsBean;
 import org.apache.commons.lang.StringEscapeUtils;
 
 import tr.com.agem.common.AgemActionMapping;
@@ -69,37 +66,14 @@ public class AryaJarAdaptor extends AryaApplicationAdaptor {
 			if (aryaRequest.getParams() != null && aryaRequest.getParams().size() > 0) {
 
 				for (Entry<String, Object> entry : aryaRequest.getParams().entrySet()) {
-
-					Field field = null;
 					try {
-						field = cls.getDeclaredField(entry.getKey());	//access private fields
-								//getField(entry.getKey());				//finds just public fields
-					
-					} catch (NoSuchFieldException e) {
-						logger.log(Level.WARNING, "No such a field: {0}",
-								new Object[] { entry.getKey()});
+						BeanUtilsBean.getInstance().setProperty(form, entry.getKey(), entry.getValue());
+						logger.log(Level.FINE, "Setting value of {0} to: {1}",
+								new Object[] { entry.getKey(), entry.getValue().toString() });
+					} catch (Exception e) {
+						e.printStackTrace();
 					}
-
-					if (field != null) {
-
-						Method setter = null;
-						try {
-							setter = cls.getMethod(findSetterName(field.getName()), field.getType());//we can get parameter type via field.type not entry
-						} catch (NoSuchMethodException e) {
-						}
-
-						if (setter != null) {
-
-							setter.invoke(form, returnValidType(field.getType(),entry.getValue().toString()));
-
-							logger.log(Level.FINE, "Setting value of {0} to: {1}",
-									new Object[] { field.getName(), entry.getValue().toString() });
-						}
-
-					}
-
 				}
-
 			}
 			
 			// Mock UserContext
@@ -147,39 +121,6 @@ public class AryaJarAdaptor extends AryaApplicationAdaptor {
 			e.printStackTrace();
 		}
 
-		return null;
-	}
-
-	private Object returnValidType(Class<?> clazz, String value) {//TODO complex types?
-																//is returning null valid?
-		 if (clazz == null){
-			 logger.log(Level.WARNING, "Class is null ");
-			 return null;
-		 }
-		 
-		   try {
-
-		        if(Integer.class.equals(clazz)) {
-		            return Integer.valueOf(value);
-		        }
-		        else if(Double.class.equals(clazz)) {
-		            return Double.valueOf(value);
-		        }
-		        else if(Long.class.equals(clazz)) {
-		            return Long.valueOf(value);
-		        }
-		        else if(Float.class.equals(clazz)) {
-		            return Float.valueOf(value);
-		        }
-		        else if(String.class.equals(clazz)) {
-		            return String.valueOf(value);
-		        }
-		        //so on
-		   }
-		    catch(NumberFormatException|NullPointerException ex) {
-		         logger.log(Level.WARNING, "Invalid or Undefined Type  : {0}",new Object[] { clazz.getName()});
-		    }
-		    
 		return null;
 	}
 
@@ -360,14 +301,6 @@ public class AryaJarAdaptor extends AryaApplicationAdaptor {
 		}
 
 		return result.toString();
-	}
-
-	private String findSetterName(String name) {
-		Matcher matcher = Pattern.compile("_(\\w)").matcher(name);
-		while (matcher.find()) {
-			name = name.replaceFirst(matcher.group(0), matcher.group(1).toUpperCase());
-		}
-		return "set" + name.substring(0, 1).toUpperCase() + name.substring(1);
 	}
 
 }
