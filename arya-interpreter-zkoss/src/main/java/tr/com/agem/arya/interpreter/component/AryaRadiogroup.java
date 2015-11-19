@@ -1,9 +1,13 @@
 package tr.com.agem.arya.interpreter.component;
 
+import java.util.List;
+
 import org.xml.sax.Attributes;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.EventListener;
+import org.zkoss.zul.Listitem;
+import org.zkoss.zul.Radio;
 import org.zkoss.zul.Radiogroup;
 
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
@@ -138,15 +142,17 @@ public class AryaRadiogroup extends Radiogroup implements IAryaComponent {
 		 * There is no componentValue variable for this component. This function
 		 * was created for IAryaComponent interface.
 		 */
-		return null;
+		return this.getSelectedItem().getValue();
 	}
 
 	@Override
 	public void setComponentValue(String componentValue) {
-		/*
-		 * There is no componentValue variable for this component. This function
-		 * was created for IAryaComponent interface.
-		 */
+		List<Radio> items = this.getItems();
+		for (Radio item : items) {
+			if (item != null && item.getValue() != null && item.getValue().equals(componentValue)) {
+				this.setSelectedItem(item);			
+			}
+		}
 	}
 
 	@Override

@@ -1,6 +1,7 @@
 package tr.com.agem.arya.interpreter.parser;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Stack;
 
 import org.xml.sax.Attributes;
@@ -59,13 +60,13 @@ public class AryaMetadataParser extends DefaultHandler {
 				currentComponent.push(comp);
 				main.getAryaWindow().getComponents().add(comp);
 				if (tabpanel != null) {
-					tabpanel.add(comp);
+					tabpanel.add(comp.getComponentId());
 				}
 			}
 
 			// Add new component to the component list of parent window
 			if (main.getAryaWindow().getComponents() == null) {
-				main.getAryaWindow().setComponents(new ArrayList<IAryaComponent>());
+				main.getAryaWindow().setComponents(new HashSet<IAryaComponent>());
 			}
 			if (main.getAryaNavBar().getComponents() == null) {
 				main.getAryaNavBar().setComponents(new ArrayList<IAryaComponent>());

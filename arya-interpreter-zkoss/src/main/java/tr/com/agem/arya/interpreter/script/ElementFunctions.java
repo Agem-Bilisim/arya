@@ -2,24 +2,30 @@ package tr.com.agem.arya.interpreter.script;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import org.apache.commons.lang.StringUtils;
 import org.json.JSONObject;
 import org.mozilla.javascript.Context;
 import org.mozilla.javascript.NativeArray;
 import org.mozilla.javascript.NativeFunction;
 import org.mozilla.javascript.NativeJSON;
 import org.mozilla.javascript.Scriptable;
-
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import org.zkoss.zk.ui.Component;
+import org.zkoss.zul.Tab;
 
 import tr.com.agem.arya.interpreter.component.AryaCombobox;
 import tr.com.agem.arya.interpreter.component.AryaListbox;
+import tr.com.agem.arya.interpreter.component.AryaTabpanel;
+import tr.com.agem.arya.interpreter.component.AryaTabs;
 import tr.com.agem.arya.interpreter.component.AryaTextbox;
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.utils.AryaException;
@@ -29,6 +35,10 @@ import tr.com.agem.core.gateway.model.AryaResponse;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.property.reader.PropertyReader;
 import tr.com.agem.core.utils.AryaUtils;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class ElementFunctions extends AnnotatedScriptableObject {
 
@@ -173,12 +183,10 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 		
 	
 	@AryaJsFunction
-	public Object getElementById(String id) { //only on window not menu
+	public IAryaComponent getElementById(String id) { //only on window not menu
 
-		IAryaComponent comp;
-
-		for (int i = 0; i < main.getAryaWindow().getComponents().size(); i++) {
-			comp = main.getAryaWindow().getComponents().get(i);
+		Set<IAryaComponent> comps = main.getAryaWindow().getComponents();
+		for (IAryaComponent comp : comps) {
 
 			if (comp.getComponentId() != null && comp.getComponentId().endsWith(id)) {
 					return comp;
@@ -192,11 +200,8 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 	public Object[] getElementsByName(String name) {//only on window not menu
 
 		List<IAryaComponent> objList = new ArrayList<IAryaComponent>();
-		IAryaComponent comp;
-
-		for (int i = 0; i < main.getAryaWindow().getComponents().size(); i++) {
-			comp = main.getAryaWindow().getComponents().get(i);
-
+		Set<IAryaComponent> comps = main.getAryaWindow().getComponents();
+		for (IAryaComponent comp : comps) {
 			if (name.equalsIgnoreCase(
 					comp.getClass().toString().replace("class tr.com.agem.arya.interpreter.component.Arya", ""))) {
 				objList.add(comp);
@@ -209,10 +214,8 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 	public Object[] getElementsByClass(String className) {//only on window not menu
 
 		List<IAryaComponent> objList = new ArrayList<IAryaComponent>();
-		IAryaComponent comp;
-
-		for (int i = 0; i < main.getAryaWindow().getComponents().size(); i++) {
-			comp = main.getAryaWindow().getComponents().get(i);
+		Set<IAryaComponent> comps = main.getAryaWindow().getComponents();
+		for (IAryaComponent comp : comps) {
 
 			if (className.equalsIgnoreCase(comp.getComponentClassName())) {
 				objList.add(comp);
@@ -224,10 +227,8 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 	@AryaJsFunction
 	public String serializeForm() {//only on window not menu
 		String strSerialize = "";
-		IAryaComponent comp;
-
-		for (int i = 0; i < main.getAryaWindow().getComponents().size(); i++) {
-			comp = main.getAryaWindow().getComponents().get(i);
+		Set<IAryaComponent> comps = main.getAryaWindow().getComponents();
+		for (IAryaComponent comp : comps) {
 			strSerialize += ",\"" + comp.getComponentId() + "\":"
 					+ (comp.getComponentValue() == null ? null : "\"" + comp.getComponentValue() + "\"");
 		}
@@ -290,6 +291,56 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 		ElementFunctions.values = values;
 	}
 
-	
+	@AryaJsFunction
+	public void send(String action, String requestType, String parentObjectId, String objectIdProp, String tabName) throws JsonProcessingException {
+		Component obj = (Component) getElementById(parentObjectId);
+		while (!(obj instanceof AryaTabpanel)) {
+			obj = obj.getParent(); 
+		}
+		AryaTabpanel tabpanel = (AryaTabpanel) obj;
+		Collection<String> components = tabpanel.getComponents();
+		Map<String, Object> m = new HashMap<String, Object>();
+		for (String id : components) {
+			IAryaComponent c = getElementById(id);
+			if (AryaInterpreterHelper.isInputElement(c)) {
+				String v = c.getComponentValue();
+				setValue(m, id, v);
+			}
+		}
+		ObjectMapper mapper = new ObjectMapper(); 
+		String json = mapper.writeValueAsString(m);
+		if ("undefined".equals(tabName)) {
+			tabName = null;
+		}
+		post(action, requestType, json, AryaUtils.isEmpty(tabName) ?  tabpanel.getTab().getLabel() : tabName, null, null);
+	}
+
+	private void setValue(Map<String, Object> m, String key, String value) {
+		key = StringUtils.substringAfterLast(key, "-");
+//		String d[] = key.split("\\.");
+//		Map<String, Object> x = m;
+//		for (int i=0; i < d.length-1; i++) {
+//			x = (Map<String, Object>) m.get(d[i]);
+//			if (x == null) {
+//				x = new HashMap<String, Object>();
+//				m.put(d[i], x);
+//			}
+//		}
+		m.put(key, value);
+	}
 		
+	@AryaJsFunction
+	public void tabCloseFunction(String tabId) throws JsonProcessingException {
+		Component comp = (Component)getElementById("tab" + tabId);
+		AryaInterpreterHelper.removeElement(main.getAryaWindow(), comp.getParent(), comp);
+		comp = (Component)getElementById("tabpanel" + tabId);
+		AryaInterpreterHelper.removeElement(main.getAryaWindow(), comp.getParent(), comp);
+
+		AryaTabs tabs = BaseController.getTabs();
+		if(tabs.getChildren() != null && tabs.getChildren().size() > 1)	{
+			BaseController.getTabbox().setSelectedTab((Tab)tabs.getChildren().get(tabs.getChildren().size()-1));
+		}
+	}
+	
 }
+

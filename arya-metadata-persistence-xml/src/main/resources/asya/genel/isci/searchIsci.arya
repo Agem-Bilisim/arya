@@ -3,15 +3,15 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listIsciWindow">
 		<vlayout>
-			<grid sizedByContent="true" zclass="none">
+			<grid sizedByContent="true" zclass="none" id="isci_search_grid">
 				<rows>
 					<row>
 						<label id="kisiParam.tckNoParamlbl" value="T.C. Kimlik No" />
-						<textbox type="text" id="tckNoParam" width="200"  maxlength="11"  placeholder=""   />
+						<textbox type="text" id="kisiParam.tckNoLikeParam" width="200"  maxlength="11"  placeholder=""   />
 					</row>
 					<row>
 						<label id="kisiParam.adSoyadParamlbl" value="Ad Soyad" />
-						<textbox type="text" id="adSoyadParam" width="200"  maxlength="255"  placeholder=""  />
+						<textbox type="text" id="kisiParam.adSoyadParam" width="200"  maxlength="255"  placeholder=""  />
 					</row>
 					<row>
 						<label id="sgkNoParamlbl" value="SGK Sicil No" />
@@ -25,35 +25,17 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 						</combobox>
 					</row>
 					<row>
-						<label id="kanGrubuParamlbl" value="Kan Grubu" />
-						<combobox id="kanGrubuParam"  width="200"  >
-							<comboitem label="f3w9ze0pxu" value="1642" />
-						</combobox>
-					</row>
-					<row>
-						<label id="isyeriBilgileriLabellbl" value="İşyeri Bilgileri"    />
-					</row>
-					<row>
-						<label id="isyeriParam.subeParamlbl" value="Şube" />
-						<combobox id="ilAdi"  width="300" tooltip="genel.subeAtama.list" >
-						</combobox>
-					</row>
-					<row>
-						<textbox visible="false" type="text" id="isyeriIdParam" placeholder=""  />
+						<label id="isyeriBilgilerLabellbl" value="İşyeri Bilgileri" style="font-weight: bold; font-size: 110%" />
 					</row>
 					<row>
 						<label id="isyeriParam.unvanParamlbl" value="İşyeri Ünvanı" />
-						<textbox type="text" id="unvanParam" width="416"  maxlength="255"  placeholder=""  top="56" />
+						<textbox type="text" id="isyeriParam.unvanParam" width="416"  maxlength="255"  placeholder=""  top="56" />
 					</row>
 					<row>
-						<label id="isyeriParam.sgkKisaNoParamlbl" value="İşyeri SGK No" />
-						<textbox type="text" id="sgkKisaNoParam" maxlength="34"  placeholder=""   />
+						<checkbox type="text" id="isyeriParam.isletmeParam"  checked="false"  label="İşletme Bazında"  onCheck=""  width="50"  />
 					</row>
 					<row>
-						<checkbox type="text" id="isletmeParam"  checked="false"  label="İşletme Bazında"  onCheck=""  width="50"  />
-					</row>
-					<row>
-						<label id="digerBilgilerLabellbl" value="Diğer Bilgiler"  />
+						<label id="digerBilgilerLabellbl" value="Diğer Bilgiler" style="font-weight: bold; font-size: 110%" />
 					</row>
 					<row>
 						<checkbox type="text" id="issizParam"  checked="false"  label="İşsiz"  onCheck=""  width="25"  />
@@ -69,17 +51,13 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 				</rows>
 			</grid>
 			<button id="listele" label="Listele" position="1/3" newLine="true"
-					onClick="search()" />
+					onClick="search_isci()" />
 		</vlayout>
 	</window>
 	<script>
 	
-		search = function(){
-		
-			setParams(['tckNoParam', 'adSoyadParam', 'unvanParam']);
-			setComps(['kisi.tckNo', 'kisi.adSoyad', 'isyeri.unvan']);
-			
-			post('genel.isci.list', 'ALL',{'json': '1'});
+		search_isci = function(){
+			send('genel.isci.list', 'ALL','isci_search_grid', '', 'İşçi Listesi');
 			
 		};
 		

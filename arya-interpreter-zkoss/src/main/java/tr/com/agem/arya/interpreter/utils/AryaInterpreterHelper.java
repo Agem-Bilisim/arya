@@ -2,9 +2,12 @@ package tr.com.agem.arya.interpreter.utils;
 
 import java.io.IOException;
 import java.io.StringReader;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
@@ -24,7 +27,10 @@ import org.json.JSONObject;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.zkoss.zk.ui.Component;
+import org.xml.sax.Attributes;
 import org.zkoss.zul.Div;
+import org.zkoss.zul.Listbox;
+import org.zkoss.zul.Radiogroup;
 import org.zkoss.zul.impl.InputElement;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -39,6 +45,7 @@ import tr.com.agem.arya.interpreter.component.AryaListItem;
 import tr.com.agem.arya.interpreter.component.AryaListbox;
 import tr.com.agem.arya.interpreter.component.AryaRow;
 import tr.com.agem.arya.interpreter.component.AryaRows;
+import tr.com.agem.arya.interpreter.component.AryaScript;
 import tr.com.agem.arya.interpreter.component.AryaTab;
 import tr.com.agem.arya.interpreter.component.AryaTabpanel;
 import tr.com.agem.arya.interpreter.component.AryaTabpanels;
@@ -46,6 +53,7 @@ import tr.com.agem.arya.interpreter.component.AryaTabs;
 import tr.com.agem.arya.interpreter.component.AryaTemplate;
 import tr.com.agem.arya.interpreter.component.ComponentFactory;
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
+import tr.com.agem.arya.interpreter.components.base.AryaWindow;
 import tr.com.agem.arya.interpreter.parser.AryaMetadataParser;
 import tr.com.agem.arya.interpreter.parser.AryaParserAttributes;
 import tr.com.agem.arya.interpreter.script.ElementFunctions;
@@ -59,7 +67,7 @@ import tr.com.agem.core.utils.AryaUtils;
 
 public class AryaInterpreterHelper {
 
-	private static final String MIME_TYPE = "application/json";
+	private static final String MIME_TYPE = "application/json;charset=UTF-8";
 
 	private static HttpClient httpClient = HttpClientBuilder.create().build();
 
@@ -77,7 +85,7 @@ public class AryaInterpreterHelper {
 		StringEntity se;
 		String result = null;
 		try {
-			se = new StringEntity(request);
+			se = new StringEntity(request, Charset.forName("UTF-8"));
 
 			httpPost.setEntity(se);
 			HttpResponse response = httpClient.execute(httpPost);
@@ -90,6 +98,7 @@ public class AryaInterpreterHelper {
 			}
 
 			HttpEntity entity = response.getEntity();
+			
 			result = EntityUtils.toString(entity, "UTF-8");
 			
 			System.out.println(result);
@@ -109,8 +118,11 @@ public class AryaInterpreterHelper {
 
 			AryaTab tab = getCurrentTab(tabs, tabValue);
 			if (tab != null) {
-				tab.getTabPanel().getParent().removeChild(tab.getTabPanel());
-				tab.getParent().removeChild(tab);
+				AryaTabpanel panel = tab.getTabPanel();
+				panel.setTab(null);
+				tab.setTabPanel(null);
+				removeElement(main.getAryaWindow(), panel.getParent(), panel);
+				removeElement(main.getAryaWindow(), tab.getParent(), tab);
 			}
 			tab = null;
 
@@ -124,6 +136,29 @@ public class AryaInterpreterHelper {
 		}
 		
 		populateListComponents(main);
+	}
+
+	public static void removeElement(AryaWindow window, Component parent, Component component) {
+		try {
+			if (!(component instanceof Listbox)) {
+				List<Component> childs = component.getChildren();
+				
+				for (int i=0; i < childs.size(); ) {
+					Component c = childs.get(0);
+					removeElement(window, component, c);
+				}
+			}
+			if (component instanceof AryaScript) {
+				return;
+			}
+			parent.removeChild(component);
+			Set<IAryaComponent> comps = window.getComponents();
+			comps.remove(component);
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("ID:"+component.getId());
+		}
 	}
 
 	public static void interpretResponseMenu(AryaResponse response, AryaMain main, AryaTabs tabs, AryaTabpanels tabpanels) {
@@ -209,11 +244,21 @@ public class AryaInterpreterHelper {
 								JSONObject jsonObj = jsonArray.getJSONObject(0);
 								
 								
-								for (IAryaComponent comp : tab.getTabPanel().getComponents()) {
-									if (comp instanceof InputElement) {
+								for (String id : tab.getTabPanel().getComponents()) {
+									IAryaComponent comp = getElementById(id, main);
+									if (isInputElement(comp)) {
 										String key = StringUtils.substringAfterLast(comp.getComponentId(), "-");
 										comp.setComponentValue(getJSONValue(jsonObj,key).toString());
 									}
+									
+								}
+								try {
+									String message = (String) jsonObj.get("@message");
+									if (message != null) {
+										main.getMessage().setValue(message);
+									}
+								}
+								catch (Exception e ) {
 									
 								}
 							}
@@ -228,6 +273,12 @@ public class AryaInterpreterHelper {
 		}
 	}
 	
+	public static boolean isInputElement(IAryaComponent comp) {
+		return (comp instanceof InputElement) ||
+			   (comp instanceof Radiogroup) ||
+			   (comp instanceof Listbox);
+	}
+
 	private static Object getJSONValue(JSONObject jsonObj, String key) {
 		
 		String k = StringUtils.substringBefore(key, ".");
@@ -239,12 +290,16 @@ public class AryaInterpreterHelper {
 			}
 			catch (Exception e) {
 			}
-			if (AryaUtils.isEmpty(v) || "null".equals(v)) {
+			if (AryaUtils.isEmpty(v) || v.equals(null)) {
 				return ""; 
 			}
 			return v;
 		}
-		return getJSONValue((JSONObject)jsonObj.get(k), x);
+		Object obj = jsonObj.get(k);
+		if (!(obj instanceof JSONObject)) {
+			obj = null;
+		}
+		return obj == null ? "" : getJSONValue((JSONObject) obj, x);
 	}
 
 	private static void populateListComponents(AryaMain main) {
@@ -330,17 +385,95 @@ public class AryaInterpreterHelper {
 		
 		AryaTabpanel tabpanel = new AryaTabpanel(main, null);
 	
-		if(!isMenu && tab == null) { 
-			tab = new AryaTab(main, null);
+		if(!isMenu && tab == null) {
+			final String tabId = System.currentTimeMillis() + "";
+			Attributes attributes = new Attributes() {
+				
+				@Override
+				public String getValue(String uri, String localName) {
+					return null;
+				}
+				
+				@Override
+				public String getValue(String qName) {
+					if ("onClose".equals(qName)) {
+						return "tabCloseFunction('"+tabId+"')";
+					} else if ("id".equals(qName)) {
+						return "tab" + tabId;
+					}
+					return null;
+				}
+				
+				@Override
+				public String getValue(int index) {
+					return null;
+				}
+				
+				@Override
+				public String getURI(int index) {
+					return null;
+				}
+				
+				@Override
+				public String getType(String uri, String localName) {
+					return null;
+				}
+				
+				@Override
+				public String getType(String qName) {
+					return null;
+				}
+				
+				@Override
+				public String getType(int index) {
+					return null;
+				}
+				
+				@Override
+				public String getQName(int index) {
+					return null;
+				}
+				
+				@Override
+				public String getLocalName(int index) {
+					return null;
+				}
+				
+				@Override
+				public int getLength() {
+					return 0;
+				}
+				
+				@Override
+				public int getIndex(String uri, String localName) {
+					return 0;
+				}
+				
+				@Override
+				public int getIndex(String qName) {
+					return 0;
+				}
+			};
+			
+			tab = new AryaTab(main, attributes);
 			tab.setParent(tabs);
 			tab.setClosable(true);
 			tab.setSelected(true);
 			tab.setLabel(tabValue);
-					
+			tab.setComponentId("tab" + tabId);
+			main.getAryaWindow().getComponents().add(tab);
+
 			tabpanel = new AryaTabpanel(main, null);
 			tabpanel.setParent(tabpanels);
-			tabpanel.setComponentId("tabpanel"+String.valueOf(tabpanels.getChildren().size()));
+			tabpanel.setComponentId("tabpanel"+tabId);
 			tab.setTabPanel(tabpanel);
+			tabpanel.setTab(tab);
+			main.getAryaWindow().getComponents().add(tabpanel);
+			if ("Master".equals(tabValue)) {
+				tab.setVisible(false);
+				tabpanel.setVisible(false);
+			}
+
 		}
 			
 
@@ -378,10 +511,8 @@ public class AryaInterpreterHelper {
 																			// not
 																			// menu
 
-		IAryaComponent comp;
-
-		for (int i = 0; i < main.getAryaWindow().getComponents().size(); i++) {
-			comp = main.getAryaWindow().getComponents().get(i);
+		Set<IAryaComponent> comps = main.getAryaWindow().getComponents();
+		for (IAryaComponent comp : comps) {
 			// ids are suffix of component ids (tabpanel2-list etc....)
 			if (comp.getComponentId() != null && comp.getComponentId().endsWith(id)) {
 				return comp;

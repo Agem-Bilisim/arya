@@ -16,23 +16,18 @@
 						<row>
 							<label value="Kullanıcı Adı" />
 							<textbox id="username" width="200px" maxlength="20"
-								value="" constraint="no empty" />
+								value="agem" constraint="no empty" />
 						</row>
 						<row>
-							<label value="Şifre" />
+							<label value="Parola" />
 							<textbox id="password" type="password" width="200px"
-								maxlength="20" value="" constraint="no empty" />
-						</row>
-						<row spans="2">
-							<div align="center">
-								<checkbox id="remembermeCheckbox" label="Beni Hatırla" />
-							</div>
+								maxlength="20" value="agem" constraint="no empty" />
 						</row>
 					</rows>
 				</grid>
+				<div style="text-align: right; padding: 10px">
 				<button id="loginButton" label="Tamam" image="/img/user.gif" />
-				<button id="passwordForget" label="Şifremi unuttum"
-					image="/img/forgot_password.png" />
+				</div>
 				<grid id="passwordForgetGrid" visible="false">
 					<rows>
 						<row>

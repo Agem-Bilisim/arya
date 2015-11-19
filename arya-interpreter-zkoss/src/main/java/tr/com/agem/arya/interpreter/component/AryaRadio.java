@@ -86,6 +86,8 @@ public class AryaRadio extends Radio implements IAryaComponent {
 		} else {
 			this.setWidth(attributes.getValue("width") + "px");
 		}
+		
+		this.setValue(attributes.getValue("value"));
 
 		if (AryaUtils.isNotEmpty(attributes.getValue("onClick"))) {
 			final String functionName = attributes.getValue("onClick");
@@ -195,7 +197,7 @@ public class AryaRadio extends Radio implements IAryaComponent {
 		 * There is no componentValue variable for this component. This function
 		 * was created for IAryaComponent interface.
 		 */
-		return null;
+		return this.getValue();
 	}
 
 	@Override
@@ -204,6 +206,7 @@ public class AryaRadio extends Radio implements IAryaComponent {
 		 * There is no componentValue variable for this component. This function
 		 * was created for IAryaComponent interface.
 		 */
+		this.setValue(componentValue);
 	}
 
 	@Override

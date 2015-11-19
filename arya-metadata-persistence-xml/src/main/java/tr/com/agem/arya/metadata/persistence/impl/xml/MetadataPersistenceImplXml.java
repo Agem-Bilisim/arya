@@ -90,9 +90,8 @@ public class MetadataPersistenceImplXml implements IMetadataPersistence {
 	
 	static final Map<String, String> ACTION_META = new HashMap<String, String>();
 	static {
-		ACTION_META.put("empty", "edit");
 		ACTION_META.put("select", "edit");
-		ACTION_META.put("delete", "edit");
+		ACTION_META.put("delete", "empty");
 		ACTION_META.put("add", "edit");
 	}
 

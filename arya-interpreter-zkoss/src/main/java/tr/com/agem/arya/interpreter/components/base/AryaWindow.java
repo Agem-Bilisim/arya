@@ -1,23 +1,23 @@
 package tr.com.agem.arya.interpreter.components.base;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import tr.com.agem.core.interpreter.IAryaComponent;
 
 public class AryaWindow{
 
-	private List<IAryaComponent> components;
+	private Set<IAryaComponent> components;
 	
 	public AryaWindow() {
-		components = new ArrayList<>();
+		components = new HashSet<IAryaComponent>();
 	}
 	
-	public List<IAryaComponent> getComponents() {
+	public Set<IAryaComponent> getComponents() {
 		return components;
 	}
 
-	public void setComponents(List<IAryaComponent> components) {
+	public void setComponents(Set<IAryaComponent> components) {
 		this.components = components;
 	}
 }

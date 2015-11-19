@@ -20,7 +20,8 @@ public class AryaTabpanel extends Tabpanel implements IAryaComponent {
 
 	private String componentClassName;
 	private String componentAttribute;
-	private Collection<IAryaComponent> components = new ArrayList<IAryaComponent>();
+	private Collection<String> components = new ArrayList<String>();
+	private AryaTab tab;
 
 	public AryaTabpanel(final AryaMain main, Attributes attributes) {
 		super();
@@ -152,16 +153,24 @@ public class AryaTabpanel extends Tabpanel implements IAryaComponent {
 		return "tabpanel";
 	}
 
-	public Collection<IAryaComponent> getComponents() {
+	public Collection<String> getComponents() {
 		return components;
 	}
 
-	public void setComponents(Collection<IAryaComponent> components) {
+	public void setComponents(Collection<String> components) {
 		this.components = components;
 	}
 
-	public boolean add(IAryaComponent e) {
+	public boolean add(String e) {
 		return components.add(e);
+	}
+
+	public AryaTab getTab() {
+		return tab;
+	}
+
+	public void setTab(AryaTab tab) {
+		this.tab = tab;
 	}
 
 }

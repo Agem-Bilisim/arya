@@ -1,5 +1,7 @@
 package tr.com.agem.arya.interpreter.component;
 
+import java.util.List;
+
 import org.xml.sax.Attributes;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.event.Event;
@@ -140,6 +142,10 @@ public class AryaButton extends Button implements IAryaComponent {
 
 		}
 
+	}
+	
+	public AryaButton getSelf() {
+		return this;
 	}
 
 	@Override

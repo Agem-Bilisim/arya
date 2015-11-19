@@ -2,11 +2,13 @@
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addIsciWindow">
-		<grid id="list">
+		<textbox id="kisiId" visible="false"/>
+		<textbox id="kisi.kisiId" visible="false"/>
+		<grid id="isci_edit_grid">
 			<rows>
 				<row>
 					<label id="kisi.tckNolbl" value="T.C. Kimlik No" />
-					<textbox type="text" id="kisi.tckNo"  value="p2m23fpl3bd"  width="100"  maxlength="11"  placeholder=""/>
+					<textbox type="text" id="kisi.tckNo"  value=""  width="100"  maxlength="11"  placeholder=""/>
 				</row>
 				<row>
 					<label id="kisi.adlbl" value="Ad" />
@@ -18,21 +20,32 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 				</row>
 				<row>
 					<label id="sgkNolbl" value="SGK Sicil No" />
-					<intbox id="sgkNo"  value="-1387344926"  width="200"  maxlength="13"  placeholder=""  />
+					<intbox id="sgkNo"  value=""  width="200"  maxlength="13"  placeholder=""  />
 				</row>
 				<row>
 					<label id="cinsiyetlbl" value="Cinsiyet" />
-					<combobox id="cinsiyet"  width="200"  >
-						<comboitem label="c74voda5ef" value="p3rp" />
-					</combobox>
+					<radiogroup id="cinsiyet"  >
+						<radio label="Erkek" value="E" />
+						<radio label="Kadın" value="K" />
+					</radiogroup>
 				</row>
 				<row>
 					<label id="aciklamalbl" value="Açıklama" />
-					<textbox type="text" id="aciklama"  value="m7wku1a17c"  width="470"  placeholder=""  />
+					<textbox type="text" id="aciklama"  value=""  width="470"  placeholder=""  />
 				</row>
 			</rows>
 		</grid>
+		<div style="padding: 5px; text-align: right">
+			<button label="Kaydet" onClick="kaydet_isci()" style="margin-left: 5px"/>
+			<button label="Sil" onClick="sil_isci()" style="margin-left: 5px"/>
+		</div>
 	</window>
 	<script>
+		kaydet_isci = function() {
+			send('genel.isci.edit', 'ALL', 'isci_edit_grid', 'isciId');
+		}
+		sil_isci = function() {
+			send('genel.isci.delete', 'ALL', 'isci_edit_grid', 'isciId');
+		}
 	</script>
 </arya>

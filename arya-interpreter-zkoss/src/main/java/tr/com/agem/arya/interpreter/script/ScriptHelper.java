@@ -1,6 +1,7 @@
 package tr.com.agem.arya.interpreter.script;
 
 import java.util.HashMap;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -28,9 +29,8 @@ public class ScriptHelper {
 	}
 
 	private static AryaScript getScriptComponent(AryaMain main) {
-		IAryaComponent comp;
-		for (int i = 0; i < main.getAryaWindow().getComponents().size(); i++) {
-			comp = main.getAryaWindow().getComponents().get(i);
+		Set<IAryaComponent> comps = main.getAryaWindow().getComponents();
+		for (IAryaComponent comp : comps) {
 			if (comp instanceof AryaScript) {
 				AryaScript scriptObj = (AryaScript) comp;
 				logger.log(Level.FINE, "AryaScript instance found.");

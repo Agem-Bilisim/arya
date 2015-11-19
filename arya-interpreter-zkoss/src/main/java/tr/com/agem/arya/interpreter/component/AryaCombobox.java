@@ -212,19 +212,12 @@ public class AryaCombobox extends Combobox implements IAryaComponent {
 
 	@Override
 	public String getComponentValue() {
-		/*
-		 * There is no componentValue variable for this component. This function
-		 * was created for IAryaComponent interface.
-		 */
-		return null;
+		return this.getValue();
 	}
 
 	@Override
 	public void setComponentValue(String componentValue) {
-		/*
-		 * There is no componentValue variable for this component. This function
-		 * was created for IAryaComponent interface.
-		 */
+		this.setValue(componentValue);
 	}
 
 	@Override

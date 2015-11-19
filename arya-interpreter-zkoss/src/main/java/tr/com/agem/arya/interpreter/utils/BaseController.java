@@ -6,6 +6,7 @@ import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.util.GenericForwardComposer;
 import org.zkoss.zul.Div;
 import org.zkoss.zul.Include;
+import org.zkoss.zul.Label;
 
 import tr.com.agem.arya.interpreter.component.AryaTabbox;
 import tr.com.agem.arya.interpreter.component.AryaTabpanels;
@@ -22,6 +23,7 @@ public class BaseController extends GenericForwardComposer {
 	private static final long serialVersionUID = 8866650311533378984L;
 	private Div componentContainer; // works as a parent component
 	private Div menuContainer;
+	private Label aryaMessage;
 	private Include login;
 	private static AryaMain main;
 	private static AryaTabbox tabbox;
@@ -47,7 +49,7 @@ public class BaseController extends GenericForwardComposer {
 		if(login == null)
 			login = new Include();
 		
-		AryaMain main = new AryaMain(componentContainer, menuContainer, login);
+		AryaMain main = new AryaMain(componentContainer, menuContainer, login, aryaMessage);
 		
 		tabbox = new AryaTabbox(main, null);
 		tabbox.setParent(main.getComponentContainer());

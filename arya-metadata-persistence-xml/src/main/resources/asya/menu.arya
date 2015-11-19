@@ -6,9 +6,9 @@
 				<menuitem label="Arama"
 					onClick="post('genel.isci.search', 'ALL',{'json': '1'}, 'İşçi Arama')" />
 				<menuitem label="Liste"
-					onClick="post('genel.isci.list', 'ALL',{'json': '1'}, 'İşçi Listesi')" />
+					onClick="post('genel.isci.list', 'ALL',{'json': '1', pageSize: '1000'}, 'İşçi Listesi')" />
 				<menuitem label="Yeni Kayıt"
-					onClick="post('genel.isci.emptyIsci', 'VIEW_ONLY',{'json': '1'}, 'Yeni İşçi Kaydı')" />
+					onClick="post('genel.isci.emptyIsci', 'VIEW_ONLY',{'json': '1'}, 'İşçi Bilgileri')" />
 			</menupopup>
 		</menu>
 		<menu label="İşyeri Bilgileri">

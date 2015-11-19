@@ -1,10 +1,13 @@
 package tr.com.agem.arya.interpreter.component;
 
+import java.util.List;
+
 import org.xml.sax.Attributes;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.EventListener;
 import org.zkoss.zul.Listbox;
+import org.zkoss.zul.Listitem;
 
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.script.ScriptHelper;
@@ -168,22 +171,20 @@ public class AryaListbox extends Listbox implements IAryaComponent, IAryaTemplat
 	public void setComponentAttribute(String componentAttribute) {
 		this.componentAttribute = componentAttribute;
 	}
-
+	
 	@Override
 	public String getComponentValue() {
-		/*
-		 * There is no componentValue variable for this component. This function
-		 * was created for IAryaComponent interface.
-		 */
-		return null;
+		return this.getSelectedItem().getValue();
 	}
 
 	@Override
 	public void setComponentValue(String componentValue) {
-		/*
-		 * There is no componentValue variable for this component. This function
-		 * was created for IAryaComponent interface.
-		 */
+		List<Listitem> items = this.getItems();
+		for (Listitem item : items) {
+			if (item.getValue().equals(componentValue)) {
+				this.setSelectedItem(item);			
+			}
+		}
 	}
 
 	@Override

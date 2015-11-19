@@ -209,7 +209,7 @@ public class AryaDatebox extends Datebox implements IAryaComponent {
 	@Override
 	public void setComponentValue(String componentValue) {
 		// TODO dateformat mevzuu
-		if (componentValue != null && !componentValue.equals("null")) {
+		if (componentValue != null && !componentValue.equals("null") && !componentValue.equals("")) {
 			SimpleDateFormat f = new SimpleDateFormat("dd/mm/yyyy");
 			Date d = null;
 			try {

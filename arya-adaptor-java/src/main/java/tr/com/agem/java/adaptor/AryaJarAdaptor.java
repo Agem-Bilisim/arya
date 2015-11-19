@@ -14,7 +14,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.beanutils.BeanUtilsBean;
+import org.apache.commons.beanutils.PropertyUtils;
 import org.apache.commons.lang.StringEscapeUtils;
+import org.apache.commons.lang.StringUtils;
 
 import tr.com.agem.common.AgemActionMapping;
 import tr.com.agem.common.AgemConstant;
@@ -30,6 +32,7 @@ import tr.com.agem.core.context.AryaThreadLocal;
 import tr.com.agem.core.gateway.model.IAryaRequest;
 import tr.com.agem.core.metadata.exception.AryaLoginFailedException;
 import tr.com.agem.core.property.reader.PropertyReader;
+import tr.com.agem.core.utils.AryaUtils;
 import tr.com.agem.db.connection.DBConnectionFactory;
 import tr.com.agem.db.connection.DBConnectionInterface;
 import tr.com.agem.db.operations.BDBase;
@@ -64,14 +67,12 @@ public class AryaJarAdaptor extends AryaApplicationAdaptor {
 
 			// ...and set its fields using request parameters
 			if (aryaRequest.getParams() != null && aryaRequest.getParams().size() > 0) {
-
 				for (Entry<String, Object> entry : aryaRequest.getParams().entrySet()) {
 					try {
-						BeanUtilsBean.getInstance().setProperty(form, entry.getKey(), entry.getValue());
+						setFormValue(form, entry.getKey(), entry.getValue());
 						logger.log(Level.FINE, "Setting value of {0} to: {1}",
 								new Object[] { entry.getKey(), entry.getValue().toString() });
-					} catch (Exception e) {
-						e.printStackTrace();
+					} catch (Throwable e) {
 					}
 				}
 			}
@@ -96,13 +97,24 @@ public class AryaJarAdaptor extends AryaApplicationAdaptor {
 			// Create action dispatcher
 			cls = Class.forName(PropertyReader.property("agem.crud.action"));
 			AgemCrudAction da = (AgemCrudAction) cls.newInstance();
-
+			((HttpServletRequest)AryaThreadLocal.getRequest()).getSession().setAttribute(AgemConstant.C_PAGE_SIZE, 50);
 			// Create request and response mock objects
 			addRequestParameters(aryaRequest, (HttpServletRequest) AryaThreadLocal.getRequest());
-
+			
 			// Execute action!
 			da.execute(mapping, form, (HttpServletRequest) AryaThreadLocal.getRequest(),		//TODO in string parameters looing for 'like' not equality?
 					(HttpServletResponse) AryaThreadLocal.getResponse());
+			
+			
+			if (mapping.getMethod().equals("insert") || mapping.getMethod().equals("update")) {
+				mapping.setMethod("select");
+				da.execute(mapping, form, (HttpServletRequest) AryaThreadLocal.getRequest(), (HttpServletResponse) AryaThreadLocal.getResponse());
+			} else 	if (mapping.getMethod().equals("delete")) {
+				mapping.setMethod("empty");
+				da.execute(mapping, form, (HttpServletRequest) AryaThreadLocal.getRequest(), (HttpServletResponse) AryaThreadLocal.getResponse());
+				AryaThreadLocal.getRequest().setAttribute(mappedRequest.getFormName(), form.renew());
+			}
+
 
 			String dataStr = convertToJson(AryaThreadLocal.getRequest(), mappedRequest.getFormName());
 
@@ -122,6 +134,29 @@ public class AryaJarAdaptor extends AryaApplicationAdaptor {
 		}
 
 		return null;
+	}
+
+	@SuppressWarnings("rawtypes")
+	private void setFormValue(Object form, String key, Object value) throws IllegalAccessException, InvocationTargetException, NoSuchMethodException, InstantiationException {
+		if (key.indexOf(".") > -1) {
+			String prop = StringUtils.substringBefore(key, ".");
+			Object v = PropertyUtils.getProperty(form, prop);
+			if (v == null) {
+				Class cls = PropertyUtils.getPropertyType(form, prop);
+				v = cls.newInstance();
+				PropertyUtils.setProperty(form, prop, v);
+			}
+			setFormValue(v, StringUtils.substringAfter(key, "."), value);
+		}
+		else {
+			if (AryaUtils.isEmpty(value)) {
+				PropertyUtils.setProperty(form, key, null);
+			}
+			else {
+				BeanUtilsBean.getInstance().setProperty(form, key, value);
+			}
+		}
+		
 	}
 
 	@Override

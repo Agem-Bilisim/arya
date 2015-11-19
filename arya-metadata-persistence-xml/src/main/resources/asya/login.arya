@@ -5,9 +5,9 @@
 
 	<window>
 		<label id="lbl1" value="Username" />
-		<textbox id="u" />
+		<textbox id="u" value="agem"/>
 		<label id="lbl2" value="Password" />
-		<textbox id="p" type="password" />
+		<textbox id="p" type="password" value="agem"/>
 		<button id="btn2" label="Login" onClick="login()" />
 	</window>
 

@@ -87,6 +87,15 @@ public class AryaTab extends Tab implements IAryaComponent {
 				});
 			}
 
+			if (AryaUtils.isNotEmpty(attributes.getValue("onClose"))) {
+				final String functionName = attributes.getValue("onClose");
+				this.addEventListener("onClose", new EventListener<Event>() {
+					@Override
+					public void onEvent(Event event) throws Exception {
+						ScriptHelper.executeScript(functionName, null, main);
+					}
+				});
+			}
 		}
 	}
 
