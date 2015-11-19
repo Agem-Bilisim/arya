@@ -1,5 +1,6 @@
 package tr.com.agem.arya.interpreter.components;
 
+import android.app.ActionBar;
 import android.graphics.Color;
 import android.text.InputFilter;
 import android.text.InputType;
@@ -60,6 +61,8 @@ public class AryaTextbox extends EditText implements IAryaComponent {
             // Height
             String height = attributes.getValue("height") ;
             this.setHeight(height != null ? Integer.parseInt(height) : 150);
+            String width = attributes.getValue("width") ;
+            this.setWidth(height != null ? Integer.parseInt(width) : 150);
             // Value
             String value =attributes.getValue("value") ;
             if (value != null) {
@@ -115,6 +118,7 @@ public class AryaTextbox extends EditText implements IAryaComponent {
             }
 
         }
+        setMinimumWidth(1000);
 
         main.getAryaWindow().addView(this);
     }

@@ -1,5 +1,6 @@
 package tr.com.agem.arya.interpreter.components;
 
+import android.app.ActionBar;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -80,8 +81,8 @@ public class AryaButton extends Button implements IAryaComponent {
                });
             }
 
-        }
-
+        };
+        setMinimumWidth(350);
         main.getAryaWindow().addView(this);
     }
 
@@ -91,6 +92,7 @@ public class AryaButton extends Button implements IAryaComponent {
     @Override
     public void setComponentParent(Object o) {
         ((ViewGroup)o).addView(this);
+
 
     }
 
@@ -106,6 +108,9 @@ public class AryaButton extends Button implements IAryaComponent {
     public void setComponentClassName(String componentClassName) {
         this.componentClassName = componentClassName;
     }
+    public void setValue(String value) {
+        this.setText(value);
+    }
 
     @Override
     public String getComponentAttribute() {
@@ -120,6 +125,10 @@ public class AryaButton extends Button implements IAryaComponent {
     @Override
     public String getComponentValue() {
         return componentValue;
+    }
+
+    public String getValue() {
+        return getText().toString();
     }
 
     @Override

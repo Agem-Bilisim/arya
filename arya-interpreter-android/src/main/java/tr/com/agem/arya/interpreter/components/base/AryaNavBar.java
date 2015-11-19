@@ -1,6 +1,8 @@
 package tr.com.agem.arya.interpreter.components.base;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -34,6 +36,8 @@ public class AryaNavBar extends ActionBarActivity {
 
         if(AryaUtils.isNotEmpty(menuBar)){
             menuItemList = menuBar.getMenuItems();
+            actionBar.setBackgroundDrawable(new ColorDrawable(Color.DKGRAY));
+            actionBar.setTitle("ARYA");
             actionBar.show();
         }
 

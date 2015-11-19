@@ -67,8 +67,10 @@ public class AryaComboBox extends Spinner implements IAryaComponent {
             this.setOnItemSelectedListener(new OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                    if(isInit()){
-                        ScriptHelper.executeScript(onChange, null, main);
+                    if (onChange != null) {
+                        if (isInit()) {
+                            ScriptHelper.executeScript(onChange, null, main);
+                        }
                     }
                 }
 
