@@ -38,7 +38,7 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 	  
 		select = function(){
 		
-			renderSelectedItem('list', ['textId', 'textBabaAdi', 'textAnaAdi', 'textDogumYeri', 'textDogumTarihi'], ['kisiId', 'no', 'anaAdi', 'dogumYeri', 'dogumTarihi']);
+			renderSelectedItem('list', 'kisiId', '', ['textId', 'textBabaAdi', 'textAnaAdi', 'textDogumYeri', 'textDogumTarihi'], ['kisiId', 'no', 'anaAdi', 'dogumYeri', 'dogumTarihi']);
 		
 		};
 	</script>

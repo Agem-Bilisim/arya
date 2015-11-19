@@ -55,6 +55,9 @@ public class AryaMetadataParser extends DefaultHandler {
 				currentComponent.push(template);
 			}
 			else {
+				if(comp.getComponentId() != null && !comp.getComponentId().equals(""))
+					comp.setComponentId(tabpanel.getComponentId()+"-"+comp.getComponentId());
+				
 				comp.setComponentParent(currentComponent.size() > 0 ? currentComponent.peek():(isMenu ? main.getMenuContainer() : tabpanel));
 				currentComponent.push(comp);
 				main.getAryaWindow().getComponents().add(comp);

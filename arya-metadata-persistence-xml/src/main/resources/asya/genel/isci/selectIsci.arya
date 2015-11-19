@@ -2,7 +2,7 @@
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addIsciWindow">
-		<grid  sizedByContent="true" hflex="min" zclass="none">
+		<grid id="list" sizedByContent="true" hflex="min" zclass="none">
 			<rows>
 				<row>
 					<label id="kisi.tckNolbl" value="T.C. Kimlik No" />

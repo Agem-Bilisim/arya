@@ -28,6 +28,7 @@ import tr.com.agem.arya.interpreter.utils.BaseController;
 import tr.com.agem.core.gateway.model.AryaResponse;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.property.reader.PropertyReader;
+import tr.com.agem.core.utils.AryaUtils;
 
 public class ElementFunctions extends AnnotatedScriptableObject {
 
@@ -74,8 +75,8 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 	@AryaJsFunction
 	public void post(String action, String requestType, Object params, String tabValue, NativeFunction onSuccess, NativeFunction onFailure) {//debug dan geçirmek gerek(volkan)
 
-		// login ve master sayfaları için javascript kullanılmadığından
-		if(!requestType.equals("LOGIN") && !action.equals("master")) {
+		// bazı sayfalar için javascript kullanılmadığından
+		if(!(params instanceof String)) {
 			Object jsonParam = NativeJSON.stringify(context, scope, params, null, null);
 			params = jsonParam;
 		}
@@ -95,14 +96,13 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 			
 			logger.log(Level.FINE, "Post result: {0}", result);
 			
-			
 			response = new AryaResponse();
 			response.fromXMLString(result);
 			
 			AryaInterpreterHelper.interpretResponse(response, main, BaseController.getTabs(), BaseController.getTabpanels(), tabValue);
 			
 			// Kullanıcı login olmuşsa
-			if(requestType.equals("LOGIN") && response.getData() != null) {
+			if(requestType.equals("LOGIN") && AryaUtils.isNotEmpty(response.getData())) {
 				
 				BaseController.getMain().getMenuContainer().setVisible(true);
 				BaseController.getMain().getLogin().setVisible(false);
@@ -127,25 +127,36 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 	}
 	
 	@AryaJsFunction
-	public void renderSelectedItem (String id, NativeArray comps, NativeArray values) {
+	public void renderSelectedItem (String elementId, String id, String action, NativeArray comps, NativeArray values, 
+			String tabValue) {
 		
 		//TODO id listbox olmayabilir???!??!?
 		JSONObject jsonObj = null;
 		
-		if(getElementById(id) instanceof AryaListbox) {
+		if(getElementById(elementId) instanceof AryaListbox) {
 			
-			jsonObj = ((AryaListbox)getElementById(id)).getSelectedItem().getValue();
+			jsonObj = ((AryaListbox)getElementById(elementId)).getSelectedItem().getValue();
 		}		
-		else if(getElementById(id) instanceof AryaCombobox) {
+		else if(getElementById(elementId) instanceof AryaCombobox) {
 			
-			jsonObj = ((AryaCombobox)getElementById(id)).getSelectedItem().getValue();
+			jsonObj = ((AryaCombobox)getElementById(elementId)).getSelectedItem().getValue();
 		}
+		
+		String params = "{\"kisiId\":\""+ splitId(id, jsonObj)+"\"}"; 
 		
 		for (int i = 0; i < comps.size(); i++) {
 			
-			String comp = (String) comps.get(i);
-			((IAryaComponent)getElementById(comp)).setComponentValue(jsonObj.get((String)values.get(i)).toString());
-		}	
+			String value = splitId(values.get(i).toString(), jsonObj);
+			
+			String comp = (String) comps.get(i);			
+
+			((IAryaComponent)getElementById(comp)).setComponentValue(value);
+				
+		} 
+		
+		if(!action.isEmpty())
+			post(action, "ALL", params, tabValue, null, null);
+		
 	}
 	
 	@AryaJsFunction
@@ -169,9 +180,10 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 		for (int i = 0; i < main.getAryaWindow().getComponents().size(); i++) {
 			comp = main.getAryaWindow().getComponents().get(i);
 
-			if (id.equalsIgnoreCase(comp.getComponentId())) {
-				return comp;
+			if (comp.getComponentId().endsWith(id)) {
+					return comp;
 			}
+		
 		}
 		return null;
 	}
@@ -223,6 +235,41 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 		if (strSerialize.length() > 0)
 			return "{" + strSerialize.substring(1, strSerialize.length()) + "}";
 		return "{}";
+	}
+	
+	public static String splitId(String id, JSONObject jsonObj) {
+
+		String retVal = null;
+		JSONObject obj = null;
+						
+		if (jsonObj != null) {
+			
+			String[] spl;
+			
+			if(id.contains("-")) {
+				
+				String[] temp = id.split("-");
+				spl = temp[1].split("\\.");
+			}
+			else {
+				spl = id.split("\\.");
+			}
+			
+			for (int i = 0; i < spl.length - 1; i++)
+				obj = (JSONObject) jsonObj.get(spl[i]);
+			
+			Object ret;
+			
+			if (obj != null)
+				ret = obj.get(spl[spl.length - 1]);
+			else    
+				ret = jsonObj.get(spl[0]);
+			if (!ret.equals(JSONObject.NULL)) {
+				retVal = ret.toString();
+			}
+		} 
+
+		return retVal;
 	}
 
 	@AryaJsFunction

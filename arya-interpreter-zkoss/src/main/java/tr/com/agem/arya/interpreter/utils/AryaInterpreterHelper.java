@@ -89,6 +89,8 @@ public class AryaInterpreterHelper {
 
 			HttpEntity entity = response.getEntity();
 			result = EntityUtils.toString(entity, "UTF-8");
+			
+			System.out.println(result);
 
 		} catch (ParseException | IOException e) {
 			e.printStackTrace();
@@ -190,6 +192,7 @@ public class AryaInterpreterHelper {
 
 	private static void populateView(String data, AryaMain main) {
 
+		System.out.println(data);
 		ObjectMapper mapper = new ObjectMapper(); 
 		try {
 			JsonNode rootNode = mapper.readTree(data);
@@ -206,10 +209,14 @@ public class AryaInterpreterHelper {
 								JSONObject jsonObj = jsonArray.getJSONObject(0);
 								for (Iterator<?> iterator = jsonObj.keySet().iterator(); iterator.hasNext();) {
 									String key = (String) iterator.next();
+									
 									IAryaComponent c = (IAryaComponent) getElementById(key, main);
-
-									if (AryaUtils.isNotEmpty(jsonObj.get(key).toString()) && AryaUtils.isNotEmpty(c))
-										c.setComponentValue(jsonObj.get(key).toString());
+									
+									System.out.println(key+" "+getElementById(key, main));
+									
+									if(c != null)
+										if (AryaUtils.isNotEmpty(jsonObj.get(key).toString()) && AryaUtils.isNotEmpty(c))
+											c.setComponentValue(jsonObj.get(key).toString());
 									}
 								}
 							}
@@ -324,6 +331,7 @@ public class AryaInterpreterHelper {
 					
 			tabpanel = new AryaTabpanel(main, null);
 			tabpanel.setParent(tabpanels);
+			tabpanel.setComponentId("tabpanel"+String.valueOf(tabpanels.getChildren().size()));
 		}
 			
 
@@ -354,7 +362,8 @@ public class AryaInterpreterHelper {
 		for (int i = 0; i < main.getAryaWindow().getComponents().size(); i++) {
 			comp = main.getAryaWindow().getComponents().get(i);
 
-			if (id.equalsIgnoreCase(comp.getComponentId())) {
+			// ids are suffix of component ids (tabpanel2-list etc....)
+			if (comp.getComponentId().endsWith(id)) {
 				return comp;
 			}
 		}
@@ -365,13 +374,25 @@ public class AryaInterpreterHelper {
 
 		String retVal = null;
 		JSONObject obj = null;
-		
+						
 		if (jsonObj != null) {
-			String[] spl = id.split("\\.");
-
+			
+			String[] spl;
+			
+			if(id.contains("-")) {
+				
+				String[] temp = id.split("-");
+				spl = temp[1].split("\\.");
+			}
+			else {
+				spl = id.split("\\.");
+			}
+			
 			for (int i = 0; i < spl.length - 1; i++)
 				obj = (JSONObject) jsonObj.get(spl[i]);
+			
 			Object ret;
+			
 			if (obj != null)
 				ret = obj.get(spl[spl.length - 1]);
 			else    

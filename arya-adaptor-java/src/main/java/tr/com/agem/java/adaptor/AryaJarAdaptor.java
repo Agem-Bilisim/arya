@@ -130,7 +130,7 @@ public class AryaJarAdaptor extends AryaApplicationAdaptor {
 			da.execute(mapping, form, (HttpServletRequest) AryaThreadLocal.getRequest(),		//TODO in string parameters looing for 'like' not equality?
 					(HttpServletResponse) AryaThreadLocal.getResponse());
 
-			String dataStr = convertToJson(AryaThreadLocal.getRequest());
+			String dataStr = convertToJson(AryaThreadLocal.getRequest(), mappedRequest.getFormName());
 
 			logger.log(Level.INFO, "Action executed successfully: {0} ", dataStr);
 
@@ -307,10 +307,11 @@ public class AryaJarAdaptor extends AryaApplicationAdaptor {
 		// here!
 	}
 
-	private String convertToJson(ServletRequest httpRequest) {
+	private String convertToJson(ServletRequest httpRequest, String attributeName) {
 
 		Object obj = httpRequest.getAttribute("collection");
-		Object json = httpRequest.getAttribute("json");
+//		Object json = httpRequest.getAttribute("json");
+		Object json = httpRequest.getAttribute(attributeName);
 		StringBuilder result = new StringBuilder("");
 
 		if (obj != null) {
@@ -353,7 +354,7 @@ public class AryaJarAdaptor extends AryaApplicationAdaptor {
 			}
 			result.append(" }");
 		} else if (json instanceof AgemForm) {
-			result.append(AgemUtils.jsObject(json));
+			result.append("{ \"results\":["+AgemUtils.jsObject(json)+"] }");
 		} else {
 			result.append("{ \"results\":[] }");
 		}
