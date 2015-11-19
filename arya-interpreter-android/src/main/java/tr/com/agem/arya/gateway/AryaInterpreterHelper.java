@@ -12,6 +12,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import android.app.Activity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -29,11 +31,13 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
+import tr.com.agem.arya.MainActivity;
 import tr.com.agem.arya.R;
 import tr.com.agem.arya.interpreter.components.AryaListCell;
 import tr.com.agem.arya.interpreter.components.AryaListBox;
 import tr.com.agem.arya.interpreter.components.AryaListItem;
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
+import tr.com.agem.arya.interpreter.components.base.AryaNavBar;
 import tr.com.agem.arya.interpreter.parser.AryaMetadataParser;
 import tr.com.agem.arya.interpreter.parser.AryaParserAttributes;
 import tr.com.agem.arya.interpreter.parser.IAryaMenu;
@@ -113,11 +117,29 @@ public class AryaInterpreterHelper {
         return null;
     }
 
-    public static void interpretResponse(AryaResponse response, AryaMain main) {
 
+    public static void interpretResponse(AryaResponse response, boolean login, AryaMain main) { //Overloaded function
+
+
+        if(login){
+            main.getAryaNavBar().getMenuBar().getMenuItemsCopy().clear();
+            for(int i=0;i<main.getAryaNavBar().getMenuBar().getMenuItems().size();i++){    //If it is a login page, delete menu and have a backup
+                main.getAryaNavBar().getMenuBar().getMenuItemsCopy().add(main.getAryaNavBar().getMenuBar().getMenuItems().get(i));
+            }
+           while(main.getAryaNavBar().getMenuBar().getMenuItems().size()>0){        //Determine which menu items remain on login screen
+               main.getAryaNavBar().getMenuBar().getMenuItems().remove(0);
+           }
+        }
+        else{
+
+            for(int i=0;i<main.getAryaNavBar().getMenuBar().getMenuItemsCopy().size();i++){    //reload menu items to show in master
+                main.getAryaNavBar().getMenuBar().setMenuItems(main.getAryaNavBar().getMenuBar().getMenuItemsCopy());
+            }
+            ((Activity)(AryaNavBar.context)).invalidateOptionsMenu();
+        }
         if(AryaUtils.isNotEmpty(response.getView())) {
 
-                 if (main.getAryaWindow().getComponents() != null) {// TODO bu alan yönetilmeli neler kaldırılacak ekrandan
+            if (main.getAryaWindow().getComponents() != null) {// TODO bu alan yönetilmeli neler kaldırılacak ekrandan
 
                 while ((main.getAryaWindow().getChildCount()) != 1)
                     if(!(main.getAryaWindow().getChildAt(1) instanceof IAryaMenu)) {

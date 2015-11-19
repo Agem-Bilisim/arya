@@ -76,8 +76,8 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 
 
 	@AryaJsFunction
-	public void post(String action, String requestType, Object params, NativeFunction onSuccess, NativeFunction onFailure) {
-
+	public void post(String action, String requestType, Object params, String tabValue, NativeFunction onSuccess, NativeFunction onFailure) {
+		//tab system is not implemented on android, so it isn't using
 		Object jsonParam = NativeJSON.stringify(context, scope, params, null, null);
 
 		StringBuilder request = new StringBuilder("{ \"params\": ")
@@ -99,7 +99,12 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 		AryaResponse response = new AryaResponse();
 		response.fromXMLString(result);//TODO result check
 
-		AryaInterpreterHelper.interpretResponse(response, main);
+		if(tabValue.equals("login")) {
+			AryaInterpreterHelper.interpretResponse(response, true, main);
+		}
+		else{
+			AryaInterpreterHelper.interpretResponse(response, false, main);
+		}
 
 		//TODO response fail condition add
 
