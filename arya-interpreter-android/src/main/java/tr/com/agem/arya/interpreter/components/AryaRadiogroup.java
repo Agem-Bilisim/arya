@@ -49,7 +49,7 @@ public class AryaRadiogroup extends RadioGroup implements IAryaComponent {
             if (attributes.getValue("disabled") != null) {
                 this.setEnabled(!Boolean.parseBoolean(attributes.getValue("disabled")));
             }
-            this.setBackgroundColor(Color.parseColor("#900000"));
+           // this.setBackgroundColor(Color.parseColor("#900000")); red bg
 
         }
 

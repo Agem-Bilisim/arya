@@ -33,8 +33,9 @@ public class AryaHlayout extends LinearLayout implements IAryaComponent {
             this.componentClassName = attributes.getValue("class");
             this.componentValue = attributes.getValue("value");
             this.componentAttribute = attributes.getValue("attribute");
-            this.setMinimumHeight(300);
+            this.setVerticalScrollBarEnabled(true);
             this.setHorizontalScrollBarEnabled(true);
+            this.setMinimumWidth(ViewGroup.LayoutParams.MATCH_PARENT);
 
         }
 
