@@ -2,7 +2,7 @@
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addIsciWindow">
-		<label value="İşçi Yeni Kaydı" style="font-size: 120%; color: black; font-weight: bold"/>
+		<label value="Yeni İşçi Kaydı" style="font-size: 120%; color: black; font-weight: bold"/>
 		<grid id="isci_edit_grid">
 			<rows>
 				<row>

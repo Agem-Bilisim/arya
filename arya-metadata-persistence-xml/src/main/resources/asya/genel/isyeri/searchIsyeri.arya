@@ -2,60 +2,49 @@
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listIsyeriWindow">
-		<textbox visible="false" type="text" id="isyeriIdParam"  value="r622leop0p"  placeholder=""  />
-		<textbox visible="false" type="text" id="merkezIdParam"  value="rm164x5g51"  placeholder=""  />
-		<label id="sgkSiraNoParamlbl" value="İşyeri SGK No" />
-		<intbox id="sgkSiraNoParam"  value="-473231738"  width="57"  maxlength="7"  placeholder="Sıra No"  />
-		<intbox id="sgkIlKodParam"  value="1110744629"  width="33"  maxlength="3"  placeholder="İl Kodu"  />
-		<label id="unvanParamlbl" value="İşyeri Ünvanı" />
-		<textbox type="text" id="unvanParam" width="416"  maxlength="255"  placeholder=""  top="56" onChange="" />
-		<label id="kisaAdParamlbl" value="Kısa Ad" />
-		<textbox type="text" id="kisaAdParam"  value="cjhvh903zqoj42pr7p7zi4ed82nxn7ovsza83sg2y6ziuwoyd82dfpn7wtax7xgs15gb00bkwlosletzz29uqafpop71uormwd73izfz478883rrvp6a2c8qtuvqrt45rjwoutv76g3icoyinfnm03rjhgxfifphgnnjn1aam547pp1fimw8gqjge76k9rstq5e77cxe4sbya59gw0gbqtaxfbsh24jv9tb8fi5stys38577h7rsp135w8e763s"  width="260"  maxlength="255"  placeholder=""  />
-		<label id="orgutluParamlbl" value="Örgütlenme Var" />
-		<combobox id="orgutluParam"  width="80"  >
-			<comboitem label="h1b22qdcw7" value="7gqu" />
-		</combobox>
-		<label id="orgutlenmeTarihiBasParamlbl" value="Başlangıç Tarihi" />
-		<datebox id="orgutlenmeTarihiBasParam"  value="1999-7-1"  width="90"  placeholder=""  />
-		<label id="orgutlenmeTarihiBitParamlbl" value="Bitiş Tarihi" />
-		<datebox id="orgutlenmeTarihiBitParam"  value="1993-6-31"  width="90"  placeholder=""  />
-		<checkbox type="text" id="merkezIdIsNullParam"  checked="false"  label="İşyeri / İşletme Merkezleri"  onCheck=""  width="50"  />
-		<label id="isyeriDurumParamlbl" value="İşyeri Durum " />
-		<combobox id="isyeriDurumParam"  width="120"  >
-			<comboitem label="g15hheo6e1" value="ylbx" />
-		</combobox>
-		<label id="sozlesmeDurumParamlbl" value="Sözleşme Durum " />
-		<combobox id="sozlesmeDurumParam"  width="120"  >
-			<comboitem label="9gjccj32aa" value="cvy4" />
-		</combobox>
-		<label id="isyeriTurParamlbl" value="İşyeri Tür" />
-		<combobox id="isyeriTurParam"  width="120"  >
-			<comboitem label="3341qoil44" value="oc76" />
-		</combobox>
-		<label id="isyeriKategoriIdParamlbl" value="Kategori" />
-		<combobox id="isyeriKategoriIdParam"  width="300"  >
-			<comboitem label="2au83lhrzp" value="5fjk" />
-		</combobox>
-		<label id="calisanSayisiBasParamlbl" value="Çalışan Sayısı" />
-		<intbox id="calisanSayisiBasParam"  value="268235235"  width="98"  maxlength="5"  placeholder=""  />
-		<intbox id="calisanSayisiBitParam"  value="-1916802109"  width="98"  maxlength="5"  placeholder=""  />
-		<label id="ilKoduParamlbl" value="İl" />
-		<combobox id="ilKoduParam"  width="98"  >
-			<comboitem label="pyizncktxk" value="1zj2" />
-		</combobox>
-		<combobox id="ilceKoduParam"  width="98"  >
-			<comboitem label="0sl0qgugy9" value="5toh" />
-		</combobox>
-		<label id="subeParamlbl" value="Şube" />
-		<combobox id="subeParam"  width="300"  >
-			<comboitem label="12qzwl789r" value="euul" />
-		</combobox>
-		<checkbox type="text" id="isletmeTekAidatParam"  checked="false"  label="İşletme Tek Aidat Listesi"  onCheck=""  width="50"  />
-		<label visible="false" id="ilKodlariParamlbl" value="İl" />
-		<textbox visible="false" type="text" id="ilKodlariParam"  value="wp5vyu7t55"  placeholder=""  />
-		<label id="ilAdlariParamlbl" value="İller" />
-		<textbox type="text" id="ilAdlariParam"  value="s8x32udyza"  width="361"  placeholder=""  readonly="true"  />
+		<grid sizedByContent="true" zclass="none" id="isyeri_search_grid">
+			<rows>
+				<row>
+					<label id="subelbl" value="Şube" />
+					<combobox id="sube"  width="120"  >
+					</combobox>
+				</row>
+				<row>
+					<label id="isyeriSGKNolbl" value="İşyeri SGK No" />
+					<textbox type="text" id="sgkKisaNo" width="245"  maxlength="255"  placeholder=""  top="56" />
+				</row>
+				<row>
+					<label id="unvanlbl" value="İşyeri Ünvanı" />
+					<textbox type="text" id="unvan" width="245"  maxlength="255"  placeholder=""  top="56" />
+				</row>
+				<row>
+					<label id="isyeriKategoriIdlbl" value="Kategori" />
+					<combobox id="isyeriKategoriId"  width="120"  >
+					</combobox>
+				</row>
+				<row>
+					<label id="calisanSayisilbl" value="İşçi Sayısı" />
+					<intbox id="calisanSayisi"  width="107"  maxlength="5"  placeholder=""  />
+				</row>
+				<row>
+					<label id="vergiDairesilbl" value="Vergi Dairesi" />
+					<textbox type="text" id="vergiDairesi"  width="180"  maxlength="50"  placeholder=""  />	
+				</row>
+				<row>
+					<label id="kisaAdlbl" value="Kısa Ad" />
+					<textbox type="text" id="kisaAd" width="110"  maxlength="255"  placeholder=""  top="56" />
+				</row>
+			</rows>
+		</grid>
+		<button id="listele" label="Listele" position="1/3" newLine="true"
+					onClick="search_isyeri()" />
 	</window>
 	<script>
+	
+		search_isyeri = function(){
+			send('genel.isyeri.list', 'ALL','isyeri_search_grid', '', 'İşyeri Listesi');
+			
+		};
+		
 	</script>
 </arya>

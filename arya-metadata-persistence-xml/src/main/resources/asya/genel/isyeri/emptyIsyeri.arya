@@ -2,11 +2,14 @@
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addIsyeriWindow">
+	<label value="Yeni İşyeri Kaydı" style="font-size: 120%; color: black; font-weight: bold"/>
 		<grid id="isyeri_edit_grid">
 			<rows>
 				<row>
 					<label id="subelbl" value="Şube" />
 					<combobox id="sube"  width="120"  >
+						<comboitem label="Ankara"/>
+						<comboitem label="İstanbul"/>
 					</combobox>
 				</row>
 				<row>
@@ -45,18 +48,12 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 			</rows>
 		</grid>
 		<div style="padding: 5px; text-align: right">
-			<button label="Kaydet" onClick="kaydet_isyeri()" style="margin-left: 5px"/>
-			<button label="Sil" onClick="sil_isyeri()" style="margin-left: 5px"/>
+			<button label="Kaydet" onClick="kaydet_isyeri()"/>
 		</div>				
 	</window>
 	<script>
-	
 		kaydet_isyeri = function() {
-			send('genel.isyeri.edit', 'ALL', 'isyeri_edit_grid', 'isyeriId');
+			send('genel.isyeri.add', 'ALL', 'isyeri_edit_grid', 'isyeriId');
 		}
-		sil_isyeri = function() {
-			send('genel.isyeri.delete', 'ALL', 'isyeri_edit_grid', 'isyeriId');
-		}
-		
 	</script>
 </arya>

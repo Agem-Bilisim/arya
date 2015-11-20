@@ -143,8 +143,7 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 		//TODO id listbox olmayabilir???!??!?
 		JSONObject jsonObj = null;
 		
-		if(getElementById(elementId) instanceof AryaListbox) {
-			
+		if(getElementById(elementId) instanceof AryaListbox) { 
 			jsonObj = ((AryaListbox)getElementById(elementId)).getSelectedItem().getValue();
 		}		
 		else if(getElementById(elementId) instanceof AryaCombobox) {

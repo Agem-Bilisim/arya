@@ -30,8 +30,10 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 		</vlayout>
 	</window>
 	<script>
+	
 		select_isyeri = function(){
 			renderSelectedItem('list', 'id', 'genel.isyeri.select', [], [], 'İşyeri Bilgileri');
 		}
+		
 	</script>
 </arya>

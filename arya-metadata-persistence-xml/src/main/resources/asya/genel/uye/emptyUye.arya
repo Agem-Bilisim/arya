@@ -2,16 +2,9 @@
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addUyeWindow">
+		<label value="Yeni Üye Kaydı" style="font-size: 120%; color: black; font-weight: bold"/>
 		<grid id="uye_edit_grid">
 			<rows>
-				<row>
-					<label id="uyeIdlbl" value="Uye Id" />
-					<textbox type="text" id="uyeId"  placeholder=""  />
-				</row>
-				<row>
-					<label id="kisiIdlbl" value="Kisi Id" />
-					<textbox type="text" id="kisiId"  placeholder=""  />
-				</row>
 				<row>
 					<label id="eklemeTarihilbl" value="Ekleme Tarihi" />
 					<textbox type="text" id="eklemeTarihi" placeholder=""  />
@@ -39,17 +32,14 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 			</rows>
 		</grid>
 		<div style="padding: 5px; text-align: right">
-			<button label="Kaydet" onClick="kaydet_uye()" style="margin-left: 5px"/>
-			<button label="Sil" onClick="sil_uye()" style="margin-left: 5px"/>
-		</div>		
+			<button label="Kaydet" onClick="kaydet_uye()"/>
+		</div>
 	</window>
 	<script>
-		
+	
 		kaydet_uye = function() {
-			send('genel.uye.edit', 'ALL', 'uye_edit_grid', 'uyeId');
-		}
-		sil_uye = function() {
-			send('genel.uye.delete', 'ALL', 'uye_edit_grid', 'uyeId');
-		}
+				send('genel.uye.add', 'ALL', 'uye_edit_grid', 'uyeId');
+			}
+	
 	</script>
 </arya>

@@ -41,11 +41,13 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 		</div>
 	</window>
 	<script>
+	
 		kaydet_isci = function() {
 			send('genel.isci.edit', 'ALL', 'isci_edit_grid', 'isciId');
 		}
 		sil_isci = function() {
 			send('genel.isci.delete', 'ALL', 'isci_edit_grid', 'isciId');
 		}
+		
 	</script>
 </arya>

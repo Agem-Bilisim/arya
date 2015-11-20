@@ -3,7 +3,7 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listUyeWindow">
 		<vlayout>
-			<listbox id="list" pagesize="10" mold="paging">
+			<listbox id="genel.uye.list" pagesize="10" mold="paging" >
 				<listhead>
 					<listheader label="Üye Id" />
 					<listheader label="Üye Baş.Tar." />
@@ -31,6 +31,6 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 			</listbox>
 		</vlayout>
 	</window>
-	<script>
+	<script>		
 	</script>
 </arya>

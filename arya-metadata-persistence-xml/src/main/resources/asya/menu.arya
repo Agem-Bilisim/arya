@@ -13,14 +13,16 @@
 		</menu>
 		<menu label="İşyeri Bilgileri">
 			<menupopup>
+				<menuitem label="Arama"
+					onClick="post('genel.isyeri.searchIsyeri', 'VIEW_ONLY',{'json': '1'}, 'İşyeri Arama')" />
 				<menuitem label="Liste"
 					onClick="post('genel.isyeri.list', 'ALL',{'json': '1'}, 'İşyeri Listesi')" />
+				<menuitem label="Yeni Kayıt"
+					onClick="post('genel.isyeri.emptyIsyeri', 'VIEW_ONLY',{'json': '1'}, 'İşyeri Bilgileri')" />
 			</menupopup>
 		</menu>
 		<menu label="Üyelik İşlemleri">
 			<menupopup>
-				<menuitem label="Arama"
-					onClick="post('genel.uye.search', 'ALL',{'json': '1'}, 'Üye Arama')" />
 				<menuitem label="Liste"
 					onClick="post('genel.uye.list', 'ALL',{'json': '1'}, 'Üye Listesi')" />
 			</menupopup>

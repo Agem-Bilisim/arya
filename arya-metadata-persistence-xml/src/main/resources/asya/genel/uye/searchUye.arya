@@ -3,10 +3,10 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listUyeWindow">
 		<vlayout>
-			<grid sizedByContent="true" hflex="min" zclass="none">
+			<grid sizedByContent="true" hflex="min" zclass="none" id="uye_search_grid">
 				<rows>
 					<row>
-						<label id="uyelikAramaParam" value="Üyelik Arama" />
+						<label id="uyelikAramaParam" value="Üyelik Arama" style="font-weight: bold; font-size: 110%" />
 					</row>
 					<row>
 						<label id="durumParamlbl" value="Üyelik Durumu" />
@@ -18,12 +18,11 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 						</combobox>
 					</row>
 					<row>
-						<label id="isyeriBilgileriParam" value="İşyeri Bilgileri" />
+						<label id="isyeriBilgileriParam" value="İşyeri Bilgileri" style="font-weight: bold; font-size: 110%" />
 					</row>
 					<row>
 						<label id="subeParam" value="Şube" />
 						<combobox id="subeler"  width="120"  >
-							<comboitem label="wjahf5mfkh" value="e7mn" />
 						</combobox>
 						<label id="gecerlilikParamlbl" value="İşyeri Kısa Ad" />
 						<textbox type="text" id="kisaAd" width="120"  placeholder=""  />
@@ -44,7 +43,7 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 						<textbox type="text" id="kategori" width="120"  placeholder=""  />
 					</row>
 					<row>
-						<label id="isciBilgileriParam" value="İşçi Bilgileri" />
+						<label id="isciBilgileriParam" value="İşçi Bilgileri" style="font-weight: bold; font-size: 110%" />
 					</row>
 					<row>
 						<label id="kimlikParam" value="T.C. Kimlik No" />
@@ -76,9 +75,15 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 				</rows>
 			</grid>
 			<button id="listele" label="Listele" position="1/3" newLine="true"
-					onClick="" />
+					onClick="search_uye()" />
 		</vlayout>
 	</window>
 	<script>
+	
+		search_uye = function(){
+			send('genel.uye.list', 'ALL','uye_search_grid', '', 'Üye Listesi');
+			
+		};
+		
 	</script>
 </arya>

@@ -142,7 +142,9 @@ public class AryaRadiogroup extends Radiogroup implements IAryaComponent {
 		 * There is no componentValue variable for this component. This function
 		 * was created for IAryaComponent interface.
 		 */
-		return this.getSelectedItem().getValue();
+		if (this.getSelectedItem() != null)
+			return this.getSelectedItem().getValue();
+		return "";
 	}
 
 	@Override

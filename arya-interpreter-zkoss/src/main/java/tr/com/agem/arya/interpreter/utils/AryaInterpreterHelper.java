@@ -237,30 +237,39 @@ public class AryaInterpreterHelper {
 						Map.Entry<String, JsonNode> entry = fields.next();
 						if ("results".equals(entry.getKey().toString())) {
 							JSONArray jsonArray = new JSONArray(entry.getValue().toString());
-							if (action.endsWith("list")) {
-								populateAryaTemplate(main, (IAryaTemplate) getElementById(action, main), jsonArray);
-							} 
-							else  if (jsonArray.length() == 1){  
-								JSONObject jsonObj = jsonArray.getJSONObject(0);
-								
-								
-								for (String id : tab.getTabPanel().getComponents()) {
-									IAryaComponent comp = getElementById(id, main);
-									if (isInputElement(comp)) {
-										String key = StringUtils.substringAfterLast(comp.getComponentId(), "-");
-										comp.setComponentValue(getJSONValue(jsonObj,key).toString());
-									}
+							try {
+								String message = "";
+								if (action.endsWith("list")) {
+									if (jsonArray.length() > 0)
+										message=jsonArray.length()+" adet kayıt bulundu.";
+									else
+										message="Hiçbir kayıt bulunamadı.";
+										
+									populateAryaTemplate(main, (IAryaTemplate) getElementById(action, main), jsonArray);
+								} 
+								else  if (jsonArray.length() == 1){  
+									JSONObject jsonObj = jsonArray.getJSONObject(0);
 									
-								}
-								try {
-									String message = (String) jsonObj.get("@message");
-									if (message != null) {
-										main.getMessage().setValue(message);
-									}
-								}
-								catch (Exception e ) {
 									
+									for (String id : tab.getTabPanel().getComponents()) {
+										IAryaComponent comp = getElementById(id, main);
+										if (isInputElement(comp)) {
+											String key = StringUtils.substringAfterLast(comp.getComponentId(), "-");
+											comp.setComponentValue(getJSONValue(jsonObj,key).toString());
+										}
+										
+									}
+									message = (String) jsonObj.get("@message");
 								}
+								if (message != null) {
+									main.getMessage().setValue(message);
+								}
+								else { 
+									main.getMessage().setValue("");
+								}
+							}
+							catch (Exception e ) {
+								main.getMessage().setValue("");
 							}
 						}
 					}
