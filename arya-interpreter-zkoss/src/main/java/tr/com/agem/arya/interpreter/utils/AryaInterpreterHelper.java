@@ -33,10 +33,6 @@ import org.zkoss.zul.Listbox;
 import org.zkoss.zul.Radiogroup;
 import org.zkoss.zul.impl.InputElement;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import tr.com.agem.arya.interpreter.component.AryaComboItem;
 import tr.com.agem.arya.interpreter.component.AryaCombobox;
 import tr.com.agem.arya.interpreter.component.AryaDatebox;
@@ -54,7 +50,6 @@ import tr.com.agem.arya.interpreter.component.AryaTabs;
 import tr.com.agem.arya.interpreter.component.AryaTemplate;
 import tr.com.agem.arya.interpreter.component.ComponentFactory;
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
-import tr.com.agem.arya.interpreter.components.base.AryaWindow;
 import tr.com.agem.arya.interpreter.parser.AryaMetadataParser;
 import tr.com.agem.arya.interpreter.parser.AryaParserAttributes;
 import tr.com.agem.arya.interpreter.script.ElementFunctions;
@@ -65,6 +60,10 @@ import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.interpreter.IAryaTemplate;
 import tr.com.agem.core.property.reader.PropertyReader;
 import tr.com.agem.core.utils.AryaUtils;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class AryaInterpreterHelper {
 
@@ -122,8 +121,8 @@ public class AryaInterpreterHelper {
 				AryaTabpanel panel = tab.getTabPanel();
 				panel.setTab(null);
 				tab.setTabPanel(null);
-				removeElement(main.getAryaWindow(), panel.getParent(), panel);
-				removeElement(main.getAryaWindow(), tab.getParent(), tab);
+				removeElement(main, panel.getParent(), panel);
+				removeElement(main, tab.getParent(), tab);
 			}
 			tab = null;
 
@@ -139,21 +138,21 @@ public class AryaInterpreterHelper {
 		populateListComponents(main);
 	}
 
-	public static void removeElement(AryaWindow window, Component parent, Component component) {
+	public static void removeElement(AryaMain main, Component parent, Component component) {
 		try {
 			if (!(component instanceof Listbox)) {
 				List<Component> childs = component.getChildren();
 				
 				for (int i=0; i < childs.size(); ) {
 					Component c = childs.get(0);
-					removeElement(window, component, c);
+					removeElement(main, component, c);
 				}
 			}
 			if (component instanceof AryaScript) {
 				return;
 			}
 			parent.removeChild(component);
-			Set<IAryaComponent> comps = window.getComponents();
+			Set<IAryaComponent> comps = main.getAryaWindowComponents();
 			comps.remove(component);
 		}
 		catch (Exception e) {
@@ -315,7 +314,7 @@ public class AryaInterpreterHelper {
 
 	private static void populateListComponents(AryaMain main) {
 		
-		for (Iterator<IAryaComponent> iterator = main.getAryaWindow().getComponents().iterator(); iterator.hasNext();) {
+		for (Iterator<IAryaComponent> iterator = main.getAryaWindowComponents().iterator(); iterator.hasNext();) {
 			IAryaComponent comp = (IAryaComponent) iterator.next();
 			
 			if (comp instanceof AryaCombobox) {
@@ -472,14 +471,14 @@ public class AryaInterpreterHelper {
 			tab.setSelected(true);
 			tab.setLabel(tabValue);
 			tab.setComponentId("tab" + tabId);
-			main.getAryaWindow().getComponents().add(tab);
+			main.getAryaWindowComponents().add(tab);
 
 			tabpanel = new AryaTabpanel(main, null);
 			tabpanel.setParent(tabpanels);
 			tabpanel.setComponentId("tabpanel"+tabId);
 			tab.setTabPanel(tabpanel);
 			tabpanel.setTab(tab);
-			main.getAryaWindow().getComponents().add(tabpanel);
+			main.getAryaWindowComponents().add(tabpanel);
 			if ("Master".equals(tabValue)) {
 				tab.setVisible(false);
 				tabpanel.setVisible(false);
@@ -522,7 +521,7 @@ public class AryaInterpreterHelper {
 																			// not
 																			// menu
 
-		Set<IAryaComponent> comps = main.getAryaWindow().getComponents();
+		Set<IAryaComponent> comps = main.getAryaWindowComponents();
 		for (IAryaComponent comp : comps) {
 			// ids are suffix of component ids (tabpanel2-list etc....)
 			if (comp.getComponentId() != null && comp.getComponentId().endsWith(id)) {

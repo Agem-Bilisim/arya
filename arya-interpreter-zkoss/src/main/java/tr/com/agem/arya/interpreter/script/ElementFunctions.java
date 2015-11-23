@@ -187,7 +187,7 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 	@AryaJsFunction
 	public IAryaComponent getElementById(String id) { //only on window not menu
 
-		Set<IAryaComponent> comps = main.getAryaWindow().getComponents();
+		Set<IAryaComponent> comps = main.getAryaWindowComponents();
 		for (IAryaComponent comp : comps) {
 
 			if (comp.getComponentId() != null && comp.getComponentId().endsWith(id)) {
@@ -202,7 +202,7 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 	public Object[] getElementsByName(String name) {//only on window not menu
 
 		List<IAryaComponent> objList = new ArrayList<IAryaComponent>();
-		Set<IAryaComponent> comps = main.getAryaWindow().getComponents();
+		Set<IAryaComponent> comps = main.getAryaWindowComponents();
 		for (IAryaComponent comp : comps) {
 			if (name.equalsIgnoreCase(
 					comp.getClass().toString().replace("class tr.com.agem.arya.interpreter.component.Arya", ""))) {
@@ -216,7 +216,7 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 	public Object[] getElementsByClass(String className) {//only on window not menu
 
 		List<IAryaComponent> objList = new ArrayList<IAryaComponent>();
-		Set<IAryaComponent> comps = main.getAryaWindow().getComponents();
+		Set<IAryaComponent> comps = main.getAryaWindowComponents();
 		for (IAryaComponent comp : comps) {
 
 			if (className.equalsIgnoreCase(comp.getComponentClassName())) {
@@ -229,7 +229,7 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 	@AryaJsFunction
 	public String serializeForm() {//only on window not menu
 		String strSerialize = "";
-		Set<IAryaComponent> comps = main.getAryaWindow().getComponents();
+		Set<IAryaComponent> comps = main.getAryaWindowComponents();
 		for (IAryaComponent comp : comps) {
 			strSerialize += ",\"" + comp.getComponentId() + "\":"
 					+ (comp.getComponentValue() == null ? null : "\"" + comp.getComponentValue() + "\"");
@@ -335,9 +335,9 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 	@AryaJsFunction
 	public void tabCloseFunction(String tabId) throws JsonProcessingException {
 		Component comp = (Component)getElementById("tab" + tabId);
-		AryaInterpreterHelper.removeElement(main.getAryaWindow(), comp.getParent(), comp);
+		AryaInterpreterHelper.removeElement(main, comp.getParent(), comp);
 		comp = (Component)getElementById("tabpanel" + tabId);
-		AryaInterpreterHelper.removeElement(main.getAryaWindow(), comp.getParent(), comp);
+		AryaInterpreterHelper.removeElement(main, comp.getParent(), comp);
 
 		AryaTabs tabs = BaseController.getTabs();
 		if(tabs.getChildren() != null && tabs.getChildren().size() > 1)	{
