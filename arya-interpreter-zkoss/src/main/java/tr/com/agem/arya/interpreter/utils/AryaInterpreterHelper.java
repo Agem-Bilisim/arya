@@ -24,10 +24,10 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.zkoss.zk.ui.Component;
-import org.xml.sax.Attributes;
 import org.zkoss.zul.Div;
 import org.zkoss.zul.Listbox;
 import org.zkoss.zul.Radiogroup;
@@ -39,6 +39,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import tr.com.agem.arya.interpreter.component.AryaComboItem;
 import tr.com.agem.arya.interpreter.component.AryaCombobox;
+import tr.com.agem.arya.interpreter.component.AryaDatebox;
 import tr.com.agem.arya.interpreter.component.AryaGrid;
 import tr.com.agem.arya.interpreter.component.AryaListCell;
 import tr.com.agem.arya.interpreter.component.AryaListItem;
@@ -254,6 +255,7 @@ public class AryaInterpreterHelper {
 									for (String id : tab.getTabPanel().getComponents()) {
 										IAryaComponent comp = getElementById(id, main);
 										if (isInputElement(comp)) {
+											
 											String key = StringUtils.substringAfterLast(comp.getComponentId(), "-");
 											comp.setComponentValue(getJSONValue(jsonObj,key).toString());
 										}

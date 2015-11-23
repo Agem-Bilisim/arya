@@ -24,7 +24,7 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 				</row>
 				<row>
 					<label id="cinsiyetlbl" value="Cinsiyet" />
-					<radiogroup id="cinsiyet"  >
+					<radiogroup id="cinsiyet" >
 						<radio label="Erkek" value="E" />
 						<radio label="Kadın" value="K" />
 					</radiogroup>

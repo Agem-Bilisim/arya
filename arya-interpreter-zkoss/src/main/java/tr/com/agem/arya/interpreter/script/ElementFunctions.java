@@ -1,8 +1,10 @@
 package tr.com.agem.arya.interpreter.script;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -22,7 +24,12 @@ import org.mozilla.javascript.Scriptable;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zul.Tab;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import tr.com.agem.arya.interpreter.component.AryaCombobox;
+import tr.com.agem.arya.interpreter.component.AryaDatebox;
 import tr.com.agem.arya.interpreter.component.AryaListbox;
 import tr.com.agem.arya.interpreter.component.AryaTabpanel;
 import tr.com.agem.arya.interpreter.component.AryaTabs;
@@ -35,10 +42,6 @@ import tr.com.agem.core.gateway.model.AryaResponse;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.property.reader.PropertyReader;
 import tr.com.agem.core.utils.AryaUtils;
-
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class ElementFunctions extends AnnotatedScriptableObject {
 
@@ -302,6 +305,7 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 		for (String id : components) {
 			IAryaComponent c = getElementById(id);
 			if (AryaInterpreterHelper.isInputElement(c)) {
+				
 				String v = c.getComponentValue();
 				setValue(m, id, v);
 			}

@@ -25,7 +25,7 @@ public class ComponentFactory {
 			comp = new AryaDatebox(main, attributes);
 		} else if ("button".equalsIgnoreCase(tagName)) {
 			comp = new AryaButton(main, attributes);
-		} else if ("intbox".equalsIgnoreCase(tagName)) {
+		} else if ("textbox".equalsIgnoreCase(tagName)) {
 			comp = new AryaTextbox(main, attributes);
 		} else if ("doublebox".equalsIgnoreCase(tagName)) {
 			comp = new AryaTextbox(main, attributes);
@@ -119,6 +119,8 @@ public class ComponentFactory {
 			comp = new AryaTabpanels(main, attributes);
 		} else if ("tabpanel".equalsIgnoreCase(tagName)) {
 			comp = new AryaTabpanel(main, attributes);
+		} else if ("intbox".equalsIgnoreCase(tagName)) {
+			comp = new AryaIntbox(main, attributes);
 		}
 
 		return comp;

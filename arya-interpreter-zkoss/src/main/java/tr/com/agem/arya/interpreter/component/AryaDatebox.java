@@ -76,6 +76,12 @@ public class AryaDatebox extends Datebox implements IAryaComponent {
 			
 			if (attributes.getValue("style") != null)
 				this.setStyle(attributes.getValue("style"));
+			
+			if (attributes.getValue("lenient") != null)
+				this.setLenient(Boolean.parseBoolean(attributes.getValue("lenient")));
+			
+			if (attributes.getValue("buttonVisible") != null)
+				this.setButtonVisible(Boolean.parseBoolean(attributes.getValue("buttonVisible")));
 
 			/*
 			 * if the dimension input format of .arya files does NOT contains
@@ -203,7 +209,10 @@ public class AryaDatebox extends Datebox implements IAryaComponent {
 		 * There is no componentValue variable for this component. This function
 		 * was created for IAryaComponent interface.
 		 */
-		return this.getValue().toString();
+		
+		SimpleDateFormat f = new SimpleDateFormat("dd/mm/yyyy");
+		
+		return f.format(this.getValue());
 	}
 
 	@Override

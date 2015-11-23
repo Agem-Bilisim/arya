@@ -31,7 +31,7 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 						<label id="isyeriUnvanParam" value="İşyeri Ünvanı" />
 						<textbox type="text" id="isyeriUnvan" width="120"  placeholder=""  />
 						<label id="isyeriSGKParam" value="İşyeri SGK No" />
-						<textbox type="text" id="isyeriSGK" width="120"  placeholder=""  />
+						<intbox id="isyeriSGK" width="120"  placeholder=""  />
 					</row>
 					<row>
 						<label id="ilParam" value="İl" />
@@ -47,7 +47,7 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 					</row>
 					<row>
 						<label id="kimlikParam" value="T.C. Kimlik No" />
-						<textbox type="text" id="kimlik" width="120"  placeholder=""  />
+						<intbox id="kimlik" width="120"  maxlength="11"  placeholder=""  />
 					</row>
 					<row>
 						<label id="adSoyadParam" value="Ad Soyad" />
@@ -70,7 +70,7 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 					</row>
 					<row>
 						<label id="referansParam" value="Arşiv Referans No" />
-						<textbox type="text" id="referans" width="120"  placeholder=""  />
+						<intbox id="referans" width="120"  placeholder=""  />
 					</row>
 				</rows>
 			</grid>

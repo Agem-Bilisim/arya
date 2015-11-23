@@ -3,32 +3,39 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addUyeWindow">
 		<label value="Yeni Üye Kaydı" style="font-size: 120%; color: black; font-weight: bold"/>
+		<textbox id="kisiId" visible="false"/>
+		<textbox id="isci.kisi.kisiId" visible="false"/>
 		<grid id="uye_edit_grid">
 			<rows>
 				<row>
-					<label id="eklemeTarihilbl" value="Ekleme Tarihi" />
-					<textbox type="text" id="eklemeTarihi" placeholder=""  />
-				</row>
-				<row>
-					<label id="ekleyenlbl" value="Ekleyen" />
-					<textbox type="text" id="ekleyen"  maxlength="255"  placeholder=""  />
-				</row>
-				<row>
-					<label id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
-					<textbox type="text" id="sonGunlemeTarihi"  placeholder=""  />
-				</row>
-				<row>
-					<label id="sonGunleyenlbl" value="Son Gunleyen" />
-					<textbox type="text" id="sonGunleyen"  maxlength="255"  placeholder=""  />
+					<label id="kisi.tckNolbl" value="T.C. Kimlik No" />
+					<intbox id="kisi.tckNo"  constraint="no empty"  width="100"  maxlength="11"  placeholder=""/>
 				</row>
 				<row>
 					<label id="girisBasvuruTarihilbl" value="Giriş Başvuru Tarihi" />
-					<textbox type="text" id="girisBasvuruTarihi"  maxlength="255"  placeholder=""  />
+					<datebox id="girisBasvuruTarihi" lenient="true" buttonVisible="true" />
 				</row>
 				<row>
-					<label id="cikisBasvuruTarihilbl" value="Çıkış Başvuru Tarihi" />
-					<textbox type="text" id="cikisBasvuruTarihi"  maxlength="255"  placeholder=""  />
+					<label id="dogrulamaKodulbl" value="Doğrulama Kodu" />
+					<textbox type="text" id="dogrulamaKodu" placeholder=""  />
 				</row>
+				<row>
+					<label id="girisOnayTarihilbl" value="Giriş Onay Tarihi" />
+					<datebox id="girisOnayTarihi" lenient="true" buttonVisible="true" />
+				</row>
+				<row>
+					<label id="girisYkKararNolbl" value="YK Karar No" />
+					<intbox id="girisYkKararNo" placeholder=""  />
+				</row>
+				<row>
+					<label id="aciklamalbl" value="Açıklama" />
+					<textbox type="text" id="aciklama" placeholder=""  />
+				</row>
+				<row>
+					<label id="isyeriUnvanlbl" value="İşyeri Ünvan" />
+					<textbox type="text" id="isyeri.unvan" placeholder=""  />
+				</row>
+				
 			</rows>
 		</grid>
 		<div style="padding: 5px; text-align: right">

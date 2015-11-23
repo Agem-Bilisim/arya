@@ -9,6 +9,7 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 import org.zkoss.zk.ui.Component;
 
+import tr.com.agem.arya.interpreter.component.AryaCombobox;
 import tr.com.agem.arya.interpreter.component.AryaGrid;
 import tr.com.agem.arya.interpreter.component.AryaListbox;
 import tr.com.agem.arya.interpreter.component.AryaScript;
@@ -58,6 +59,7 @@ public class AryaMetadataParser extends DefaultHandler {
 				
 				comp.setComponentParent(currentComponent.size() > 0 ? currentComponent.peek():(isMenu ? main.getMenuContainer() : tabpanel));
 				currentComponent.push(comp);
+					
 				main.getAryaWindow().getComponents().add(comp);
 				if (tabpanel != null) {
 					tabpanel.add(comp.getComponentId());

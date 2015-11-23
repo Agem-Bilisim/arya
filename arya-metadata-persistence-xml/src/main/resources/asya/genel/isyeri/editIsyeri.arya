@@ -57,6 +57,7 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 		sil_isyeri = function() {
 			send('genel.isyeri.delete', 'ALL', 'isyeri_edit_grid', 'isyeriId');
 		}
+		fill_comobobox('genel.isyeri', 'isyeri_edit_grid', 'isyeriKategoriId');
 		
 	</script>
 </arya>

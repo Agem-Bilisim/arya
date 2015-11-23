@@ -14,7 +14,7 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 				</row>
 				<row>
 					<label id="isyeriSGKNolbl" value="İşyeri SGK No" />
-					<textbox type="text" id="sgkKisaNo" width="245"  maxlength="255"  placeholder=""  top="56" />
+					<intbox id="sgkKisaNo" width="245"  maxlength="255"  placeholder=""  top="56" />
 				</row>
 				<row>
 					<label id="SGKIlKodulbl" value="SGK İl Kodu" />

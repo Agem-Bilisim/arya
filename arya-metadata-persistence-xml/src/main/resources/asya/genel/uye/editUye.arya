@@ -2,6 +2,8 @@
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addUyeWindow">
+		<textbox id="kisiId" visible="false"/>
+		<textbox id="isci.kisi.kisiId" visible="false"/>
 		<grid id="uye_edit_grid">
 			<rows>
 				<row>

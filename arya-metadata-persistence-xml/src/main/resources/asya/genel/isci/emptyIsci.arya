@@ -7,7 +7,7 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 			<rows>
 				<row>
 					<label id="kisi.tckNolbl" value="T.C. Kimlik No" />
-					<textbox type="text" id="kisi.tckNo"  value=""  width="100"  maxlength="11"  placeholder=""/>
+					<intbox id="kisi.tckNo"  constraint="no empty"  width="100"  maxlength="11"  placeholder=""/>
 				</row>
 				<row>
 					<label id="kisi.adlbl" value="Ad" />
@@ -19,7 +19,7 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 				</row>
 				<row>
 					<label id="sgkNolbl" value="SGK Sicil No" />
-					<intbox id="sgkNo"  value=""  width="200"  maxlength="13"  placeholder=""  />
+					<intbox id="sgkNo"  width="200"  maxlength="13"  placeholder=""  />
 				</row>
 				<row>
 					<label id="cinsiyetlbl" value="Cinsiyet" />

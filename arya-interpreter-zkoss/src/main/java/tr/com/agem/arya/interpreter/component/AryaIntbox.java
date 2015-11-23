@@ -4,21 +4,21 @@ import org.xml.sax.Attributes;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.EventListener;
-import org.zkoss.zul.Combobox;
+import org.zkoss.zul.Intbox;
 
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.script.ScriptHelper;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
 
-public class AryaCombobox extends Combobox implements IAryaComponent {
+public class AryaIntbox extends Intbox implements IAryaComponent {
 
-	private static final long serialVersionUID = -1829374522609555406L;
+	private static final long serialVersionUID = -9013728719463917434L;
 
 	private String componentClassName;
 	private String componentAttribute;
 
-	public AryaCombobox(final AryaMain main, Attributes attributes) {
+	public AryaIntbox(final AryaMain main, Attributes attributes) {
 		super();
 
 		if (AryaUtils.isNotEmpty(attributes)) {
@@ -27,6 +27,12 @@ public class AryaCombobox extends Combobox implements IAryaComponent {
 			this.componentAttribute = attributes.getValue("attribute");
 
 			this.setClass(attributes.getValue("class"));
+			
+			if(attributes.getValue("value") != null) {
+				this.setValue(Integer.valueOf(attributes.getValue("value")));
+			}
+			
+			
 			if (attributes.getValue("visible") != null) {
 				this.setVisible(Boolean.parseBoolean(attributes.getValue("visible")));
 			}
@@ -64,15 +70,12 @@ public class AryaCombobox extends Combobox implements IAryaComponent {
 			this.setHflex(attributes.getValue("hflex"));
 			this.setVflex(attributes.getValue("vflex"));
 			
-			if (attributes.getValue("buttonVisible") != null)
-				this.setButtonVisible(Boolean.parseBoolean(attributes.getValue("buttonVisible")));
+			if (attributes.getValue("style") != null)
+				this.setStyle(attributes.getValue("style"));
 			
-			if (attributes.getValue("open") != null)
-				this.setOpen(Boolean.parseBoolean(attributes.getValue("open")));
-			
-			if (attributes.getValue("readonly") != null)
-				this.setReadonly(Boolean.parseBoolean(attributes.getValue("readonly")));
-			
+			if (attributes.getValue("constraint") != null)
+				this.setConstraint(attributes.getValue("constraint"));
+
 			/*
 			 * if the dimension input format of .arya files does NOT contains
 			 * the unit like -height="200px"
@@ -146,29 +149,8 @@ public class AryaCombobox extends Combobox implements IAryaComponent {
 					}
 				});
 			}
-			
-			if (AryaUtils.isNotEmpty(attributes.getValue("onSelect"))) {
-				final String functionName = attributes.getValue("onSelect");
-				this.addEventListener("onSelect", new EventListener<Event>() {
-					@Override
-					public void onEvent(Event event) throws Exception {
-						ScriptHelper.executeScript(functionName, null, main);
-					}
-				});
-			}
-			
-			if (AryaUtils.isNotEmpty(attributes.getValue("onOpen"))) {
-				final String functionName = attributes.getValue("onOpen");
-				this.addEventListener("onOpen", new EventListener<Event>() {
-					@Override
-					public void onEvent(Event event) throws Exception {
-						ScriptHelper.executeScript(functionName, null, main);
-					}
-				});
-			}
 
 		}
-
 	}
 
 	@Override
@@ -214,17 +196,17 @@ public class AryaCombobox extends Combobox implements IAryaComponent {
 
 	@Override
 	public String getComponentValue() {
-		return this.getValue();
+		return String.valueOf(this.getValue());
 	}
 
 	@Override
 	public void setComponentValue(String componentValue) {
-		this.setValue(componentValue);
+		this.setValue(Integer.valueOf(componentValue));
 	}
 
 	@Override
 	public String getComponentTagName() {
-		return "combobox";
+		return "intbox";
 	}
 
 }
