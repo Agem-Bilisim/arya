@@ -7,7 +7,6 @@ import java.util.Stack;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
-import org.zkoss.zk.ui.Component;
 
 import tr.com.agem.arya.interpreter.component.AryaGrid;
 import tr.com.agem.arya.interpreter.component.AryaListbox;
@@ -58,22 +57,22 @@ public class AryaMetadataParser extends DefaultHandler {
 				
 				comp.setComponentParent(currentComponent.size() > 0 ? currentComponent.peek():(isMenu ? main.getMenuContainer() : tabpanel));
 				currentComponent.push(comp);
-				main.getAryaWindow().getComponents().add(comp);
+				main.getAryaWindowComponents().add(comp);
 				if (tabpanel != null) {
 					tabpanel.add(comp.getComponentId());
 				}
 			}
 
 			// Add new component to the component list of parent window
-			if (main.getAryaWindow().getComponents() == null) {
-				main.getAryaWindow().setComponents(new HashSet<IAryaComponent>());
+			if (main.getAryaWindowComponents() == null) {
+				main.setAryaWindowComponents(new HashSet<IAryaComponent>());
 			}
-			if (main.getAryaNavBar().getComponents() == null) {
-				main.getAryaNavBar().setComponents(new ArrayList<IAryaComponent>());
+			if (main.getAryaNavBarComponents() == null) {
+				main.setAryaNavBarComponents(new ArrayList<IAryaComponent>());
 			}
 
 			if (comp instanceof IAryaMenu) {
-				main.getAryaNavBar().getComponents().add(comp);
+				main.getAryaNavBarComponents().add(comp);
 			}
 		}
 	}
@@ -95,9 +94,8 @@ public class AryaMetadataParser extends DefaultHandler {
 	}
 
 	private AryaScript getAryaScript() {
-		for (IAryaComponent comp : main.getAryaWindow().getComponents()) {
+		for (IAryaComponent comp : main.getAryaWindowComponents()) {
 			if (comp instanceof AryaScript) {
-				Component c = (Component) comp;
 				return (AryaScript) comp;
 			}
 		}

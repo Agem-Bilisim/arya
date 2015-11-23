@@ -29,7 +29,7 @@ public class ScriptHelper {
 	}
 
 	private static AryaScript getScriptComponent(AryaMain main) {
-		Set<IAryaComponent> comps = main.getAryaWindow().getComponents();
+		Set<IAryaComponent> comps = main.getAryaWindowComponents();
 		for (IAryaComponent comp : comps) {
 			if (comp instanceof AryaScript) {
 				AryaScript scriptObj = (AryaScript) comp;

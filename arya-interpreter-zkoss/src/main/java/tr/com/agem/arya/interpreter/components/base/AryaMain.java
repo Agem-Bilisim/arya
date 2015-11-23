@@ -1,15 +1,19 @@
 package tr.com.agem.arya.interpreter.components.base;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+
 import org.zkoss.zul.Div;
 import org.zkoss.zul.Include;
 import org.zkoss.zul.Label;
 
-import tr.com.agem.arya.interpreter.utils.BaseController;
+import tr.com.agem.core.interpreter.IAryaComponent;
 
 public class AryaMain {
 
-	private AryaWindow aryaWindow;
-	private AryaNavBar aryaNavBar;
+	private Set<IAryaComponent> aryaWindowComponents;
+	private ArrayList<IAryaComponent> aryaNavBarComponents;
 	private Div componentContainer;
 	private Div menuContainer;
 	private Label message;
@@ -20,34 +24,17 @@ public class AryaMain {
 		this.menuContainer = menuContainer;
 		this.componentContainer = componentContainer;
 		this.login = login;
-		this.aryaWindow = new AryaWindow();
-		this.aryaNavBar = new AryaNavBar();
+		this.aryaWindowComponents = new HashSet<IAryaComponent>();
+		this.aryaNavBarComponents = new ArrayList<IAryaComponent>();
 		this.message = message;
 	}
 
-	public AryaWindow getAryaWindow() {
-		return aryaWindow;
-	}
-
-	public void setAryaWindow(AryaWindow aryaWindow) {
-		this.aryaWindow = aryaWindow;
-	}
-
-	
 	public Div getComponentContainer() {
 		return componentContainer;
 	}
 
 	public void setComponentContainer(Div componentContainer) {
 		this.componentContainer = componentContainer;
-	}
-
-	public AryaNavBar getAryaNavBar() {
-		return aryaNavBar;
-	}
-
-	public void setAryaNavBar(AryaNavBar aryaNavBar) {
-		this.aryaNavBar = aryaNavBar;
 	}
 
 	public Div getMenuContainer() {
@@ -72,6 +59,22 @@ public class AryaMain {
 
 	public void setMessage(Label message) {
 		this.message = message;
+	}
+
+	public Set<IAryaComponent> getAryaWindowComponents() {
+		return aryaWindowComponents;
+	}
+
+	public void setAryaWindowComponents(Set<IAryaComponent> aryaWindowComponents) {
+		this.aryaWindowComponents = aryaWindowComponents;
+	}
+
+	public ArrayList<IAryaComponent> getAryaNavBarComponents() {
+		return aryaNavBarComponents;
+	}
+
+	public void setAryaNavBarComponents(ArrayList<IAryaComponent> aryaNavBarComponents) {
+		this.aryaNavBarComponents = aryaNavBarComponents;
 	}
 
 	
