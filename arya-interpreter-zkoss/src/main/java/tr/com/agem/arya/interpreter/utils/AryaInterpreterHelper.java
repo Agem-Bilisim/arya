@@ -33,9 +33,12 @@ import org.zkoss.zul.Listbox;
 import org.zkoss.zul.Radiogroup;
 import org.zkoss.zul.impl.InputElement;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import tr.com.agem.arya.interpreter.component.AryaComboItem;
 import tr.com.agem.arya.interpreter.component.AryaCombobox;
-import tr.com.agem.arya.interpreter.component.AryaDatebox;
 import tr.com.agem.arya.interpreter.component.AryaGrid;
 import tr.com.agem.arya.interpreter.component.AryaListCell;
 import tr.com.agem.arya.interpreter.component.AryaListItem;
@@ -44,6 +47,7 @@ import tr.com.agem.arya.interpreter.component.AryaRow;
 import tr.com.agem.arya.interpreter.component.AryaRows;
 import tr.com.agem.arya.interpreter.component.AryaScript;
 import tr.com.agem.arya.interpreter.component.AryaTab;
+import tr.com.agem.arya.interpreter.component.AryaTabbox;
 import tr.com.agem.arya.interpreter.component.AryaTabpanel;
 import tr.com.agem.arya.interpreter.component.AryaTabpanels;
 import tr.com.agem.arya.interpreter.component.AryaTabs;
@@ -60,10 +64,6 @@ import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.interpreter.IAryaTemplate;
 import tr.com.agem.core.property.reader.PropertyReader;
 import tr.com.agem.core.utils.AryaUtils;
-
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class AryaInterpreterHelper {
 
@@ -123,19 +123,35 @@ public class AryaInterpreterHelper {
 				tab.setTabPanel(null);
 				removeElement(main, panel.getParent(), panel);
 				removeElement(main, tab.getParent(), tab);
-			}
+			} 
+		
 			tab = null;
 
 			drawView(response.getView(), main, tab, tabs, tabpanels, false, tabValue);
 		}
 
 		if (AryaUtils.isNotEmpty(response.getData())) {
+			
 			AryaTab tab = getCurrentTab(tabs, tabValue);
+			
+			if(response.getView().isEmpty() && tab != null) {
+				
+				//to remove old listbox items at same page
+				if(getElementById(action, main) instanceof AryaListbox) {
+					
+					AryaListbox listbox = (AryaListbox) getElementById(action, main);
+
+					while(listbox.getChildren().size() > 1){
+						listbox.getChildren().remove(1);
+					}
+				}
+			}
+			
 			System.out.println("view:"+response.getView());
 			populateView(response.getData(), action, main, tab, tabValue);
 		}
 		
-		populateListComponents(main);
+		//populateListComponents(main);
 	}
 
 	public static void removeElement(AryaMain main, Component parent, Component component) {
@@ -148,6 +164,7 @@ public class AryaInterpreterHelper {
 					removeElement(main, component, c);
 				}
 			}
+			
 			if (component instanceof AryaScript) {
 				return;
 			}
@@ -190,18 +207,24 @@ public class AryaInterpreterHelper {
 			
 			AryaListItem item = new AryaListItem(main, null);
 			AryaRow row = new AryaRow(main, null);
+			AryaComboItem comboItem = new AryaComboItem(main, null);
 				
-			if (masterComponent.getClass().equals(AryaListbox.class)) {
+			if (masterComponent instanceof AryaListbox) {
 				item.setValue(jsonObj);
 				item.setComponentParent(masterComponent);
-			} else {
+			} 
+			else if (masterComponent instanceof AryaGrid) {
 				row.setValue(jsonObj);
 				row.setComponentParent(rows);
+			}
+			else if(masterComponent instanceof AryaCombobox) {
+				comboItem.setValue(jsonObj);
+				comboItem.setComponentParent(masterComponent);
 			}
 			
 			for (IAryaComponent comp : ((AryaTemplate) masterComponent.getAryaTemplate()).getChildren()) {
 				
-				if (!(comp instanceof AryaListItem) && !(comp instanceof AryaRow)) {
+				if (!(comp instanceof AryaListItem) && !(comp instanceof AryaRow) && !(comp instanceof AryaComboItem)) {
 					
 					AryaParserAttributes attr = new AryaParserAttributes();
 					attr.setValue("id", comp.getComponentId() + "" + (i));
@@ -213,13 +236,16 @@ public class AryaInterpreterHelper {
 						attr.setValue("value", splitId(comp.getComponentId(), jsonObj));
 						IAryaComponent compNew = ComponentFactory.getComponent(comp.getComponentTagName(), main, attr);
 						compNew.setComponentParent(row);
-					} else {
-
+					} else if (masterComponent instanceof AryaComboItem){
+						attr.setValue("value", splitId(comp.getComponentId(), jsonObj));
+						IAryaComponent compNew = ComponentFactory.getComponent(comp.getComponentTagName(), main, attr);
+						compNew.setComponentParent(comboItem);
 					}
 				}
 			}
 		}
 		
+			
 		ElementFunctions.setComps(null);
 		ElementFunctions.setValues(new ArrayList<String>());
 	}
@@ -312,80 +338,80 @@ public class AryaInterpreterHelper {
 		return obj == null ? "" : getJSONValue((JSONObject) obj, x);
 	}
 
-	private static void populateListComponents(AryaMain main) {
-		
-		for (Iterator<IAryaComponent> iterator = main.getAryaWindowComponents().iterator(); iterator.hasNext();) {
-			IAryaComponent comp = (IAryaComponent) iterator.next();
-			
-			if (comp instanceof AryaCombobox) {
-				AryaCombobox combobox = (AryaCombobox) comp;
-				
-				if (combobox.getTooltip() != null) {
-					AryaRequest request = new AryaRequest();
-					
-					request.setAction(combobox.getTooltip());
-					request.setRequestType(RequestTypes.DATA_ONLY);
-	
-					String responseStr=null;
-					try {
-						responseStr = AryaInterpreterHelper.callUrl(PropertyReader.property("gateway.base.url"), request);
-						
-						AryaResponse response = new AryaResponse();
-						response.fromXMLString(responseStr);
-						
-						
-						ObjectMapper mapper = new ObjectMapper();
-						try {
-							JsonNode rootNode = mapper.readTree(response.getData());
-							if (rootNode != null) {
-								Iterator<Map.Entry<String, JsonNode>> fields = rootNode.fields();
-								if (fields != null) {
-									while (fields.hasNext()) {
-										Map.Entry<String, JsonNode> entry = fields.next();
-										if ("results".equals(entry.getKey().toString())) {
-											
-											JSONArray jsonArray = new JSONArray(entry.getValue().toString());
-											
-											populateCombobox(main, jsonArray, combobox);
-											
-										}
-									}
-								}
-							}
-							
-
-						} catch (JsonProcessingException e) {
-							e.printStackTrace();
-						} catch (IOException e) {
-							e.printStackTrace();
-						}
-						
-						
-						System.out.println(responseStr);
-					} catch (Exception e) {
-						e.printStackTrace();
-					} 
-				}
-			}
-		}
-	}
-	
-	private static void populateCombobox(AryaMain main, JSONArray jsonArray, AryaCombobox combobox) {
-		
-		for (int i = 0; i < jsonArray.length(); i++) {
-			
-			JSONObject jsonObj = jsonArray.getJSONObject(i);
-			
-			AryaParserAttributes attr = new AryaParserAttributes();
-			attr.setValue("id", combobox.getComponentId() + "" + (i));
-			
-			attr.setValue("label", splitId(combobox.getComponentId(), jsonObj));
-			AryaComboItem comboItem = new AryaComboItem(main, attr);
-			comboItem.setComponentParent(combobox);
-			
-		} 
-		
-	}
+//	private static void populateListComponents(AryaMain main) {
+//		
+//		for (Iterator<IAryaComponent> iterator = main.getAryaWindowComponents().iterator(); iterator.hasNext();) {
+//			IAryaComponent comp = (IAryaComponent) iterator.next();
+//			
+//			if (comp instanceof AryaCombobox) {
+//				AryaCombobox combobox = (AryaCombobox) comp;
+//				
+//				if (combobox.getTooltip() != null) {
+//					AryaRequest request = new AryaRequest();
+//					
+//					request.setAction(combobox.getTooltip());
+//					request.setRequestType(RequestTypes.DATA_ONLY);
+//	
+//					String responseStr=null;
+//					try {
+//						responseStr = AryaInterpreterHelper.callUrl(PropertyReader.property("gateway.base.url"), request);
+//						
+//						AryaResponse response = new AryaResponse();
+//						response.fromXMLString(responseStr);
+//						
+//						
+//						ObjectMapper mapper = new ObjectMapper();
+//						try {
+//							JsonNode rootNode = mapper.readTree(response.getData());
+//							if (rootNode != null) {
+//								Iterator<Map.Entry<String, JsonNode>> fields = rootNode.fields();
+//								if (fields != null) {
+//									while (fields.hasNext()) {
+//										Map.Entry<String, JsonNode> entry = fields.next();
+//										if ("results".equals(entry.getKey().toString())) {
+//											
+//											JSONArray jsonArray = new JSONArray(entry.getValue().toString());
+//											
+//											populateCombobox(main, jsonArray, combobox);
+//											
+//										}
+//									}
+//								}
+//							}
+//							
+//
+//						} catch (JsonProcessingException e) {
+//							e.printStackTrace();
+//						} catch (IOException e) {
+//							e.printStackTrace();
+//						}
+//						
+//						
+//						System.out.println(responseStr);
+//					} catch (Exception e) {
+//						e.printStackTrace();
+//					} 
+//				}
+//			}
+//		}
+//	}
+//	
+//	private static void populateCombobox(AryaMain main, JSONArray jsonArray, AryaCombobox combobox) {
+//		
+//		for (int i = 0; i < jsonArray.length(); i++) {
+//			
+//			JSONObject jsonObj = jsonArray.getJSONObject(i);
+//			
+//			AryaParserAttributes attr = new AryaParserAttributes();
+//			attr.setValue("id", combobox.getComponentId() + "" + (i));
+//			
+//			attr.setValue("label", splitId(combobox.getComponentId(), jsonObj));
+//			AryaComboItem comboItem = new AryaComboItem(main, attr);
+//			comboItem.setComponentParent(combobox);
+//			
+//		} 
+//		
+//	}
 
 	private static void drawView(String view, AryaMain main, AryaTab tab, AryaTabs tabs, AryaTabpanels tabpanels, Boolean isMenu, String tabValue) {
 						

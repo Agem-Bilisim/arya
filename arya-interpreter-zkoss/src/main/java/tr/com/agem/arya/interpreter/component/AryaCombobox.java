@@ -9,14 +9,17 @@ import org.zkoss.zul.Combobox;
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.script.ScriptHelper;
 import tr.com.agem.core.interpreter.IAryaComponent;
+import tr.com.agem.core.interpreter.IAryaTemplate;
 import tr.com.agem.core.utils.AryaUtils;
 
-public class AryaCombobox extends Combobox implements IAryaComponent {
+public class AryaCombobox extends Combobox implements IAryaComponent, IAryaTemplate {
 
 	private static final long serialVersionUID = -1829374522609555406L;
 
 	private String componentClassName;
 	private String componentAttribute;
+	
+	private AryaTemplate template;
 
 	public AryaCombobox(final AryaMain main, Attributes attributes) {
 		super();
@@ -222,6 +225,16 @@ public class AryaCombobox extends Combobox implements IAryaComponent {
 		this.setValue(componentValue);
 	}
 
+	@Override
+	public Object getAryaTemplate() {
+		return template;
+	}
+
+	@Override
+	public void setAryaTemplate(Object template) {
+		this.template = (AryaTemplate) template;
+	}
+	
 	@Override
 	public String getComponentTagName() {
 		return "combobox";

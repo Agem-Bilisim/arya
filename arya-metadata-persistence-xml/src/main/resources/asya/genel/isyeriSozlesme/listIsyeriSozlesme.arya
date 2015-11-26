@@ -2,18 +2,29 @@
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listIsyerisozlesmeWindow">
-		<listbox id="list">
+		<listbox id="genel.isyeriSozlesme.list">
 			<listhead>
-				<listheader label="Şube" id="sube" />
-				<listheader label="SGK No/Kod" id="kod" />
-				<listheader label="Taraf" id="taraf" />
-				<listheader label="Başlangıç" id="baslangicTarihi" />
-				<listheader label="Bitiş" id="bitisTarihi" />
-				<listheader label="Süre" id="kalanGun" />
-				<listheader label="Başvuru" id="basvuruTarihi" />
+				<listheader label="Şube" />
+				<listheader label="SGK No/Kod" />
+				<listheader label="Taraf" />
+				<listheader label="Başlangıç" />
+				<listheader label="Bitiş" />
+				<listheader label="Süre" />
+				<listheader label="Başvuru" />
 			</listhead>
+			<template>
+				<listitem>
+					<listcell id="sube" />
+					<listcell id="kod" />
+					<listcell id="taraf" />
+					<listcell id="baslangicTarihi" />
+					<listcell id="bitisTarihi" />
+					<listcell id="kalanGun" />
+					<listcell id="basvuruTarihi" />
+				</listitem>
+			</template>
 		</listbox>
 	</window>
 	<script>
-$(document).ready( 	function () {	});AgemTable.rowDblClick = function(id) {	if (id) {		var d= AgemTable.get(id);		if (d.secilebilir == "1") {			if (AgemWM.exists('#genelSozlesmeSelect')) {				AgemWM.addQueryString(Agem.json2Param({sozlesmeIdParam: id, sozlesmeId: id}));				AgemWM.link('#genelSozlesmeSelect', {url: 'genel/sozlesme/select.do'});				Agem.message('Bilgiler okunuyor...');			} else {				<agem:access URL="genel/sozlesme/select">				AgemWM.window({ link:"genel/sozlesme/select.do?sozlesmeId="+id + "&sozlesmeIdParam="+id, label: "Sözleşmeler",width: 800, height: 600});				</agem:access>			}		}		}};	</script>
+	</script>
 </arya>

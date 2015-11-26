@@ -93,7 +93,7 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 			Object jsonParam = NativeJSON.stringify(context, scope, params, null, null);
 			params = jsonParam;
 		}
-
+		
 		StringBuilder request = new StringBuilder("{ \"params\": ")
 				.append(params)
 				.append(", \"requestType\": \"")
@@ -165,10 +165,30 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 			((IAryaComponent)getElementById(comp)).setComponentValue(value);
 				
 		} 
-		
+
 		if(!action.isEmpty())
 			post(action, "ALL", params, tabValue, null, null);
 		
+	}
+	
+	@AryaJsFunction
+	public void renderAtSamePage (String elementId, String id, String action, String tabValue) {
+		
+		//TODO id listbox olmayabilir???!??!?
+		JSONObject jsonObj = null;
+		
+		if(getElementById(elementId) instanceof AryaListbox) { 
+			jsonObj = ((AryaListbox)getElementById(elementId)).getSelectedItem().getValue();
+		}		
+		else if(getElementById(elementId) instanceof AryaCombobox) {
+			jsonObj = ((AryaCombobox)getElementById(elementId)).getSelectedItem().getValue();
+		}
+
+		 if(!action.isEmpty() && action.endsWith("list")) {
+			//TODO isyeriIdParam -> idParam
+			 String params = "{\"isyeriIdParam\":\""+ splitId(id, jsonObj)+"\",\"id\":\""+ splitId(id, jsonObj)+"\"}";
+			 post(action, "DATA_ONLY", params, tabValue, null, null);
+		}
 	}
 	
 	@AryaJsFunction

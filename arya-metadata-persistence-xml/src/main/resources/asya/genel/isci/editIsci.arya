@@ -20,7 +20,7 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 				</row>
 				<row>
 					<label id="sgkNolbl" value="SGK Sicil No" />
-					<intbox id="sgkNo"  value=""  width="200"  maxlength="13"  placeholder=""  />
+					<intbox id="sgkNo"  width="200"  maxlength="13"  placeholder=""  />
 				</row>
 				<row>
 					<label id="cinsiyetlbl" value="Cinsiyet" />

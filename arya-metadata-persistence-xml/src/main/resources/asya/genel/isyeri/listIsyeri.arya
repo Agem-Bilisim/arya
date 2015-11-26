@@ -3,7 +3,7 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listIsyeriWindow">
 		<vlayout>
-			<listbox id="genel.isyeri.list" onSelect="select_isyeri()" mold="paging" pagesize="5">
+			<listbox id="genel.isyeri.list" onSelect="render_sozlesmeler()" mold="paging" pagesize="5">
 				<listhead>
 					<listheader label="Şube" />
 					<listheader label="İşyeri SGK No" />
@@ -27,12 +27,35 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 					</listitem>
 				</template>
 			</listbox>
+			<label id="sozlesmelerLabellbl" value="Sözleşmeler" style="font-weight: bold; font-size: 110%" />
+			<listbox id="genel.isyeriSozlesme.list">
+				<listhead>
+					<listheader label="Şube" />
+					<listheader label="SGK No/Kod" />
+					<listheader label="Taraf" />
+					<listheader label="Başlangıç" />
+					<listheader label="Bitiş" />
+					<listheader label="Süre" />
+					<listheader label="Başvuru" />
+				</listhead>
+				<template>
+					<listitem>
+						<listcell id="sube" />
+						<listcell id="kod" />
+						<listcell id="taraf" />
+						<listcell id="baslangicTarihi" />
+						<listcell id="bitisTarihi" />
+						<listcell id="kalanGun" />
+						<listcell id="basvuruTarihi" />
+					</listitem>
+				</template>
+			</listbox>
 		</vlayout>
 	</window>
 	<script>
 	
-		select_isyeri = function(){
-			renderSelectedItem('list', 'id', 'genel.isyeri.select', [], [], 'İşyeri Bilgileri');
+		render_sozlesmeler = function() {
+			renderAtSamePage('isyeri.list', 'id', 'genel.isyeriSozlesme.list', 'İşyeri Listesi');
 		}
 		
 	</script>

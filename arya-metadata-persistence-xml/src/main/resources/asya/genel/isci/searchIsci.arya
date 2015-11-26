@@ -33,7 +33,10 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 					</row>
 					<row>
 						<label id="isyeriSubelbl" value="Şube" />
-						<combobox id="isyeri.sube"  width="120"  >
+						<combobox id="item"  width="120"  >
+							<template>
+								<comboitem id="isyeri.sube"/>
+							</template>
 						</combobox>
 					</row>
 					<row>
