@@ -33,9 +33,9 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 					</row>
 					<row>
 						<label id="isyeriSubelbl" value="Şube" />
-						<combobox id="item"  width="120"  >
+						<combobox id="genel.isyeri.list"  width="120" onOpen="list_sube()" >
 							<template>
-								<comboitem id="isyeri.sube"/>
+								<comboitem id="birim.label"/>
 							</template>
 						</combobox>
 					</row>
@@ -67,7 +67,11 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 		search_isci = function(){
 			send('genel.isci.list', 'ALL','isci_search_grid', '', 'İşçi Listesi');
 			
-		};
+		}
+		
+		list_sube = function(){
+			fillCombobox('genel.isyeri.list', 'İşçi Arama');
+		}
 		
 	</script>
 </arya>

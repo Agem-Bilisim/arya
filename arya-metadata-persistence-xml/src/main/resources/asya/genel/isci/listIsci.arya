@@ -23,7 +23,7 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 		
 		select_isci = function(){
 		
-			renderSelectedItem('list', 'id', 'genel.isci.select', [], [], 'İşçi Bilgileri');
+			renderSelectedItem('isci.list', 'id', 'genel.isci.select', [], [], 'İşçi Bilgileri');
 		
 		}
 		

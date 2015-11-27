@@ -1,10 +1,8 @@
 package tr.com.agem.arya.interpreter.script;
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -29,7 +27,6 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import tr.com.agem.arya.interpreter.component.AryaCombobox;
-import tr.com.agem.arya.interpreter.component.AryaDatebox;
 import tr.com.agem.arya.interpreter.component.AryaListbox;
 import tr.com.agem.arya.interpreter.component.AryaTabpanel;
 import tr.com.agem.arya.interpreter.component.AryaTabs;
@@ -188,6 +185,41 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 			//TODO isyeriIdParam -> idParam
 			 String params = "{\"isyeriIdParam\":\""+ splitId(id, jsonObj)+"\",\"id\":\""+ splitId(id, jsonObj)+"\"}";
 			 post(action, "DATA_ONLY", params, tabValue, null, null);
+		}
+	}
+	
+	@AryaJsFunction
+	public void fillCombobox (String parentId, String action, String tabValue) {
+		
+		if(getElementById(parentId) instanceof AryaCombobox) { 
+			
+			String params = "{\"json\":\"1\"}";
+		
+			StringBuilder request = new StringBuilder("{ \"params\": ")
+					.append(params)
+					.append(", \"requestType\": \"")
+					.append("DATA_ONLY")
+					.append("\", \"action\": \"")
+					.append(action)
+					.append("\" }");
+			
+			String result=null;
+			AryaResponse response=null;
+			
+			try {
+				result = AryaInterpreterHelper.callUrl(PropertyReader.property("gateway.base.url"), request.toString());
+				
+				logger.log(Level.FINE, "Post result: {0}", result);
+				
+				response = new AryaResponse();
+				response.fromXMLString(result);
+				
+				AryaInterpreterHelper.populateView(response.getData(), action, parentId, main, null, tabValue);
+			
+			
+			}catch (AryaException e) {
+				
+			}
 		}
 	}
 	

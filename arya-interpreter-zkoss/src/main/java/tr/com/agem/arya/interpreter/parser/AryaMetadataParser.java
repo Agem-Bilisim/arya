@@ -46,6 +46,9 @@ public class AryaMetadataParser extends DefaultHandler {
 				else if(currentComponent.peek() instanceof AryaGrid) {
 					((AryaGrid)currentComponent.peek()).setAryaTemplate(comp);
 				}
+				else if(currentComponent.peek() instanceof AryaCombobox) {
+					((AryaCombobox)currentComponent.peek()).setAryaTemplate(comp);
+				}
 				currentComponent.push(comp);
 			} else if ((currentComponent.size() > 0) && (currentComponent.peek() instanceof AryaTemplate)) {
 				AryaTemplate template = (AryaTemplate) currentComponent.peek();

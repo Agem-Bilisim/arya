@@ -196,6 +196,10 @@ public class AryaIntbox extends Intbox implements IAryaComponent {
 
 	@Override
 	public String getComponentValue() {
+		
+		if(this.getValue() == null)
+			return "";
+		
 		return String.valueOf(this.getValue());
 	}
 
