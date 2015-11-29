@@ -1,6 +1,7 @@
 package tr.com.agem.arya;
 
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.StrictMode;
@@ -10,6 +11,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewTreeObserver;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
@@ -17,19 +19,20 @@ import java.util.concurrent.ExecutionException;
 
 import tr.com.agem.arya.gateway.AryaInterpreterHelper;
 import tr.com.agem.arya.gateway.WebServiceConnectionAsyncTask;
-import tr.com.agem.arya.interpreter.AlertController;
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.script.ElementFunctions;
 import tr.com.agem.core.gateway.model.AryaRequest;
 import tr.com.agem.core.gateway.model.AryaResponse;
 import tr.com.agem.core.gateway.model.RequestTypes;
-
 import tr.com.agem.core.utils.AryaUtils;
 
 public class MainActivity extends ActionBarActivity {
     private static final String TAG = "MainActivity";
-    public static String inetAddr = "192.168.1.202"; // if you use AVD(emulator) just change it to 10.0.2.2 statically or if you use GENYMOTION set it to 10.0.3.2 .
-
+    public static String inetAddr = "10.0.3.2"; /* AVD(emulator) = 10.0.2.2
+                                                *  GENYMOTION = 10.0.3.2
+                                                *  PHYSICAL DEVICE = make sure that your device and PC connected to the same network
+                                                *  then type terminal ifconfig and paste the value "inet addr"
+                                                */
     private static AlertDialog alertDialog;
     private LinearLayout mainLayout;
     private AryaMain main;
@@ -49,10 +52,9 @@ public class MainActivity extends ActionBarActivity {
         mScrollView.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
             @Override
             public void onScrollChanged() {
-                if(mScrollView.getScrollY()==0){
+                if (mScrollView.getScrollY() == 0) {
                     mSwipeRefreshLayout.setEnabled(true);
-                }
-                else{
+                } else {
                     mSwipeRefreshLayout.setEnabled(false);
                 }
             }
@@ -66,7 +68,7 @@ public class MainActivity extends ActionBarActivity {
                     @Override
                     public void run() {
                         mSwipeRefreshLayout.setRefreshing(false);
-                        refresh(mainLayout);	//TODO I just called refresh() function for simplicity, It should be implemented with more appropriate post function.
+                        refresh(mainLayout);    //TODO I just called refresh() function for simplicity, It should be implemented with more appropriate post function.
                     }
                 }, 1000);
             }
@@ -89,8 +91,8 @@ public class MainActivity extends ActionBarActivity {
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
 
-        if(AryaUtils.isNotEmpty(main))
-            if(AryaUtils.isNotEmpty(main.getAryaNavBar())){
+        if (AryaUtils.isNotEmpty(main))
+            if (AryaUtils.isNotEmpty(main.getAryaNavBar())) {
                 menu = main.getAryaNavBar().fillMenuOptions(menu);
             }
 
@@ -105,8 +107,8 @@ public class MainActivity extends ActionBarActivity {
         AryaRequest requestMenu = new AryaRequest();
         requestMenu.setAction("menu");
         requestMenu.setRequestType(RequestTypes.VIEW_ONLY);
-        WebServiceConnectionAsyncTask connThreadMenu = new WebServiceConnectionAsyncTask("http://"+inetAddr+":8080/arya/rest/asya",requestMenu, getApplicationContext());
-        String responseMenuStr=null;
+        WebServiceConnectionAsyncTask connThreadMenu = new WebServiceConnectionAsyncTask("http://" + inetAddr + ":8080/arya/rest/asya", requestMenu, getApplicationContext());
+        String responseMenuStr = null;
         try {
             responseMenuStr = connThreadMenu.execute().get();
         } catch (InterruptedException e) {
@@ -114,18 +116,17 @@ public class MainActivity extends ActionBarActivity {
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
-        if(AryaInterpreterHelper.getjSessionId() == null || ElementFunctions.getLastPage() == null) {
+        if (AryaInterpreterHelper.getjSessionId() == null || ElementFunctions.getLastPage() == null) {
             request.setAction("login");
             request.setRequestType(RequestTypes.VIEW_ONLY);
 
-        }
-        else {
+        } else {
             request.setAction(ElementFunctions.getLastPage());
             request.setRequestType(RequestTypes.valueOf(ElementFunctions.getReqType()));
         }
 
 
-        WebServiceConnectionAsyncTask connThread = new WebServiceConnectionAsyncTask("http://"+inetAddr+":8080/arya/rest/asya",request, getApplicationContext());
+        WebServiceConnectionAsyncTask connThread = new WebServiceConnectionAsyncTask("http://" + inetAddr + ":8080/arya/rest/asya", request, getApplicationContext());
 
         String responseStr = null;
         try {
@@ -136,25 +137,59 @@ public class MainActivity extends ActionBarActivity {
             e.printStackTrace();
         }
 
-        if (responseStr != null && responseMenuStr !=null) {
+        if (responseStr != null && responseMenuStr != null) {
             AryaResponse response = new AryaResponse();
             response.fromXMLString(responseStr);
             AryaResponse responseMenu = new AryaResponse();
             responseMenu.fromXMLString(responseMenuStr);
 
-            main = new AryaMain(this,mainLayout);
+            main = new AryaMain(this, mainLayout);
             AryaInterpreterHelper.interpretResponseMenu(responseMenu, main);
-            if(request.getAction().equals("login")) {
-                AryaInterpreterHelper.interpretResponse(response,true, main);
-            }
-            else{
-                AryaInterpreterHelper.interpretResponse(response,false, main);
+            if (request.getAction().equals("login")) {
+                AryaInterpreterHelper.interpretResponse(response, true, main);
+            } else {
+                AryaInterpreterHelper.interpretResponse(response, false, main);
             }
 
         } else {
-            AlertController.setAndShowPrimerAlert(this, "HATA!", "Sunucuyla Bağlantı Kurulamadı", "Tamam");
+            AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
+            alertDialog.setTitle("HATA");
+            alertDialog.setMessage("Sunucuyla (" + inetAddr + ") baglanti kurulamadi. Adresi degistirmek icin asagidaki alanin kullaniniz.");
+
+            final EditText input = new EditText(MainActivity.this);
+            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.MATCH_PARENT);
+            input.setLayoutParams(lp);
+            alertDialog.setView(input);
+
+
+            alertDialog.setPositiveButton("Degistir",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                            inetAddr = input.getText().toString();
+                            refresh(mainLayout);
+                        }
+                    });
+
+            alertDialog.setNegativeButton("Degistirme",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                            refresh(mainLayout);
+                        }
+                    });
+
+
+            alertDialog.setIconAttribute(android.R.attr.alertDialogIcon);
+            alertDialog.show();
+
+
+            // AlertController.setAndShowPrimerAlert(this, "HATA!", "Sunucuyla("+inetAddr+") Bağlantı Kurulamadı", "Tamam");}
         }
     }
+
 
     public static AlertDialog getAlertDialog() {
         return alertDialog;
