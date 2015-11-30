@@ -42,13 +42,35 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build(); //for (Wrapped android.os.NetworkOnMainThreadException) exception abaout threads wich use network
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build(); //for (Wrapped android.os.NetworkOnMainThreadException) exception about threads which use network
         StrictMode.setThreadPolicy(policy);
 
         setContentView(R.layout.activity_main);
         mainLayout = (LinearLayout) findViewById(R.id.scrollViewContentLayout);
-        final ScrollView mScrollView = (ScrollView) findViewById(R.id.scrollView);
-        final SwipeRefreshLayout mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_view);
+        setupScrollView((SwipeRefreshLayout) findViewById(R.id.swipe_view), (ScrollView) findViewById(R.id.scrollView));
+        setupActionBar(getSupportActionBar());
+        refresh(mainLayout);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        menu.clear();
+        return true;
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+
+        if (AryaUtils.isNotEmpty(main))
+            if (AryaUtils.isNotEmpty(main.getAryaNavBar())) {
+                menu = main.getAryaNavBar().fillMenuOptions(menu);
+            }
+
+        return true;
+    }
+
+    private void setupScrollView(final SwipeRefreshLayout mSwipeRefreshLayout, final ScrollView mScrollView){
         mScrollView.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
             @Override
             public void onScrollChanged() {
@@ -73,32 +95,12 @@ public class MainActivity extends ActionBarActivity {
                 }, 1000);
             }
         });
+    }
 
-        ActionBar actionBar = getSupportActionBar();
+    private void setupActionBar(ActionBar actionBar){
         actionBar.setTitle("arya");
         actionBar.hide();
-
-        refresh(mainLayout);
     }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        menu.clear();
-        return true;
-    }
-
-    @Override
-    public boolean onPrepareOptionsMenu(Menu menu) {
-
-        if (AryaUtils.isNotEmpty(main))
-            if (AryaUtils.isNotEmpty(main.getAryaNavBar())) {
-                menu = main.getAryaNavBar().fillMenuOptions(menu);
-            }
-
-        return true;
-    }
-
     public void refresh(View v) {
 
         // Prepare initial request
@@ -152,45 +154,46 @@ public class MainActivity extends ActionBarActivity {
             }
 
         } else {
-            AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
-            alertDialog.setTitle("HATA");
-            alertDialog.setMessage("Sunucuyla (" + inetAddr + ") baglanti kurulamadi. Adresi degistirmek icin asagidaki alanin kullaniniz.");
-
-            final EditText input = new EditText(MainActivity.this);
-            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.MATCH_PARENT,
-                    LinearLayout.LayoutParams.MATCH_PARENT);
-            input.setLayoutParams(lp);
-            alertDialog.setView(input);
-
-
-            alertDialog.setPositiveButton("Degistir",
-                    new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.cancel();
-                            inetAddr = input.getText().toString();
-                            refresh(mainLayout);
-                        }
-                    });
-
-            alertDialog.setNegativeButton("Degistirme",
-                    new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.cancel();
-                            refresh(mainLayout);
-                        }
-                    });
-
-
-            alertDialog.setIconAttribute(android.R.attr.alertDialogIcon);
-            alertDialog.show();
-
+            setupConnectionFailedDialog( new AlertDialog.Builder(MainActivity.this));
 
             // AlertController.setAndShowPrimerAlert(this, "HATA!", "Sunucuyla("+inetAddr+") Bağlantı Kurulamadı", "Tamam");}
         }
     }
 
+    private void setupConnectionFailedDialog(AlertDialog.Builder alertDialog){
+        alertDialog.setTitle("HATA");
+        alertDialog.setMessage("Sunucuyla (" + inetAddr + ") baglanti kurulamadi. Adresi degistirmek icin asagidaki alanin kullaniniz.");
 
+        final EditText input = new EditText(MainActivity.this);
+        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.MATCH_PARENT);
+        input.setLayoutParams(lp);
+        alertDialog.setView(input);
+
+
+        alertDialog.setPositiveButton("Degistir",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                        inetAddr = input.getText().toString();
+                        refresh(mainLayout);
+                    }
+                });
+
+        alertDialog.setNegativeButton("Degistirme",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                        refresh(mainLayout);
+                    }
+                });
+
+
+        alertDialog.setIconAttribute(android.R.attr.alertDialogIcon);
+        alertDialog.show();
+
+    }
     public static AlertDialog getAlertDialog() {
         return alertDialog;
     }
