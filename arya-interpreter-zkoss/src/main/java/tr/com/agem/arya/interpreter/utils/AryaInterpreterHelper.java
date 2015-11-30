@@ -148,7 +148,7 @@ public class AryaInterpreterHelper {
 			}
 			
 			System.out.println("view:"+response.getView());
-			populateView(response.getData(), action, null, main, tab, tabValue);
+			populateView(response.getData(), action, main, tab, tabValue);
 		}
 	}
 
@@ -229,28 +229,29 @@ public class AryaInterpreterHelper {
 						attr.setValue("value", splitId(comp.getComponentId(), jsonObj));
 						IAryaComponent compNew = ComponentFactory.getComponent(comp.getComponentTagName(), main, attr);
 						compNew.setComponentParent(row);
-					} else if (masterComponent instanceof AryaCombobox){
-						
-						int size = ((AryaCombobox)masterComponent).getChildren().size();
-						boolean isExist = false;
-						String label = splitId(comp.getComponentId(), jsonObj);
-						
-						for (int j = 0; j < size; j++) {
-							
-							AryaComboItem cItem = (AryaComboItem) ((AryaCombobox)masterComponent).getChildren().get(j);
-							
-							if(cItem.getLabel().equals(label)) {
-								isExist = true;
-								break;
-							}
-						}
-						
-						if(isExist == false && label != null) {
-							attr.setValue("label", label);
-							AryaComboItem comboItem = new AryaComboItem(main, attr);
-							comboItem.setComponentParent(masterComponent);
-						}
-					}
+					} 
+//					else if (masterComponent instanceof AryaCombobox){
+//						
+//						int size = ((AryaCombobox)masterComponent).getChildren().size();
+//						boolean isExist = false;
+//						String label = splitId(comp.getComponentId(), jsonObj);
+//						
+//						for (int j = 0; j < size; j++) {
+//							
+//							AryaComboItem cItem = (AryaComboItem) ((AryaCombobox)masterComponent).getChildren().get(j);
+//							
+//							if(cItem.getLabel().equals(label)) {
+//								isExist = true;
+//								break;
+//							}
+//						}
+//						
+//						if(isExist == false && label != null) {
+//							attr.setValue("label", label);
+//							AryaComboItem comboItem = new AryaComboItem(main, attr);
+//							comboItem.setComponentParent(masterComponent);
+//						}
+//					}
 				}
 			}
 		}
@@ -260,7 +261,7 @@ public class AryaInterpreterHelper {
 		ElementFunctions.setValues(new ArrayList<String>());
 	}
 
-	public static void populateView(String data, String action, String comboId, AryaMain main, AryaTab tab, String tabValue) {
+	public static void populateView(String data, String action, AryaMain main, AryaTab tab, String tabValue) {
 
 		System.out.println(data);
 		ObjectMapper mapper = new ObjectMapper(); 
@@ -276,16 +277,13 @@ public class AryaInterpreterHelper {
 							try {
 								String message = "";
 								if (action.endsWith("list")) {
-									if(comboId == null) {
 										if (jsonArray.length() > 0) 
 											message=jsonArray.length()+" adet kayıt bulundu."; 
 										else
 											message="Hiçbir kayıt bulunamadı.";
 										
 										populateAryaTemplate(main, (IAryaTemplate) getElementById(action, main), jsonArray);
-									}
-									else
-										populateAryaTemplate(main, (IAryaTemplate) getElementById(comboId, main), jsonArray);
+									
 								} 
 								else  if (jsonArray.length() == 1){  
 									JSONObject jsonObj = jsonArray.getJSONObject(0);

@@ -23,6 +23,8 @@ public class AryaResponse implements IAryaResponse
 	 * response data in JSON  
 	 */
 	private String data;
+	
+	private String attributes;
 
 	public String getView() {
 		return view;
@@ -38,6 +40,15 @@ public class AryaResponse implements IAryaResponse
 
 	public void setData(String data) {
 		this.data = data;
+	}
+	
+	public void setAttributes(String attributes) {
+		this.attributes = attributes;
+	}
+	
+	@Override
+	public String getAttributes() {
+		return attributes;
 	}
 	
 	public void fromXMLString(String xmlString) {
@@ -91,5 +102,7 @@ public class AryaResponse implements IAryaResponse
 
 		return xmlString.toString();
 	}
+
+	
 
 }

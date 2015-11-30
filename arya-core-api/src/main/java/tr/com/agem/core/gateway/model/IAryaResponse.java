@@ -7,4 +7,5 @@ public interface IAryaResponse
 	String toString();
 	String getView();
 	String getData();
+	String getAttributes();
 }
