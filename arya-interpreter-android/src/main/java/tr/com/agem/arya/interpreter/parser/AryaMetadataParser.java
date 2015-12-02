@@ -1,21 +1,18 @@
 package tr.com.agem.arya.interpreter.parser;
 
-import android.view.View;
-import android.view.ViewGroup;
-
 import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;
 
 import java.util.ArrayList;
 import java.util.Stack;
 
-
+import tr.com.agem.arya.interpreter.components.AryaListBox;
+import tr.com.agem.arya.interpreter.components.AryaScript;
+import tr.com.agem.arya.interpreter.components.AryaTemplate;
+import tr.com.agem.arya.interpreter.components.ComponentFactory;
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
-
 import tr.com.agem.arya.interpreter.components.menu.AryaMenu;
 import tr.com.agem.arya.interpreter.components.menu.AryaMenuItem;
-import tr.com.agem.arya.interpreter.components.AryaScript;
-import tr.com.agem.arya.interpreter.components.ComponentFactory;
 import tr.com.agem.arya.interpreter.components.menu.AryaPopupMenu;
 import tr.com.agem.core.interpreter.IAryaComponent;
 
@@ -35,14 +32,25 @@ public class AryaMetadataParser extends DefaultHandler {
         IAryaComponent comp = ComponentFactory.getComponent(tagName,main, attributes);
 
         if (comp != null) {
-
-            if(currentComponent.size() > 0 ){
-                if((!(comp instanceof IAryaMenu))){
-                    if( ((View)comp).getParent()!=null) { //have to check whether it is instanceof AryaMenuItem or not because MenuItems cannot be casted to View
+            if (comp instanceof AryaTemplate) {
+                if (currentComponent.peek() instanceof AryaListBox) {
+                    ((AryaListBox)currentComponent.peek()).setAryaTemplate(comp);
+                }
+                currentComponent.push(comp);
+            }
+            else if(currentComponent.size() > 0 ){
+                if((currentComponent.peek() instanceof AryaTemplate)) {
+                    AryaTemplate template = (AryaTemplate) currentComponent.peek();
+                    template.getChildren().add(comp);
+                    currentComponent.push(template);
+                }
+                else if((!(comp instanceof IAryaMenu))){
+                    /*if( ((View)comp).getParent()!=null) { //have to check whether it is instanceof AryaMenuItem or not because MenuItems cannot be casted to View
                         ((ViewGroup) ((View) comp).getParent()).removeView((View) comp);
-                    }
-                    comp.setComponentParent(currentComponent.peek());}
-                else{
+                    }*/
+                    comp.setComponentParent(currentComponent.peek());
+
+                } else{
                     if(comp instanceof AryaPopupMenu){
                         ((AryaPopupMenu) comp).setLabel(((AryaMenu)currentComponent.peek()).getLabel());
                         main.getAryaNavBar().getMenuBar().getMenuItems().remove(main.getAryaNavBar().getMenuBar().getMenuItems().size()-1); //Remove Menu if it has a popupchild, just delegate it's name to popup menu
@@ -70,14 +78,18 @@ public class AryaMetadataParser extends DefaultHandler {
                 }
             }
 
+            if (!(comp instanceof AryaTemplate)) {
 
-            currentComponent.push(comp);
+                if(!((currentComponent.size() > 0) && (currentComponent.peek() instanceof AryaTemplate))) {
+                    currentComponent.push(comp);
 
-            if (main.getAryaWindow().getComponents() == null) {
-                main.getAryaWindow().setComponents(new ArrayList<IAryaComponent>());
+                    if (main.getAryaWindow().getComponents() == null) {
+                        main.getAryaWindow().setComponents(new ArrayList<IAryaComponent>());
+                    }
+
+                    main.getAryaWindow().getComponents().add(comp);
+                }
             }
-
-            main.getAryaWindow().getComponents().add(comp);
         }
     }
 

@@ -41,6 +41,5 @@
 		</menu>
 		<menu label="Rakip Sendikalar">
 		</menu>
-		<menuitem label="Çıkış" onClick="post('login', 'LOGOUT',{'json': '1'}, 'Çıkış')"/>
 	</menubar>
 </arya>

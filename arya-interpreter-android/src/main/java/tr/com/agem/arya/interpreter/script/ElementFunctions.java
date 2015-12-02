@@ -2,34 +2,26 @@ package tr.com.agem.arya.interpreter.script;
 
 import android.view.View;
 
-import java.io.IOException;
-import java.net.CookieHandler;
-import java.net.CookieManager;
-import java.net.CookiePolicy;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map.Entry;
-import java.util.concurrent.ExecutionException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.mozilla.javascript.Context;
 import org.mozilla.javascript.NativeFunction;
 import org.mozilla.javascript.NativeJSON;
 import org.mozilla.javascript.Scriptable;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map.Entry;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import tr.com.agem.arya.MainActivity;
 import tr.com.agem.arya.gateway.AryaInterpreterHelper;
-import tr.com.agem.arya.gateway.WebServiceConnectionAsyncTask;
-import tr.com.agem.arya.interpreter.AlertController;
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
-import tr.com.agem.core.gateway.model.AryaRequest;
 import tr.com.agem.core.gateway.model.AryaResponse;
-import tr.com.agem.core.gateway.model.RequestTypes;
 import tr.com.agem.core.interpreter.IAryaComponent;
 
 public class ElementFunctions extends AnnotatedScriptableObject {
@@ -100,10 +92,10 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 		response.fromXMLString(result);//TODO result check
 
 		if(tabValue.equals("login")) {
-			AryaInterpreterHelper.interpretResponse(response, true, main);
+			AryaInterpreterHelper.interpretResponse(response, action, true, main);
 		}
 		else{
-			AryaInterpreterHelper.interpretResponse(response, false, main);
+			AryaInterpreterHelper.interpretResponse(response, action, false, main);
 		}
 
 		//TODO response fail condition add

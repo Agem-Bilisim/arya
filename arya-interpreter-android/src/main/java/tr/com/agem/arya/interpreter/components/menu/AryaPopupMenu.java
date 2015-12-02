@@ -9,7 +9,6 @@ import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.SubMenu;
 import android.view.View;
-import android.widget.Toast;
 
 import org.xml.sax.Attributes;
 
@@ -17,12 +16,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import tr.com.agem.arya.MainActivity;
-
-
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.components.base.AryaNavBar;
 import tr.com.agem.arya.interpreter.parser.IAryaMenu;
-
+import tr.com.agem.arya.interpreter.script.ScriptHelper;
 import tr.com.agem.core.interpreter.IAryaComponent;
 
 
@@ -51,7 +48,8 @@ public class AryaPopupMenu implements IAryaComponent,IAryaMenu, MenuItem {//TODO
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 selectedItem = which;
-                                menuItems.get(selectedItem).getOnMenuItemClickListener();
+                                //menuItems.get(selectedItem).getOnMenuItemClickListener();
+                                ScriptHelper.executeScript( menuItems.get(selectedItem).getOnClick(), null, main);
                                 dialog.dismiss();
                             }
                         });

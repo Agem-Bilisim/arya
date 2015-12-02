@@ -66,6 +66,8 @@ public class ComponentFactory {
             comp = new AryaVlayout(attributes,main);
         }else if ("hlayout".equalsIgnoreCase(tagName)) {
             comp = new AryaHlayout(attributes,main);
+        }else if ("template".equalsIgnoreCase(tagName)) {
+            comp = new AryaTemplate(attributes,main);
         }
 
         return comp;

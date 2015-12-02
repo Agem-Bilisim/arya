@@ -28,7 +28,7 @@ import tr.com.agem.core.utils.AryaUtils;
 
 public class MainActivity extends ActionBarActivity {
     private static final String TAG = "MainActivity";
-    public static String inetAddr = "10.0.3.2"; /* AVD(emulator) = 10.0.2.2
+    public static String inetAddr = "192.168.1.236"; /* AVD(emulator) = 10.0.2.2
                                                 *  GENYMOTION = 10.0.3.2
                                                 *  PHYSICAL DEVICE = make sure that your device and PC connected to the same network
                                                 *  then type terminal ifconfig and paste the value "inet addr"
@@ -148,9 +148,9 @@ public class MainActivity extends ActionBarActivity {
             main = new AryaMain(this, mainLayout);
             AryaInterpreterHelper.interpretResponseMenu(responseMenu, main);
             if (request.getAction().equals("login")) {
-                AryaInterpreterHelper.interpretResponse(response, true, main);
+                AryaInterpreterHelper.interpretResponse(response, request.getAction(), true, main);
             } else {
-                AryaInterpreterHelper.interpretResponse(response, false, main);
+                AryaInterpreterHelper.interpretResponse(response, request.getAction(), false, main);
             }
 
         } else {

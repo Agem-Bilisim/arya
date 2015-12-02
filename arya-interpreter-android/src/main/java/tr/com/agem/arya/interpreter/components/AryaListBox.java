@@ -1,18 +1,21 @@
 package tr.com.agem.arya.interpreter.components;
 
+import android.widget.TableLayout;
+
 import org.xml.sax.Attributes;
 
-import android.widget.TableLayout;
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.core.interpreter.IAryaComponent;
+import tr.com.agem.core.interpreter.IAryaTemplate;
 import tr.com.agem.core.utils.AryaUtils;
 
-public class AryaListBox extends TableLayout implements IAryaComponent {
+public class AryaListBox extends TableLayout implements IAryaComponent, IAryaTemplate {
 
 	private String componentClassName;
 	private String componentId;
 	private String componentAttribute;
 	private String componentValue;
+	private AryaTemplate template;
 
 	public AryaListBox(Attributes attributes, AryaMain main) {
 
@@ -78,8 +81,19 @@ public class AryaListBox extends TableLayout implements IAryaComponent {
 	}
 
 	@Override
+	public Object getAryaTemplate() {
+		return template;
+	}
+
+	@Override
+	public void setAryaTemplate(Object template) {
+		this.template = (AryaTemplate) template;
+	}
+
+	@Override
 	public String getComponentTagName() {
 		return "listbox";
 	}
+
 
 }

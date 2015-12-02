@@ -1,4 +1,17 @@
 package tr.com.agem.arya.gateway;
+
+import android.app.Activity;
+import android.widget.ImageView;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
+
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -12,30 +25,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import android.app.Activity;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageView;
-
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
-
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
-import tr.com.agem.arya.MainActivity;
 import tr.com.agem.arya.R;
-import tr.com.agem.arya.interpreter.components.AryaListCell;
 import tr.com.agem.arya.interpreter.components.AryaListBox;
+import tr.com.agem.arya.interpreter.components.AryaListCell;
 import tr.com.agem.arya.interpreter.components.AryaListItem;
+import tr.com.agem.arya.interpreter.components.AryaTemplate;
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.components.base.AryaNavBar;
 import tr.com.agem.arya.interpreter.parser.AryaMetadataParser;
@@ -44,6 +42,7 @@ import tr.com.agem.arya.interpreter.parser.IAryaMenu;
 import tr.com.agem.core.gateway.model.AryaRequest;
 import tr.com.agem.core.gateway.model.AryaResponse;
 import tr.com.agem.core.interpreter.IAryaComponent;
+import tr.com.agem.core.interpreter.IAryaTemplate;
 import tr.com.agem.core.utils.AryaUtils;
 
 
@@ -118,7 +117,7 @@ public class AryaInterpreterHelper {
     }
 
 
-    public static void interpretResponse(AryaResponse response, boolean login, AryaMain main) { //Overloaded function
+    public static void interpretResponse(AryaResponse response, String action, boolean login, AryaMain main) { //Overloaded function
 
 
         if(login){
@@ -151,7 +150,7 @@ public class AryaInterpreterHelper {
         }
 
         if(AryaUtils.isNotEmpty(response.getData()))
-            AryaInterpreterHelper.populateView(response.getData(), main);
+            AryaInterpreterHelper.populateView(response.getData(), action, main);
 
     }
 
@@ -190,94 +189,79 @@ public class AryaInterpreterHelper {
             image.setPadding(700, 0, 1, 0);
 
         main.getAryaWindow().addView(image);
-    }}
+        }
+    }
+
+    private static void populateAryaTemplate(AryaMain main, IAryaTemplate masterComponent, JSONArray jsonArrayData) {
 
 
-    public static void populateView(String responseData, AryaMain main) {
+        for (int i = 0; i < jsonArrayData.length(); i++) {
 
+            JSONObject jsonObj = jsonArrayData.getJSONObject(i);
+
+            AryaListItem item = new AryaListItem(null, main);
+
+            if (masterComponent instanceof AryaListBox) {
+                item.setComponentValue(jsonObj.toString());
+                item.setComponentParent(masterComponent);
+            }
+
+            for (IAryaComponent comp : ((AryaTemplate) masterComponent.getAryaTemplate()).getChildren()) {
+
+                if (!(comp instanceof AryaListItem)) {
+
+                    AryaParserAttributes attr = new AryaParserAttributes();
+                    attr.setValue("id", comp.getComponentId() + "" + (i));
+                    if (masterComponent instanceof AryaListBox) {
+                        attr.setValue("label", splitId(comp.getComponentId(), jsonObj));
+                        AryaListCell cell = new AryaListCell(attr, main, null);
+                        cell.setComponentParent(item);
+                    }
+                }
+            }
+        }
+    }
+
+
+    public static void populateView(String data, String action, AryaMain main) {
+
+        System.out.println(data);
         ObjectMapper mapper = new ObjectMapper();
-
         try {
-            JsonNode rootNode = mapper.readTree(responseData);
-
+            JsonNode rootNode = mapper.readTree(data);
             if (rootNode != null) {
                 Iterator<Map.Entry<String, JsonNode>> fields = rootNode.fields();
-
                 if (fields != null) {
-
                     while (fields.hasNext()) {
                         Map.Entry<String, JsonNode> entry = fields.next();
+                        if ("results".equals(entry.getKey().toString())) {
+                            JSONArray jsonArray = new JSONArray(entry.getValue().toString());
+                            try {
+                                String message = "";
+                                if (action.endsWith("list")) {
+                                    if (jsonArray.length() > 0)
+                                        message=jsonArray.length()+" adet kayıt bulundu.";
+                                    else
+                                        message="Hiçbir kayıt bulunamadı.";
 
+                                    populateAryaTemplate(main, (IAryaTemplate) getElementById(action, main), jsonArray);
 
-                        if("results".equals(entry.getKey().toString())){
-                            if ("results".equals(entry.getKey().toString())) {
+                                }
+                                else  if (jsonArray.length() == 1){
 
-                                JSONArray jsonArray = new JSONArray(entry.getValue().toString());
-
-                                for (int i = 0; i < jsonArray.length(); i++) {
-                                    JSONObject jsonObj = jsonArray.getJSONObject(i);
-
-
-
-                                    String whatYouWantToFill = "list";// TODO liste datası olup olmadığı anlaşılmalı
-
-                                    if ("list".equals(whatYouWantToFill)) {
-
-                                        AryaListItem item = new AryaListItem(null,main);
-                                        item.setComponentParent(getElementById("list", main));
-
-                                        AryaListBox lb = (AryaListBox) getElementById("list", main);
-
-
-
-                                        /*for(int k=0; k<lb.getChildCount(); k++) {
-                                            Log.d("aaa", lb.getChildAt(k).toString());
-                                        }*/
-
-
-
-
-
-
-                                        for (Iterator<?> iterator = jsonObj.keySet().iterator(); iterator.hasNext();) {///TODO (volkan)
-                                            String key = (String) iterator.next();
-
-                                            if (AryaUtils.isNotEmpty(jsonObj.get(key).toString())&&AryaUtils.isNotEmpty(getElementById(key, main))) {
-                                                AryaParserAttributes attr = new AryaParserAttributes();
-                                                attr.setValue("id", key + "" + (i));
-                                                attr.setValue("label", jsonObj.get(key).toString());
-                                                AryaListCell cell = new AryaListCell(attr, main, null);
-                                                cell.setComponentParent(item);
-
-
-                                            }
-                                        }
-
-
-                                    } else {
-                                        for (Iterator<?> iterator = jsonObj.keySet().iterator(); iterator.hasNext();) {
-                                            String key = (String) iterator.next();
-                                            IAryaComponent c = (IAryaComponent) getElementById(key, main);
-
-                                            if (AryaUtils.isNotEmpty(jsonObj.get(key).toString())&& AryaUtils.isNotEmpty(c))
-                                                c.setComponentValue(jsonObj.get(key).toString());
-                                        }
-
-                                    }
 
                                 }
                             }
+                            catch (Exception e ) {
 
+                            }
                         }
                     }
                 }
             }
-
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         } catch (IOException e) {
-            e.printStackTrace();
-        } catch (JSONException e) {
             e.printStackTrace();
         }
 
@@ -286,10 +270,10 @@ public class AryaInterpreterHelper {
 
     public static Object getElementById(String id, AryaMain main) {
 
-        View child = null;
-        for (int i = 0; i < main.getAryaWindow().getChildCount(); i++) {
+        IAryaComponent child = null;
+        for (int i = 0; i < main.getAryaWindow().getComponents().size(); i++) {
 
-            child = main.getAryaWindow().getChildAt(i);
+            child = main.getAryaWindow().getComponents().get(i);
             if (child instanceof IAryaComponent) {
                 IAryaComponent o = (IAryaComponent) child;
 
@@ -299,6 +283,40 @@ public class AryaInterpreterHelper {
             }
         }
         return null;
+    }
+
+    public static String splitId(String id, JSONObject jsonObj) {
+
+        String retVal = null;
+        JSONObject obj = jsonObj;
+
+        if (jsonObj != null) {
+
+            String[] spl;
+
+            if(id.contains("-")) {
+
+                String[] temp = id.split("-");
+                spl = temp[1].split("\\.");
+            }
+            else {
+                spl = id.split("\\.");
+            }
+
+            for (int i = 0; i < spl.length - 1; i++)
+                obj = (JSONObject) obj.get(spl[i]);
+
+            Object ret;
+
+            if (obj != null)
+                ret = obj.get(spl[spl.length - 1]);
+            else
+                ret = jsonObj.get(spl[0]);
+            if (!ret.equals(JSONObject.NULL)) {
+                retVal = ret.toString();
+            }
+        }
+        return retVal;
     }
 
     public static String getjSessionId() {

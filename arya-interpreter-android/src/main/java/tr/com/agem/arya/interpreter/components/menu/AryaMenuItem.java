@@ -12,7 +12,6 @@ import org.xml.sax.Attributes;
 
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.parser.IAryaMenu;
-import tr.com.agem.arya.interpreter.script.ScriptHelper;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
 
@@ -20,34 +19,37 @@ public class AryaMenuItem implements IAryaComponent,IAryaMenu, MenuItem {//TODO
 
 
     private String label;
-    private OnMenuItemClickListener onMenuItemClickListener;
-
+    //private OnMenuItemClickListener onMenuItemClickListener;
+    private String onClick;
 
     public AryaMenuItem(Attributes attributes, final AryaMain main) {
 
         if(AryaUtils.isNotEmpty(attributes)){
             this.label=attributes.getValue("label");
 
-            final String onClick =  attributes.getValue("onClick");
+            onClick =  attributes.getValue("onClick");
 
-            if(AryaUtils.isNotEmpty(onClick)){
+           /* if(AryaUtils.isNotEmpty(onClick)){
                 this.setOnMenuItemClickListener(new OnMenuItemClickListener() {
                     @Override
                     public boolean onMenuItemClick(MenuItem menuItem) {
                         ScriptHelper.executeScript(onClick, null,main );
 
-                        return false;
+                        return true;
                     }
                 });
-            }
+            }*/
         }
     }
 
-    @Override
+   /* @Override
     public OnMenuItemClickListener getOnMenuItemClickListener() {
         return onMenuItemClickListener;
-    }
+    }*/
 
+    public String getOnClick() {
+        return onClick;
+    }
 
     @Override
     public void setComponentParent(Object o) {
@@ -67,6 +69,10 @@ public class AryaMenuItem implements IAryaComponent,IAryaMenu, MenuItem {//TODO
         this.label = label;
     }
 
+    @Override
+    public OnMenuItemClickListener getOnMenuItemClickListener() {
+        return null;
+    }
 
 
     @Override
@@ -210,10 +216,15 @@ public class AryaMenuItem implements IAryaComponent,IAryaMenu, MenuItem {//TODO
     }
 
     @Override
-    public MenuItem setOnMenuItemClickListener(OnMenuItemClickListener onMenuItemClickListener) {
-        this.onMenuItemClickListener=onMenuItemClickListener;
+    public MenuItem setOnMenuItemClickListener(OnMenuItemClickListener menuItemClickListener) {
         return null;
     }
+
+    /*@Override
+    public MenuItem setOnMenuItemClickListener(OnMenuItemClickListener onMenuItemClickListener) {
+        this.onMenuItemClickListener = onMenuItemClickListener;
+        return null;
+    }*/
 
     @Override
     public ContextMenu.ContextMenuInfo getMenuInfo() {
