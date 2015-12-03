@@ -1,5 +1,6 @@
 package tr.com.agem.arya.interpreter.components.menu;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -50,6 +51,8 @@ public class AryaPopupMenu implements IAryaComponent,IAryaMenu, MenuItem {//TODO
                                 selectedItem = which;
                                 //menuItems.get(selectedItem).getOnMenuItemClickListener();
                                 ScriptHelper.executeScript( menuItems.get(selectedItem).getOnClick(), null, main);
+
+
                                 dialog.dismiss();
                             }
                         });
