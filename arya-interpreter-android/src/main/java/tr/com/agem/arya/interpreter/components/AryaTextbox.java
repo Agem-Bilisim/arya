@@ -1,6 +1,5 @@
 package tr.com.agem.arya.interpreter.components;
 
-import android.app.ActionBar;
 import android.graphics.Color;
 import android.text.InputFilter;
 import android.text.InputType;
@@ -9,6 +8,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.TableRow;
 import android.widget.Toast;
 
 import org.xml.sax.Attributes;
@@ -99,7 +99,7 @@ public class AryaTextbox extends EditText implements IAryaComponent {
             // Multiline
             String rowsStr =attributes.getValue("placeholder");
             int rows;
-            if (rowsStr != null && (rows = Integer.parseInt(rowsStr)) > 0) {
+            if (rowsStr != null && !(rowsStr.equals("")) && (rows = Integer.parseInt(rowsStr)) > 0) {
                 this.setInputType(InputType.TYPE_TEXT_FLAG_MULTI_LINE);
                 this.setLines(rows);
                 this.setMinLines(rows);
@@ -131,7 +131,16 @@ public class AryaTextbox extends EditText implements IAryaComponent {
 
     @Override
     public void setComponentParent(Object o) {
-        ((ViewGroup)o).addView(this);
+
+        if(o instanceof AryaListItem){
+            AryaListItem li = (AryaListItem) o;
+
+            this.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT, 10.0f));
+            li.addView(this);
+        }
+        else {
+            ((ViewGroup)o).addView(this);
+        }
     }
 
     public boolean isMandatory() {

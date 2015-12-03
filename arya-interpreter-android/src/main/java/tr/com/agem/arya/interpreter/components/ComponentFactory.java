@@ -34,13 +34,13 @@ public class ComponentFactory {
             comp = new AryaMultipleComboBox(attributes, main);
         }else if ("mcomboitem".equalsIgnoreCase(tagName)) {
             comp = new AryaMultipleComboItem(attributes, main);
-        }else if ("listbox".equalsIgnoreCase(tagName)) {
+        }else if ("listbox".equalsIgnoreCase(tagName) || "grid".equalsIgnoreCase(tagName)) {
             comp = new AryaListBox(attributes, main);
         }else if ("listhead".equalsIgnoreCase(tagName)) { // maybe create head class for self properties TODO sıraya göre değil direk head olmalı çizerken(volkan)
             comp = new AryaListItem(attributes, main);
         }else if ("listheader".equalsIgnoreCase(tagName)||"listcell".equalsIgnoreCase(tagName)) {
             comp = new AryaListCell(attributes, main,tagName);
-        }else if ("listitem".equalsIgnoreCase(tagName)) {
+        }else if ("listitem".equalsIgnoreCase(tagName) || "row".equalsIgnoreCase(tagName)) {
             comp = new AryaListItem(attributes, main);
         }else if ("script".equalsIgnoreCase(tagName)) {
             comp = new AryaScript(attributes,main);

@@ -1,5 +1,8 @@
 package tr.com.agem.arya.interpreter.parser;
 
+import android.view.View;
+import android.view.ViewGroup;
+
 import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;
 
@@ -15,6 +18,7 @@ import tr.com.agem.arya.interpreter.components.menu.AryaMenu;
 import tr.com.agem.arya.interpreter.components.menu.AryaMenuItem;
 import tr.com.agem.arya.interpreter.components.menu.AryaPopupMenu;
 import tr.com.agem.core.interpreter.IAryaComponent;
+import tr.com.agem.core.interpreter.IAryaTemplate;
 
 public class AryaMetadataParser extends DefaultHandler {
 
@@ -44,10 +48,10 @@ public class AryaMetadataParser extends DefaultHandler {
                     template.getChildren().add(comp);
                     currentComponent.push(template);
                 }
-                else if((!(comp instanceof IAryaMenu))){
-                    /*if( ((View)comp).getParent()!=null) { //have to check whether it is instanceof AryaMenuItem or not because MenuItems cannot be casted to View
+                else if((!(comp instanceof IAryaMenu)) && (!(comp instanceof IAryaTemplate))){
+                    if( ((View)comp).getParent()!=null) { //have to check whether it is instanceof AryaMenuItem or not because MenuItems cannot be casted to View
                         ((ViewGroup) ((View) comp).getParent()).removeView((View) comp);
-                    }*/
+                    }
                     comp.setComponentParent(currentComponent.peek());
 
                 } else{

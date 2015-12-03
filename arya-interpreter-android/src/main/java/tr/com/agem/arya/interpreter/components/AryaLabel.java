@@ -1,13 +1,14 @@
 package tr.com.agem.arya.interpreter.components;
 
-import org.xml.sax.Attributes;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TableRow;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
-import android.widget.Toast;
+import org.xml.sax.Attributes;
 
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.script.ScriptHelper;
@@ -69,7 +70,17 @@ public class AryaLabel extends TextView implements IAryaComponent {
 
     @Override
     public void setComponentParent(Object o) {
-        ((ViewGroup)o).addView(this);
+
+        if(o instanceof AryaListItem){
+            AryaListItem li = (AryaListItem) o;
+
+            this.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT, 10.0f));
+            li.addView(this);
+        }
+        else {
+            ((ViewGroup)o).addView(this);
+        }
+
     }
 
     public void setComponentId(String componentId) {this.componentId = componentId;}
