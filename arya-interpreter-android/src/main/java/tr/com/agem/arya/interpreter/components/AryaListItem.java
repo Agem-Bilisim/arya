@@ -23,6 +23,7 @@ public class AryaListItem extends TableRow implements IAryaComponent {
             this.componentClassName = attributes.getValue("class");
             this.componentValue = attributes.getValue("value");
             this.componentAttribute = attributes.getValue("attribute");
+
         }
     }
 
@@ -31,7 +32,7 @@ public class AryaListItem extends TableRow implements IAryaComponent {
     public void setComponentParent(Object o) {
         AryaListBox lb = (AryaListBox) o;
 
-        this.setLayoutParams(new TableRow.LayoutParams(LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT, 10.0f));
+        this.setLayoutParams(new TableRow.LayoutParams(LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT, 10.0f));
         this.setPadding(1, 1, 1, 1);
 
         lb.addView(this);

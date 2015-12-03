@@ -1,9 +1,14 @@
 package tr.com.agem.arya.interpreter.components;
 
+import android.app.ActionBar;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.util.TypedValue;
+import android.view.Gravity;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TableRow;
 import android.widget.TextView;
 
@@ -19,7 +24,7 @@ public class AryaListCell extends TextView implements IAryaComponent {
     private String componentValue;
     private String componentClassName;
     private String componentAttribute;
-
+    private boolean stretched =false;
 
     public AryaListCell(Attributes attributes,AryaMain main, String tag) {
         super(main.getAryaWindow().getContext());
@@ -32,6 +37,24 @@ public class AryaListCell extends TextView implements IAryaComponent {
             this.componentAttribute = attributes.getValue("attribute");
 
             this.setText(attributes.getValue("label"));
+           // this.setMinimumWidth(ActionBar.LayoutParams.WRAP_CONTENT);
+           // this.setMinimumHeight(ActionBar.LayoutParams.WRAP_CONTENT);
+            this.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(!stretched){
+                        setLayoutParams(new TableRow.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ActionBar.LayoutParams.MATCH_PARENT, 1f));
+                        stretched=true;
+                    }
+                    else{
+                        setLayoutParams(new TableRow.LayoutParams(120, 120, 1f));
+                        stretched=false;
+                    }
+
+                }
+            });
+            this.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
+            //this.setTextSize(15, TypedValue.COMPLEX_UNIT_DIP);
         }
 
         if("listheader".equalsIgnoreCase(tag)){
@@ -57,8 +80,8 @@ public class AryaListCell extends TextView implements IAryaComponent {
     @Override
     public void setComponentParent(Object o) {
         AryaListItem li = (AryaListItem) o;
-
-        this.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT, 10.0f));
+// Arguments here: width, height, weight
+        this.setLayoutParams(new TableRow.LayoutParams(120, 120, 1f));
         li.addView(this);
     }
 
