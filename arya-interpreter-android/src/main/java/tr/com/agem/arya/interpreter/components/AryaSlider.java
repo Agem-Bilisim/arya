@@ -110,6 +110,11 @@ public class AryaSlider extends SeekBar implements IAryaComponent {
     }
 
     @Override
+    public Object getComponentParent() {
+        return this.getComponentParent();
+    }
+
+    @Override
     public String getComponentTagName() {
         return "slider";
     }

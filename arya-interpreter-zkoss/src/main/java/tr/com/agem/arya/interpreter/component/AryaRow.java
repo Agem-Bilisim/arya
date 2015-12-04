@@ -151,6 +151,11 @@ public class AryaRow extends Row implements IAryaComponent {
 		 * was created for IAryaComponent interface.
 		 */
 	}
+	
+	@Override
+	public Object getComponentParent() {
+		return this.getComponentParent();
+	}
 
 	@Override
 	public String getComponentTagName() {

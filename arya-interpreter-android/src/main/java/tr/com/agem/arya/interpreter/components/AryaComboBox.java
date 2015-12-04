@@ -5,6 +5,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TableRow;
 import android.widget.Toast;
 
 import org.xml.sax.Attributes;
@@ -134,7 +135,16 @@ public class AryaComboBox extends Spinner implements IAryaComponent {
 
     @Override
     public void setComponentParent(Object o) {
-        ((ViewGroup)o).addView(this);
+
+        if(o instanceof AryaListItem){
+            AryaListItem li = (AryaListItem) o;
+
+            this.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT, 10.0f));
+            li.addView(this);
+        }
+        else {
+            ((ViewGroup)o).addView(this);
+        }
     }
 
     @Override
@@ -150,6 +160,11 @@ public class AryaComboBox extends Spinner implements IAryaComponent {
     @Override
     public void setComponentValue(String componentValue) {
         this.componentValue = componentValue;
+    }
+
+    @Override
+    public Object getComponentParent() {
+        return this.getComponentParent();
     }
 
     @Override

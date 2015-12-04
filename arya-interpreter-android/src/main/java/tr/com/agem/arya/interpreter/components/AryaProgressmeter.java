@@ -87,6 +87,11 @@ public class AryaProgressmeter extends ProgressBar implements IAryaComponent {
     }
 
     @Override
+    public Object getComponentParent() {
+        return this.getComponentParent();
+    }
+
+    @Override
     public String getComponentTagName() {
         return "progressmeter";
     }

@@ -156,6 +156,11 @@ public class AryaRadiogroup extends Radiogroup implements IAryaComponent {
 			}
 		}
 	}
+	
+	@Override
+	public Object getComponentParent() {
+		return this.getComponentParent();
+	}
 
 	@Override
 	public String getComponentTagName() {

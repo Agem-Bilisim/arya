@@ -185,6 +185,11 @@ public class AryaGrid extends Grid implements IAryaComponent, IAryaTemplate {
 	public void setAryaTemplate(Object template) {
 		this.template = (AryaTemplate) template;
 	}
+	
+	@Override
+	public Object getComponentParent() {
+		return this.getComponentParent();
+	}
 
 	@Override
 	public String getComponentTagName() {

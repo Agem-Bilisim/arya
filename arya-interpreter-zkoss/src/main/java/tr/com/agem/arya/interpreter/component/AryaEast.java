@@ -144,6 +144,11 @@ public class AryaEast extends East implements IAryaComponent {
 		 * was created for IAryaComponent interface.
 		 */
 	}
+	
+	@Override
+	public Object getComponentParent() {
+		return this.getComponentParent();
+	}
 
 
 	@Override

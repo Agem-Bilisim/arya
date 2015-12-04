@@ -180,6 +180,11 @@ public class AryaMenu extends Menu implements IAryaComponent, IAryaMenu {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	@Override
+	public Object getComponentParent() {
+		return this.getComponentParent();
+	}
 
 	@Override
 	public String getComponentTagName() {

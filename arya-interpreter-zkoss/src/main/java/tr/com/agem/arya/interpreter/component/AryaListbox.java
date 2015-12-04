@@ -202,4 +202,9 @@ public class AryaListbox extends Listbox implements IAryaComponent, IAryaTemplat
 		return "listbox";
 	}
 
+	@Override
+	public Object getComponentParent() {
+		return this.getComponentParent();
+	}
+
 }

@@ -111,6 +111,11 @@ public class AryaListCell extends TextView implements IAryaComponent {
     }
 
     @Override
+    public Object getComponentParent() {
+        return this.getComponentParent();
+    }
+
+    @Override
     public String getComponentTagName() {
         return "listcell";
     }

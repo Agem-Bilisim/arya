@@ -1,6 +1,5 @@
 package tr.com.agem.arya.interpreter.components;
 
-import android.app.ActionBar;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -134,6 +133,11 @@ public class AryaButton extends Button implements IAryaComponent {
     @Override
     public void setComponentValue(String componentValue) {
         this.componentValue = componentValue;
+    }
+
+    @Override
+    public Object getComponentParent() {
+        return this.getComponentParent();
     }
 
     @Override

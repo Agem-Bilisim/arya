@@ -182,7 +182,8 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 		}
 
 		 if(!action.isEmpty() && action.endsWith("list")) {
-			//TODO isyeriIdParam -> idParam
+			 
+			//TODO isyeriIdParam -> idParam!!!!!
 			 String params = "{\"isyeriIdParam\":\""+ splitId(id, jsonObj)+"\",\"id\":\""+ splitId(id, jsonObj)+"\"}";
 			 post(action, "DATA_ONLY", params, tabValue, null, null);
 		}

@@ -17,6 +17,8 @@ public class AryaListBox extends TableLayout implements IAryaComponent, IAryaTem
 	private String componentValue;
 	private AryaTemplate template;
 
+	private String onSelect;
+
 	public AryaListBox(Attributes attributes, AryaMain main) {
 
 		super(main.getAryaWindow().getContext());
@@ -26,7 +28,9 @@ public class AryaListBox extends TableLayout implements IAryaComponent, IAryaTem
 			this.componentClassName = attributes.getValue("class");
 			this.componentValue = attributes.getValue("value");
 			this.componentAttribute = attributes.getValue("attribute");
+			onSelect =  attributes.getValue("onSelect");
 		}
+
 		main.getAryaWindow().addView(this);
 	}
 
@@ -88,6 +92,15 @@ public class AryaListBox extends TableLayout implements IAryaComponent, IAryaTem
 	@Override
 	public void setAryaTemplate(Object template) {
 		this.template = (AryaTemplate) template;
+	}
+
+	public String getOnSelect() {
+		return onSelect;
+	}
+
+	@Override
+	public Object getComponentParent() {
+		return this.getComponentParent();
 	}
 
 	@Override

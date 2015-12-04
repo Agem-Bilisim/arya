@@ -171,6 +171,11 @@ public class AryaColumns extends Columns implements IAryaComponent {
 		 * was created for IAryaComponent interface.
 		 */
 	}
+	
+	@Override
+	public Object getComponentParent() {
+		return this.getComponentParent();
+	}
 
 	@Override
 	public String getComponentTagName() {

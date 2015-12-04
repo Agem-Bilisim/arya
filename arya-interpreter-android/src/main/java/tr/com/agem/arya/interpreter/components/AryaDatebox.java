@@ -113,6 +113,11 @@ public class AryaDatebox  extends DatePicker implements IAryaComponent {
     }
 
     @Override
+    public Object getComponentParent() {
+        return this.getComponentParent();
+    }
+
+    @Override
     public String getComponentTagName() {
         return "datebox";
     }

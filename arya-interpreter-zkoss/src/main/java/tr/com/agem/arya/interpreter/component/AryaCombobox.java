@@ -236,6 +236,11 @@ public class AryaCombobox extends Combobox implements IAryaComponent, IAryaTempl
 	}
 	
 	@Override
+	public Object getComponentParent() {
+		return this.getComponentParent();
+	}
+	
+	@Override
 	public String getComponentTagName() {
 		return "combobox";
 	}

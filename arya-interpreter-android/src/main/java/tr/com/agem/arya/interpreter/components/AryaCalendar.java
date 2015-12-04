@@ -124,6 +124,11 @@ public class AryaCalendar extends CalendarView implements IAryaComponent {
     }
 
     @Override
+    public Object getComponentParent() {
+        return this.getComponentParent();
+    }
+
+    @Override
     public String getComponentTagName() {
         return "calendar";
     }

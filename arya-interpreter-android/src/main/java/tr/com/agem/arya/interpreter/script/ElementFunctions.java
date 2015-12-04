@@ -2,18 +2,23 @@ package tr.com.agem.arya.interpreter.script;
 
 import android.view.View;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import org.json.JSONObject;
 import org.mozilla.javascript.Context;
+import org.mozilla.javascript.NativeArray;
 import org.mozilla.javascript.NativeFunction;
 import org.mozilla.javascript.NativeJSON;
 import org.mozilla.javascript.Scriptable;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -35,6 +40,8 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 
 	private static String lastPage;
 	private static String reqType;
+
+	private static JSONObject jsonObj;
 
 	public ElementFunctions(Context context, Scriptable scope,AryaMain main) {
 		this.context = context;
@@ -69,11 +76,14 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 
 	@AryaJsFunction
 	public void post(String action, String requestType, Object params, String tabValue, NativeFunction onSuccess, NativeFunction onFailure) {
-		//tab system is not implemented on android, so it isn't using
-		Object jsonParam = NativeJSON.stringify(context, scope, params, null, null);
+
+		if(!(params instanceof String)) {
+			Object jsonParam = NativeJSON.stringify(context, scope, params, null, null);
+			params = jsonParam;
+		}
 
 		StringBuilder request = new StringBuilder("{ \"params\": ")
-				.append(jsonParam)
+				.append(params)
 				.append(", \"requestType\": \"")
 				.append(requestType)
 				.append("\", \"action\": \"")
@@ -91,7 +101,7 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 		AryaResponse response = new AryaResponse();
 		response.fromXMLString(result);//TODO result check
 
-		if(tabValue.equals("login")) {
+		if(tabValue != null && tabValue.equals("login")) {
 			AryaInterpreterHelper.interpretResponse(response, action, true, main);
 		}
 		else{
@@ -108,6 +118,55 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 			scope.put(onFailure.getFunctionName(), scope, onFailure);
 			Context.call(null, onFailure, scope, this, new Object[]{ response });
 		}
+	}
+
+	@AryaJsFunction
+	public void renderSelectedItem (String elementId, String id, String action, NativeArray comps, NativeArray values,
+									String tabValue) {
+
+		String params = "{\"id\":\""+ splitId(id, jsonObj)+"\"}";
+
+		for (int i = 0; i < comps.size(); i++) {
+
+			String value = splitId(values.get(i).toString(), jsonObj);
+
+			String comp = (String) comps.get(i);
+
+			((IAryaComponent)getElementById(comp)).setComponentValue(value);
+
+		}
+
+		if(!action.isEmpty())
+			post(action, "ALL", params, tabValue, null, null);
+
+	}
+
+	@AryaJsFunction
+	public void renderAtSamePage (String elementId, String id, String action, String tabValue) {
+
+		if(!action.isEmpty() && action.endsWith("list")) {
+			//TODO isyeriIdParam -> idParam !!!
+			String params = "{\"isyeriIdParam\":\""+ splitId(id, jsonObj)+"\",\"id\":\""+ splitId(id, jsonObj)+"\"}";
+			post(action, "DATA_ONLY", params, tabValue, null, null);
+		}
+	}
+
+	@AryaJsFunction
+	public void send(String action, String requestType, String parentObjectId, String objectIdProp, String tabName) throws JsonProcessingException {
+
+		List<IAryaComponent> components = main.getAryaWindow().getComponents();
+		Map<String, Object> m = new HashMap<String, Object>();
+		for (IAryaComponent cmp : components) {
+			if (AryaInterpreterHelper.isInputElement(cmp)) {
+
+				String v = cmp.getComponentValue();
+				m.put(cmp.getComponentId(), v);
+			}
+		}
+		ObjectMapper mapper = new ObjectMapper();
+		String json = mapper.writeValueAsString(m);
+
+		post(action, requestType, json, null, null, null);
 	}
 
 	@AryaJsFunction
@@ -179,6 +238,49 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 		if (strSerialize.length() > 0)
 			return "{" + strSerialize.substring(1, strSerialize.length()) + "}";
 		return "{}";
+	}
+
+	public static String splitId(String id, JSONObject jsonObj) {
+
+		String retVal = null;
+		JSONObject obj = null;
+
+		if (jsonObj != null) {
+
+			String[] spl;
+
+			if(id.contains("-")) {
+
+				String[] temp = id.split("-");
+				spl = temp[1].split("\\.");
+			}
+			else {
+				spl = id.split("\\.");
+			}
+
+			for (int i = 0; i < spl.length - 1; i++)
+				obj = (JSONObject) jsonObj.get(spl[i]);
+
+			Object ret;
+
+			if (obj != null)
+				ret = obj.get(spl[spl.length - 1]);
+			else
+				ret = jsonObj.get(spl[0]);
+			if (!ret.equals(JSONObject.NULL)) {
+				retVal = ret.toString();
+			}
+		}
+
+		return retVal;
+	}
+
+	public static JSONObject getJsonObj() {
+		return jsonObj;
+	}
+
+	public static void setJsonObj(JSONObject jsonObj) {
+		ElementFunctions.jsonObj = jsonObj;
 	}
 
 	public static String getLastPage() {

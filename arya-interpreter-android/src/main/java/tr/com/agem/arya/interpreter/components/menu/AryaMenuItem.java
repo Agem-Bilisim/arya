@@ -332,6 +332,11 @@ public class AryaMenuItem implements IAryaComponent,IAryaMenu, MenuItem {//TODO
     }
 
     @Override
+    public Object getComponentParent() {
+        return this.getComponentParent();
+    }
+
+    @Override
     public String getComponentTagName() {
         return "menuitem";
     }

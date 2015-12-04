@@ -127,6 +127,11 @@ public class AryaTemplate implements IAryaComponent{
 	public void setVar(String var) {
 		this.var = var;
 	}
+	
+	@Override
+	public Object getComponentParent() {
+		return this.getComponentParent();
+	}
 
 	@Override
 	public String getComponentTagName() {

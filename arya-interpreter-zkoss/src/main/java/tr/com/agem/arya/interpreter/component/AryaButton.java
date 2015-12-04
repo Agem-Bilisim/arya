@@ -198,6 +198,11 @@ public class AryaButton extends Button implements IAryaComponent {
 	public void setComponentValue(String componentValue) {
 		this.setLabel(componentValue);
 	}
+	
+	@Override
+	public Object getComponentParent() {
+		return this.getComponentParent();
+	}
 
 	@Override
 	public String getComponentTagName() {

@@ -183,6 +183,12 @@ public class AryaTextbox extends EditText implements IAryaComponent {
     @Override
     public void setComponentValue(String componentValue) {
         this.componentValue = componentValue;
+        this.setText(componentValue);
+    }
+
+    @Override
+    public Object getComponentParent() {
+        return this.getComponentParent();
     }
 
     @Override

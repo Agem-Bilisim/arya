@@ -1,6 +1,5 @@
 package tr.com.agem.arya.interpreter.components;
 
-import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RadioGroup;
@@ -95,6 +94,11 @@ public class AryaRadiogroup extends RadioGroup implements IAryaComponent {
     @Override
     public void setComponentValue(String componentValue) {
         this.componentValue = componentValue;
+    }
+
+    @Override
+    public Object getComponentParent() {
+        return this.getComponentParent();
     }
 
     @Override

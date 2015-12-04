@@ -1,9 +1,10 @@
 package tr.com.agem.arya.interpreter.components;
 
 
+import org.xml.sax.Attributes;
+
 import java.util.ArrayList;
 import java.util.List;
-import org.xml.sax.Attributes;
 
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.core.interpreter.IAryaComponent;
@@ -127,6 +128,11 @@ public class AryaTemplate implements IAryaComponent{
 
     public void setVar(String var) {
         this.var = var;
+    }
+
+    @Override
+    public Object getComponentParent() {
+        return this.getComponentParent();
     }
 
    @Override

@@ -208,6 +208,11 @@ public class AryaRadio extends Radio implements IAryaComponent {
 		 */
 		this.setValue(componentValue);
 	}
+	
+	@Override
+	public Object getComponentParent() {
+		return this.getComponentParent();
+	}
 
 	@Override
 	public String getComponentTagName() {

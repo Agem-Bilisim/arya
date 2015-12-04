@@ -33,6 +33,7 @@ public class AryaLabel extends TextView implements IAryaComponent {
             this.componentValue = attributes.getValue("value");
             this.componentAttribute = attributes.getValue("attribute");
             this.setText(attributes.getValue("label"));
+
             final String tooltiptext = attributes.getValue("tooltiptext");
             this.setOnLongClickListener(new OnLongClickListener() {
                 public boolean onLongClick(View v) {
@@ -122,6 +123,11 @@ public class AryaLabel extends TextView implements IAryaComponent {
     @Override
     public int getImportantForAccessibility() {
         return super.getImportantForAccessibility();
+    }
+
+    @Override
+    public Object getComponentParent() {
+        return this.getComponentParent();
     }
 
     @Override

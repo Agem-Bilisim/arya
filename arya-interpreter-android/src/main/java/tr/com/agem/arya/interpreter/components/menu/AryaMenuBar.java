@@ -112,6 +112,11 @@ public class AryaMenuBar implements IAryaMenu,IAryaComponent {
     }
 
     @Override
+    public Object getComponentParent() {
+        return this.getComponentParent();
+    }
+
+    @Override
     public String getComponentTagName() {
         return "menubar";
     }

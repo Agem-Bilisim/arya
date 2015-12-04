@@ -8,9 +8,9 @@ package tr.com.agem.arya.interpreter.components;
 import android.view.ViewGroup;
 import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 
 import org.xml.sax.Attributes;
+
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
@@ -83,6 +83,11 @@ public class AryaHlayout extends LinearLayout implements IAryaComponent {
     @Override
     public void setComponentValue(String componentValue) {
         this.componentValue = componentValue;
+    }
+
+    @Override
+    public Object getComponentParent() {
+        return this.getComponentParent();
     }
 
     @Override

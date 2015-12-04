@@ -34,6 +34,7 @@ import tr.com.agem.arya.interpreter.components.AryaListBox;
 import tr.com.agem.arya.interpreter.components.AryaListCell;
 import tr.com.agem.arya.interpreter.components.AryaListItem;
 import tr.com.agem.arya.interpreter.components.AryaTemplate;
+import tr.com.agem.arya.interpreter.components.AryaTextbox;
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.components.base.AryaNavBar;
 import tr.com.agem.arya.interpreter.parser.AryaMetadataParser;
@@ -149,9 +150,21 @@ public class AryaInterpreterHelper {
             AryaInterpreterHelper.drawView(response.getView(), main,false);
         }
 
-        if(AryaUtils.isNotEmpty(response.getData()))
-            AryaInterpreterHelper.populateView(response.getData(), action, main);
+        if(AryaUtils.isNotEmpty(response.getData())) {
 
+            //to remove old listbox items at same page
+            if(response.getView().isEmpty()) {
+                if(getElementById(action, main) instanceof AryaListBox) {
+
+                    AryaListBox listbox = (AryaListBox) getElementById(action, main);
+
+                    while(listbox.getChildAt(1) != null) {
+                        listbox.removeViewAt(1);
+                    }
+                }
+            }
+            AryaInterpreterHelper.populateView(response.getData(), action, main);
+        }
     }
 
     public static void interpretResponseMenu(AryaResponse response, AryaMain main) {
@@ -249,11 +262,24 @@ public class AryaInterpreterHelper {
                                 }
                                 else  if (jsonArray.length() == 1){
 
+                                    JSONObject jsonObj = jsonArray.getJSONObject(0);
+                                    List<IAryaComponent> comps = main.getAryaWindow().getComponents();
 
+                                    for (IAryaComponent cmp : comps) {
+                                        if(cmp.getComponentId() != null) {
+
+                                            IAryaComponent comp = (IAryaComponent) getElementById(cmp.getComponentId(), main);
+
+                                            if (isInputElement(comp)) {
+
+                                                comp.setComponentValue(getJSONValue(jsonObj, comp.getComponentId()).toString());
+                                            }
+                                        }
+                                    }
                                 }
                             }
                             catch (Exception e ) {
-
+                                System.out.print(e.toString());
                             }
                         }
                     }
@@ -265,6 +291,33 @@ public class AryaInterpreterHelper {
             e.printStackTrace();
         }
 
+    }
+
+    public static boolean isInputElement(IAryaComponent comp) {
+        return (comp instanceof AryaTextbox);
+    }
+
+    private static Object getJSONValue(JSONObject jsonObj, String key) {
+
+        String[] temp = key.split("\\.");
+
+        if (temp.length == 1) {
+            Object v= "";
+            try {
+                v = jsonObj.get(temp[0].toString());
+            }
+            catch (Exception e) {
+            }
+            if (AryaUtils.isEmpty(v) || v.equals(null)) {
+                return "";
+            }
+            return v;
+        }
+        Object obj = jsonObj.get(temp[0].toString());
+        if (!(obj instanceof JSONObject)) {
+            obj = null;
+        }
+        return obj == null ? "" : getJSONValue((JSONObject) obj, temp[1]);
     }
 
 

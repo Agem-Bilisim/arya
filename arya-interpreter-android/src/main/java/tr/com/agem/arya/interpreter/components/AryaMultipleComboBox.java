@@ -122,6 +122,11 @@ public class AryaMultipleComboBox extends ListView implements IAryaComponent {
     }
 
     @Override
+    public Object getComponentParent() {
+        return this.getComponentParent();
+    }
+
+    @Override
     public String getComponentTagName() {
         return "multiplecombobox";
     }

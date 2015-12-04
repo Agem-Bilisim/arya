@@ -95,6 +95,11 @@ public class AryaScript extends View implements IAryaComponent{
     }
 
     @Override
+    public Object getComponentParent() {
+        return this.getComponentParent();
+    }
+
+    @Override
     public String getComponentTagName() {
         return "script";
     }

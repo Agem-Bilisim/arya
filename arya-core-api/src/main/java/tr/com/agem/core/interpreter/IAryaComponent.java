@@ -21,6 +21,8 @@ public interface IAryaComponent {
 	String validate();
 	
 	void setComponentParent(Object parent);
+	
+	Object getComponentParent();
 
 	String getComponentTagName();
 }

@@ -85,6 +85,11 @@ public class AryaScript extends Script implements IAryaComponent {
 	public void setSrcList(List<String> srcList) {
 		this.srcList = srcList;
 	}
+	
+	@Override
+	public Object getComponentParent() {
+		return this.getComponentParent();
+	}
 
 	@Override
 	public String getComponentTagName() {

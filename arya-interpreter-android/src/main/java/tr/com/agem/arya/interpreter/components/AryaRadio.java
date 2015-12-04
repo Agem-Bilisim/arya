@@ -2,10 +2,7 @@ package tr.com.agem.arya.interpreter.components;
 
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.RadioButton;
-import android.widget.TableRow;
 import android.widget.Toast;
 
 import org.xml.sax.Attributes;
@@ -108,6 +105,11 @@ public class AryaRadio extends RadioButton implements IAryaComponent {
     @Override
     public void setComponentValue(String componentValue) {
         this.componentValue = componentValue;
+    }
+
+    @Override
+    public Object getComponentParent() {
+        return this.getComponentParent();
     }
 
     @Override

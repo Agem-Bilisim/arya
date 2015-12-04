@@ -132,6 +132,11 @@ public class AryaCheckbox extends CheckBox implements IAryaComponent {
     }
 
     @Override
+    public Object getComponentParent() {
+        return this.getComponentParent();
+    }
+
+    @Override
     public String getComponentTagName() {
         return "checkbox";
     }

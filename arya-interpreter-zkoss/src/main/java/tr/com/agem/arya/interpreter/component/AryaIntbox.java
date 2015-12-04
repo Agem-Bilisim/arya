@@ -207,6 +207,11 @@ public class AryaIntbox extends Intbox implements IAryaComponent {
 	public void setComponentValue(String componentValue) {
 		this.setValue(Integer.valueOf(componentValue));
 	}
+	
+	@Override
+	public Object getComponentParent() {
+		return this.getComponentParent();
+	}
 
 	@Override
 	public String getComponentTagName() {
