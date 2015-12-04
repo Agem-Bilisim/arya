@@ -29,6 +29,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
+import tr.com.agem.arya.MainActivity;
 import tr.com.agem.arya.R;
 import tr.com.agem.arya.interpreter.components.AryaListBox;
 import tr.com.agem.arya.interpreter.components.AryaListCell;
@@ -131,20 +132,23 @@ public class AryaInterpreterHelper {
            }
         }
         else{
-
-            for(int i=0;i<main.getAryaNavBar().getMenuBar().getMenuItemsCopy().size();i++){    //reload menu items to show in master
-                main.getAryaNavBar().getMenuBar().setMenuItems(main.getAryaNavBar().getMenuBar().getMenuItemsCopy());
+            if(main.getAryaNavBar().getMenuBar().getMenuItems().size()!=main.getAryaNavBar().getMenuBar().getMenuItemsCopy().size()) {
+                for (int i = 0; i < main.getAryaNavBar().getMenuBar().getMenuItemsCopy().size(); i++) {    //reload menu items to show in master
+                    main.getAryaNavBar().getMenuBar().setMenuItems(main.getAryaNavBar().getMenuBar().getMenuItemsCopy());
+                }
+                ((Activity) (AryaNavBar.context)).invalidateOptionsMenu();
             }
-            ((Activity)(AryaNavBar.context)).invalidateOptionsMenu();
         }
         if(AryaUtils.isNotEmpty(response.getView())) {
 
             if (main.getAryaWindow().getComponents() != null) {// TODO bu alan yönetilmeli neler kaldırılacak ekrandan
 
-                while ((main.getAryaWindow().getChildCount()) != 1)
+          /*      while ((main.getAryaWindow().getChildCount()) != 1)
                     if(!(main.getAryaWindow().getChildAt(1) instanceof IAryaMenu)) {
                         main.getAryaWindow().removeView(main.getAryaWindow().getChildAt(1));
-                    }
+                   }
+*/
+                main.getAryaWindow().clearPageExceptMenu();
             }
 
             AryaInterpreterHelper.drawView(response.getView(), main,false);
@@ -206,7 +210,6 @@ public class AryaInterpreterHelper {
     }
 
     private static void populateAryaTemplate(AryaMain main, IAryaTemplate masterComponent, JSONArray jsonArrayData) {
-
 
         for (int i = 0; i < jsonArrayData.length(); i++) {
 

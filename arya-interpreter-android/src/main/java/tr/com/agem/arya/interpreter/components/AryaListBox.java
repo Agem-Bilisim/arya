@@ -1,5 +1,6 @@
 package tr.com.agem.arya.interpreter.components;
 
+import android.widget.HorizontalScrollView;
 import android.widget.TableLayout;
 
 import org.xml.sax.Attributes;
@@ -31,7 +32,13 @@ public class AryaListBox extends TableLayout implements IAryaComponent, IAryaTem
 			onSelect =  attributes.getValue("onSelect");
 		}
 
-		main.getAryaWindow().addView(this);
+
+		//main.getAryaWindow().addView(this);
+		this.setMinimumWidth(LayoutParams.MATCH_PARENT);
+		HorizontalScrollView HorizontalScrollViewParent = new HorizontalScrollView(main.getAryaWindow().getContext());
+		main.getAryaWindow().addView(HorizontalScrollViewParent);
+		HorizontalScrollViewParent.addView(this);
+
 	}
 
 	@Override

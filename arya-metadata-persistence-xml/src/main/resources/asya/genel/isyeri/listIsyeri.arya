@@ -51,6 +51,7 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 				</template>
 			</listbox>
 		</vlayout>
+
 	</window>
 	<script>
 	

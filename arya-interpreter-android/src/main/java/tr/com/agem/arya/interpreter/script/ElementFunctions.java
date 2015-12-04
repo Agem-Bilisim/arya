@@ -27,6 +27,7 @@ import tr.com.agem.arya.MainActivity;
 import tr.com.agem.arya.gateway.AryaInterpreterHelper;
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.core.gateway.model.AryaResponse;
+import tr.com.agem.core.gateway.model.RequestTypes;
 import tr.com.agem.core.interpreter.IAryaComponent;
 
 public class ElementFunctions extends AnnotatedScriptableObject {
@@ -92,7 +93,6 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 
 		lastPage = action;
 		reqType = requestType;
-
 		String result = AryaInterpreterHelper.callUrl("http://"+MainActivity.inetAddr+":8080/arya/rest/asya", request.toString());
 
 		logger.log(Level.FINE, "Post result: {0}", result);
