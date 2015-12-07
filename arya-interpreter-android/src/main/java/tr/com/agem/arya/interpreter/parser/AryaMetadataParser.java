@@ -9,14 +9,19 @@ import org.xml.sax.helpers.DefaultHandler;
 import java.util.ArrayList;
 import java.util.Stack;
 
+import tr.com.agem.arya.MainActivity;
+import tr.com.agem.arya.gateway.AryaInterpreterHelper;
 import tr.com.agem.arya.interpreter.components.AryaListBox;
 import tr.com.agem.arya.interpreter.components.AryaScript;
 import tr.com.agem.arya.interpreter.components.AryaTemplate;
 import tr.com.agem.arya.interpreter.components.ComponentFactory;
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
+import tr.com.agem.arya.interpreter.components.command.AryaFill;
 import tr.com.agem.arya.interpreter.components.menu.AryaMenu;
 import tr.com.agem.arya.interpreter.components.menu.AryaMenuItem;
 import tr.com.agem.arya.interpreter.components.menu.AryaPopupMenu;
+import tr.com.agem.core.gateway.model.AryaResponse;
+import tr.com.agem.core.interpreter.IAryaCommand;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.interpreter.IAryaTemplate;
 
@@ -35,7 +40,7 @@ public class AryaMetadataParser extends DefaultHandler {
 
         IAryaComponent comp = ComponentFactory.getComponent(tagName,main, attributes);
 
-        if (comp != null) {
+        if (comp != null && !(comp instanceof AryaFill)) {
             if (comp instanceof AryaTemplate) {
                 if (currentComponent.peek() instanceof AryaListBox) {
                     ((AryaListBox)currentComponent.peek()).setAryaTemplate(comp);
@@ -94,6 +99,24 @@ public class AryaMetadataParser extends DefaultHandler {
                     main.getAryaWindow().getComponents().add(comp);
                 }
             }
+        }
+        else if(comp != null && (comp instanceof AryaFill)) {
+
+            StringBuilder request = new StringBuilder("{ \"params\": ")
+                    .append("{\"json\":\"1\"}")
+                    .append(", \"requestType\": \"")
+                    .append("DATA_ONLY")
+                    .append("\", \"action\": \"")
+                    .append(((AryaFill)comp).getFrom())
+                    .append("\" }");
+
+            String result = AryaInterpreterHelper.callUrl("http://"+ MainActivity.inetAddr+":8080/arya/rest/asya", request.toString());
+
+            AryaResponse response = new AryaResponse();
+            response.fromXMLString(result);
+
+            AryaInterpreterHelper.populateToFill(response.getData(), (IAryaCommand) comp, main);
+
         }
     }
 

@@ -4,6 +4,7 @@ package tr.com.agem.arya.interpreter.components;
 import org.xml.sax.Attributes;
 
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
+import tr.com.agem.arya.interpreter.components.command.AryaFill;
 import tr.com.agem.arya.interpreter.components.menu.AryaMenu;
 import tr.com.agem.arya.interpreter.components.menu.AryaMenuBar;
 import tr.com.agem.arya.interpreter.components.menu.AryaMenuItem;
@@ -68,6 +69,8 @@ public class ComponentFactory {
             comp = new AryaHlayout(attributes,main);
         }else if ("template".equalsIgnoreCase(tagName)) {
             comp = new AryaTemplate(attributes,main);
+        }else if ("fill".equalsIgnoreCase(tagName)) {
+            comp = new AryaFill(attributes,main);
         }
 
         return comp;

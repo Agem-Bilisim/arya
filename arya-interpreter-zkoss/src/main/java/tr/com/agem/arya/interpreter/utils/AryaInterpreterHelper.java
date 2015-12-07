@@ -37,6 +37,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import tr.com.agem.arya.interpreter.command.AryaFill;
 import tr.com.agem.arya.interpreter.component.AryaComboItem;
 import tr.com.agem.arya.interpreter.component.AryaCombobox;
 import tr.com.agem.arya.interpreter.component.AryaGrid;
@@ -47,7 +48,6 @@ import tr.com.agem.arya.interpreter.component.AryaRow;
 import tr.com.agem.arya.interpreter.component.AryaRows;
 import tr.com.agem.arya.interpreter.component.AryaScript;
 import tr.com.agem.arya.interpreter.component.AryaTab;
-import tr.com.agem.arya.interpreter.component.AryaTabbox;
 import tr.com.agem.arya.interpreter.component.AryaTabpanel;
 import tr.com.agem.arya.interpreter.component.AryaTabpanels;
 import tr.com.agem.arya.interpreter.component.AryaTabs;
@@ -59,10 +59,9 @@ import tr.com.agem.arya.interpreter.parser.AryaParserAttributes;
 import tr.com.agem.arya.interpreter.script.ElementFunctions;
 import tr.com.agem.core.gateway.model.AryaRequest;
 import tr.com.agem.core.gateway.model.AryaResponse;
-import tr.com.agem.core.gateway.model.RequestTypes;
+import tr.com.agem.core.interpreter.IAryaCommand;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.interpreter.IAryaTemplate;
-import tr.com.agem.core.property.reader.PropertyReader;
 import tr.com.agem.core.utils.AryaUtils;
 
 public class AryaInterpreterHelper {
@@ -189,6 +188,43 @@ public class AryaInterpreterHelper {
 			drawView(response.getView(), main, null, tabs, tabpanels, true, null);
 		}
 	}
+	
+	public static void populateToFill(String data, IAryaCommand cmd, AryaMain main) {
+		
+		for (int i = 0; i < getJSONArray(data).length(); i++) {
+			
+			JSONObject jsonObj = getJSONArray(data).getJSONObject(i);
+			
+			if(cmd instanceof AryaFill) {
+				if(((AryaFill) cmd).getTo() != null) {
+					if(getElementById(((AryaFill) cmd).getTo(), main) instanceof AryaCombobox) {
+						AryaCombobox combo = (AryaCombobox) getElementById(((AryaFill) cmd).getTo(), main);
+						
+						int size = combo.getChildren().size();
+						boolean isExist = false;
+						AryaParserAttributes attr = new AryaParserAttributes();
+						String label = splitId(((AryaFill) cmd).getValue(), jsonObj);
+						
+						for (int j = 0; j < size; j++) {
+							
+							AryaComboItem cItem = (AryaComboItem) combo.getChildren().get(j);
+							
+							if(cItem.getLabel().equals(label)) {
+								isExist = true;
+								break;
+							}
+						}
+						
+						if(isExist == false && label != null) {
+							attr.setValue("label", label);
+							AryaComboItem comboItem = new AryaComboItem(main, attr);
+							comboItem.setComponentParent(combo);
+						}
+					}
+				}
+			}
+		}
+	}
 
 	private static void populateAryaTemplate(AryaMain main, IAryaTemplate masterComponent, JSONArray jsonArrayData) {
 		
@@ -230,40 +266,56 @@ public class AryaInterpreterHelper {
 						IAryaComponent compNew = ComponentFactory.getComponent(comp.getComponentTagName(), main, attr);
 						compNew.setComponentParent(row);
 					} 
-//					else if (masterComponent instanceof AryaCombobox){
-//						
-//						int size = ((AryaCombobox)masterComponent).getChildren().size();
-//						boolean isExist = false;
-//						String label = splitId(comp.getComponentId(), jsonObj);
-//						
-//						for (int j = 0; j < size; j++) {
-//							
-//							AryaComboItem cItem = (AryaComboItem) ((AryaCombobox)masterComponent).getChildren().get(j);
-//							
-//							if(cItem.getLabel().equals(label)) {
-//								isExist = true;
-//								break;
-//							}
-//						}
-//						
-//						if(isExist == false && label != null) {
-//							attr.setValue("label", label);
-//							AryaComboItem comboItem = new AryaComboItem(main, attr);
-//							comboItem.setComponentParent(masterComponent);
-//						}
-//					}
 				}
 			}
 		}
-		
-			
 		ElementFunctions.setComps(null);
 		ElementFunctions.setValues(new ArrayList<String>());
 	}
 
 	public static void populateView(String data, String action, AryaMain main, AryaTab tab, String tabValue) {
-
-		System.out.println(data);
+		try {
+			String message = "";
+			if (action.endsWith("list")) {
+					if (getJSONArray(data).length() > 0) 
+						message=getJSONArray(data).length()+" adet kayıt bulundu."; 
+					else
+						message="Hiçbir kayıt bulunamadı.";
+					
+					populateAryaTemplate(main, (IAryaTemplate) getElementById(action, main), getJSONArray(data));
+				
+			} 
+			else  if (getJSONArray(data).length() == 1){
+				JSONObject jsonObj = getJSONArray(data).getJSONObject(0);
+				
+				
+				for (String id : tab.getTabPanel().getComponents()) {
+					IAryaComponent comp = getElementById(id, main);
+					if (isInputElement(comp)) {
+						
+						String key = StringUtils.substringAfterLast(comp.getComponentId(), "-");
+						comp.setComponentValue(getJSONValue(jsonObj,key).toString());
+					}
+				}
+				message = (String) jsonObj.get("@message");
+			}
+			if (message != null) {
+				main.getMessage().setValue(message);
+			}
+			else { 
+				main.getMessage().setValue("");
+			}
+		}
+		catch (Exception e ) {
+			main.getMessage().setValue("");
+		}
+	
+	}
+	
+	public static JSONArray getJSONArray(String data) {
+		
+		//System.out.println(data);
+		JSONArray jsonArray = null;
 		ObjectMapper mapper = new ObjectMapper(); 
 		try {
 			JsonNode rootNode = mapper.readTree(data);
@@ -273,43 +325,7 @@ public class AryaInterpreterHelper {
 					while (fields.hasNext()) {
 						Map.Entry<String, JsonNode> entry = fields.next();
 						if ("results".equals(entry.getKey().toString())) {
-							JSONArray jsonArray = new JSONArray(entry.getValue().toString());
-							try {
-								String message = "";
-								if (action.endsWith("list")) {
-										if (jsonArray.length() > 0) 
-											message=jsonArray.length()+" adet kayıt bulundu."; 
-										else
-											message="Hiçbir kayıt bulunamadı.";
-										
-										populateAryaTemplate(main, (IAryaTemplate) getElementById(action, main), jsonArray);
-									
-								} 
-								else  if (jsonArray.length() == 1){  
-									JSONObject jsonObj = jsonArray.getJSONObject(0);
-									
-									
-									for (String id : tab.getTabPanel().getComponents()) {
-										IAryaComponent comp = getElementById(id, main);
-										if (isInputElement(comp)) {
-											
-											String key = StringUtils.substringAfterLast(comp.getComponentId(), "-");
-											comp.setComponentValue(getJSONValue(jsonObj,key).toString());
-										}
-										
-									}
-									message = (String) jsonObj.get("@message");
-								}
-								if (message != null) {
-									main.getMessage().setValue(message);
-								}
-								else { 
-									main.getMessage().setValue("");
-								}
-							}
-							catch (Exception e ) {
-								main.getMessage().setValue("");
-							}
+							jsonArray = new JSONArray(entry.getValue().toString());
 						}
 					}
 				}
@@ -319,6 +335,8 @@ public class AryaInterpreterHelper {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
+		return jsonArray;
 	}
 	
 	public static boolean isInputElement(IAryaComponent comp) {

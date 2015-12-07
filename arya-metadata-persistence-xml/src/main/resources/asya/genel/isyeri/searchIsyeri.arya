@@ -6,10 +6,7 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 			<rows>
 				<row>
 					<label id="subelbl" value="Şube" />
-					<combobox id="sube.list"  width="120" >
-						<template>
-							<comboitem id="birim.label"/>
-						</template>
+					<combobox id="subeC"  width="120" >
 					</combobox>
 				</row>
 				<row>
@@ -22,10 +19,7 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 				</row>
 				<row>
 					<label id="isyeriKategoriIdlbl" value="Kategori" />
-					<combobox id="kategori.list"  width="120"  >
-						<template>
-							<comboitem id="isyeriKategori"/>
-						</template>
+					<combobox id="kategoriler"  width="120"  >
 					</combobox>
 				</row>
 				<row>
@@ -53,4 +47,6 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 		}
 		
 	</script>
+	<fill from="genel.isyeri.list" to="subeC" value="birim.label"/>
+	<fill from="genel.isyeri.list" to="kategoriler" value="isyeriKategori"/>
 </arya>

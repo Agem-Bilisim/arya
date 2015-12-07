@@ -28,7 +28,7 @@ import tr.com.agem.core.utils.AryaUtils;
 
 public class MainActivity extends ActionBarActivity {
     private static final String TAG = "MainActivity";
-    public static String inetAddr = "192.168.1.223"; /* AVD(emulator) = 10.0.2.2
+    public static String inetAddr = "192.168.1.236"; /* AVD(emulator) = 10.0.2.2
                                                 *  GENYMOTION = 10.0.3.2
                                                 *  PHYSICAL DEVICE = make sure that your device and PC connected to the same network
                                                 *  then type terminal ifconfig and paste the value "inet addr"

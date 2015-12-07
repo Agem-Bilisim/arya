@@ -29,8 +29,9 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
-import tr.com.agem.arya.MainActivity;
 import tr.com.agem.arya.R;
+import tr.com.agem.arya.interpreter.components.AryaComboBox;
+import tr.com.agem.arya.interpreter.components.AryaComboItem;
 import tr.com.agem.arya.interpreter.components.AryaListBox;
 import tr.com.agem.arya.interpreter.components.AryaListCell;
 import tr.com.agem.arya.interpreter.components.AryaListItem;
@@ -38,11 +39,12 @@ import tr.com.agem.arya.interpreter.components.AryaTemplate;
 import tr.com.agem.arya.interpreter.components.AryaTextbox;
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.components.base.AryaNavBar;
+import tr.com.agem.arya.interpreter.components.command.AryaFill;
 import tr.com.agem.arya.interpreter.parser.AryaMetadataParser;
 import tr.com.agem.arya.interpreter.parser.AryaParserAttributes;
-import tr.com.agem.arya.interpreter.parser.IAryaMenu;
 import tr.com.agem.core.gateway.model.AryaRequest;
 import tr.com.agem.core.gateway.model.AryaResponse;
+import tr.com.agem.core.interpreter.IAryaCommand;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.interpreter.IAryaTemplate;
 import tr.com.agem.core.utils.AryaUtils;
@@ -179,7 +181,7 @@ public class AryaInterpreterHelper {
                 main.getAryaNavBar().getMenuBar().getMenuItems().clear();
             }
 
-            drawView(response.getView(), main,true);
+            drawView(response.getView(), main, true);
         }
     }
 
@@ -206,6 +208,43 @@ public class AryaInterpreterHelper {
             image.setPadding(700, 0, 1, 0);
 
         main.getAryaWindow().addView(image);
+        }
+    }
+
+    public static void populateToFill(String data, IAryaCommand cmd, AryaMain main) {
+
+        for (int i = 0; i < getJSONArray(data).length(); i++) {
+
+            JSONObject jsonObj = getJSONArray(data).getJSONObject(i);
+
+            if(cmd instanceof AryaFill) {
+                if(((AryaFill) cmd).getTo() != null) {
+                    if(getElementById(((AryaFill) cmd).getTo(), main) instanceof AryaComboBox) {
+                        AryaComboBox combo = (AryaComboBox) getElementById(((AryaFill) cmd).getTo(), main);
+
+                        int size = combo.getAdapter().getCount();
+                        boolean isExist = false;
+                        AryaParserAttributes attr = new AryaParserAttributes();
+                        String label = splitId(((AryaFill) cmd).getValue(), jsonObj);
+
+                        for (int j = 0; j < size; j++) {
+
+                            AryaComboItem cItem = (AryaComboItem) combo.getAdapter().getItem(j);
+
+                            if(cItem.getLabel().equals(label)) {
+                                isExist = true;
+                                break;
+                            }
+                        }
+
+                        if(isExist == false && label != null) {
+                            attr.setValue("label", label);
+                            AryaComboItem comboItem = new AryaComboItem(attr, main);
+                            comboItem.setComponentParent(combo);
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -241,7 +280,44 @@ public class AryaInterpreterHelper {
 
     public static void populateView(String data, String action, AryaMain main) {
 
-        System.out.println(data);
+        try {
+            String message = "";
+            if (action.endsWith("list")) {
+                if (getJSONArray(data).length() > 0)
+                    message=getJSONArray(data).length()+" adet kayıt bulundu.";
+                else
+                    message="Hiçbir kayıt bulunamadı.";
+
+                populateAryaTemplate(main, (IAryaTemplate) getElementById(action, main), getJSONArray(data));
+
+            }
+            else  if (getJSONArray(data).length() == 1){
+
+                JSONObject jsonObj = getJSONArray(data).getJSONObject(0);
+                List<IAryaComponent> comps = main.getAryaWindow().getComponents();
+
+                for (IAryaComponent cmp : comps) {
+                    if(cmp.getComponentId() != null) {
+
+                        IAryaComponent comp = (IAryaComponent) getElementById(cmp.getComponentId(), main);
+
+                        if (isInputElement(comp)) {
+
+                            comp.setComponentValue(getJSONValue(jsonObj, comp.getComponentId()).toString());
+                        }
+                    }
+                }
+            }
+        }
+        catch (Exception e ) {
+            System.out.print(e.toString());
+        }
+    }
+
+    public static JSONArray getJSONArray(String data) {
+
+        //System.out.println(data);
+        JSONArray jsonArray = null;
         ObjectMapper mapper = new ObjectMapper();
         try {
             JsonNode rootNode = mapper.readTree(data);
@@ -251,39 +327,7 @@ public class AryaInterpreterHelper {
                     while (fields.hasNext()) {
                         Map.Entry<String, JsonNode> entry = fields.next();
                         if ("results".equals(entry.getKey().toString())) {
-                            JSONArray jsonArray = new JSONArray(entry.getValue().toString());
-                            try {
-                                String message = "";
-                                if (action.endsWith("list")) {
-                                    if (jsonArray.length() > 0)
-                                        message=jsonArray.length()+" adet kayıt bulundu.";
-                                    else
-                                        message="Hiçbir kayıt bulunamadı.";
-
-                                    populateAryaTemplate(main, (IAryaTemplate) getElementById(action, main), jsonArray);
-
-                                }
-                                else  if (jsonArray.length() == 1){
-
-                                    JSONObject jsonObj = jsonArray.getJSONObject(0);
-                                    List<IAryaComponent> comps = main.getAryaWindow().getComponents();
-
-                                    for (IAryaComponent cmp : comps) {
-                                        if(cmp.getComponentId() != null) {
-
-                                            IAryaComponent comp = (IAryaComponent) getElementById(cmp.getComponentId(), main);
-
-                                            if (isInputElement(comp)) {
-
-                                                comp.setComponentValue(getJSONValue(jsonObj, comp.getComponentId()).toString());
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                            catch (Exception e ) {
-                                System.out.print(e.toString());
-                            }
+                            jsonArray = new JSONArray(entry.getValue().toString());
                         }
                     }
                 }
@@ -294,6 +338,7 @@ public class AryaInterpreterHelper {
             e.printStackTrace();
         }
 
+        return jsonArray;
     }
 
     public static boolean isInputElement(IAryaComponent comp) {

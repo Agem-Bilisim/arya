@@ -189,41 +189,6 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 		}
 	}
 	
-//	@AryaJsFunction
-//	public void fillCombobox (String parentId, String action, String tabValue) {
-//		
-//		if(getElementById(parentId) instanceof AryaCombobox) { 
-//			
-//			String params = "{\"json\":\"1\"}";
-//		
-//			StringBuilder request = new StringBuilder("{ \"params\": ")
-//					.append(params)
-//					.append(", \"requestType\": \"")
-//					.append("DATA_ONLY")
-//					.append("\", \"action\": \"")
-//					.append(action)
-//					.append("\" }");
-//			
-//			String result=null;
-//			AryaResponse response=null;
-//			
-//			try {
-//				result = AryaInterpreterHelper.callUrl(PropertyReader.property("gateway.base.url"), request.toString());
-//				
-//				logger.log(Level.FINE, "Post result: {0}", result);
-//				
-//				response = new AryaResponse();
-//				response.fromXMLString(result);
-//				
-//				AryaInterpreterHelper.populateView(response.getData(), action, parentId, main, null, tabValue);
-//			
-//			
-//			}catch (AryaException e) {
-//				
-//			}
-//		}
-//	}
-	
 	@AryaJsFunction
 	public void setParams (NativeArray values) {
 		

@@ -2,11 +2,13 @@ package tr.com.agem.arya.interpreter.component;
 
 import org.xml.sax.Attributes;
 
+import tr.com.agem.arya.interpreter.command.AryaFill;
 import tr.com.agem.arya.interpreter.component.menu.AryaMenu;
 import tr.com.agem.arya.interpreter.component.menu.AryaMenuBar;
 import tr.com.agem.arya.interpreter.component.menu.AryaMenuItem;
 import tr.com.agem.arya.interpreter.component.menu.AryaMenuPopUp;
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
+import tr.com.agem.core.interpreter.IAryaCommand;
 import tr.com.agem.core.interpreter.IAryaComponent;
 
 public class ComponentFactory {
@@ -121,6 +123,8 @@ public class ComponentFactory {
 			comp = new AryaTabpanel(main, attributes);
 		} else if ("intbox".equalsIgnoreCase(tagName)) {
 			comp = new AryaIntbox(main, attributes);
+		} else if ("fill".equalsIgnoreCase(tagName)) {
+			comp = new AryaFill(main, attributes);
 		}
 
 		return comp;

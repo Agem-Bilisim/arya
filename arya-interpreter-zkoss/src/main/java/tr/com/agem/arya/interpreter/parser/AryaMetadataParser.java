@@ -3,11 +3,13 @@ package tr.com.agem.arya.interpreter.parser;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Stack;
+import java.util.logging.Level;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
+import tr.com.agem.arya.interpreter.command.AryaFill;
 import tr.com.agem.arya.interpreter.component.AryaCombobox;
 import tr.com.agem.arya.interpreter.component.AryaGrid;
 import tr.com.agem.arya.interpreter.component.AryaListbox;
@@ -17,7 +19,12 @@ import tr.com.agem.arya.interpreter.component.AryaTemplate;
 import tr.com.agem.arya.interpreter.component.ComponentFactory;
 import tr.com.agem.arya.interpreter.component.menu.IAryaMenu;
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
+import tr.com.agem.arya.interpreter.utils.AryaException;
+import tr.com.agem.arya.interpreter.utils.AryaInterpreterHelper;
+import tr.com.agem.core.gateway.model.AryaResponse;
+import tr.com.agem.core.interpreter.IAryaCommand;
 import tr.com.agem.core.interpreter.IAryaComponent;
+import tr.com.agem.core.property.reader.PropertyReader;
 
 public class AryaMetadataParser extends DefaultHandler {
 
@@ -38,7 +45,7 @@ public class AryaMetadataParser extends DefaultHandler {
 		
 		IAryaComponent comp = ComponentFactory.getComponent(tagName, main, attributes);
 		
-		if (comp != null) {
+		if (comp != null && !(comp instanceof AryaFill)) {
 			if (comp instanceof AryaTemplate) {
 				if (currentComponent.peek() instanceof AryaListbox) {
 					((AryaListbox)currentComponent.peek()).setAryaTemplate(comp);
@@ -77,6 +84,30 @@ public class AryaMetadataParser extends DefaultHandler {
 
 			if (comp instanceof IAryaMenu) {
 				main.getAryaNavBarComponents().add(comp);
+			}
+		}
+		else if(comp != null && (comp instanceof AryaFill)) {
+			
+			StringBuilder request = new StringBuilder("{ \"params\": ")
+			.append("{\"json\":\"1\"}")
+			.append(", \"requestType\": \"")
+			.append("DATA_ONLY")
+			.append("\", \"action\": \"")
+			.append(((AryaFill)comp).getFrom())
+			.append("\" }");
+			
+			String result=null;
+			AryaResponse response=null;
+			
+			try {
+				result = AryaInterpreterHelper.callUrl(PropertyReader.property("gateway.base.url"), request.toString());
+				
+				response = new AryaResponse();
+				response.fromXMLString(result);
+				
+				AryaInterpreterHelper.populateToFill(response.getData(), (IAryaCommand) comp, main);
+			
+			}catch (AryaException e) {
 			}
 		}
 	}
