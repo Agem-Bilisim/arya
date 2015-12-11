@@ -19,6 +19,7 @@ public class AryaButton extends Button implements IAryaComponent {
 
 	private String componentClassName;
 	private String componentAttribute;
+	private String database;
 
 	public AryaButton(final AryaMain main, Attributes attributes) {
 
@@ -73,6 +74,8 @@ public class AryaButton extends Button implements IAryaComponent {
 			
 			if (attributes.getValue("style") != null) 
 				this.setStyle(attributes.getValue("style"));
+			
+			this.database = attributes.getValue("database");
 			
 			/*
 			 * if the dimension input format of .arya files does NOT contains
@@ -207,6 +210,16 @@ public class AryaButton extends Button implements IAryaComponent {
 	@Override
 	public String getComponentTagName() {
 		return "button";
+	}
+
+	@Override
+	public String getDatabase() {
+		return database;
+	}
+
+	@Override
+	public void setDatabase(String database) {
+		this.database = database;
 	}
 
 }

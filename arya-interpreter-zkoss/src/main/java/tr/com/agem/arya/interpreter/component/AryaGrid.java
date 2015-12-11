@@ -18,6 +18,7 @@ public class AryaGrid extends Grid implements IAryaComponent, IAryaTemplate {
 
 	private String componentClassName;
 	private String componentAttribute;
+	private String database;
 	
 	private AryaTemplate template;
 
@@ -55,6 +56,8 @@ public class AryaGrid extends Grid implements IAryaComponent, IAryaTemplate {
 			this.setVflex(attributes.getValue("vflex"));
 			
 			this.setMold(attributes.getValue("mold"));
+			
+			this.database = attributes.getValue("database");
 
 			if(attributes.getValue("pagesize") != null) //TODO number value exception
 				this.setPageSize(new Integer (attributes.getValue("pagesize")));
@@ -194,6 +197,16 @@ public class AryaGrid extends Grid implements IAryaComponent, IAryaTemplate {
 	@Override
 	public String getComponentTagName() {
 		return "grid";
+	}
+
+	@Override
+	public String getDatabase() {
+		return database;
+	}
+
+	@Override
+	public void setDatabase(String database) {
+		this.database = database;
 	}
 
 }

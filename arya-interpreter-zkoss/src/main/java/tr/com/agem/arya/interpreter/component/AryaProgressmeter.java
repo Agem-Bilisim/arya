@@ -17,6 +17,7 @@ public class AryaProgressmeter extends Progressmeter implements IAryaComponent {
 
 	private String componentClassName;
 	private String componentAttribute;
+	private String database;
 
 	public AryaProgressmeter(final AryaMain main, Attributes attributes) {
 
@@ -48,6 +49,8 @@ public class AryaProgressmeter extends Progressmeter implements IAryaComponent {
 			} else {
 				this.setWidth(attributes.getValue("width") + "px");
 			}
+			
+			this.database = attributes.getValue("database");
 
 			final String functionName = attributes.getValue("onClick");
 
@@ -122,6 +125,16 @@ public class AryaProgressmeter extends Progressmeter implements IAryaComponent {
 	@Override
 	public String getComponentTagName() {
 		return "progressmeter";
+	}
+
+	@Override
+	public String getDatabase() {
+		return database;
+	}
+
+	@Override
+	public void setDatabase(String database) {
+		this.database = database;
 	}
 
 }

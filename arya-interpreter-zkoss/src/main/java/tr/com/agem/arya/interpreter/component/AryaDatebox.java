@@ -21,6 +21,7 @@ public class AryaDatebox extends Datebox implements IAryaComponent {
 
 	private String componentClassName;
 	private String componentAttribute;
+	private String database;
 
 	public AryaDatebox(final AryaMain main, Attributes attributes) {
 		super();
@@ -82,6 +83,8 @@ public class AryaDatebox extends Datebox implements IAryaComponent {
 			
 			if (attributes.getValue("buttonVisible") != null)
 				this.setButtonVisible(Boolean.parseBoolean(attributes.getValue("buttonVisible")));
+			
+			this.database = attributes.getValue("database");
 
 			/*
 			 * if the dimension input format of .arya files does NOT contains
@@ -244,6 +247,16 @@ public class AryaDatebox extends Datebox implements IAryaComponent {
 	@Override
 	public String getComponentTagName() {
 		return "datebox";
+	}
+
+	@Override
+	public String getDatabase() {
+		return database;
+	}
+
+	@Override
+	public void setDatabase(String database) {
+		this.database = database;
 	}
 
 }

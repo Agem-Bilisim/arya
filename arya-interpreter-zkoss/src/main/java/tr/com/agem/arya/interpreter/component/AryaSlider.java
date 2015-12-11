@@ -17,6 +17,7 @@ public class AryaSlider extends Slider implements IAryaComponent {
 
 	private String componentClassName;
 	private String componentAttribute;
+	private String database;
 
 	public AryaSlider(final AryaMain main, Attributes attributes) {
 		super();
@@ -62,6 +63,8 @@ public class AryaSlider extends Slider implements IAryaComponent {
 		if (attributes.getValue("step") != null) {
 			this.setStep(Double.parseDouble(attributes.getValue("step")));
 		}
+		
+		this.database = attributes.getValue("database");
 
 		/*
 		 * if the dimension input format of .arya files does NOT contains the
@@ -207,6 +210,16 @@ public class AryaSlider extends Slider implements IAryaComponent {
 	@Override
 	public String getComponentTagName() {
 		return "slider";
+	}
+
+	@Override
+	public String getDatabase() {
+		return database;
+	}
+
+	@Override
+	public void setDatabase(String database) {
+		this.database = database;
 	}
 
 }

@@ -17,6 +17,7 @@ public class AryaSpinner extends Spinner implements IAryaComponent {
 
 	private String componentClassName;
 	private String componentAttribute;
+	private String database;
 
 	public AryaSpinner(final AryaMain main, Attributes attributes) {
 		super();
@@ -62,6 +63,8 @@ public class AryaSpinner extends Spinner implements IAryaComponent {
 		this.setAction(attributes.getValue("action"));
 		this.setHflex(attributes.getValue("hflex"));
 		this.setVflex(attributes.getValue("vflex"));
+		
+		this.database = attributes.getValue("database");
 
 		/*
 		 * if the dimension input format of .arya files does NOT contains the
@@ -205,6 +208,16 @@ public class AryaSpinner extends Spinner implements IAryaComponent {
 	@Override
 	public String getComponentTagName() {
 		return "spinner";
+	}
+
+	@Override
+	public String getDatabase() {
+		return database;
+	}
+
+	@Override
+	public void setDatabase(String database) {
+		this.database = database;
 	}
 
 }

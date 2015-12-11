@@ -207,4 +207,16 @@ public class AryaDoublespinner extends Doublespinner implements IAryaComponent {
 		return "doublespinner";
 	}
 
+	@Override
+	public String getDatabase() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setDatabase(String database) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

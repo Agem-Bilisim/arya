@@ -8,12 +8,14 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 					<listheader label="T.C. Kimlik No" />			
 					<listheader label="Ad Soyad" />
 					<listheader label="İşyeri" />
+					<listheader label="İşyeri Şube" />
 				</listhead>
 				<template>
 					<listitem>
-						<listcell id="kisi.tckNo" />
-						<listcell id="kisi.adSoyad" />
-						<listcell id="isyeri.unvan" />
+						<listcell id="tck" database="kisi.tckNo" />
+						<listcell id="adSoyad" database="kisi.adSoyad" />
+						<listcell id="unvan" database="isyeri.unvan" />
+						<listcell id="sube" database="isyeri.birim.label" />
 					</listitem>
 				</template>
 			</listbox>

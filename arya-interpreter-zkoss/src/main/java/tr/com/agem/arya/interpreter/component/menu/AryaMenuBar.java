@@ -163,4 +163,16 @@ public class AryaMenuBar extends Menubar implements IAryaComponent, IAryaMenu {
 		return "menubar";
 	}
 
+	@Override
+	public String getDatabase() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setDatabase(String database) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

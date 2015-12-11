@@ -18,6 +18,7 @@ public class AryaCombobox extends Combobox implements IAryaComponent, IAryaTempl
 
 	private String componentClassName;
 	private String componentAttribute;
+	private String database;
 	
 	private AryaTemplate template;
 
@@ -75,6 +76,8 @@ public class AryaCombobox extends Combobox implements IAryaComponent, IAryaTempl
 			
 			if (attributes.getValue("readonly") != null)
 				this.setReadonly(Boolean.parseBoolean(attributes.getValue("readonly")));
+			
+			this.database = attributes.getValue("database");
 			
 			/*
 			 * if the dimension input format of .arya files does NOT contains
@@ -217,11 +220,25 @@ public class AryaCombobox extends Combobox implements IAryaComponent, IAryaTempl
 
 	@Override
 	public String getComponentValue() {
+		
+		if(this.getSelectedItem() != null) {
+			if((this.getSelectedItem().getId()).contains("-")) {
+				String[] temp = (this.getSelectedItem().getId()).split("-");
+				return temp[1];
+			}
+			return this.getSelectedItem().getId();
+		}
 		return this.getValue();
 	}
 
 	@Override
 	public void setComponentValue(String componentValue) {
+		for (int i = 0; i < this.getChildren().size(); i++) {
+			AryaComboItem item = (AryaComboItem) this.getChildren().get(i);
+			if(item.getLabel().equals(componentValue)) {
+				this.setSelectedItem(item);
+			}
+		}
 		this.setValue(componentValue);
 	}
 
@@ -243,6 +260,16 @@ public class AryaCombobox extends Combobox implements IAryaComponent, IAryaTempl
 	@Override
 	public String getComponentTagName() {
 		return "combobox";
+	}
+
+	@Override
+	public String getDatabase() {
+		return database;
+	}
+
+	@Override
+	public void setDatabase(String database) {
+		this.database = database;
 	}
 
 }

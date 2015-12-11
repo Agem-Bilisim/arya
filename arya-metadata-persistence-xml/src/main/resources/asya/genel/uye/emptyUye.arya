@@ -9,31 +9,31 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 			<rows>
 				<row>
 					<label id="kisi.tckNolbl" value="T.C. Kimlik No" />
-					<intbox id="kisi.tckNo"  constraint="no empty"  width="100"  maxlength="11"  placeholder=""/>
+					<intbox id="kisiTckNo" database="kisi.tckNo"  constraint="no empty"  width="100"  maxlength="11"  placeholder=""/>
 				</row>
 				<row>
 					<label id="girisBasvuruTarihilbl" value="Giriş Başvuru Tarihi" />
-					<datebox id="girisBasvuruTarihi" lenient="true" buttonVisible="true" />
+					<datebox id="girisBasvuruTarihi" database="girisBasvuruTarihi" lenient="true" buttonVisible="true" />
 				</row>
 				<row>
 					<label id="dogrulamaKodulbl" value="Doğrulama Kodu" />
-					<textbox type="text" id="dogrulamaKodu" placeholder=""  />
+					<textbox type="text" id="dogrulamaKodu" database="dogrulamaKodu" placeholder=""  />
 				</row>
 				<row>
 					<label id="girisOnayTarihilbl" value="Giriş Onay Tarihi" />
-					<datebox id="girisOnayTarihi" lenient="true" buttonVisible="true" />
+					<datebox id="girisOnayTarihi" database="girisOnayTarihi" lenient="true" buttonVisible="true" />
 				</row>
 				<row>
 					<label id="girisYkKararNolbl" value="YK Karar No" />
-					<intbox id="girisYkKararNo" placeholder=""  />
+					<intbox id="girisYkKararNo" database="girisYkKararNo" placeholder=""  />
 				</row>
 				<row>
 					<label id="aciklamalbl" value="Açıklama" />
-					<textbox type="text" id="aciklama" placeholder=""  />
+					<textbox type="text" id="aciklama" database="aciklama" placeholder=""  />
 				</row>
 				<row>
 					<label id="isyeriUnvanlbl" value="İşyeri Ünvan" />
-					<textbox type="text" id="isyeri.unvan" placeholder=""  />
+					<textbox type="text" id="isyeriUnvan" database="isyeri.unvan" placeholder=""  />
 				</row>
 				
 			</rows>

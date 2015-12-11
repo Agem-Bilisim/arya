@@ -17,6 +17,7 @@ public class AryaTabs extends Tabs implements IAryaComponent {
 
 	private String componentClassName;
 	private String componentAttribute;
+	private String database;
 
 	public AryaTabs(final AryaMain main, Attributes attributes) {
 		super();
@@ -50,6 +51,8 @@ public class AryaTabs extends Tabs implements IAryaComponent {
 			}
 			this.setAction(attributes.getValue("action"));
 			this.setVflex(attributes.getValue("vflex"));
+			
+			this.database = attributes.getValue("database");
 
 			/*
 			 * if the dimension input format of .arya files does NOT contains
@@ -151,6 +154,16 @@ public class AryaTabs extends Tabs implements IAryaComponent {
 	@Override
 	public String getComponentTagName() {
 		return "tabs";
+	}
+
+	@Override
+	public String getDatabase() {
+		return database;
+	}
+
+	@Override
+	public void setDatabase(String database) {
+		this.database = database;
 	}
 
 }

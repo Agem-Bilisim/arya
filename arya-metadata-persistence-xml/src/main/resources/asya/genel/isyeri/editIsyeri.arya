@@ -6,41 +6,41 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 			<rows>
 				<row>
 					<label id="subelbl" value="Şube" />
-					<combobox id="sube"  width="120"  >
+					<combobox id="sube" database="sube"  width="120"  >
 					</combobox>
 				</row>
 				<row>
 					<label id="isyeriSGKNolbl" value="İşyeri SGK No" />
-					<textbox type="text" id="sgkKisaNo" width="245"  maxlength="255"  placeholder=""  top="56" />
+					<textbox type="text" id="sgkKisa" database="sgkKisaNo" width="245"  maxlength="255"  placeholder=""  top="56" />
 				</row>
 				<row>
 					<label id="SGKIlKodulbl" value="SGK İl Kodu" />
-					<textbox type="text" id="sgkIlKod" width="245"  maxlength="255"  placeholder=""  top="56" />
+					<textbox type="text" id="sgkIl" database="sgkIlKod" width="245"  maxlength="255"  placeholder=""  top="56" />
 				</row>
 				<row>
 					<label id="unvanlbl" value="İşyeri Ünvanı" />
-					<textbox type="text" id="unvan" width="245"  maxlength="255"  placeholder=""  top="56" />
+					<textbox type="text" id="unvan" database="unvan" width="245"  maxlength="255"  placeholder=""  top="56" />
 				</row>
 				<row>
 					<label id="isyeriKategoriIdlbl" value="Kategori" />
-					<combobox id="isyeriKategoriId"  width="120"  >
+					<combobox id="isyeriKategori" database="isyeriKategoriId"  width="120"  >
 					</combobox>
 				</row>
 				<row>
 					<label id="calisanSayisilbl" value="İşçi Sayısı" />
-					<intbox id="calisanSayisi"  width="107"  maxlength="5"  placeholder=""  />
+					<intbox id="calSay" database="calisanSayisi"  width="107"  maxlength="5"  placeholder=""  />
 				</row>
 				<row>
 					<label id="vergiDairesilbl" value="Vergi Dairesi" />
-					<textbox type="text" id="vergiDairesi"  width="180"  maxlength="50"  placeholder=""  />	
+					<textbox type="text" id="vergiDaire" database="vergiDairesi"  width="180"  maxlength="50"  placeholder=""  />	
 				</row>
 				<row>
 					<label id="maasGunulbl" value="Maaş Günü" />
-					<textbox type="text" id="maasGunu"  width="180"  maxlength="50"  placeholder=""  />	
+					<textbox type="text" id="gun" database="maasGunu"  width="180"  maxlength="50"  placeholder=""  />	
 				</row>
 				<row>
 					<label id="kisaAdlbl" value="Kısa Ad" />
-					<textbox type="text" id="kisaAd" width="110"  maxlength="255"  placeholder=""  top="56" />
+					<textbox type="text" id="kisaAd" database="kisaAd" width="110"  maxlength="255"  placeholder=""  top="56" />
 				</row>
 			</rows>
 		</grid>
@@ -61,13 +61,13 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 			</listhead>
 			<template>
 				<listitem>
-					<listcell id="sube" />
-					<listcell id="kod" />
-					<listcell id="taraf" />
-					<listcell id="baslangicTarihi" />
-					<listcell id="bitisTarihi" />
-					<listcell id="kalanGun" />
-					<listcell id="basvuruTarihi" />
+					<listcell id="isySube" database="sube" />
+					<listcell id="kod" database="kod" />
+					<listcell id="taraf" database="taraf" />
+					<listcell id="basTarih" database="baslangicTarihi" />
+					<listcell id="bitTarih" database="bitisTarihi" />
+					<listcell id="kalan" database="kalanGun" />
+					<listcell id="basvTarihi" database="basvuruTarihi" />
 				</listitem>
 			</template>
 		</listbox>			

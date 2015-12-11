@@ -7,30 +7,30 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 			<rows>
 				<row>
 					<label id="kisi.tckNolbl" value="T.C. Kimlik No" />
-					<intbox id="kisi.tckNo"  constraint="no empty"  width="100"  maxlength="11"  placeholder=""/>
+					<intbox id="tck" database="kisi.tckNo"  constraint="no empty"  width="100"  maxlength="11"  placeholder=""/>
 				</row>
 				<row>
 					<label id="kisi.adlbl" value="Ad" />
-					<textbox type="text" id="kisi.ad" width="100"  maxlength="255"  placeholder=""  />
+					<textbox type="text" id="ad" database="kisi.ad" width="100"  maxlength="255"  placeholder=""  />
 				</row>
 				<row>
 					<label id="kisi.soyadlbl" value="Soyad" />
-					<textbox type="text" id="kisi.soyad" width="100"  maxlength="255"  placeholder=""  />
+					<textbox type="text" id="soyad" database="kisi.soyad" width="100"  maxlength="255"  placeholder=""  />
 				</row>
 				<row>
 					<label id="sgkNolbl" value="SGK Sicil No" />
-					<intbox id="sgkNo"  width="200"  maxlength="13"  placeholder=""  />
+					<intbox id="sgk" database="sgkNo"  width="200"  maxlength="13"  placeholder=""  />
 				</row>
 				<row>
 					<label id="cinsiyetlbl" value="Cinsiyet" />
-					<radiogroup id="cinsiyet"  >
+					<radiogroup id="cins" database="cinsiyet"  >
 						<radio label="Erkek" value="E" />
 						<radio label="Kadın" value="K" />
 					</radiogroup>
 				</row>
 				<row>
 					<label id="aciklamalbl" value="Açıklama" />
-					<textbox type="text" id="aciklama"  value=""  width="470"  placeholder=""  />
+					<textbox type="text" id="acik" database="aciklama"  value=""  width="470"  placeholder=""  />
 				</row>
 			</rows>
 		</grid>

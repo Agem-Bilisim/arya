@@ -16,6 +16,7 @@ public class AryaListHead extends Listhead implements IAryaComponent {
 	private static final long serialVersionUID = -6309356054625200856L;
 	private String componentClassName;
 	private String componentAttribute;
+	private String database;
 
 	public AryaListHead(final AryaMain main, Attributes attributes) {
 		super();
@@ -50,6 +51,8 @@ public class AryaListHead extends Listhead implements IAryaComponent {
 				}
 				this.setAction(attributes.getValue("action"));
 				this.setVflex(attributes.getValue("vflex"));
+				
+				this.database = attributes.getValue("database");
 
 				// TODO unit checking will be fixed
 				this.setHeight(attributes.getValue("height"));
@@ -144,6 +147,16 @@ public class AryaListHead extends Listhead implements IAryaComponent {
 	@Override
 	public String getComponentTagName() {
 		return "listhead";
+	}
+
+	@Override
+	public String getDatabase() {
+		return database;
+	}
+
+	@Override
+	public void setDatabase(String database) {
+		this.database = database;
 	}
 
 }

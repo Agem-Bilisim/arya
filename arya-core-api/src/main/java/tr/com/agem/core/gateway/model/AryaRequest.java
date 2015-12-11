@@ -10,6 +10,8 @@ public class AryaRequest implements IAryaRequest, Serializable {
 	private static final long serialVersionUID = 722327548252141833L;
 
 	private Map<String,Object> params;
+	private String attributeName;
+	private String attributeValue;
 	private String action;
 	private RequestTypes requestType;
 
@@ -29,7 +31,7 @@ public class AryaRequest implements IAryaRequest, Serializable {
 	public void setParams(Map<String,Object> params) {
 		this.params = params;
 	}
-
+	
 	@Override
 	public String getAction() {
 		return action;
@@ -49,4 +51,20 @@ public class AryaRequest implements IAryaRequest, Serializable {
 		}
 	}
 
+	public String getAttributeName() {
+		return attributeName;
+	}
+
+	public void setAttributeName(String attributeName) {
+		this.attributeName = attributeName;
+	}
+
+	public String getAttributeValue() {
+		return attributeValue;
+	}
+
+	public void setAttributeValue(String attributeValue) {
+		this.attributeValue = attributeValue;
+	}
+	
 }

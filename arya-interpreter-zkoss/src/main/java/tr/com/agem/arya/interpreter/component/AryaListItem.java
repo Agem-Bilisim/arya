@@ -17,6 +17,7 @@ public class AryaListItem extends Listitem implements IAryaComponent {
 
 	private String componentClassName;
 	private String componentAttribute;
+	private String database;
 
 	public AryaListItem(final AryaMain main, Attributes attributes) {
 		super();
@@ -57,6 +58,8 @@ public class AryaListItem extends Listitem implements IAryaComponent {
 
 			// TODO unit checking will be fixed
 			this.setHeight(attributes.getValue("height"));
+			
+			this.database = attributes.getValue("database");
 
 			if (AryaUtils.isNotEmpty(attributes.getValue("onDrop"))) {
 				final String functionName = attributes.getValue("onDrop");
@@ -147,6 +150,16 @@ public class AryaListItem extends Listitem implements IAryaComponent {
 	@Override
 	public String getComponentTagName() {
 		return "listitem";
+	}
+
+	@Override
+	public String getDatabase() {
+		return database;
+	}
+
+	@Override
+	public void setDatabase(String database) {
+		this.database = database;
 	}
 
 }

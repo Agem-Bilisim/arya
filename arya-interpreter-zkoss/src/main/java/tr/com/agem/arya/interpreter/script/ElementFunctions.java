@@ -325,7 +325,10 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 			if (AryaInterpreterHelper.isInputElement(c)) {
 				
 				String v = c.getComponentValue();
-				setValue(m, id, v);
+				String d = c.getDatabase();
+				
+				if(d != null)
+					m.put(d, v);
 			}
 		}
 		ObjectMapper mapper = new ObjectMapper(); 
@@ -336,20 +339,6 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 		post(action, requestType, json, AryaUtils.isEmpty(tabName) ?  tabpanel.getTab().getLabel() : tabName, null, null);
 	}
 
-	private void setValue(Map<String, Object> m, String key, String value) {
-		key = StringUtils.substringAfterLast(key, "-");
-//		String d[] = key.split("\\.");
-//		Map<String, Object> x = m;
-//		for (int i=0; i < d.length-1; i++) {
-//			x = (Map<String, Object>) m.get(d[i]);
-//			if (x == null) {
-//				x = new HashMap<String, Object>();
-//				m.put(d[i], x);
-//			}
-//		}
-		m.put(key, value);
-	}
-		
 	@AryaJsFunction
 	public void tabCloseFunction(String tabId) throws JsonProcessingException {
 		Component comp = (Component)getElementById("tab" + tabId);

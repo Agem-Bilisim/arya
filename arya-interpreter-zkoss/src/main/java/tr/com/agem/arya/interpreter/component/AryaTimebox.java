@@ -17,6 +17,7 @@ public class AryaTimebox extends Timebox implements IAryaComponent {
 
 	private String componentClassName;
 	private String componentAttribute;
+	private String database;
 
 	public AryaTimebox(final AryaMain main, Attributes attributes) {
 
@@ -63,6 +64,8 @@ public class AryaTimebox extends Timebox implements IAryaComponent {
 		this.setAction(attributes.getValue("action"));
 		this.setHflex(attributes.getValue("hflex"));
 		this.setVflex(attributes.getValue("vflex"));
+		
+		this.database = attributes.getValue("database");
 
 		/*
 		 * if the dimension input format of .arya files does NOT contains the
@@ -206,6 +209,16 @@ public class AryaTimebox extends Timebox implements IAryaComponent {
 	@Override
 	public String getComponentTagName() {
 		return "timebox";
+	}
+
+	@Override
+	public String getDatabase() {
+		return database;
+	}
+
+	@Override
+	public void setDatabase(String database) {
+		this.database = database;
 	}
 
 }

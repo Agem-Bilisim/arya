@@ -14,6 +14,7 @@ public class AryaComboItem extends Comboitem implements IAryaComponent {
 
 	private String componentClassName;
 	private String componentAttribute;
+	private String database;
 
 	public AryaComboItem(AryaMain main, Attributes attributes) {
 		super();
@@ -26,6 +27,8 @@ public class AryaComboItem extends Comboitem implements IAryaComponent {
 
 			this.setClass(attributes.getValue("class"));
 			this.setLabel(attributes.getValue("label"));
+			
+			this.database = attributes.getValue("database");
 		}
 	}
 
@@ -87,6 +90,16 @@ public class AryaComboItem extends Comboitem implements IAryaComponent {
 	@Override
 	public String getComponentTagName() {
 		return "comboitem";
+	}
+
+	@Override
+	public String getDatabase() {
+		return database;
+	}
+
+	@Override
+	public void setDatabase(String database) {
+		this.database = database;
 	}
 
 }

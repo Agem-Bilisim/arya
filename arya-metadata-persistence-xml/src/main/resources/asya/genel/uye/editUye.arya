@@ -2,41 +2,40 @@
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="addUyeWindow">
-		<textbox id="kisiId" visible="false"/>
 		<textbox id="isci.kisi.kisiId" visible="false"/>
 		<grid id="uye_edit_grid">
 			<rows>
 				<row>
 					<label id="uyeIdlbl" value="Uye Id" />
-					<textbox type="text" id="uyeId"  placeholder=""  />
+					<textbox type="text" id="uyeId" database="uyeId"  placeholder=""  />
 				</row>
 				<row>
 					<label id="kisiIdlbl" value="Kisi Id" />
-					<textbox type="text" id="kisiId"  placeholder=""  />
+					<textbox type="text" id="kisiId" database="kisiId"  placeholder=""  />
 				</row>
 				<row>
 					<label id="eklemeTarihilbl" value="Ekleme Tarihi" />
-					<textbox type="text" id="eklemeTarihi" placeholder=""  />
+					<textbox type="text" id="eklemeTarihi" database="eklemeTarihi" placeholder=""  />
 				</row>
 				<row>
 					<label id="ekleyenlbl" value="Ekleyen" />
-					<textbox type="text" id="ekleyen"  maxlength="255"  placeholder=""  />
+					<textbox type="text" id="ekleyen" database="ekleyen"  maxlength="255"  placeholder=""  />
 				</row>
 				<row>
 					<label id="sonGunlemeTarihilbl" value="Son Gunleme Tarihi" />
-					<textbox type="text" id="sonGunlemeTarihi"  placeholder=""  />
+					<textbox type="text" id="sonGunlemeTarihi" database="sonGunlemeTarihi"  placeholder=""  />
 				</row>
 				<row>
 					<label id="sonGunleyenlbl" value="Son Gunleyen" />
-					<textbox type="text" id="sonGunleyen"  maxlength="255"  placeholder=""  />
+					<textbox type="text" id="sonGunleyen" database="sonGunleyen"  maxlength="255"  placeholder=""  />
 				</row>
 				<row>
 					<label id="girisBasvuruTarihilbl" value="Giriş Başvuru Tarihi" />
-					<textbox type="text" id="girisBasvuruTarihi"  maxlength="255"  placeholder=""  />
+					<textbox type="text" id="girisBasvuruTarihi" database="girisBasvuruTarihi"  maxlength="255"  placeholder=""  />
 				</row>
 				<row>
 					<label id="cikisBasvuruTarihilbl" value="Çıkış Başvuru Tarihi" />
-					<textbox type="text" id="cikisBasvuruTarihi"  maxlength="255"  placeholder=""  />
+					<textbox type="text" id="cikisBasvuruTarihi" database="cikisBasvuruTarihi"  maxlength="255"  placeholder=""  />
 				</row>
 			</rows>
 		</grid>

@@ -4,4 +4,5 @@ public interface IAryaAdaptorResponse
 {
 	String getViewName();
 	String getData();
+	String getAttributes();
 }

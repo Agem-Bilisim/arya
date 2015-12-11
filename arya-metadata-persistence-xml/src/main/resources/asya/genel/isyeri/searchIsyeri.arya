@@ -6,33 +6,33 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 			<rows>
 				<row>
 					<label id="subelbl" value="Şube" />
-					<combobox id="subeC"  width="120" >
+					<combobox id="subeC" database="sube"  width="120" >
 					</combobox>
 				</row>
 				<row>
 					<label id="isyeriSGKNolbl" value="İşyeri SGK No" />
-					<intbox id="sgkKisaNo" width="245"  maxlength="255"  placeholder=""  top="56" />
+					<intbox id="sgkKisaNo" database="kisaNo" width="245"  maxlength="255"  placeholder=""  top="56" />
 				</row>
 				<row>
 					<label id="unvanlbl" value="İşyeri Ünvanı" />
-					<textbox type="text" id="unvan" width="245"  maxlength="255"  placeholder=""  top="56" />
+					<textbox type="text" id="unvan" database="unvan" width="245"  maxlength="255"  placeholder=""  top="56" />
 				</row>
 				<row>
 					<label id="isyeriKategoriIdlbl" value="Kategori" />
-					<combobox id="kategoriler"  width="120"  >
+					<combobox id="isyeriKat" database="isyeriKategoriId"  width="120"  >
 					</combobox>
 				</row>
 				<row>
 					<label id="calisanSayisilbl" value="İşçi Sayısı" />
-					<intbox id="calisanSayisi"  width="107"  maxlength="5"  placeholder=""  />
+					<intbox id="calSay" database="calisanSayisi"  width="107"  maxlength="5"  placeholder=""  />
 				</row>
 				<row>
 					<label id="vergiDairesilbl" value="Vergi Dairesi" />
-					<textbox type="text" id="vergiDairesi"  width="180"  maxlength="50"  placeholder=""  />	
+					<textbox type="text" id="daire" database="vergiDairesi"  width="180"  maxlength="50"  placeholder=""  />	
 				</row>
 				<row>
 					<label id="kisaAdlbl" value="Kısa Ad" />
-					<textbox type="text" id="kisaAd" width="110"  maxlength="255"  placeholder=""  top="56" />
+					<textbox type="text" id="kisa" database="kisaAd" width="110"  maxlength="255"  placeholder=""  top="56" />
 				</row>
 			</rows>
 		</grid>
@@ -47,6 +47,5 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 		}
 		
 	</script>
-	<fill from="genel.isyeri.list" to="subeC" value="birim.label"/>
-	<fill from="genel.isyeri.list" to="kategoriler" value="isyeriKategori"/>
+	<fill from="genel.orgBirim.list" to="subeC" param="&quot;orgBirimTurIdParam&quot;:&quot;sube&quot;" value="label" />
 </arya>

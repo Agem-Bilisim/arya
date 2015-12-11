@@ -17,6 +17,7 @@ public class AryaTextbox extends Textbox implements IAryaComponent {
 
 	private String componentClassName;
 	private String componentAttribute;
+	private String database;
 
 	public AryaTextbox(final AryaMain main, Attributes attributes) {
 		super();
@@ -67,6 +68,8 @@ public class AryaTextbox extends Textbox implements IAryaComponent {
 			this.setAction(attributes.getValue("action"));
 			this.setHflex(attributes.getValue("hflex"));
 			this.setVflex(attributes.getValue("vflex"));
+			
+			this.database = attributes.getValue("database");
 			
 			if (attributes.getValue("rows") != null)
 				this.setRows(Integer.parseInt(attributes.getValue("rows")));
@@ -219,6 +222,16 @@ public class AryaTextbox extends Textbox implements IAryaComponent {
 	@Override
 	public String getComponentTagName() {
 		return "textbox";
+	}
+
+	@Override
+	public String getDatabase() {
+		return database;
+	}
+
+	@Override
+	public void setDatabase(String database) {
+		this.database = database;
 	}
 
 }

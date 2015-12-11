@@ -16,14 +16,14 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 				</listhead>
 				<template>
 					<listitem>
-						<listcell id="birim.tanim"/>
-						<listcell id="sgkKisaNo"/>
-						<listcell id="unvan"/>
-						<listcell id="iletisim.ilce.ilceAdi"/>
-						<listcell id="isyeriKategori"/>
-						<listcell id="calisanSayisi"/>
-						<listcell id="vergiDairesi"/>
-						<listcell id="kisaAd"/>
+						<listcell id="sube" database="birim.tanim"/>
+						<listcell id="sgk" database="sgkKisaNo"/>
+						<listcell id="unvan" database="unvan"/>
+						<listcell id="ilceAdi" database="iletisim.ilce.ilceAdi"/>
+						<listcell id="isyKat" database="isyeriKategori"/>
+						<listcell id="calisanSay" database="calisanSayisi"/>
+						<listcell id="vergiDaire" database="vergiDairesi"/>
+						<listcell id="kisa" database="kisaAd"/>
 					</listitem>
 				</template>
 			</listbox>
@@ -40,13 +40,13 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 				</listhead>
 				<template>
 					<listitem>
-						<listcell id="sube" />
-						<listcell id="kod" />
-						<listcell id="taraf" />
-						<listcell id="baslangicTarihi" />
-						<listcell id="bitisTarihi" />
-						<listcell id="kalanGun" />
-						<listcell id="basvuruTarihi" />
+						<listcell id="isySube" database="sube" />
+						<listcell id="kod" database="kod" />
+						<listcell id="taraf" database="taraf" />
+						<listcell id="basTarih" database="baslangicTarihi" />
+						<listcell id="bitTarih" database="bitisTarihi" />
+						<listcell id="kalan" database="kalanGun" />
+						<listcell id="basvTarihi" database="basvuruTarihi" />
 					</listitem>
 				</template>
 			</listbox>

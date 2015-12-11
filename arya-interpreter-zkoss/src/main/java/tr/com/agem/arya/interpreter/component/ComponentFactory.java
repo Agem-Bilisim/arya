@@ -8,7 +8,6 @@ import tr.com.agem.arya.interpreter.component.menu.AryaMenuBar;
 import tr.com.agem.arya.interpreter.component.menu.AryaMenuItem;
 import tr.com.agem.arya.interpreter.component.menu.AryaMenuPopUp;
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
-import tr.com.agem.core.interpreter.IAryaCommand;
 import tr.com.agem.core.interpreter.IAryaComponent;
 
 public class ComponentFactory {
@@ -125,6 +124,8 @@ public class ComponentFactory {
 			comp = new AryaIntbox(main, attributes);
 		} else if ("fill".equalsIgnoreCase(tagName)) {
 			comp = new AryaFill(main, attributes);
+		} else if ("attribute".equalsIgnoreCase(tagName)) {
+			comp = new AryaAttribute(main, attributes);
 		}
 
 		return comp;

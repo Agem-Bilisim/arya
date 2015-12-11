@@ -17,6 +17,7 @@ public class AryaMultipleCombobox extends Listbox implements IAryaComponent {
 
 	private String componentClassName;
 	private String componentAttribute;
+	private String database;
 
 	public AryaMultipleCombobox(final AryaMain main, Attributes attributes) {
 		super();
@@ -64,6 +65,8 @@ public class AryaMultipleCombobox extends Listbox implements IAryaComponent {
 			this.setAction(attributes.getValue("action"));
 			this.setHflex(attributes.getValue("hflex"));
 			this.setVflex(attributes.getValue("vflex"));
+			
+			this.database = attributes.getValue("database");
 
 			/*
 			 * if the dimension input format of .arya files does NOT contains
@@ -219,6 +222,16 @@ public class AryaMultipleCombobox extends Listbox implements IAryaComponent {
 	@Override
 	public String getComponentTagName() {
 		return "multiplecombobox";
+	}
+
+	@Override
+	public String getDatabase() {
+		return database;
+	}
+
+	@Override
+	public void setDatabase(String database) {
+		this.database = database;
 	}
 
 }

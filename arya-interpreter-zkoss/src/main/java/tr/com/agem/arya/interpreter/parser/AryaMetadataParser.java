@@ -69,8 +69,10 @@ public class AryaMetadataParser extends DefaultHandler {
 				comp.setComponentParent(currentComponent.size() > 0 ? currentComponent.peek():(isMenu ? main.getMenuContainer() : tabpanel));
 				currentComponent.push(comp);
 				main.getAryaWindowComponents().add(comp);
+				
 				if (tabpanel != null) {
 					tabpanel.add(comp.getComponentId());
+					System.out.println("(parser)component id: " + comp.getComponentId());
 				}
 			}
 
@@ -89,7 +91,7 @@ public class AryaMetadataParser extends DefaultHandler {
 		else if(comp != null && (comp instanceof AryaFill)) {
 			
 			StringBuilder request = new StringBuilder("{ \"params\": ")
-			.append("{\"json\":\"1\"}")
+			.append("{\"json\":\"1\"," +((AryaFill)comp).getParam()+"}")
 			.append(", \"requestType\": \"")
 			.append("DATA_ONLY")
 			.append("\", \"action\": \"")
@@ -105,7 +107,7 @@ public class AryaMetadataParser extends DefaultHandler {
 				response = new AryaResponse();
 				response.fromXMLString(result);
 				
-				AryaInterpreterHelper.populateToFill(response.getData(), (IAryaCommand) comp, main);
+				AryaInterpreterHelper.populateToFill(response.getData(), (IAryaCommand) comp, main, tabpanel);
 			
 			}catch (AryaException e) {
 			}

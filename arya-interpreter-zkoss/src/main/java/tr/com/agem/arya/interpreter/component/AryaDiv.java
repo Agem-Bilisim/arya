@@ -18,6 +18,7 @@ public class AryaDiv extends Div implements IAryaComponent {
 	private Div menuContainer;
 	private String componentClassName;
 	private String componentAttribute;
+	private String database;
 
 	public AryaDiv(final AryaMain main, Attributes attributes) {
 		super();
@@ -50,6 +51,8 @@ public class AryaDiv extends Div implements IAryaComponent {
 		this.setAction(attributes.getValue("action"));
 		this.setHflex(attributes.getValue("hflex"));
 		this.setVflex(attributes.getValue("vflex"));
+		
+		this.database = attributes.getValue("database");
 
 		/*
 		 * if the dimension input format of .arya files does NOT contains the
@@ -164,6 +167,16 @@ public class AryaDiv extends Div implements IAryaComponent {
 	@Override
 	public String getComponentTagName() {
 		return "div";
+	}
+
+	@Override
+	public String getDatabase() {
+		return database;
+	}
+
+	@Override
+	public void setDatabase(String database) {
+		this.database = database;
 	}
 
 }

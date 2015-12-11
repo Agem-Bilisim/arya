@@ -167,4 +167,16 @@ public class AryaVlayout extends Vlayout implements IAryaComponent {
 		return "vlayout";
 	}
 
+	@Override
+	public String getDatabase() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setDatabase(String database) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

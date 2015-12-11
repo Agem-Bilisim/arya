@@ -36,11 +36,12 @@ public class AryaScript extends Script implements IAryaComponent {
 
 	@Override
 	public void setComponentId(String componentId) {
+		this.setId(componentId);
 	}
 
 	@Override
 	public String getComponentId() {
-		return "aryaScript";
+		return this.getId();
 	}
 
 	@Override
@@ -94,6 +95,18 @@ public class AryaScript extends Script implements IAryaComponent {
 	@Override
 	public String getComponentTagName() {
 		return "script";
+	}
+
+	@Override
+	public String getDatabase() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setDatabase(String database) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

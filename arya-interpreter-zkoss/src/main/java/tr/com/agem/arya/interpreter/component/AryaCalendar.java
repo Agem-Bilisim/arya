@@ -17,6 +17,7 @@ public class AryaCalendar extends Calendar implements IAryaComponent {
 
 	private String componentClassName;
 	private String componentAttribute;
+	private String database;
 
 	public AryaCalendar(final AryaMain main, Attributes attributes) {
 
@@ -57,6 +58,8 @@ public class AryaCalendar extends Calendar implements IAryaComponent {
 		
 		if (attributes.getValue("name") != null)
 			this.setName(attributes.getValue("name"));
+		
+		this.database = attributes.getValue("database");
 		
 		/*
 		 * if the dimension input format of .arya files does NOT contains the
@@ -173,6 +176,16 @@ public class AryaCalendar extends Calendar implements IAryaComponent {
 	@Override
 	public String getComponentTagName() {
 		return "calendar";
+	}
+
+	@Override
+	public String getDatabase() {
+		return database;
+	}
+
+	@Override
+	public void setDatabase(String database) {
+		this.database = database;
 	}
 
 }

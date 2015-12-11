@@ -16,6 +16,7 @@ public class AryaMultiComboItem extends Listitem implements IAryaComponent {
 	private static final long serialVersionUID = -5868397529900372434L;
 	private String componentClassName;
 	private String componentAttribute;
+	private String database;
 
 	public AryaMultiComboItem(final AryaMain main, Attributes attributes) {
 		super();
@@ -52,6 +53,8 @@ public class AryaMultiComboItem extends Listitem implements IAryaComponent {
 			}
 			this.setAction(attributes.getValue("action"));
 			this.setVflex(attributes.getValue("vflex"));
+			
+			this.database = attributes.getValue("database");
 
 			/*
 			 * if the dimension input format of .arya files does NOT contains
@@ -182,6 +185,16 @@ public class AryaMultiComboItem extends Listitem implements IAryaComponent {
 	@Override
 	public String getComponentTagName() {
 		return "multiplecomboitem";
+	}
+
+	@Override
+	public String getDatabase() {
+		return database;
+	}
+
+	@Override
+	public void setDatabase(String database) {
+		this.database = database;
 	}
 
 }

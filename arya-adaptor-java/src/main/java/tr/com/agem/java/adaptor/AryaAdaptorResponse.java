@@ -7,6 +7,8 @@ public class AryaAdaptorResponse implements IAryaAdaptorResponse {
 	private String viewName;
 
 	private String data;
+	
+	private String attributes;
 
 	@Override
 	public String getViewName() {
@@ -24,6 +26,15 @@ public class AryaAdaptorResponse implements IAryaAdaptorResponse {
 
 	public void setData(String data) {
 		this.data = data;
+	}
+	
+	public void setAttributes(String attributes) {
+		this.attributes = attributes;
+	}
+
+	@Override
+	public String getAttributes() {
+		return attributes;
 	}
 
 }

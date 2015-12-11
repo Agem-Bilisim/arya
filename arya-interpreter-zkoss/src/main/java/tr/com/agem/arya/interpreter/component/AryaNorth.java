@@ -154,4 +154,16 @@ public class AryaNorth extends North implements IAryaComponent {
 		return "north";
 	}
 
+	@Override
+	public String getDatabase() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setDatabase(String database) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

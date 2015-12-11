@@ -17,15 +17,15 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 				</listhead>
 				<template>
 					<listitem>
-						<listcell id="uyeId"/>
-						<listcell id="girisGecerlilikTarihi"/>
-						<listcell id="dogrulamaKodu"/>
-						<listcell id="isci.cepTel"/>
-						<listcell id="girisYkKararNo"/>
-						<listcell id="cikisBasvuruTarihi"/>
-						<listcell id="cikisGecerlilikTarihi"/>
-						<listcell id="cikisNoterYevmiyeNo"/>
-						<listcell id="cikisNedeni"/>
+						<listcell id="uye" database="uyeId"/>
+						<listcell id="girisGecerlilikTarihi" database="girisGecerlilikTarihi"/>
+						<listcell id="dogrulamaKodu" database="dogrulamaKodu"/>
+						<listcell id="isciCepTel" database="isci.cepTel"/>
+						<listcell id="girisYkKararNo" database="girisYkKararNo"/>
+						<listcell id="cikisBasvuruTarihi" database="cikisBasvuruTarihi"/>
+						<listcell id="cikisGecerlilikTarihi" database="cikisGecerlilikTarihi"/>
+						<listcell id="cikisNoterYevmiyeNo" database="cikisNoterYevmiyeNo"/>
+						<listcell id="cikisNedeni" database="cikisNedeni"/>
 					</listitem>
 				</template>
 			</listbox>

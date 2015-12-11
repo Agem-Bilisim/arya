@@ -17,6 +17,7 @@ public class AryaLabel extends Label implements IAryaComponent {
 
 	private String componentClassName;
 	private String componentAttribute;
+	private String database;
 
 	public AryaLabel(final AryaMain main, Attributes attributes) {
 		super();
@@ -52,6 +53,8 @@ public class AryaLabel extends Label implements IAryaComponent {
 			this.setAction(attributes.getValue("action"));
 			this.setHflex(attributes.getValue("hflex"));
 			this.setVflex(attributes.getValue("vflex"));
+			
+			this.database = attributes.getValue("database");
 
 			/*
 			 * if the dimension input format of .arya files does NOT contains
@@ -181,6 +184,16 @@ public class AryaLabel extends Label implements IAryaComponent {
 	@Override
 	public String getComponentTagName() {
 		return "label";
+	}
+
+	@Override
+	public String getDatabase() {
+		return database;
+	}
+
+	@Override
+	public void setDatabase(String database) {
+		this.database = database;
 	}
 
 }

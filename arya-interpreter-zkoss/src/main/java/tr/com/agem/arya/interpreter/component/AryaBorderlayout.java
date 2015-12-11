@@ -17,6 +17,7 @@ public class AryaBorderlayout extends Borderlayout implements IAryaComponent {
 
 	private String componentClassName;
 	private String componentAttribute;
+	private String database;
 
 	public AryaBorderlayout(final AryaMain main, Attributes attributes) {
 
@@ -55,6 +56,8 @@ public class AryaBorderlayout extends Borderlayout implements IAryaComponent {
 		if (attributes.getValue("splittable") != null) {
 			this.setVisible(Boolean.parseBoolean(attributes.getValue("splittable")));
 		}
+		
+		this.database = attributes.getValue("database");
 
 		/*
 		 * if the dimension input format of .arya files does NOT contains the
@@ -160,6 +163,16 @@ public class AryaBorderlayout extends Borderlayout implements IAryaComponent {
 	@Override
 	public String getComponentTagName() {
 		return "borderlayout";
+	}
+	
+	@Override
+	public String getDatabase() {
+		return database;
+	}
+
+	@Override
+	public void setDatabase(String database) {
+		this.database = database;
 	}
 
 }

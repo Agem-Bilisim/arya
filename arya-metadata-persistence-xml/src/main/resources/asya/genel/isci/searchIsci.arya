@@ -7,19 +7,19 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 				<rows>
 					<row>
 						<label id="kisiParam.tckNoParamlbl" value="T.C. Kimlik No" />
-						<intbox id="kisiParam.tckNoLikeParam" width="200"  maxlength="11"  placeholder=""   />
+						<intbox id="tck" database="kisiParam.tckNoLikeParam" width="200"  maxlength="11"  placeholder=""   />
 					</row>
 					<row>
 						<label id="kisiParam.adSoyadParamlbl" value="Ad Soyad" />
-						<textbox type="text" id="kisiParam.adSoyadParam" width="200"  maxlength="255"  placeholder=""  />
+						<textbox type="text" id="adSoyad" database="kisiParam.adSoyadParam" width="200"  maxlength="255"  placeholder=""  />
 					</row>
 					<row>
 						<label id="sgkNoParamlbl" value="SGK Sicil No" />
-						<intbox id="sgkNoParam" width="200"  maxlength="13"  placeholder=""   />
+						<intbox id="sgkNo" database="sgkNoParam" width="200"  maxlength="13"  placeholder=""   />
 					</row>
 					<row>
 						<label id="cinsiyetlbl" value="Cinsiyet" />
-						<radiogroup id="cinsiyet" >
+						<radiogroup id="cins" database="cinsiyet">
 							<radio label="Erkek" value="E" />
 							<radio label="Kadın" value="K" />
 						</radiogroup>
@@ -29,29 +29,29 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 					</row>
 					<row>
 						<label id="isyeriParam.unvanParamlbl" value="İşyeri Ünvanı" />
-						<textbox type="text" id="isyeriParam.unvanParam" width="416"  maxlength="255"  placeholder=""  top="56" />
+						<textbox type="text" id="unvan" database="isyeriParam.unvanParam" width="416"  maxlength="255"  placeholder=""  top="56" />
 					</row>
 					<row>
 						<label id="isyeriSubelbl" value="Şube" />
-						<combobox id="subeCombo"  width="120" >
+						<combobox id="isyCombo"  width="120" >
 						</combobox>
 					</row>
 					<row>
-						<checkbox type="text" id="isyeriParam.isletmeParam"  checked="false"  label="İşletme Bazında"  onCheck=""  width="50"  />
+						<checkbox type="text" id="isletmeBaz" database="isyeriParam.isletmeParam"  checked="false"  label="İşletme Bazında"  onCheck=""  width="50"  />
 					</row>
 					<row>
 						<label id="digerBilgilerLabellbl" value="Diğer Bilgiler" style="font-weight: bold; font-size: 110%" />
 					</row>
 					<row>
-						<checkbox type="text" id="issizParam"  checked="false"  label="İşsiz"  onCheck=""  width="25"  />
-						<checkbox type="text" id="uyeDurumParam"  checked="false"  label="Üyeler"  onCheck=""  width="25"  />
+						<checkbox type="text" id="issiz" database="issizParam"  checked="false"  label="İşsiz"  onCheck=""  width="25"  />
+						<checkbox type="text" id="uyeDurum" database="uyeDurumParam"  checked="false"  label="Üyeler"  onCheck=""  width="25"  />
 					</row>
 					<row>
-						<checkbox type="text" id="tckNoHataliParam"  checked="false"  label="T.C. Kimlik No Hatalı"  onCheck=""  width="25"  />
-						<checkbox type="text" id="cepTelParam"  checked="false"  label="Cep Tel. Kayıtlı"  onCheck=""  width="25"  />
+						<checkbox type="text" id="tckHatali" database="tckNoHataliParam"  checked="false"  label="T.C. Kimlik No Hatalı"  onCheck=""  width="25"  />
+						<checkbox type="text" id="cepTel" database="cepTelParam"  checked="false"  label="Cep Tel. Kayıtlı"  onCheck=""  width="25"  />
 					</row>
 					<row>
-						<checkbox type="text" id="epostaParam"  checked="false"  label="E-posta Kayıtlı"  onCheck=""  width="25"  />
+						<checkbox type="text" id="eposta" database="epostaParam"  checked="false"  label="E-posta Kayıtlı"  onCheck=""  width="25"  />
 					</row>
 				</rows>
 			</grid>
@@ -66,5 +66,5 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 		}
 		
 	</script>
-	<fill from="genel.isyeri.list" to="subeCombo" value="birim.label" />
+	<attribute name="SESSION_SUBE_LIST" value="label" comp="isyCombo" />
 </arya>

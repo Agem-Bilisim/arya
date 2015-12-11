@@ -16,6 +16,7 @@ public class AryaSelectbox extends Selectbox implements IAryaComponent {
 	private static final long serialVersionUID = 2051047315627309416L;
 	private String componentClassName;
 	private String componentAttribute;
+	private String database;
 
 	public AryaSelectbox(final AryaMain main, Attributes attributes) {
 
@@ -53,6 +54,8 @@ public class AryaSelectbox extends Selectbox implements IAryaComponent {
 			} else {
 				this.setWidth(attributes.getValue("width") + "px");
 			}
+			
+			this.database = attributes.getValue("database");
 
 			if (AryaUtils.isNotEmpty(attributes.getValue("onDrop"))) {
 				final String functionName = attributes.getValue("onDrop");
@@ -154,6 +157,16 @@ public class AryaSelectbox extends Selectbox implements IAryaComponent {
 	@Override
 	public String getComponentTagName() {
 		return "selectbox";
+	}
+
+	@Override
+	public String getDatabase() {
+		return database;
+	}
+
+	@Override
+	public void setDatabase(String database) {
+		this.database = database;
 	}
 
 }

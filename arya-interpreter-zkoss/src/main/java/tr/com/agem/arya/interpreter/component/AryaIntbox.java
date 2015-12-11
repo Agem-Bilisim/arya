@@ -17,6 +17,7 @@ public class AryaIntbox extends Intbox implements IAryaComponent {
 
 	private String componentClassName;
 	private String componentAttribute;
+	private String database;
 
 	public AryaIntbox(final AryaMain main, Attributes attributes) {
 		super();
@@ -69,6 +70,8 @@ public class AryaIntbox extends Intbox implements IAryaComponent {
 			this.setAction(attributes.getValue("action"));
 			this.setHflex(attributes.getValue("hflex"));
 			this.setVflex(attributes.getValue("vflex"));
+			
+			this.database = attributes.getValue("database");
 			
 			if (attributes.getValue("style") != null)
 				this.setStyle(attributes.getValue("style"));
@@ -205,7 +208,10 @@ public class AryaIntbox extends Intbox implements IAryaComponent {
 
 	@Override
 	public void setComponentValue(String componentValue) {
-		this.setValue(Integer.valueOf(componentValue));
+		if(componentValue.equals(""))
+			this.setValue(null);
+		else
+			this.setValue(Integer.valueOf(componentValue));
 	}
 	
 	@Override
@@ -216,6 +222,16 @@ public class AryaIntbox extends Intbox implements IAryaComponent {
 	@Override
 	public String getComponentTagName() {
 		return "intbox";
+	}
+
+	@Override
+	public String getDatabase() {
+		return database;
+	}
+
+	@Override
+	public void setDatabase(String database) {
+		this.database = database;
 	}
 
 }

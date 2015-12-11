@@ -149,4 +149,16 @@ public class AryaCenter extends Center implements IAryaComponent {
 		return "center";
 	}
 
+	@Override
+	public String getDatabase() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setDatabase(String database) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

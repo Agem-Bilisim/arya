@@ -16,6 +16,7 @@ public class AryaListCell extends Listcell implements IAryaComponent {
 	private static final long serialVersionUID = 2829782011828954223L;
 	private String componentClassName;
 	private String componentAttribute;
+	private String database;
 
 	public AryaListCell(final AryaMain main, Attributes attributes) {
 		super();
@@ -51,6 +52,8 @@ public class AryaListCell extends Listcell implements IAryaComponent {
 			}
 			this.setAction(attributes.getValue("action"));
 			this.setVflex(attributes.getValue("vflex"));
+			
+			this.database = attributes.getValue("database");
 
 			if (AryaUtils.isNotEmpty(attributes.getValue("onClick"))) {
 				final String functionName = attributes.getValue("onClick");
@@ -171,6 +174,16 @@ public class AryaListCell extends Listcell implements IAryaComponent {
 	@Override
 	public String getComponentTagName() {
 		return "listcell";
+	}
+
+	@Override
+	public String getDatabase() {
+		return database;
+	}
+
+	@Override
+	public void setDatabase(String database) {
+		this.database = database;
 	}
 
 }

@@ -21,6 +21,7 @@ public class AryaListbox extends Listbox implements IAryaComponent, IAryaTemplat
 
 	private String componentClassName;
 	private String componentAttribute;
+	private String database;
 	
 	private AryaTemplate template;
 	
@@ -77,6 +78,8 @@ public class AryaListbox extends Listbox implements IAryaComponent, IAryaTemplat
 			this.setWidth(attributes.getValue("width"));
 			
 			this.setMold(attributes.getValue("mold"));
+			
+			this.database = attributes.getValue("database");
 			
 			if(attributes.getValue("rows") != null) //TODO number value exception
 				this.setRows(new Integer (attributes.getValue("rows")));
@@ -205,6 +208,16 @@ public class AryaListbox extends Listbox implements IAryaComponent, IAryaTemplat
 	@Override
 	public Object getComponentParent() {
 		return this.getComponentParent();
+	}
+
+	@Override
+	public String getDatabase() {
+		return database;
+	}
+
+	@Override
+	public void setDatabase(String database) {
+		this.database = database;
 	}
 
 }

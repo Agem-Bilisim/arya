@@ -22,6 +22,7 @@ public class AryaTabpanel extends Tabpanel implements IAryaComponent {
 	private String componentAttribute;
 	private Collection<String> components = new ArrayList<String>();
 	private AryaTab tab;
+	private String database;
 
 	public AryaTabpanel(final AryaMain main, Attributes attributes) {
 		super();
@@ -55,6 +56,8 @@ public class AryaTabpanel extends Tabpanel implements IAryaComponent {
 			}
 			this.setAction(attributes.getValue("action"));
 			this.setVflex(attributes.getValue("vflex"));
+			
+			this.database = attributes.getValue("database");
 
 			/*
 			 * if the dimension input format of .arya files does NOT contains
@@ -176,6 +179,16 @@ public class AryaTabpanel extends Tabpanel implements IAryaComponent {
 
 	public void setTab(AryaTab tab) {
 		this.tab = tab;
+	}
+
+	@Override
+	public String getDatabase() {
+		return database;
+	}
+
+	@Override
+	public void setDatabase(String database) {
+		this.database = database;
 	}
 
 }

@@ -17,6 +17,7 @@ public class AryaRadio extends Radio implements IAryaComponent {
 
 	private String componentClassName;
 	private String componentAttribute;
+	private String database;
 
 	public AryaRadio(final AryaMain main, Attributes attributes) {
 		super();
@@ -60,6 +61,8 @@ public class AryaRadio extends Radio implements IAryaComponent {
 		this.setAction(attributes.getValue("action"));
 		this.setHflex(attributes.getValue("hflex"));
 		this.setVflex(attributes.getValue("vflex"));
+		
+		this.database = attributes.getValue("database");
 		
 		if(attributes.getValue("radiogroup") != null)
 			this.setRadiogroup(attributes.getValue("radiogroup"));
@@ -217,6 +220,16 @@ public class AryaRadio extends Radio implements IAryaComponent {
 	@Override
 	public String getComponentTagName() {
 		return "radio";
+	}
+
+	@Override
+	public String getDatabase() {
+		return database;
+	}
+
+	@Override
+	public void setDatabase(String database) {
+		this.database = database;
 	}
 
 }

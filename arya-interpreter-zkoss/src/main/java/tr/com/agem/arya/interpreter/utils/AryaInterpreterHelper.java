@@ -28,6 +28,7 @@ import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.zkoss.zk.ui.Component;
+import org.zkoss.zul.Combobox;
 import org.zkoss.zul.Div;
 import org.zkoss.zul.Listbox;
 import org.zkoss.zul.Radiogroup;
@@ -189,7 +190,7 @@ public class AryaInterpreterHelper {
 		}
 	}
 	
-	public static void populateToFill(String data, IAryaCommand cmd, AryaMain main) {
+	public static void populateToFill(String data, IAryaCommand cmd, AryaMain main, AryaTabpanel tabpanel) {
 		
 		for (int i = 0; i < getJSONArray(data).length(); i++) {
 			
@@ -200,23 +201,13 @@ public class AryaInterpreterHelper {
 					if(getElementById(((AryaFill) cmd).getTo(), main) instanceof AryaCombobox) {
 						AryaCombobox combo = (AryaCombobox) getElementById(((AryaFill) cmd).getTo(), main);
 						
-						int size = combo.getChildren().size();
-						boolean isExist = false;
 						AryaParserAttributes attr = new AryaParserAttributes();
 						String label = splitId(((AryaFill) cmd).getValue(), jsonObj);
+						String id = tabpanel.getComponentId()+"-"+splitId("id", jsonObj);
 						
-						for (int j = 0; j < size; j++) {
-							
-							AryaComboItem cItem = (AryaComboItem) combo.getChildren().get(j);
-							
-							if(cItem.getLabel().equals(label)) {
-								isExist = true;
-								break;
-							}
-						}
-						
-						if(isExist == false && label != null) {
+						if(label != null) {
 							attr.setValue("label", label);
+							attr.setValue("id", id);
 							AryaComboItem comboItem = new AryaComboItem(main, attr);
 							comboItem.setComponentParent(combo);
 						}
@@ -258,11 +249,11 @@ public class AryaInterpreterHelper {
 					AryaParserAttributes attr = new AryaParserAttributes();
 					attr.setValue("id", comp.getComponentId() + "" + (i));
 					if (masterComponent instanceof AryaListbox) {
-						attr.setValue("label", splitId(comp.getComponentId(), jsonObj));
+						attr.setValue("label", splitId(comp.getDatabase(), jsonObj));
 						AryaListCell cell = new AryaListCell(main, attr);
 						cell.setComponentParent(item);
 					} else if (masterComponent instanceof AryaGrid) {
-						attr.setValue("value", splitId(comp.getComponentId(), jsonObj));
+						attr.setValue("value", splitId(comp.getDatabase(), jsonObj));
 						IAryaComponent compNew = ComponentFactory.getComponent(comp.getComponentTagName(), main, attr);
 						compNew.setComponentParent(row);
 					} 
@@ -287,13 +278,12 @@ public class AryaInterpreterHelper {
 			} 
 			else  if (getJSONArray(data).length() == 1){
 				JSONObject jsonObj = getJSONArray(data).getJSONObject(0);
-				
-				
 				for (String id : tab.getTabPanel().getComponents()) {
+					System.out.println("tabpanel components: " + id); //işçi edit sayfasındaki radiogroup ve sonrası comp olarak gelmiyor!!!!!
 					IAryaComponent comp = getElementById(id, main);
-					if (isInputElement(comp)) {
+					if (isInputElement(comp)) {  
 						
-						String key = StringUtils.substringAfterLast(comp.getComponentId(), "-");
+						String key = comp.getDatabase();
 						comp.setComponentValue(getJSONValue(jsonObj,key).toString());
 					}
 				}
@@ -342,6 +332,7 @@ public class AryaInterpreterHelper {
 	public static boolean isInputElement(IAryaComponent comp) {
 		return (comp instanceof InputElement) ||
 			   (comp instanceof Radiogroup) ||
+			   (comp instanceof Combobox) ||
 			   (comp instanceof Listbox);
 	}
 

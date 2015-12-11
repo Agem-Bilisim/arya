@@ -19,6 +19,7 @@ public class AryaFill implements IAryaCommand, IAryaComponent {
 	private String from;
 	private String to;
 	private String value;
+	private String param;
 	
 	public AryaFill(final AryaMain main, Attributes attributes) {
 		super();
@@ -34,6 +35,7 @@ public class AryaFill implements IAryaCommand, IAryaComponent {
 				this.from = attributes.getValue("from");
 				this.to = attributes.getValue("to");
 				this.value = attributes.getValue("value");
+				this.param = attributes.getValue("param");
 
 			}
 		}
@@ -96,6 +98,14 @@ public class AryaFill implements IAryaCommand, IAryaComponent {
 		this.value = value;
 	}
 	
+	public String getParam() {
+		return param;
+	}
+
+	public void setParam(String param) {
+		this.param = param;
+	}
+	
 	@Override
 	public void setComponentId(String componentId) {
 		// TODO Auto-generated method stub
@@ -147,6 +157,18 @@ public class AryaFill implements IAryaCommand, IAryaComponent {
 	
 	public String getComponentTagName() {
 		return "fill";
+	}
+
+	@Override
+	public String getDatabase() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setDatabase(String database) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

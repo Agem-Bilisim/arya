@@ -23,6 +23,10 @@ public interface IAryaComponent {
 	void setComponentParent(Object parent);
 	
 	Object getComponentParent();
+	
+	String getDatabase();
+	
+	void setDatabase(String database);
 
 	String getComponentTagName();
 }
