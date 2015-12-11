@@ -4,7 +4,7 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listIsyeriWindow">
 		<vlayout>
 			<listbox id="genel.isyeri.list" onSelect="render_sozlesmeler()" mold="paging" pagesize="5">
-				<listhead>
+				<listhead masterCol="2">
 					<listheader label="Şube" />
 					<listheader label="İşyeri SGK No" />
 					<listheader label="İşyeri Ünvanı" />
@@ -13,6 +13,7 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 					<listheader label="İşçi Sayısı" />
 					<listheader label="Vergi Dairesi" />
 					<listheader label="Kısa Ad" />
+					
 				</listhead>
 				<template>
 					<listitem>

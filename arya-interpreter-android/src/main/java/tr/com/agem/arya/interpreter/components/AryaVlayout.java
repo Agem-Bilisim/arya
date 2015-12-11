@@ -89,6 +89,7 @@ public class AryaVlayout extends LinearLayout implements IAryaComponent {
         return this.getComponentParent();
     }
 
+
     @Override
     public String getComponentTagName() {
         return "vlayout";

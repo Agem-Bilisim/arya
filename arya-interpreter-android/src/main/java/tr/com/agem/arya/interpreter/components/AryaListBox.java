@@ -1,11 +1,18 @@
 package tr.com.agem.arya.interpreter.components;
 
+import android.widget.ArrayAdapter;
 import android.widget.HorizontalScrollView;
+import android.widget.Spinner;
 import android.widget.TableLayout;
+import android.widget.TextView;
 
 import org.xml.sax.Attributes;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
+import tr.com.agem.arya.interpreter.components.base.AryaNavBar;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.interpreter.IAryaTemplate;
 import tr.com.agem.core.utils.AryaUtils;
@@ -29,6 +36,7 @@ public class AryaListBox extends TableLayout implements IAryaComponent, IAryaTem
 			this.componentClassName = attributes.getValue("class");
 			this.componentValue = attributes.getValue("value");
 			this.componentAttribute = attributes.getValue("attribute");
+
 			onSelect =  attributes.getValue("onSelect");
 		}
 
@@ -73,7 +81,6 @@ public class AryaListBox extends TableLayout implements IAryaComponent, IAryaTem
 
 	@Override
 	public void setComponentParent(Object o) {
-
 	}
 
 	@Override

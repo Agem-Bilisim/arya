@@ -1,6 +1,7 @@
 package tr.com.agem.arya.interpreter.components;
 
 import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.view.View;
 import android.widget.TableRow;
 
@@ -18,7 +19,7 @@ public class AryaListItem extends TableRow implements IAryaComponent {
     private String componentValue;
     private String componentClassName;
     private String componentAttribute;
-
+    private int masterCol=0;
     private AryaMain main;
 
     public AryaListItem(Attributes attributes, final AryaMain main) {
@@ -30,10 +31,17 @@ public class AryaListItem extends TableRow implements IAryaComponent {
             this.componentClassName = attributes.getValue("class");
             this.componentValue = attributes.getValue("value");
             this.componentAttribute = attributes.getValue("attribute");
-
+            if(attributes.getValue("masterCol")!=null){
+                this.masterCol=Integer.parseInt(attributes.getValue("masterCol"));
+            }
         }
         this.main = main;
-
+        GradientDrawable gd = new GradientDrawable(
+                GradientDrawable.Orientation.TOP_BOTTOM,
+                new int[] {Color.parseColor("#C0C0C0"), Color.parseColor("#505050")});
+        gd.setGradientCenter(0.f, 1.f);
+        gd.setLevel(2);
+        this.setBackground(gd);
     }
 
 
@@ -128,6 +136,13 @@ public class AryaListItem extends TableRow implements IAryaComponent {
     @Override
     public String getComponentTagName() {
         return "listitem";
+    }
+    public int getMasterCol() {
+        return masterCol;
+    }
+
+    public void setMasterCol(int masterCol) {
+        this.masterCol = masterCol;
     }
 
 }
