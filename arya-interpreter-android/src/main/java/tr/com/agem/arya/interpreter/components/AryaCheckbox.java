@@ -21,6 +21,8 @@ public class AryaCheckbox extends CheckBox implements IAryaComponent {
     private String componentAttribute;
     private String componentValue;
 
+    private String database;
+
     public AryaCheckbox(Attributes attributes, final AryaMain main) {
         super(main.getAryaWindow().getContext());
 
@@ -34,6 +36,8 @@ public class AryaCheckbox extends CheckBox implements IAryaComponent {
             this.componentClassName = attributes.getValue("class");
             this.componentValue = attributes.getValue("value");
             this.componentAttribute = attributes.getValue("attribute");
+
+            this.database = attributes.getValue("database");
 
             this.setText(attributes.getValue("label"));
             final String tooltiptext = attributes.getValue("tooltiptext");
@@ -134,6 +138,16 @@ public class AryaCheckbox extends CheckBox implements IAryaComponent {
     @Override
     public Object getComponentParent() {
         return this.getComponentParent();
+    }
+
+    @Override
+    public String getDatabase() {
+        return database;
+    }
+
+    @Override
+    public void setDatabase(String database) {
+        this.database = database;
     }
 
     @Override

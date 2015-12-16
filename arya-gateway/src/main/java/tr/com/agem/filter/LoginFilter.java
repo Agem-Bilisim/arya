@@ -21,6 +21,8 @@ import tr.com.agem.common.AgemUtils;
 import tr.com.agem.core.adaptor.IAryaAdaptor;
 import tr.com.agem.core.gateway.model.AryaRequest;
 import tr.com.agem.core.gateway.model.RequestTypes;
+import tr.com.agem.core.metadata.IMetadataEngine;
+import tr.com.agem.core.metadata.model.IMetadata;
 import tr.com.agem.core.utils.AryaUtils;
 import tr.com.agem.filter.utils.LoginRequestWrapper;
 
@@ -30,10 +32,11 @@ public class LoginFilter extends OncePerRequestFilter {
 
 	@Autowired
 	private IAryaAdaptor adaptor;
-
+	
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
 			throws ServletException, IOException {
+		
 		
 //		HttpSession session = request.getSession();
 //		
@@ -53,7 +56,7 @@ public class LoginFilter extends OncePerRequestFilter {
 
 		if ("menu".equals(aryaRequest.getAction())|| "login".equals(aryaRequest.getAction())|| RequestTypes.LOGIN.equals(aryaRequest.getRequestType()) || adaptor.checkLogin(aryaRequest)) {
 			logger.log(Level.FINE, "User has already logged in!");
-			filterChain.doFilter(request, response);
+			filterChain.doFilter(requestWrapper, response);
 			
 		} else {
 			logger.log(Level.SEVERE, "User has not logged in: {0}",

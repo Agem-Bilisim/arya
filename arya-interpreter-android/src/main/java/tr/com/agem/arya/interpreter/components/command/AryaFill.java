@@ -146,6 +146,16 @@ public class AryaFill implements IAryaCommand, IAryaComponent {
         return this.getComponentParent();
     }
 
+    @Override
+    public String getDatabase() {
+        return null;
+    }
+
+    @Override
+    public void setDatabase(String s) {
+
+    }
+
     public String getComponentTagName() {
         return "fill";
     }

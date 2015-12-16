@@ -30,6 +30,7 @@ import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
 import tr.com.agem.arya.R;
+import tr.com.agem.arya.interpreter.components.AryaAttribute;
 import tr.com.agem.arya.interpreter.components.AryaComboBox;
 import tr.com.agem.arya.interpreter.components.AryaComboItem;
 import tr.com.agem.arya.interpreter.components.AryaListBox;
@@ -44,7 +45,6 @@ import tr.com.agem.arya.interpreter.parser.AryaMetadataParser;
 import tr.com.agem.arya.interpreter.parser.AryaParserAttributes;
 import tr.com.agem.core.gateway.model.AryaRequest;
 import tr.com.agem.core.gateway.model.AryaResponse;
-import tr.com.agem.core.interpreter.IAryaCommand;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.interpreter.IAryaTemplate;
 import tr.com.agem.core.utils.AryaUtils;
@@ -171,6 +171,24 @@ public class AryaInterpreterHelper {
             }
             AryaInterpreterHelper.populateView(response.getData(), action, main);
         }
+
+        if(AryaUtils.isNotEmpty(response.getAttributes())) {
+
+            AryaAttribute attrComp = getAttribute(main);   //TODO birden fazla attribute olabilir!!
+            populateToFill((String) response.getAttributes(), attrComp, main);
+
+        }
+    }
+
+    public static AryaAttribute getAttribute(AryaMain main) {
+
+        List<IAryaComponent> comps = main.getAryaWindow().getComponents();
+        for (IAryaComponent comp : comps) {
+            if (comp instanceof AryaAttribute) {
+                return (AryaAttribute) comp;
+            }
+        }
+        return null;
     }
 
     public static void interpretResponseMenu(AryaResponse response, AryaMain main) {
@@ -211,37 +229,36 @@ public class AryaInterpreterHelper {
         }
     }
 
-    public static void populateToFill(String data, IAryaCommand cmd, AryaMain main) {
+    public static void populateToFill(String data, IAryaComponent cmp, AryaMain main) {
 
         for (int i = 0; i < getJSONArray(data).length(); i++) {
 
             JSONObject jsonObj = getJSONArray(data).getJSONObject(i);
 
-            if(cmd instanceof AryaFill) {
-                if(((AryaFill) cmd).getTo() != null) {
-                    if(getElementById(((AryaFill) cmd).getTo(), main) instanceof AryaComboBox) {
-                        AryaComboBox combo = (AryaComboBox) getElementById(((AryaFill) cmd).getTo(), main);
+            String comp = null;
+            String value = null;
 
-                        int size = combo.getAdapter().getCount();
-                        boolean isExist = false;
-                        AryaParserAttributes attr = new AryaParserAttributes();
-                        String label = splitId(((AryaFill) cmd).getValue(), jsonObj);
+            if(cmp instanceof AryaFill) {
+                comp = new String(((AryaFill) cmp).getTo());
+                value = new String(((AryaFill) cmp).getValue());
+            }
+            else if(cmp instanceof AryaAttribute) {
+                comp = new String((((AryaAttribute)cmp).getComp()));
+                value = new String(((AryaAttribute) cmp).getValue());
+            }
 
-                        for (int j = 0; j < size; j++) {
+            if(comp != null) {
 
-                            AryaComboItem cItem = (AryaComboItem) combo.getAdapter().getItem(j);
+                if(getElementById(comp, main) instanceof AryaComboBox) {
+                    AryaComboBox combo = (AryaComboBox) getElementById(comp, main);
 
-                            if(cItem.getLabel().equals(label)) {
-                                isExist = true;
-                                break;
-                            }
-                        }
+                    AryaParserAttributes attr = new AryaParserAttributes();
+                    String label = splitId(value, jsonObj);
 
-                        if(isExist == false && label != null) {
-                            attr.setValue("label", label);
-                            AryaComboItem comboItem = new AryaComboItem(attr, main);
-                            comboItem.setComponentParent(combo);
-                        }
+                    if(label != null) {
+                        attr.setValue("label", label);
+                        AryaComboItem comboItem = new AryaComboItem(attr, main);
+                        comboItem.setComponentParent(combo);
                     }
                 }
             }
@@ -268,7 +285,7 @@ public class AryaInterpreterHelper {
                     AryaParserAttributes attr = new AryaParserAttributes();
                     attr.setValue("id", comp.getComponentId() + "" + (i));
                     if (masterComponent instanceof AryaListBox) {
-                        attr.setValue("label", splitId(comp.getComponentId(), jsonObj));
+                        attr.setValue("label", splitId(comp.getDatabase(), jsonObj));
                         AryaListCell cell = new AryaListCell(attr, main, null);
                         cell.setComponentParent(item);
                     }
@@ -303,7 +320,8 @@ public class AryaInterpreterHelper {
 
                         if (isInputElement(comp)) {
 
-                            comp.setComponentValue(getJSONValue(jsonObj, comp.getComponentId()).toString());
+                            String key = comp.getDatabase();
+                            comp.setComponentValue(getJSONValue(jsonObj,key).toString());
                         }
                     }
                 }

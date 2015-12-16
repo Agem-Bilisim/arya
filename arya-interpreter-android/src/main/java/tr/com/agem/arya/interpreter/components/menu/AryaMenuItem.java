@@ -337,6 +337,16 @@ public class AryaMenuItem implements IAryaComponent,IAryaMenu, MenuItem {//TODO
     }
 
     @Override
+    public String getDatabase() {
+        return null;
+    }
+
+    @Override
+    public void setDatabase(String s) {
+
+    }
+
+    @Override
     public String getComponentTagName() {
         return "menuitem";
     }

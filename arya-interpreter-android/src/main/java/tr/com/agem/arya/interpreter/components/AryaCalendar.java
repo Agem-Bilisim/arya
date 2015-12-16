@@ -19,6 +19,8 @@ public class AryaCalendar extends CalendarView implements IAryaComponent {
     private String componentAttribute;
     private String componentValue;
 
+    private String database;
+
     public AryaCalendar(Attributes attributes, final AryaMain main) {
         super(main.getAryaWindow().getContext());
 
@@ -28,6 +30,8 @@ public class AryaCalendar extends CalendarView implements IAryaComponent {
             this.componentClassName = attributes.getValue("class");
             this.componentValue = attributes.getValue("value");
             this.componentAttribute = attributes.getValue("attribute");
+
+            this.database = attributes.getValue("database");
 
             final String tooltiptext = attributes.getValue("tooltiptext")!=null ? attributes.getValue("tooltiptext") : null;
             this.setOnLongClickListener(new OnLongClickListener() {
@@ -126,6 +130,16 @@ public class AryaCalendar extends CalendarView implements IAryaComponent {
     @Override
     public Object getComponentParent() {
         return this.getComponentParent();
+    }
+
+    @Override
+    public String getDatabase() {
+        return database;
+    }
+
+    @Override
+    public void setDatabase(String database) {
+        this.database = database;
     }
 
     @Override

@@ -3,13 +3,13 @@ package tr.com.agem.arya.interpreter.parser;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Stack;
-import java.util.logging.Level;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import tr.com.agem.arya.interpreter.command.AryaFill;
+import tr.com.agem.arya.interpreter.component.AryaAttribute;
 import tr.com.agem.arya.interpreter.component.AryaCombobox;
 import tr.com.agem.arya.interpreter.component.AryaGrid;
 import tr.com.agem.arya.interpreter.component.AryaListbox;
@@ -22,7 +22,6 @@ import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.utils.AryaException;
 import tr.com.agem.arya.interpreter.utils.AryaInterpreterHelper;
 import tr.com.agem.core.gateway.model.AryaResponse;
-import tr.com.agem.core.interpreter.IAryaCommand;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.property.reader.PropertyReader;
 
@@ -33,7 +32,8 @@ public class AryaMetadataParser extends DefaultHandler {
 	private Stack<IAryaComponent> currentComponent = null;
 	private Boolean isMenu = false;
 
-	public AryaMetadataParser(AryaMain main, Boolean isMenu, AryaTabpanel tabpanel) {
+	public AryaMetadataParser(AryaMain main, Boolean isMenu, AryaTabpanel tabpanel) 
+	{
 		this.main = main;
 		this.currentComponent = new Stack<IAryaComponent>();
 		this.isMenu = isMenu;
@@ -66,6 +66,10 @@ public class AryaMetadataParser extends DefaultHandler {
 				if(comp.getComponentId() != null && !comp.getComponentId().equals(""))
 					comp.setComponentId(tabpanel.getComponentId()+"-"+comp.getComponentId());
 				
+				if(comp instanceof AryaAttribute) {
+					comp.setComponentId(new String(""));
+				}
+				
 				comp.setComponentParent(currentComponent.size() > 0 ? currentComponent.peek():(isMenu ? main.getMenuContainer() : tabpanel));
 				currentComponent.push(comp);
 				main.getAryaWindowComponents().add(comp);
@@ -74,6 +78,7 @@ public class AryaMetadataParser extends DefaultHandler {
 					tabpanel.add(comp.getComponentId());
 					System.out.println("(parser)component id: " + comp.getComponentId());
 				}
+				
 			}
 
 			// Add new component to the component list of parent window
@@ -107,7 +112,7 @@ public class AryaMetadataParser extends DefaultHandler {
 				response = new AryaResponse();
 				response.fromXMLString(result);
 				
-				AryaInterpreterHelper.populateToFill(response.getData(), (IAryaCommand) comp, main, tabpanel);
+				AryaInterpreterHelper.populateToFill(response.getData(), comp, main, tabpanel);
 			
 			}catch (AryaException e) {
 			}

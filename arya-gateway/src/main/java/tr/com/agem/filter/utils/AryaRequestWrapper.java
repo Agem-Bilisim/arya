@@ -10,13 +10,13 @@ import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletRequestWrapper;
 
-public class LoginRequestWrapper extends HttpServletRequestWrapper {
-
+public class AryaRequestWrapper extends HttpServletRequestWrapper {
+	
 	private final String requestBody;
 
-	public LoginRequestWrapper(HttpServletRequest request) {
+	public AryaRequestWrapper(HttpServletRequest request, String name, String value) {
 		super(request);
-
+		
 		StringBuilder stringBuilder = new StringBuilder();
 		BufferedReader bufferedReader = null;
 
@@ -32,6 +32,13 @@ public class LoginRequestWrapper extends HttpServletRequestWrapper {
 				while ((bytesRead = bufferedReader.read(charBuffer)) > 0) {
 					stringBuilder.append(charBuffer, 0, bytesRead);
 				}
+				stringBuilder.deleteCharAt(stringBuilder.length()-1);
+				stringBuilder = stringBuilder.append(", \"attributeName\": \"")
+								.append(name)
+								.append("\", \"attributeValue\": \"")
+								.append(value)
+								.append("\" }");
+				System.out.println("requestwrapper<<<<<<"+stringBuilder.toString());
 			} else {
 				// make an empty string since there is no payload
 				stringBuilder.append("");
@@ -48,9 +55,8 @@ public class LoginRequestWrapper extends HttpServletRequestWrapper {
 		}
 
 		requestBody = stringBuilder.toString();
-		
 	}
-
+	
 	@Override
 	public ServletInputStream getInputStream() throws IOException {
 		final ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(requestBody.getBytes());
@@ -61,5 +67,6 @@ public class LoginRequestWrapper extends HttpServletRequestWrapper {
 		};
 		return inputStream;
 	}
+
 
 }

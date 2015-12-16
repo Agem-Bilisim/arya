@@ -27,6 +27,8 @@ public class AryaComboBox extends Spinner implements IAryaComponent {
     private String componentValue;
     private boolean spinnerInit =false;
 
+    private String database;
+
     public AryaComboBox(Attributes attributes , final AryaMain main) {
         super(main.getAryaWindow().getContext());
 
@@ -35,6 +37,8 @@ public class AryaComboBox extends Spinner implements IAryaComponent {
             this.componentClassName = attributes.getValue("class");
             this.componentValue = attributes.getValue("value");
             this.componentAttribute = attributes.getValue("attribute");
+
+            this.database = attributes.getValue("database");
 
             final String tooltiptext = attributes.getValue("tooltiptext");
             this.setOnLongClickListener(new OnLongClickListener() {
@@ -165,6 +169,16 @@ public class AryaComboBox extends Spinner implements IAryaComponent {
     @Override
     public Object getComponentParent() {
         return this.getComponentParent();
+    }
+
+    @Override
+    public String getDatabase() {
+        return database;
+    }
+
+    @Override
+    public void setDatabase(String database) {
+        this.database = database;
     }
 
     @Override

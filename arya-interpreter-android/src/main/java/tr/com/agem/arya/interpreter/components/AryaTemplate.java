@@ -135,7 +135,17 @@ public class AryaTemplate implements IAryaComponent{
         return this.getComponentParent();
     }
 
-   @Override
+    @Override
+    public String getDatabase() {
+        return null;
+    }
+
+    @Override
+    public void setDatabase(String s) {
+
+    }
+
+    @Override
     public String getComponentTagName() {
         return "template";
     }

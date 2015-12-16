@@ -19,6 +19,8 @@ public class AryaListItem extends TableRow implements IAryaComponent {
     private String componentValue;
     private String componentClassName;
     private String componentAttribute;
+    private String database;
+
     private int masterCol=0;
     private AryaMain main;
 
@@ -31,6 +33,8 @@ public class AryaListItem extends TableRow implements IAryaComponent {
             this.componentClassName = attributes.getValue("class");
             this.componentValue = attributes.getValue("value");
             this.componentAttribute = attributes.getValue("attribute");
+            this.database = attributes.getValue("database");
+
             if(attributes.getValue("masterCol")!=null){
                 this.masterCol=Integer.parseInt(attributes.getValue("masterCol"));
             }
@@ -65,10 +69,12 @@ public class AryaListItem extends TableRow implements IAryaComponent {
 
                 v.setDrawingCacheBackgroundColor(Color.LTGRAY);
 
-                JSONObject j = new JSONObject(((AryaListItem)v).getComponentValue());
-                ElementFunctions.setJsonObj(j);
+                if((((AryaListItem)v).getComponentValue()) != null) {
+                    JSONObject j = new JSONObject(((AryaListItem) v).getComponentValue());
+                    ElementFunctions.setJsonObj(j);
 
-                ScriptHelper.executeScript(onSelect, null, getMain());
+                    ScriptHelper.executeScript(onSelect, null, getMain());
+                }
             }
         });
 
@@ -131,6 +137,16 @@ public class AryaListItem extends TableRow implements IAryaComponent {
     @Override
     public Object getComponentParent() {
         return this.getComponentParent();
+    }
+
+    @Override
+    public String getDatabase() {
+        return database;
+    }
+
+    @Override
+    public void setDatabase(String database) {
+        this.database = database;
     }
 
     @Override

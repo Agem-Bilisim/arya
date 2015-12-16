@@ -1,9 +1,5 @@
 package tr.com.agem.arya.interpreter.components;
 
-/**
- * Created by bcelenk on 10/13/15.
- */
-
 
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -87,6 +83,16 @@ public class AryaVlayout extends LinearLayout implements IAryaComponent {
     @Override
     public Object getComponentParent() {
         return this.getComponentParent();
+    }
+
+    @Override
+    public String getDatabase() {
+        return null;
+    }
+
+    @Override
+    public void setDatabase(String s) {
+
     }
 
 

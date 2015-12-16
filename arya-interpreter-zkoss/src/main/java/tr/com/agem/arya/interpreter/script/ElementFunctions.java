@@ -143,29 +143,21 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 		//TODO id listbox olmayabilir???!??!?
 		JSONObject jsonObj = null;
 		
-		if(getElementById(elementId) instanceof AryaListbox) { 
+		if(getElementById(elementId) instanceof AryaListbox) {
 			jsonObj = ((AryaListbox)getElementById(elementId)).getSelectedItem().getValue();
-		}		
-		else if(getElementById(elementId) instanceof AryaCombobox) {
-			
-			jsonObj = ((AryaCombobox)getElementById(elementId)).getSelectedItem().getValue();
-		}
 		
-		String params = "{\"id\":\""+ splitId(id, jsonObj)+"\"}"; 
-		
-		for (int i = 0; i < comps.size(); i++) {
+			String params = "{\"id\":\""+ splitId(id, jsonObj)+"\"}"; 
 			
-			String value = splitId(values.get(i).toString(), jsonObj);
-			
-			String comp = (String) comps.get(i);			
-
-			((IAryaComponent)getElementById(comp)).setComponentValue(value);
+			for (int i = 0; i < comps.size(); i++) {
 				
-		} 
-
-		if(!action.isEmpty())
-			post(action, "ALL", params, tabValue, null, null);
-		
+				String value = splitId(values.get(i).toString(), jsonObj);
+				String comp = (String) comps.get(i);			
+				((IAryaComponent)getElementById(comp)).setComponentValue(value);
+			} 
+	
+			if(!action.isEmpty())
+				post(action, "ALL", params, tabValue, null, null);
+		}
 	}
 	
 	@AryaJsFunction
@@ -174,18 +166,15 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 		//TODO id listbox olmayabilir???!??!?
 		JSONObject jsonObj = null;
 		
-		if(getElementById(elementId) instanceof AryaListbox) { 
+		if(getElementById(elementId) instanceof AryaListbox) {
 			jsonObj = ((AryaListbox)getElementById(elementId)).getSelectedItem().getValue();
-		}		
-		else if(getElementById(elementId) instanceof AryaCombobox) {
-			jsonObj = ((AryaCombobox)getElementById(elementId)).getSelectedItem().getValue();
-		}
 
-		 if(!action.isEmpty() && action.endsWith("list")) {
-			 
-			//TODO isyeriIdParam -> idParam!!!!!
-			 String params = "{\"isyeriIdParam\":\""+ splitId(id, jsonObj)+"\",\"id\":\""+ splitId(id, jsonObj)+"\"}";
-			 post(action, "DATA_ONLY", params, tabValue, null, null);
+			 if(!action.isEmpty() && action.endsWith("list")) {
+				 
+				//TODO isyeriIdParam -> idParam!!!!!
+				 String params = "{\"isyeriIdParam\":\""+ splitId(id, jsonObj)+"\",\"id\":\""+ splitId(id, jsonObj)+"\"}";
+				 post(action, "DATA_ONLY", params, tabValue, null, null);
+			}
 		}
 	}
 	
@@ -313,6 +302,7 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 
 	@AryaJsFunction
 	public void send(String action, String requestType, String parentObjectId, String objectIdProp, String tabName) throws JsonProcessingException {
+		
 		Component obj = (Component) getElementById(parentObjectId);
 		while (!(obj instanceof AryaTabpanel)) {
 			obj = obj.getParent(); 

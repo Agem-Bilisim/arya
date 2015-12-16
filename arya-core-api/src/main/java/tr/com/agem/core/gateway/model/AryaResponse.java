@@ -24,7 +24,7 @@ public class AryaResponse implements IAryaResponse
 	 */
 	private String data;
 	
-	private String attributes;
+	private Object attributes;
 
 	public String getView() {
 		return view;
@@ -42,12 +42,12 @@ public class AryaResponse implements IAryaResponse
 		this.data = data;
 	}
 	
-	public void setAttributes(String attributes) {
+	public void setAttributes(Object attributes) {
 		this.attributes = attributes;
 	}
 	
 	@Override
-	public String getAttributes() {
+	public Object getAttributes() {
 		return attributes;
 	}
 	
@@ -69,6 +69,12 @@ public class AryaResponse implements IAryaResponse
 			assert(nodeList != null && nodeList.getLength() == 1);
 
 			this.data = nodeList.item(0).getTextContent();
+			
+			nodeList = doc.getElementsByTagName("attributes");
+
+			assert(nodeList != null && nodeList.getLength() == 1);
+
+			this.attributes = nodeList.item(0).getTextContent();
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -96,6 +102,14 @@ public class AryaResponse implements IAryaResponse
 			.append("]]></data>");
 		} else {
 			xmlString.append("<data/>");			
+		}
+		
+		if (this.attributes != null) {
+			xmlString.append("<attributes><![CDATA[{ \"results\":")
+			.append(this.attributes)
+			.append(" }]]></attributes>");
+		} else {
+			xmlString.append("<attributes/>");			
 		}
 		
 		xmlString.append("</arya-response>");

@@ -100,6 +100,16 @@ public class AryaScript extends View implements IAryaComponent{
     }
 
     @Override
+    public String getDatabase() {
+        return null;
+    }
+
+    @Override
+    public void setDatabase(String s) {
+
+    }
+
+    @Override
     public String getComponentTagName() {
         return "script";
     }

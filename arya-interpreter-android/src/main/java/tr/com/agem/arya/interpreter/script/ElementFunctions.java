@@ -27,7 +27,6 @@ import tr.com.agem.arya.MainActivity;
 import tr.com.agem.arya.gateway.AryaInterpreterHelper;
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.core.gateway.model.AryaResponse;
-import tr.com.agem.core.gateway.model.RequestTypes;
 import tr.com.agem.core.interpreter.IAryaComponent;
 
 public class ElementFunctions extends AnnotatedScriptableObject {
@@ -160,7 +159,10 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 			if (AryaInterpreterHelper.isInputElement(cmp)) {
 
 				String v = cmp.getComponentValue();
-				m.put(cmp.getComponentId(), v);
+				String d = cmp.getDatabase();
+
+				if(d != null)
+					m.put(d, v);
 			}
 		}
 		ObjectMapper mapper = new ObjectMapper();

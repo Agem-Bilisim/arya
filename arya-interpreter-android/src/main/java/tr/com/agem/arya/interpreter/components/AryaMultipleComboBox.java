@@ -22,6 +22,8 @@ public class AryaMultipleComboBox extends ListView implements IAryaComponent {
     private String componentId;
     private String componentAttribute;
     private String componentValue;
+    private String database;
+
 
 
     public AryaMultipleComboBox(Attributes attributes, AryaMain main) {
@@ -33,6 +35,8 @@ public class AryaMultipleComboBox extends ListView implements IAryaComponent {
             this.componentClassName = attributes.getValue("class");
             this.componentValue = attributes.getValue("value");
             this.componentAttribute = attributes.getValue("attribute");
+            this.database = attributes.getValue("database");
+
         }
 
         createAdapter();
@@ -124,6 +128,16 @@ public class AryaMultipleComboBox extends ListView implements IAryaComponent {
     @Override
     public Object getComponentParent() {
         return this.getComponentParent();
+    }
+
+    @Override
+    public String getDatabase() {
+        return database;
+    }
+
+    @Override
+    public void setDatabase(String database) {
+        this.database = database;
     }
 
     @Override

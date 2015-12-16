@@ -12,18 +12,12 @@ import android.graphics.Rect;
 import android.view.Display;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.Spinner;
 import android.widget.TableRow;
 import android.widget.TextView;
 
 import org.xml.sax.Attributes;
-
-
-import java.util.ArrayList;
-import java.util.List;
 
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.components.base.AryaNavBar;
@@ -36,6 +30,8 @@ public class AryaListCell extends TextView implements IAryaComponent {
     private String componentValue;
     private String componentClassName;
     private String componentAttribute;
+    private String database;
+
     private String tag;
 
     public AryaListCell(Attributes attributes,AryaMain main, String tag) {
@@ -47,6 +43,8 @@ public class AryaListCell extends TextView implements IAryaComponent {
             this.componentClassName = attributes.getValue("class");
             this.componentValue = attributes.getValue("value");
             this.componentAttribute = attributes.getValue("attribute");
+            this.database = attributes.getValue("database");
+
 
             this.setText(attributes.getValue("label"));
             this.setOnClickListener(new OnClickListener() {
@@ -147,6 +145,16 @@ public class AryaListCell extends TextView implements IAryaComponent {
     @Override
     public Object getComponentParent() {
         return this.getComponentParent();
+    }
+
+    @Override
+    public String getDatabase() {
+        return database;
+    }
+
+    @Override
+    public void setDatabase(String database) {
+        this.database = database;
     }
 
     @Override

@@ -19,6 +19,8 @@ public class AryaButton extends Button implements IAryaComponent {
     private String componentAttribute;
     private String componentValue;
 
+    private String database;
+
     public AryaButton(final Attributes attributes, final AryaMain main) {
         super(main.getAryaWindow().getContext());
         this.setBackgroundResource(android.R.drawable.btn_default);
@@ -59,7 +61,7 @@ public class AryaButton extends Button implements IAryaComponent {
                 this.setEnabled(!Boolean.parseBoolean(attributes.getValue("disabled")));
             }
 
-
+            this.database = attributes.getValue("database");
 
             if (attributes.getValue("onClick") != null) {
                 final String functionName = attributes.getValue("onClick");
@@ -138,6 +140,16 @@ public class AryaButton extends Button implements IAryaComponent {
     @Override
     public Object getComponentParent() {
         return this.getComponentParent();
+    }
+
+    @Override
+    public String getDatabase() {
+        return database;
+    }
+
+    @Override
+    public void setDatabase(String database) {
+        this.database = database;
     }
 
     @Override

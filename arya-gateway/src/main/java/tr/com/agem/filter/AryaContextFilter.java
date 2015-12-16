@@ -25,7 +25,7 @@ public class AryaContextFilter extends OncePerRequestFilter {
 			throws ServletException, IOException {
 		AryaThreadLocal.set(request, response, getServletContext());
 		filterChain.doFilter(request, response);
-		AryaThreadLocal.unset();
+		//AryaThreadLocal.unset();
 	}
 
 }

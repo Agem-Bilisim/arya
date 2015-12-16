@@ -1,4 +1,4 @@
-package tr.com.agem.arya.interpreter.component;
+package tr.com.agem.component;
 
 import org.xml.sax.Attributes;
 
@@ -9,7 +9,6 @@ public class AryaAttribute implements IAryaComponent {
 	
 	private String componentClassName;
 	private String componentAttribute;
-	private String id;
 	
 	private String name;
 	private String value;
@@ -26,20 +25,20 @@ public class AryaAttribute implements IAryaComponent {
 				this.name = attributes.getValue("name");
 				this.value = attributes.getValue("value");
 				this.comp = attributes.getValue("comp");
-				
-				if(attributes.getValue("id") != null){
-					this.id = attributes.getValue("id");
-				}
 			}
 		}
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	@Override
+	public void setComponentId(String componentId) {
+		// TODO Auto-generated method stub
+
 	}
 
-	public String getId() {
-		return id;
+	@Override
+	public String getComponentId() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
@@ -106,7 +105,8 @@ public class AryaAttribute implements IAryaComponent {
 
 	@Override
 	public String getComponentTagName() {
-		return "attribute";
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	public String getName() {
@@ -131,16 +131,6 @@ public class AryaAttribute implements IAryaComponent {
 
 	public void setComp(String comp) {
 		this.comp = comp;
-	}
-
-	@Override
-	public void setComponentId(String componentId) {
-		setId(componentId);
-	}
-
-	@Override
-	public String getComponentId() {
-		return getId();
 	}
 
 }

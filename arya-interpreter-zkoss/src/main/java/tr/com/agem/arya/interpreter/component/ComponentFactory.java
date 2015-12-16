@@ -125,9 +125,9 @@ public class ComponentFactory {
 		} else if ("fill".equalsIgnoreCase(tagName)) {
 			comp = new AryaFill(main, attributes);
 		} else if ("attribute".equalsIgnoreCase(tagName)) {
-			comp = new AryaAttribute(main, attributes);
+			comp = new AryaAttribute(attributes);
 		}
-
+		
 		return comp;
 	}
 

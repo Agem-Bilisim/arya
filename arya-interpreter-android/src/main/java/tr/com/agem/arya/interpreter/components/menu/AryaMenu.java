@@ -1,7 +1,6 @@
 package tr.com.agem.arya.interpreter.components.menu;
-/**
- * Created by bcelenk on 11/5/15.
- */
+
+
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.view.ActionProvider;
@@ -327,6 +326,16 @@ public class AryaMenu implements IAryaComponent,IAryaMenu, MenuItem {//TODO
     @Override
     public Object getComponentParent() {
         return this.getComponentParent();
+    }
+
+    @Override
+    public String getDatabase() {
+        return null;
+    }
+
+    @Override
+    public void setDatabase(String s) {
+
     }
 
     @Override

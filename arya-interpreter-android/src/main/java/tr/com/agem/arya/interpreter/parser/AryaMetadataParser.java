@@ -11,6 +11,7 @@ import java.util.Stack;
 
 import tr.com.agem.arya.MainActivity;
 import tr.com.agem.arya.gateway.AryaInterpreterHelper;
+import tr.com.agem.arya.interpreter.components.AryaAttribute;
 import tr.com.agem.arya.interpreter.components.AryaListBox;
 import tr.com.agem.arya.interpreter.components.AryaScript;
 import tr.com.agem.arya.interpreter.components.AryaTemplate;
@@ -21,7 +22,6 @@ import tr.com.agem.arya.interpreter.components.menu.AryaMenu;
 import tr.com.agem.arya.interpreter.components.menu.AryaMenuItem;
 import tr.com.agem.arya.interpreter.components.menu.AryaPopupMenu;
 import tr.com.agem.core.gateway.model.AryaResponse;
-import tr.com.agem.core.interpreter.IAryaCommand;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.interpreter.IAryaTemplate;
 
@@ -90,6 +90,11 @@ public class AryaMetadataParser extends DefaultHandler {
             if (!(comp instanceof AryaTemplate)) {
 
                 if(!((currentComponent.size() > 0) && (currentComponent.peek() instanceof AryaTemplate))) {
+
+                    if(comp instanceof AryaAttribute) {
+                        comp.setComponentId(new String(""));
+                    }
+
                     currentComponent.push(comp);
 
                     if (main.getAryaWindow().getComponents() == null) {
@@ -115,7 +120,7 @@ public class AryaMetadataParser extends DefaultHandler {
             AryaResponse response = new AryaResponse();
             response.fromXMLString(result);
 
-            AryaInterpreterHelper.populateToFill(response.getData(), (IAryaCommand) comp, main);
+            AryaInterpreterHelper.populateToFill(response.getData(), comp, main);
 
         }
     }

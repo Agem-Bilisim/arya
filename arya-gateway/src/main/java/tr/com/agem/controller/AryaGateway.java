@@ -1,6 +1,5 @@
 package tr.com.agem.controller;
 
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -82,7 +81,6 @@ public class AryaGateway {
 				if (adaptorResponse.getViewName() != null && RequestTypes.ALL.equals(aryaRequest.getRequestType())) {
 					metadata = metadataEngine.findWithNameAsXML(applicationName, adaptorResponse.getViewName());
 				}
-
 				resp.setData(adaptorResponse.getData());
 			} else {
 				if (RequestTypes.NAVBAR.equals(aryaRequest.getRequestType())) {
@@ -94,14 +92,23 @@ public class AryaGateway {
 		if (metadata != null) {
 			resp.setView(metadata.getMetadata());
 		}
+		
+		if(aryaRequest.getAttributeName() != null) {
+			HttpSession session = request.getSession();
+			resp.setAttributes(session.getAttribute(aryaRequest.getAttributeName()));
+		}
+		
+		
 
 		String respStr = resp.toString();
 
 		logger.log(Level.INFO, "AryaResponse: {0}", respStr);
+		
+		System.out.println("aryagateway...respStr......."+respStr);
 
 		return respStr;
 	}
-
+	
 	@ExceptionHandler(value = Exception.class)
 	public void defaultErrorHandler(HttpServletResponse response, Exception e)
 			throws Exception {

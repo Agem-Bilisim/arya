@@ -39,6 +39,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import tr.com.agem.arya.interpreter.command.AryaFill;
+import tr.com.agem.arya.interpreter.component.AryaAttribute;
 import tr.com.agem.arya.interpreter.component.AryaComboItem;
 import tr.com.agem.arya.interpreter.component.AryaCombobox;
 import tr.com.agem.arya.interpreter.component.AryaGrid;
@@ -60,7 +61,6 @@ import tr.com.agem.arya.interpreter.parser.AryaParserAttributes;
 import tr.com.agem.arya.interpreter.script.ElementFunctions;
 import tr.com.agem.core.gateway.model.AryaRequest;
 import tr.com.agem.core.gateway.model.AryaResponse;
-import tr.com.agem.core.interpreter.IAryaCommand;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.interpreter.IAryaTemplate;
 import tr.com.agem.core.utils.AryaUtils;
@@ -150,8 +150,29 @@ public class AryaInterpreterHelper {
 			System.out.println("view:"+response.getView());
 			populateView(response.getData(), action, main, tab, tabValue);
 		}
+		
+		if(AryaUtils.isNotEmpty(response.getAttributes())) {
+			
+			AryaTab tab = getCurrentTab(tabs, tabValue);
+			
+			AryaAttribute attrComp = getAttribute(main);   //TODO birden fazla attribute olabilir!!
+			populateToFill((String) response.getAttributes(), attrComp, main, tab.getTabPanel());
+			
+		}
+		
 	}
-
+	
+	public static AryaAttribute getAttribute(AryaMain main) {
+		
+		Set<IAryaComponent> comps = main.getAryaWindowComponents();
+		for (IAryaComponent comp : comps) {
+			if (comp instanceof AryaAttribute) {
+				return (AryaAttribute) comp;
+			}
+		}
+		return null;
+	}
+	
 	public static void removeElement(AryaMain main, Component parent, Component component) {
 		try {
 			if (!(component instanceof Listbox)) {
@@ -190,27 +211,37 @@ public class AryaInterpreterHelper {
 		}
 	}
 	
-	public static void populateToFill(String data, IAryaCommand cmd, AryaMain main, AryaTabpanel tabpanel) {
+	public static void populateToFill(String data, IAryaComponent cmp, AryaMain main, AryaTabpanel tabpanel) {
 		
 		for (int i = 0; i < getJSONArray(data).length(); i++) {
 			
 			JSONObject jsonObj = getJSONArray(data).getJSONObject(i);
 			
-			if(cmd instanceof AryaFill) {
-				if(((AryaFill) cmd).getTo() != null) {
-					if(getElementById(((AryaFill) cmd).getTo(), main) instanceof AryaCombobox) {
-						AryaCombobox combo = (AryaCombobox) getElementById(((AryaFill) cmd).getTo(), main);
-						
-						AryaParserAttributes attr = new AryaParserAttributes();
-						String label = splitId(((AryaFill) cmd).getValue(), jsonObj);
-						String id = tabpanel.getComponentId()+"-"+splitId("id", jsonObj);
-						
-						if(label != null) {
-							attr.setValue("label", label);
-							attr.setValue("id", id);
-							AryaComboItem comboItem = new AryaComboItem(main, attr);
-							comboItem.setComponentParent(combo);
-						}
+			String comp = null;
+			String value = null;
+			
+			if(cmp instanceof AryaFill) {
+				comp = new String(((AryaFill) cmp).getTo());
+				value = new String(((AryaFill) cmp).getValue());
+			}
+			else if(cmp instanceof AryaAttribute) {
+				comp = new String((((AryaAttribute)cmp).getComp()));
+				value = new String(((AryaAttribute) cmp).getValue());
+			}
+			
+			if(comp != null) {
+				if(getElementById(comp, main) instanceof AryaCombobox) {
+					AryaCombobox combo = (AryaCombobox) getElementById(comp, main);
+					
+					AryaParserAttributes attr = new AryaParserAttributes();
+					String label = new String(splitId(value, jsonObj));
+					String id = tabpanel.getComponentId()+"-"+splitId("id", jsonObj);
+					
+					if(label != null) {
+						attr.setValue("label", label);
+						attr.setValue("id", id);
+						AryaComboItem comboItem = new AryaComboItem(main, attr);
+						comboItem.setComponentParent(combo);
 					}
 				}
 			}
@@ -304,7 +335,6 @@ public class AryaInterpreterHelper {
 	
 	public static JSONArray getJSONArray(String data) {
 		
-		//System.out.println(data);
 		JSONArray jsonArray = null;
 		ObjectMapper mapper = new ObjectMapper(); 
 		try {
