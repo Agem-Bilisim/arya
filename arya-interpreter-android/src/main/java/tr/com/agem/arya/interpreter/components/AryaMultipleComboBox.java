@@ -6,6 +6,7 @@ import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.TableRow;
 
 import org.xml.sax.Attributes;
 
@@ -86,7 +87,15 @@ public class AryaMultipleComboBox extends ListView implements IAryaComponent {
 
     @Override
     public void setComponentParent(Object o) {
+        if(o instanceof AryaListItem){
+            AryaListItem li = (AryaListItem) o;
 
+            this.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT, 10.0f));
+            li.addView(this);
+        }
+        else {
+            ((ViewGroup)o).addView(this);
+        }
     }
 
     @Override
