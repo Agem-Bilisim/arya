@@ -63,7 +63,7 @@ public class AryaListBox extends TableLayout implements IAryaComponent, IAryaTem
         main.getAryaWindow().addView(HorizontalScrollViewParent);
         HorizontalScrollViewParent.addView(this);
         this.addView(listBoxSpinner);
-
+        listBoxSpinner.setVisibility(INVISIBLE);
         adapter = new ArrayAdapter<>(AryaNavBar.context, android.R.layout.simple_spinner_item, spinnerItems);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         listBoxSpinner.setAdapter(adapter);

@@ -1,8 +1,12 @@
 package tr.com.agem.arya.interpreter.components;
 
+import android.content.Context;
 import android.graphics.Color;
+import android.graphics.Point;
 import android.graphics.drawable.GradientDrawable;
+import android.view.Display;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.TableRow;
 
 import org.json.JSONObject;
@@ -53,7 +57,14 @@ public class AryaListItem extends TableRow implements IAryaComponent {
     public void setComponentParent(Object o) {
         AryaListBox lb = (AryaListBox) o;
 
-        this.setLayoutParams(new TableRow.LayoutParams(LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT, 10.0f));
+       // this.setLayoutParams(new TableRow.LayoutParams(LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT, 10.0f));
+
+        WindowManager wm = (WindowManager) tr.com.agem.arya.interpreter.components.base.AryaNavBar.context.getSystemService(Context.WINDOW_SERVICE);
+        Display display = wm.getDefaultDisplay();
+        Point size= new Point();
+        display.getSize(size);
+        int width = size.x;
+        this.setLayoutParams(new TableRow.LayoutParams(width-100, TableRow.LayoutParams.WRAP_CONTENT, 1f)); //MATCH_PARENT is not working here, thats why I used pixels
         this.setPadding(1, 1, 1, 1);
 
         lb.addView(this);
