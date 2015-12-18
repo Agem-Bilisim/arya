@@ -8,8 +8,6 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.HorizontalScrollView;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -17,7 +15,6 @@ import android.widget.TableRow;
 import org.xml.sax.Attributes;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
@@ -36,9 +33,12 @@ public class AryaListBox extends TableLayout implements IAryaComponent, IAryaTem
     private String attribute;
     private String attributeValue;
     private String attributeLabel;
+    private Spinner listBoxSpinner = new Spinner(AryaNavBar.context);
+    private List<String> spinnerItems = new ArrayList<>();
 
     private AryaTemplate template;
 
+    private ArrayAdapter<String> adapter;
     private String onSelect;
 
     public AryaListBox(Attributes attributes, AryaMain main) {
