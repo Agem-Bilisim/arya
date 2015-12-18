@@ -22,6 +22,10 @@ public class AryaRadiogroup extends Radiogroup implements IAryaComponent {
 	private String componentClassName;
 	private String componentAttribute;
 	private String database;
+	private String attribute;
+	private String attributeValue;
+	private String attributeLabel;
+
 
 	public AryaRadiogroup(final AryaMain main, Attributes attributes) {
 
@@ -58,6 +62,10 @@ public class AryaRadiogroup extends Radiogroup implements IAryaComponent {
 		this.setVflex(attributes.getValue("vflex"));
 		
 		this.database = attributes.getValue("database");
+		this.attribute = attributes.getValue("attribute");
+		this.attributeValue = attributes.getValue("attributeValue");
+		this.attributeLabel = attributes.getValue("attributeLabel");
+
 
 		/*
 		 * if the dimension input format of .arya files does NOT contains the
@@ -178,6 +186,34 @@ public class AryaRadiogroup extends Radiogroup implements IAryaComponent {
 	@Override
 	public void setDatabase(String database) {
 		this.database = database;
+	}
+
+	@Override
+	public String getAttribute() {
+		return attribute;
+	}
+
+	@Override
+	public void setAttribute(String attribute) {
+		this.attribute = attribute;
+	}
+
+	public String getAttributeValue() {
+		return attributeValue;
+	}
+
+	public void setAttributeValue(String attributeValue) {
+		this.attributeValue = attributeValue;
+	}
+
+	@Override
+	public String getAttributeLabel() {
+		return attributeLabel;
+	}
+
+	@Override
+	public void setAttributeLabel(String attributeLabel) {
+		this.attributeLabel = attributeLabel;
 	}
 
 }

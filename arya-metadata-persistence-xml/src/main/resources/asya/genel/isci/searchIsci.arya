@@ -33,7 +33,9 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 					</row>
 					<row>
 						<label id="isyeriSubelbl" value="Şube" />
-						<combobox id="isyCombo"  width="120" >
+						<combobox id="isyCombo"  width="120" attribute="SESSION_SUBE_LIST" attributeLabel="label">
+						</combobox>
+						<combobox id="test"  width="120" attribute="C_SESSION_ISVEREN_SENDIKA_LIST" attributeLabel="label">
 						</combobox>
 					</row>
 					<row>
@@ -66,5 +68,8 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 		}
 		
 	</script>
-	<attribute name="SESSION_SUBE_LIST" value="label" comp="isyCombo" />
+	<attributes>
+		<attribute name="SESSION_SUBE_LIST"/>
+		<attribute name="C_SESSION_ISVEREN_SENDIKA_LIST" />
+	</attributes>
 </arya>

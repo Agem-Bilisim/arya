@@ -11,7 +11,6 @@ import java.util.Stack;
 
 import tr.com.agem.arya.MainActivity;
 import tr.com.agem.arya.gateway.AryaInterpreterHelper;
-import tr.com.agem.arya.interpreter.components.AryaAttribute;
 import tr.com.agem.arya.interpreter.components.AryaListBox;
 import tr.com.agem.arya.interpreter.components.AryaScript;
 import tr.com.agem.arya.interpreter.components.AryaTemplate;
@@ -90,10 +89,6 @@ public class AryaMetadataParser extends DefaultHandler {
             if (!(comp instanceof AryaTemplate)) {
 
                 if(!((currentComponent.size() > 0) && (currentComponent.peek() instanceof AryaTemplate))) {
-
-                    if(comp instanceof AryaAttribute) {
-                        comp.setComponentId(new String(""));
-                    }
 
                     currentComponent.push(comp);
 

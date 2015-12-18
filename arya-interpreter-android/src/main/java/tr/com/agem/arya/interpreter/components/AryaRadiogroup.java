@@ -19,6 +19,10 @@ public class AryaRadiogroup extends RadioGroup implements IAryaComponent {
     private String componentValue;
     private String database;
 
+    private String attribute;
+    private String attributeValue;
+    private String attributeLabel;
+
 
     public AryaRadiogroup(Attributes attributes, final AryaMain main) {
         super(main.getAryaWindow().getContext());
@@ -30,6 +34,10 @@ public class AryaRadiogroup extends RadioGroup implements IAryaComponent {
             this.componentValue = attributes.getValue("value");
             this.componentAttribute = attributes.getValue("attribute");
             this.database = attributes.getValue("database");
+
+            this.attribute = attributes.getValue("attribute");
+            this.attributeValue = attributes.getValue("attributeValue");
+            this.attributeLabel = attributes.getValue("attributeLabel");
 
 
             final String tooltiptext = attributes.getValue("tooltiptext");
@@ -113,6 +121,34 @@ public class AryaRadiogroup extends RadioGroup implements IAryaComponent {
     @Override
     public void setDatabase(String database) {
         this.database = database;
+    }
+
+    @Override
+    public String getAttribute() {
+        return attribute;
+    }
+
+    @Override
+    public void setAttribute(String attribute) {
+        this.attribute = attribute;
+    }
+
+    public String getAttributeValue() {
+        return attributeValue;
+    }
+
+    public void setAttributeValue(String attributeValue) {
+        this.attributeValue = attributeValue;
+    }
+
+    @Override
+    public String getAttributeLabel() {
+        return attributeLabel;
+    }
+
+    @Override
+    public void setAttributeLabel(String attributeLabel) {
+        this.attributeLabel = attributeLabel;
     }
 
     @Override

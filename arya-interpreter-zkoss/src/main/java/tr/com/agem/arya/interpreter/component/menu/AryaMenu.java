@@ -200,4 +200,40 @@ public class AryaMenu extends Menu implements IAryaComponent, IAryaMenu {
 	public void setDatabase(String database) {
 	}
 
+	@Override
+	public String getAttribute() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setAttribute(String attribute) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public String getAttributeValue() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setAttributeValue(String attributeValue) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public String getAttributeLabel() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setAttributeLabel(String attributeLabel) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

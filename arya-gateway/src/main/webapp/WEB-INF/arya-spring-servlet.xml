@@ -31,9 +31,11 @@
   	<property name="persistence" ref="aryaPersistence"/>
   </bean>
   
+  <bean id="intercepter" class="tr.com.agem.controller.AryaIntercepter">
+  </bean>
+  
   <bean id="aryaContextFilter" class="tr.com.agem.filter.AryaContextFilter" />
   <bean id="corsFilter" class="tr.com.agem.filter.CorsFilter" />
   <bean id="loginFilter" class="tr.com.agem.filter.LoginFilter" />
-  <bean id="AryaRequestAttributeIntercepter" class="tr.com.agem.filter.AryaRequestAttributeIntercepter" />
                  
 </beans>

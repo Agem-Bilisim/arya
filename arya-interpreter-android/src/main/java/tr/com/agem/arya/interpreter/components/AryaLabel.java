@@ -22,6 +22,9 @@ public class AryaLabel extends TextView implements IAryaComponent {
     private String componentAttribute;
     private String componentValue;
     private String database;
+    private String attribute;
+    private String attributeValue;
+    private String attributeLabel;
 
 
     public AryaLabel(Attributes attributes, final AryaMain main) {
@@ -35,6 +38,10 @@ public class AryaLabel extends TextView implements IAryaComponent {
             this.componentValue = attributes.getValue("value");
             this.componentAttribute = attributes.getValue("attribute");
             this.database = attributes.getValue("database");
+
+            this.attribute = attributes.getValue("attribute");
+            this.attributeValue = attributes.getValue("attributeValue");
+            this.attributeLabel = attributes.getValue("attributeLabel");
 
             this.setText(attributes.getValue("label"));
 
@@ -142,6 +149,34 @@ public class AryaLabel extends TextView implements IAryaComponent {
     @Override
     public void setDatabase(String database) {
         this.database = database;
+    }
+
+    @Override
+    public String getAttribute() {
+        return attribute;
+    }
+
+    @Override
+    public void setAttribute(String attribute) {
+        this.attribute = attribute;
+    }
+
+    public String getAttributeValue() {
+        return attributeValue;
+    }
+
+    public void setAttributeValue(String attributeValue) {
+        this.attributeValue = attributeValue;
+    }
+
+    @Override
+    public String getAttributeLabel() {
+        return attributeLabel;
+    }
+
+    @Override
+    public void setAttributeLabel(String attributeLabel) {
+        this.attributeLabel = attributeLabel;
     }
 
     @Override

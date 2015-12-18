@@ -105,9 +105,9 @@ public class AryaResponse implements IAryaResponse
 		}
 		
 		if (this.attributes != null) {
-			xmlString.append("<attributes><![CDATA[{ \"results\":")
+			xmlString.append("<attributes><![CDATA[{ \"session\":[{")
 			.append(this.attributes)
-			.append(" }]]></attributes>");
+			.append("}] }]]></attributes>");
 		} else {
 			xmlString.append("<attributes/>");			
 		}

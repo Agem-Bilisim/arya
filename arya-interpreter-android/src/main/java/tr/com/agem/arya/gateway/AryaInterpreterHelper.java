@@ -30,7 +30,6 @@ import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
 import tr.com.agem.arya.R;
-import tr.com.agem.arya.interpreter.components.AryaAttribute;
 import tr.com.agem.arya.interpreter.components.AryaComboBox;
 import tr.com.agem.arya.interpreter.components.AryaComboItem;
 import tr.com.agem.arya.interpreter.components.AryaListBox;
@@ -174,21 +173,15 @@ public class AryaInterpreterHelper {
 
         if(AryaUtils.isNotEmpty(response.getAttributes())) {
 
-            AryaAttribute attrComp = getAttribute(main);   //TODO birden fazla attribute olabilir!!
-            populateToFill((String) response.getAttributes(), attrComp, main);
+            List<IAryaComponent> comps = main.getAryaWindow().getComponents();
+            for(IAryaComponent component : comps) {
 
-        }
-    }
-
-    public static AryaAttribute getAttribute(AryaMain main) {
-
-        List<IAryaComponent> comps = main.getAryaWindow().getComponents();
-        for (IAryaComponent comp : comps) {
-            if (comp instanceof AryaAttribute) {
-                return (AryaAttribute) comp;
+                if(component.getAttribute() != null) {
+                    populateToFill((String) response.getAttributes(), component, main);
+                }
             }
+
         }
-        return null;
     }
 
     public static void interpretResponseMenu(AryaResponse response, AryaMain main) {
@@ -242,21 +235,41 @@ public class AryaInterpreterHelper {
                 comp = new String(((AryaFill) cmp).getTo());
                 value = new String(((AryaFill) cmp).getValue());
             }
-            else if(cmp instanceof AryaAttribute) {
-                comp = new String((((AryaAttribute)cmp).getComp()));
-                value = new String(((AryaAttribute) cmp).getValue());
+            else {
+                JSONArray jsonArray = (JSONArray) jsonObj.get(cmp.getAttribute());
+
+                for (int j = 0; j < jsonArray.length(); j++) {
+                    JSONObject jsonObject = jsonArray.getJSONObject(j);
+
+                    if(cmp instanceof AryaComboBox) {
+                        AryaComboBox combo = (AryaComboBox) cmp;
+
+                        AryaParserAttributes attr = new AryaParserAttributes();
+                        String label = new String(splitId(combo.getAttributeLabel(), jsonObject));
+                        String id = System.currentTimeMillis()+""+splitId("id", jsonObject);
+
+                        if(label != null) {
+                            attr.setValue("label", label);
+                            attr.setValue("id", id);
+                            AryaComboItem comboItem = new AryaComboItem(attr, main);
+                            comboItem.setComponentParent(combo);
+                        }
+                    }
+                }
             }
 
-            if(comp != null) {
+            if(cmp instanceof AryaFill && comp != null) {
 
                 if(getElementById(comp, main) instanceof AryaComboBox) {
                     AryaComboBox combo = (AryaComboBox) getElementById(comp, main);
 
                     AryaParserAttributes attr = new AryaParserAttributes();
                     String label = splitId(value, jsonObj);
+                    String id = System.currentTimeMillis()+""+splitId("id", jsonObj);
 
                     if(label != null) {
                         attr.setValue("label", label);
+                        attr.setValue("id", id);
                         AryaComboItem comboItem = new AryaComboItem(attr, main);
                         comboItem.setComponentParent(combo);
                     }
@@ -347,6 +360,9 @@ public class AryaInterpreterHelper {
                         if ("results".equals(entry.getKey().toString())) {
                             jsonArray = new JSONArray(entry.getValue().toString());
                         }
+                        else if ("session".equals(entry.getKey().toString())) {
+                            jsonArray = new JSONArray(entry.getValue().toString());
+                        }
                     }
                 }
             }
@@ -394,7 +410,7 @@ public class AryaInterpreterHelper {
 
             child = main.getAryaWindow().getComponents().get(i);
             if (child instanceof IAryaComponent) {
-                IAryaComponent o = (IAryaComponent) child;
+                IAryaComponent o = child;
 
                 if (id.equals(o.getComponentId())) {
                     return o;
@@ -440,10 +456,6 @@ public class AryaInterpreterHelper {
 
     public static String getjSessionId() {
         return jSessionId;
-    }
-
-    public static void setjSessionId(String jSessionId) {
-        AryaInterpreterHelper.jSessionId = jSessionId;
     }
 
 }

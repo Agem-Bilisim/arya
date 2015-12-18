@@ -9,7 +9,6 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import tr.com.agem.arya.interpreter.command.AryaFill;
-import tr.com.agem.arya.interpreter.component.AryaAttribute;
 import tr.com.agem.arya.interpreter.component.AryaCombobox;
 import tr.com.agem.arya.interpreter.component.AryaGrid;
 import tr.com.agem.arya.interpreter.component.AryaListbox;
@@ -65,10 +64,6 @@ public class AryaMetadataParser extends DefaultHandler {
 			else {
 				if(comp.getComponentId() != null && !comp.getComponentId().equals(""))
 					comp.setComponentId(tabpanel.getComponentId()+"-"+comp.getComponentId());
-				
-				if(comp instanceof AryaAttribute) {
-					comp.setComponentId(new String(""));
-				}
 				
 				comp.setComponentParent(currentComponent.size() > 0 ? currentComponent.peek():(isMenu ? main.getMenuContainer() : tabpanel));
 				currentComponent.push(comp);

@@ -71,8 +71,6 @@ public class ComponentFactory {
             comp = new AryaTemplate(attributes,main);
         }else if ("fill".equalsIgnoreCase(tagName)) {
             comp = new AryaFill(attributes,main);
-        }else if ("attribute".equalsIgnoreCase(tagName)) {
-            comp = new AryaAttribute(attributes);
         }
 
         return comp;

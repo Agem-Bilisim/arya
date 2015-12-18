@@ -18,11 +18,6 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 					<textbox type="text" id="unvan" database="unvan" width="245"  maxlength="255"  placeholder=""  top="56" />
 				</row>
 				<row>
-					<label id="isyeriKategoriIdlbl" value="Kategori" />
-					<combobox id="isyeriKat" database="isyeriKategoriId"  width="120"  >
-					</combobox>
-				</row>
-				<row>
 					<label id="calisanSayisilbl" value="İşçi Sayısı" />
 					<intbox id="calSay" database="calisanSayisi"  width="107"  maxlength="5"  placeholder=""  />
 				</row>

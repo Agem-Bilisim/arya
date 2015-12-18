@@ -9,6 +9,7 @@ public class AryaAttribute implements IAryaComponent {
 	
 	private String componentClassName;
 	private String componentAttribute;
+	private IAryaComponent componentParent;
 	
 	private String name;
 	private String value;
@@ -81,14 +82,12 @@ public class AryaAttribute implements IAryaComponent {
 
 	@Override
 	public void setComponentParent(Object parent) {
-		// TODO Auto-generated method stub
-
+		this.componentParent = (IAryaComponent) parent;
 	}
 
 	@Override
 	public Object getComponentParent() {
-		// TODO Auto-generated method stub
-		return null;
+		return componentParent;
 	}
 
 	@Override
@@ -131,6 +130,42 @@ public class AryaAttribute implements IAryaComponent {
 
 	public void setComp(String comp) {
 		this.comp = comp;
+	}
+
+	@Override
+	public String getAttribute() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setAttribute(String attribute) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public String getAttributeValue() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setAttributeValue(String attributeValue) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public String getAttributeLabel() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setAttributeLabel(String attributeLabel) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

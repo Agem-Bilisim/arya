@@ -27,6 +27,18 @@ public interface IAryaComponent {
 	String getDatabase();
 	
 	void setDatabase(String database);
+	
+	String getAttribute();
+	
+	void setAttribute(String attribute);
+	
+	String getAttributeValue();
+	
+	void setAttributeValue(String attributeValue);
+	
+	String getAttributeLabel();
+	
+	void setAttributeLabel(String attributeLabel);
 
 	String getComponentTagName();
 }

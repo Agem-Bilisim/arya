@@ -5,7 +5,6 @@ import java.util.logging.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.AnnotationUtils;
@@ -23,6 +22,7 @@ import tr.com.agem.core.adaptor.AryaApplicationAdaptor;
 import tr.com.agem.core.adaptor.IAryaAdaptorResponse;
 import tr.com.agem.core.gateway.model.AryaRequest;
 import tr.com.agem.core.gateway.model.AryaResponse;
+import tr.com.agem.core.gateway.model.IAryaIntercepter;
 import tr.com.agem.core.gateway.model.RequestTypes;
 import tr.com.agem.core.metadata.IMetadataEngine;
 import tr.com.agem.core.metadata.exception.AryaMetadataNotFoundException;
@@ -42,6 +42,9 @@ public class AryaGateway {
 
 	@Autowired
 	IMetadataEngine metadataEngine;
+	
+	@Autowired
+	IAryaIntercepter intercepter;
 
 	/**
 	 * All requests are handled in this method.
@@ -91,15 +94,11 @@ public class AryaGateway {
 
 		if (metadata != null) {
 			resp.setView(metadata.getMetadata());
+			
+			//to get data from session
+			resp = intercepter.setAttributeData(applicationName, metadata, resp, request);
 		}
 		
-		if(aryaRequest.getAttributeName() != null) {
-			HttpSession session = request.getSession();
-			resp.setAttributes(session.getAttribute(aryaRequest.getAttributeName()));
-		}
-		
-		
-
 		String respStr = resp.toString();
 
 		logger.log(Level.INFO, "AryaResponse: {0}", respStr);
