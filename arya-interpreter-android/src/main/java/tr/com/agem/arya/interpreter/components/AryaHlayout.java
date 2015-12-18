@@ -3,6 +3,7 @@ package tr.com.agem.arya.interpreter.components;
 import android.view.ViewGroup;
 import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
+import android.widget.TableRow;
 
 import org.xml.sax.Attributes;
 
@@ -44,7 +45,15 @@ public class AryaHlayout extends LinearLayout implements IAryaComponent {
 
     @Override
     public void setComponentParent(Object o) {
-        ((ViewGroup)o).addView(this);
+        if(o instanceof AryaListItem){
+            AryaListItem li = (AryaListItem) o;
+
+            this.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT, 10.0f));
+            li.addView(this);
+        }
+        else {
+            ((ViewGroup)o).addView(this);
+        }
     }
 
     public String getComponentId() { return componentId; }

@@ -4,6 +4,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.TableRow;
 import android.widget.Toast;
 
 import org.xml.sax.Attributes;
@@ -101,7 +102,15 @@ public class AryaCheckbox extends CheckBox implements IAryaComponent {
 
     @Override
     public void setComponentParent(Object o) {
-        ((ViewGroup)o).addView(this);
+        if(o instanceof AryaListItem){
+            AryaListItem li = (AryaListItem) o;
+
+            this.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT, 10.0f));
+            li.addView(this);
+        }
+        else {
+            ((ViewGroup)o).addView(this);
+        }
     }
 
     public boolean isMandatory() { return mandatory;}

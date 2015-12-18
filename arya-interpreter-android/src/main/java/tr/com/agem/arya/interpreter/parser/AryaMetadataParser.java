@@ -43,6 +43,7 @@ public class AryaMetadataParser extends DefaultHandler {
             if (comp instanceof AryaTemplate) {
                 if (currentComponent.peek() instanceof AryaListBox) {
                     ((AryaListBox)currentComponent.peek()).setAryaTemplate(comp);
+                    ((AryaListBox)currentComponent.peek()).getListBoxSpinner().setVisibility(View.VISIBLE);
                 }
                 currentComponent.push(comp);
             }

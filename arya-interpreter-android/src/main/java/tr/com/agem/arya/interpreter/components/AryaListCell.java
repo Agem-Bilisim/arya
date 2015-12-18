@@ -34,14 +34,13 @@ public class AryaListCell extends TextView implements IAryaComponent {
     private String attribute;
     private String attributeValue;
     private String attributeLabel;
+    private String type;
 
-    private String tag;
-
-    public AryaListCell(Attributes attributes,AryaMain main, String tag) {
+    public AryaListCell(Attributes attributes,AryaMain main, final String type) {
         super(main.getAryaWindow().getContext());
 
         if(AryaUtils.isNotEmpty(attributes)){
-            this.tag = tag;
+            this.type = type;
             this.componentId = attributes.getValue("id");
             this.componentClassName = attributes.getValue("class");
             this.componentValue = attributes.getValue("value");
@@ -57,9 +56,9 @@ public class AryaListCell extends TextView implements IAryaComponent {
             this.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    detailView(new AlertDialog.Builder(AryaNavBar.context));
-
-
+                    if(!("listheader".equalsIgnoreCase(type))){
+                        detailView(new AlertDialog.Builder(AryaNavBar.context));
+                    }
                 }
             });
 
@@ -67,7 +66,7 @@ public class AryaListCell extends TextView implements IAryaComponent {
             //this.setTextSize(15, TypedValue.COMPLEX_UNIT_DIP);
         }
 
-        if("listheader".equalsIgnoreCase(tag)){
+        if("listheader".equalsIgnoreCase(type)){
             this.setTextColor(Color.BLACK);
             this.setBackgroundColor(Color.LTGRAY);
         }
@@ -82,7 +81,12 @@ public class AryaListCell extends TextView implements IAryaComponent {
 
         paint.setStyle(Paint.Style.STROKE);
         paint.setColor(Color.WHITE);
-        paint.setStrokeWidth(2);
+        if(!getText().equals("")) {
+            paint.setStrokeWidth(2);
+        }
+        else{
+            paint.setStrokeWidth(0);
+        }
 
         getLocalVisibleRect(rect);
         canvas.drawRect(rect, paint);
@@ -94,8 +98,14 @@ public class AryaListCell extends TextView implements IAryaComponent {
         li.addView(this);
         AryaListItem parent = (AryaListItem)this.getParent();
 // Arguments here: width, height, weight
+        if("listheader".equalsIgnoreCase(type)){
+            ((AryaListBox)li.getParent()).getSpinnerItems().add(getText().toString());
+            ((AryaListBox)li.getParent()).getAdapter().notifyDataSetChanged();
 
-        if(li.getChildCount()-1==((AryaListItem)(((AryaListBox)li.getParent()).getChildAt(0))).getMasterCol()){ //If current cell is element of master column
+
+        }
+        if(li.getChildCount()-1==((AryaListItem)(((AryaListBox)li.getParent()).getChildAt(1))).getMasterCol()){ //If current cell is element of master column
+
             WindowManager wm = (WindowManager) AryaNavBar.context.getSystemService(Context.WINDOW_SERVICE);
             Display display = wm.getDefaultDisplay();
             Point size= new Point();
@@ -202,6 +212,14 @@ public class AryaListCell extends TextView implements IAryaComponent {
     public String getComponentTagName() {
         return "listcell";
     }
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     private void detailView(AlertDialog.Builder alertDialog){
         AryaListItem parent = (AryaListItem)this.getParent();
         alertDialog.setTitle("Bilgiler");
@@ -222,7 +240,7 @@ public class AryaListCell extends TextView implements IAryaComponent {
                     LinearLayout.LayoutParams.WRAP_CONTENT);
             ele_layout.setOrientation(LinearLayout.HORIZONTAL);
             final TextView columnName= new TextView(AryaNavBar.context);
-            columnName.setText(((TextView) ((AryaListItem) ((AryaListBox) parent.getParent()).getChildAt(0)).getChildAt(i)).getText() + ":\t");
+            columnName.setText(((TextView) ((AryaListItem) ((AryaListBox) parent.getParent()).getChildAt(1)).getChildAt(i)).getText() + ":\t");
             final TextView info= new TextView(AryaNavBar.context);
             info.setText(((TextView)parent.getChildAt(i)).getText());
             columnName.setLayoutParams(lp);

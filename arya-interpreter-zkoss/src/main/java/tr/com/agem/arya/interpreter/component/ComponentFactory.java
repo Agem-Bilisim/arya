@@ -124,6 +124,8 @@ public class ComponentFactory {
 			comp = new AryaIntbox(main, attributes);
 		} else if ("fill".equalsIgnoreCase(tagName)) {
 			comp = new AryaFill(main, attributes);
+		} else if ("chart".equalsIgnoreCase(tagName)) {
+			comp = new AryaChart(main,attributes);
 		}
 		
 		return comp;

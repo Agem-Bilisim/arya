@@ -7,8 +7,9 @@
     </style>
     <!-- Style to replace actionbar overflow icon. set item 'android:actionOverflowButtonStyle' in AppTheme -->
     <style name="OverridedActionButtonOverflow" parent="android:style/Widget.Holo.Light.ActionButton.Overflow">
-        <item name="android:src">@drawable/menu_icon</item>
-        <item name="android:background">?android:attr/actionBarItemBackground</item>
+
+        <item name="android:background">#01579B</item>
+        <item name="android:icon">@drawable/menu_icon</item>
         <item name="android:contentDescription">"Change Menu logo for simplicity"</item>
     </style>
 </resources>
