@@ -15,7 +15,7 @@ public interface IAryaComponent {
 	String getComponentValue();
 
 	void setComponentAttribute(String componentAttribute);
-
+	
 	String getComponentAttribute();
 
 	String validate();
