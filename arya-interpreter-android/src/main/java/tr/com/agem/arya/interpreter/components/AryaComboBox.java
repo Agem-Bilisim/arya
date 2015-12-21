@@ -203,12 +203,12 @@ public class AryaComboBox extends Spinner implements IAryaComponent {
         this.attributeValue = attributeValue;
     }
 
-
+    @Override
     public String getAttributeLabel() {
         return attributeLabel;
     }
 
-
+    @Override
     public void setAttributeLabel(String attributeLabel) {
         this.attributeLabel = attributeLabel;
     }

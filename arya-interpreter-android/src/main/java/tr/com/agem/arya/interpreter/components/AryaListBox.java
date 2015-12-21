@@ -196,12 +196,12 @@ public class AryaListBox extends TableLayout implements IAryaComponent, IAryaTem
         this.database = database;
     }
 
-
+    @Override
     public String getAttribute() {
         return attribute;
     }
 
-
+    @Override
     public void setAttribute(String attribute) {
         this.attribute = attribute;
     }
@@ -214,12 +214,12 @@ public class AryaListBox extends TableLayout implements IAryaComponent, IAryaTem
         this.attributeValue = attributeValue;
     }
 
-
+    @Override
     public String getAttributeLabel() {
         return attributeLabel;
     }
 
-
+    @Override
     public void setAttributeLabel(String attributeLabel) {
         this.attributeLabel = attributeLabel;
     }

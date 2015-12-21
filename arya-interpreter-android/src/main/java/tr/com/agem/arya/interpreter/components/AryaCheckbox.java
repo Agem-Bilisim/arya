@@ -165,12 +165,12 @@ public class AryaCheckbox extends CheckBox implements IAryaComponent {
         this.database = database;
     }
 
-
+    @Override
     public String getAttribute() {
         return attribute;
     }
 
-
+    @Override
     public void setAttribute(String attribute) {
         this.attribute = attribute;
     }
@@ -183,12 +183,12 @@ public class AryaCheckbox extends CheckBox implements IAryaComponent {
         this.attributeValue = attributeValue;
     }
 
-
+    @Override
     public String getAttributeLabel() {
         return attributeLabel;
     }
 
-
+    @Override
     public void setAttributeLabel(String attributeLabel) {
         this.attributeLabel = attributeLabel;
     }

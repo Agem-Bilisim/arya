@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.TableRow;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 import org.xml.sax.Attributes;
 
@@ -90,12 +89,7 @@ public class AryaListItem extends TableRow implements IAryaComponent {
                 v.setDrawingCacheBackgroundColor(Color.LTGRAY);
 
                 if((((AryaListItem)v).getComponentValue()) != null) {
-                    JSONObject j = null;
-                    try {
-                        j = new JSONObject(((AryaListItem) v).getComponentValue());
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
+                    JSONObject j = new JSONObject(((AryaListItem) v).getComponentValue());
                     ElementFunctions.setJsonObj(j);
 
                     ScriptHelper.executeScript(onSelect, null, getMain());
@@ -174,12 +168,12 @@ public class AryaListItem extends TableRow implements IAryaComponent {
         this.database = database;
     }
 
-
+    @Override
     public String getAttribute() {
         return attribute;
     }
 
-
+    @Override
     public void setAttribute(String attribute) {
         this.attribute = attribute;
     }
@@ -192,12 +186,12 @@ public class AryaListItem extends TableRow implements IAryaComponent {
         this.attributeValue = attributeValue;
     }
 
-
+    @Override
     public String getAttributeLabel() {
         return attributeLabel;
     }
 
-
+    @Override
     public void setAttributeLabel(String attributeLabel) {
         this.attributeLabel = attributeLabel;
     }

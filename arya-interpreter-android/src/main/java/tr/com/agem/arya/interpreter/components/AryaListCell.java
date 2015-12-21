@@ -17,14 +17,10 @@ import android.widget.LinearLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-import org.json.JSONException;
-import org.json.JSONObject;
 import org.xml.sax.Attributes;
 
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.components.base.AryaNavBar;
-import tr.com.agem.arya.interpreter.script.ElementFunctions;
-import tr.com.agem.arya.interpreter.script.ScriptHelper;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
 
@@ -62,24 +58,8 @@ public class AryaListCell extends TextView implements IAryaComponent {
                 public void onClick(View v) {
                     if(!("listheader".equalsIgnoreCase(type))){
                         detailView(new AlertDialog.Builder(AryaNavBar.context));
-                        final String onSelect = ((AryaListBox)getParent().getParent()).getOnSelect();
-
-                        v.setDrawingCacheBackgroundColor(Color.LTGRAY);
-
-                        if ((((AryaListItem) v.getParent()).getComponentValue()) != null && onSelect !=null) {
-                            JSONObject j = null;
-                            try {
-                                j = new JSONObject(((AryaListItem) v.getParent()).getComponentValue());
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                            ElementFunctions.setJsonObj(j);
-                            ScriptHelper.executeScript(onSelect, null, ((AryaListItem) getParent()).getMain());
-                        }
                     }
-
                 }
-
             });
 
            // this.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
@@ -194,12 +174,12 @@ public class AryaListCell extends TextView implements IAryaComponent {
         this.database = database;
     }
 
-
+    @Override
     public String getAttribute() {
         return attribute;
     }
 
-
+    @Override
     public void setAttribute(String attribute) {
         this.attribute = attribute;
     }
@@ -212,12 +192,12 @@ public class AryaListCell extends TextView implements IAryaComponent {
         this.attributeValue = attributeValue;
     }
 
-
+    @Override
     public String getAttributeLabel() {
         return attributeLabel;
     }
 
-
+    @Override
     public void setAttributeLabel(String attributeLabel) {
         this.attributeLabel = attributeLabel;
     }

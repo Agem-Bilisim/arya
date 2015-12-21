@@ -176,7 +176,7 @@ public class AryaInterpreterHelper {
             List<IAryaComponent> comps = main.getAryaWindow().getComponents();
             for(IAryaComponent component : comps) {
 
-                if(component.getComponentAttribute() != null) {
+                if(component.getAttribute() != null) {
                     populateToFill((String) response.getAttributes(), component, main);
                 }
             }
@@ -236,7 +236,7 @@ public class AryaInterpreterHelper {
                 value = new String(((AryaFill) cmp).getValue());
             }
             else {
-                JSONArray jsonArray = (JSONArray) jsonObj.get(cmp.getComponentAttribute());
+                JSONArray jsonArray = (JSONArray) jsonObj.get(cmp.getAttribute());
 
                 for (int j = 0; j < jsonArray.length(); j++) {
                     JSONObject jsonObject = jsonArray.getJSONObject(j);
