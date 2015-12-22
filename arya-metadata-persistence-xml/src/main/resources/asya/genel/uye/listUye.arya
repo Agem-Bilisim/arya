@@ -5,15 +5,15 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 		<vlayout>
 			<listbox id="genel.uye.list" onSelect="select_uye()" pagesize="10" mold="paging" >
 				<listhead>
-					<listheader label="Üye Id" />
+					<listheader sort="auto" label="Üye Id" />
 					<listheader label="Üye Baş.Tar." />
-					<listheader label="Doğrulama" />
-					<listheader label="Cep No" />
-					<listheader label="Giriş YK Karar No" />
+					<listheader sort="auto" label="Doğrulama" />
+					<listheader sort="auto" label="Cep No" />
+					<listheader sort="auto" label="Giriş YK Karar No" />
 					<listheader label="İstifa Tar." />
 					<listheader label="Üye Bit.Tar." />
-					<listheader label="Çıkış Noter Yev.Ref.No" />
-					<listheader label="Çıkış Nedeni" />
+					<listheader sort="auto" label="Çıkış Noter Yev.Ref.No" />
+					<listheader sort="auto" label="Çıkış Nedeni" />
 				</listhead>
 				<template>
 					<listitem>

@@ -103,8 +103,6 @@ public class AryaGateway {
 
 		logger.log(Level.INFO, "AryaResponse: {0}", respStr);
 		
-		System.out.println("aryagateway...respStr......."+respStr);
-
 		return respStr;
 	}
 	

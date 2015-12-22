@@ -63,7 +63,7 @@ public class AryaListHeader extends Listheader implements IAryaComponent {
 		this.attribute = attributes.getValue("attribute");
 		this.attributeValue = attributes.getValue("attributeValue");
 		this.attributeLabel = attributes.getValue("attributeLabel");
-
+		this.setSort(attributes.getValue("sort"));
 
 		/*
 		 * if the dimension input format of .arya files does NOT contains the

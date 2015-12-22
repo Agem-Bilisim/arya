@@ -15,10 +15,9 @@ public class ScriptHelper {
 	private static final Logger logger = Logger.getLogger(ScriptHelper.class.getName());
 
 	public static Object executeScript(String functionName, HashMap<Object, Object> params, AryaMain main) {
-
 		StringBuilder script = new StringBuilder(); //TODO performansı arttırmak için; jsrun bir kere çağırılıp context.evaluateString tekrarlı çağırılmalı(volkan)
 		AryaScript scriptObj = getScriptComponent(main);
-
+		
 		if (AryaUtils.isNotEmpty(scriptObj)) {
 			script.append(scriptObj.getScript()).append(getFunctionName(functionName));
 			logger.log(Level.FINE, "Script: {0}", script);
@@ -29,15 +28,18 @@ public class ScriptHelper {
 	}
 
 	private static AryaScript getScriptComponent(AryaMain main) {
+		AryaScript scriptObj = null;
 		Set<IAryaComponent> comps = main.getAryaWindowComponents();
 		for (IAryaComponent comp : comps) {
 			if (comp instanceof AryaScript) {
-				AryaScript scriptObj = (AryaScript) comp;
+				scriptObj = (AryaScript) comp;
 				logger.log(Level.FINE, "AryaScript instance found.");
-				return scriptObj;
+				
+				if(scriptObj.getScript() != null)
+					return scriptObj;
 			}
 		}
-		return null;
+		return scriptObj;
 	}
 
 	private static StringBuilder getFunctionName(String functionName) {

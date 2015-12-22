@@ -29,13 +29,13 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 					</row>
 					<row>
 						<label id="isyeriParam.unvanParamlbl" value="İşyeri Ünvanı" />
-						<textbox type="text" id="unvan" database="isyeriParam.unvanParam" width="416"  maxlength="255"  placeholder=""  top="56" />
+						<textbox type="text"  id="unvan" database="isyeriParam.unvanParam" width="200"  maxlength="255"  placeholder=""  top="56" />
 					</row>
 					<row>
 						<label id="isyeriSubelbl" value="Şube" />
-						<combobox id="isyCombo"  width="120" attribute="SESSION_SUBE_LIST" attributeLabel="label">
+						<combobox id="isyCombo" database="isyeriParam.subeParam"  width="200" attribute="SESSION_SUBE_LIST" attributeLabel="label">
 						</combobox>
-						<combobox id="test"  width="120" attribute="C_SESSION_ISVEREN_SENDIKA_LIST" attributeLabel="label">
+						<combobox id="test"  width="200" attribute="C_SESSION_ISVEREN_SENDIKA_LIST" attributeLabel="label">
 						</combobox>
 					</row>
 					<row>

@@ -101,8 +101,6 @@ public class AryaInterpreterHelper {
 			
 			result = EntityUtils.toString(entity, "UTF-8");
 			
-			System.out.println(result);
-
 		} catch (ParseException | IOException e) {
 			e.printStackTrace();
 		}
@@ -111,7 +109,7 @@ public class AryaInterpreterHelper {
 	}
 
 	public static void interpretResponse(AryaResponse response, String action, AryaMain main, AryaTabs tabs, AryaTabpanels tabpanels, String tabValue) {
-
+		
 		if (AryaUtils.isNotEmpty(response.getView())) {// Remove previous
 														// components before
 														// adding new ones!
@@ -128,6 +126,20 @@ public class AryaInterpreterHelper {
 			tab = null;
 
 			drawView(response.getView(), main, tab, tabs, tabpanels, false, tabValue);
+		}
+		
+		if(AryaUtils.isNotEmpty(response.getAttributes())) {
+			
+			AryaTab tab = getCurrentTab(tabs, tabValue);
+			
+			Set<IAryaComponent> comps = main.getAryaWindowComponents();
+			for(IAryaComponent component : comps) {
+				
+				if(component.getAttribute() != null) {
+					if(component instanceof AryaCombobox && ((AryaCombobox)component).getChildren().isEmpty())
+						populateToFill((String) response.getAttributes(), component, main, tab.getTabPanel());
+				}
+			}
 		}
 
 		if (AryaUtils.isNotEmpty(response.getData())) {
@@ -147,22 +159,9 @@ public class AryaInterpreterHelper {
 				}
 			}
 			
-			System.out.println("view:"+response.getView());
 			populateView(response.getData(), action, main, tab, tabValue);
 		}
 		
-		if(AryaUtils.isNotEmpty(response.getAttributes())) {
-			
-			AryaTab tab = getCurrentTab(tabs, tabValue);
-			
-			Set<IAryaComponent> comps = main.getAryaWindowComponents();
-			for(IAryaComponent component : comps) {
-				
-				if(component.getAttribute() != null) {
-					populateToFill((String) response.getAttributes(), component, main, tab.getTabPanel());
-				}
-			}
-		}
 	}
 	
 	public static void removeElement(AryaMain main, Component parent, Component component) {
@@ -176,16 +175,16 @@ public class AryaInterpreterHelper {
 				}
 			}
 			
-			if (component instanceof AryaScript) {
+			if(component instanceof AryaScript){
 				return;
 			}
+			
 			parent.removeChild(component);
 			Set<IAryaComponent> comps = main.getAryaWindowComponents();
 			comps.remove(component);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("ID:"+component.getId());
 		}
 	}
 
@@ -232,6 +231,7 @@ public class AryaInterpreterHelper {
 							if(label != null) {
 								attr.setValue("label", label);
 								attr.setValue("id", id);
+								attr.setValue("value", splitId("id", jsonObject));
 								AryaComboItem comboItem = new AryaComboItem(main, attr);
 								comboItem.setComponentParent(combo);
 							}
@@ -251,6 +251,7 @@ public class AryaInterpreterHelper {
 						if(label != null) {
 							attr.setValue("label", label);
 							attr.setValue("id", id);
+							attr.setValue("value", splitId("id", jsonObj));
 							AryaComboItem comboItem = new AryaComboItem(main, attr);
 							comboItem.setComponentParent(combo);
 						}
@@ -289,7 +290,7 @@ public class AryaInterpreterHelper {
 				if (!(comp instanceof AryaListItem) && !(comp instanceof AryaRow)) {
 					
 					AryaParserAttributes attr = new AryaParserAttributes();
-					attr.setValue("id", comp.getComponentId() + "" + (i));
+					attr.setValue("id", System.currentTimeMillis()+""+comp.getComponentId() + "" + (i));
 					if (masterComponent instanceof AryaListbox) {
 						attr.setValue("label", splitId(comp.getDatabase(), jsonObj));
 						AryaListCell cell = new AryaListCell(main, attr);
@@ -308,20 +309,20 @@ public class AryaInterpreterHelper {
 
 	public static void populateView(String data, String action, AryaMain main, AryaTab tab, String tabValue) {
 		try {
+			JSONArray jsonArray = getJSONArray(data);
 			String message = "";
-			if (action.endsWith("list")) {
-					if (getJSONArray(data).length() > 0) 
-						message=getJSONArray(data).length()+" adet kayıt bulundu."; 
-					else
-						message="Hiçbir kayıt bulunamadı.";
+			if (jsonArray.length() > 1) {
+//					if (getJSONArray(data).length() > 0) 
+//						message=getJSONArray(data).length()+" adet kayıt bulundu."; 
+//					else
+//						message="Hiçbir kayıt bulunamadı.";
 					
-					populateAryaTemplate(main, (IAryaTemplate) getElementById(action, main), getJSONArray(data));
+					populateAryaTemplate(main, (IAryaTemplate) getElementById(action, main), jsonArray);
 				
 			} 
-			else  if (getJSONArray(data).length() == 1){
-				JSONObject jsonObj = getJSONArray(data).getJSONObject(0);
+			else  if (jsonArray.length() == 1){
+				JSONObject jsonObj = jsonArray.getJSONObject(0);
 				for (String id : tab.getTabPanel().getComponents()) {
-					System.out.println("tabpanel components: " + id); //işçi edit sayfasındaki radiogroup ve sonrası comp olarak gelmiyor!!!!!
 					IAryaComponent comp = getElementById(id, main);
 					if (isInputElement(comp)) {  
 						
@@ -501,7 +502,7 @@ public class AryaInterpreterHelper {
 			}
 
 		}
-			
+		
 
 		SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
 		SAXParser parser = null;

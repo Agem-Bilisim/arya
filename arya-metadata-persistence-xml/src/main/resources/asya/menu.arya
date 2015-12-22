@@ -39,5 +39,7 @@
 		</menu>
 		<menu label="Rakip Sendikalar">
 		</menu>
+		<menuitem label="Çıkış"
+					onClick="post('logout', 'LOGOUT', {'json': '1'})" />
 	</menubar>
 </arya>

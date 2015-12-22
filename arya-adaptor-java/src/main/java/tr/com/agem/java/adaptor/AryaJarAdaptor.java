@@ -238,10 +238,11 @@ public class AryaJarAdaptor extends AryaApplicationAdaptor {
 		mapping.setMethod("logout");
 		mapping.setModuleConfig(new AgemModuleConfigImp(""));
 
-		LogoutAction logoutAction = new LogoutAction();
+//		LogoutAction logoutAction = new LogoutAction();
 		try {
-			logoutAction.logout(mapping, null, (HttpServletRequest) AryaThreadLocal.getRequest(),
-					(HttpServletResponse) AryaThreadLocal.getResponse());
+			((HttpServletRequest) AryaThreadLocal.getRequest()).getSession().invalidate();
+//			logoutAction.logout(mapping, null, (HttpServletRequest) AryaThreadLocal.getRequest(),
+//					(HttpServletResponse) AryaThreadLocal.getResponse());
 		} catch (Exception e) {
 			logger.log(Level.SEVERE, e.toString(), e);
 		}

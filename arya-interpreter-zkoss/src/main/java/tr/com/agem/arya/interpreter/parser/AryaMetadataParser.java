@@ -71,8 +71,8 @@ public class AryaMetadataParser extends DefaultHandler {
 				
 				if (tabpanel != null) {
 					tabpanel.add(comp.getComponentId());
-					System.out.println("(parser)component id: " + comp.getComponentId());
 				}
+				
 				
 			}
 
@@ -131,12 +131,18 @@ public class AryaMetadataParser extends DefaultHandler {
 	}
 
 	private AryaScript getAryaScript() {
+		
+		AryaScript script = null;
+		
 		for (IAryaComponent comp : main.getAryaWindowComponents()) {
 			if (comp instanceof AryaScript) {
-				return (AryaScript) comp;
+				script = (AryaScript)comp;
+				if(script.getScript() != null){
+					return script;
+				}
 			}
 		}
-		return null;
+		return script;
 	}
 
 }

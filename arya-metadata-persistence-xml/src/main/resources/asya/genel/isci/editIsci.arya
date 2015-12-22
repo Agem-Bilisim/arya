@@ -30,11 +30,6 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 					</radiogroup>
 				</row>
 				<row>
-					<label id="isyeriSubelbl" value="Şube" />
-					<combobox id="combo" database="isyeri.birim.label"  width="120" >
-					</combobox>
-				</row>
-				<row>
 					<label id="aciklamalbl" value="Açıklama" />
 					<textbox type="text" id="acikl" database="aciklama"  value=""  width="470"  placeholder=""  />
 				</row>

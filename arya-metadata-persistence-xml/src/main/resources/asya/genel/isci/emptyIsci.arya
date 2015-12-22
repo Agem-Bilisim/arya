@@ -7,15 +7,15 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 			<rows>
 				<row>
 					<label id="kisi.tckNolbl" value="T.C. Kimlik No" />
-					<intbox id="tck" database="kisi.tckNo"  constraint="no empty"  width="100"  maxlength="11"  placeholder=""/>
+					<intbox id="tck" database="kisi.tckNo"  constraint="no empty"  width="200"  maxlength="11"  placeholder=""/>
 				</row>
 				<row>
 					<label id="kisi.adlbl" value="Ad" />
-					<textbox type="text" id="ad" database="kisi.ad" width="100"  maxlength="255"  placeholder=""  />
+					<textbox type="text" id="ad" database="kisi.ad" width="200"  maxlength="255"  placeholder=""  />
 				</row>
 				<row>
 					<label id="kisi.soyadlbl" value="Soyad" />
-					<textbox type="text" id="soyad" database="kisi.soyad" width="100"  maxlength="255"  placeholder=""  />
+					<textbox type="text" id="soyad" database="kisi.soyad" width="200"  maxlength="255"  placeholder=""  />
 				</row>
 				<row>
 					<label id="sgkNolbl" value="SGK Sicil No" />
@@ -30,7 +30,7 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 				</row>
 				<row>
 					<label id="aciklamalbl" value="Açıklama" />
-					<textbox type="text" id="acik" database="aciklama"  value=""  width="470"  placeholder=""  />
+					<textbox type="text" id="acik" database="aciklama"  value=""  width="200"  placeholder=""  />
 				</row>
 			</rows>
 		</grid>

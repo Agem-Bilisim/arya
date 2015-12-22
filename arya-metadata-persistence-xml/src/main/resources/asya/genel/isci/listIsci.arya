@@ -5,10 +5,10 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 		<vlayout>
 			<listbox id="genel.isci.list" pagesize="10" mold="paging" onSelect="select_isci()">
 				<listhead>
-					<listheader label="T.C. Kimlik No" />			
-					<listheader label="Ad Soyad" />
-					<listheader label="İşyeri" />
-					<listheader label="İşyeri Şube" />
+					<listheader sort="auto" label="T.C. Kimlik No" />			
+					<listheader sort="auto" label="Ad Soyad" />
+					<listheader sort="auto" label="İşyeri" />
+					<listheader sort="auto" label="İşyeri Şube" />
 				</listhead>
 				<template>
 					<listitem>

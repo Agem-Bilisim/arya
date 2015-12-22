@@ -230,11 +230,7 @@ public class AryaCombobox extends Combobox implements IAryaComponent, IAryaTempl
 	public String getComponentValue() {
 		
 		if(this.getSelectedItem() != null) {
-			if((this.getSelectedItem().getId()).contains("-")) {
-				String[] temp = (this.getSelectedItem().getId()).split("-");
-				return temp[1];
-			}
-			return this.getSelectedItem().getId();
+			return this.getSelectedItem().getValue();
 		}
 		return this.getValue();
 	}
@@ -243,11 +239,10 @@ public class AryaCombobox extends Combobox implements IAryaComponent, IAryaTempl
 	public void setComponentValue(String componentValue) {
 		for (int i = 0; i < this.getChildren().size(); i++) {
 			AryaComboItem item = (AryaComboItem) this.getChildren().get(i);
-			if(item.getLabel().equals(componentValue)) {
+			if(item.getValue().equals(componentValue)) {
 				this.setSelectedItem(item);
 			}
 		}
-		this.setValue(componentValue);
 	}
 
 	@Override

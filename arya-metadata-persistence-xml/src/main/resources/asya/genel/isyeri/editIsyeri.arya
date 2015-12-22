@@ -6,7 +6,7 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 			<rows>
 				<row>
 					<label id="subelbl" value="Şube" />
-					<combobox id="sube" database="sube"  width="120"  >
+					<combobox id="sube" database="sube" attribute="SESSION_SUBE_LIST" attributeLabel="label"  width="120"  >
 					</combobox>
 				</row>
 				<row>
@@ -20,11 +20,6 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 				<row>
 					<label id="unvanlbl" value="İşyeri Ünvanı" />
 					<textbox type="text" id="unvan" database="unvan" width="245"  maxlength="255"  placeholder=""  top="56" />
-				</row>
-				<row>
-					<label id="isyeriKategoriIdlbl" value="Kategori" />
-					<combobox id="isyeriKategori" database="isyeriKategoriId"  width="120"  >
-					</combobox>
 				</row>
 				<row>
 					<label id="calisanSayisilbl" value="İşçi Sayısı" />
@@ -45,38 +40,11 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 			</rows>
 		</grid>
 		<div style="padding: 5px; text-align: right">
-			<button label="Sözleşmelerini Göster" position="1/3" newLine="true" onClick="render_sozlesmeler()" />
 			<button label="Kaydet" onClick="kaydet_isyeri()" style="margin-left: 5px"/>
 			<button label="Sil" onClick="sil_isyeri()" style="margin-left: 5px"/>
 		</div>	
-		<listbox id="genel.isyeriSozlesme.list">
-			<listhead>
-				<listheader label="Şube" />
-				<listheader label="SGK No/Kod" />
-				<listheader label="Taraf" />
-				<listheader label="Başlangıç" />
-				<listheader label="Bitiş" />
-				<listheader label="Süre" />
-				<listheader label="Başvuru" />
-			</listhead>
-			<template>
-				<listitem>
-					<listcell id="isySube" database="sube" />
-					<listcell id="kod" database="kod" />
-					<listcell id="taraf" database="taraf" />
-					<listcell id="basTarih" database="baslangicTarihi" />
-					<listcell id="bitTarih" database="bitisTarihi" />
-					<listcell id="kalan" database="kalanGun" />
-					<listcell id="basvTarihi" database="basvuruTarihi" />
-				</listitem>
-			</template>
-		</listbox>			
 	</window>
 	<script>
-	
-		render_sozlesmeler = function() {
-			renderSelectedItem('list', 'id', 'genel.isyeriSozlesme.list', [], [], 'Sözleşme Listesi');
-		}
 	
 		kaydet_isyeri = function() {
 			send('genel.isyeri.edit', 'ALL', 'isyeri_edit_grid', 'isyeriId');
@@ -87,4 +55,7 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 		
 		
 	</script>
+	<attributes>
+		<attribute name="SESSION_SUBE_LIST"/>
+	</attributes>
 </arya>

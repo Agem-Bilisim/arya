@@ -1,18 +1,14 @@
 package tr.com.agem.arya.interpreter.script;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.apache.commons.lang.StringUtils;
 import org.json.JSONObject;
 import org.mozilla.javascript.Context;
 import org.mozilla.javascript.NativeArray;
@@ -21,12 +17,11 @@ import org.mozilla.javascript.NativeJSON;
 import org.mozilla.javascript.Scriptable;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zul.Tab;
+import org.zkoss.zul.Tabbox;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import tr.com.agem.arya.interpreter.component.AryaCombobox;
 import tr.com.agem.arya.interpreter.component.AryaListbox;
 import tr.com.agem.arya.interpreter.component.AryaTabpanel;
 import tr.com.agem.arya.interpreter.component.AryaTabs;
@@ -56,30 +51,6 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 		this.context = context;
 		this.scope = scope;
 		this.main = main;
-	}
-
-	@AryaJsFunction
-	public void populate(String data) {
-		ObjectMapper mapper = new ObjectMapper();
-		try {
-			JsonNode rootNode = mapper.readTree(data);
-			if (rootNode != null) {
-				Iterator<Entry<String, JsonNode>> fields = rootNode.fields();
-				if (fields != null) {
-					while (fields.hasNext()) {
-						Entry<String, JsonNode> entry = fields.next();
-						logger.log(Level.FINE, "JSON property: {0}:{1}", new Object[]{ entry.getKey(), entry.getValue() });
-						
-						IAryaComponent comp = (IAryaComponent) getElementById(entry.getKey());
-						if (comp != null) {
-							comp.setComponentValue(entry.getValue().asText());
-						}
-					}
-				}
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
 	}
 
 	@AryaJsFunction
@@ -132,6 +103,11 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 				scope.put(onFailure.getFunctionName(), scope, onFailure);
 				Context.call(null, onFailure, scope, this, new Object[]{ response });			
 			}
+		}
+		
+		if(action.equals("logout") && requestType.equals("LOGOUT")){
+			main.getMenuContainer().setVisible(false);
+			main.getComponentContainer().getChildren().clear();
 		}
 		
 	}
@@ -302,7 +278,7 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 
 	@AryaJsFunction
 	public void send(String action, String requestType, String parentObjectId, String objectIdProp, String tabName) throws JsonProcessingException {
-		
+		//TODO searchIsyeri'nde database isimleri doğru olmadığı için (şube dışında) sonuç doğru gelmiyor????
 		Component obj = (Component) getElementById(parentObjectId);
 		while (!(obj instanceof AryaTabpanel)) {
 			obj = obj.getParent(); 

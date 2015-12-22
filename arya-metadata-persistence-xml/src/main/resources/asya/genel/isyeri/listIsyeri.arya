@@ -3,16 +3,16 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listIsyeriWindow">
 		<vlayout>
-			<listbox id="genel.isyeri.list" onSelect="render_sozlesmeler()" mold="paging" pagesize="5">
+			<listbox id="genel.isyeri.list" onSelect="select_isyeri()" mold="paging" pagesize="5">
 				<listhead masterCol="2">
-					<listheader label="Şube" />
-					<listheader label="İşyeri SGK No" />
-					<listheader label="İşyeri Ünvanı" />
-					<listheader label="İlçe / İl" />
-					<listheader label="Kategori" />
-					<listheader label="İşçi Sayısı" />
-					<listheader label="Vergi Dairesi" />
-					<listheader label="Kısa Ad" />
+					<listheader sort="auto" label="Şube" />
+					<listheader sort="auto" label="İşyeri SGK No" />
+					<listheader sort="auto" label="İşyeri Ünvanı" />
+					<listheader sort="auto" label="İlçe / İl" />
+					<listheader sort="auto" label="Kategori" />
+					<listheader sort="auto" label="İşçi Sayısı" />
+					<listheader sort="auto" label="Vergi Dairesi" />
+					<listheader sort="auto" label="Kısa Ad" />
 					
 				</listhead>
 				<template>
@@ -31,13 +31,13 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 			<label id="sozlesmelerLabellbl" value="Sözleşmeler" style="font-weight: bold; font-size: 110%" />
 			<listbox id="genel.isyeriSozlesme.list">
 				<listhead>
-					<listheader label="Şube" />
-					<listheader label="SGK No/Kod" />
-					<listheader label="Taraf" />
-					<listheader label="Başlangıç" />
-					<listheader label="Bitiş" />
-					<listheader label="Süre" />
-					<listheader label="Başvuru" />
+					<listheader sort="auto" label="Şube" />
+					<listheader sort="auto" label="SGK No/Kod" />
+					<listheader sort="auto" label="Taraf" />
+					<listheader sort="auto" label="Başlangıç" />
+					<listheader sort="auto" label="Bitiş" />
+					<listheader sort="auto" label="Süre" />
+					<listheader sort="auto" label="Başvuru" />
 				</listhead>
 				<template>
 					<listitem>
@@ -55,6 +55,11 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 
 	</window>
 	<script>
+	
+		select_isyeri = function(){
+			renderSelectedItem('isyeri.list', 'id', 'genel.isyeri.select', [], [], 'İşyeri Bilgileri');
+			renderAtSamePage('isyeri.list', 'id', 'genel.isyeriSozlesme.list', 'İşyeri Listesi');
+		}
 	
 		render_sozlesmeler = function() {
 			renderAtSamePage('isyeri.list', 'id', 'genel.isyeriSozlesme.list', 'İşyeri Listesi');

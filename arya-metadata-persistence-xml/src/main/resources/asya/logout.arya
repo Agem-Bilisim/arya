@@ -1,0 +1,8 @@
+<arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="aryaportal.org arya.xsd http://www.zkoss.org/2005/zul/zul.xsd">
+	<window>
+		<label id="son" label="Oturumunuz sonlandırılmıştır." />
+	</window>
+	<script>
+	</script>
+</arya>
