@@ -28,7 +28,7 @@ public class AryaMetadataParser extends DefaultHandler {
 
     private AryaMain main=null;
     private Stack<IAryaComponent> currentComponent = null;
-
+    private  IAryaComponent comp;
     public AryaMetadataParser(AryaMain main) {
         this.main = main;
         this.currentComponent = new Stack<>();
@@ -37,7 +37,7 @@ public class AryaMetadataParser extends DefaultHandler {
     @Override
     public void startElement (String uri, String localName,String tagName, Attributes attributes){
 
-        IAryaComponent comp = ComponentFactory.getComponent(tagName,main, attributes);
+       comp = ComponentFactory.getComponent(tagName,main, attributes);
 
         if (comp != null && !(comp instanceof AryaFill)) {
             if (comp instanceof AryaTemplate) {
@@ -124,10 +124,12 @@ public class AryaMetadataParser extends DefaultHandler {
     @Override
     public void endElement (String uri, String localName, String qName){
 
-        if (!currentComponent.isEmpty()) {
-            currentComponent.pop();
+        if (comp!=null && !currentComponent.isEmpty()) {
+
+                currentComponent.pop();
+            }
         }
-    }
+
 
     @Override
     public void characters (char ch[], int start, int length){

@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.TableRow;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.xml.sax.Attributes;
 
@@ -89,7 +90,12 @@ public class AryaListItem extends TableRow implements IAryaComponent {
                 v.setDrawingCacheBackgroundColor(Color.LTGRAY);
 
                 if((((AryaListItem)v).getComponentValue()) != null) {
-                    JSONObject j = new JSONObject(((AryaListItem) v).getComponentValue());
+                    JSONObject j = null;
+                    try {
+                        j = new JSONObject(((AryaListItem) v).getComponentValue());
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                     ElementFunctions.setJsonObj(j);
 
                     ScriptHelper.executeScript(onSelect, null, getMain());
