@@ -2,7 +2,7 @@
 <arya xmlns="aryaportal.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listIsyeriWindow">
-		<grid sizedByContent="true" zclass="none" id="isyeri_search_grid">
+		<grid sizedByContent="true" id="isyeri_search_grid">
 			<rows>
 				<row>
 					<label id="subelbl" value="Şube" />

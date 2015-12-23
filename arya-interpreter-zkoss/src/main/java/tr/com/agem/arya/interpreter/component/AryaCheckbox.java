@@ -134,26 +134,6 @@ public class AryaCheckbox extends Checkbox implements IAryaComponent {
 					}
 				});
 			}
-
-			if (AryaUtils.isNotEmpty(attributes.getValue("onDoubleClick"))) {
-				final String functionName = attributes.getValue("onDoubleClick");
-				this.addEventListener("onDoubleClick", new EventListener<Event>() {
-					@Override
-					public void onEvent(Event event) throws Exception {
-						ScriptHelper.executeScript(functionName, null, main);
-					}
-				});
-			}
-			if (AryaUtils.isNotEmpty(attributes.getValue("onRightClick"))) {
-				final String functionName = attributes.getValue("onRightClick");
-				this.addEventListener("onRightClick", new EventListener<Event>() {
-					@Override
-					public void onEvent(Event event) throws Exception {
-						ScriptHelper.executeScript(functionName, null, main);
-					}
-				});
-			}
-
 		}
 	}
 
@@ -200,19 +180,16 @@ public class AryaCheckbox extends Checkbox implements IAryaComponent {
 
 	@Override
 	public String getComponentValue() {
-		/*
-		 * There is no componentValue variable for this component. This function
-		 * was created for IAryaComponent interface.
-		 */
+		if(this.isChecked()){
+			this.setComponentValue(this.getLabel());
+			return this.getLabel();
+		}
 		return null;
 	}
 
 	@Override
 	public void setComponentValue(String componentValue) {
-		/*
-		 * There is no componentValue variable for this component. This function
-		 * was created for IAryaComponent interface.
-		 */
+		this.setValue(componentValue);
 	}
 	
 	@Override

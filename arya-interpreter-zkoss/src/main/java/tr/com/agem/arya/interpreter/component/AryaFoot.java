@@ -4,16 +4,17 @@ import org.xml.sax.Attributes;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.EventListener;
-import org.zkoss.zul.Listhead;
+import org.zkoss.zul.Foot;
 
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.script.ScriptHelper;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
 
-public class AryaListHead extends Listhead implements IAryaComponent {
+public class AryaFoot extends Foot implements IAryaComponent {
 
-	private static final long serialVersionUID = -6309356054625200856L;
+	private static final long serialVersionUID = 1L;
+
 	private String componentClassName;
 	private String componentAttribute;
 	private String database;
@@ -22,7 +23,7 @@ public class AryaListHead extends Listhead implements IAryaComponent {
 	private String attributeLabel;
 
 
-	public AryaListHead(final AryaMain main, Attributes attributes) {
+	public AryaFoot(final AryaMain main, Attributes attributes) {
 		super();
 
 		if (AryaUtils.isNotEmpty(attributes)) {
@@ -55,7 +56,6 @@ public class AryaListHead extends Listhead implements IAryaComponent {
 				}
 				this.setAction(attributes.getValue("action"));
 				this.setVflex(attributes.getValue("vflex"));
-				this.setSizable(Boolean.parseBoolean(attributes.getValue("sizable")));
 				
 				this.database = attributes.getValue("database");
 				this.attribute = attributes.getValue("attribute");

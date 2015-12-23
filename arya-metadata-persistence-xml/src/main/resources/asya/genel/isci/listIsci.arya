@@ -4,7 +4,10 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listIsciWindow">
 		<vlayout>
 			<listbox id="genel.isci.list" pagesize="10" mold="paging" onSelect="select_isci()">
-				<listhead>
+				<auxhead>
+            		<auxheader colspan="4" class="topic" label="İşçiler ve İşçilere Ait Bilgiler"/>
+        		</auxhead>
+				<listhead sizable="true">
 					<listheader sort="auto" label="T.C. Kimlik No" />			
 					<listheader sort="auto" label="Ad Soyad" />
 					<listheader sort="auto" label="İşyeri" />

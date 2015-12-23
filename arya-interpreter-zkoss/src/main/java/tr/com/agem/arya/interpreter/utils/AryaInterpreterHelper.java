@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.StringReader;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -29,6 +28,7 @@ import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.zkoss.zk.ui.Component;
+import org.zkoss.zul.Checkbox;
 import org.zkoss.zul.Combobox;
 import org.zkoss.zul.Div;
 import org.zkoss.zul.Listbox;
@@ -40,10 +40,12 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import tr.com.agem.arya.interpreter.command.AryaFill;
+import tr.com.agem.arya.interpreter.component.AryaAuxHead;
 import tr.com.agem.arya.interpreter.component.AryaComboItem;
 import tr.com.agem.arya.interpreter.component.AryaCombobox;
 import tr.com.agem.arya.interpreter.component.AryaGrid;
 import tr.com.agem.arya.interpreter.component.AryaListCell;
+import tr.com.agem.arya.interpreter.component.AryaListHead;
 import tr.com.agem.arya.interpreter.component.AryaListItem;
 import tr.com.agem.arya.interpreter.component.AryaListbox;
 import tr.com.agem.arya.interpreter.component.AryaRow;
@@ -152,9 +154,11 @@ public class AryaInterpreterHelper {
 				if(getElementById(action, main) instanceof AryaListbox) {
 					
 					AryaListbox listbox = (AryaListbox) getElementById(action, main);
-
-					while(listbox.getChildren().size() > 1){
-						listbox.getChildren().remove(1);
+					
+					for (int i = 0; i < listbox.getChildren().size(); i++) {
+						if(!(listbox.getChildren().get(i) instanceof AryaAuxHead) && !(listbox.getChildren().get(i) instanceof AryaListHead)){
+							listbox.getChildren().remove(i);
+						}
 					}
 				}
 			}
@@ -378,6 +382,7 @@ public class AryaInterpreterHelper {
 		return (comp instanceof InputElement) ||
 			   (comp instanceof Radiogroup) ||
 			   (comp instanceof Combobox) ||
+			   (comp instanceof Checkbox) ||
 			   (comp instanceof Listbox);
 	}
 

@@ -50,6 +50,7 @@ public class AryaColumns extends Columns implements IAryaComponent {
 			}
 			this.setAction(attributes.getValue("action"));
 			this.setVflex(attributes.getValue("vflex"));
+			this.setSizable(Boolean.parseBoolean(attributes.getValue("sizable")));
 
 			/*
 			 * if the dimension input format of .arya files does NOT contains

@@ -126,6 +126,14 @@ public class ComponentFactory {
 			comp = new AryaFill(main, attributes);
 		} else if ("chart".equalsIgnoreCase(tagName)) {
 			comp = new AryaChart(main,attributes);
+		} else if ("auxhead".equalsIgnoreCase(tagName)) {
+			comp = new AryaAuxHead(main,attributes);
+		} else if ("auxheader".equalsIgnoreCase(tagName)) {
+			comp = new AryaAuxHeader(main,attributes);
+		} else if ("foot".equalsIgnoreCase(tagName)) {
+			comp = new AryaFoot(main,attributes);
+		} else if ("footer".equalsIgnoreCase(tagName)) {
+			comp = new AryaFooter(main,attributes);
 		}
 		
 		return comp;

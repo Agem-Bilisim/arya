@@ -4,7 +4,10 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listIsyeriWindow">
 		<vlayout>
 			<listbox id="genel.isyeri.list" onSelect="select_isyeri()" mold="paging" pagesize="5">
-				<listhead masterCol="2">
+				<auxhead>
+            		<auxheader colspan="8" class="topic" label="İşyerleri ve İşyerlerine Ait Bilgiler"/>
+        		</auxhead>
+				<listhead masterCol="2" sizable="true">
 					<listheader sort="auto" label="Şube" />
 					<listheader sort="auto" label="İşyeri SGK No" />
 					<listheader sort="auto" label="İşyeri Ünvanı" />
@@ -28,8 +31,10 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 					</listitem>
 				</template>
 			</listbox>
-			<label id="sozlesmelerLabellbl" value="Sözleşmeler" style="font-weight: bold; font-size: 110%" />
 			<listbox id="genel.isyeriSozlesme.list">
+				<auxhead>
+            		<auxheader colspan="7" class="topic" label="İşyerlerine Ait Sözleşmeler"/>
+        		</auxhead>
 				<listhead>
 					<listheader sort="auto" label="Şube" />
 					<listheader sort="auto" label="SGK No/Kod" />

@@ -3,11 +3,11 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listIsciWindow">
 		<vlayout>
-			<grid sizedByContent="true" zclass="none" id="isci_search_grid">
+			<grid sizedByContent="true" id="isci_search_grid">
 				<rows>
 					<row>
 						<label id="kisiParam.tckNoParamlbl" value="T.C. Kimlik No" />
-						<intbox id="tck" database="kisiParam.tckNoLikeParam" width="200"  maxlength="11"  placeholder=""   />
+						<intbox id="tck" database="kisiParam.tckNoLikeParam" width="200"  maxlength="11"   />
 					</row>
 					<row>
 						<label id="kisiParam.adSoyadParamlbl" value="Ad Soyad" />

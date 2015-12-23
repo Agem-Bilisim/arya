@@ -3,8 +3,11 @@
 xsi:schemaLocation="aryaportal.org arya.xsd">
 	<window id="listUyeWindow">
 		<vlayout>
-			<listbox id="genel.uye.list" onSelect="select_uye()" pagesize="10" mold="paging" >
-				<listhead>
+			<listbox id="genel.uye.list" pagesize="10" mold="paging" >
+				<auxhead>
+            		<auxheader colspan="9" class="topic" label="Üyeler ve Üyelere Ait Bilgiler"/>
+        		</auxhead>
+				<listhead sizable="true">
 					<listheader sort="auto" label="Üye Id" />
 					<listheader label="Üye Baş.Tar." />
 					<listheader sort="auto" label="Doğrulama" />
@@ -32,10 +35,5 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 		</vlayout>
 	</window>
 	<script>
-	
-		select_uye = function(){
-			renderSelectedItem('list', 'id', 'genel.uye.select', [], [], 'Üye Bilgileri');
-		}
-		
 	</script>
 </arya>
