@@ -53,12 +53,7 @@ public class AryaListItem extends TableRow implements IAryaComponent {
             }
         }
         this.main = main;
-        GradientDrawable gd = new GradientDrawable(
-                GradientDrawable.Orientation.TOP_BOTTOM,
-                new int[] {Color.parseColor("#C0C0C0"), Color.parseColor("#505050")});
-        gd.setGradientCenter(0.f, 1.f);
-        gd.setLevel(2);
-        this.setBackground(gd);
+
     }
 
 
@@ -74,7 +69,7 @@ public class AryaListItem extends TableRow implements IAryaComponent {
         display.getSize(size);
         int width = size.x;
         this.setLayoutParams(new TableRow.LayoutParams(width-100, TableRow.LayoutParams.WRAP_CONTENT, 1f)); //MATCH_PARENT is not working here, thats why I used pixels
-        this.setPadding(1, 1, 1, 1);
+       // this.setPadding(1,1,1,1);
 
         lb.addView(this);
 

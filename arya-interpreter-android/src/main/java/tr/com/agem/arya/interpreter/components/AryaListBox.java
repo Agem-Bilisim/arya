@@ -2,12 +2,18 @@ package tr.com.agem.arya.interpreter.components;
 
 import android.content.Context;
 import android.graphics.Point;
+import android.graphics.drawable.Drawable;
 import android.view.Display;
+import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.HorizontalScrollView;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -15,6 +21,8 @@ import android.widget.TableRow;
 import org.xml.sax.Attributes;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
@@ -33,19 +41,23 @@ public class AryaListBox extends TableLayout implements IAryaComponent, IAryaTem
     private String attribute;
     private String attributeValue;
     private String attributeLabel;
-    private Spinner listBoxSpinner = new Spinner(AryaNavBar.context);
+    private Spinner listBoxSpinner = new Spinner(AryaNavBar.context,Spinner.MODE_DIALOG);
     private List<String> spinnerItems = new ArrayList<>();
-
+    private ImageView sort_icon = new ImageView(AryaNavBar.context);
+    private EditText search_editText = new EditText(AryaNavBar.context);
+    private Button search_button = new Button(AryaNavBar.context);
     private AryaTemplate template;
-
+    private LinearLayout linLayout = new LinearLayout(AryaNavBar.context);
     private ArrayAdapter<String> adapter;
     private String onSelect;
-
-    public AryaListBox(Attributes attributes, AryaMain main) {
+    int selectedItem =0;
+    public AryaListBox(Attributes attributes, final AryaMain main) {
 
         super(main.getAryaWindow().getContext());
 
         if (AryaUtils.isNotEmpty(attributes)) {
+
+
             this.componentId = attributes.getValue("id");
             this.componentClassName = attributes.getValue("class");
             this.componentValue = attributes.getValue("value");
@@ -61,30 +73,36 @@ public class AryaListBox extends TableLayout implements IAryaComponent, IAryaTem
         }
 
 
+       setupLinearLayout();
         //main.getAryaWindow().addView(this);
         this.setMinimumWidth(LayoutParams.MATCH_PARENT);
         HorizontalScrollView HorizontalScrollViewParent = new HorizontalScrollView(main.getAryaWindow().getContext());
         main.getAryaWindow().addView(HorizontalScrollViewParent);
         HorizontalScrollViewParent.addView(this);
         this.addView(listBoxSpinner);
-        listBoxSpinner.setVisibility(INVISIBLE);
+        this.addView(linLayout);
+
+
+        listBoxSpinner.setVisibility(GONE);
         adapter = new ArrayAdapter<>(AryaNavBar.context, android.R.layout.simple_spinner_item, spinnerItems);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         listBoxSpinner.setAdapter(adapter);
 
 
         listBoxSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+
                 listBoxSpinner.post(new Runnable() {
                     @Override
                     public void run() {
-                        listBoxSpinner.setSelection(((AryaListItem) getChildAt(1)).getMasterCol(), false);
+                        listBoxSpinner.setSelection(((AryaListItem) getChildAt(2)).getMasterCol(), false);
                     }
                 });
-                ((AryaListItem) getChildAt(1)).setMasterCol(position);   //change master column according to spinner\
+                ((AryaListItem) getChildAt(2)).setMasterCol(position);   //change master column according to spinner\
 
-                for (int i = 1; i < getChildCount(); i++) {
+                for (int i = 2; i < getChildCount(); i++) {
                     for (int j = 0; j < ((AryaListItem) getChildAt(i)).getChildCount(); j++) {
 
                         if (j == position) {
@@ -251,6 +269,100 @@ public class AryaListBox extends TableLayout implements IAryaComponent, IAryaTem
 
     public void setAdapter(ArrayAdapter<String> adapter) {
         this.adapter = adapter;
+    }
+    public LinearLayout getLinLayout() {
+        return linLayout;
+    }
+
+    public void setLinLayout(LinearLayout linLayout) {
+        this.linLayout = linLayout;
+    }
+
+    public void setupLinearLayout(){
+        LinearLayout.LayoutParams params = new
+                LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT,
+                LayoutParams.WRAP_CONTENT);
+        params.gravity=Gravity.CENTER;
+
+//create a button
+        search_editText.setHint("Aranacak kelimeyi giriniz.");
+        search_editText.setVisibility(VISIBLE);
+        search_editText.setLayoutParams(params);
+
+//create text view widget
+        search_button.setText("ARA");
+        search_button.setLayoutParams(params);
+        search_button.setVisibility(VISIBLE);
+        search_button.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                int position =((AryaListItem) getChildAt(2)).getMasterCol();
+                for (int i = 2; i < getChildCount(); i++) {
+                    for (int j = 0; j < ((AryaListItem) getChildAt(i)).getChildCount(); j++) {
+                        if(j==position) {
+                            if ((((AryaListCell) ((AryaListItem) getChildAt(i)).getChildAt(j)).getText().toString().toLowerCase().contains(search_editText.getText().toString().toLowerCase()))) {
+                                WindowManager wm = (WindowManager) AryaNavBar.context.getSystemService(Context.WINDOW_SERVICE);
+                                Display display = wm.getDefaultDisplay();
+                                Point size = new Point();
+                                display.getSize(size);
+                                int width = size.x;
+                                (((AryaListItem) getChildAt(i)).getChildAt(j)).setVisibility(VISIBLE);
+                                (((AryaListItem) getChildAt(i)).getChildAt(j)).setLayoutParams(new TableRow.LayoutParams(width - 100, TableRow.LayoutParams.WRAP_CONTENT, 1f)); //MATCH_PARENT is not working here, thats why I used pixels
+
+                            } else {
+                                (((AryaListItem) getChildAt(i)).getChildAt(j)).setVisibility(GONE);
+                                (((AryaListItem) getChildAt(i)).getChildAt(j)).setLayoutParams(new TableRow.LayoutParams(0, 0, 0f));
+                            }
+                        }
+
+                    }
+                }
+
+            }
+        });
+
+
+
+
+
+        String uri = "@drawable/sort_icon";  // where myresource.png is the file
+        int imageResource = getResources().getIdentifier(uri, null, AryaNavBar.context.getPackageName());
+        Drawable res = getResources().getDrawable(imageResource);
+        sort_icon.setImageDrawable(res);
+        sort_icon.setVisibility(VISIBLE);
+        sort_icon.setLayoutParams(params);
+
+
+        sort_icon.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ArrayList<AryaListItem> itemsToSort = new ArrayList<>();
+                for(int i=0;i<getChildCount();i++){
+                    if(getChildAt(i) instanceof AryaListItem){
+                        itemsToSort.add(((AryaListItem)getChildAt(i)));
+                    }
+                }
+                Collections.sort(itemsToSort,new ListItemComparator());
+            }
+        });
+        linLayout.setOrientation(LinearLayout.HORIZONTAL);
+        // creating LayoutParams
+
+        linLayout.addView(sort_icon);
+        linLayout.addView(search_editText);
+        linLayout.addView(search_button);
+
+        linLayout.setVisibility(GONE);
+
+
+    }
+    class ListItemComparator implements Comparator<AryaListItem> {
+        @Override
+        public int compare(AryaListItem o1, AryaListItem o2) {
+            int position =((AryaListItem) getChildAt(2)).getMasterCol();
+            return ((AryaListCell)o1.getChildAt(position)).getText().toString().compareTo(((AryaListCell) o2.getChildAt(position)).getText().toString());
+        }
     }
 }
 

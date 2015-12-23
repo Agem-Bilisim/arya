@@ -100,16 +100,19 @@ public class AryaListCell extends TextView implements IAryaComponent {
         Paint paint = new Paint();
 
         paint.setStyle(Paint.Style.STROKE);
-        paint.setColor(Color.WHITE);
+        paint.setColor(Color.BLACK);
         if(!getText().equals("")) {
             paint.setStrokeWidth(2);
+            getLocalVisibleRect(rect);
+            canvas.drawLine(0,0,rect.width(),0,paint);
         }
         else{
-            paint.setStrokeWidth(0);
+            setVisibility(INVISIBLE);
+            paint.setStrokeWidth(2);
         }
 
-        getLocalVisibleRect(rect);
-        canvas.drawRect(rect, paint);
+
+       // canvas.drawRect(rect, paint);
     }
     @Override
     public void setComponentParent(Object o) {
@@ -124,7 +127,7 @@ public class AryaListCell extends TextView implements IAryaComponent {
 
 
         }
-        if(li.getChildCount()-1==((AryaListItem)(((AryaListBox)li.getParent()).getChildAt(1))).getMasterCol()){ //If current cell is element of master column
+        if(li.getChildCount()-1==((AryaListItem)(((AryaListBox)li.getParent()).getChildAt(2))).getMasterCol()){ //If current cell is element of master column
 
             WindowManager wm = (WindowManager) AryaNavBar.context.getSystemService(Context.WINDOW_SERVICE);
             Display display = wm.getDefaultDisplay();
@@ -260,7 +263,7 @@ public class AryaListCell extends TextView implements IAryaComponent {
                     LinearLayout.LayoutParams.WRAP_CONTENT);
             ele_layout.setOrientation(LinearLayout.HORIZONTAL);
             final TextView columnName= new TextView(AryaNavBar.context);
-            columnName.setText(((TextView) ((AryaListItem) ((AryaListBox) parent.getParent()).getChildAt(1)).getChildAt(i)).getText() + ":\t");
+            columnName.setText(((TextView) ((AryaListItem) ((AryaListBox) parent.getParent()).getChildAt(2)).getChildAt(i)).getText() + ":\t");
             final TextView info= new TextView(AryaNavBar.context);
             info.setText(((TextView)parent.getChildAt(i)).getText());
             columnName.setLayoutParams(lp);
