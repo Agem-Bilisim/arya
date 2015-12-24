@@ -16,12 +16,14 @@ import org.mozilla.javascript.NativeFunction;
 import org.mozilla.javascript.NativeJSON;
 import org.mozilla.javascript.Scriptable;
 import org.zkoss.zk.ui.Component;
+import org.zkoss.zul.Listbox;
 import org.zkoss.zul.Tab;
 import org.zkoss.zul.Tabbox;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import tr.com.agem.arya.interpreter.component.AryaGrid;
 import tr.com.agem.arya.interpreter.component.AryaListbox;
 import tr.com.agem.arya.interpreter.component.AryaTabpanel;
 import tr.com.agem.arya.interpreter.component.AryaTabs;
@@ -150,6 +152,26 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 				//TODO isyeriIdParam -> idParam!!!!!
 				 String params = "{\"isyeriIdParam\":\""+ splitId(id, jsonObj)+"\",\"id\":\""+ splitId(id, jsonObj)+"\"}";
 				 post(action, "DATA_ONLY", params, tabValue, null, null);
+			}
+		}
+	}
+	
+	@AryaJsFunction
+	public void clean(String parentComp){
+		
+		Component obj = (Component) getElementById(parentComp);
+		while (!(obj instanceof AryaTabpanel)) {
+			obj = obj.getParent(); 
+		}
+		AryaTabpanel tabpanel = (AryaTabpanel) obj;
+		Collection<String> components = tabpanel.getComponents();
+		
+		for (String id : components) {
+			IAryaComponent c = getElementById(id);
+			if (AryaInterpreterHelper.isInputElement(c)) {
+				
+				if(c.getComponentValue() != null)
+					c.setComponentValue("");
 			}
 		}
 	}
@@ -288,7 +310,7 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 		Map<String, Object> m = new HashMap<String, Object>();
 		for (String id : components) {
 			IAryaComponent c = getElementById(id);
-			if (AryaInterpreterHelper.isInputElement(c)) {
+			if (!(c instanceof Listbox) && AryaInterpreterHelper.isInputElement(c)) {
 				
 				String v = c.getComponentValue();
 				String d = c.getDatabase();

@@ -16,7 +16,6 @@ public class AryaWest extends West implements IAryaComponent {
 	private static final long serialVersionUID = -207082899880288071L;
 
 	private String componentClassName;
-	private String componentAttribute;
 
 	public AryaWest(final AryaMain main, Attributes attributes) {
 
@@ -24,7 +23,6 @@ public class AryaWest extends West implements IAryaComponent {
 
 		this.setId(attributes.getValue("id"));
 		this.componentClassName = attributes.getValue("class");
-		this.componentAttribute = attributes.getValue("attribute");
 
 		if (attributes.getValue("visible") != null) {
 			this.setVisible(Boolean.parseBoolean(attributes.getValue("visible")));
@@ -117,16 +115,6 @@ public class AryaWest extends West implements IAryaComponent {
 	@Override
 	public void setComponentId(String componentId) {
 		this.setId(componentId);
-	}
-
-	@Override
-	public String getComponentAttribute() {
-		return componentAttribute;
-	}
-
-	@Override
-	public void setComponentAttribute(String componentAttribute) {
-		this.componentAttribute = componentAttribute;
 	}
 
 	@Override

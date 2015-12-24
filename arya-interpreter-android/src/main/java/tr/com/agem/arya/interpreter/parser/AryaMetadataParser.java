@@ -12,6 +12,7 @@ import java.util.Stack;
 import tr.com.agem.arya.MainActivity;
 import tr.com.agem.arya.gateway.AryaInterpreterHelper;
 import tr.com.agem.arya.interpreter.components.AryaListBox;
+import tr.com.agem.arya.interpreter.components.AryaListItem;
 import tr.com.agem.arya.interpreter.components.AryaScript;
 import tr.com.agem.arya.interpreter.components.AryaTemplate;
 import tr.com.agem.arya.interpreter.components.ComponentFactory;
@@ -92,12 +93,15 @@ public class AryaMetadataParser extends DefaultHandler {
 
                 if(!((currentComponent.size() > 0) && (currentComponent.peek() instanceof AryaTemplate))) {
 
-                    currentComponent.push(comp);
-
+                    if(!(currentComponent.isEmpty()) && (currentComponent.peek() instanceof AryaListBox) && !(comp instanceof AryaListItem)){
+                        //not to get wrong components after listbox
+                    }
+                    else {
+                        currentComponent.push(comp);
+                    }
                     if (main.getAryaWindow().getComponents() == null) {
                         main.getAryaWindow().setComponents(new ArrayList<IAryaComponent>());
                     }
-
                     main.getAryaWindow().getComponents().add(comp);
                 }
             }
@@ -125,11 +129,36 @@ public class AryaMetadataParser extends DefaultHandler {
     @Override
     public void endElement (String uri, String localName, String qName){
 
-        if (comp!=null && !currentComponent.isEmpty()) {
-
+        if (comp!=null && !currentComponent.isEmpty() && isSame(currentComponent.peek().getComponentTagName(), localName)) {
                 currentComponent.pop();
             }
+    }
+
+    public boolean isSame(String tagName, String localName){
+        if(tagName.equals("textbox")){
+            if(localName.equals("textbox") || localName.equals("intbox") || localName.equals("doublebox")
+                    || localName.equals("longbox") || localName.equals("decimalbox") || localName.equals("timebox")) {
+                return true;
+            }
         }
+        else if(tagName.equals("listbox")){
+            if(localName.equals("listbox") || localName.equals("grid"))
+                return true;
+        }
+        else if(tagName.equals("listcell")){
+            if(localName.equals("listcell") || localName.equals("listheader"))
+                return true;
+        }
+        else if(tagName.equals("listitem")){
+            if(localName.equals("listitem") || localName.equals("row") || localName.equals("listhead"))
+                return true;
+        }
+        else {
+            return true;
+        }
+
+        return false;
+    }
 
 
     @Override

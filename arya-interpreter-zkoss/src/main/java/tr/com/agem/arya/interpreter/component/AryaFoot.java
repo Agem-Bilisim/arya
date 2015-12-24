@@ -16,7 +16,6 @@ public class AryaFoot extends Foot implements IAryaComponent {
 	private static final long serialVersionUID = 1L;
 
 	private String componentClassName;
-	private String componentAttribute;
 	private String database;
 	private String attribute;
 	private String attributeValue;
@@ -30,7 +29,6 @@ public class AryaFoot extends Foot implements IAryaComponent {
 			if (AryaUtils.isNotEmpty(attributes)) {
 				this.setId(attributes.getValue("id"));
 				this.componentClassName = attributes.getValue("class");
-				this.componentAttribute = attributes.getValue("attribute");
 
 				this.setClass(attributes.getValue("class"));
 				if (attributes.getValue("visible") != null) {
@@ -119,16 +117,6 @@ public class AryaFoot extends Foot implements IAryaComponent {
 	@Override
 	public void setComponentId(String componentId) {
 		this.setId(componentId);
-	}
-
-	@Override
-	public String getComponentAttribute() {
-		return componentAttribute;
-	}
-
-	@Override
-	public void setComponentAttribute(String componentAttribute) {
-		this.componentAttribute = componentAttribute;
 	}
 
 	@Override

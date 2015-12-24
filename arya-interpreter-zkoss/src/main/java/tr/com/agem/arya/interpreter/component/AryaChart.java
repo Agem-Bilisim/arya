@@ -20,7 +20,6 @@ public class AryaChart extends Chart implements IAryaComponent {
 	private static final long serialVersionUID = -8101533101584382438L;
 
 	private String componentClassName;
-	private String componentAttribute;
 	private String database;
 
 	public AryaChart(final AryaMain main, Attributes attributes) {
@@ -31,7 +30,6 @@ public class AryaChart extends Chart implements IAryaComponent {
 			this.setType(attributes.getValue("type")); //chart type
 			this.setId(attributes.getValue("id"));
 			this.componentClassName = attributes.getValue("class");
-			this.componentAttribute = attributes.getValue("attribute");
 			if (attributes.getValue("paneColor") != null) {
 			this.setPaneColor(attributes.getValue("paneColor"));
 			}
@@ -179,20 +177,6 @@ public class AryaChart extends Chart implements IAryaComponent {
 	public void setComponentId(String componentId) {
 		this.setId(componentId);
 	}
-
-	@Override
-	public String getComponentAttribute() {
-		return componentAttribute;
-	}
-
-	@Override
-	public void setComponentAttribute(String componentAttribute) {
-		this.componentAttribute = componentAttribute;
-	}
-
-	
-
-	
 	
 	@Override
 	public Object getComponentParent() {

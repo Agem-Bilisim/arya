@@ -16,7 +16,6 @@ public class AryaListHeader extends Listheader implements IAryaComponent {
 	private static final long serialVersionUID = -9059892322277407469L;
 
 	private String componentClassName;
-	private String componentAttribute;
 	private String database;
 	private String attribute;
 	private String attributeValue;
@@ -29,7 +28,6 @@ public class AryaListHeader extends Listheader implements IAryaComponent {
 
 		this.setId(attributes.getValue("id"));
 		this.componentClassName = attributes.getValue("class");
-		this.componentAttribute = attributes.getValue("attribute");
 
 		this.setClass(attributes.getValue("class"));
 		if (attributes.getValue("visible") != null) {
@@ -152,16 +150,6 @@ public class AryaListHeader extends Listheader implements IAryaComponent {
 	@Override
 	public void setComponentId(String componentId) {
 		this.setId(componentId);
-	}
-
-	@Override
-	public String getComponentAttribute() {
-		return componentAttribute;
-	}
-
-	@Override
-	public void setComponentAttribute(String componentAttribute) {
-		this.componentAttribute = componentAttribute;
 	}
 
 	@Override

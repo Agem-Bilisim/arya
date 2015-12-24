@@ -8,7 +8,6 @@ import tr.com.agem.core.utils.AryaUtils;
 public class AryaAttribute implements IAryaComponent {
 	
 	private String componentClassName;
-	private String componentAttribute;
 	private IAryaComponent componentParent;
 	
 	private String name;
@@ -21,7 +20,6 @@ public class AryaAttribute implements IAryaComponent {
 		if (AryaUtils.isNotEmpty(attributes)) {
 			if (AryaUtils.isNotEmpty(attributes)) {
 				this.componentClassName = attributes.getValue("class");
-				this.componentAttribute = attributes.getValue("attribute");
 				
 				this.name = attributes.getValue("name");
 				this.value = attributes.getValue("value");
@@ -32,13 +30,10 @@ public class AryaAttribute implements IAryaComponent {
 
 	@Override
 	public void setComponentId(String componentId) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public String getComponentId() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -54,29 +49,15 @@ public class AryaAttribute implements IAryaComponent {
 
 	@Override
 	public void setComponentValue(String componentValue) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public String getComponentValue() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void setComponentAttribute(String componentAttribute) {
-		this.componentAttribute = componentAttribute;
-	}
-
-	@Override
-	public String getComponentAttribute() {
-		return componentAttribute;
-	}
-
-	@Override
 	public String validate() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -92,20 +73,16 @@ public class AryaAttribute implements IAryaComponent {
 
 	@Override
 	public String getDatabase() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void setDatabase(String database) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public String getComponentTagName() {
-		// TODO Auto-generated method stub
-		return null;
+		return "attribute";
 	}
 
 	public String getName() {
@@ -134,38 +111,29 @@ public class AryaAttribute implements IAryaComponent {
 
 	@Override
 	public String getAttribute() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void setAttribute(String attribute) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public String getAttributeValue() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void setAttributeValue(String attributeValue) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public String getAttributeLabel() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void setAttributeLabel(String attributeLabel) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

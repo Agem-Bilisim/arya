@@ -18,7 +18,6 @@ public class AryaButton extends Button implements IAryaComponent {
 	private static final long serialVersionUID = -8101533101584382438L;
 
 	private String componentClassName;
-	private String componentAttribute;
 	private String database;
 
 	public AryaButton(final AryaMain main, Attributes attributes) {
@@ -28,7 +27,6 @@ public class AryaButton extends Button implements IAryaComponent {
 		if (AryaUtils.isNotEmpty(attributes)) {
 			this.setId(attributes.getValue("id"));
 			this.componentClassName = attributes.getValue("class");
-			this.componentAttribute = attributes.getValue("attribute");
 
 			this.setClass(attributes.getValue("class"));
 			this.setLabel(attributes.getValue("label"));
@@ -158,7 +156,6 @@ public class AryaButton extends Button implements IAryaComponent {
 
 	@Override
 	public String validate() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -180,16 +177,6 @@ public class AryaButton extends Button implements IAryaComponent {
 	@Override
 	public void setComponentId(String componentId) {
 		this.setId(componentId);
-	}
-
-	@Override
-	public String getComponentAttribute() {
-		return componentAttribute;
-	}
-
-	@Override
-	public void setComponentAttribute(String componentAttribute) {
-		this.componentAttribute = componentAttribute;
 	}
 
 	@Override
@@ -224,38 +211,29 @@ public class AryaButton extends Button implements IAryaComponent {
 
 	@Override
 	public String getAttribute() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void setAttribute(String attribute) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public String getAttributeValue() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void setAttributeValue(String attributeValue) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public String getAttributeLabel() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void setAttributeLabel(String attributeLabel) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

@@ -317,16 +317,6 @@ public class AryaMenuItem implements IAryaComponent,IAryaMenu, MenuItem {//TODO
     }
 
     @Override
-    public void setComponentAttribute(String s) {
-
-    }
-
-    @Override
-    public String getComponentAttribute() {
-        return null;
-    }
-
-    @Override
     public String validate() {
         return null;
     }

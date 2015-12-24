@@ -16,7 +16,6 @@ public class AryaSlider extends Slider implements IAryaComponent {
 	private static final long serialVersionUID = -1421523495684567458L;
 
 	private String componentClassName;
-	private String componentAttribute;
 	private String database;
 
 	public AryaSlider(final AryaMain main, Attributes attributes) {
@@ -24,7 +23,6 @@ public class AryaSlider extends Slider implements IAryaComponent {
 
 		this.setId(attributes.getValue("id"));
 		this.componentClassName = attributes.getValue("class");
-		this.componentAttribute = attributes.getValue("attribute");
 		if(attributes.getValue("value") != null){
 			this.setCurpos(Integer.parseInt(attributes.getValue("value")));
 		}
@@ -180,16 +178,6 @@ public class AryaSlider extends Slider implements IAryaComponent {
 	@Override
 	public void setComponentId(String componentId) {
 		this.setId(componentId);
-	}
-
-	@Override
-	public String getComponentAttribute() {
-		return componentAttribute;
-	}
-
-	@Override
-	public void setComponentAttribute(String componentAttribute) {
-		this.componentAttribute = componentAttribute;
 	}
 
 	@Override

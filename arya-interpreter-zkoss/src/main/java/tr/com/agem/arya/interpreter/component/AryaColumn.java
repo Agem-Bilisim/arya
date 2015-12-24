@@ -16,7 +16,6 @@ public class AryaColumn extends Column implements IAryaComponent {
 	private static final long serialVersionUID = -1829374522609555406L;
 
 	private String componentClassName;
-	private String componentAttribute;
 
 	public AryaColumn(final AryaMain main, Attributes attributes) {
 		super();
@@ -24,7 +23,6 @@ public class AryaColumn extends Column implements IAryaComponent {
 		if (AryaUtils.isNotEmpty(attributes)) {
 			this.setId(attributes.getValue("id"));
 			this.componentClassName = attributes.getValue("class");
-			this.componentAttribute = attributes.getValue("attribute");
 
 			this.setClass(attributes.getValue("class"));
 			this.setLabel(attributes.getValue("label"));
@@ -155,16 +153,6 @@ public class AryaColumn extends Column implements IAryaComponent {
 	@Override
 	public void setComponentId(String componentId) {
 		this.setId(componentId);
-	}
-
-	@Override
-	public String getComponentAttribute() {
-		return componentAttribute;
-	}
-
-	@Override
-	public void setComponentAttribute(String componentAttribute) {
-		this.componentAttribute = componentAttribute;
 	}
 
 	@Override

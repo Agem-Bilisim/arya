@@ -62,15 +62,6 @@ public class AryaScript extends Script implements IAryaComponent {
 		return null;
 	}
 
-	@Override
-	public void setComponentAttribute(String componentAttribute) {
-	}
-
-	@Override
-	public String getComponentAttribute() {
-		return null;
-	}
-
 	public String getScript() {
 		return script;
 	}

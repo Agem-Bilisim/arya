@@ -16,14 +16,12 @@ public class AryaCenter extends Center implements IAryaComponent {
 	private static final long serialVersionUID = -120655914532934396L;
 
 	private String componentClassName;
-	private String componentAttribute;
 
 	public AryaCenter(final AryaMain main, Attributes attributes) {
 
 		super();
 		this.setId(attributes.getValue("id"));
 		this.componentClassName = attributes.getValue("class");
-		this.componentAttribute = attributes.getValue("attribute");
 		if (attributes.getValue("visible") != null) {
 			this.setVisible(Boolean.parseBoolean(attributes.getValue("visible")));
 		}
@@ -110,16 +108,6 @@ public class AryaCenter extends Center implements IAryaComponent {
 	public void setComponentId(String componentId) {
 		this.setId(componentId);
 		;
-	}
-
-	@Override
-	public String getComponentAttribute() {
-		return componentAttribute;
-	}
-
-	@Override
-	public void setComponentAttribute(String componentAttribute) {
-		this.componentAttribute = componentAttribute;
 	}
 
 	@Override

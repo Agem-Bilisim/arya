@@ -20,7 +20,6 @@ public class AryaListbox extends Listbox implements IAryaComponent, IAryaTemplat
 	private static final long serialVersionUID = 5336801586396485340L;
 
 	private String componentClassName;
-	private String componentAttribute;
 	private String database;
 	private String attribute;
 	private String attributeValue;
@@ -35,7 +34,6 @@ public class AryaListbox extends Listbox implements IAryaComponent, IAryaTemplat
 		if (AryaUtils.isNotEmpty(attributes)) {
 			this.setId(attributes.getValue("id"));
 			this.componentClassName = attributes.getValue("class");
-			this.componentAttribute = attributes.getValue("attribute");
 
 			this.setClass(attributes.getValue("class"));
 			if (attributes.getValue("visible") != null) {
@@ -82,6 +80,8 @@ public class AryaListbox extends Listbox implements IAryaComponent, IAryaTemplat
 			this.setWidth(attributes.getValue("width"));
 			
 			this.setMold(attributes.getValue("mold"));
+			this.setMultiple(Boolean.parseBoolean(attributes.getValue("multiple")));
+			this.setCheckmark(Boolean.parseBoolean(attributes.getValue("checkmark")));
 			
 			this.database = attributes.getValue("database");
 			this.attribute = attributes.getValue("attribute");
@@ -173,16 +173,6 @@ public class AryaListbox extends Listbox implements IAryaComponent, IAryaTemplat
 		this.setId(componentId);
 	}
 
-	@Override
-	public String getComponentAttribute() {
-		return componentAttribute;
-	}
-
-	@Override
-	public void setComponentAttribute(String componentAttribute) {
-		this.componentAttribute = componentAttribute;
-	}
-	
 	@Override
 	public String getComponentValue() {
 		return this.getSelectedItem().getValue();

@@ -23,7 +23,6 @@ public class AryaComboBox extends Spinner implements IAryaComponent {
 
     private String componentClassName;
     private String componentId;
-    private String componentAttribute;
     private String componentValue;
     private boolean spinnerInit =false;
 
@@ -39,7 +38,6 @@ public class AryaComboBox extends Spinner implements IAryaComponent {
             this.componentId = attributes.getValue("id");
             this.componentClassName = attributes.getValue("class");
             this.componentValue = attributes.getValue("value");
-            this.componentAttribute = attributes.getValue("attribute");
 
             this.database = attributes.getValue("database");
             this.attribute = attributes.getValue("attribute");
@@ -134,11 +132,6 @@ public class AryaComboBox extends Spinner implements IAryaComponent {
     }
 
     @Override
-    public String getComponentAttribute() {
-        return componentAttribute;
-    }
-
-    @Override
     public String validate() {
         return null;
     }
@@ -155,11 +148,6 @@ public class AryaComboBox extends Spinner implements IAryaComponent {
         else {
             ((ViewGroup)o).addView(this);
         }
-    }
-
-    @Override
-    public void setComponentAttribute(String componentAttribute) {
-        this.componentAttribute = componentAttribute;
     }
 
     @Override

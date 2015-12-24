@@ -3,7 +3,6 @@ package tr.com.agem.arya.interpreter.components;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Point;
-import android.graphics.drawable.GradientDrawable;
 import android.view.Display;
 import android.view.View;
 import android.view.WindowManager;
@@ -23,7 +22,6 @@ public class AryaListItem extends TableRow implements IAryaComponent {
     private String componentId;
     private String componentValue;
     private String componentClassName;
-    private String componentAttribute;
     private String database;
     private String attribute;
     private String attributeValue;
@@ -41,7 +39,6 @@ public class AryaListItem extends TableRow implements IAryaComponent {
             this.componentId = attributes.getValue("id");
             this.componentClassName = attributes.getValue("class");
             this.componentValue = attributes.getValue("value");
-            this.componentAttribute = attributes.getValue("attribute");
             this.database = attributes.getValue("database");
 
             this.attribute = attributes.getValue("attribute");
@@ -131,19 +128,8 @@ public class AryaListItem extends TableRow implements IAryaComponent {
     }
 
     @Override
-    public String getComponentAttribute() {
-        return componentAttribute;
-    }
-
-    @Override
     public String validate() {
         return null;
-    }
-
-
-    @Override
-    public void setComponentAttribute(String componentAttribute) {
-        this.componentAttribute = componentAttribute;
     }
 
     public AryaMain getMain() {

@@ -97,32 +97,34 @@ public class AryaListBox extends TableLayout implements IAryaComponent, IAryaTem
                 listBoxSpinner.post(new Runnable() {
                     @Override
                     public void run() {
-                        listBoxSpinner.setSelection(((AryaListItem) getChildAt(2)).getMasterCol(), false);
+                        listBoxSpinner.setSelection(getListHead().getMasterCol(), false);
                     }
                 });
-                ((AryaListItem) getChildAt(2)).setMasterCol(position);   //change master column according to spinner\
+                getListHead().setMasterCol(position);   //change master column according to spinner\
 
                 for (int i = 2; i < getChildCount(); i++) {
-                    for (int j = 0; j < ((AryaListItem) getChildAt(i)).getChildCount(); j++) {
+                    if (getChildAt(i) instanceof AryaListItem) {
+                        for (int j = 0; j < ((AryaListItem) getChildAt(i)).getChildCount(); j++) {
 
-                        if (j == position) {
-                            WindowManager wm = (WindowManager) AryaNavBar.context.getSystemService(Context.WINDOW_SERVICE);
-                            Display display = wm.getDefaultDisplay();
-                            Point size = new Point();
-                            display.getSize(size);
-                            int width = size.x;
-                            if (!(((AryaListCell) ((AryaListItem) getChildAt(i)).getChildAt(j)).getText().toString().equals(""))) {
-                                (((AryaListItem) getChildAt(i)).getChildAt(j)).setVisibility(VISIBLE);
-                                (((AryaListItem) getChildAt(i)).getChildAt(j)).setLayoutParams(new TableRow.LayoutParams(width - 100, TableRow.LayoutParams.WRAP_CONTENT, 1f)); //MATCH_PARENT is not working here, thats why I used pixels
+                            if (j == position) {
+                                WindowManager wm = (WindowManager) AryaNavBar.context.getSystemService(Context.WINDOW_SERVICE);
+                                Display display = wm.getDefaultDisplay();
+                                Point size = new Point();
+                                display.getSize(size);
+                                int width = size.x;
+                                if (!(((AryaListCell) ((AryaListItem) getChildAt(i)).getChildAt(j)).getText().toString().equals(""))) {
+                                    (((AryaListItem) getChildAt(i)).getChildAt(j)).setVisibility(VISIBLE);
+                                    (((AryaListItem) getChildAt(i)).getChildAt(j)).setLayoutParams(new TableRow.LayoutParams(width - 100, TableRow.LayoutParams.WRAP_CONTENT, 1f)); //MATCH_PARENT is not working here, thats why I used pixels
+                                } else {
+                                    (((AryaListItem) getChildAt(i)).getChildAt(j)).setVisibility(INVISIBLE);
+                                    (((AryaListItem) getChildAt(i)).getChildAt(j)).setLayoutParams(new TableRow.LayoutParams(0, 0, 0f));
+                                }
                             } else {
                                 (((AryaListItem) getChildAt(i)).getChildAt(j)).setVisibility(INVISIBLE);
                                 (((AryaListItem) getChildAt(i)).getChildAt(j)).setLayoutParams(new TableRow.LayoutParams(0, 0, 0f));
                             }
-                        } else {
-                            (((AryaListItem) getChildAt(i)).getChildAt(j)).setVisibility(INVISIBLE);
-                            (((AryaListItem) getChildAt(i)).getChildAt(j)).setLayoutParams(new TableRow.LayoutParams(0, 0, 0f));
-                        }
 
+                        }
                     }
                 }
             }
@@ -134,6 +136,14 @@ public class AryaListBox extends TableLayout implements IAryaComponent, IAryaTem
 
         });
 
+    }
+
+    public AryaListItem getListHead(){
+        for(int i=0; i<getChildCount(); i++){
+            if(getChildAt(i) instanceof AryaListItem)
+                return (AryaListItem) getChildAt(i);
+        }
+        return null;
     }
 
     @Override
@@ -157,22 +167,12 @@ public class AryaListBox extends TableLayout implements IAryaComponent, IAryaTem
     }
 
     @Override
-    public String getComponentAttribute() {
-        return componentAttribute;
-    }
-
-    @Override
     public String validate() {
         return null;
     }
 
     @Override
     public void setComponentParent(Object o) {
-    }
-
-    @Override
-    public void setComponentAttribute(String componentAttribute) {
-        this.componentAttribute = componentAttribute;
     }
 
     @Override
@@ -297,25 +297,27 @@ public class AryaListBox extends TableLayout implements IAryaComponent, IAryaTem
             @Override
             public void onClick(View view) {
 
-                int position =((AryaListItem) getChildAt(2)).getMasterCol();
+                int position =getListHead().getMasterCol();
                 for (int i = 2; i < getChildCount(); i++) {
-                    for (int j = 0; j < ((AryaListItem) getChildAt(i)).getChildCount(); j++) {
-                        if(j==position) {
-                            if ((((AryaListCell) ((AryaListItem) getChildAt(i)).getChildAt(j)).getText().toString().toLowerCase().contains(search_editText.getText().toString().toLowerCase()))) {
-                                WindowManager wm = (WindowManager) AryaNavBar.context.getSystemService(Context.WINDOW_SERVICE);
-                                Display display = wm.getDefaultDisplay();
-                                Point size = new Point();
-                                display.getSize(size);
-                                int width = size.x;
-                                (((AryaListItem) getChildAt(i)).getChildAt(j)).setVisibility(VISIBLE);
-                                (((AryaListItem) getChildAt(i)).getChildAt(j)).setLayoutParams(new TableRow.LayoutParams(width - 100, TableRow.LayoutParams.WRAP_CONTENT, 1f)); //MATCH_PARENT is not working here, thats why I used pixels
+                    if (getChildAt(i) instanceof AryaListItem) {
+                        for (int j = 0; j < ((AryaListItem) getChildAt(i)).getChildCount(); j++) {
+                            if (j == position) {
+                                if ((((AryaListCell) ((AryaListItem) getChildAt(i)).getChildAt(j)).getText().toString().toLowerCase().contains(search_editText.getText().toString().toLowerCase()))) {
+                                    WindowManager wm = (WindowManager) AryaNavBar.context.getSystemService(Context.WINDOW_SERVICE);
+                                    Display display = wm.getDefaultDisplay();
+                                    Point size = new Point();
+                                    display.getSize(size);
+                                    int width = size.x;
+                                    (((AryaListItem) getChildAt(i)).getChildAt(j)).setVisibility(VISIBLE);
+                                    (((AryaListItem) getChildAt(i)).getChildAt(j)).setLayoutParams(new TableRow.LayoutParams(width - 100, TableRow.LayoutParams.WRAP_CONTENT, 1f)); //MATCH_PARENT is not working here, thats why I used pixels
 
-                            } else {
-                                (((AryaListItem) getChildAt(i)).getChildAt(j)).setVisibility(GONE);
-                                (((AryaListItem) getChildAt(i)).getChildAt(j)).setLayoutParams(new TableRow.LayoutParams(0, 0, 0f));
+                                } else {
+                                    (((AryaListItem) getChildAt(i)).getChildAt(j)).setVisibility(GONE);
+                                    (((AryaListItem) getChildAt(i)).getChildAt(j)).setLayoutParams(new TableRow.LayoutParams(0, 0, 0f));
+                                }
                             }
-                        }
 
+                        }
                     }
                 }
 
@@ -360,7 +362,7 @@ public class AryaListBox extends TableLayout implements IAryaComponent, IAryaTem
     class ListItemComparator implements Comparator<AryaListItem> {
         @Override
         public int compare(AryaListItem o1, AryaListItem o2) {
-            int position =((AryaListItem) getChildAt(2)).getMasterCol();
+            int position = getListHead().getMasterCol();
             return ((AryaListCell)o1.getChildAt(position)).getText().toString().compareTo(((AryaListCell) o2.getChildAt(position)).getText().toString());
         }
     }

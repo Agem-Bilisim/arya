@@ -17,7 +17,6 @@ public class AryaHlayout extends LinearLayout implements IAryaComponent {
 
     private String componentClassName;
     private String componentId;
-    private String componentAttribute;
     private String componentValue;
 
     public AryaHlayout(Attributes attributes, final AryaMain main) {
@@ -28,7 +27,6 @@ public class AryaHlayout extends LinearLayout implements IAryaComponent {
             this.componentId = attributes.getValue("id");
             this.componentClassName = attributes.getValue("class");
             this.componentValue = attributes.getValue("value");
-            this.componentAttribute = attributes.getValue("attribute");
             this.setVerticalScrollBarEnabled(true);
             this.setHorizontalScrollBarEnabled(true);
             this.setMinimumWidth(ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -67,16 +65,6 @@ public class AryaHlayout extends LinearLayout implements IAryaComponent {
     @Override
     public void setComponentClassName(String componentClassName) {
         this.componentClassName = componentClassName;
-    }
-
-    @Override
-    public String getComponentAttribute() {
-        return componentAttribute;
-    }
-
-    @Override
-    public void setComponentAttribute(String componentAttribute) {
-        this.componentAttribute = componentAttribute;
     }
 
     @Override

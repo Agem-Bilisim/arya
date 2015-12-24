@@ -13,7 +13,6 @@ import tr.com.agem.core.utils.AryaUtils;
 public class AryaTemplate implements IAryaComponent{
 
     private String componentClassName;
-    private String componentAttribute;
 
     private IAryaComponent parent;
     private List<IAryaComponent> children = new ArrayList<IAryaComponent>();
@@ -28,7 +27,6 @@ public class AryaTemplate implements IAryaComponent{
         if (AryaUtils.isNotEmpty(attributes)) {
             if (AryaUtils.isNotEmpty(attributes)) {
                 this.componentClassName = attributes.getValue("class");
-                this.componentAttribute = attributes.getValue("attribute");
 
                 this.name = attributes.getValue("name");
                 this.var = attributes.getValue("var");
@@ -51,16 +49,6 @@ public class AryaTemplate implements IAryaComponent{
     @Override
     public void setComponentClassName(String componentClassName) {
         this.componentClassName = componentClassName;
-    }
-
-    @Override
-    public String getComponentAttribute() {
-        return componentAttribute;
-    }
-
-    @Override
-    public void setComponentAttribute(String componentAttribute) {
-        this.componentAttribute = componentAttribute;
     }
 
     @Override

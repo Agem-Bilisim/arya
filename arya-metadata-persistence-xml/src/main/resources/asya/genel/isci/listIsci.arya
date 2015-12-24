@@ -5,7 +5,13 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 		<vlayout>
 			<listbox id="genel.isci.list" pagesize="10" mold="paging" onSelect="select_isci()">
 				<auxhead>
-            		<auxheader colspan="4" class="topic" label="İşçiler ve İşçilere Ait Bilgiler"/>
+            		<auxheader colspan="1" class="topic">
+            			<textbox id="tckFilter" database="kisiParam.tckNoLikeParam" instant="true" placeholder="Filtrele" onChange="filtrele()"/>
+            		</auxheader>
+            		<auxheader colspan="1" class="topic">
+            			<textbox id="adSoyadFilter" database="kisiParam.adSoyadParam" instant="true" placeholder="Filtrele" onChange="filtrele()"/>
+            		</auxheader>
+            		<auxheader colspan="2" class="topic" label="İşyeri Bilgileri"/>
         		</auxhead>
 				<listhead sizable="true">
 					<listheader sort="auto" label="T.C. Kimlik No" />			
@@ -30,6 +36,10 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 		
 			renderSelectedItem('isci.list', 'id', 'genel.isci.select', [], [], 'İşçi Bilgileri');
 		
+		}
+		
+		filtrele = function(){
+			send('genel.isci.list', 'ALL','genel.isci.list', '', 'İşçi Listesi');
 		}
 		
 	</script>

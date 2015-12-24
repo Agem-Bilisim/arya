@@ -20,7 +20,6 @@ public class AryaDatebox extends Datebox implements IAryaComponent {
 	private static final long serialVersionUID = 5090052412080219262L;
 
 	private String componentClassName;
-	private String componentAttribute;
 	private String database;
 
 	public AryaDatebox(final AryaMain main, Attributes attributes) {
@@ -29,7 +28,6 @@ public class AryaDatebox extends Datebox implements IAryaComponent {
 		if (AryaUtils.isNotEmpty(attributes)) {
 			this.setId(attributes.getValue("id"));
 			this.componentClassName = attributes.getValue("class");
-			this.componentAttribute = attributes.getValue("attribute");
 
 			this.setClass(attributes.getValue("class"));
 			if (attributes.getValue("visible") != null) {
@@ -193,16 +191,6 @@ public class AryaDatebox extends Datebox implements IAryaComponent {
 	@Override
 	public void setComponentId(String componentId) {
 		this.setId(componentId);
-	}
-
-	@Override
-	public String getComponentAttribute() {
-		return componentAttribute;
-	}
-
-	@Override
-	public void setComponentAttribute(String componentAttribute) {
-		this.componentAttribute = componentAttribute;
 	}
 
 	@Override

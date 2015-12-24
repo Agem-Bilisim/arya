@@ -104,7 +104,7 @@ public class AryaListCell extends TextView implements IAryaComponent {
         if(!getText().equals("")) {
             paint.setStrokeWidth(2);
             getLocalVisibleRect(rect);
-            canvas.drawLine(0,0,rect.width(),0,paint);
+            canvas.drawLine(0, 0, rect.width(), 0, paint);
         }
         else{
             setVisibility(INVISIBLE);
@@ -127,18 +127,29 @@ public class AryaListCell extends TextView implements IAryaComponent {
 
 
         }
-        if(li.getChildCount()-1==((AryaListItem)(((AryaListBox)li.getParent()).getChildAt(2))).getMasterCol()){ //If current cell is element of master column
+
+        AryaListItem item = getListHead(li);
+        if(li != null && li.getChildCount()-1==item.getMasterCol()){ //If current cell is element of master column
 
             WindowManager wm = (WindowManager) AryaNavBar.context.getSystemService(Context.WINDOW_SERVICE);
             Display display = wm.getDefaultDisplay();
             Point size= new Point();
             display.getSize(size);
             int width = size.x;
-            this.setLayoutParams(new TableRow.LayoutParams(width-100, TableRow.LayoutParams.WRAP_CONTENT, 1f)); //MATCH_PARENT is not working here, thats why I used pixels
+            this.setLayoutParams(new TableRow.LayoutParams(width - 100, TableRow.LayoutParams.WRAP_CONTENT, 1f)); //MATCH_PARENT is not working here, thats why I used pixels
         }
         else{
             this.setLayoutParams(new TableRow.LayoutParams(0, 0, 0f));
         }
+    }
+
+    public static AryaListItem getListHead(AryaListItem li){
+        AryaListBox listbox = (AryaListBox)li.getParent();
+        for (int i=0; i<listbox.getChildCount(); i++){
+            if(listbox.getChildAt(i) instanceof AryaListItem)
+                return (AryaListItem) listbox.getChildAt(i);
+        }
+        return null;
     }
 
 
@@ -170,11 +181,6 @@ public class AryaListCell extends TextView implements IAryaComponent {
     @Override
     public void setComponentClassName(String componentClassName) {
         this.componentClassName = componentClassName;
-    }
-
-    @Override
-    public String getComponentAttribute() {
-        return componentAttribute;
     }
 
     @Override
@@ -226,12 +232,6 @@ public class AryaListCell extends TextView implements IAryaComponent {
     }
 
     @Override
-    public void setComponentAttribute(String componentAttribute) {
-        this.componentAttribute = componentAttribute;
-    }
-
-
-    @Override
     public String getComponentTagName() {
         return "listcell";
     }
@@ -263,7 +263,7 @@ public class AryaListCell extends TextView implements IAryaComponent {
                     LinearLayout.LayoutParams.WRAP_CONTENT);
             ele_layout.setOrientation(LinearLayout.HORIZONTAL);
             final TextView columnName= new TextView(AryaNavBar.context);
-            columnName.setText(((TextView) ((AryaListItem) ((AryaListBox) parent.getParent()).getChildAt(2)).getChildAt(i)).getText() + ":\t");
+            columnName.setText(((TextView) getListHead(parent).getChildAt(i)).getText() + ":\t");
             final TextView info= new TextView(AryaNavBar.context);
             info.setText(((TextView)parent.getChildAt(i)).getText());
             columnName.setLayoutParams(lp);

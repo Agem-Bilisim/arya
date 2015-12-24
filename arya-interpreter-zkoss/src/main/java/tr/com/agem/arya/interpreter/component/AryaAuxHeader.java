@@ -16,20 +16,16 @@ public class AryaAuxHeader extends Auxheader implements IAryaComponent {
 	private static final long serialVersionUID = 1L;
 
 	private String componentClassName;
-	private String componentAttribute;
 	private String database;
 	private String attribute;
 	private String attributeValue;
 	private String attributeLabel;
-
-	
 
 	public AryaAuxHeader(final AryaMain main, Attributes attributes) {
 		super();
 
 		this.setId(attributes.getValue("id"));
 		this.componentClassName = attributes.getValue("class");
-		this.componentAttribute = attributes.getValue("attribute");
 
 		this.setClass(attributes.getValue("class"));
 		if (attributes.getValue("visible") != null) {
@@ -59,6 +55,7 @@ public class AryaAuxHeader extends Auxheader implements IAryaComponent {
 		this.setAction(attributes.getValue("action"));
 		this.setVflex(attributes.getValue("vflex"));
 		this.setColspan(Integer.parseInt(attributes.getValue("colspan")));
+		this.setStyle(attributes.getValue("style"));
 		
 		this.database = attributes.getValue("database");
 		this.attribute = attributes.getValue("attribute");
@@ -130,7 +127,6 @@ public class AryaAuxHeader extends Auxheader implements IAryaComponent {
 
 	@Override
 	public String validate() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -152,16 +148,6 @@ public class AryaAuxHeader extends Auxheader implements IAryaComponent {
 	@Override
 	public void setComponentId(String componentId) {
 		this.setId(componentId);
-	}
-
-	@Override
-	public String getComponentAttribute() {
-		return componentAttribute;
-	}
-
-	@Override
-	public void setComponentAttribute(String componentAttribute) {
-		this.componentAttribute = componentAttribute;
 	}
 
 	@Override

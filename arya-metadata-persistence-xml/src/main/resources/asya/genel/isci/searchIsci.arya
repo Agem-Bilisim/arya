@@ -57,14 +57,21 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 					</row>
 				</rows>
 			</grid>
-			<button id="listele" label="Listele" position="1/3" newLine="true"
-					onClick="search_isci()" />
+			<hlayout>
+				<button id="listele" label="Listele" position="1/3" newLine="true"
+						onClick="search_isci()" />
+				<button id="temizle" label="Temizle" position="1/3" newLine="true"
+						onClick="temizle()" />
+			</hlayout>
 		</vlayout>
 	</window>
 	<script>
 	
 		search_isci = function(){
 			send('genel.isci.list', 'ALL','isci_search_grid', '', 'İşçi Listesi');
+		}
+		temizle = function(){
+			clean('isci_search_grid');
 		}
 		
 	</script>

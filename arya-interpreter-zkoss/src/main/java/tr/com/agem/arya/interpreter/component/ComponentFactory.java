@@ -134,6 +134,8 @@ public class ComponentFactory {
 			comp = new AryaFoot(main,attributes);
 		} else if ("footer".equalsIgnoreCase(tagName)) {
 			comp = new AryaFooter(main,attributes);
+		} else if ("image".equalsIgnoreCase(tagName)) {
+			comp = new AryaImage(main,attributes);
 		}
 		
 		return comp;

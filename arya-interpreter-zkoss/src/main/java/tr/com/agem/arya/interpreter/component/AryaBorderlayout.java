@@ -16,7 +16,6 @@ public class AryaBorderlayout extends Borderlayout implements IAryaComponent {
 	private static final long serialVersionUID = -5455540598090891506L;
 
 	private String componentClassName;
-	private String componentAttribute;
 	private String database;
 
 	public AryaBorderlayout(final AryaMain main, Attributes attributes) {
@@ -24,7 +23,6 @@ public class AryaBorderlayout extends Borderlayout implements IAryaComponent {
 		super();
 		this.setId(attributes.getValue("id"));
 		this.componentClassName = attributes.getValue("class");
-		this.componentAttribute = attributes.getValue("attribute");
 
 		if (attributes.getValue("visible") != null) {
 			this.setVisible(Boolean.parseBoolean(attributes.getValue("visible")));
@@ -104,7 +102,6 @@ public class AryaBorderlayout extends Borderlayout implements IAryaComponent {
 
 	@Override
 	public String validate() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -126,16 +123,6 @@ public class AryaBorderlayout extends Borderlayout implements IAryaComponent {
 	@Override
 	public void setComponentId(String componentId) {
 		this.setId(componentId);
-	}
-
-	@Override
-	public String getComponentAttribute() {
-		return componentAttribute;
-	}
-
-	@Override
-	public void setComponentAttribute(String componentAttribute) {
-		this.componentAttribute = componentAttribute;
 	}
 
 	@Override
@@ -177,38 +164,29 @@ public class AryaBorderlayout extends Borderlayout implements IAryaComponent {
 
 	@Override
 	public String getAttribute() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void setAttribute(String attribute) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public String getAttributeValue() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void setAttributeValue(String attributeValue) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public String getAttributeLabel() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void setAttributeLabel(String attributeLabel) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

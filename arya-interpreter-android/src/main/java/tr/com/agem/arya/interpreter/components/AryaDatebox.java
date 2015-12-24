@@ -19,7 +19,6 @@ public class AryaDatebox  extends DatePicker implements IAryaComponent {
     private String componentId;
     private String componentClassName;
     private boolean mandatory;
-    private String componentAttribute;
     private String componentValue;
     private String database;
 
@@ -34,7 +33,6 @@ public class AryaDatebox  extends DatePicker implements IAryaComponent {
             this.componentId = attributes.getValue("id");
             this.componentClassName = attributes.getValue("class");
             this.componentValue = attributes.getValue("value");
-            this.componentAttribute = attributes.getValue("attribute");
             this.database = attributes.getValue("database");
 
 
@@ -102,16 +100,6 @@ public class AryaDatebox  extends DatePicker implements IAryaComponent {
     @Override
     public void setComponentClassName(String componentClassName) {
         this.componentClassName = componentClassName;
-    }
-
-    @Override
-    public String getComponentAttribute() {
-        return componentAttribute;
-    }
-
-    @Override
-    public void setComponentAttribute(String componentAttribute) {
-        this.componentAttribute = componentAttribute;
     }
 
     @Override

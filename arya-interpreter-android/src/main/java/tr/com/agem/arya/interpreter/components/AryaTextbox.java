@@ -25,7 +25,6 @@ public class AryaTextbox extends EditText implements IAryaComponent {
     private String componentClassName;
     private String componentId;
     private boolean mandatory;
-    private String componentAttribute;
     private String componentValue;
     private String database;
 
@@ -41,7 +40,6 @@ public class AryaTextbox extends EditText implements IAryaComponent {
             this.componentId = attributes.getValue("id");
             this.componentClassName = attributes.getValue("class");
             this.componentValue = attributes.getValue("value");
-            this.componentAttribute = attributes.getValue("attribute");
             this.database = attributes.getValue("database");
 
             this.attribute = attributes.getValue("attribute");
@@ -110,12 +108,8 @@ public class AryaTextbox extends EditText implements IAryaComponent {
             }
             // Multiline
             String rowsStr =attributes.getValue("placeholder");
-            int rows;
-            if (rowsStr != null && !(rowsStr.equals("")) && (rows = Integer.parseInt(rowsStr)) > 0) {
+            if (rowsStr != null && !(rowsStr.equals(""))) {
                 this.setInputType(InputType.TYPE_TEXT_FLAG_MULTI_LINE);
-                this.setLines(rows);
-                this.setMinLines(rows);
-                this.setMaxLines(rows + 2);
                 this.setGravity(Gravity.TOP | Gravity.LEFT);
                 this.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
                 this.setVerticalScrollBarEnabled(true);
@@ -175,16 +169,6 @@ public class AryaTextbox extends EditText implements IAryaComponent {
     @Override
     public void setComponentClassName(String componentClassName) {
         this.componentClassName = componentClassName;
-    }
-
-    @Override
-    public String getComponentAttribute() {
-        return componentAttribute;
-    }
-
-    @Override
-    public void setComponentAttribute(String componentAttribute) {
-        this.componentAttribute = componentAttribute;
     }
 
     @Override

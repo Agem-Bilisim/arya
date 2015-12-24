@@ -16,7 +16,6 @@ public class AryaTab extends Tab implements IAryaComponent {
 	private static final long serialVersionUID = -1829374522609555406L;
 
 	private String componentClassName;
-	private String componentAttribute;
 	private AryaTabpanel tabPanel;
 	private String database;
 
@@ -26,7 +25,6 @@ public class AryaTab extends Tab implements IAryaComponent {
 		if (AryaUtils.isNotEmpty(attributes)) {
 			this.setId(attributes.getValue("id"));
 			this.componentClassName = attributes.getValue("class");
-			this.componentAttribute = attributes.getValue("attribute");
 
 			this.setClass(attributes.getValue("class"));
 			if (attributes.getValue("visible") != null) {
@@ -131,16 +129,6 @@ public class AryaTab extends Tab implements IAryaComponent {
 	@Override
 	public void setComponentId(String componentId) {
 		this.setId(componentId);
-	}
-
-	@Override
-	public String getComponentAttribute() {
-		return componentAttribute;
-	}
-
-	@Override
-	public void setComponentAttribute(String componentAttribute) {
-		this.componentAttribute = componentAttribute;
 	}
 
 	@Override

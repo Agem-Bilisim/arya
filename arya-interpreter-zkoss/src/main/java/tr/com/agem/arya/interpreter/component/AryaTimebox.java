@@ -16,7 +16,6 @@ public class AryaTimebox extends Timebox implements IAryaComponent {
 	private static final long serialVersionUID = 8878576351289066716L;
 
 	private String componentClassName;
-	private String componentAttribute;
 	private String database;
 
 	public AryaTimebox(final AryaMain main, Attributes attributes) {
@@ -25,7 +24,6 @@ public class AryaTimebox extends Timebox implements IAryaComponent {
 
 		this.setId(attributes.getValue("id"));
 		this.componentClassName = attributes.getValue("class");
-		this.componentAttribute = attributes.getValue("attribute");
 
 		this.setClass(attributes.getValue("class"));
 		if (attributes.getValue("visible") != null) {
@@ -172,16 +170,6 @@ public class AryaTimebox extends Timebox implements IAryaComponent {
 	@Override
 	public void setComponentId(String componentId) {
 		this.setId(componentId);
-	}
-
-	@Override
-	public String getComponentAttribute() {
-		return componentAttribute;
-	}
-
-	@Override
-	public void setComponentAttribute(String componentAttribute) {
-		this.componentAttribute = componentAttribute;
 	}
 
 	@Override

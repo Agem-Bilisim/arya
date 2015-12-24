@@ -17,7 +17,6 @@ public class AryaButton extends Button implements IAryaComponent {
 
     private String componentClassName;
     private String componentId;
-    private String componentAttribute;
     private String componentValue;
 
     private String database;
@@ -32,7 +31,6 @@ public class AryaButton extends Button implements IAryaComponent {
             this.componentId = attributes.getValue("id");
             this.componentClassName = attributes.getValue("class");
             this.componentValue = attributes.getValue("value");
-            this.componentAttribute = attributes.getValue("attribute");
             this.setText(attributes.getValue("label"));
             final String tooltiptext = attributes.getValue("tooltiptext");
             this.setOnLongClickListener(new OnLongClickListener() {
@@ -120,16 +118,6 @@ public class AryaButton extends Button implements IAryaComponent {
     }
     public void setValue(String value) {
         this.setText(value);
-    }
-
-    @Override
-    public String getComponentAttribute() {
-        return componentAttribute;
-    }
-
-    @Override
-    public void setComponentAttribute(String componentAttribute) {
-        this.componentAttribute = componentAttribute;
     }
 
     @Override

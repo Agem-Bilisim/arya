@@ -16,7 +16,6 @@ public class AryaTabbox extends Tabbox implements IAryaComponent, IAryaTemplate 
 	
 	private static final long serialVersionUID = 1L;
 	private String componentClassName;
-	private String componentAttribute;
 	private String database;
 	
 	private AryaTemplate template;
@@ -27,7 +26,6 @@ public class AryaTabbox extends Tabbox implements IAryaComponent, IAryaTemplate 
 		if (AryaUtils.isNotEmpty(attributes)) {
 			this.setId(attributes.getValue("id"));
 			this.componentClassName = attributes.getValue("class");
-			this.componentAttribute = attributes.getValue("attribute");
 	
 			this.setClass(attributes.getValue("class"));
 			if (attributes.getValue("visible") != null) {
@@ -128,16 +126,6 @@ public class AryaTabbox extends Tabbox implements IAryaComponent, IAryaTemplate 
 	@Override
 	public void setComponentId(String componentId) {
 		this.setId(componentId);
-	}
-
-	@Override
-	public String getComponentAttribute() {
-		return componentAttribute;
-	}
-
-	@Override
-	public void setComponentAttribute(String componentAttribute) {
-		this.componentAttribute = componentAttribute;
 	}
 
 	@Override

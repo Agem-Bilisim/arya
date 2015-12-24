@@ -16,7 +16,6 @@ public class AryaCalendar extends Calendar implements IAryaComponent {
 	private static final long serialVersionUID = -1487988311035638716L;
 
 	private String componentClassName;
-	private String componentAttribute;
 	private String database;
 
 	public AryaCalendar(final AryaMain main, Attributes attributes) {
@@ -25,7 +24,6 @@ public class AryaCalendar extends Calendar implements IAryaComponent {
 
 		this.setId(attributes.getValue("id"));
 		this.componentClassName = attributes.getValue("class");
-		this.componentAttribute = attributes.getValue("attribute");
 
 		this.setClass(attributes.getValue("class"));
 		this.setHeight(attributes.getValue("height"));
@@ -139,16 +137,6 @@ public class AryaCalendar extends Calendar implements IAryaComponent {
 	@Override
 	public void setComponentId(String componentId) {
 		this.setId(componentId);
-	}
-
-	@Override
-	public String getComponentAttribute() {
-		return componentAttribute;
-	}
-
-	@Override
-	public void setComponentAttribute(String componentAttribute) {
-		this.componentAttribute = componentAttribute;
 	}
 
 	@Override

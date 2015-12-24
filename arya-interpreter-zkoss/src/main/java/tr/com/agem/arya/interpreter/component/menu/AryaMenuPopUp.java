@@ -16,7 +16,6 @@ public class AryaMenuPopUp extends Menupopup implements IAryaComponent, IAryaMen
 	private static final long serialVersionUID = 1L;
 	private String componentClassName;
 	private String componentId;
-	private String componentAttribute;
 	private String componentValue;
 
 	public AryaMenuPopUp(final AryaMain main, Attributes attributes) {
@@ -27,7 +26,6 @@ public class AryaMenuPopUp extends Menupopup implements IAryaComponent, IAryaMen
 			this.componentId = attributes.getValue("id");
 			this.componentClassName = attributes.getValue("class");
 			this.componentValue = attributes.getValue("value");
-			this.componentAttribute = attributes.getValue("attribute");
 
 			this.setId(attributes.getValue("id"));
 			this.setClass(attributes.getValue("class"));
@@ -119,16 +117,6 @@ public class AryaMenuPopUp extends Menupopup implements IAryaComponent, IAryaMen
 	@Override
 	public void setComponentId(String componentId) {
 		this.componentId = componentId;
-	}
-
-	@Override
-	public String getComponentAttribute() {
-		return componentAttribute;
-	}
-
-	@Override
-	public void setComponentAttribute(String componentAttribute) {
-		this.componentAttribute = componentAttribute;
 	}
 
 	@Override

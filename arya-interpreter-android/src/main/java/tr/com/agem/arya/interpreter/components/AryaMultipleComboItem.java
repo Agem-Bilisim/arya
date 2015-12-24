@@ -14,7 +14,6 @@ public class AryaMultipleComboItem extends View implements IAryaComponent {
 
     private String componentClassName;
     private String componentId;
-    private String componentAttribute;
     private String componentValue;
     private String database;
 
@@ -32,7 +31,6 @@ public class AryaMultipleComboItem extends View implements IAryaComponent {
             this.componentId = attributes.getValue("id");
             this.componentClassName = attributes.getValue("class");
             this.componentValue = attributes.getValue("value");
-            this.componentAttribute = attributes.getValue("attribute");
             this.database = attributes.getValue("database");
 
             this.attribute = attributes.getValue("attribute");
@@ -64,11 +62,6 @@ public class AryaMultipleComboItem extends View implements IAryaComponent {
     }
 
     @Override
-    public String getComponentAttribute() {
-        return componentAttribute;
-    }
-
-    @Override
     public String validate() {
         return null;
     }
@@ -81,11 +74,6 @@ public class AryaMultipleComboItem extends View implements IAryaComponent {
             ((ArrayAdapter<AryaMultipleComboItem>) mcb.getAdapter()).add(this);
             mcb.setListViewHeightBasedOnChildren(mcb);
         }
-    }
-
-    @Override
-    public void setComponentAttribute(String componentAttribute) {
-        this.componentAttribute = componentAttribute;
     }
 
     @Override

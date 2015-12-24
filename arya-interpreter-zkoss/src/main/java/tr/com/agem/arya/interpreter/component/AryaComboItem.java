@@ -13,7 +13,6 @@ public class AryaComboItem extends Comboitem implements IAryaComponent {
 	private static final long serialVersionUID = -7348740222197906039L;
 
 	private String componentClassName;
-	private String componentAttribute;
 	private String database;
 	private String attribute;
 	private String attributeValue;
@@ -27,7 +26,6 @@ public class AryaComboItem extends Comboitem implements IAryaComponent {
 			this.setId(attributes.getValue("id"));
 			this.componentClassName = attributes.getValue("class");
 			this.setValue(attributes.getValue("value"));
-			this.componentAttribute = attributes.getValue("attribute");
 
 			this.setClass(attributes.getValue("class"));
 			this.setLabel(attributes.getValue("label"));
@@ -68,16 +66,6 @@ public class AryaComboItem extends Comboitem implements IAryaComponent {
 	@Override
 	public void setComponentId(String componentId) {
 		this.setId(componentId);
-	}
-
-	@Override
-	public String getComponentAttribute() {
-		return componentAttribute;
-	}
-
-	@Override
-	public void setComponentAttribute(String componentAttribute) {
-		this.componentAttribute = componentAttribute;
 	}
 
 	@Override

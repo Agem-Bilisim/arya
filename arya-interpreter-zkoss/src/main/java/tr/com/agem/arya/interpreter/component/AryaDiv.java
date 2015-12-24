@@ -17,7 +17,6 @@ public class AryaDiv extends Div implements IAryaComponent {
 	private Div componentContainer; // works as a parent component
 	private Div menuContainer;
 	private String componentClassName;
-	private String componentAttribute;
 	private String database;
 
 	public AryaDiv(final AryaMain main, Attributes attributes) {
@@ -25,7 +24,6 @@ public class AryaDiv extends Div implements IAryaComponent {
 
 		this.setId(attributes.getValue("id"));
 		this.componentClassName = attributes.getValue("class");
-		this.componentAttribute = attributes.getValue("attribute");
 
 		this.setClass(attributes.getValue("class"));
 		if (attributes.getValue("visible") != null) {
@@ -130,16 +128,6 @@ public class AryaDiv extends Div implements IAryaComponent {
 	@Override
 	public void setComponentId(String componentId) {
 		this.setId(componentId);
-	}
-
-	@Override
-	public String getComponentAttribute() {
-		return componentAttribute;
-	}
-
-	@Override
-	public void setComponentAttribute(String componentAttribute) {
-		this.componentAttribute = componentAttribute;
 	}
 
 	@Override

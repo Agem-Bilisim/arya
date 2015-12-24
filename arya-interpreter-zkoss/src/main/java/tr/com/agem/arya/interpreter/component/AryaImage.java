@@ -1,29 +1,22 @@
 package tr.com.agem.arya.interpreter.component;
 
-import java.util.ArrayList;
-import java.util.Collection;
-
 import org.xml.sax.Attributes;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.EventListener;
-import org.zkoss.zul.Tabpanel;
+import org.zkoss.zul.Image;
 
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.script.ScriptHelper;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
 
-public class AryaTabpanel extends Tabpanel implements IAryaComponent {
+public class AryaImage extends Image implements IAryaComponent {
 
-	private static final long serialVersionUID = -1829374522609555406L;
-
+	private static final long serialVersionUID = 1L;
 	private String componentClassName;
-	private Collection<String> components = new ArrayList<String>();
-	private AryaTab tab;
-	private String database;
 
-	public AryaTabpanel(final AryaMain main, Attributes attributes) {
+	public AryaImage(final AryaMain main, Attributes attributes) {
 		super();
 
 		if (AryaUtils.isNotEmpty(attributes)) {
@@ -31,9 +24,11 @@ public class AryaTabpanel extends Tabpanel implements IAryaComponent {
 			this.componentClassName = attributes.getValue("class");
 
 			this.setClass(attributes.getValue("class"));
+			
 			if (attributes.getValue("visible") != null) {
 				this.setVisible(Boolean.parseBoolean(attributes.getValue("visible")));
 			}
+			
 			this.setTooltip(attributes.getValue("tooltip"));
 			this.setTooltiptext(attributes.getValue("tooltiptext"));
 			this.setDraggable(attributes.getValue("draggable"));
@@ -53,9 +48,12 @@ public class AryaTabpanel extends Tabpanel implements IAryaComponent {
 				this.setRenderdefer(Integer.parseInt(attributes.getValue("renderdefer")));
 			}
 			this.setAction(attributes.getValue("action"));
+			this.setHflex(attributes.getValue("hflex"));
 			this.setVflex(attributes.getValue("vflex"));
+			this.setSrc(attributes.getValue("src"));
 			
-			this.database = attributes.getValue("database");
+			if (attributes.getValue("style") != null)
+				this.setStyle(attributes.getValue("style"));
 
 			/*
 			 * if the dimension input format of .arya files does NOT contains
@@ -66,6 +64,12 @@ public class AryaTabpanel extends Tabpanel implements IAryaComponent {
 				this.setHeight(attributes.getValue("height"));
 			} else {
 				this.setHeight(attributes.getValue("height") + "px");
+			}
+
+			if ((attributes.getValue("width") != null) && attributes.getValue("width").contains("px")) {
+				this.setWidth(attributes.getValue("width"));
+			} else {
+				this.setWidth(attributes.getValue("width") + "px");
 			}
 
 			if (AryaUtils.isNotEmpty(attributes.getValue("onDrop"))) {
@@ -81,6 +85,43 @@ public class AryaTabpanel extends Tabpanel implements IAryaComponent {
 			if (AryaUtils.isNotEmpty(attributes.getValue("onCreate"))) {
 				final String functionName = attributes.getValue("onCreate");
 				this.addEventListener("onCreate", new EventListener<Event>() {
+					@Override
+					public void onEvent(Event event) throws Exception {
+						ScriptHelper.executeScript(functionName, null, main);
+					}
+				});
+			}
+
+			if (AryaUtils.isNotEmpty(attributes.getValue("onChange"))) {
+				final String functionName = attributes.getValue("onChange");
+				this.addEventListener("onChange", new EventListener<Event>() {
+					@Override
+					public void onEvent(Event event) throws Exception {
+						ScriptHelper.executeScript(functionName, null, main);
+					}
+				});
+			}
+			if (AryaUtils.isNotEmpty(attributes.getValue("onChanging"))) {
+				final String functionName = attributes.getValue("onChanging");
+				this.addEventListener("onChanging", new EventListener<Event>() {
+					@Override
+					public void onEvent(Event event) throws Exception {
+						ScriptHelper.executeScript(functionName, null, main);
+					}
+				});
+			}
+			if (AryaUtils.isNotEmpty(attributes.getValue("onFocus"))) {
+				final String functionName = attributes.getValue("onFocus");
+				this.addEventListener("onFocus", new EventListener<Event>() {
+					@Override
+					public void onEvent(Event event) throws Exception {
+						ScriptHelper.executeScript(functionName, null, main);
+					}
+				});
+			}
+			if (AryaUtils.isNotEmpty(attributes.getValue("onBlur"))) {
+				final String functionName = attributes.getValue("onBlur");
+				this.addEventListener("onBlur", new EventListener<Event>() {
 					@Override
 					public void onEvent(Event event) throws Exception {
 						ScriptHelper.executeScript(functionName, null, main);
@@ -123,96 +164,56 @@ public class AryaTabpanel extends Tabpanel implements IAryaComponent {
 	}
 
 	@Override
-	public String getComponentValue() {
-		/*
-		 * There is no componentValue variable for this component. This function
-		 * was created for IAryaComponent interface.
-		 */
-		return null;
-	}
-
-	@Override
-	public void setComponentValue(String componentValue) {
-		/*
-		 * There is no componentValue variable for this component. This function
-		 * was created for IAryaComponent interface.
-		 */
-	}
-	
-	@Override
 	public Object getComponentParent() {
 		return this.getComponentParent();
 	}
 
 	@Override
 	public String getComponentTagName() {
-		return "tabpanel";
-	}
-
-	public Collection<String> getComponents() {
-		return components;
-	}
-
-	public void setComponents(Collection<String> components) {
-		this.components = components;
-	}
-
-	public boolean add(String e) {
-		return components.add(e);
-	}
-
-	public AryaTab getTab() {
-		return tab;
-	}
-
-	public void setTab(AryaTab tab) {
-		this.tab = tab;
+		return "image";
 	}
 
 	@Override
 	public String getDatabase() {
-		return database;
+		return null;
 	}
 
 	@Override
 	public void setDatabase(String database) {
-		this.database = database;
 	}
 
 	@Override
 	public String getAttribute() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void setAttribute(String attribute) {
-		// TODO Auto-generated method stub
-		
 	}
 
-	@Override
 	public String getAttributeValue() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
 	public void setAttributeValue(String attributeValue) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public String getAttributeLabel() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void setAttributeLabel(String attributeLabel) {
-		// TODO Auto-generated method stub
-		
+	}
+
+	@Override
+	public void setComponentValue(String componentValue) {
+	}
+
+	@Override
+	public String getComponentValue() {
+		return null;
 	}
 
 }

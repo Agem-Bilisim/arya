@@ -75,16 +75,6 @@ public class AryaScript extends View implements IAryaComponent{
     }
 
     @Override
-    public void setComponentAttribute(String s) {
-
-    }
-
-    @Override
-    public String getComponentAttribute() {
-        return null;
-    }
-
-    @Override
     public String validate() {
         return null;
     }

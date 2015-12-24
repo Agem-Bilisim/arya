@@ -16,7 +16,6 @@ public class AryaCheckbox extends Checkbox implements IAryaComponent {
 	private static final long serialVersionUID = -768799901950036923L;
 
 	private String componentClassName;
-	private String componentAttribute;
 	private String database;
 	private String attribute;
 	private String attributeValue;
@@ -28,7 +27,6 @@ public class AryaCheckbox extends Checkbox implements IAryaComponent {
 		if (AryaUtils.isNotEmpty(attributes)) {
 			this.setId(attributes.getValue("id"));
 			this.componentClassName = attributes.getValue("class");
-			this.componentAttribute = attributes.getValue("attribute");
 
 			this.setClass(attributes.getValue("class"));
 			this.setLabel(attributes.getValue("label"));
@@ -166,16 +164,6 @@ public class AryaCheckbox extends Checkbox implements IAryaComponent {
 	@Override
 	public void setComponentId(String componentId) {
 		this.setId(componentId);
-	}
-
-	@Override
-	public String getComponentAttribute() {
-		return componentAttribute;
-	}
-
-	@Override
-	public void setComponentAttribute(String componentAttribute) {
-		this.componentAttribute = componentAttribute;
 	}
 
 	@Override

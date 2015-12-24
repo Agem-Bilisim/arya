@@ -32,15 +32,6 @@ public class AryaAttributes implements IAryaComponent {
 	}
 
 	@Override
-	public void setComponentAttribute(String componentAttribute) {
-	}
-
-	@Override
-	public String getComponentAttribute() {
-		return null;
-	}
-
-	@Override
 	public String validate() {
 		return null;
 	}

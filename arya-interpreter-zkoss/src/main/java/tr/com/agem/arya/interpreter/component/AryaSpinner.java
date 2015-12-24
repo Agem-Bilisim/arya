@@ -16,7 +16,6 @@ public class AryaSpinner extends Spinner implements IAryaComponent {
 	private static final long serialVersionUID = -4019284059182059962L;
 
 	private String componentClassName;
-	private String componentAttribute;
 	private String database;
 
 	public AryaSpinner(final AryaMain main, Attributes attributes) {
@@ -24,7 +23,6 @@ public class AryaSpinner extends Spinner implements IAryaComponent {
 
 		this.setId(attributes.getValue("id"));
 		this.componentClassName = attributes.getValue("class");
-		this.componentAttribute = attributes.getValue("attribute");
 
 		this.setClass(attributes.getValue("class"));
 		if (attributes.getValue("visible") != null) {
@@ -171,16 +169,6 @@ public class AryaSpinner extends Spinner implements IAryaComponent {
 	@Override
 	public void setComponentId(String componentId) {
 		this.setId(componentId);
-	}
-
-	@Override
-	public String getComponentAttribute() {
-		return componentAttribute;
-	}
-
-	@Override
-	public void setComponentAttribute(String componentAttribute) {
-		this.componentAttribute = componentAttribute;
 	}
 
 	@Override
