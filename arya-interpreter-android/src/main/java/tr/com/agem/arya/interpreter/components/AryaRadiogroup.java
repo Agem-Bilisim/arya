@@ -102,6 +102,11 @@ public class AryaRadiogroup extends RadioGroup implements IAryaComponent {
 
     @Override
     public void setComponentValue(String componentValue) {
+        for (int i=0; i<getChildCount(); i++){
+            if(((AryaRadio)getChildAt(i)).getComponentValue().equals(componentValue)){
+                ((AryaRadio) getChildAt(i)).setChecked(true);
+            }
+        }
         this.componentValue = componentValue;
     }
 

@@ -4,7 +4,6 @@ import android.graphics.Color;
 import android.text.InputFilter;
 import android.text.InputType;
 import android.view.Gravity;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
@@ -49,12 +48,13 @@ public class AryaTextbox extends EditText implements IAryaComponent {
             final String tooltiptext = attributes.getValue("tooltiptext");
             this.setOnLongClickListener(new OnLongClickListener() {
                 public boolean onLongClick(View v) {
-                    if(tooltiptext!=null) {
+                    if (tooltiptext != null) {
                         Toast.makeText(v.getContext(), tooltiptext, Toast.LENGTH_SHORT).show();
                     }
                     return true;
                 }
             });
+
 
             // Placeholder
             this.setHint(attributes.getValue("placeholder"));
@@ -96,13 +96,15 @@ public class AryaTextbox extends EditText implements IAryaComponent {
             // onChange
             final String onChange = attributes.getValue("onChange");
             if (onChange != null) {
-                this.setOnKeyListener(new OnKeyListener() {
+
+                setOnFocusChangeListener(new OnFocusChangeListener(){
+
                     @Override
-                    public boolean onKey(View v, int keyCode, KeyEvent event) {
-                        HashMap<Object, Object> params = new HashMap<Object, Object>();
-                        params.put("keyCode", new Integer(keyCode));
-                        ScriptHelper.executeScript(onChange, params, main);
-                        return true;
+                    public void onFocusChange(View v, boolean hasFocus) {
+                        if(!hasFocus){
+                            HashMap<Object, Object> params = new HashMap<Object, Object>();
+                            ScriptHelper.executeScript(onChange, params, main);
+                        }
                     }
                 });
             }

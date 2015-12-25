@@ -35,6 +35,7 @@ import tr.com.agem.arya.interpreter.components.AryaComboItem;
 import tr.com.agem.arya.interpreter.components.AryaListBox;
 import tr.com.agem.arya.interpreter.components.AryaListCell;
 import tr.com.agem.arya.interpreter.components.AryaListItem;
+import tr.com.agem.arya.interpreter.components.AryaRadiogroup;
 import tr.com.agem.arya.interpreter.components.AryaTemplate;
 import tr.com.agem.arya.interpreter.components.AryaTextbox;
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
@@ -334,7 +335,9 @@ public class AryaInterpreterHelper {
                         if (isInputElement(comp)) {
 
                             String key = comp.getDatabase();
-                            comp.setComponentValue(getJSONValue(jsonObj,key).toString());
+                            if(key != null) {
+                                comp.setComponentValue(getJSONValue(jsonObj, key).toString());
+                            }
                         }
                     }
                 }
@@ -376,7 +379,9 @@ public class AryaInterpreterHelper {
     }
 
     public static boolean isInputElement(IAryaComponent comp) {
-        return (comp instanceof AryaTextbox);
+        return (comp instanceof AryaTextbox) ||
+                (comp instanceof AryaRadiogroup) ||
+                (comp instanceof AryaComboBox);
     }
 
     private static Object getJSONValue(JSONObject jsonObj, String key) {

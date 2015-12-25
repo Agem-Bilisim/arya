@@ -2,6 +2,7 @@ package tr.com.agem.arya.interpreter.components;
 
 import android.content.Context;
 import android.graphics.Point;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.view.Display;
 import android.view.Gravity;
@@ -17,6 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TableRow;
+import android.widget.TextView;
 
 import org.xml.sax.Attributes;
 
@@ -42,6 +44,7 @@ public class AryaListBox extends TableLayout implements IAryaComponent, IAryaTem
     private String attributeValue;
     private String attributeLabel;
     private Spinner listBoxSpinner = new Spinner(AryaNavBar.context,Spinner.MODE_DIALOG);
+    private TextView label = new TextView(AryaNavBar.context);
     private List<String> spinnerItems = new ArrayList<>();
     private ImageView sort_icon = new ImageView(AryaNavBar.context);
     private EditText search_editText = new EditText(AryaNavBar.context);
@@ -50,7 +53,7 @@ public class AryaListBox extends TableLayout implements IAryaComponent, IAryaTem
     private LinearLayout linLayout = new LinearLayout(AryaNavBar.context);
     private ArrayAdapter<String> adapter;
     private String onSelect;
-    int selectedItem =0;
+
     public AryaListBox(Attributes attributes, final AryaMain main) {
 
         super(main.getAryaWindow().getContext());
@@ -73,16 +76,22 @@ public class AryaListBox extends TableLayout implements IAryaComponent, IAryaTem
         }
 
 
-       setupLinearLayout();
+       //setupLinearLayout();
         //main.getAryaWindow().addView(this);
         this.setMinimumWidth(LayoutParams.MATCH_PARENT);
         HorizontalScrollView HorizontalScrollViewParent = new HorizontalScrollView(main.getAryaWindow().getContext());
         main.getAryaWindow().addView(HorizontalScrollViewParent);
         HorizontalScrollViewParent.addView(this);
+
+        label.setText("Listeleme kriterini seçiniz:");
+        label.setTypeface(null, Typeface.ITALIC);
+        label.setTextSize(16);
+        this.addView(label);
         this.addView(listBoxSpinner);
         this.addView(linLayout);
 
 
+        label.setVisibility(GONE);
         listBoxSpinner.setVisibility(GONE);
         adapter = new ArrayAdapter<>(AryaNavBar.context, android.R.layout.simple_spinner_item, spinnerItems);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -261,6 +270,14 @@ public class AryaListBox extends TableLayout implements IAryaComponent, IAryaTem
 
     public void setListBoxSpinner(Spinner listBoxSpinner) {
         this.listBoxSpinner = listBoxSpinner;
+    }
+
+    public TextView getLabel() {
+        return label;
+    }
+
+    public void setLabel(TextView label) {
+        this.label = label;
     }
 
     public ArrayAdapter<String> getAdapter() {

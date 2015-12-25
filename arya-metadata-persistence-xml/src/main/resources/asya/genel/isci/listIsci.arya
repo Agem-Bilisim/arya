@@ -6,10 +6,10 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 			<listbox id="genel.isci.list" pagesize="10" mold="paging" onSelect="select_isci()">
 				<auxhead>
             		<auxheader colspan="1" class="topic">
-            			<textbox id="tckFilter" database="kisiParam.tckNoLikeParam" instant="true" placeholder="Filtrele" onChange="filtrele()"/>
+            			<textbox id="tckFilter" database="kisiParam.tckNoLikeParam" instant="true" placeholder="T.C. Kimlik No Filtrele" onChange="filtrele()"/>
             		</auxheader>
             		<auxheader colspan="1" class="topic">
-            			<textbox id="adSoyadFilter" database="kisiParam.adSoyadParam" instant="true" placeholder="Filtrele" onChange="filtrele()"/>
+            			<textbox id="adSoyadFilter" database="kisiParam.adSoyadParam" instant="true" placeholder="Ad Soyad Filtrele" onChange="filtrele()"/>
             		</auxheader>
             		<auxheader colspan="2" class="topic" label="İşyeri Bilgileri"/>
         		</auxhead>
