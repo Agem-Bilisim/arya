@@ -81,7 +81,7 @@ public class AryaButton extends Button implements IAryaComponent {
                });
             }
 
-        };
+        }
         setMinimumWidth(350);
         main.getAryaWindow().addView(this);
     }

@@ -19,64 +19,64 @@ import org.mozilla.javascript.tools.shell.Global;
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 
 public class JsRunner {
-	
-	private static final Logger logger = Logger.getLogger(JsRunner.class.getName());
 
-	public static Object jsRun(List<String> srcList, String script, AryaMain main) {
-		try {
-			Context context = ContextFactory.getGlobal().enterContext();
-			context.setOptimizationLevel(-1);
-			
-			Scriptable scope = new Global();
-			((Global) scope).init(context);
-			
-			logger.log(Level.FINE, "Context and scope created");
+    private static final Logger logger = Logger.getLogger(JsRunner.class.getName());
 
-			ElementFunctions e = new ElementFunctions(context, scope, main);
-			e.addToScope(scope);
-			
-			logger.log(Level.FINE, "Functions added to scope");
+    public static Object jsRun(List<String> srcList, String script, AryaMain main) {
+        try {
+            Context context = ContextFactory.getGlobal().enterContext();
+            context.setOptimizationLevel(-1);
 
-			if (null != srcList)
-				script = getSourceScript(srcList) + " " + script;
-			
-			logger.log(Level.INFO, "Script: {0}", script);
+            Scriptable scope = new Global();
+            ((Global) scope).init(context);
 
-			return context.evaluateString(scope, script, "<rule>", 1, null);
-			
-		} finally {
-			Context.exit();
-		}
-	}
+            logger.log(Level.FINE, "Context and scope created");
 
-	// TODO srcList may not always contain http URLs!
-	private static String getSourceScript(List<String> srcList) {
-		URL url;
-		StringBuilder extendedScript = new StringBuilder(" ");
+            ElementFunctions e = new ElementFunctions(context, scope, main);
+            e.addToScope(scope);
 
-		for (String strUrl : srcList) {
+            logger.log(Level.FINE, "Functions added to scope");
 
-			try {
-				url = new URL(strUrl);
-				URLConnection conn = url.openConnection();
+            if (null != srcList)
+                script = getSourceScript(srcList) + " " + script;
 
-				BufferedReader bufferReader = new BufferedReader(
-						new InputStreamReader(conn.getInputStream(), StandardCharsets.UTF_8));
-				String inputLine;
+            logger.log(Level.INFO, "Script: {0}", script);
 
-				while ((inputLine = bufferReader.readLine()) != null) {
-					extendedScript.append(inputLine);
-				}
-				bufferReader.close();
+            return context.evaluateString(scope, script, "<rule>", 1, null);
 
-			} catch (MalformedURLException e) {
-				e.printStackTrace();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
+        } finally {
+            Context.exit();
+        }
+    }
 
-		return extendedScript.append(" ").toString();
-	}
+    // TODO srcList may not always contain http URLs!
+    private static String getSourceScript(List<String> srcList) {
+        URL url;
+        StringBuilder extendedScript = new StringBuilder(" ");
+
+        for (String strUrl : srcList) {
+
+            try {
+                url = new URL(strUrl);
+                URLConnection conn = url.openConnection();
+
+                BufferedReader bufferReader = new BufferedReader(
+                        new InputStreamReader(conn.getInputStream(), StandardCharsets.UTF_8));
+                String inputLine;
+
+                while ((inputLine = bufferReader.readLine()) != null) {
+                    extendedScript.append(inputLine);
+                }
+                bufferReader.close();
+
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return extendedScript.append(" ").toString();
+    }
 
 }

@@ -72,7 +72,7 @@ public class AryaMultipleComboItem extends View implements IAryaComponent {
 
         if(mcb.getAdapter()!=null){
             ((ArrayAdapter<AryaMultipleComboItem>) mcb.getAdapter()).add(this);
-            mcb.setListViewHeightBasedOnChildren(mcb);
+            AryaMultipleComboBox.setListViewHeightBasedOnChildren(mcb);
         }
     }
 

@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
@@ -21,6 +22,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.xml.sax.Attributes;
 
+import tr.com.agem.arya.R;
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.components.base.AryaNavBar;
 import tr.com.agem.arya.interpreter.script.ElementFunctions;
@@ -40,10 +42,10 @@ public class AryaListCell extends TextView implements IAryaComponent {
     private String attributeLabel;
     private String type;
 
-    public AryaListCell(Attributes attributes,AryaMain main, final String type) {
+    public AryaListCell(Attributes attributes, AryaMain main, final String type) {
         super(main.getAryaWindow().getContext());
 
-        if(AryaUtils.isNotEmpty(attributes)){
+        if (AryaUtils.isNotEmpty(attributes)) {
             this.type = type;
             this.componentId = attributes.getValue("id");
             this.componentClassName = attributes.getValue("class");
@@ -60,13 +62,13 @@ public class AryaListCell extends TextView implements IAryaComponent {
             this.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if(!("listheader".equalsIgnoreCase(type))){
+                    if (!("listheader".equalsIgnoreCase(type))) {
                         detailView(new AlertDialog.Builder(AryaNavBar.context));
-                        final String onSelect = ((AryaListBox)getParent().getParent()).getOnSelect();
+                        final String onSelect = ((AryaListBox) getParent().getParent()).getOnSelect();
 
                         v.setDrawingCacheBackgroundColor(Color.LTGRAY);
 
-                        if ((((AryaListItem) v.getParent()).getComponentValue()) != null && onSelect !=null) {
+                        if ((((AryaListItem) v.getParent()).getComponentValue()) != null && onSelect != null) {
                             JSONObject j = null;
                             try {
                                 j = new JSONObject(((AryaListItem) v.getParent()).getComponentValue());
@@ -82,11 +84,11 @@ public class AryaListCell extends TextView implements IAryaComponent {
 
             });
 
-           // this.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
+            // this.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
             //this.setTextSize(15, TypedValue.COMPLEX_UNIT_DIP);
         }
 
-        if("listheader".equalsIgnoreCase(type)){
+        if ("listheader".equalsIgnoreCase(type)) {
             this.setTextColor(Color.BLACK);
             this.setBackgroundColor(Color.LTGRAY);
         }
@@ -101,52 +103,51 @@ public class AryaListCell extends TextView implements IAryaComponent {
 
         paint.setStyle(Paint.Style.STROKE);
         paint.setColor(Color.BLACK);
-        if(!getText().equals("")) {
+        if (!getText().equals("")) {
             paint.setStrokeWidth(2);
             getLocalVisibleRect(rect);
             canvas.drawLine(0, 0, rect.width(), 0, paint);
-        }
-        else{
+        } else {
             setVisibility(INVISIBLE);
             paint.setStrokeWidth(2);
         }
 
 
-       // canvas.drawRect(rect, paint);
+        // canvas.drawRect(rect, paint);
     }
+
     @Override
     public void setComponentParent(Object o) {
 
         AryaListItem li = (AryaListItem) o;
         li.addView(this);
-        AryaListItem parent = (AryaListItem)this.getParent();
+        AryaListItem parent = (AryaListItem) this.getParent();
 // Arguments here: width, height, weight
-        if("listheader".equalsIgnoreCase(type)){
-            ((AryaListBox)li.getParent()).getSpinnerItems().add(getText().toString());
-            ((AryaListBox)li.getParent()).getAdapter().notifyDataSetChanged();
+        if ("listheader".equalsIgnoreCase(type)) {
+            ((AryaListBox) li.getParent()).getSpinnerItems().add(getText().toString());
+            ((AryaListBox) li.getParent()).getAdapter().notifyDataSetChanged();
 
 
         }
 
         AryaListItem item = getListHead(li);
-        if(li != null && li.getChildCount()-1==item.getMasterCol()){ //If current cell is element of master column
+        if (li != null && li.getChildCount() - 1 == item.getMasterCol()) { //If current cell is element of master column
 
             WindowManager wm = (WindowManager) AryaNavBar.context.getSystemService(Context.WINDOW_SERVICE);
             Display display = wm.getDefaultDisplay();
-            Point size= new Point();
+            Point size = new Point();
             display.getSize(size);
             int width = size.x;
             this.setLayoutParams(new TableRow.LayoutParams(width - 100, TableRow.LayoutParams.WRAP_CONTENT, 1f)); //MATCH_PARENT is not working here, thats why I used pixels
-        }
-        else{
+        } else {
             this.setLayoutParams(new TableRow.LayoutParams(0, 0, 0f));
         }
     }
 
-    public static AryaListItem getListHead(AryaListItem li){
-        AryaListBox listbox = (AryaListBox)li.getParent();
-        for (int i=0; i<listbox.getChildCount(); i++){
-            if(listbox.getChildAt(i) instanceof AryaListItem)
+    public static AryaListItem getListHead(AryaListItem li) {
+        AryaListBox listbox = (AryaListBox) li.getParent();
+        for (int i = 0; i < listbox.getChildCount(); i++) {
+            if (listbox.getChildAt(i) instanceof AryaListItem)
                 return (AryaListItem) listbox.getChildAt(i);
         }
         return null;
@@ -235,6 +236,7 @@ public class AryaListCell extends TextView implements IAryaComponent {
     public String getComponentTagName() {
         return "listcell";
     }
+
     public String getType() {
         return type;
     }
@@ -243,36 +245,44 @@ public class AryaListCell extends TextView implements IAryaComponent {
         this.type = type;
     }
 
-    private void detailView(AlertDialog.Builder alertDialog){
-        AryaListItem parent = (AryaListItem)this.getParent();
+    private void detailView(AlertDialog.Builder alertDialog) {
+        AryaListItem parent = (AryaListItem) this.getParent();
         alertDialog.setTitle("Bilgiler");
         //alertDialog.setMessage("");
-        LinearLayout layout = new LinearLayout(AryaNavBar.context);
-        layout.setVerticalScrollBarEnabled(true);
-        layout.setHorizontalScrollBarEnabled(true);
-        layout.setOrientation(LinearLayout.VERTICAL);
-        final EditText input = new EditText(AryaNavBar.context);
-        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT);
+        TableLayout tbl = new TableLayout(AryaNavBar.context);
 
-        for(int i=0;i<parent.getChildCount();i++){
-            LinearLayout ele_layout = new LinearLayout(AryaNavBar.context);
-            LinearLayout.LayoutParams ele_lp = new LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.WRAP_CONTENT,
-                    LinearLayout.LayoutParams.WRAP_CONTENT);
-            ele_layout.setOrientation(LinearLayout.HORIZONTAL);
-            final TextView columnName= new TextView(AryaNavBar.context);
+        for (int i = 0; i < parent.getChildCount(); i++) {
+
+            TableRow tr = new TableRow(AryaNavBar.context);
+            final TextView columnName = new TextView(AryaNavBar.context);
             columnName.setText(((TextView) getListHead(parent).getChildAt(i)).getText() + ":\t");
-            final TextView info= new TextView(AryaNavBar.context);
-            info.setText(((TextView)parent.getChildAt(i)).getText());
-            columnName.setLayoutParams(lp);
-            info.setLayoutParams(lp);
-            ele_layout.addView(columnName,ele_lp);
-            ele_layout.addView(info,ele_lp);
-            layout.addView(ele_layout,lp);
+
+            final TextView info = new TextView(AryaNavBar.context);
+            info.setText(((TextView) parent.getChildAt(i)).getText());
+            final float scale = getContext().getResources().getDisplayMetrics().density;
+            int pixels = (int) (200 * scale + 0.5f);
+            info.setWidth(pixels);
+
+            TableLayout.LayoutParams tableRowParams =
+                    new TableLayout.LayoutParams
+                            (TableLayout.LayoutParams.WRAP_CONTENT,TableLayout.LayoutParams.WRAP_CONTENT,1.0f);
+
+
+
+            tr.setLayoutParams(tableRowParams);
+
+            tr.addView(columnName);
+            tr.addView(info);
+
+
+            tbl.addView(tr);
+            View v = new View(AryaNavBar.context);
+            v.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, 1));
+            v.setBackgroundColor(Color.rgb(51, 51, 51));
+            tbl.addView(v);
+
         }
-        alertDialog.setView(layout);
+        alertDialog.setView(tbl);
 
 
         alertDialog.setPositiveButton("Geri",
@@ -282,8 +292,8 @@ public class AryaListCell extends TextView implements IAryaComponent {
                     }
                 });
 
-        alertDialog.setIcon(android.R.drawable.arrow_down_float);
-        alertDialog.setIconAttribute(android.R.attr.alertDialogIcon);
+        alertDialog.setIcon(R.drawable.info);
+        //alertDialog.setIconAttribute(android.R.attr.alertDialogIcon);
         alertDialog.show();
 
     }

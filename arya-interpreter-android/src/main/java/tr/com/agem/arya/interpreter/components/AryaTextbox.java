@@ -1,8 +1,10 @@
 package tr.com.agem.arya.interpreter.components;
 
 import android.graphics.Color;
+import android.text.Editable;
 import android.text.InputFilter;
 import android.text.InputType;
+import android.text.TextWatcher;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -96,12 +98,11 @@ public class AryaTextbox extends EditText implements IAryaComponent {
             // onChange
             final String onChange = attributes.getValue("onChange");
             if (onChange != null) {
-
                 setOnFocusChangeListener(new OnFocusChangeListener(){
 
                     @Override
                     public void onFocusChange(View v, boolean hasFocus) {
-                        if(!hasFocus){
+                        if(!hasFocus && !getText().toString().equals("")){
                             HashMap<Object, Object> params = new HashMap<Object, Object>();
                             ScriptHelper.executeScript(onChange, params, main);
                         }
@@ -119,7 +120,7 @@ public class AryaTextbox extends EditText implements IAryaComponent {
 
             if("doublebox".equalsIgnoreCase(tag) | "decimalbox".equalsIgnoreCase(tag)){
                 this.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
-            }else if("intbox".equalsIgnoreCase(tag)||"longbox".equalsIgnoreCase(tag)){
+            }else if("intbox".equalsIgnoreCase (tag)||"longbox".equalsIgnoreCase(tag)){
                 this.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_VARIATION_NORMAL);
             }else if("timebox".equalsIgnoreCase(tag)) {
                 this.setInputType(InputType.TYPE_DATETIME_VARIATION_TIME | InputType.TYPE_CLASS_DATETIME);
