@@ -125,11 +125,11 @@ public class AryaListBox extends TableLayout implements IAryaComponent, IAryaTem
                                     (((AryaListItem) getChildAt(i)).getChildAt(j)).setVisibility(VISIBLE);
                                     (((AryaListItem) getChildAt(i)).getChildAt(j)).setLayoutParams(new TableRow.LayoutParams(width - 100, TableRow.LayoutParams.WRAP_CONTENT, 1f)); //MATCH_PARENT is not working here, thats why I used pixels
                                 } else {
-                                    (((AryaListItem) getChildAt(i)).getChildAt(j)).setVisibility(INVISIBLE);
+                                    (((AryaListItem) getChildAt(i)).getChildAt(j)).setVisibility(GONE);
                                     (((AryaListItem) getChildAt(i)).getChildAt(j)).setLayoutParams(new TableRow.LayoutParams(0, 0, 0f));
                                 }
                             } else {
-                                (((AryaListItem) getChildAt(i)).getChildAt(j)).setVisibility(INVISIBLE);
+                                (((AryaListItem) getChildAt(i)).getChildAt(j)).setVisibility(GONE);
                                 (((AryaListItem) getChildAt(i)).getChildAt(j)).setLayoutParams(new TableRow.LayoutParams(0, 0, 0f));
                             }
 

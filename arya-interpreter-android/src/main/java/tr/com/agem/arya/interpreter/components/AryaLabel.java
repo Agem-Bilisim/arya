@@ -40,7 +40,14 @@ public class AryaLabel extends TextView implements IAryaComponent {
             this.attribute = attributes.getValue("attribute");
             this.attributeValue = attributes.getValue("attributeValue");
             this.attributeLabel = attributes.getValue("attributeLabel");
-
+            if (attributes.getValue("visible") != null) {
+                if(attributes.getValue("visible").equals("true")){
+                    this.setVisibility(VISIBLE);
+                }
+                else{
+                    this.setVisibility(GONE);
+                }
+            }
             this.setText(attributes.getValue("label"));
 
             final String tooltiptext = attributes.getValue("tooltiptext");

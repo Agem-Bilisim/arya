@@ -2,6 +2,7 @@ package tr.com.agem.arya.interpreter.components;
 
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
@@ -54,7 +55,7 @@ public class AryaMultipleComboBox extends ListView implements IAryaComponent {
         listAdapter.setDropDownViewResource(android.R.layout.simple_list_item_multiple_choice);
         this.setAdapter(listAdapter);
         this.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
-        this.setChoiceMode(this.CHOICE_MODE_MULTIPLE);
+        this.setChoiceMode(CHOICE_MODE_MULTIPLE);
 
         setListViewHeightBasedOnChildren(this);
     }

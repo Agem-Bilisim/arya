@@ -71,7 +71,7 @@ public class AryaInterpreterHelper {
             urlConnection.setRequestProperty("Accept", MIME_TYPE);
 
             if (jSessionId != null)
-               urlConnection.setRequestProperty("Cookie", jSessionId);
+                urlConnection.setRequestProperty("Cookie", jSessionId);
 
             urlConnection.setConnectTimeout(4000);
             urlConnection.setDoOutput(true);
@@ -124,24 +124,23 @@ public class AryaInterpreterHelper {
     public static void interpretResponse(AryaResponse response, String action, boolean login, AryaMain main) { //Overloaded function
 
 
-        if(login){
+        if (login) {
             main.getAryaNavBar().getMenuBar().getMenuItemsCopy().clear();
-            for(int i=0;i<main.getAryaNavBar().getMenuBar().getMenuItems().size();i++){    //If it is a login page, delete menu and have a backup
+            for (int i = 0; i < main.getAryaNavBar().getMenuBar().getMenuItems().size(); i++) {    //If it is a login page, delete menu and have a backup
                 main.getAryaNavBar().getMenuBar().getMenuItemsCopy().add(main.getAryaNavBar().getMenuBar().getMenuItems().get(i));
             }
-           while(main.getAryaNavBar().getMenuBar().getMenuItems().size()>0){        //Determine which menu items remain on login screen
-               main.getAryaNavBar().getMenuBar().getMenuItems().remove(0);
-           }
-        }
-        else{
-            if(main.getAryaNavBar().getMenuBar().getMenuItems().size()!=main.getAryaNavBar().getMenuBar().getMenuItemsCopy().size()) {
+            while (main.getAryaNavBar().getMenuBar().getMenuItems().size() > 0) {        //Determine which menu items remain on login screen
+                main.getAryaNavBar().getMenuBar().getMenuItems().remove(0);
+            }
+        } else {
+            if (main.getAryaNavBar().getMenuBar().getMenuItems().size() != main.getAryaNavBar().getMenuBar().getMenuItemsCopy().size()) {
                 for (int i = 0; i < main.getAryaNavBar().getMenuBar().getMenuItemsCopy().size(); i++) {    //reload menu items to show in master
                     main.getAryaNavBar().getMenuBar().setMenuItems(main.getAryaNavBar().getMenuBar().getMenuItemsCopy());
                 }
                 ((Activity) (AryaNavBar.context)).invalidateOptionsMenu();
             }
         }
-        if(AryaUtils.isNotEmpty(response.getView())) {
+        if (AryaUtils.isNotEmpty(response.getView())) {
 
             if (main.getAryaWindow().getComponents() != null) {// TODO bu alan yönetilmeli neler kaldırılacak ekrandan
 
@@ -153,18 +152,18 @@ public class AryaInterpreterHelper {
                 main.getAryaWindow().clearPageExceptMenu();
             }
 
-            AryaInterpreterHelper.drawView(response.getView(), main,false);
+            AryaInterpreterHelper.drawView(response.getView(), main, false);
         }
 
-        if(AryaUtils.isNotEmpty(response.getData())) {
+        if (AryaUtils.isNotEmpty(response.getData())) {
 
             //to remove old listbox items at same page
-            if(response.getView().isEmpty()) {
-                if(getElementById(action, main) instanceof AryaListBox) {
+            if (response.getView().isEmpty()) {
+                if (getElementById(action, main) instanceof AryaListBox) {
 
                     AryaListBox listbox = (AryaListBox) getElementById(action, main);
 
-                    while(listbox.getChildAt(1) != null) {
+                    while (listbox.getChildAt(1) != null) {
                         listbox.removeViewAt(1);
                     }
                 }
@@ -172,12 +171,12 @@ public class AryaInterpreterHelper {
             AryaInterpreterHelper.populateView(response.getData(), action, main);
         }
 
-        if(AryaUtils.isNotEmpty(response.getAttributes())) {
+        if (AryaUtils.isNotEmpty(response.getAttributes())) {
 
             List<IAryaComponent> comps = main.getAryaWindow().getComponents();
-            for(IAryaComponent component : comps) {
+            for (IAryaComponent component : comps) {
 
-                if(component.getAttribute() != null) {
+                if (component.getAttribute() != null) {
                     populateToFill((String) response.getAttributes(), component, main);
                 }
             }
@@ -214,12 +213,12 @@ public class AryaInterpreterHelper {
             e.printStackTrace();
         }
 
-        if(!isMenu) {
+        if (!isMenu) {
             ImageView image = new ImageView(main.getAryaWindow().getContext());
             image.setImageResource(R.drawable.agem_logo);
             image.setPadding(700, 0, 1, 0);
 
-        main.getAryaWindow().addView(image);
+            main.getAryaWindow().addView(image);
         }
     }
 
@@ -232,24 +231,23 @@ public class AryaInterpreterHelper {
             String comp = null;
             String value = null;
 
-            if(cmp instanceof AryaFill) {
+            if (cmp instanceof AryaFill) {
                 comp = new String(((AryaFill) cmp).getTo());
                 value = new String(((AryaFill) cmp).getValue());
-            }
-            else {
+            } else {
                 JSONArray jsonArray = (JSONArray) jsonObj.get(cmp.getAttribute());
 
                 for (int j = 0; j < jsonArray.length(); j++) {
                     JSONObject jsonObject = jsonArray.getJSONObject(j);
 
-                    if(cmp instanceof AryaComboBox) {
+                    if (cmp instanceof AryaComboBox) {
                         AryaComboBox combo = (AryaComboBox) cmp;
 
                         AryaParserAttributes attr = new AryaParserAttributes();
                         String label = new String(splitId(combo.getAttributeLabel(), jsonObject));
-                        String id = System.currentTimeMillis()+""+splitId("id", jsonObject);
+                        String id = System.currentTimeMillis() + "" + splitId("id", jsonObject);
 
-                        if(label != null) {
+                        if (label != null) {
                             attr.setValue("label", label);
                             attr.setValue("id", id);
                             AryaComboItem comboItem = new AryaComboItem(attr, main);
@@ -259,16 +257,16 @@ public class AryaInterpreterHelper {
                 }
             }
 
-            if(cmp instanceof AryaFill && comp != null) {
+            if (cmp instanceof AryaFill && comp != null) {
 
-                if(getElementById(comp, main) instanceof AryaComboBox) {
+                if (getElementById(comp, main) instanceof AryaComboBox) {
                     AryaComboBox combo = (AryaComboBox) getElementById(comp, main);
 
                     AryaParserAttributes attr = new AryaParserAttributes();
                     String label = splitId(value, jsonObj);
-                    String id = System.currentTimeMillis()+""+splitId("id", jsonObj);
+                    String id = System.currentTimeMillis() + "" + splitId("id", jsonObj);
 
-                    if(label != null) {
+                    if (label != null) {
                         attr.setValue("label", label);
                         attr.setValue("id", id);
                         AryaComboItem comboItem = new AryaComboItem(attr, main);
@@ -315,35 +313,33 @@ public class AryaInterpreterHelper {
             String message = "";
             if (action.endsWith("list")) {
                 if (getJSONArray(data).length() > 0)
-                    message=getJSONArray(data).length()+" adet kayıt bulundu.";
+                    message = getJSONArray(data).length() + " adet kayıt bulundu.";
                 else
-                    message="Hiçbir kayıt bulunamadı.";
+                    message = "Hiçbir kayıt bulunamadı.";
 
                 populateAryaTemplate(main, (IAryaTemplate) getElementById(action, main), getJSONArray(data));
 
-            }
-            else  if (getJSONArray(data).length() == 1){
+            } else if (getJSONArray(data).length() == 1) {
 
                 JSONObject jsonObj = getJSONArray(data).getJSONObject(0);
                 List<IAryaComponent> comps = main.getAryaWindow().getComponents();
 
                 for (IAryaComponent cmp : comps) {
-                    if(cmp.getComponentId() != null) {
+                    if (cmp.getComponentId() != null) {
 
                         IAryaComponent comp = (IAryaComponent) getElementById(cmp.getComponentId(), main);
 
                         if (isInputElement(comp)) {
 
                             String key = comp.getDatabase();
-                            if(key != null) {
+                            if (key != null) {
                                 comp.setComponentValue(getJSONValue(jsonObj, key).toString());
                             }
                         }
                     }
                 }
             }
-        }
-        catch (Exception e ) {
+        } catch (Exception e) {
             System.out.print(e.toString());
         }
     }
@@ -362,8 +358,7 @@ public class AryaInterpreterHelper {
                         Map.Entry<String, JsonNode> entry = fields.next();
                         if ("results".equals(entry.getKey().toString())) {
                             jsonArray = new JSONArray(entry.getValue().toString());
-                        }
-                        else if ("session".equals(entry.getKey().toString())) {
+                        } else if ("session".equals(entry.getKey().toString())) {
                             jsonArray = new JSONArray(entry.getValue().toString());
                         }
                     }
@@ -389,11 +384,10 @@ public class AryaInterpreterHelper {
         String[] temp = key.split("\\.");
 
         if (temp.length == 1) {
-            Object v= "";
+            Object v = "";
             try {
                 v = jsonObj.get(temp[0].toString());
-            }
-            catch (Exception e) {
+            } catch (Exception e) {
             }
             if (AryaUtils.isEmpty(v) || v.equals(null)) {
                 return "";
@@ -434,12 +428,11 @@ public class AryaInterpreterHelper {
 
             String[] spl;
 
-            if(id.contains("-")) {
+            if (id.contains("-")) {
 
                 String[] temp = id.split("-");
                 spl = temp[1].split("\\.");
-            }
-            else {
+            } else {
                 spl = id.split("\\.");
             }
 

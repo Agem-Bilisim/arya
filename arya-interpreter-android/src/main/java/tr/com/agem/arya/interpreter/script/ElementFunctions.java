@@ -31,274 +31,272 @@ import tr.com.agem.core.interpreter.IAryaComponent;
 
 public class ElementFunctions extends AnnotatedScriptableObject {
 
-	private static final long serialVersionUID = 2251889177219110859L;
-	private static final Logger logger = Logger.getLogger(ElementFunctions.class.getName());
+    private static final long serialVersionUID = 2251889177219110859L;
+    private static final Logger logger = Logger.getLogger(ElementFunctions.class.getName());
 
-	private Context context;
-	private Scriptable scope;
-	private AryaMain main;
+    private Context context;
+    private Scriptable scope;
+    private AryaMain main;
 
-	private static String lastPage;
-	private static String reqType;
+    private static String lastPage;
+    private static String reqType;
 
-	private static JSONObject jsonObj;
+    private static JSONObject jsonObj;
 
-	public ElementFunctions(Context context, Scriptable scope,AryaMain main) {
-		this.context = context;
-		this.scope = scope;
-		this.main = main;
-	}
+    public ElementFunctions(Context context, Scriptable scope, AryaMain main) {
+        this.context = context;
+        this.scope = scope;
+        this.main = main;
+    }
 
-	@AryaJsFunction
-	public void populate(String data) {
-		ObjectMapper mapper = new ObjectMapper();
-		try {
-			JsonNode rootNode = mapper.readTree(data);
-			if (rootNode != null) {
-				Iterator<Entry<String, JsonNode>> fields = rootNode.fields();
-				if (fields != null) {
-					while (fields.hasNext()) {
-						Entry<String, JsonNode> entry = fields.next();
-						logger.log(Level.FINE, "JSON property: {0}:{1}", new Object[]{ entry.getKey(), entry.getValue() });
+    @AryaJsFunction
+    public void populate(String data) {
+        ObjectMapper mapper = new ObjectMapper();
+        try {
+            JsonNode rootNode = mapper.readTree(data);
+            if (rootNode != null) {
+                Iterator<Entry<String, JsonNode>> fields = rootNode.fields();
+                if (fields != null) {
+                    while (fields.hasNext()) {
+                        Entry<String, JsonNode> entry = fields.next();
+                        logger.log(Level.FINE, "JSON property: {0}:{1}", new Object[]{entry.getKey(), entry.getValue()});
 
-						IAryaComponent comp = (IAryaComponent) getElementById(entry.getKey());
-						if (comp != null) {
-							comp.setComponentValue(entry.getValue().asText());
-						}
-					}
-				}
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-
-
-	@AryaJsFunction
-	public void post(String action, String requestType, Object params, String tabValue, NativeFunction onSuccess, NativeFunction onFailure) {
-
-		if(!(params instanceof String)) {
-			Object jsonParam = NativeJSON.stringify(context, scope, params, null, null);
-			params = jsonParam;
-		}
-
-		StringBuilder request = new StringBuilder("{ \"params\": ")
-				.append(params)
-				.append(", \"requestType\": \"")
-				.append(requestType)
-				.append("\", \"action\": \"")
-				.append(action)
-				.append("\" }");
-
-		lastPage = action;
-		reqType = requestType;
-		String result = AryaInterpreterHelper.callUrl("http://"+MainActivity.inetAddr+":8080/arya/rest/asya", request.toString());
-
-		logger.log(Level.FINE, "Post result: {0}", result);
+                        IAryaComponent comp = (IAryaComponent) getElementById(entry.getKey());
+                        if (comp != null) {
+                            comp.setComponentValue(entry.getValue().asText());
+                        }
+                    }
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 
-		AryaResponse response = new AryaResponse();
-		response.fromXMLString(result);//TODO result check
+    @AryaJsFunction
+    public void post(String action, String requestType, Object params, String tabValue, NativeFunction onSuccess, NativeFunction onFailure) {
 
-		if(tabValue != null && tabValue.equals("login")) {
-			AryaInterpreterHelper.interpretResponse(response, action, true, main);
-		}
-		else{
-			AryaInterpreterHelper.interpretResponse(response, action, false, main);
-		}
+        if (!(params instanceof String)) {
+            Object jsonParam = NativeJSON.stringify(context, scope, params, null, null);
+            params = jsonParam;
+        }
 
-		//TODO response fail condition add
+        StringBuilder request = new StringBuilder("{ \"params\": ")
+                .append(params)
+                .append(", \"requestType\": \"")
+                .append(requestType)
+                .append("\", \"action\": \"")
+                .append(action)
+                .append("\" }");
 
-		if (onSuccess != null) {
-			scope.put(onSuccess.getFunctionName(), scope, onSuccess);
-			Context.call(null, onSuccess, scope, this, new Object[]{ response });
-		}
-		if (onFailure != null) {
-			scope.put(onFailure.getFunctionName(), scope, onFailure);
-			Context.call(null, onFailure, scope, this, new Object[]{ response });
-		}
-	}
+        lastPage = action;
+        reqType = requestType;
+        String result = AryaInterpreterHelper.callUrl("http://" + MainActivity.inetAddr + ":8080/arya/rest/asya", request.toString());
 
-	@AryaJsFunction
-	public void renderSelectedItem (String elementId, String id, String action, NativeArray comps, NativeArray values,
-									String tabValue) {
+        logger.log(Level.FINE, "Post result: {0}", result);
 
-		String params = "{\"id\":\""+ splitId(id, jsonObj)+"\"}";
 
-		for (int i = 0; i < comps.size(); i++) {
+        AryaResponse response = new AryaResponse();
+        response.fromXMLString(result);//TODO result check
 
-			String value = splitId(values.get(i).toString(), jsonObj);
+        if (tabValue != null && tabValue.equals("login")) {
+            AryaInterpreterHelper.interpretResponse(response, action, true, main);
+        } else {
+            AryaInterpreterHelper.interpretResponse(response, action, false, main);
+        }
 
-			String comp = (String) comps.get(i);
+        //TODO response fail condition add
 
-			((IAryaComponent)getElementById(comp)).setComponentValue(value);
+        if (onSuccess != null) {
+            scope.put(onSuccess.getFunctionName(), scope, onSuccess);
+            Context.call(null, onSuccess, scope, this, new Object[]{response});
+        }
+        if (onFailure != null) {
+            scope.put(onFailure.getFunctionName(), scope, onFailure);
+            Context.call(null, onFailure, scope, this, new Object[]{response});
+        }
+    }
 
-		}
+    @AryaJsFunction
+    public void renderSelectedItem(String elementId, String id, String action, NativeArray comps, NativeArray values,
+                                   String tabValue) {
 
-		if(!action.isEmpty())
-			post(action, "ALL", params, tabValue, null, null);
+        String params = "{\"id\":\"" + splitId(id, jsonObj) + "\"}";
 
-	}
+        for (int i = 0; i < comps.size(); i++) {
 
-	@AryaJsFunction
-	public void renderAtSamePage (String elementId, String id, String action, String tabValue) {
+            String value = splitId(values.get(i).toString(), jsonObj);
 
-		if(!action.isEmpty() && action.endsWith("list")) {
-			//TODO isyeriIdParam -> idParam !!!
-			String params = "{\"isyeriIdParam\":\""+ splitId(id, jsonObj)+"\",\"id\":\""+ splitId(id, jsonObj)+"\"}";
-			post(action, "DATA_ONLY", params, tabValue, null, null);
-		}
-	}
+            String comp = (String) comps.get(i);
 
-	@AryaJsFunction
-	public void send(String action, String requestType, String parentObjectId, String objectIdProp, String tabName) throws JsonProcessingException {
+            ((IAryaComponent) getElementById(comp)).setComponentValue(value);
 
-		List<IAryaComponent> components = main.getAryaWindow().getComponents();
-		Map<String, Object> m = new HashMap<String, Object>();
-		for (IAryaComponent cmp : components) {
-			if (AryaInterpreterHelper.isInputElement(cmp)) {
+        }
 
-				String v = cmp.getComponentValue();
-				String d = cmp.getDatabase();
+        if (!action.isEmpty())
+            post(action, "ALL", params, tabValue, null, null);
 
-				if(d != null)
-					m.put(d, v);
-			}
-		}
-		ObjectMapper mapper = new ObjectMapper();
-		String json = mapper.writeValueAsString(m);
+    }
 
-		post(action, requestType, json, null, null, null);
-	}
+    @AryaJsFunction
+    public void renderAtSamePage(String elementId, String id, String action, String tabValue) {
 
-	@AryaJsFunction
-	public Object getElementById(String id) {
+        if (!action.isEmpty() && action.endsWith("list")) {
+            //TODO isyeriIdParam -> idParam !!!
+            String params = "{\"isyeriIdParam\":\"" + splitId(id, jsonObj) + "\",\"id\":\"" + splitId(id, jsonObj) + "\"}";
+            post(action, "DATA_ONLY", params, tabValue, null, null);
+        }
+    }
 
-		View child = null;
-		for (int i = 0; i < main.getAryaWindow().getChildCount(); i++) {
+    @AryaJsFunction
+    public void send(String action, String requestType, String parentObjectId, String objectIdProp, String tabName) throws JsonProcessingException {
 
-			child = main.getAryaWindow().getChildAt(i);
-			if (child instanceof IAryaComponent) {
-				IAryaComponent o = (IAryaComponent) child;
+        List<IAryaComponent> components = main.getAryaWindow().getComponents();
+        Map<String, Object> m = new HashMap<String, Object>();
+        for (IAryaComponent cmp : components) {
+            if (AryaInterpreterHelper.isInputElement(cmp)) {
 
-				if (id.equals(o.getComponentId())) {
-					return o;
-				}
-			}
-		}
-		return null;
-	}
+                String v = cmp.getComponentValue();
+                String d = cmp.getDatabase();
 
-	@AryaJsFunction
-	public Object[] getElementsByName(String name) {
-		List objList = new ArrayList();
-		View child = null;
-		for (int i = 0; i < main.getAryaWindow().getChildCount(); i++) {
+                if (d != null)
+                    m.put(d, v);
+            }
+        }
+        ObjectMapper mapper = new ObjectMapper();
+        String json = mapper.writeValueAsString(m);
 
-			child = main.getAryaWindow().getChildAt(i);
-			if (child instanceof IAryaComponent) {
-				IAryaComponent o = (IAryaComponent) child;
-				if (name.equalsIgnoreCase(
-						o.getClass().toString().replace("class tr.com.agem.arya.interpreter.components.Arya", ""))) {
-					objList.add(o);
-				}
-			}
-		}
-		return objList.toArray(new Object[objList.size()]);
-	}
+        post(action, requestType, json, null, null, null);
+    }
 
-	@AryaJsFunction
-	public Object[] getElementsByClass(String className) {
-		List objList = new ArrayList();
-		View child = null;
-		for (int i = 0; i < main.getAryaWindow().getChildCount(); i++) {
+    @AryaJsFunction
+    public Object getElementById(String id) {
 
-			child = main.getAryaWindow().getChildAt(i);
-			if (child instanceof IAryaComponent) {
-				IAryaComponent o = (IAryaComponent) child;
-				if (className.equalsIgnoreCase(o.getComponentClassName())) {
-					objList.add(o);
-				}
-			}
-		}
-		return objList.toArray(new Object[objList.size()]);
-	}
+        View child = null;
+        for (int i = 0; i < main.getAryaWindow().getChildCount(); i++) {
 
-	@AryaJsFunction
-	public String serializeForm() {
-		String strSerialize = "";
-		View child = null;
-		for (int i = 0; i < main.getAryaWindow().getChildCount(); i++) {
-			child = main.getAryaWindow().getChildAt(i);
-			if (child instanceof IAryaComponent) {
-				IAryaComponent o = (IAryaComponent) child;
-				strSerialize += ",\"" + o.getComponentId() + "\":"
-						+ (o.getComponentValue() == null ? null : "\"" + o.getComponentValue() + "\"");
-			}
-		}
+            child = main.getAryaWindow().getChildAt(i);
+            if (child instanceof IAryaComponent) {
+                IAryaComponent o = (IAryaComponent) child;
 
-		if (strSerialize.length() > 0)
-			return "{" + strSerialize.substring(1, strSerialize.length()) + "}";
-		return "{}";
-	}
+                if (id.equals(o.getComponentId())) {
+                    return o;
+                }
+            }
+        }
+        return null;
+    }
 
-	public static String splitId(String id, JSONObject jsonObj) {
+    @AryaJsFunction
+    public Object[] getElementsByName(String name) {
+        List objList = new ArrayList();
+        View child = null;
+        for (int i = 0; i < main.getAryaWindow().getChildCount(); i++) {
 
-		String retVal = null;
-		JSONObject obj = null;
+            child = main.getAryaWindow().getChildAt(i);
+            if (child instanceof IAryaComponent) {
+                IAryaComponent o = (IAryaComponent) child;
+                if (name.equalsIgnoreCase(
+                        o.getClass().toString().replace("class tr.com.agem.arya.interpreter.components.Arya", ""))) {
+                    objList.add(o);
+                }
+            }
+        }
+        return objList.toArray(new Object[objList.size()]);
+    }
 
-		if (jsonObj != null) {
+    @AryaJsFunction
+    public Object[] getElementsByClass(String className) {
+        List objList = new ArrayList();
+        View child = null;
+        for (int i = 0; i < main.getAryaWindow().getChildCount(); i++) {
 
-			String[] spl;
+            child = main.getAryaWindow().getChildAt(i);
+            if (child instanceof IAryaComponent) {
+                IAryaComponent o = (IAryaComponent) child;
+                if (className.equalsIgnoreCase(o.getComponentClassName())) {
+                    objList.add(o);
+                }
+            }
+        }
+        return objList.toArray(new Object[objList.size()]);
+    }
 
-			if(id.contains("-")) {
+    @AryaJsFunction
+    public String serializeForm() {
+        String strSerialize = "";
+        View child = null;
+        for (int i = 0; i < main.getAryaWindow().getChildCount(); i++) {
+            child = main.getAryaWindow().getChildAt(i);
+            if (child instanceof IAryaComponent) {
+                IAryaComponent o = (IAryaComponent) child;
+                strSerialize += ",\"" + o.getComponentId() + "\":"
+                        + (o.getComponentValue() == null ? null : "\"" + o.getComponentValue() + "\"");
+            }
+        }
 
-				String[] temp = id.split("-");
-				spl = temp[1].split("\\.");
-			}
-			else {
-				spl = id.split("\\.");
-			}
+        if (strSerialize.length() > 0)
+            return "{" + strSerialize.substring(1, strSerialize.length()) + "}";
+        return "{}";
+    }
 
-			for (int i = 0; i < spl.length - 1; i++)
-				obj = (JSONObject) jsonObj.get(spl[i]);
+    public static String splitId(String id, JSONObject jsonObj) {
 
-			Object ret;
+        String retVal = null;
+        JSONObject obj = null;
 
-			if (obj != null)
-				ret = obj.get(spl[spl.length - 1]);
-			else
-				ret = jsonObj.get(spl[0]);
-			if (!ret.equals(JSONObject.NULL)) {
-				retVal = ret.toString();
-			}
-		}
+        if (jsonObj != null) {
 
-		return retVal;
-	}
+            String[] spl;
 
-	public static JSONObject getJsonObj() {
-		return jsonObj;
-	}
+            if (id.contains("-")) {
 
-	public static void setJsonObj(JSONObject jsonObj) {
-		ElementFunctions.jsonObj = jsonObj;
-	}
+                String[] temp = id.split("-");
+                spl = temp[1].split("\\.");
+            } else {
+                spl = id.split("\\.");
+            }
 
-	public static String getLastPage() {
-		return lastPage;
-	}
+            for (int i = 0; i < spl.length - 1; i++)
+                obj = (JSONObject) jsonObj.get(spl[i]);
 
-	public static void setLastPage(String lastPage) {
-		ElementFunctions.lastPage = lastPage;
-	}
+            Object ret;
 
-	public static String getReqType() {
-		return reqType;
-	}
+            if (obj != null)
+                ret = obj.get(spl[spl.length - 1]);
+            else
+                ret = jsonObj.get(spl[0]);
+            if (!ret.equals(JSONObject.NULL)) {
+                retVal = ret.toString();
+            }
+        }
 
-	public static void setReqType(String reqType) {
-		ElementFunctions.reqType = reqType;
-	}
+        return retVal;
+    }
+
+    public static JSONObject getJsonObj() {
+        return jsonObj;
+    }
+
+    public static void setJsonObj(JSONObject jsonObj) {
+        ElementFunctions.jsonObj = jsonObj;
+    }
+
+    public static String getLastPage() {
+        return lastPage;
+    }
+
+    public static void setLastPage(String lastPage) {
+        ElementFunctions.lastPage = lastPage;
+    }
+
+    public static String getReqType() {
+        return reqType;
+    }
+
+    public static void setReqType(String reqType) {
+        ElementFunctions.reqType = reqType;
+    }
 
 }
