@@ -6,7 +6,6 @@ import org.xml.sax.Attributes;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.EventListener;
-import org.zkoss.zul.Listitem;
 import org.zkoss.zul.Radio;
 import org.zkoss.zul.Radiogroup;
 
@@ -24,7 +23,6 @@ public class AryaRadiogroup extends Radiogroup implements IAryaComponent {
 	private String attribute;
 	private String attributeValue;
 	private String attributeLabel;
-
 
 	public AryaRadiogroup(final AryaMain main, Attributes attributes) {
 
@@ -63,7 +61,6 @@ public class AryaRadiogroup extends Radiogroup implements IAryaComponent {
 		this.attribute = attributes.getValue("attribute");
 		this.attributeValue = attributes.getValue("attributeValue");
 		this.attributeLabel = attributes.getValue("attributeLabel");
-
 
 		/*
 		 * if the dimension input format of .arya files does NOT contains the
@@ -111,7 +108,6 @@ public class AryaRadiogroup extends Radiogroup implements IAryaComponent {
 
 	@Override
 	public String validate() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

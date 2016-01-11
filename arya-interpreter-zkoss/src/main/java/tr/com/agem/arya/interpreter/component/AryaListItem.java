@@ -21,7 +21,6 @@ public class AryaListItem extends Listitem implements IAryaComponent {
 	private String attributeValue;
 	private String attributeLabel;
 
-
 	public AryaListItem(final AryaMain main, Attributes attributes) {
 		super();
 
@@ -86,9 +85,7 @@ public class AryaListItem extends Listitem implements IAryaComponent {
 					}
 				});
 			}
-
 		}
-
 	}
 
 	@Override

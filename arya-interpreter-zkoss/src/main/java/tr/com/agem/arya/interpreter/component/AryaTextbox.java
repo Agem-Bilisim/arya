@@ -21,7 +21,6 @@ public class AryaTextbox extends Textbox implements IAryaComponent {
 	private String attributeValue;
 	private String attributeLabel;
 
-
 	public AryaTextbox(final AryaMain main, Attributes attributes) {
 		super();
 
@@ -167,7 +166,6 @@ public class AryaTextbox extends Textbox implements IAryaComponent {
 					}
 				});
 			}
-
 		}
 	}
 
@@ -178,7 +176,6 @@ public class AryaTextbox extends Textbox implements IAryaComponent {
 
 	@Override
 	public String validate() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

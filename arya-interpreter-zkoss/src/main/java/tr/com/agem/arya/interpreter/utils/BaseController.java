@@ -21,7 +21,8 @@ import tr.com.agem.core.property.reader.PropertyReader;
 public class BaseController extends GenericForwardComposer {
 
 	private static final long serialVersionUID = 8866650311533378984L;
-	private Div componentContainer; // works as a parent component
+	
+	private Div componentContainer;
 	private Div menuContainer;
 	private Label aryaMessage;
 	private Include login;
@@ -144,7 +145,5 @@ public class BaseController extends GenericForwardComposer {
 	public void setLogin(Include login) {
 		this.login = login;
 	}
-
-
 
 }

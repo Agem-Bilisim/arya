@@ -5,8 +5,7 @@ import java.util.List;
 
 import tr.com.agem.core.metadata.model.IMetadata;
 
-public interface IMetadataEngine 
-{
+public interface IMetadataEngine {
 	
 	IMetadata findMetadata(String applicationName, Long metaDataId);
 	

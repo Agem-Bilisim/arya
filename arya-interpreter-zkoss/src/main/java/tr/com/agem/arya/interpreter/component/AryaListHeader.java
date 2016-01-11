@@ -21,8 +21,6 @@ public class AryaListHeader extends Listheader implements IAryaComponent {
 	private String attributeValue;
 	private String attributeLabel;
 
-	
-
 	public AryaListHeader(final AryaMain main, Attributes attributes) {
 		super();
 
@@ -118,7 +116,6 @@ public class AryaListHeader extends Listheader implements IAryaComponent {
 				}
 			});
 		}
-
 	}
 
 	@Override
@@ -128,7 +125,6 @@ public class AryaListHeader extends Listheader implements IAryaComponent {
 
 	@Override
 	public String validate() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

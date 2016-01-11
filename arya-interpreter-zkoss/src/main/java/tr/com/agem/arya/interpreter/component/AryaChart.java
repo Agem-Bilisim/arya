@@ -1,17 +1,13 @@
 package tr.com.agem.arya.interpreter.component;
 
-import java.util.List;
-
 import org.xml.sax.Attributes;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.EventListener;
-import org.zkoss.zul.Button;
 import org.zkoss.zul.Chart;
 
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.script.ScriptHelper;
-import tr.com.agem.arya.metadata.arya.impl.ChartsType;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
 
@@ -154,7 +150,6 @@ public class AryaChart extends Chart implements IAryaComponent {
 
 	@Override
 	public String validate() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -200,50 +195,38 @@ public class AryaChart extends Chart implements IAryaComponent {
 
 	@Override
 	public void setComponentValue(String componentValue) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public String getComponentValue() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public String getAttribute() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void setAttribute(String attribute) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public String getAttributeValue() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void setAttributeValue(String attributeValue) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public String getAttributeLabel() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void setAttributeLabel(String attributeLabel) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

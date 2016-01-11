@@ -15,11 +15,13 @@ import tr.com.agem.core.utils.AryaUtils;
 public class AryaVlayout extends Vlayout implements IAryaComponent {
 
 	private static final long serialVersionUID = -1829374522609555406L;
+	
 	private Div componentContainer; // works as a parent component
 	private Div menuContainer;
 	private String componentClassName;
 
 	public AryaVlayout(final AryaMain main, Attributes attributes) {
+		
 		super();
 
 		this.setId(attributes.getValue("id"));
@@ -96,7 +98,6 @@ public class AryaVlayout extends Vlayout implements IAryaComponent {
 
 	@Override
 	public String validate() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -157,50 +158,38 @@ public class AryaVlayout extends Vlayout implements IAryaComponent {
 
 	@Override
 	public String getDatabase() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void setDatabase(String database) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public String getAttribute() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void setAttribute(String attribute) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public String getAttributeValue() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void setAttributeValue(String attributeValue) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public String getAttributeLabel() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void setAttributeLabel(String attributeLabel) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

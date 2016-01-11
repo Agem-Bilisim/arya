@@ -6,6 +6,7 @@ import java.util.List;
 
 public class AryaUtils {
 
+	@SafeVarargs
 	public static <T> String join(String separator, T... objects) {
 		if (objects != null) {
 			StringBuilder sb = new StringBuilder();
@@ -26,6 +27,7 @@ public class AryaUtils {
 	 * @param params
 	 * @return
 	 */
+	@SafeVarargs
 	public static <T> T firstNonNull(T... params) {
 		if (params != null) {
 			for (T o : params) {

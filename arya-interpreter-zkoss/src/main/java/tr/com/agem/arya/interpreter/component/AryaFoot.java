@@ -21,7 +21,6 @@ public class AryaFoot extends Foot implements IAryaComponent {
 	private String attributeValue;
 	private String attributeLabel;
 
-
 	public AryaFoot(final AryaMain main, Attributes attributes) {
 		super();
 
@@ -95,7 +94,6 @@ public class AryaFoot extends Foot implements IAryaComponent {
 
 	@Override
 	public String validate() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

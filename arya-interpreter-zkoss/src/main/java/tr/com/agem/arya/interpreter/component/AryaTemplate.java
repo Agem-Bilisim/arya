@@ -11,15 +11,13 @@ import tr.com.agem.core.utils.AryaUtils;
 public class AryaTemplate implements IAryaComponent{
 	
 	private String componentClassName;
-	
 	private IAryaComponent parent;
 	private List<IAryaComponent> children = new ArrayList<IAryaComponent>();
-	
 	private String name;
 	private String var;
 
-
 	public AryaTemplate(final AryaMain main, Attributes attributes) {
+		
 		super();
 
 		if (AryaUtils.isNotEmpty(attributes)) {
@@ -35,7 +33,6 @@ public class AryaTemplate implements IAryaComponent{
 
 	@Override
 	public String validate() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -68,13 +65,10 @@ public class AryaTemplate implements IAryaComponent{
 
 	@Override
 	public void setComponentId(String componentId) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public String getComponentId() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -128,50 +122,38 @@ public class AryaTemplate implements IAryaComponent{
 
 	@Override
 	public String getDatabase() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void setDatabase(String database) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public String getAttribute() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void setAttribute(String attribute) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public String getAttributeValue() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void setAttributeValue(String attributeValue) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public String getAttributeLabel() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void setAttributeLabel(String attributeLabel) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

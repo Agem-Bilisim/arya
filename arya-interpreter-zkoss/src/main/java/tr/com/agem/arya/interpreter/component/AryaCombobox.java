@@ -190,7 +190,6 @@ public class AryaCombobox extends Combobox implements IAryaComponent, IAryaTempl
 
 	@Override
 	public String validate() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

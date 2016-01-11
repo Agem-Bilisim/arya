@@ -18,7 +18,6 @@ public class AryaComboItem extends Comboitem implements IAryaComponent {
 	private String attributeValue;
 	private String attributeLabel;
 
-
 	public AryaComboItem(AryaMain main, Attributes attributes) {
 		super();
 

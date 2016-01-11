@@ -1,8 +1,5 @@
 package tr.com.agem.core.adaptor;
 
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-
 import tr.com.agem.core.gateway.model.IAryaRequest;
 
 public interface IAryaAdaptor {

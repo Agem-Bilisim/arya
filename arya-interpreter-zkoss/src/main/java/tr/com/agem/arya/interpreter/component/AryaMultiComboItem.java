@@ -20,7 +20,6 @@ public class AryaMultiComboItem extends Listitem implements IAryaComponent {
 	private String attributeValue;
 	private String attributeLabel;
 
-
 	public AryaMultiComboItem(final AryaMain main, Attributes attributes) {
 		super();
 
@@ -60,7 +59,6 @@ public class AryaMultiComboItem extends Listitem implements IAryaComponent {
 			this.attribute = attributes.getValue("attribute");
 			this.attributeValue = attributes.getValue("attributeValue");
 			this.attributeLabel = attributes.getValue("attributeLabel");
-
 
 			/*
 			 * if the dimension input format of .arya files does NOT contains
@@ -121,9 +119,7 @@ public class AryaMultiComboItem extends Listitem implements IAryaComponent {
 					}
 				});
 			}
-
 		}
-
 	}
 
 	@Override

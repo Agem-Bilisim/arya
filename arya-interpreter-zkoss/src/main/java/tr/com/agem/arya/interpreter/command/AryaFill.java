@@ -10,12 +10,9 @@ public class AryaFill implements IAryaCommand, IAryaComponent {
 	
 	private String componentClassName;
 	private String componentAttribute;
-	
 	private IAryaComponent parent;
-	
 	private String name;
 	private String var;
-	
 	private String from;
 	private String to;
 	private String value;
@@ -39,7 +36,6 @@ public class AryaFill implements IAryaCommand, IAryaComponent {
 
 			}
 		}
-		
 	}
 	
 	public String getComponentClassName() {
@@ -108,31 +104,24 @@ public class AryaFill implements IAryaCommand, IAryaComponent {
 	
 	@Override
 	public void setComponentId(String componentId) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public String getComponentId() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void setComponentValue(String componentValue) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public String getComponentValue() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public String validate() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 	
@@ -161,50 +150,38 @@ public class AryaFill implements IAryaCommand, IAryaComponent {
 
 	@Override
 	public String getDatabase() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void setDatabase(String database) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public String getAttribute() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void setAttribute(String attribute) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public String getAttributeValue() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void setAttributeValue(String attributeValue) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public String getAttributeLabel() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void setAttributeLabel(String attributeLabel) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

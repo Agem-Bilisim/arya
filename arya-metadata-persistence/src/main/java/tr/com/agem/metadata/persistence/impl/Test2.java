@@ -1,13 +1,6 @@
 package tr.com.agem.metadata.persistence.impl;
 
-import javax.persistence.EntityManager;
-
 import org.hsqldb.util.DatabaseManagerSwing;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import tr.com.agem.core.metadata.persistence.IMetadataPersistence;
-import tr.com.agem.metadata.persistence.EntityManagerService;
-import tr.com.agem.metadata.persistence.model.MetadataImpl;
 
 public class Test2 {
 

@@ -21,7 +21,6 @@ public class AryaIntbox extends Intbox implements IAryaComponent {
 	private String attributeValue;
 	private String attributeLabel;
 
-
 	public AryaIntbox(final AryaMain main, Attributes attributes) {
 		super();
 
@@ -34,7 +33,6 @@ public class AryaIntbox extends Intbox implements IAryaComponent {
 			if(attributes.getValue("value") != null) {
 				this.setValue(Integer.valueOf(attributes.getValue("value")));
 			}
-			
 			
 			if (attributes.getValue("visible") != null) {
 				this.setVisible(Boolean.parseBoolean(attributes.getValue("visible")));
@@ -158,7 +156,6 @@ public class AryaIntbox extends Intbox implements IAryaComponent {
 					}
 				});
 			}
-
 		}
 	}
 
@@ -169,7 +166,6 @@ public class AryaIntbox extends Intbox implements IAryaComponent {
 
 	@Override
 	public String validate() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

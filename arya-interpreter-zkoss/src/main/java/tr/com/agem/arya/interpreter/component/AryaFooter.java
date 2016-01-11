@@ -14,6 +14,7 @@ import tr.com.agem.core.utils.AryaUtils;
 public class AryaFooter extends Footer implements IAryaComponent {
 
 	private static final long serialVersionUID = 1L;
+	
 	private String componentClassName;
 	private String database;
 	private String attribute;
@@ -127,7 +128,6 @@ public class AryaFooter extends Footer implements IAryaComponent {
 
 	@Override
 	public String validate() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

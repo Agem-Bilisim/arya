@@ -15,8 +15,8 @@ public class EntityManagerService {
 			ClassPathXmlApplicationContext appContext = new ClassPathXmlApplicationContext("applicationContext.xml");
 			EntityManagerFactory emf = appContext.getBean(EntityManagerFactory.class);
 			em = emf.createEntityManager();
+			appContext.close();
 		}
-		
 		return em;
 	}
 

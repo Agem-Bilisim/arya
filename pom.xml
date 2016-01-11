@@ -83,6 +83,11 @@
 			<name>ismail basaran</name>
 			<email>basaran.ismaill@gmail.com</email>
 		</developer>
+		<developer>
+			<id>mdogan</id>
+			<name>mine dogan</name>
+			<email>mine.dogan@agem.com.tr</email>
+		</developer>
 	</developers>
 
 	<licenses>

@@ -17,6 +17,7 @@ import tr.com.agem.arya.interpreter.script.ElementFunctions;
 public class LoginController extends GenericForwardComposer {
 
 	private static final long serialVersionUID = 8866650311533378984L;
+	
 	private Textbox username;
 	private Textbox password;
 	private Button loginButton;

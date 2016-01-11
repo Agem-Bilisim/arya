@@ -21,8 +21,6 @@ public class AryaGrid extends Grid implements IAryaComponent, IAryaTemplate {
 	private String attribute;
 	private String attributeValue;
 	private String attributeLabel;
-
-	
 	private AryaTemplate template;
 
 	public AryaGrid(final AryaMain main, Attributes attributes) {
@@ -76,7 +74,6 @@ public class AryaGrid extends Grid implements IAryaComponent, IAryaTemplate {
 			
 			if (attributes.getValue("zclass") != null)
 				this.setZclass(attributes.getValue("zclass")); 
-			
 
 			/*
 			 * if the dimension input format of .arya files does NOT contains
@@ -134,7 +131,6 @@ public class AryaGrid extends Grid implements IAryaComponent, IAryaTemplate {
 
 	@Override
 	public String validate() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

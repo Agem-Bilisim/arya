@@ -21,7 +21,6 @@ public class AryaRadio extends Radio implements IAryaComponent {
 	private String attributeValue;
 	private String attributeLabel;
 
-
 	public AryaRadio(final AryaMain main, Attributes attributes) {
 		super();
 
@@ -166,7 +165,6 @@ public class AryaRadio extends Radio implements IAryaComponent {
 
 	@Override
 	public String validate() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

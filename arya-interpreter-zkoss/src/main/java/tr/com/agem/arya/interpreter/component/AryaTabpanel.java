@@ -24,6 +24,7 @@ public class AryaTabpanel extends Tabpanel implements IAryaComponent {
 	private String database;
 
 	public AryaTabpanel(final AryaMain main, Attributes attributes) {
+		
 		super();
 
 		if (AryaUtils.isNotEmpty(attributes)) {
@@ -87,7 +88,6 @@ public class AryaTabpanel extends Tabpanel implements IAryaComponent {
 					}
 				});
 			}
-
 		}
 	}
 
@@ -98,7 +98,6 @@ public class AryaTabpanel extends Tabpanel implements IAryaComponent {
 
 	@Override
 	public String validate() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -181,38 +180,29 @@ public class AryaTabpanel extends Tabpanel implements IAryaComponent {
 
 	@Override
 	public String getAttribute() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void setAttribute(String attribute) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public String getAttributeValue() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void setAttributeValue(String attributeValue) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public String getAttributeLabel() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void setAttributeLabel(String attributeLabel) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

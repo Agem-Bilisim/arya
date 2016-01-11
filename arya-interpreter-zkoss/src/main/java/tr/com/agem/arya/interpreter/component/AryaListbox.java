@@ -24,8 +24,6 @@ public class AryaListbox extends Listbox implements IAryaComponent, IAryaTemplat
 	private String attribute;
 	private String attributeValue;
 	private String attributeLabel;
-
-	
 	private AryaTemplate template;
 	
 	public AryaListbox(final AryaMain main, Attributes attributes) {
@@ -103,9 +101,6 @@ public class AryaListbox extends Listbox implements IAryaComponent, IAryaTemplat
 			
 			if(attributes.getValue("span") != null)
 				this.setSpan(attributes.getValue("span"));
-		
-			
-			
 
 			if (AryaUtils.isNotEmpty(attributes.getValue("onDrop"))) {
 				final String functionName = attributes.getValue("onDrop");
@@ -137,9 +132,7 @@ public class AryaListbox extends Listbox implements IAryaComponent, IAryaTemplat
 					}
 				});
 			}
-
 		}
-
 	}
 
 	@Override
@@ -149,7 +142,6 @@ public class AryaListbox extends Listbox implements IAryaComponent, IAryaTemplat
 
 	@Override
 	public String validate() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

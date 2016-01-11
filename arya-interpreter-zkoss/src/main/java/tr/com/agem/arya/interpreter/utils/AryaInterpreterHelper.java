@@ -168,6 +168,20 @@ public class AryaInterpreterHelper {
 		
 	}
 	
+	public static void interpretResponseMenu(AryaResponse response, AryaMain main, AryaTabs tabs, AryaTabpanels tabpanels) {
+		if (AryaUtils.isNotEmpty(response.getView())) {// Remove previous
+														// components before
+														// adding new ones!
+			if (AryaUtils.isNotEmpty(main.getMenuContainer())) {
+				Div menuDiv = main.getMenuContainer();
+				menuDiv.getChildren().clear();
+			}
+			
+
+			drawView(response.getView(), main, null, tabs, tabpanels, true, null);
+		}
+	}
+	
 	public static void removeElement(AryaMain main, Component parent, Component component) {
 		try {
 			if (!(component instanceof Listbox)) {
@@ -192,76 +206,61 @@ public class AryaInterpreterHelper {
 		}
 	}
 
-	public static void interpretResponseMenu(AryaResponse response, AryaMain main, AryaTabs tabs, AryaTabpanels tabpanels) {
-		if (AryaUtils.isNotEmpty(response.getView())) {// Remove previous
-														// components before
-														// adding new ones!
-			if (AryaUtils.isNotEmpty(main.getMenuContainer())) {
-				Div menuDiv = main.getMenuContainer();
-				menuDiv.getChildren().clear();
+	public static void populateToFill(String data, IAryaComponent cmp, AryaMain main, AryaTabpanel tabpanel) {  //for fill command or session data
+		
+		for (int i = 0; i < getJSONArray(data).length(); i++) {
+			
+			JSONObject jsonObj = getJSONArray(data).getJSONObject(i);
+			
+			String comp = null;
+			String value = null;
+			
+			if(cmp != null && cmp instanceof AryaFill) {
+				comp = new String(((AryaFill) cmp).getTo());
+				value = new String(((AryaFill) cmp).getValue());
+			}
+			else {
+				JSONArray jsonArray = (JSONArray) jsonObj.get(cmp.getAttribute());
+				
+				for (int j = 0; j < jsonArray.length(); j++) {
+					JSONObject jsonObject = jsonArray.getJSONObject(j);
+					
+					if(cmp instanceof AryaCombobox) {
+						AryaCombobox combo = (AryaCombobox) cmp;
+						
+						String label = new String(ElementFunctions.splitId(combo.getAttributeLabel(), jsonObject));
+						String id = tabpanel.getComponentId()+"-"+System.currentTimeMillis()+""+ElementFunctions.splitId("id", jsonObject);
+						
+						createComboItem(label, id, jsonObject, main, combo);
+					}
+				}
+
 			}
 			
-
-			drawView(response.getView(), main, null, tabs, tabpanels, true, null);
+			if(cmp instanceof AryaFill && comp != null) {
+				if(getElementById(comp, main) instanceof AryaCombobox) {
+					AryaCombobox combo = (AryaCombobox) getElementById(comp, main);
+					
+					String label = new String(ElementFunctions.splitId(value, jsonObj));
+					String id = tabpanel.getComponentId()+"-"+System.currentTimeMillis()+""+ElementFunctions.splitId("id", jsonObj);
+					
+					createComboItem(label, id, jsonObj, main, combo);
+				}
+			}
 		}
 	}
 	
-	public static void populateToFill(String data, IAryaComponent cmp, AryaMain main, AryaTabpanel tabpanel) {
+	public static void createComboItem (String label, String id, JSONObject jsonObj, AryaMain main, AryaCombobox combo){
 		
-			for (int i = 0; i < getJSONArray(data).length(); i++) {
-				
-				JSONObject jsonObj = getJSONArray(data).getJSONObject(i);
-				
-				String comp = null;
-				String value = null;
-				
-				if(cmp != null && cmp instanceof AryaFill) {
-					comp = new String(((AryaFill) cmp).getTo());
-					value = new String(((AryaFill) cmp).getValue());
-				}
-				else {
-					JSONArray jsonArray = (JSONArray) jsonObj.get(cmp.getAttribute());
-					
-					for (int j = 0; j < jsonArray.length(); j++) {
-						JSONObject jsonObject = jsonArray.getJSONObject(j);
-						
-						if(cmp instanceof AryaCombobox) {
-							AryaCombobox combo = (AryaCombobox) cmp;
-							
-							AryaParserAttributes attr = new AryaParserAttributes();
-							String label = new String(splitId(combo.getAttributeLabel(), jsonObject));
-							String id = tabpanel.getComponentId()+"-"+System.currentTimeMillis()+""+splitId("id", jsonObject);
-							
-							if(label != null) {
-								attr.setValue("label", label);
-								attr.setValue("id", id);
-								attr.setValue("value", splitId("id", jsonObject));
-								AryaComboItem comboItem = new AryaComboItem(main, attr);
-								comboItem.setComponentParent(combo);
-							}
-						}
-					}
-
-				}
-				
-				if(cmp instanceof AryaFill && comp != null) {
-					if(getElementById(comp, main) instanceof AryaCombobox) {
-						AryaCombobox combo = (AryaCombobox) getElementById(comp, main);
-						
-						AryaParserAttributes attr = new AryaParserAttributes();
-						String label = new String(splitId(value, jsonObj));
-						String id = tabpanel.getComponentId()+"-"+System.currentTimeMillis()+""+splitId("id", jsonObj);
-						
-						if(label != null) {
-							attr.setValue("label", label);
-							attr.setValue("id", id);
-							attr.setValue("value", splitId("id", jsonObj));
-							AryaComboItem comboItem = new AryaComboItem(main, attr);
-							comboItem.setComponentParent(combo);
-						}
-					}
-				}
-			}
+		AryaParserAttributes attr = new AryaParserAttributes();
+		
+		if(label != null) {
+			attr.setValue("label", label);
+			attr.setValue("id", id);
+			attr.setValue("value", ElementFunctions.splitId("id", jsonObj));
+			AryaComboItem comboItem = new AryaComboItem(main, attr);
+			comboItem.setComponentParent(combo);
+		}
 	}
 
 	private static void populateAryaTemplate(AryaMain main, IAryaTemplate masterComponent, JSONArray jsonArrayData) {
@@ -296,11 +295,11 @@ public class AryaInterpreterHelper {
 					AryaParserAttributes attr = new AryaParserAttributes();
 					attr.setValue("id", System.currentTimeMillis()+""+comp.getComponentId() + "" + (i));
 					if (masterComponent instanceof AryaListbox) {
-						attr.setValue("label", splitId(comp.getDatabase(), jsonObj));
+						attr.setValue("label", ElementFunctions.splitId(comp.getDatabase(), jsonObj));
 						AryaListCell cell = new AryaListCell(main, attr);
 						cell.setComponentParent(item);
 					} else if (masterComponent instanceof AryaGrid) {
-						attr.setValue("value", splitId(comp.getDatabase(), jsonObj));
+						attr.setValue("value", ElementFunctions.splitId(comp.getDatabase(), jsonObj));
 						IAryaComponent compNew = ComponentFactory.getComponent(comp.getComponentTagName(), main, attr);
 						compNew.setComponentParent(row);
 					} 
@@ -378,14 +377,6 @@ public class AryaInterpreterHelper {
 		return jsonArray;
 	}
 	
-	public static boolean isInputElement(IAryaComponent comp) {
-		return (comp instanceof InputElement) ||
-			   (comp instanceof Radiogroup) ||
-			   (comp instanceof Combobox) ||
-			   (comp instanceof Checkbox) ||
-			   (comp instanceof Listbox);
-	}
-
 	private static Object getJSONValue(JSONObject jsonObj, String key) {
 		
 		String k = StringUtils.substringBefore(key, ".");
@@ -553,37 +544,12 @@ public class AryaInterpreterHelper {
 		return null;
 	}
 	
-	public static String splitId(String id, JSONObject jsonObj) {
-
-		String retVal = null;
-		JSONObject obj = jsonObj;
-						
-		if (jsonObj != null) {
-			
-			String[] spl;
-			
-			if(id.contains("-")) {
-				
-				String[] temp = id.split("-");
-				spl = temp[1].split("\\.");
-			}
-			else {
-				spl = id.split("\\.");
-			}
-			
-			for (int i = 0; i < spl.length - 1; i++)
-				obj = (JSONObject) obj.get(spl[i]);
-			
-			Object ret;
-			
-			if (obj != null)
-				ret = obj.get(spl[spl.length - 1]);
-			else    
-				ret = jsonObj.get(spl[0]);
-			if (!ret.equals(JSONObject.NULL)) {
-				retVal = ret.toString();
-			}
-		}  
-		return retVal;
+	public static boolean isInputElement(IAryaComponent comp) {
+		return (comp instanceof InputElement) ||
+			   (comp instanceof Radiogroup) ||
+			   (comp instanceof Combobox) ||
+			   (comp instanceof Checkbox) ||
+			   (comp instanceof Listbox);
 	}
+	
 }

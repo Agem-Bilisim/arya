@@ -14,6 +14,7 @@ import tr.com.agem.core.utils.AryaUtils;
 public class AryaImage extends Image implements IAryaComponent {
 
 	private static final long serialVersionUID = 1L;
+	
 	private String componentClassName;
 
 	public AryaImage(final AryaMain main, Attributes attributes) {
@@ -139,7 +140,6 @@ public class AryaImage extends Image implements IAryaComponent {
 
 	@Override
 	public String validate() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

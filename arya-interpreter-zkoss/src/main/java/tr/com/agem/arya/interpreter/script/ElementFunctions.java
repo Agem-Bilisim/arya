@@ -18,12 +18,10 @@ import org.mozilla.javascript.Scriptable;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zul.Listbox;
 import org.zkoss.zul.Tab;
-import org.zkoss.zul.Tabbox;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import tr.com.agem.arya.interpreter.component.AryaGrid;
 import tr.com.agem.arya.interpreter.component.AryaListbox;
 import tr.com.agem.arya.interpreter.component.AryaTabpanel;
 import tr.com.agem.arya.interpreter.component.AryaTabs;
@@ -40,12 +38,12 @@ import tr.com.agem.core.utils.AryaUtils;
 public class ElementFunctions extends AnnotatedScriptableObject {
 
 	private static final long serialVersionUID = 2251889177219110859L;
+	
 	private static final Logger logger = Logger.getLogger(ElementFunctions.class.getName());
 	
 	private Context context;
 	private Scriptable scope;
 	private AryaMain main;
-	
 	private static NativeArray comps;
 	private static ArrayList<String> values;
 
@@ -118,7 +116,6 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 	public void renderSelectedItem (String elementId, String id, String action, NativeArray comps, NativeArray values, 
 			String tabValue) {
 		
-		//TODO id listbox olmayabilir???!??!?
 		JSONObject jsonObj = null;
 		
 		if(getElementById(elementId) instanceof AryaListbox) {
@@ -139,9 +136,8 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 	}
 	
 	@AryaJsFunction
-	public void renderAtSamePage (String elementId, String id, String action, String tabValue) {
+	public void renderAtSamePage (String elementId, String id, String action, String tabValue) {  //for two listbox at same page
 		
-		//TODO id listbox olmayabilir???!??!?
 		JSONObject jsonObj = null;
 		
 		if(getElementById(elementId) instanceof AryaListbox) {
@@ -245,59 +241,6 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 		return "{}";
 	}
 	
-	public static String splitId(String id, JSONObject jsonObj) {
-
-		String retVal = null;
-		JSONObject obj = null;
-						
-		if (jsonObj != null) {
-			
-			String[] spl;
-			
-			if(id.contains("-")) {
-				
-				String[] temp = id.split("-");
-				spl = temp[1].split("\\.");
-			}
-			else {
-				spl = id.split("\\.");
-			}
-			
-			for (int i = 0; i < spl.length - 1; i++)
-				obj = (JSONObject) jsonObj.get(spl[i]);
-			
-			Object ret;
-			
-			if (obj != null)
-				ret = obj.get(spl[spl.length - 1]);
-			else    
-				ret = jsonObj.get(spl[0]);
-			if (!ret.equals(JSONObject.NULL)) {
-				retVal = ret.toString();
-			}
-		} 
-
-		return retVal;
-	}
-
-	@AryaJsFunction
-	public static NativeArray getComps() {
-		return comps;
-	}
-
-	@AryaJsFunction
-	public static void setComps(NativeArray comps) {
-		ElementFunctions.comps = comps;
-	}
-
-	public static ArrayList<String> getValues() {
-		return values;
-	}
-
-	public static void setValues(ArrayList<String> values) {
-		ElementFunctions.values = values;
-	}
-
 	@AryaJsFunction
 	public void send(String action, String requestType, String parentObjectId, String objectIdProp, String tabName) throws JsonProcessingException {
 		//TODO searchIsyeri'nde database isimleri doğru olmadığı için (şube dışında) sonuç doğru gelmiyor????
@@ -338,6 +281,58 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 		if(tabs.getChildren() != null && tabs.getChildren().size() > 1)	{
 			BaseController.getTabbox().setSelectedTab((Tab)tabs.getChildren().get(tabs.getChildren().size()-1));
 		}
+	}
+	
+	public static String splitId(String id, JSONObject jsonObj) {
+
+		String retVal = null;
+		JSONObject obj = jsonObj;
+						
+		if (jsonObj != null) {
+			
+			String[] spl;
+			
+			if(id.contains("-")) {
+				
+				String[] temp = id.split("-");
+				spl = temp[1].split("\\.");
+			}
+			else {
+				spl = id.split("\\.");
+			}
+			
+			for (int i = 0; i < spl.length - 1; i++)
+				obj = (JSONObject) obj.get(spl[i]);
+			
+			Object ret;
+			
+			if (obj != null)
+				ret = obj.get(spl[spl.length - 1]);
+			else    
+				ret = jsonObj.get(spl[0]);
+			if (!ret.equals(JSONObject.NULL)) {
+				retVal = ret.toString();
+			}
+		}  
+		return retVal;
+	}
+	
+	@AryaJsFunction
+	public static NativeArray getComps() {
+		return comps;
+	}
+
+	@AryaJsFunction
+	public static void setComps(NativeArray comps) {
+		ElementFunctions.comps = comps;
+	}
+
+	public static ArrayList<String> getValues() {
+		return values;
+	}
+
+	public static void setValues(ArrayList<String> values) {
+		ElementFunctions.values = values;
 	}
 	
 }

@@ -117,6 +117,4 @@ public class AryaResponse implements IAryaResponse
 		return xmlString.toString();
 	}
 
-	
-
 }

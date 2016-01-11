@@ -14,6 +14,7 @@ import tr.com.agem.core.utils.AryaUtils;
 public class AryaMenuBar extends Menubar implements IAryaComponent, IAryaMenu {
 
 	private static final long serialVersionUID = 8605492923881165335L;
+	
 	private String componentClassName;
 	private String componentId;
 	private String componentValue;
@@ -96,7 +97,6 @@ public class AryaMenuBar extends Menubar implements IAryaComponent, IAryaMenu {
 					}
 				});
 			}
-
 		}
 	}
 
@@ -137,7 +137,6 @@ public class AryaMenuBar extends Menubar implements IAryaComponent, IAryaMenu {
 
 	@Override
 	public String validate() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 	
@@ -162,38 +161,29 @@ public class AryaMenuBar extends Menubar implements IAryaComponent, IAryaMenu {
 
 	@Override
 	public String getAttribute() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void setAttribute(String attribute) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public String getAttributeValue() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void setAttributeValue(String attributeValue) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public String getAttributeLabel() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void setAttributeLabel(String attributeLabel) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

@@ -9,7 +9,6 @@ public class AryaAttribute implements IAryaComponent {
 	
 	private String componentClassName;
 	private IAryaComponent componentParent;
-	
 	private String name;
 	private String value;
 	private String comp;

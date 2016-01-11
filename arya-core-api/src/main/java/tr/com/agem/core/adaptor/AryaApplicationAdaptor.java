@@ -8,9 +8,7 @@ import tr.com.agem.core.gateway.model.RequestTypes;
 public abstract class AryaApplicationAdaptor implements IAryaAdaptor {
 
 	private IAryaMapper mapper;
-
 	private IAryaConverter converter;
-
 	private DataSource dataSource;
 
 	public IAryaAdaptorResponse handleRequest(IAryaRequest request) {

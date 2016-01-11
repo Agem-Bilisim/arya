@@ -14,12 +14,12 @@ import tr.com.agem.core.utils.AryaUtils;
 public class AryaListCell extends Listcell implements IAryaComponent {
 
 	private static final long serialVersionUID = 2829782011828954223L;
+	
 	private String componentClassName;
 	private String database;
 	private String attribute;
 	private String attributeValue;
 	private String attributeLabel;
-
 
 	public AryaListCell(final AryaMain main, Attributes attributes) {
 		super();
@@ -121,7 +121,6 @@ public class AryaListCell extends Listcell implements IAryaComponent {
 
 	@Override
 	public String validate() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

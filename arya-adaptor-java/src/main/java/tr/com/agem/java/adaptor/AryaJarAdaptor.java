@@ -41,7 +41,6 @@ import tr.com.agem.startup.db.PostgreSqlDBMS;
 import tr.com.agem.startup.kullanici.KullaniciForm;
 import tr.com.agem.startup.login.LoginAction;
 import tr.com.agem.startup.login.LoginForm;
-import tr.com.agem.startup.logout.LogoutAction;
 import tr.com.agem.struts.AgemModuleConfigImp;
 import tr.com.agem.user.User;
 
@@ -90,7 +89,7 @@ public class AryaJarAdaptor extends AryaApplicationAdaptor {
 			mapping.setAttribute(mappedRequest.getFormName());
 			mapping.setPath(mappedRequest.getPath());
 			
-			//   /select ise edit yap
+			// Select ise edit yap
 			mapping.setMethod(mappedRequest.getActionMethodName());
 			mapping.setModuleConfig(new AgemModuleConfigImp(""));
 

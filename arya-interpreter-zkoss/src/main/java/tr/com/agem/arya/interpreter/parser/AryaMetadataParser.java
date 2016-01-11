@@ -31,8 +31,7 @@ public class AryaMetadataParser extends DefaultHandler {
 	private Stack<IAryaComponent> currentComponent = null;
 	private Boolean isMenu = false;
 
-	public AryaMetadataParser(AryaMain main, Boolean isMenu, AryaTabpanel tabpanel) 
-	{
+	public AryaMetadataParser(AryaMain main, Boolean isMenu, AryaTabpanel tabpanel) {
 		this.main = main;
 		this.currentComponent = new Stack<IAryaComponent>();
 		this.isMenu = isMenu;
@@ -72,8 +71,6 @@ public class AryaMetadataParser extends DefaultHandler {
 				if (tabpanel != null) {
 					tabpanel.add(comp.getComponentId());
 				}
-				
-				
 			}
 
 			// Add new component to the component list of parent window

@@ -1,7 +1,6 @@
 package tr.com.agem.filter;
 
 import java.io.IOException;
-import java.util.Enumeration;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -9,7 +8,6 @@ import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,13 +15,9 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import tr.com.agem.common.AgemUtils;
 import tr.com.agem.core.adaptor.IAryaAdaptor;
 import tr.com.agem.core.gateway.model.AryaRequest;
 import tr.com.agem.core.gateway.model.RequestTypes;
-import tr.com.agem.core.metadata.IMetadataEngine;
-import tr.com.agem.core.metadata.model.IMetadata;
-import tr.com.agem.core.utils.AryaUtils;
 import tr.com.agem.filter.utils.LoginRequestWrapper;
 
 public class LoginFilter extends OncePerRequestFilter {
@@ -36,20 +30,6 @@ public class LoginFilter extends OncePerRequestFilter {
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
 			throws ServletException, IOException {
-		
-		
-//		HttpSession session = request.getSession();
-//		
-//		@SuppressWarnings("unchecked")
-//		Enumeration<String> attrs = session.getAttributeNames();
-//		
-//		System.out.println("SESSION-SUBE: "+session.getAttribute("SESSION_SUBE_LIST"));
-//		
-//		AgemUtils.jsObject(session.getAttribute("SESSION_SUBE_LIST"));
-//		
-//		while (attrs.hasMoreElements()) {
-//			String attr = attrs.nextElement();
-//		}
 
 		LoginRequestWrapper requestWrapper = new LoginRequestWrapper((HttpServletRequest) request);
 		AryaRequest aryaRequest = new ObjectMapper().readValue(requestWrapper.getInputStream(), AryaRequest.class);

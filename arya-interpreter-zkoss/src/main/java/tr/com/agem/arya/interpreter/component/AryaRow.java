@@ -21,7 +21,6 @@ public class AryaRow extends Row implements IAryaComponent {
 	private String attributeValue;
 	private String attributeLabel;
 
-
 	public AryaRow(final AryaMain main, Attributes attributes) {
 		super();
 
@@ -58,7 +57,6 @@ public class AryaRow extends Row implements IAryaComponent {
 			this.attribute = attributes.getValue("attribute");
 			this.attributeValue = attributes.getValue("attributeValue");
 			this.attributeLabel = attributes.getValue("attributeLabel");
-
 
 			/*
 			 * if the dimension input format of .arya files does NOT contains
@@ -110,7 +108,6 @@ public class AryaRow extends Row implements IAryaComponent {
 
 	@Override
 	public String validate() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

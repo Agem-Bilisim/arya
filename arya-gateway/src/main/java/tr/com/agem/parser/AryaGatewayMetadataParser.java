@@ -8,7 +8,6 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import tr.com.agem.component.AryaAttribute;
-import tr.com.agem.component.AryaAttributes;
 import tr.com.agem.component.GatewayComponentFactory;
 import tr.com.agem.component.base.AryaGatewayMain;
 import tr.com.agem.core.interpreter.IAryaComponent;

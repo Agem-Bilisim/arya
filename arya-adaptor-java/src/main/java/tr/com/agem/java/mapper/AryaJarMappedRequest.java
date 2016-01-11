@@ -5,15 +5,10 @@ import tr.com.agem.core.adaptor.IAryaMappedRequest;
 public class AryaJarMappedRequest implements IAryaMappedRequest {
 	
 	private String action;
-	
 	private String actionMethodName;
-	
 	private String serviceName;
-	
 	private String formName;
-	
 	private String path;
-	
 	private String viewName;
 
 	public String getAction() {

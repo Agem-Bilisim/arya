@@ -15,9 +15,9 @@ import tr.com.agem.core.utils.AryaUtils;
 public class AryaTabbox extends Tabbox implements IAryaComponent, IAryaTemplate {
 	
 	private static final long serialVersionUID = 1L;
+	
 	private String componentClassName;
 	private String database;
-	
 	private AryaTemplate template;
 	
 	public AryaTabbox(final AryaMain main, Attributes attributes) {
@@ -60,8 +60,6 @@ public class AryaTabbox extends Tabbox implements IAryaComponent, IAryaTemplate 
 			this.setMold(attributes.getValue("mold"));
 			
 			this.database = attributes.getValue("database");
-			
-			
 	
 			if (AryaUtils.isNotEmpty(attributes.getValue("onDrop"))) {
 				final String functionName = attributes.getValue("onDrop");
@@ -93,7 +91,6 @@ public class AryaTabbox extends Tabbox implements IAryaComponent, IAryaTemplate 
 					}
 				});
 			}
-	
 		}
 	}
 
@@ -104,7 +101,6 @@ public class AryaTabbox extends Tabbox implements IAryaComponent, IAryaTemplate 
 
 	@Override
 	public String validate() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -177,38 +173,29 @@ public class AryaTabbox extends Tabbox implements IAryaComponent, IAryaTemplate 
 
 	@Override
 	public String getAttribute() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void setAttribute(String attribute) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public String getAttributeValue() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void setAttributeValue(String attributeValue) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public String getAttributeLabel() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void setAttributeLabel(String attributeLabel) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

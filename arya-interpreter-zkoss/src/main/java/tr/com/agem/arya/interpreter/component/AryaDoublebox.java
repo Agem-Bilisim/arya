@@ -21,7 +21,6 @@ public class AryaDoublebox extends Doublebox implements IAryaComponent {
 	private String attributeValue;
 	private String attributeLabel;
 
-
 	public AryaDoublebox(final AryaMain main, Attributes attributes) {
 
 		super();
@@ -71,7 +70,6 @@ public class AryaDoublebox extends Doublebox implements IAryaComponent {
 		this.attribute = attributes.getValue("attribute");
 		this.attributeValue = attributes.getValue("attributeValue");
 		this.attributeLabel = attributes.getValue("attributeLabel");
-
 
 		/*
 		 * if the dimension input format of .arya files does NOT contains the
@@ -156,7 +154,6 @@ public class AryaDoublebox extends Doublebox implements IAryaComponent {
 
 	@Override
 	public String validate() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

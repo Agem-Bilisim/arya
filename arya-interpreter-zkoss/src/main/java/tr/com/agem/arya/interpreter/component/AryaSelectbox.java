@@ -14,12 +14,12 @@ import tr.com.agem.core.utils.AryaUtils;
 public class AryaSelectbox extends Selectbox implements IAryaComponent {
 
 	private static final long serialVersionUID = 2051047315627309416L;
+	
 	private String componentClassName;
 	private String database;
 	private String attribute;
 	private String attributeValue;
 	private String attributeLabel;
-
 
 	public AryaSelectbox(final AryaMain main, Attributes attributes) {
 
@@ -92,9 +92,7 @@ public class AryaSelectbox extends Selectbox implements IAryaComponent {
 					}
 				});
 			}
-
 		}
-
 	}
 
 	@Override
@@ -104,7 +102,6 @@ public class AryaSelectbox extends Selectbox implements IAryaComponent {
 
 	@Override
 	public String validate() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

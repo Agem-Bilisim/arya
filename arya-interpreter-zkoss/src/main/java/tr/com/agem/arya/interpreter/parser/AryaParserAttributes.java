@@ -10,7 +10,6 @@ import tr.com.agem.core.utils.AryaUtils;
 public class AryaParserAttributes implements Attributes{
 
 	 Map<String,String> attributesMap = new HashMap<>();
-	 
 
 	    @Override
 	    public int getLength() {

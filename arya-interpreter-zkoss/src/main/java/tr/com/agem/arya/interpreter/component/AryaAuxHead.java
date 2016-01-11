@@ -14,12 +14,12 @@ import tr.com.agem.core.utils.AryaUtils;
 public class AryaAuxHead extends Auxhead implements IAryaComponent {
 
 	private static final long serialVersionUID = 1L;
+	
 	private String componentClassName;
 	private String database;
 	private String attribute;
 	private String attributeValue;
 	private String attributeLabel;
-
 
 	public AryaAuxHead(final AryaMain main, Attributes attributes) {
 		super();

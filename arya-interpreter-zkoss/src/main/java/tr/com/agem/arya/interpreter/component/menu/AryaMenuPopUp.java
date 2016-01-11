@@ -14,6 +14,7 @@ import tr.com.agem.core.utils.AryaUtils;
 public class AryaMenuPopUp extends Menupopup implements IAryaComponent, IAryaMenu {
 
 	private static final long serialVersionUID = 1L;
+	
 	private String componentClassName;
 	private String componentId;
 	private String componentValue;
@@ -131,7 +132,6 @@ public class AryaMenuPopUp extends Menupopup implements IAryaComponent, IAryaMen
 
 	@Override
 	public String validate() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 	
@@ -156,38 +156,29 @@ public class AryaMenuPopUp extends Menupopup implements IAryaComponent, IAryaMen
 
 	@Override
 	public String getAttribute() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void setAttribute(String attribute) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public String getAttributeValue() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void setAttributeValue(String attributeValue) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public String getAttributeLabel() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void setAttributeLabel(String attributeLabel) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

@@ -8,7 +8,6 @@ import org.zkoss.zul.Div;
 import org.zkoss.zul.Include;
 import org.zkoss.zul.Label;
 
-import tr.com.agem.arya.interpreter.component.AryaScript;
 import tr.com.agem.core.interpreter.IAryaComponent;
 
 public class AryaMain {
@@ -21,6 +20,7 @@ public class AryaMain {
 	private Include login;
 
 	public AryaMain(Div componentContainer, Div menuContainer, Include login, Label message) {
+		
 		super();
 		this.menuContainer = menuContainer;
 		this.componentContainer = componentContainer;

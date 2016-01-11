@@ -142,7 +142,6 @@ public class AryaCheckbox extends Checkbox implements IAryaComponent {
 
 	@Override
 	public String validate() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

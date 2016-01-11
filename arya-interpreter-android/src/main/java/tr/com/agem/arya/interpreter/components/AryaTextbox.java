@@ -91,7 +91,7 @@ public class AryaTextbox extends EditText implements IAryaComponent {
             // Visible
             String visible = attributes.getValue("visible");
             if (visible != null && !Boolean.parseBoolean(visible)) {
-                this.setVisibility(View.INVISIBLE);
+                this.setVisibility(View.GONE);
             }
             // onChange
             final String onChange = attributes.getValue("onChange");
