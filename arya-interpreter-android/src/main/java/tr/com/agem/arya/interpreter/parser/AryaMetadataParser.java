@@ -154,6 +154,10 @@ public class AryaMetadataParser extends DefaultHandler {
             if(localName.equals("listitem") || localName.equals("row") || localName.equals("listhead"))
                 return true;
         }
+        else if(tagName.equals("vlayout")){
+            if(localName.equals("vlayout") || localName.equals("hlayout"))
+                return true;
+        }
         else {
             return true;
         }

@@ -58,7 +58,8 @@ public class AryaChart extends Chart implements IAryaComponent {
 			this.setAction(attributes.getValue("action"));
 			this.setHflex(attributes.getValue("hflex"));
 			this.setVflex(attributes.getValue("vflex"));
-			
+			this.setXAxis(attributes.getValue("xAxis"));
+			this.setYAxis(attributes.getValue("yAxis"));
 			
 			
 			if (attributes.getValue("type") != null) 
@@ -180,7 +181,7 @@ public class AryaChart extends Chart implements IAryaComponent {
 
 	@Override
 	public String getComponentTagName() {
-		return "button";
+		return "chart";
 	}
 
 	@Override

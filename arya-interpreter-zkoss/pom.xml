@@ -104,6 +104,11 @@
 			<version>${zk.version}</version>
 		</dependency>
 		<dependency>
+		    <groupId>org.zkoss.chart</groupId>
+		    <artifactId>zkcharts</artifactId>
+		    <version>1.0.0</version>
+		</dependency>
+		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 			<version>${commons-io}</version>

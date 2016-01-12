@@ -42,6 +42,7 @@ public class AryaCheckbox extends Checkbox implements IAryaComponent {
 			this.setImage(attributes.getValue("image"));
 			this.setHoverImage(attributes.getValue("hoverimage"));
 			this.setLabel(attributes.getValue("label"));
+			this.setValue(attributes.getValue("value"));
 			this.setTooltip(attributes.getValue("tooltip"));
 			this.setTooltiptext(attributes.getValue("tooltiptext"));
 			this.setDraggable(attributes.getValue("draggable"));
@@ -168,8 +169,7 @@ public class AryaCheckbox extends Checkbox implements IAryaComponent {
 	@Override
 	public String getComponentValue() {
 		if(this.isChecked()){
-			this.setComponentValue(this.getLabel());
-			return this.getLabel();
+			return this.getValue();
 		}
 		return null;
 	}

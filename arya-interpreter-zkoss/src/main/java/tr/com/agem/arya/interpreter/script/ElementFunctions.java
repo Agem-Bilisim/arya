@@ -1,10 +1,13 @@
 package tr.com.agem.arya.interpreter.script;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -20,6 +23,7 @@ import org.zkoss.zul.Listbox;
 import org.zkoss.zul.Tab;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import tr.com.agem.arya.interpreter.component.AryaListbox;
@@ -51,6 +55,30 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 		this.context = context;
 		this.scope = scope;
 		this.main = main;
+	}
+	
+	@AryaJsFunction
+	public void populate(String data) {
+		ObjectMapper mapper = new ObjectMapper();
+		try {
+			JsonNode rootNode = mapper.readTree(data);
+			if (rootNode != null) {
+				Iterator<Entry<String, JsonNode>> fields = rootNode.fields();
+				if (fields != null) {
+					while (fields.hasNext()) {
+						Entry<String, JsonNode> entry = fields.next();
+						logger.log(Level.FINE, "JSON property: {0}:{1}", new Object[]{ entry.getKey(), entry.getValue() });
+						
+						IAryaComponent comp = (IAryaComponent) getElementById(entry.getKey());
+						if (comp != null) {
+							comp.setComponentValue(entry.getValue().asText());
+						}
+					}
+				}
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@AryaJsFunction

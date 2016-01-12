@@ -150,6 +150,19 @@ public class ElementFunctions extends AnnotatedScriptableObject {
     }
 
     @AryaJsFunction
+    public void clean(String parentComp){
+
+        List<IAryaComponent> components = main.getAryaWindow().getComponents();
+
+        for (IAryaComponent cmp : components) {
+            if (AryaInterpreterHelper.isInputElement(cmp)) {
+
+                cmp.setComponentValue("");
+            }
+        }
+    }
+
+    @AryaJsFunction
     public void send(String action, String requestType, String parentObjectId, String objectIdProp, String tabName) throws JsonProcessingException {
 
         List<IAryaComponent> components = main.getAryaWindow().getComponents();
@@ -173,15 +186,13 @@ public class ElementFunctions extends AnnotatedScriptableObject {
     @AryaJsFunction
     public Object getElementById(String id) {
 
-        View child = null;
-        for (int i = 0; i < main.getAryaWindow().getChildCount(); i++) {
+        for (int i = 0; i < main.getAryaWindow().getComponents().size(); i++) {
 
-            child = main.getAryaWindow().getChildAt(i);
-            if (child instanceof IAryaComponent) {
-                IAryaComponent o = (IAryaComponent) child;
+            if (main.getAryaWindow().getComponents().get(i) instanceof IAryaComponent) {
+                IAryaComponent child = main.getAryaWindow().getComponents().get(i);
 
-                if (id.equals(o.getComponentId())) {
-                    return o;
+                if (id.equals(child.getComponentId())) {
+                    return child;
                 }
             }
         }

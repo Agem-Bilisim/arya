@@ -24,6 +24,8 @@ public class AryaButton extends Button implements IAryaComponent {
     public AryaButton(final Attributes attributes, final AryaMain main) {
         super(main.getAryaWindow().getContext());
         this.setBackgroundResource(android.R.drawable.btn_default);
+        this.setMinimumWidth(ViewGroup.LayoutParams.WRAP_CONTENT);
+        this.setMinimumHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
 
         String height=null;
         if(AryaUtils.isNotEmpty(attributes)){
@@ -48,14 +50,12 @@ public class AryaButton extends Button implements IAryaComponent {
             if (attributes.getValue("width") != null) {
                 this.setWidth(Integer.parseInt(attributes.getValue("width")));
             }
-            if (attributes.getValue("visible") != null) {
-                if(attributes.getValue("visible").equals("true")){
-                    this.setVisibility(VISIBLE);
-                }
-                else{
-                    this.setVisibility(INVISIBLE);
+            if(attributes.getValue("visible") != null){
+                if(attributes.getValue("visible").equals("false")){
+                    this.setVisibility(GONE);
                 }
             }
+
             if (attributes.getValue("disabled") != null) {
                 this.setEnabled(!Boolean.parseBoolean(attributes.getValue("disabled")));
             }

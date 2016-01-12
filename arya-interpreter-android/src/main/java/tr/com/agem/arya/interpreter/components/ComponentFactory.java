@@ -61,10 +61,8 @@ public class ComponentFactory {
             comp = new AryaRadiogroup(attributes,main);
         }else if ("slider".equalsIgnoreCase(tagName)) {
             comp = new AryaSlider(attributes, main);
-        }else if ("vlayout".equalsIgnoreCase(tagName)) {
+        }else if ("vlayout".equalsIgnoreCase(tagName) || "hlayout".equalsIgnoreCase(tagName)) {
             comp = new AryaVlayout(attributes,main);
-        }else if ("hlayout".equalsIgnoreCase(tagName)) {
-            comp = new AryaHlayout(attributes,main);
         }else if ("template".equalsIgnoreCase(tagName)) {
             comp = new AryaTemplate(attributes,main);
         }else if ("fill".equalsIgnoreCase(tagName)) {

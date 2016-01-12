@@ -30,12 +30,14 @@ public class AryaVlayout extends LinearLayout implements IAryaComponent {
             this.componentValue = attributes.getValue("value");
             this.setVerticalScrollBarEnabled(true);
             this.setHorizontalScrollBarEnabled(true);
-
+            this.setMinimumHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
+            this.setMinimumWidth(ViewGroup.LayoutParams.MATCH_PARENT);
 
         }
-        ScrollView ScrollViewParent = new ScrollView(main.getAryaWindow().getContext());
-        main.getAryaWindow().addView(ScrollViewParent);
-        ScrollViewParent.addView(this);
+        ScrollView scrollViewParent = new ScrollView(main.getAryaWindow().getContext());
+        main.getAryaWindow().addView(scrollViewParent, main.getAryaWindow().getChildCount());
+        scrollViewParent.addView(this);
+
     }
 
     @Override
