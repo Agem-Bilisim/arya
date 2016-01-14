@@ -19,13 +19,18 @@ import org.mozilla.javascript.NativeFunction;
 import org.mozilla.javascript.NativeJSON;
 import org.mozilla.javascript.Scriptable;
 import org.zkoss.zk.ui.Component;
+import org.zkoss.zul.ChartModel;
 import org.zkoss.zul.Listbox;
+import org.zkoss.zul.SimpleCategoryModel;
+import org.zkoss.zul.SimplePieModel;
+import org.zkoss.zul.SimpleXYModel;
 import org.zkoss.zul.Tab;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import tr.com.agem.arya.interpreter.component.AryaFlashchart;
 import tr.com.agem.arya.interpreter.component.AryaListbox;
 import tr.com.agem.arya.interpreter.component.AryaTabpanel;
 import tr.com.agem.arya.interpreter.component.AryaTabs;
@@ -176,6 +181,54 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 				//TODO isyeriIdParam -> idParam!!!!!
 				 String params = "{\"isyeriIdParam\":\""+ splitId(id, jsonObj)+"\",\"id\":\""+ splitId(id, jsonObj)+"\"}";
 				 post(action, "DATA_ONLY", params, tabValue, null, null);
+			}
+		}
+	}
+	
+	@AryaJsFunction
+	public void setChartModel(String chartId){
+		
+		IAryaComponent comp = getElementById(chartId);
+		
+		if(comp instanceof AryaFlashchart){
+			AryaFlashchart chart = (AryaFlashchart) comp;
+			ChartModel model = null;
+			
+			if(chart.getType() != null){
+				
+				if(chart.getType().equals("pie")){
+					model = new SimplePieModel();
+				}
+				else if(chart.getType().equals("stackbar") || chart.getType().equals("bar") || 
+						chart.getType().equals("line") || chart.getType().equals("column")){
+					
+					model = new SimpleCategoryModel();
+				}
+				chart.setModel(model);
+			}
+		}
+	}
+	
+	@AryaJsFunction
+	public void setChartValue(String chartId, String category, String secondCategory, Double value){
+		
+		IAryaComponent comp = getElementById(chartId);
+		
+		if(comp instanceof AryaFlashchart) {
+			AryaFlashchart chart = (AryaFlashchart) comp;
+			
+			if(chart.getType() != null){
+				
+				if(chart.getType().equals("pie")){
+					SimplePieModel model = (SimplePieModel) chart.getModel();
+					model.setValue(category, value);
+				}
+				else if(chart.getType().equals("stackbar") || chart.getType().equals("bar") || 
+						chart.getType().equals("line") || chart.getType().equals("column")){
+					
+					SimpleCategoryModel model = (SimpleCategoryModel) chart.getModel();
+					model.setValue(category, secondCategory, value);
+				}
 			}
 		}
 	}

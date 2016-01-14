@@ -125,7 +125,7 @@ public class ComponentFactory {
 		} else if ("fill".equalsIgnoreCase(tagName)) {
 			comp = new AryaFill(main, attributes);
 		} else if ("chart".equalsIgnoreCase(tagName)) {
-			comp = new AryaChart(main,attributes);
+			comp = new AryaFlashchart(main,attributes);
 		} else if ("auxhead".equalsIgnoreCase(tagName)) {
 			comp = new AryaAuxHead(main,attributes);
 		} else if ("auxheader".equalsIgnoreCase(tagName)) {

@@ -4,40 +4,36 @@ import org.xml.sax.Attributes;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.EventListener;
-import org.zkoss.zul.Chart;
+import org.zkoss.zul.Flashchart;
 
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.script.ScriptHelper;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
 
-public class AryaChart extends Chart implements IAryaComponent {
+public class AryaFlashchart extends Flashchart implements IAryaComponent {
 
 	private static final long serialVersionUID = -8101533101584382438L;
 
 	private String componentClassName;
 	private String database;
 
-	public AryaChart(final AryaMain main, Attributes attributes) {
+	public AryaFlashchart(final AryaMain main, Attributes attributes) {
 
 		super();
 
 		if (AryaUtils.isNotEmpty(attributes)) {
-			this.setType(attributes.getValue("type")); //chart type
+			if (attributes.getValue("type") != null) 
+				this.setType(attributes.getValue("type"));
 			this.setId(attributes.getValue("id"));
 			this.componentClassName = attributes.getValue("class");
 			if (attributes.getValue("paneColor") != null) {
-			this.setPaneColor(attributes.getValue("paneColor"));
-			}
-			this.setFgAlpha(Integer.parseInt(attributes.getValue("fgAlpha")));
 			this.setClass(attributes.getValue("class"));
 			
 			if (attributes.getValue("visible") != null) {
 				this.setVisible(Boolean.parseBoolean(attributes.getValue("visible")));
 			}
-		
-					
-			this.setTooltip(attributes.getValue("tooltip"));
+			
 			this.setTooltiptext(attributes.getValue("tooltiptext"));
 			this.setDraggable(attributes.getValue("draggable"));
 			this.setDroppable(attributes.getValue("droppable"));
@@ -58,12 +54,8 @@ public class AryaChart extends Chart implements IAryaComponent {
 			this.setAction(attributes.getValue("action"));
 			this.setHflex(attributes.getValue("hflex"));
 			this.setVflex(attributes.getValue("vflex"));
-			this.setXAxis(attributes.getValue("xAxis"));
-			this.setYAxis(attributes.getValue("yAxis"));
 			
 			
-			if (attributes.getValue("type") != null) 
-				this.setType(attributes.getValue("type"));
 			
 			if (attributes.getValue("style") != null) 
 				this.setStyle(attributes.getValue("style"));
@@ -139,8 +131,9 @@ public class AryaChart extends Chart implements IAryaComponent {
 		}
 
 	}
+	}
 	
-	public AryaChart getSelf() {
+	public AryaFlashchart getSelf() {
 		return this;
 	}
 

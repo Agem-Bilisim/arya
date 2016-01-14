@@ -56,6 +56,9 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 					</listitem>
 				</template>
 			</listbox>
+			<button id="grafik" label="Grafik çiz." position="1/3" newLine="true"
+						onClick="grafik()" />
+			<chart id="iscichart" type="pie" />
 		</vlayout>
 
 	</window>
@@ -68,6 +71,14 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 	
 		render_sozlesmeler = function() {
 			renderAtSamePage('isyeri.list', 'id', 'genel.isyeriSozlesme.list', 'İşyeri Listesi');
+		}
+		
+		grafik = function() {
+			setChartModel('iscichart');
+			setChartValue('iscichart', '150 TARIM SAT.KOOP.', 'a', 206);
+			setChartValue('iscichart', '162 ZEYTİN T.S.KOOP.', 'b', 10);
+			setChartValue('iscichart', '189 SAYILIZEYTİN KOOP.', 'c', 5);
+			setChartValue('iscichart', '2000 EKMEK GIDA LTD.ŞTİ.', 'd', 95);
 		}
 		
 	</script>

@@ -580,6 +580,7 @@
 			<xs:element ref="decimalbox" />
 			<xs:element ref="div" />
 			<xs:element ref="doublebox" />
+			<xs:element ref="flashchart" />
 			<xs:element ref="grid" />
 			<xs:element ref="groupbox" />
 			<xs:element ref="hbox" />
@@ -641,6 +642,7 @@
 				<xs:element ref="decimalbox" />
 				<xs:element ref="div" />
 				<xs:element ref="doublebox" />
+				<xs:element ref="flashchart" />
 				<xs:element ref="grid" />
 				<xs:element ref="groupbox" />
 				<xs:element ref="hbox" />
@@ -1255,6 +1257,17 @@
 		<xs:attributeGroup ref="htmlBasedComponentAttrGroup" />
 		<xs:attribute name="native" type="xs:string" use="optional" />
 		<xs:attribute name="number" type="xs:string" use="optional" />
+	</xs:complexType>
+	<!-- flashchart -->
+	<xs:element name="flashchart" type="flashchartType" />
+	<xs:complexType name="flashchartType">
+		<xs:group ref="baseGroup" minOccurs="0" maxOccurs="unbounded" />
+		<xs:attributeGroup ref="htmlBasedComponentAttrGroup" />
+		<xs:attribute name="type" type="xs:string" use="required" />
+		<xs:attribute name="model" type="xs:string" use="optional" />
+		<xs:attribute name="xAxis" type="xs:string" use="optional" />
+		<xs:attribute name="yAxis" type="xs:string" use="optional" />
+		<xs:attribute name="chartStyle" type="xs:string" use="optional" />
 	</xs:complexType>
 	<!-- foot -->
 	<xs:element name="foot" type="footType" />

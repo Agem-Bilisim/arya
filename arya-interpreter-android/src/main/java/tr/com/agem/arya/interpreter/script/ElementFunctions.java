@@ -29,6 +29,8 @@ import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.core.gateway.model.AryaResponse;
 import tr.com.agem.core.interpreter.IAryaComponent;
 
+
+
 public class ElementFunctions extends AnnotatedScriptableObject {
 
     private static final long serialVersionUID = 2251889177219110859L;
@@ -147,6 +149,16 @@ public class ElementFunctions extends AnnotatedScriptableObject {
             String params = "{\"isyeriIdParam\":\"" + splitId(id, jsonObj) + "\",\"id\":\"" + splitId(id, jsonObj) + "\"}";
             post(action, "DATA_ONLY", params, tabValue, null, null);
         }
+    }
+
+    @AryaJsFunction
+    public void setChartModel(String chartId){
+
+    }
+
+    @AryaJsFunction
+    public void setChartValue(String chartId, String category, String secondCategory, Double value){
+
     }
 
     @AryaJsFunction
