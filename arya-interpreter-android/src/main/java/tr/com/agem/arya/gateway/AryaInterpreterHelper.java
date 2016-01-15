@@ -30,6 +30,7 @@ import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
 import tr.com.agem.arya.R;
+import tr.com.agem.arya.interpreter.components.AryaCheckbox;
 import tr.com.agem.arya.interpreter.components.AryaComboBox;
 import tr.com.agem.arya.interpreter.components.AryaComboItem;
 import tr.com.agem.arya.interpreter.components.AryaListBox;
@@ -376,7 +377,8 @@ public class AryaInterpreterHelper {
     public static boolean isInputElement(IAryaComponent comp) {
         return (comp instanceof AryaTextbox) ||
                 (comp instanceof AryaRadiogroup) ||
-                (comp instanceof AryaComboBox);
+                (comp instanceof AryaComboBox) ||
+                (comp instanceof AryaCheckbox);
     }
 
     private static Object getJSONValue(JSONObject jsonObj, String key) {

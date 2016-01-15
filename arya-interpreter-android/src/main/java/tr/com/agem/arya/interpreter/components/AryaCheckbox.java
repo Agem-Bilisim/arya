@@ -78,7 +78,7 @@ public class AryaCheckbox extends CheckBox implements IAryaComponent {
 
 
             final String onCheck =attributes.getValue("onCheck");
-            if (onCheck != null) {
+            if (onCheck != null && !onCheck.equals("")) {
                 this.setOnCheckedChangeListener(new OnCheckedChangeListener() {
                     @Override
                     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
