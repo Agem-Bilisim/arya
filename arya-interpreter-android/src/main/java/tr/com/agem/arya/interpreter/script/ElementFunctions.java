@@ -1,6 +1,7 @@
 package tr.com.agem.arya.interpreter.script;
 
 import android.view.View;
+import android.view.ViewGroup;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -31,6 +32,12 @@ import java.util.logging.Logger;
 import tr.com.agem.arya.MainActivity;
 import tr.com.agem.arya.gateway.AryaInterpreterHelper;
 import tr.com.agem.arya.interpreter.components.AryaChart;
+import tr.com.agem.arya.interpreter.components.AryaCheckbox;
+import tr.com.agem.arya.interpreter.components.AryaComboBox;
+import tr.com.agem.arya.interpreter.components.AryaListBox;
+import tr.com.agem.arya.interpreter.components.AryaListItem;
+import tr.com.agem.arya.interpreter.components.AryaRadio;
+import tr.com.agem.arya.interpreter.components.AryaRadiogroup;
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.core.gateway.model.AryaResponse;
 import tr.com.agem.core.interpreter.IAryaComponent;
@@ -211,16 +218,64 @@ public class ElementFunctions extends AnnotatedScriptableObject {
     }
 
     @AryaJsFunction
-    public void clean(String parentComp){
+    public void clean(String parentCompId){
+
 
         List<IAryaComponent> components = main.getAryaWindow().getComponents();
 
-        for (IAryaComponent cmp : components) {
-            if (AryaInterpreterHelper.isInputElement(cmp)) {
+        for (IAryaComponent parentComp : components) {
+            if (parentComp.getComponentId() != null) {
+                if (parentComp.getComponentId().equals(parentCompId)) {
+                    for (int i = 0; i < ((ViewGroup) parentComp).getChildCount(); i++) {
+                        if (((ViewGroup) parentComp).getChildAt(i) instanceof IAryaComponent) {
+                            IAryaComponent cmp = ((IAryaComponent) ((ViewGroup) parentComp).getChildAt(i));
+                            if(cmp instanceof AryaListBox || cmp instanceof AryaListItem){
+                                clean(cmp);    //depth-first search
+                            }
+                            else if (AryaInterpreterHelper.isInputElement(cmp)) {
+                                if (cmp instanceof AryaRadiogroup) {
+                                    for (int j = 0; j < ((AryaRadiogroup) cmp).getChildCount(); j++) {
+                                        ((AryaRadio) ((AryaRadiogroup) cmp).getChildAt(j)).setChecked(false);
+                                    }
+                                } else if (cmp instanceof AryaCheckbox) {
+                                    ((AryaCheckbox) cmp).setChecked(false);
+                                } else if (cmp instanceof AryaComboBox) {
+                                    ((AryaComboBox) cmp).setSelection(0, true);
+                                }
+                                cmp.setComponentValue("");
 
-                cmp.setComponentValue("");
+                            }
+                        }
+                    }
+                    break; //no need to check further
+                }
             }
         }
+    }
+
+    //please do NOT tag it with AryaJSFunction, it's an overloaded version of clean which helps the original one in a recursive way.
+    public void clean(IAryaComponent parentComp){
+                    for (int i = 0; i < ((ViewGroup) parentComp).getChildCount(); i++) {
+                        if (((ViewGroup) parentComp).getChildAt(i) instanceof IAryaComponent) {
+                            IAryaComponent cmp = ((IAryaComponent) ((ViewGroup) parentComp).getChildAt(i));
+                            if(cmp instanceof AryaListBox || cmp instanceof AryaListItem){
+                                clean(cmp);    //depth-first search
+                            }
+                            else if (AryaInterpreterHelper.isInputElement(cmp)) {
+                                if (cmp instanceof AryaRadiogroup) {
+                                    for (int j = 0; j < ((AryaRadiogroup) cmp).getChildCount(); j++) {
+                                        ((AryaRadio) ((AryaRadiogroup) cmp).getChildAt(j)).setChecked(false);
+                                    }
+                                } else if (cmp instanceof AryaCheckbox) {
+                                    ((AryaCheckbox) cmp).setChecked(false);
+                                } else if (cmp instanceof AryaComboBox) {
+                                    ((AryaComboBox) cmp).setSelection(0, true);
+                                }
+                                cmp.setComponentValue("");
+
+                            }
+                        }
+                    }
     }
 
     @AryaJsFunction
