@@ -14,7 +14,7 @@
 	<script>
 	
 		login = function(){
-			post('login','LOGIN', {'username':'admin','password':'a395em8?'}, 'Master',s,f); /* {'username':String(getElementById('u').getComponentValue()),'password':String(getElementById('p').getComponentValue())},s,f); */
+			post('login','LOGIN', {'username':'admin','password':'a9em@5466'}, 'Master',s,f); /* {'username':String(getElementById('u').getComponentValue()),'password':String(getElementById('p').getComponentValue())},s,f); */
 			
 		}
 		

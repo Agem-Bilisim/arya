@@ -83,6 +83,7 @@ public class AryaButton extends Button implements IAryaComponent {
 
         }
         setMinimumWidth(350);
+
         main.getAryaWindow().addView(this);
     }
 
@@ -100,8 +101,6 @@ public class AryaButton extends Button implements IAryaComponent {
         else {
             ((ViewGroup)o).addView(this);
         }
-
-
     }
 
     public String getComponentId() { return componentId; }

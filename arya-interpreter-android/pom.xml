@@ -117,11 +117,10 @@
 			<version>20140107</version>
 		</dependency>
 		<dependency>
-			<groupId>org.quanqi</groupId>
-			<artifactId>android-holo-graph</artifactId>
-			<version>0.1.0</version>
+			<groupId>com.jjoe64</groupId>
+			<artifactId>graphview</artifactId>
+			<version>4.0.1</version>
 			<type>aar</type>
 		</dependency>
 	</dependencies>
-
 </project>

@@ -5,6 +5,10 @@ import android.view.View;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.jjoe64.graphview.LegendRenderer;
+import com.jjoe64.graphview.series.BarGraphSeries;
+import com.jjoe64.graphview.series.DataPoint;
+import com.jjoe64.graphview.series.LineGraphSeries;
 
 import org.json.JSONObject;
 import org.mozilla.javascript.Context;
@@ -20,11 +24,13 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import tr.com.agem.arya.MainActivity;
 import tr.com.agem.arya.gateway.AryaInterpreterHelper;
+import tr.com.agem.arya.interpreter.components.AryaChart;
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.core.gateway.model.AryaResponse;
 import tr.com.agem.core.interpreter.IAryaComponent;
@@ -44,6 +50,9 @@ public class ElementFunctions extends AnnotatedScriptableObject {
     private static String reqType;
 
     private static JSONObject jsonObj;
+
+    private LineGraphSeries lineSeries;
+    private BarGraphSeries<DataPoint> barSeries;
 
     public ElementFunctions(Context context, Scriptable scope, AryaMain main) {
         this.context = context;
@@ -152,13 +161,53 @@ public class ElementFunctions extends AnnotatedScriptableObject {
     }
 
     @AryaJsFunction
-    public void setChartModel(String chartId){
+    public void setChartModel(String chartId){   // This method behaves differently than Zkoss.
 
+        IAryaComponent comp = (IAryaComponent) getElementById(chartId);
+
+        if(comp instanceof AryaChart) {
+
+            if (((AryaChart) comp).getVisibility() == View.VISIBLE) {
+                ((AryaChart) comp).removeAllSeries();
+            }
+        }
     }
 
     @AryaJsFunction
     public void setChartValue(String chartId, String category, String secondCategory, Double value){
 
+        IAryaComponent comp = (IAryaComponent) getElementById(chartId);
+
+        Random rand = new Random();
+
+        if(comp instanceof AryaChart){
+
+            if(((AryaChart) comp).getType() != null){
+                if(((AryaChart) comp).getType().equals("line")){
+
+                    lineSeries = new LineGraphSeries<DataPoint>(new DataPoint[] {
+                            new DataPoint(0, value)
+                    });
+                    lineSeries.setColor(rand.nextInt());
+                    lineSeries.setTitle(category);
+                    ((AryaChart) comp).addSeries(lineSeries);
+
+                } else if(((AryaChart) comp).getType().equals("pie") || ((AryaChart) comp).getType().equals("stackbar") ||
+                        ((AryaChart) comp).getType().equals("bar") || ((AryaChart) comp).getType().equals("column")){
+
+                    barSeries = new BarGraphSeries<DataPoint>(new DataPoint[] {
+                            new DataPoint(0, value)
+                    });
+                    barSeries.setColor(rand.nextInt());
+                    barSeries.setTitle(category);
+                    ((AryaChart) comp).addSeries(barSeries);
+                }
+            }
+            ((AryaChart) comp).getViewport().setScrollable(true);
+            ((AryaChart) comp).setVisibility(View.VISIBLE);
+            ((AryaChart) comp).getLegendRenderer().setVisible(true);
+            ((AryaChart) comp).getLegendRenderer().setAlign(LegendRenderer.LegendAlign.BOTTOM);
+        }
     }
 
     @AryaJsFunction
@@ -203,7 +252,7 @@ public class ElementFunctions extends AnnotatedScriptableObject {
             if (main.getAryaWindow().getComponents().get(i) instanceof IAryaComponent) {
                 IAryaComponent child = main.getAryaWindow().getComponents().get(i);
 
-                if (id.equals(child.getComponentId())) {
+                if (id.trim().equals(child.getComponentId())) {
                     return child;
                 }
             }

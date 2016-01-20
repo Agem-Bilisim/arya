@@ -63,6 +63,7 @@
     <orderEntry type="library" name="Maven: com.android.support:support-v4:aar:22.0.0" level="project" />
     <orderEntry type="library" name="Maven: com.android.support:support-annotations:22.0.0" level="project" />
     <orderEntry type="library" name="Maven: org.json:json:20140107" level="project" />
-    <orderEntry type="library" name="Maven: org.quanqi:android-holo-graph:aar:0.1.0" level="project" />
+    <orderEntry type="library" name="Maven: com.jjoe64:graphview:aar:4.0.1" level="project" />
+    <orderEntry type="library" name="Maven: com.android.support:support-v4:21.0.3" level="project" />
   </component>
 </module>

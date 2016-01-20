@@ -1,10 +1,9 @@
 package tr.com.agem.arya.interpreter.components;
 
-
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TableRow;
+
+import com.jjoe64.graphview.GraphView;
 
 import org.xml.sax.Attributes;
 
@@ -12,30 +11,39 @@ import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
 
-// NOT USED
-public class AryaVlayout extends LinearLayout implements IAryaComponent {
-
+public class AryaChart extends GraphView implements IAryaComponent {
 
     private String componentClassName;
     private String componentId;
     private String componentValue;
+    private String database;
 
-    public AryaVlayout(Attributes attributes, final AryaMain main) {
+    private String attribute;
+    private String attributeValue;
+    private String attributeLabel;
+
+    private String type;
+
+    public AryaChart(Attributes attributes, final AryaMain main){
         super(main.getAryaWindow().getContext());
 
-        if(AryaUtils.isNotEmpty(attributes)){
-            this.setOrientation(LinearLayout.VERTICAL);
+        if(AryaUtils.isNotEmpty(attributes)) {
+
             this.componentId = attributes.getValue("id");
             this.componentClassName = attributes.getValue("class");
             this.componentValue = attributes.getValue("value");
-            this.setVerticalScrollBarEnabled(true);
-            this.setHorizontalScrollBarEnabled(true);
-            this.setMinimumHeight(ViewGroup.LayoutParams.MATCH_PARENT);
+            this.database = attributes.getValue("database");
+
+            this.attribute = attributes.getValue("attribute");
+            this.attributeValue = attributes.getValue("attributeValue");
+            this.attributeLabel = attributes.getValue("attributeLabel");
+
+            this.type = attributes.getValue("type");
+            this.setVisibility(GONE);
+            this.setMinimumHeight(250);
 
         }
-        ScrollView scrollViewParent = new ScrollView(main.getAryaWindow().getContext());
-        main.getAryaWindow().addView(scrollViewParent, main.getAryaWindow().getChildCount());
-        scrollViewParent.addView(this);
+        main.getAryaWindow().addView(this);
 
     }
 
@@ -85,49 +93,52 @@ public class AryaVlayout extends LinearLayout implements IAryaComponent {
 
     @Override
     public String getDatabase() {
-        return null;
+        return database;
     }
 
     @Override
-    public void setDatabase(String s) {
-
+    public void setDatabase(String database) {
+        this.database = database;
     }
 
     @Override
     public String getAttribute() {
-        return null;
+        return attribute;
     }
 
     @Override
-    public void setAttribute(String s) {
-
+    public void setAttribute(String attribute) {
+        this.attribute = attribute;
     }
 
-    @Override
     public String getAttributeValue() {
-        return null;
+        return attributeValue;
     }
 
-    @Override
-    public void setAttributeValue(String s) {
-
+    public void setAttributeValue(String attributeValue) {
+        this.attributeValue = attributeValue;
     }
 
     @Override
     public String getAttributeLabel() {
-        return null;
+        return attributeLabel;
     }
 
     @Override
-    public void setAttributeLabel(String s) {
-
+    public void setAttributeLabel(String attributeLabel) {
+        this.attributeLabel = attributeLabel;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
     @Override
     public String getComponentTagName() {
-        return "vlayout";
+        return "chart";
     }
-
-
 }

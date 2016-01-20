@@ -71,7 +71,6 @@ public class AryaListBox extends TableLayout implements IAryaComponent, IAryaTem
             this.attributeValue = attributes.getValue("attributeValue");
             this.attributeLabel = attributes.getValue("attributeLabel");
 
-
             onSelect = attributes.getValue("onSelect");
         }
 
