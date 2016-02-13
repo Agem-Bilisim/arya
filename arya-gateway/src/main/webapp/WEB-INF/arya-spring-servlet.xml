@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:ctx="http://www.springframework.org/schema/context"
-       xmlns:p="http://www.springframework.org/schema/p"
-       xmlns:util="http://www.springframework.org/schema/util"
-       xmlns:osgix="http://www.springframework.org/schema/osgi-compendium"
-       xmlns:osgi="http://www.springframework.org/schema/osgi"
-       xmlns:mvc="http://www.springframework.org/schema/mvc"
-       xsi:schemaLocation="
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ctx="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:osgix="http://www.springframework.org/schema/osgi-compendium"
+	xmlns:osgi="http://www.springframework.org/schema/osgi" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="
            http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
            http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
@@ -15,27 +12,58 @@
            http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd
            http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-  <import resource="arya-persistence-config.xml"/>
-  <import resource="arya-adaptor-config.xml"/>
- 
-  <mvc:annotation-driven />
-  <ctx:component-scan base-package="tr.com.agem.controller"/>
-  
-  <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-    <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
-    <property name="prefix" value="/WEB-INF/views/" />
-    <property name="suffix" value=".jsp" />
-  </bean>
-  
-  <bean id="metadataEngine" class="tr.com.agem.metadata.impl.MetadataEngineImpl">
-  	<property name="persistence" ref="aryaPersistence"/>
-  </bean>
-  
-  <bean id="intercepter" class="tr.com.agem.controller.AryaIntercepter">
-  </bean>
-  
-  <bean id="aryaContextFilter" class="tr.com.agem.filter.AryaContextFilter" />
-  <bean id="corsFilter" class="tr.com.agem.filter.CorsFilter" />
-  <bean id="loginFilter" class="tr.com.agem.filter.LoginFilter" />
-                 
+	<import resource="arya-persistence-config.xml" />
+	<import resource="arya-adaptor-config.xml" />
+
+	<mvc:annotation-driven />
+	<ctx:component-scan base-package="tr.com.agem.arya.controller" />
+
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<bean id="metadataEngine" class="tr.com.agem.metadata.impl.MetadataEngineImpl">
+		<property name="persistence" ref="aryaPersistence" />
+	</bean>
+
+
+	<bean id="intercepter" class="tr.com.agem.core.gateway.model.IAryaIntercepter" scope="prototype" abstract="true"/>
+	
+	<!--  Request Intercepters -->
+	<bean id="requestIntercepters" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+			</list>
+		</constructor-arg>
+	</bean>
+	<bean id="requestIntercepterFactory" class="tr.com.agem.core.gateway.model.AryaIntercepterFactory">
+		<constructor-arg>
+			<bean factory-bean="requestIntercepters" factory-method="toArray" />
+		</constructor-arg>
+	</bean>
+	
+	<!--  Response Intercepters -->
+	<bean id="responseIntercepters" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<bean id="attributeBindingIntercepter" class="tr.com.agem.arya.intercepter.AryaResponseAttributeIntercepter" />
+			</list>
+		</constructor-arg>
+	</bean>
+	<bean id="responseIntercepterFactory" class="tr.com.agem.core.gateway.model.AryaIntercepterFactory">
+		<constructor-arg>
+			<bean factory-bean="responseIntercepters" factory-method="toArray" />
+		</constructor-arg>
+	</bean>
+
+
+	<!--  Filters -->
+	<bean id="aryaContextFilter" class="tr.com.agem.arya.filter.AryaContextFilter" />
+<!--  <bean id="corsFilter" class="tr.com.agem.arya.filter.CorsFilter" /> -->
+	<bean id="loginFilter" class="tr.com.agem.arya.filter.LoginFilter" />
+
 </beans>

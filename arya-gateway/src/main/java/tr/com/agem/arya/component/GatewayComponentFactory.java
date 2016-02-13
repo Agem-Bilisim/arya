@@ -1,4 +1,4 @@
-package tr.com.agem.component;
+package tr.com.agem.arya.component;
 
 import org.xml.sax.Attributes;
 

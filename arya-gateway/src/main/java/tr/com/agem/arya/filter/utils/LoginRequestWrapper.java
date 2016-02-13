@@ -1,4 +1,4 @@
-package tr.com.agem.filter.utils;
+package tr.com.agem.arya.filter.utils;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;

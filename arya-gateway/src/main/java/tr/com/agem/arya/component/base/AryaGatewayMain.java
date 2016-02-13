@@ -1,4 +1,4 @@
-package tr.com.agem.component.base;
+package tr.com.agem.arya.component.base;
 
 import java.util.HashSet;
 import java.util.Set;

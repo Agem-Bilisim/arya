@@ -1,4 +1,4 @@
-package tr.com.agem.parser;
+package tr.com.agem.arya.parser;
 
 
 import java.util.Stack;
@@ -7,9 +7,9 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-import tr.com.agem.component.AryaAttribute;
-import tr.com.agem.component.GatewayComponentFactory;
-import tr.com.agem.component.base.AryaGatewayMain;
+import tr.com.agem.arya.component.AryaAttribute;
+import tr.com.agem.arya.component.GatewayComponentFactory;
+import tr.com.agem.arya.component.base.AryaGatewayMain;
 import tr.com.agem.core.interpreter.IAryaComponent;
 
 public class AryaGatewayMetadataParser extends DefaultHandler {

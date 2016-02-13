@@ -1,4 +1,4 @@
-package tr.com.agem.controller;
+package tr.com.agem.arya.controller;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -22,7 +22,7 @@ import tr.com.agem.core.adaptor.AryaApplicationAdaptor;
 import tr.com.agem.core.adaptor.IAryaAdaptorResponse;
 import tr.com.agem.core.gateway.model.AryaRequest;
 import tr.com.agem.core.gateway.model.AryaResponse;
-import tr.com.agem.core.gateway.model.IAryaIntercepter;
+import tr.com.agem.core.gateway.model.AryaIntercepterFactory;
 import tr.com.agem.core.gateway.model.RequestTypes;
 import tr.com.agem.core.metadata.IMetadataEngine;
 import tr.com.agem.core.metadata.exception.AryaMetadataNotFoundException;
@@ -44,7 +44,10 @@ public class AryaGateway {
 	IMetadataEngine metadataEngine;
 	
 	@Autowired
-	IAryaIntercepter intercepter;
+	AryaIntercepterFactory requestIntercepterFactory;
+
+	@Autowired
+	AryaIntercepterFactory responseIntercepterFactory;
 
 	/**
 	 * All requests are handled in this method.
@@ -62,6 +65,13 @@ public class AryaGateway {
 		
 		IMetadata metadata = null;
 		AryaResponse resp = new AryaResponse();
+		
+		//apply request intercepters if any
+		if (requestIntercepterFactory != null && requestIntercepterFactory.getIntercepters() != null) {
+			for (int i=0; i < requestIntercepterFactory.getIntercepters().length; i++) {
+				resp= requestIntercepterFactory.getIntercepters()[i].intercept(applicationName, null, resp, request, response);
+			}
+		}
 		
 		logger.log(Level.INFO, "Application: {0}", applicationName);
 		logger.log(Level.INFO, "AryaRequest: {0}", aryaRequest.toJSON());
@@ -94,11 +104,15 @@ public class AryaGateway {
 
 		if (metadata != null) {
 			resp.setView(metadata.getMetadata());
-			
-			//to get data from session
-			resp = intercepter.setAttributeData(applicationName, metadata, resp, request);
 		}
 		
+		//apply response intercepters if any			
+		if (responseIntercepterFactory != null && responseIntercepterFactory.getIntercepters() != null) {
+			for (int i=0; i < responseIntercepterFactory.getIntercepters().length; i++) {
+				resp = responseIntercepterFactory.getIntercepters()[i].intercept(applicationName, metadata, resp, request, response);
+			}
+		}
+
 		String respStr = resp.toString();
 
 		logger.log(Level.INFO, "AryaResponse: {0}", respStr);
@@ -109,11 +123,14 @@ public class AryaGateway {
 	@ExceptionHandler(value = Exception.class)
 	public void defaultErrorHandler(HttpServletResponse response, Exception e)
 			throws Exception {
+		
 		logger.log(Level.SEVERE, e.getMessage(), e);
+		
 		// If the exception is annotated with @ResponseStatus, rethrow it and
 		// let the framework handle it
 		if (AnnotationUtils.findAnnotation(e.getClass(), ResponseStatus.class) != null)
 			throw e;
+		
 		// Otherwise setup and send the interpreter an exception message.
 		response.sendError(HttpStatus.INTERNAL_SERVER_ERROR.value(), e.getLocalizedMessage());
 	}

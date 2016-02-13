@@ -1,4 +1,4 @@
-package tr.com.agem.filter;
+package tr.com.agem.arya.filter;
 
 import java.io.IOException;
 

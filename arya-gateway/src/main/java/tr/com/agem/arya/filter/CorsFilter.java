@@ -1,4 +1,4 @@
-package tr.com.agem.filter;
+package tr.com.agem.arya.filter;
 
 import java.io.IOException;
 
@@ -24,5 +24,4 @@ public class CorsFilter extends OncePerRequestFilter {
 		((HttpServletResponse) response).addHeader("Access-Control-Max-Age", "1800");
 		filterChain.doFilter(request, response);
 	}
-
 }

@@ -1,4 +1,4 @@
-package tr.com.agem.filter;
+package tr.com.agem.arya.filter;
 
 import java.io.IOException;
 import java.util.logging.Level;
@@ -13,12 +13,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
+import tr.com.agem.arya.filter.utils.LoginRequestWrapper;
 import tr.com.agem.core.adaptor.IAryaAdaptor;
 import tr.com.agem.core.gateway.model.AryaRequest;
 import tr.com.agem.core.gateway.model.RequestTypes;
-import tr.com.agem.filter.utils.LoginRequestWrapper;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class LoginFilter extends OncePerRequestFilter {
 
