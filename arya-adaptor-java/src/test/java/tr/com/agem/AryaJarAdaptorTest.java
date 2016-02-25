@@ -16,12 +16,12 @@ import org.springframework.test.context.transaction.TransactionalTestExecutionLi
 import org.springframework.transaction.annotation.Transactional;
 
 import junit.framework.TestCase;
+import tr.com.agem.arya.adaptor.AryaJarAdaptor;
+import tr.com.agem.arya.mapper.AryaJarMapper;
 import tr.com.agem.core.adaptor.IAryaAdaptorResponse;
 import tr.com.agem.core.gateway.model.AryaRequest;
 import tr.com.agem.core.gateway.model.RequestTypes;
 import tr.com.agem.core.metadata.exception.AryaLoginFailedException;
-import tr.com.agem.java.adaptor.AryaJarAdaptor;
-import tr.com.agem.java.mapper.AryaJarMapper;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @TestExecutionListeners({ TransactionalTestExecutionListener.class, DependencyInjectionTestExecutionListener.class })

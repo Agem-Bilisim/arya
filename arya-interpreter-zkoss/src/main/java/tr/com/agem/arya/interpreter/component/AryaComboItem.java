@@ -5,7 +5,7 @@ import org.zkoss.zk.ui.Component;
 import org.zkoss.zul.Comboitem;
 
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
-import tr.com.agem.core.interpreter.IAryaComponent;
+import tr.com.agem.arya.metadata.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
 
 public class AryaComboItem extends Comboitem implements IAryaComponent {

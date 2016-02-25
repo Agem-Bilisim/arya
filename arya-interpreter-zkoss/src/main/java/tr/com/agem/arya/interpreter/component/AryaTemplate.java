@@ -4,8 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.xml.sax.Attributes;
+
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
-import tr.com.agem.core.interpreter.IAryaComponent;
+import tr.com.agem.arya.metadata.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
 
 public class AryaTemplate implements IAryaComponent{

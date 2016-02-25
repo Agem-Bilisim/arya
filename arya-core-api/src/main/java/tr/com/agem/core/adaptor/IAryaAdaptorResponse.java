@@ -1,6 +1,8 @@
 package tr.com.agem.core.adaptor;
 
-public interface IAryaAdaptorResponse {
+
+public interface IAryaAdaptorResponse 
+{
 	String getViewName();
 	String getData();
 }

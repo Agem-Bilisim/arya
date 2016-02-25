@@ -11,7 +11,7 @@ import org.zkoss.zul.Tabpanel;
 
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.script.ScriptHelper;
-import tr.com.agem.core.interpreter.IAryaComponent;
+import tr.com.agem.arya.metadata.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
 
 public class AryaTabpanel extends Tabpanel implements IAryaComponent {

@@ -8,7 +8,7 @@ import org.zkoss.zul.Div;
 import org.zkoss.zul.Include;
 import org.zkoss.zul.Label;
 
-import tr.com.agem.core.interpreter.IAryaComponent;
+import tr.com.agem.arya.metadata.interpreter.IAryaComponent;
 
 public class AryaMain {
 

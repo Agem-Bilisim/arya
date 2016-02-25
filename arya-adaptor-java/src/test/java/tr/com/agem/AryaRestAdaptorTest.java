@@ -8,12 +8,12 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 import junit.framework.TestCase;
+import tr.com.agem.arya.adaptor.AryaRestAdaptor;
+import tr.com.agem.arya.converter.AryaRestConverter;
+import tr.com.agem.arya.mapper.AryaRestMapper;
 import tr.com.agem.core.adaptor.IAryaAdaptorResponse;
 import tr.com.agem.core.gateway.model.AryaRequest;
 import tr.com.agem.core.gateway.model.RequestTypes;
-import tr.com.agem.java.adaptor.AryaRestAdaptor;
-import tr.com.agem.java.converter.AryaRestConverter;
-import tr.com.agem.java.mapper.AryaRestMapper;
 
 @RunWith(JUnit4.class)
 public class AryaRestAdaptorTest extends TestCase {

@@ -92,6 +92,10 @@
 		</dependency>
 		<dependency>
 			<groupId>tr.com.agem</groupId>
+			<artifactId>arya-metadata-engine</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>tr.com.agem</groupId>
 			<artifactId>arya-core-api</artifactId>
 		</dependency>
 		<dependency>

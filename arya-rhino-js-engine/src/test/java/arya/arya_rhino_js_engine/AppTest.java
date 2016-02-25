@@ -35,4 +35,17 @@ public class AppTest
     {
         assertTrue( true );
     }
+    
+	public static void main(String[] args) {
+
+		String script=
+				"		a = function() {print(javaFunction1('a'));};"
+				+ "		b = function() {print(javaFunction1('b'));};"
+				+ " a();";
+		
+		JsEngineUtil r = new JsEngineUtil();
+		r.jsRun(script);
+	}
+    
+    
 }

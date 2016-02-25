@@ -29,7 +29,7 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 				</template>
 			</listbox>
 			<button id="grafik" label="Grafik çiz." position="1/3" newLine="true"
-						onClick="grafik_ciz()" />
+						onClick="drawGraph()" />
 			<chart id="flashchart" type="column" />
 		</vlayout>
 	</window>
@@ -45,7 +45,7 @@ xsi:schemaLocation="aryaportal.org arya.xsd">
 			send('genel.isci.list', 'ALL','genel.isci.list', '', 'İşçi Listesi');
 		}
 		
-		grafik_ciz = function() {
+		drawGraph = function() {
 			setChartModel('flashchart');
 			setChartValue('flashchart', '20 - 30 yaş', '1 yıl', 206);
 			setChartValue('flashchart', '40 - 50 yaş', '1 yıl', 50);

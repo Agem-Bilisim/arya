@@ -26,7 +26,7 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 
-	<bean id="metadataEngine" class="tr.com.agem.metadata.impl.MetadataEngineImpl">
+	<bean id="metadataEngine" class="tr.com.agem.arya.metadata.impl.MetadataEngineImpl">
 		<property name="persistence" ref="aryaPersistence" />
 	</bean>
 
@@ -50,7 +50,7 @@
 	<bean id="responseIntercepters" class="java.util.ArrayList">
 		<constructor-arg>
 			<list>
-				<bean id="attributeBindingIntercepter" class="tr.com.agem.arya.intercepter.AryaResponseAttributeIntercepter" />
+				<bean id="attributeBindingIntercepter" class="tr.com.agem.arya.metadata.intercepter.AryaResponseAttributeIntercepter" />
 			</list>
 		</constructor-arg>
 	</bean>

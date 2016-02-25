@@ -9,17 +9,6 @@ import tr.comagem.arya.element.ElementFunctions;
 
 public class JsEngineUtil {
 
-	public static void main(String[] args) {
-
-		String script=
-				"		a = function() {print(javaFunction1('a'));};"
-				+ "		b = function() {print(javaFunction1('b'));};"
-				+ " a();";
-		
-		JsEngineUtil r = new JsEngineUtil();
-		r.jsRun(script);
-	}
-
 	private void jsRun(String script) {
 
 		try {
@@ -35,8 +24,6 @@ public class JsEngineUtil {
             @SuppressWarnings("unused")
 			Object result = context.evaluateString(scope, script, "<rule>", 1, null);
 
-            //System.out.println(result.toString());
-            //System.out.println(Context.toString(result));
 		} finally {
 			Context.exit();
 		}

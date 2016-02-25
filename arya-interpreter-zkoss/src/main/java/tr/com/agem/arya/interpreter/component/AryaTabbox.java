@@ -8,8 +8,8 @@ import org.zkoss.zul.Tabbox;
 
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.script.ScriptHelper;
-import tr.com.agem.core.interpreter.IAryaComponent;
-import tr.com.agem.core.interpreter.IAryaTemplate;
+import tr.com.agem.arya.metadata.interpreter.IAryaComponent;
+import tr.com.agem.arya.metadata.interpreter.IAryaTemplate;
 import tr.com.agem.core.utils.AryaUtils;
 
 public class AryaTabbox extends Tabbox implements IAryaComponent, IAryaTemplate {

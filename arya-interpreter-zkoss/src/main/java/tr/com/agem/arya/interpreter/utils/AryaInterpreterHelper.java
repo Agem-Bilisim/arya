@@ -35,10 +35,6 @@ import org.zkoss.zul.Listbox;
 import org.zkoss.zul.Radiogroup;
 import org.zkoss.zul.impl.InputElement;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import tr.com.agem.arya.interpreter.command.AryaFill;
 import tr.com.agem.arya.interpreter.component.AryaAuxHead;
 import tr.com.agem.arya.interpreter.component.AryaComboItem;
@@ -61,11 +57,15 @@ import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.parser.AryaMetadataParser;
 import tr.com.agem.arya.interpreter.parser.AryaParserAttributes;
 import tr.com.agem.arya.interpreter.script.ElementFunctions;
+import tr.com.agem.arya.metadata.interpreter.IAryaComponent;
+import tr.com.agem.arya.metadata.interpreter.IAryaTemplate;
 import tr.com.agem.core.gateway.model.AryaRequest;
 import tr.com.agem.core.gateway.model.AryaResponse;
-import tr.com.agem.core.interpreter.IAryaComponent;
-import tr.com.agem.core.interpreter.IAryaTemplate;
 import tr.com.agem.core.utils.AryaUtils;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class AryaInterpreterHelper {
 
@@ -315,13 +315,7 @@ public class AryaInterpreterHelper {
 			JSONArray jsonArray = getJSONArray(data);
 			String message = "";
 			if (jsonArray.length() > 1) {
-//					if (getJSONArray(data).length() > 0) 
-//						message=getJSONArray(data).length()+" adet kayıt bulundu."; 
-//					else
-//						message="Hiçbir kayıt bulunamadı.";
-					
-					populateAryaTemplate(main, (IAryaTemplate) getElementById(action, main), jsonArray);
-				
+				populateAryaTemplate(main, (IAryaTemplate) getElementById(action, main), jsonArray);
 			} 
 			else  if (jsonArray.length() == 1){
 				JSONObject jsonObj = jsonArray.getJSONObject(0);

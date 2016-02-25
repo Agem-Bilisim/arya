@@ -5,7 +5,8 @@ import javax.sql.DataSource;
 import tr.com.agem.core.gateway.model.IAryaRequest;
 import tr.com.agem.core.gateway.model.RequestTypes;
 
-public abstract class AryaApplicationAdaptor implements IAryaAdaptor {
+public abstract class AryaApplicationAdaptor implements IAryaAdaptor 
+{
 
 	private IAryaMapper mapper;
 	private IAryaConverter converter;

@@ -1,9 +1,10 @@
 package tr.com.agem.arya.interpreter.command;
 
 import org.xml.sax.Attributes;
+
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
-import tr.com.agem.core.interpreter.IAryaCommand;
-import tr.com.agem.core.interpreter.IAryaComponent;
+import tr.com.agem.arya.metadata.interpreter.IAryaCommand;
+import tr.com.agem.arya.metadata.interpreter.IAryaComponent;
 import tr.com.agem.core.utils.AryaUtils;
 
 public class AryaFill implements IAryaCommand, IAryaComponent {

@@ -5,9 +5,9 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 import junit.framework.TestCase;
+import tr.com.agem.arya.mapper.AryaRestMappedRequest;
+import tr.com.agem.arya.mapper.AryaRestMapper;
 import tr.com.agem.core.property.reader.PropertyReader;
-import tr.com.agem.java.mapper.AryaRestMappedRequest;
-import tr.com.agem.java.mapper.AryaRestMapper;
 
 @RunWith(JUnit4.class)
 public class AryaRestMapperTest extends TestCase {

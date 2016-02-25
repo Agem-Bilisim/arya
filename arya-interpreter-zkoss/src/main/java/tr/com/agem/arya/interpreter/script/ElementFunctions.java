@@ -23,12 +23,7 @@ import org.zkoss.zul.ChartModel;
 import org.zkoss.zul.Listbox;
 import org.zkoss.zul.SimpleCategoryModel;
 import org.zkoss.zul.SimplePieModel;
-import org.zkoss.zul.SimpleXYModel;
 import org.zkoss.zul.Tab;
-
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import tr.com.agem.arya.interpreter.component.AryaFlashchart;
 import tr.com.agem.arya.interpreter.component.AryaListbox;
@@ -39,10 +34,14 @@ import tr.com.agem.arya.interpreter.components.base.AryaMain;
 import tr.com.agem.arya.interpreter.utils.AryaException;
 import tr.com.agem.arya.interpreter.utils.AryaInterpreterHelper;
 import tr.com.agem.arya.interpreter.utils.BaseController;
+import tr.com.agem.arya.metadata.interpreter.IAryaComponent;
 import tr.com.agem.core.gateway.model.AryaResponse;
-import tr.com.agem.core.interpreter.IAryaComponent;
 import tr.com.agem.core.property.reader.PropertyReader;
 import tr.com.agem.core.utils.AryaUtils;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class ElementFunctions extends AnnotatedScriptableObject {
 
@@ -89,7 +88,7 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 	@AryaJsFunction
 	public void post(String action, String requestType, Object params, String tabValue, NativeFunction onSuccess, NativeFunction onFailure) {//debug dan geçirmek gerek(volkan)
 
-		// bazı sayfalar için javascript kullanılmadığından
+		// no javascript is used in some pages
 		if(!(params instanceof String)) {
 			Object jsonParam = NativeJSON.stringify(context, scope, params, null, null);
 			params = jsonParam;
@@ -115,7 +114,7 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 			
 			AryaInterpreterHelper.interpretResponse(response, action, main, BaseController.getTabs(), BaseController.getTabpanels(), tabValue);
 			
-			// Kullanıcı login olmuşsa
+			// if the user has logged in
 			if(requestType.equals("LOGIN") && AryaUtils.isNotEmpty(response.getData())) {
 				
 				BaseController.getMain().getMenuContainer().setVisible(true);
@@ -168,8 +167,9 @@ public class ElementFunctions extends AnnotatedScriptableObject {
 		}
 	}
 	
+	//for two listbox at same page
 	@AryaJsFunction
-	public void renderAtSamePage (String elementId, String id, String action, String tabValue) {  //for two listbox at same page
+	public void renderAtSamePage (String elementId, String id, String action, String tabValue) {  
 		
 		JSONObject jsonObj = null;
 		
