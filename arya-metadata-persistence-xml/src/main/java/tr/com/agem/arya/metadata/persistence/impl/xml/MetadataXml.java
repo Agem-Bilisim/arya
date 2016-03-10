@@ -9,10 +9,8 @@ public class MetadataXml implements IMetadata {
 
 	private String applicationName;
 
-	private String formName;
+	private String viewName;
 
-	private MetadataTypes metadataType;
-	
 	private String metadata;
 
 	public Long getId() {
@@ -31,20 +29,12 @@ public class MetadataXml implements IMetadata {
 		this.applicationName = applicationName;
 	}
 
-	public String getFormName() {
-		return formName;
+	public String getViewName() {
+		return viewName;
 	}
 
-	public void setFormName(String formName) {
-		this.formName = formName;
-	}
-
-	public MetadataTypes getMetadataType() {
-		return metadataType;
-	}
-
-	public void setMetadataType(MetadataTypes metadataType) {
-		this.metadataType = metadataType;
+	public void setViewName(String viewName) {
+		this.viewName = viewName;
 	}
 
 	public String getMetadata() {
@@ -53,6 +43,11 @@ public class MetadataXml implements IMetadata {
 
 	public void setMetadata(String metadata) {
 		this.metadata = metadata;
+	}
+
+	@Override
+	public MetadataTypes getMetadataType() {
+		return MetadataTypes.XML;
 	}
 
 }

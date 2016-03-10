@@ -91,7 +91,7 @@ public class AryaInterpreterHelper {
 
 			httpPost.setEntity(se);
 			HttpResponse response = httpClient.execute(httpPost);
-			// TODO AryaLoginFailedException reason ı göster
+			// TODO AryaLoginFailedException reason show the reason
 			System.out.println(response.getStatusLine().getStatusCode() + "-"
 					+ response.getStatusLine().getReasonPhrase() + "-" + response.getStatusLine().getStatusCode());
 
@@ -112,10 +112,8 @@ public class AryaInterpreterHelper {
 
 	public static void interpretResponse(AryaResponse response, String action, AryaMain main, AryaTabs tabs, AryaTabpanels tabpanels, String tabValue) {
 		
-		if (AryaUtils.isNotEmpty(response.getView())) {// Remove previous
-														// components before
-														// adding new ones!
-
+		if (AryaUtils.isNotEmpty(response.getView())) {
+			// Remove previous components before adding new ones!
 			AryaTab tab = getCurrentTab(tabs, tabValue);
 			if (tab != null) {
 				AryaTabpanel panel = tab.getTabPanel();

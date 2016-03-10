@@ -4,11 +4,11 @@ import java.util.List;
 
 public interface IBaseDao<T> {
 	
-	T save(T o);
-	void delete(Object id);
-	T find(Object id);
-	T update(T t);
+	T save(String appName, T o);
+	void delete(String appName, Object id);
+	T find(String appName, Object id);
+	T find(String appName, String viewName);
+	T update(String appName, T t);
 	
-	List<? extends T> findAll(Class<? extends T> obj);
-	T findWithName(String appName, String viewName);
+	List<? extends T> findAll(String appName, Class<? extends T> obj);
 }

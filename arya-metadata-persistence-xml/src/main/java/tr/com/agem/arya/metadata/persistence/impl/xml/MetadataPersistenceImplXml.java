@@ -12,10 +12,7 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import tr.com.agem.core.metadata.model.IMetadata;
-import tr.com.agem.core.metadata.model.MetadataTypes;
 import tr.com.agem.core.metadata.persistence.IMetadataPersistence;
 import tr.com.agem.core.property.reader.PropertyReader;
 import tr.com.agem.core.utils.AryaUtils;
@@ -25,27 +22,23 @@ public class MetadataPersistenceImplXml implements IMetadataPersistence {
 	private static final Logger logger = Logger.getLogger(MetadataPersistenceImplXml.class.getName());
 
 	@Override
-	public void saveMetadata(IMetadata metadata) {
-		// TODO Auto-generated method stub
+	public void saveMetadata(String appName, IMetadata metadata) {
 	}
 
 	@Override
-	public IMetadata findMetadata(Long metadataId) {
-		// TODO Auto-generated method stub
+	public IMetadata findMetadata(String appName, Long metadataId) {
 		return null;
 	}
 
 	@Override
-	public void updateMetadata(IMetadata metadata) {
-		// TODO Auto-generated method stub
+	public void updateMetadata(String appName, IMetadata metadata) {
 	}
 
 	@Override
-	public void deleteMetadata(Long metadataId) {
-		// TODO Auto-generated method stub
+	public void deleteMetadata(String appName, Long metadataId) {
 	}
 
-	private IMetadata findWithName(String appName, String viewName) {
+	public IMetadata findMetadata(String appName, String viewName) {
 		
 		String xmlFilePath = findXMLFilePath(appName, viewName);
 
@@ -69,8 +62,7 @@ public class MetadataPersistenceImplXml implements IMetadataPersistence {
 
 			MetadataXml metadata = new MetadataXml();
 			metadata.setApplicationName(appName);
-			metadata.setFormName(viewName);
-			metadata.setMetadataType(MetadataTypes.XML);
+			metadata.setViewName(viewName);
 			metadata.setMetadata(metadataStr.toString());
 
 			reader.close();
@@ -103,23 +95,6 @@ public class MetadataPersistenceImplXml implements IMetadataPersistence {
 		String d[] = tmp.split("\\.");
 		String path = AryaUtils.join(File.separator, d);
 		return appName + File.separator + path + "." + PropertyReader.property("metadata.file.extension");
-	}
-
-	@Override
-	public IMetadata findWithNameAsXML(String appName, String viewName) {
-		return findWithName(appName, viewName);
-	}
-
-	@Override
-	public IMetadata findWithNameAsJSON(String appName, String viewName) {
-		MetadataXml metadata = (MetadataXml) findWithName(appName, viewName);
-		metadata.setMetadataType(MetadataTypes.JSON);
-		try {
-			metadata.setMetadata(new ObjectMapper().writeValueAsString(metadata.getMetadata()));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return metadata;
 	}
 
 }

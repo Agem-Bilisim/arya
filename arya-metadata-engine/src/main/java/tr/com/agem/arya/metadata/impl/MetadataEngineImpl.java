@@ -15,21 +15,17 @@ public class MetadataEngineImpl implements IMetadataEngine {
 		this.persistence = persistence;
 	}
 
-	public void saveMetadata(IMetadata metadata) {
-		persistence.saveMetadata(metadata);
+	public void saveMetadata(String applicationName, IMetadata metadata) {
+		persistence.saveMetadata(applicationName, metadata);
 	}
 
-	public IMetadata findWithNameAsXML(String appName, String viewName) {
-		return persistence.findWithNameAsXML(appName, viewName);
-	}
-
-	public IMetadata findWithNameAsJSON(String appName, String viewName) {
-		return persistence.findWithNameAsJSON(appName, viewName);
+	public IMetadata findMetadata(String applicationName, String viewName) {
+		return persistence.findMetadata(applicationName, viewName);
 	}
 
 	@Override
 	public IMetadata findMetadata(String applicationName, Long metadataId) {
-		return persistence.findMetadata(metadataId);
+		return persistence.findMetadata(applicationName, metadataId);
 	}
 
 	@Override

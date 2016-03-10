@@ -9,13 +9,10 @@ public interface IMetadataEngine {
 	
 	IMetadata findMetadata(String applicationName, Long metaDataId);
 	
-	void saveMetadata(IMetadata metaData); // TODO ??
+	IMetadata findMetadata(String applicationName, String viewName);
 
-	IMetadata findWithNameAsXML(String applicationName, String viewName);
-
-	IMetadata findWithNameAsJSON(String applicationName, String viewName);
+	void saveMetadata(String applicationName, IMetadata metaData); 
 
 	List<String> getAttributes(IMetadata metaData);
-	
 	void setAttributes(IMetadata metadata, List<Collection<?>> attributes);
 }

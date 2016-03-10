@@ -79,7 +79,7 @@ public class AryaGateway {
 		// if request asks only for the view, return <view> and <script> metadata
 		if (RequestTypes.VIEW_ONLY.equals(aryaRequest.getRequestType())) {
 			try {
-				metadata = metadataEngine.findWithNameAsXML(applicationName, aryaRequest.getAction());
+				metadata = metadataEngine.findMetadata(applicationName, aryaRequest.getAction());
 			} catch (Exception e) {
 				logger.log(Level.SEVERE, e.toString(), e);
 				throw new AryaMetadataNotFoundException();
@@ -92,12 +92,12 @@ public class AryaGateway {
 			// the view for response
 			if (adaptorResponse != null) {
 				if (adaptorResponse.getViewName() != null && RequestTypes.ALL.equals(aryaRequest.getRequestType())) {
-					metadata = metadataEngine.findWithNameAsXML(applicationName, adaptorResponse.getViewName());
+					metadata = metadataEngine.findMetadata(applicationName, adaptorResponse.getViewName());
 				}
 				resp.setData(adaptorResponse.getData());
 			} else {
 				if (RequestTypes.NAVBAR.equals(aryaRequest.getRequestType())) {
-					metadata = metadataEngine.findWithNameAsXML(applicationName, aryaRequest.getAction());
+					metadata = metadataEngine.findMetadata(applicationName, aryaRequest.getAction());
 				}
 			}
 		}
