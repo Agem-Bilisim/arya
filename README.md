@@ -1,38 +1,22 @@
-# Arya is a cross-platform application development and migration platform
+# Arya [![Build Status](https://travis-ci.org/Agem-Bilisim/arya.svg?branch=master)](https://travis-ci.org/Agem-Bilisim/arya)
 
-## Overview
+Arya is a cross-platform application development and migration platform.
 
 ## Prerequisites
 
-### JDK7
+**JDK7**
 
 - Download and install [JDK7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)
 
-### Git
+**Git**
 
 - Documentation about installing and configuring git can be found [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [here](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)
 - Git [home](http://git-scm.com/) (download, docs)
 
-### Maven 3
+**Maven 3**
 
-#### Manual Installation
 - Get [Maven 3](http://maven.apache.org/install.html) (Specifically, at least **version 3.1.1** is needed to use static code analyzers and maven-android plugin!). Maven version can be checked with `mvn -v`
 - Maven [home](https://maven.apache.org/) (download, docs)
-
-#### Via External Repository 
-
- - [Maven3 **version 3.3.3-001**](https://launchpad.net/~andrei-pozolotin/+archive/ubuntu/maven3)
- 
-`sudo apt-get purge maven maven2 maven3 `
-
-`sudo apt-add-repository ppa:andrei-pozolotin/maven3`
-
-`sudo apt-get update`
-
-`sudo apt-get install maven3`
-
-
-
 
 ## Building From Source
 
@@ -52,19 +36,6 @@ Run the following command to pull the latest application `git pull origin master
 2. Modify `config.properties` file as you wish. At least, output files directory and reference project name must be defined.
 3. Run `tr.com.agem.arya.metadata.generator.Main.java`!
 
-## Testing
-
-TODO...
-
-## Static Analyzers
-
-We also use checkstyle and findbugs plugins to do static analyzing on the changes. Run the following commands to analyze your code to check if it is compatible.
-
-`mvn clean compile -P findbugs`
-
-`mvn clean validate -P checkstyle`
-
-
 ## Arya Modules
 
 - **arya-core-api** contains core functionalities and interfaces for all modules.
@@ -75,9 +46,6 @@ We also use checkstyle and findbugs plugins to do static analyzing on the change
 - **arya-metadata-persistence-xml** provides filesystem implementation of metadata engine.
 - **arya-metadata-engine** handles metadata operations.
 - **arya-metadata-generator** automatically generates metadata `*.arya` files from AgemUtils projects (such as Asya, RCOP etc.) using `*.jsp` files and their corresponding `*Form.java` classes.
-- **[arya-interpreter-android](arya-interpreter-android/README.md)** is the Android implementation of interpreter.
-- **[arya-interpreter-angularjs](arya-interpreter-angularjs/README.md)** is the AngularJS implementation of interpreter.
-- **arya-interpreter-zkoss** is the Zkoss implementation of interpreter.
 - **repo** is the in-project local repository for reference projects (such as asya.jar, agemutils.jar). Adaptor modules get its dependencies from this folder when it needs to operato on a reference project.
 - **scripts** contains helper scripts such as installing a jar file into `repo` folder or updating local repository.
 
