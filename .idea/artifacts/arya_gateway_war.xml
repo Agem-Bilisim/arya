@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="arya-gateway:war">
-    <output-path>$PROJECT_DIR$/arya-gateway/target</output-path>
-    <root id="archive" name="arya.war">
-      <element id="artifact" artifact-name="arya-gateway:war exploded" />
-    </root>
-  </artifact>
-</component>
