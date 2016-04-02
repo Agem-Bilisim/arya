@@ -1,4 +1,4 @@
-# Arya [![Build Status](https://travis-ci.org/Agem-Bilisim/arya.svg?branch=master)](https://travis-ci.org/Agem-Bilisim/arya)
+# Arya [![Build Status](https://travis-ci.org/Agem-Bilisim/arya.svg?branch=master)](https://travis-ci.org/Agem-Bilisim/arya) [![Coverity Scab Build Status](https://scan.coverity.com/projects/8429/badge.svg)](https://scan.coverity.com/projects/8429)
 
 Arya is a cross-platform application development and migration platform.
 
