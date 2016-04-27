@@ -3,6 +3,8 @@ package tr.com.agem.core.gateway.model;
 import java.io.Serializable;
 import java.util.Map;
 
+import tr.com.agem.core.utils.AryaUtils;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class AryaRequest implements IAryaRequest, Serializable {
@@ -46,7 +48,7 @@ public class AryaRequest implements IAryaRequest, Serializable {
 		try {
 			return mapper.writeValueAsString(this);
 		} catch (Exception e) {
-			e.printStackTrace();
+			AryaUtils.logException(null,e);
 			throw new RuntimeException(e);
 		}
 	}

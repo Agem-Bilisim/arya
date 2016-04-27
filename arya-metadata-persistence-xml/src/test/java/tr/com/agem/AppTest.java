@@ -17,6 +17,7 @@ import tr.com.agem.arya.metadata.arya.impl.ObjectFactory;
 import tr.com.agem.arya.metadata.arya.impl.WindowType;
 import tr.com.agem.arya.metadata.persistence.impl.xml.MetadataPersistenceImplXml;
 import tr.com.agem.arya.metadata.persistence.impl.xml.MetadataXml;
+import tr.com.agem.core.utils.AryaUtils;
 
 /**
  * Unit test for simple App.
@@ -91,7 +92,7 @@ public class AppTest extends TestCase {
 
 			}
 		} catch (JAXBException e) {
-			e.printStackTrace();
+			AryaUtils.logException(null,e);
 		}
 
 		assertTrue(true);

@@ -72,9 +72,9 @@ public class MetadataPersistenceImplXml implements IMetadataPersistence {
 			return metadata;
 
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+			AryaUtils.logException(null,e);
 		} catch (IOException e) {
-			e.printStackTrace();
+			AryaUtils.logException(null,e);
 		}
 
 		return null;

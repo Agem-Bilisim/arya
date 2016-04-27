@@ -8,6 +8,8 @@ import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import tr.com.agem.core.utils.AryaUtils;
+
 public class PropertyReader {
 	
 	private static final Logger logger = Logger.getLogger(PropertyReader.class.getName());
@@ -40,7 +42,7 @@ public class PropertyReader {
 
 		} catch (IOException e) {
 			logger.log(Level.SEVERE, e.toString(), e);
-			e.printStackTrace();
+			AryaUtils.logException(null,e);
 		}
 
 	}

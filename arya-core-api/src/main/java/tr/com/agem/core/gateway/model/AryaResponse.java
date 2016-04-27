@@ -8,6 +8,8 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 
+import tr.com.agem.core.utils.AryaUtils;
+
 /**
  * Arya response object for Arya interpreters
  *
@@ -77,7 +79,7 @@ public class AryaResponse implements IAryaResponse
 			this.attributes = nodeList.item(0).getTextContent();
 			
 		} catch (Exception e) {
-			e.printStackTrace();
+			AryaUtils.logException(null,e);
 			throw new RuntimeException(e.getMessage());
 		} 
 	}

@@ -3,6 +3,8 @@ package tr.com.agem.core.utils;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class AryaUtils {
 
@@ -107,7 +109,7 @@ public class AryaUtils {
 				i++;
 			}
 		} else if (separatorChars.length() == 1) {
-			// Optimise 1 character case
+			// Optimize 1 character case
 			final char sep = separatorChars.charAt(0);
 			while (i < len) {
 				if (str.charAt(i) == sep) {
@@ -202,6 +204,15 @@ public class AryaUtils {
 		int lastUnixPos = filename.lastIndexOf(UNIX_SEPARATOR);
 		int lastWindowsPos = filename.lastIndexOf(WINDOWS_SEPARATOR);
 		return Math.max(lastUnixPos, lastWindowsPos);
+	}
+	
+
+	public static void logException(Logger logger, Exception e) 
+	{
+		e.printStackTrace();
+		if (logger != null) {
+			logger.log(Level.SEVERE, e.getMessage());
+		}
 	}
 
 }

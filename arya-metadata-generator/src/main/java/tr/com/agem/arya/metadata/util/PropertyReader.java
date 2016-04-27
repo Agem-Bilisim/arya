@@ -8,6 +8,8 @@ import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import tr.com.agem.core.utils.AryaUtils;
+
 public class PropertyReader {
 
 	private static HashMap<String, String> PROPERTIES = null;
@@ -36,13 +38,13 @@ public class PropertyReader {
 			}
 		} catch (IOException e) {
 			logger.log(Level.SEVERE, "Properties dosyası yüklenemedi.", e);
-			e.printStackTrace();
+			AryaUtils.logException(null,e);
 		} finally {
 			if (inputStream != null) {
 				try {
 					inputStream.close();
 				} catch (IOException e) {
-					e.printStackTrace();
+					AryaUtils.logException(null,e);
 				}
 			}
 		}

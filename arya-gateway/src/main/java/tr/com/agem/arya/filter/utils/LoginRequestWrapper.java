@@ -10,6 +10,8 @@ import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletRequestWrapper;
 
+import tr.com.agem.core.utils.AryaUtils;
+
 public class LoginRequestWrapper extends HttpServletRequestWrapper {
 
 	private final String requestBody;
@@ -37,7 +39,7 @@ public class LoginRequestWrapper extends HttpServletRequestWrapper {
 				stringBuilder.append("");
 			}
 		} catch (IOException e) {
-			e.printStackTrace();
+			AryaUtils.logException(null,e);
 		} finally {
 			if (bufferedReader != null) {
 				try {

@@ -17,6 +17,7 @@ import tr.com.agem.core.adaptor.IAryaAdaptorResponse;
 import tr.com.agem.core.context.AttributeScope;
 import tr.com.agem.core.gateway.model.IAryaRequest;
 import tr.com.agem.core.metadata.exception.AryaAdaptorReqFailedException;
+import tr.com.agem.core.utils.AryaUtils;
 
 public class AryaRestAdaptor extends AryaApplicationAdaptor {
 
@@ -71,15 +72,15 @@ public class AryaRestAdaptor extends AryaApplicationAdaptor {
 			return response;
 
 		} catch (MalformedURLException e) {
-			e.printStackTrace();
+			AryaUtils.logException(null,e);
 		} catch (IOException e) {
-			e.printStackTrace();
+			AryaUtils.logException(null,e);
 		} finally {
 			if (br != null) {
 				try {
 					br.close();
 				} catch (IOException e) {
-					e.printStackTrace();
+					AryaUtils.logException(null,e);
 				}
 			}
 		}

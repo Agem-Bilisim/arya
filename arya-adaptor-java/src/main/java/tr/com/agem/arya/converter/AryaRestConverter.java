@@ -1,8 +1,9 @@
 package tr.com.agem.arya.converter;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import tr.com.agem.core.adaptor.IAryaConverter;
+import tr.com.agem.core.utils.AryaUtils;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class AryaRestConverter implements IAryaConverter {
 
@@ -12,7 +13,7 @@ public class AryaRestConverter implements IAryaConverter {
 		try {
 			return mapper.writeValueAsString(params);
 		} catch (Exception e) {
-			e.printStackTrace();
+			AryaUtils.logException(null,e);
 			throw new RuntimeException(e);
 		}
 	}

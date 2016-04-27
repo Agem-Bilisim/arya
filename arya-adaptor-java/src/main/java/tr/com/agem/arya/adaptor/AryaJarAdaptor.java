@@ -130,7 +130,7 @@ public class AryaJarAdaptor extends AryaApplicationAdaptor {
 				| SecurityException | IllegalArgumentException | InvocationTargetException e1) {
 			e1.printStackTrace();
 		} catch (Exception e) {
-			e.printStackTrace();
+			AryaUtils.logException(null,e);
 		}
 
 		return null;
@@ -266,7 +266,7 @@ public class AryaJarAdaptor extends AryaApplicationAdaptor {
 					try {
 						return getDataSource().getConnection();
 					} catch (SQLException e) {
-						e.printStackTrace();
+						AryaUtils.logException(null,e);
 					}
 					return null;
 				}

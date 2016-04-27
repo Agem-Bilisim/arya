@@ -2,7 +2,18 @@ package tr.com.agem.arya.metadata.xml;
 
 import java.util.HashMap;
 
-import tr.com.agem.arya.metadata.elements.*;
+import tr.com.agem.arya.metadata.elements.XMLAutocompleteElement;
+import tr.com.agem.arya.metadata.elements.XMLButtonElement;
+import tr.com.agem.arya.metadata.elements.XMLCheckboxElement;
+import tr.com.agem.arya.metadata.elements.XMLDateElement;
+import tr.com.agem.arya.metadata.elements.XMLDoubleElement;
+import tr.com.agem.arya.metadata.elements.XMLHiddenElement;
+import tr.com.agem.arya.metadata.elements.XMLIntegerElement;
+import tr.com.agem.arya.metadata.elements.XMLLabelElement;
+import tr.com.agem.arya.metadata.elements.XMLPasswordElement;
+import tr.com.agem.arya.metadata.elements.XMLSelectElement;
+import tr.com.agem.arya.metadata.elements.XMLTextElement;
+import tr.com.agem.arya.metadata.elements.XMLTextareaElement;
 import tr.com.agem.tag.anotations.InputTypeEnum;
 
 public class XMLElementFactory {

@@ -21,6 +21,7 @@ import tr.com.agem.arya.metadata.parser.AryaGatewayMetadataParser;
 import tr.com.agem.core.gateway.model.AryaResponse;
 import tr.com.agem.core.gateway.model.IAryaIntercepter;
 import tr.com.agem.core.metadata.model.IMetadata;
+import tr.com.agem.core.utils.AryaUtils;
 
 public class AryaResponseAttributeIntercepter implements IAryaIntercepter {
 
@@ -41,11 +42,11 @@ public class AryaResponseAttributeIntercepter implements IAryaIntercepter {
 			parser = saxParserFactory.newSAXParser();
 			parser.parse(new InputSource(new StringReader(metadata.getMetadata())), new AryaGatewayMetadataParser(main));
 		} catch (ParserConfigurationException e) {
-			e.printStackTrace();
+			AryaUtils.logException(null,e);
 		} catch (SAXException e) {
-			e.printStackTrace(); 
+			AryaUtils.logException(null,e); 
 		} catch (IOException e) {
-			e.printStackTrace(); 
+			AryaUtils.logException(null,e); 
 		}
 
 		HttpSession session = servletRequest.getSession();
