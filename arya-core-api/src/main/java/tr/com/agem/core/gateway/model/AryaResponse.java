@@ -27,6 +27,34 @@ public class AryaResponse implements IAryaResponse
 	private String data;
 	
 	private Object attributes;
+	
+	private String messageCode;
+	private String message;
+	private boolean isError;
+	
+	public String getMessageCode() {
+		return messageCode;
+	}
+
+	public void setMessageCode(String messageCode) {
+		this.messageCode = messageCode;
+	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public boolean isError() {
+		return isError;
+	}
+
+	public void setError(boolean isError) {
+		this.isError = isError;
+	}
 
 	public String getView() {
 		return view;
@@ -53,6 +81,11 @@ public class AryaResponse implements IAryaResponse
 		return attributes;
 	}
 	
+	
+	private String getNodeTextContent(NodeList nodeList) {
+		return (nodeList != null && nodeList.getLength() == 1) ? nodeList.item(0).getTextContent() : null;
+	}
+	
 	public void fromXMLString(String xmlString) {
 		
 		try {
@@ -60,24 +93,19 @@ public class AryaResponse implements IAryaResponse
 			Document doc = DocumentBuilderFactory.newInstance()
 				.newDocumentBuilder().parse(new ByteArrayInputStream(xmlString.getBytes(StandardCharsets.UTF_8)));
 			
-			NodeList nodeList = doc.getElementsByTagName("view");
+			this.view = getNodeTextContent( doc.getElementsByTagName("view") );					
 
-			assert(nodeList != null && nodeList.getLength() == 1);
+			this.data  = getNodeTextContent( doc.getElementsByTagName("data") );					
 
-			this.view = nodeList.item(0).getTextContent();
+			this.attributes  = getNodeTextContent( doc.getElementsByTagName("attributes") );					
 
-			nodeList = doc.getElementsByTagName("data");
+			this.messageCode =  getNodeTextContent( doc.getElementsByTagName("messageCode") );
 
-			assert(nodeList != null && nodeList.getLength() == 1);
+			this.message =  getNodeTextContent( doc.getElementsByTagName("message") );
 
-			this.data = nodeList.item(0).getTextContent();
-			
-			nodeList = doc.getElementsByTagName("attributes");
+			this.isError = ("Y".equals(getNodeTextContent( doc.getElementsByTagName("isError")))) ? true : false;
 
-			assert(nodeList != null && nodeList.getLength() == 1);
 
-			this.attributes = nodeList.item(0).getTextContent();
-			
 		} catch (Exception e) {
 			AryaUtils.logException(null,e);
 			throw new RuntimeException(e.getMessage());
@@ -114,6 +142,10 @@ public class AryaResponse implements IAryaResponse
 			xmlString.append("<attributes/>");			
 		}
 		
+		xmlString.append("<isError>").append(this.isError ? "Y" : "").append("</isError>");
+		xmlString.append("<message>").append((this.message != null ) ? this.message : "").append("</message>");
+		xmlString.append("<messageCode>").append((this.messageCode != null ) ? this.messageCode : "").append("</messageCode>");
+
 		xmlString.append("</arya-response>");
 
 		return xmlString.toString();

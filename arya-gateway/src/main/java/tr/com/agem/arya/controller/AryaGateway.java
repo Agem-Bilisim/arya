@@ -1,5 +1,6 @@
 package tr.com.agem.arya.controller;
 
+import java.io.Writer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -7,8 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.annotation.AnnotationUtils;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,21 +15,22 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
 
 import tr.com.agem.core.adaptor.AryaApplicationAdaptor;
 import tr.com.agem.core.adaptor.IAryaAdaptorResponse;
+import tr.com.agem.core.exception.AryaException;
+import tr.com.agem.core.exception.AryaMetadataNotFoundException;
 import tr.com.agem.core.gateway.model.AryaIntercepterFactory;
 import tr.com.agem.core.gateway.model.AryaRequest;
 import tr.com.agem.core.gateway.model.AryaResponse;
 import tr.com.agem.core.gateway.model.RequestTypes;
 import tr.com.agem.core.metadata.IMetadataEngine;
-import tr.com.agem.core.metadata.exception.AryaMetadataNotFoundException;
 import tr.com.agem.core.metadata.model.IMetadata;
 
 @Controller
 @RequestMapping("/rest")
 public class AryaGateway {
+	
 	private static final Logger logger = Logger.getLogger(AryaGateway.class.getName());
 
 	/**
@@ -120,19 +120,20 @@ public class AryaGateway {
 		return respStr;
 	}
 	
-	@ExceptionHandler(value = Exception.class)
-	public void defaultErrorHandler(HttpServletResponse response, Exception e)
-			throws Exception {
+	
+	@ExceptionHandler(value = AryaException.class)
+	@ResponseBody
+	public void defaultErrorHandler(final AryaException e, final HttpServletRequest request,
+	        Writer writer) throws Exception {
 		
 		logger.log(Level.SEVERE, e.getMessage(), e);
 		
-		// If the exception is annotated with @ResponseStatus, rethrow it and
-		// let the framework handle it
-		if (AnnotationUtils.findAnnotation(e.getClass(), ResponseStatus.class) != null)
-			throw e;
+		AryaResponse response = new AryaResponse();
+		response.setError(true);
+		response.setMessage(e.getMessage());
 		
-		// Otherwise setup and send the interpreter an exception message.
-		response.sendError(HttpStatus.INTERNAL_SERVER_ERROR.value(), e.getLocalizedMessage());
+		writer.write(response.toString());
 	}
+	
 
 }
